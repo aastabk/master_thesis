@@ -1,0 +1,7 @@
+fi_cycle=59
+fi_type=bitflip
+fi_max_multiple=100
+fi_next_cycle=60
+fi_next_cycle=61
+fi_next_cycle=62
+fi_next_cycle=64

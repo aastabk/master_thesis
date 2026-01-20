@@ -1,0 +1,5 @@
+# Large benchmark / data files
+*.data
+*.dat
+axbench/applications/**/data/
+llfi-build/

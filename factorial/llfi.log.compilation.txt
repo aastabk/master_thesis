@@ -1,0 +1,56 @@
+
+
+Start of a pass
+LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %argv.addr, metadata !30, metadata !DIExpression()), !dbg !31, !llfi_index !32
+LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %argc.addr, metadata !26, metadata !DIExpression()), !dbg !27, !llfi_index !28
+LLFI cannot inject faults in destination reg of   store i32 0, ptr %retval, align 4, !llfi_index !24
+LLFI cannot inject faults in destination reg of   store i32 %argc, ptr %argc.addr, align 4, !llfi_index !25
+LLFI cannot inject faults in destination reg of   store ptr %argv, ptr %argv.addr, align 8, !llfi_index !29
+LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %i, metadata !33, metadata !DIExpression()), !dbg !34, !llfi_index !35
+LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %fact, metadata !36, metadata !DIExpression()), !dbg !37, !llfi_index !38
+LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %n, metadata !39, metadata !DIExpression()), !dbg !40, !llfi_index !41
+LLFI cannot inject faults in destination reg of   store i32 %call, ptr %n, align 4, !dbg !48, !llfi_index !49
+LLFI cannot inject faults in destination reg of   store i32 1, ptr %fact, align 4, !dbg !50, !llfi_index !51
+LLFI cannot inject faults in destination reg of   store i32 1, ptr %i, align 4, !dbg !52, !llfi_index !54
+LLFI cannot inject faults in destination reg of   br label %for.cond, !dbg !55, !llfi_index !56
+LLFI cannot inject faults in source reg for.cond of instruction   br label %for.cond, !dbg !55, !llfi_index !56
+The selected instruction   br label %for.cond, !dbg !55, !llfi_index !56does not have any valid registers for fault injection
+LLFI cannot inject faults in destination reg of   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
+LLFI cannot inject faults in source reg for.end of instruction   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
+LLFI cannot inject faults in source reg for.body of instruction   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
+LLFI cannot inject faults in destination reg of   store i32 %mul, ptr %fact, align 4, !dbg !73, !llfi_index !74
+LLFI cannot inject faults in destination reg of   br label %for.inc, !dbg !75, !llfi_index !76
+LLFI cannot inject faults in source reg for.inc of instruction   br label %for.inc, !dbg !75, !llfi_index !76
+The selected instruction   br label %for.inc, !dbg !75, !llfi_index !76does not have any valid registers for fault injection
+LLFI cannot inject faults in destination reg of   store i32 %inc, ptr %i, align 4, !dbg !77, !llfi_index !80
+LLFI cannot inject faults in destination reg of   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85
+LLFI cannot inject faults in source reg for.cond of instruction   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85
+The selected instruction   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85does not have any valid registers for fault injection
+
+
+Start of a pass
+LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %argv.addr, metadata !30, metadata !DIExpression()), !dbg !31, !llfi_index !32
+LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %argc.addr, metadata !26, metadata !DIExpression()), !dbg !27, !llfi_index !28
+LLFI cannot inject faults in destination reg of   store i32 0, ptr %retval, align 4, !llfi_index !24
+LLFI cannot inject faults in destination reg of   store i32 %argc, ptr %argc.addr, align 4, !llfi_index !25
+LLFI cannot inject faults in destination reg of   store ptr %argv, ptr %argv.addr, align 8, !llfi_index !29
+LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %i, metadata !33, metadata !DIExpression()), !dbg !34, !llfi_index !35
+LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %fact, metadata !36, metadata !DIExpression()), !dbg !37, !llfi_index !38
+LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %n, metadata !39, metadata !DIExpression()), !dbg !40, !llfi_index !41
+LLFI cannot inject faults in destination reg of   store i32 %call, ptr %n, align 4, !dbg !48, !llfi_index !49
+LLFI cannot inject faults in destination reg of   store i32 1, ptr %fact, align 4, !dbg !50, !llfi_index !51
+LLFI cannot inject faults in destination reg of   store i32 1, ptr %i, align 4, !dbg !52, !llfi_index !54
+LLFI cannot inject faults in destination reg of   br label %for.cond, !dbg !55, !llfi_index !56
+LLFI cannot inject faults in source reg for.cond of instruction   br label %for.cond, !dbg !55, !llfi_index !56
+The selected instruction   br label %for.cond, !dbg !55, !llfi_index !56does not have any valid registers for fault injection
+LLFI cannot inject faults in destination reg of   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
+LLFI cannot inject faults in source reg for.end of instruction   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
+LLFI cannot inject faults in source reg for.body of instruction   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
+LLFI cannot inject faults in destination reg of   store i32 %mul, ptr %fact, align 4, !dbg !73, !llfi_index !74
+LLFI cannot inject faults in destination reg of   br label %for.inc, !dbg !75, !llfi_index !76
+LLFI cannot inject faults in source reg for.inc of instruction   br label %for.inc, !dbg !75, !llfi_index !76
+The selected instruction   br label %for.inc, !dbg !75, !llfi_index !76does not have any valid registers for fault injection
+LLFI cannot inject faults in destination reg of   store i32 %inc, ptr %i, align 4, !dbg !77, !llfi_index !80
+LLFI cannot inject faults in destination reg of   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85
+LLFI cannot inject faults in source reg for.cond of instruction   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85
+The selected instruction   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85does not have any valid registers for fault injection
