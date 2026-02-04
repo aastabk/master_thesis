@@ -1,0 +1,33 @@
+
+Success
+The change has been registered
+Basedir is: /home/aastabk/lltfi_attempt/axbench/fft
+The other path is: /home/aastabk/lltfi_attempt/axbench/fft
+compileOption:
+  instSelMethod:
+  - insttype:
+      exclude:
+      - ret
+      include:
+      - all
+  regSelMethod: regloc
+  regloc: allreg
+  tracingPropagation: false
+  tracingPropagationOption:
+    debugTrace: false
+    generateCDFG: true
+    maxTrace: 250
+runOption:
+- run:
+    fi_type: bitflip
+    numOfRuns: 5
+    verbose: true
+    window_len_multiple: 2
+
+/home/aastabk/lltfi_attempt/llvm-project/build/bin/opt -load-pass-plugin /home/aastabk/lltfi_attempt/llfi-build/bin/../llvm_passes/llfi-passes.so -genllfiindexpass -o /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-llfi_index.ll /home/aastabk/lltfi_attempt/axbench/fft/fft.ll -S
+/home/aastabk/lltfi_attempt/llvm-project/build/bin/opt -load-pass-plugin /home/aastabk/lltfi_attempt/llfi-build/bin/../llvm_passes/llfi-passes.so -profilingpass -insttype -includeinst=all -excludeinst=ret -regloc -allreg -o /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-profiling.ll /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-llfi_index.ll -S
+/home/aastabk/lltfi_attempt/llvm-project/build/bin/opt -load-pass-plugin /home/aastabk/lltfi_attempt/llfi-build/bin/../llvm_passes/llfi-passes.so -faultinjectionpass -insttype -includeinst=all -excludeinst=ret -regloc -allreg -o /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-faultinjection.ll /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-llfi_index.ll -S
+/home/aastabk/lltfi_attempt/llvm-project/build/bin/llc -filetype=obj -o /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-profiling.o /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-profiling.ll
+/home/aastabk/lltfi_attempt/llvm-project/build/bin/llc -filetype=obj -o /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-faultinjection.o /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-faultinjection.ll
+clang -o /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-profiling.exe /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-profiling.o -L/home/aastabk/lltfi_attempt/llfi-build/bin/../runtime_lib -lllfi-rt -lpthread -lstdc++ -lm -no-pie -Wl,-rpath /home/aastabk/lltfi_attempt/llfi-build/bin/../runtime_lib
+clang -o /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-faultinjection.exe /home/aastabk/lltfi_attempt/axbench/fft/llfi/fft-faultinjection.o -L/home/aastabk/lltfi_attempt/llfi-build/bin/../runtime_lib -lllfi-rt -lpthread -lstdc++ -lm -no-pie -Wl,-rpath /home/aastabk/lltfi_attempt/llfi-build/bin/../runtime_lib
