@@ -142,6 +142,12 @@ define linkonce_odr dso_local void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::_
 }
  of instruction   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator"* noundef nonnull align 1 dereferenceable(1) %20) #8, !llfi_index !48, !taffo.constinfo !43
 The selected instruction   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator"* noundef nonnull align 1 dereferenceable(1) %20) #8, !llfi_index !48, !taffo.constinfo !43does not have any valid registers for fault injection
+LLFI cannot inject faults in destination reg of   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
+LLFI cannot inject faults in source reg   %4 = alloca %"class.std::__cxx11::basic_string", align 8, !taffo.structinfo !0, !llfi_index !26 of instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
+LLFI cannot inject faults in source reg ; Function Attrs: nounwind
+declare !taffo.initweight !283 !taffo.funinfo !284 void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32)) unnamed_addr #4
+ of instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
+The selected instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43does not have any valid registers for fault injection
 LLFI cannot inject faults in source reg   %60 = extractvalue { i8*, i32 } %58, 1, !llfi_index !100 of instruction   %.04 = phi i32 [ %60, %57 ], [ %56, %53 ], !llfi_index !265
 LLFI cannot inject faults in source reg   %56 = extractvalue { i8*, i32 } %54, 1, !llfi_index !96 of instruction   %.04 = phi i32 [ %60, %57 ], [ %56, %53 ], !llfi_index !265
 LLFI cannot inject faults in destination reg of   invoke void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEE4openERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode(%"class.std::basic_ofstream"* noundef nonnull align 8 dereferenceable(248) %8, %"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %6, i32 noundef 16)
@@ -516,6 +522,9 @@ define internal void @_Z10forwardk2jffPfS_.2_fixp(i32 noundef %.u3_29fixp, i32 n
 }
  of instruction   invoke void @_Z10forwardk2jffPfS_.2_fixp(i32 %s3_29fixp18, i32 %s3_29fixp17, i32* %s3_29fixp8, i32* %s3_29fixp7)
           to label %102 unwind label %57, !taffo.info !72, !llfi_index !175, !taffo.constinfo !176, !taffo.target !67
+LLFI cannot inject faults in source reg @l1.fixp = global i32 1073741824, align 4, !taffo.info !11 of instruction   %u1_31fixp = load i32, i32* @l1.fixp, align 4, !taffo.info !11, !llfi_index !89
+LLFI cannot inject faults in source reg @l2.fixp = global i32 1073741824, align 4, !taffo.info !11 of instruction   %u1_31fixp5 = load i32, i32* @l2.fixp, align 4, !taffo.info !11, !llfi_index !90
+LLFI cannot inject faults in source reg float* %3 of instruction   %40 = load float, float* %3, align 4, !taffo.info !24, !taffo.initweight !28, !llfi_index !91, !taffo.target !87
 LLFI cannot inject faults in destination reg of   br label %103, !llfi_index !177
 LLFI cannot inject faults in source reg  of instruction   br label %103, !llfi_index !177
 The selected instruction   br label %103, !llfi_index !177does not have any valid registers for fault injection
@@ -808,12 +817,6 @@ LLFI cannot inject faults in source reg  of instruction   br label %135, !llvm.l
 The selected instruction   br label %135, !llvm.loop !249, !llfi_index !250does not have any valid registers for fault injection
 LLFI cannot inject faults in source reg @l2.fixp = global i32 1073741824, align 4, !taffo.info !11 of instruction   %u1_31fixp4 = load i32, i32* @l2.fixp, align 4, !taffo.info !11, !llfi_index !104
 LLFI cannot inject faults in source reg float* %3 of instruction   %54 = load float, float* %3, align 4, !taffo.info !24, !taffo.initweight !28, !llfi_index !110, !taffo.target !87
-LLFI cannot inject faults in destination reg of   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
-LLFI cannot inject faults in source reg   %4 = alloca %"class.std::__cxx11::basic_string", align 8, !taffo.structinfo !0, !llfi_index !26 of instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
-LLFI cannot inject faults in source reg ; Function Attrs: nounwind
-declare !taffo.initweight !283 !taffo.funinfo !284 void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32)) unnamed_addr #4
- of instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
-The selected instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43does not have any valid registers for fault injection
 LLFI cannot inject faults in destination reg of   call void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ofstream"* noundef nonnull align 8 dereferenceable(248) %8) #8, !llfi_index !266, !taffo.constinfo !43
 LLFI cannot inject faults in source reg   %8 = alloca %"class.std::basic_ofstream", align 8, !taffo.structinfo !0, !llfi_index !30 of instruction   call void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ofstream"* noundef nonnull align 8 dereferenceable(248) %8) #8, !llfi_index !266, !taffo.constinfo !43
 LLFI cannot inject faults in source reg ; Function Attrs: nounwind
@@ -928,15 +931,12 @@ declare !taffo.initweight !283 !taffo.funinfo !284 double @acos(double noundef) 
  of instruction   %.flt = call double @acos(double noundef %35) #8, !taffo.info !11, !taffo.initweight !79, !llfi_index !80, !taffo.constinfo !81
 LLFI cannot inject faults in destination reg of   store float %38, float* %3, align 4, !taffo.info !24, !llfi_index !86, !taffo.target !87
 LLFI cannot inject faults in source reg float* %3 of instruction   store float %38, float* %3, align 4, !taffo.info !24, !llfi_index !86, !taffo.target !87
-LLFI cannot inject faults in source reg @l1.fixp = global i32 1073741824, align 4, !taffo.info !11 of instruction   %u1_31fixp = load i32, i32* @l1.fixp, align 4, !taffo.info !11, !llfi_index !89
-LLFI cannot inject faults in source reg @l2.fixp = global i32 1073741824, align 4, !taffo.info !11 of instruction   %u1_31fixp5 = load i32, i32* @l2.fixp, align 4, !taffo.info !11, !llfi_index !90
-LLFI cannot inject faults in source reg float* %3 of instruction   %40 = load float, float* %3, align 4, !taffo.info !24, !taffo.initweight !28, !llfi_index !91, !taffo.target !87
-LLFI cannot inject faults in source reg ; Function Attrs: nounwind
-declare !taffo.initweight !283 !taffo.funinfo !284 double @cos(double noundef) #4
- of instruction   %42 = call double @cos(double noundef %41) #8, !taffo.info !24, !taffo.initweight !94, !llfi_index !95, !taffo.constinfo !81, !taffo.target !87
 LLFI cannot inject faults in source reg ; Function Attrs: nounwind
 declare !taffo.initweight !283 !taffo.funinfo !284 double @sin(double noundef) #4
  of instruction   %56 = call double @sin(double noundef %55) #8, !taffo.info !24, !taffo.initweight !94, !llfi_index !112, !taffo.constinfo !81, !taffo.target !87
+LLFI cannot inject faults in source reg ; Function Attrs: nounwind
+declare !taffo.initweight !283 !taffo.funinfo !284 double @cos(double noundef) #4
+ of instruction   %42 = call double @cos(double noundef %41) #8, !taffo.info !24, !taffo.initweight !94, !llfi_index !95, !taffo.constinfo !81, !taffo.target !87
 LLFI cannot inject faults in source reg ; Function Attrs: nounwind
 declare !taffo.initweight !283 !taffo.funinfo !284 double @asin(double noundef) #4
  of instruction   %.flt22 = call double @asin(double noundef %77) #8, !taffo.info !135, !taffo.initweight !94, !llfi_index !147, !taffo.constinfo !81
@@ -1138,14 +1138,11 @@ define linkonce_odr dso_local void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::_
 }
  of instruction   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator"* noundef nonnull align 1 dereferenceable(1) %20) #8, !llfi_index !48, !taffo.constinfo !43
 The selected instruction   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator"* noundef nonnull align 1 dereferenceable(1) %20) #8, !llfi_index !48, !taffo.constinfo !43does not have any valid registers for fault injection
-LLFI cannot inject faults in destination reg of   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
-LLFI cannot inject faults in source reg   %4 = alloca %"class.std::__cxx11::basic_string", align 8, !taffo.structinfo !0, !llfi_index !26 of instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
-LLFI cannot inject faults in source reg ; Function Attrs: nounwind
-declare !taffo.initweight !283 !taffo.funinfo !284 void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32)) unnamed_addr #4
- of instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
-The selected instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43does not have any valid registers for fault injection
-LLFI cannot inject faults in source reg   %60 = extractvalue { i8*, i32 } %58, 1, !llfi_index !100 of instruction   %.04 = phi i32 [ %60, %57 ], [ %56, %53 ], !llfi_index !265
-LLFI cannot inject faults in source reg   %56 = extractvalue { i8*, i32 } %54, 1, !llfi_index !96 of instruction   %.04 = phi i32 [ %60, %57 ], [ %56, %53 ], !llfi_index !265
+LLFI cannot inject faults in destination reg of   br label %164, !llfi_index !255
+LLFI cannot inject faults in source reg  of instruction   br label %164, !llfi_index !255
+The selected instruction   br label %164, !llfi_index !255does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg i32 -1 of instruction   %.09 = phi i32 [ -1, %38 ], [ 0, %162 ], !taffo.info !256, !llfi_index !258
+LLFI cannot inject faults in source reg i32 0 of instruction   %.09 = phi i32 [ -1, %38 ], [ 0, %162 ], !taffo.info !256, !llfi_index !258
 LLFI cannot inject faults in destination reg of   invoke void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEE4openERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode(%"class.std::basic_ofstream"* noundef nonnull align 8 dereferenceable(248) %8, %"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %6, i32 noundef 16)
           to label %22 unwind label %53, !llfi_index !51, !taffo.constinfo !40
 LLFI cannot inject faults in source reg   %8 = alloca %"class.std::basic_ofstream", align 8, !taffo.structinfo !0, !llfi_index !30 of instruction   invoke void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEE4openERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode(%"class.std::basic_ofstream"* noundef nonnull align 8 dereferenceable(248) %8, %"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %6, i32 noundef 16)
@@ -1388,11 +1385,6 @@ LLFI cannot inject faults in source reg ; Function Attrs: nounwind
 declare !taffo.initweight !283 !taffo.funinfo !284 void @free(i8* noundef) #4
  of instruction   call void @free(i8* noundef %163) #8, !taffo.info !72, !taffo.initweight !73, !llfi_index !254, !taffo.constinfo !43, !taffo.target !67
 The selected instruction   call void @free(i8* noundef %163) #8, !taffo.info !72, !taffo.initweight !73, !llfi_index !254, !taffo.constinfo !43, !taffo.target !67does not have any valid registers for fault injection
-LLFI cannot inject faults in destination reg of   br label %164, !llfi_index !255
-LLFI cannot inject faults in source reg  of instruction   br label %164, !llfi_index !255
-The selected instruction   br label %164, !llfi_index !255does not have any valid registers for fault injection
-LLFI cannot inject faults in source reg i32 -1 of instruction   %.09 = phi i32 [ -1, %38 ], [ 0, %162 ], !taffo.info !256, !llfi_index !258
-LLFI cannot inject faults in source reg i32 0 of instruction   %.09 = phi i32 [ -1, %38 ], [ 0, %162 ], !taffo.info !256, !llfi_index !258
 LLFI cannot inject faults in destination reg of   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ifstream"* noundef nonnull align 8 dereferenceable(256) %9) #8, !llfi_index !259, !taffo.constinfo !43
 LLFI cannot inject faults in source reg   %9 = alloca %"class.std::basic_ifstream", align 8, !taffo.structinfo !0, !llfi_index !31 of instruction   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ifstream"* noundef nonnull align 8 dereferenceable(256) %9) #8, !llfi_index !259, !taffo.constinfo !43
 LLFI cannot inject faults in source reg ; Function Attrs: nounwind
@@ -1811,6 +1803,14 @@ LLFI cannot inject faults in source reg  of instruction   br label %135, !llvm.l
 The selected instruction   br label %135, !llvm.loop !249, !llfi_index !250does not have any valid registers for fault injection
 LLFI cannot inject faults in source reg @l2.fixp = global i32 1073741824, align 4, !taffo.info !11 of instruction   %u1_31fixp4 = load i32, i32* @l2.fixp, align 4, !taffo.info !11, !llfi_index !104
 LLFI cannot inject faults in source reg float* %3 of instruction   %54 = load float, float* %3, align 4, !taffo.info !24, !taffo.initweight !28, !llfi_index !110, !taffo.target !87
+LLFI cannot inject faults in destination reg of   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
+LLFI cannot inject faults in source reg   %4 = alloca %"class.std::__cxx11::basic_string", align 8, !taffo.structinfo !0, !llfi_index !26 of instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
+LLFI cannot inject faults in source reg ; Function Attrs: nounwind
+declare !taffo.initweight !283 !taffo.funinfo !284 void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32)) unnamed_addr #4
+ of instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43
+The selected instruction   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #8, !llfi_index !262, !taffo.constinfo !43does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg   %60 = extractvalue { i8*, i32 } %58, 1, !llfi_index !100 of instruction   %.04 = phi i32 [ %60, %57 ], [ %56, %53 ], !llfi_index !265
+LLFI cannot inject faults in source reg   %56 = extractvalue { i8*, i32 } %54, 1, !llfi_index !96 of instruction   %.04 = phi i32 [ %60, %57 ], [ %56, %53 ], !llfi_index !265
 LLFI cannot inject faults in destination reg of   call void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ofstream"* noundef nonnull align 8 dereferenceable(248) %8) #8, !llfi_index !266, !taffo.constinfo !43
 LLFI cannot inject faults in source reg   %8 = alloca %"class.std::basic_ofstream", align 8, !taffo.structinfo !0, !llfi_index !30 of instruction   call void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ofstream"* noundef nonnull align 8 dereferenceable(248) %8) #8, !llfi_index !266, !taffo.constinfo !43
 LLFI cannot inject faults in source reg ; Function Attrs: nounwind

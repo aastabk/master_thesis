@@ -1,2 +1,2 @@
-FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=222, fi_cycle=7, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=32, fi_bit=15, opcode=call
-FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=225, fi_cycle=9, fi_reg_index=0, fi_reg_pos=2, fi_reg_width=64, fi_bit=15, opcode=getelementptr
+FI stat: fi_type=bitflip, fi_max_multiple=3, fi_index=916, fi_cycle=18168006, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=64, fi_bit=9, opcode=shl
+FI stat: fi_type=bitflip, fi_max_multiple=3, fi_index=701, fi_cycle=28438808, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=32, fi_bit=24, opcode=sitofp

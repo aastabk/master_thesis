@@ -1,4 +1,5 @@
-fi_cycle=13
+fi_cycle=10152292
 fi_type=bitflip
-fi_max_multiple=100
-fi_next_cycle=13
+fi_max_multiple=3
+fi_next_cycle=27265214
+fi_next_cycle=43105276

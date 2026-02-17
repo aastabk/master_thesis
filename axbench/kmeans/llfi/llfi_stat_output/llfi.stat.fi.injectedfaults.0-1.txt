@@ -1,0 +1,9 @@
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2414, fi_cycle=75716969, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=32, fi_bit=18, opcode=load
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2417, fi_cycle=75716971, fi_reg_index=2, fi_reg_pos=2, fi_reg_width=32, fi_bit=25, opcode=ashr
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2420, fi_cycle=75716973, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=32, fi_bit=16, opcode=load
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2422, fi_cycle=75716974, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=32, fi_bit=22, opcode=load
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2424, fi_cycle=75716976, fi_reg_index=2, fi_reg_pos=2, fi_reg_width=32, fi_bit=6, opcode=sub
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2426, fi_cycle=75716978, fi_reg_index=1, fi_reg_pos=1, fi_reg_width=32, fi_bit=0, opcode=zext
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2427, fi_cycle=75716980, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=64, fi_bit=27, opcode=mul
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2430, fi_cycle=75716982, fi_reg_index=1, fi_reg_pos=1, fi_reg_width=32, fi_bit=25, opcode=add
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2434, fi_cycle=75716984, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=32, fi_bit=4, opcode=load

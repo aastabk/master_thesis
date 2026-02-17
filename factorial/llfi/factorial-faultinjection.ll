@@ -6,9 +6,9 @@ target triple = "x86_64-unknown-linux-gnu"
 @.str = private unnamed_addr constant [4 x i8] c"%d\0A\00", align 1
 @alloca_namestr = internal constant [7 x i8] c"alloca\00"
 @store_namestr = internal constant [6 x i8] c"store\00"
-@load_namestr = internal constant [5 x i8] c"load\00"
 @getelementptr_namestr = internal constant [14 x i8] c"getelementptr\00"
 @call_namestr = internal constant [5 x i8] c"call\00"
+@load_namestr = internal constant [5 x i8] c"load\00"
 @icmp_namestr = internal constant [5 x i8] c"icmp\00"
 @br_namestr = internal constant [3 x i8] c"br\00"
 @mul_namestr = internal constant [4 x i8] c"mul\00"
@@ -18,115 +18,84 @@ target triple = "x86_64-unknown-linux-gnu"
 define dso_local i32 @main(i32 noundef %argc, ptr noundef %argv) #0 !dbg !10 {
 entry:
   call void @initInjections()
-  %fi1 = call i32 @injectFault1(i64 1, i32 1, i32 31, i32 1, i32 2, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
-  %retval = alloca i32, i32 %fi1, align 4, !llfi_index !19
-  %fi = call ptr @injectFault0(i64 1, ptr %retval, i32 31, i32 0, i32 2, i32 0, ptr @alloca_namestr), !llfi_injectfault !20
-  %fi3 = call i32 @injectFault1(i64 2, i32 1, i32 31, i32 1, i32 2, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
-  %argc.addr = alloca i32, i32 %fi3, align 4, !llfi_index !21
-  %fi2 = call ptr @injectFault0(i64 2, ptr %argc.addr, i32 31, i32 0, i32 2, i32 0, ptr @alloca_namestr), !llfi_injectfault !20
-  %fi5 = call i32 @injectFault1(i64 3, i32 1, i32 31, i32 1, i32 2, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
-  %argv.addr = alloca ptr, i32 %fi5, align 8, !llfi_index !22
-  %fi4 = call ptr @injectFault0(i64 3, ptr %argv.addr, i32 31, i32 0, i32 2, i32 0, ptr @alloca_namestr), !llfi_injectfault !20
-  %fi7 = call i32 @injectFault1(i64 4, i32 1, i32 31, i32 1, i32 2, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
-  %i = alloca i32, i32 %fi7, align 4, !llfi_index !23
-  %fi6 = call ptr @injectFault0(i64 4, ptr %i, i32 31, i32 0, i32 2, i32 0, ptr @alloca_namestr), !llfi_injectfault !20
-  %fi9 = call i32 @injectFault1(i64 5, i32 1, i32 31, i32 1, i32 2, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
-  %fact = alloca i32, i32 %fi9, align 4, !llfi_index !24
-  %fi8 = call ptr @injectFault0(i64 5, ptr %fact, i32 31, i32 0, i32 2, i32 0, ptr @alloca_namestr), !llfi_injectfault !20
-  %fi11 = call i32 @injectFault1(i64 6, i32 1, i32 31, i32 1, i32 2, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
-  %n = alloca i32, i32 %fi11, align 4, !llfi_index !25
-  %fi10 = call ptr @injectFault0(i64 6, ptr %n, i32 31, i32 0, i32 2, i32 0, ptr @alloca_namestr), !llfi_injectfault !20
-  %fi12 = call i32 @injectFault1(i64 7, i32 0, i32 33, i32 0, i32 2, i32 1, ptr @store_namestr), !llfi_injectfault !18
-  %fi13 = call ptr @injectFault0(i64 7, ptr %fi, i32 33, i32 1, i32 2, i32 2, ptr @store_namestr), !llfi_injectfault !18
-  store i32 %fi12, ptr %fi13, align 4, !llfi_index !26
-  %fi14 = call i32 @injectFault1(i64 8, i32 %argc, i32 33, i32 0, i32 2, i32 1, ptr @store_namestr), !llfi_injectfault !18
-  %fi15 = call ptr @injectFault0(i64 8, ptr %fi2, i32 33, i32 1, i32 2, i32 2, ptr @store_namestr), !llfi_injectfault !18
-  store i32 %fi14, ptr %fi15, align 4, !llfi_index !27
-  call void @llvm.dbg.declare(metadata ptr %argc.addr, metadata !28, metadata !DIExpression()), !dbg !29, !llfi_index !30
-  %fi16 = call ptr @injectFault0(i64 10, ptr %argv, i32 33, i32 0, i32 2, i32 1, ptr @store_namestr), !llfi_injectfault !18
-  %fi17 = call ptr @injectFault0(i64 10, ptr %fi4, i32 33, i32 1, i32 2, i32 2, ptr @store_namestr), !llfi_injectfault !18
-  store ptr %fi16, ptr %fi17, align 8, !llfi_index !31
-  call void @llvm.dbg.declare(metadata ptr %argv.addr, metadata !32, metadata !DIExpression()), !dbg !33, !llfi_index !34
-  call void @llvm.dbg.declare(metadata ptr %i, metadata !35, metadata !DIExpression()), !dbg !36, !llfi_index !37
-  call void @llvm.dbg.declare(metadata ptr %fact, metadata !38, metadata !DIExpression()), !dbg !39, !llfi_index !40
-  call void @llvm.dbg.declare(metadata ptr %n, metadata !41, metadata !DIExpression()), !dbg !42, !llfi_index !43
-  %fi19 = call ptr @injectFault0(i64 15, ptr %fi4, i32 32, i32 1, i32 2, i32 1, ptr @load_namestr), !llfi_injectfault !18
-  %0 = load ptr, ptr %fi19, align 8, !dbg !44, !llfi_index !45
-  %fi18 = call ptr @injectFault0(i64 15, ptr %0, i32 32, i32 0, i32 2, i32 0, ptr @load_namestr), !llfi_injectfault !20
-  %fi21 = call ptr @injectFault0(i64 16, ptr %fi18, i32 34, i32 1, i32 3, i32 1, ptr @getelementptr_namestr), !llfi_injectfault !18
-  %fi22 = call i64 @injectFault2(i64 16, i64 1, i32 34, i32 2, i32 3, i32 2, ptr @getelementptr_namestr), !llfi_injectfault !18
-  %arrayidx = getelementptr ptr, ptr %fi21, i64 %fi22, !dbg !44, !llfi_index !46
-  %fi20 = call ptr @injectFault0(i64 16, ptr %arrayidx, i32 34, i32 0, i32 3, i32 0, ptr @getelementptr_namestr), !llfi_injectfault !20
-  %fi24 = call ptr @injectFault0(i64 17, ptr %fi20, i32 32, i32 1, i32 2, i32 1, ptr @load_namestr), !llfi_injectfault !18
-  %1 = load ptr, ptr %fi24, align 8, !dbg !44, !llfi_index !47
-  %fi23 = call ptr @injectFault0(i64 17, ptr %1, i32 32, i32 0, i32 2, i32 0, ptr @load_namestr), !llfi_injectfault !20
-  %fi26 = call ptr @injectFault0(i64 18, ptr %fi23, i32 56, i32 1, i32 3, i32 1, ptr @call_namestr), !llfi_injectfault !18
-  %fi27 = call ptr @injectFault0(i64 18, ptr @atoi, i32 56, i32 2, i32 3, i32 2, ptr @call_namestr), !llfi_injectfault !18
-  %call = call i32 %fi27(ptr noundef %fi26) #4, !dbg !48, !llfi_index !49
-  %fi25 = call i32 @injectFault1(i64 18, i32 %call, i32 56, i32 0, i32 3, i32 0, ptr @call_namestr), !llfi_injectfault !20
-  %fi28 = call i32 @injectFault1(i64 19, i32 %fi25, i32 33, i32 0, i32 2, i32 1, ptr @store_namestr), !llfi_injectfault !18
-  %fi29 = call ptr @injectFault0(i64 19, ptr %fi10, i32 33, i32 1, i32 2, i32 2, ptr @store_namestr), !llfi_injectfault !18
-  store i32 %fi28, ptr %fi29, align 4, !dbg !50, !llfi_index !51
-  %fi30 = call i32 @injectFault1(i64 20, i32 1, i32 33, i32 0, i32 2, i32 1, ptr @store_namestr), !llfi_injectfault !18
-  %fi31 = call ptr @injectFault0(i64 20, ptr %fi8, i32 33, i32 1, i32 2, i32 2, ptr @store_namestr), !llfi_injectfault !18
-  store i32 %fi30, ptr %fi31, align 4, !dbg !52, !llfi_index !53
-  %fi32 = call i32 @injectFault1(i64 21, i32 1, i32 33, i32 0, i32 2, i32 1, ptr @store_namestr), !llfi_injectfault !18
-  %fi33 = call ptr @injectFault0(i64 21, ptr %fi6, i32 33, i32 1, i32 2, i32 2, ptr @store_namestr), !llfi_injectfault !18
-  store i32 %fi32, ptr %fi33, align 4, !dbg !54, !llfi_index !56
+  %fi = call i32 @injectFault0(i64 1, i32 1, i32 31, i32 0, i32 1, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
+  %retval = alloca i32, i32 %fi, align 4, !llfi_index !19
+  %fi1 = call i32 @injectFault0(i64 2, i32 1, i32 31, i32 0, i32 1, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
+  %argc.addr = alloca i32, i32 %fi1, align 4, !llfi_index !20
+  %fi2 = call i32 @injectFault0(i64 3, i32 1, i32 31, i32 0, i32 1, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
+  %argv.addr = alloca ptr, i32 %fi2, align 8, !llfi_index !21
+  %fi3 = call i32 @injectFault0(i64 4, i32 1, i32 31, i32 0, i32 1, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
+  %i = alloca i32, i32 %fi3, align 4, !llfi_index !22
+  %fi4 = call i32 @injectFault0(i64 5, i32 1, i32 31, i32 0, i32 1, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
+  %fact = alloca i32, i32 %fi4, align 4, !llfi_index !23
+  %fi5 = call i32 @injectFault0(i64 6, i32 1, i32 31, i32 0, i32 1, i32 1, ptr @alloca_namestr), !llfi_injectfault !18
+  %n = alloca i32, i32 %fi5, align 4, !llfi_index !24
+  %fi6 = call i32 @injectFault0(i64 7, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !18
+  store i32 %fi6, ptr %retval, align 4, !llfi_index !25
+  %fi7 = call i32 @injectFault0(i64 8, i32 %argc, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !18
+  store i32 %fi7, ptr %argc.addr, align 4, !llfi_index !26
+  call void @llvm.dbg.declare(metadata ptr %argc.addr, metadata !27, metadata !DIExpression()), !dbg !28, !llfi_index !29
+  store ptr %argv, ptr %argv.addr, align 8, !llfi_index !30
+  call void @llvm.dbg.declare(metadata ptr %argv.addr, metadata !31, metadata !DIExpression()), !dbg !32, !llfi_index !33
+  call void @llvm.dbg.declare(metadata ptr %i, metadata !34, metadata !DIExpression()), !dbg !35, !llfi_index !36
+  call void @llvm.dbg.declare(metadata ptr %fact, metadata !37, metadata !DIExpression()), !dbg !38, !llfi_index !39
+  call void @llvm.dbg.declare(metadata ptr %n, metadata !40, metadata !DIExpression()), !dbg !41, !llfi_index !42
+  %0 = load ptr, ptr %argv.addr, align 8, !dbg !43, !llfi_index !44
+  %fi8 = call i64 @injectFault1(i64 16, i64 1, i32 34, i32 0, i32 1, i32 2, ptr @getelementptr_namestr), !llfi_injectfault !18
+  %arrayidx = getelementptr ptr, ptr %0, i64 %fi8, !dbg !43, !llfi_index !45
+  %1 = load ptr, ptr %arrayidx, align 8, !dbg !43, !llfi_index !46
+  %call = call i32 @atoi(ptr noundef %1) #4, !dbg !47, !llfi_index !48
+  %fi9 = call i32 @injectFault0(i64 18, i32 %call, i32 56, i32 0, i32 1, i32 0, ptr @call_namestr), !llfi_injectfault !49
+  %fi10 = call i32 @injectFault0(i64 19, i32 %fi9, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !18
+  store i32 %fi10, ptr %n, align 4, !dbg !50, !llfi_index !51
+  %fi11 = call i32 @injectFault0(i64 20, i32 1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !18
+  store i32 %fi11, ptr %fact, align 4, !dbg !52, !llfi_index !53
+  %fi12 = call i32 @injectFault0(i64 21, i32 1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !18
+  store i32 %fi12, ptr %i, align 4, !dbg !54, !llfi_index !56
   br label %for.cond, !dbg !57, !llfi_index !58
 
 for.cond:                                         ; preds = %for.inc, %entry
-  %fi35 = call ptr @injectFault0(i64 23, ptr %fi6, i32 32, i32 1, i32 2, i32 1, ptr @load_namestr), !llfi_injectfault !18
-  %2 = load i32, ptr %fi35, align 4, !dbg !59, !llfi_index !61
-  %fi34 = call i32 @injectFault1(i64 23, i32 %2, i32 32, i32 0, i32 2, i32 0, ptr @load_namestr), !llfi_injectfault !20
-  %fi37 = call ptr @injectFault0(i64 24, ptr %fi10, i32 32, i32 1, i32 2, i32 1, ptr @load_namestr), !llfi_injectfault !18
-  %3 = load i32, ptr %fi37, align 4, !dbg !62, !llfi_index !63
-  %fi36 = call i32 @injectFault1(i64 24, i32 %3, i32 32, i32 0, i32 2, i32 0, ptr @load_namestr), !llfi_injectfault !20
-  %fi39 = call i32 @injectFault1(i64 25, i32 %fi34, i32 53, i32 1, i32 3, i32 1, ptr @icmp_namestr), !llfi_injectfault !18
-  %fi40 = call i32 @injectFault1(i64 25, i32 %fi36, i32 53, i32 2, i32 3, i32 2, ptr @icmp_namestr), !llfi_injectfault !18
-  %cmp = icmp sle i32 %fi39, %fi40, !dbg !64, !llfi_index !65
-  %fi38 = call i1 @injectFault3(i64 25, i1 %cmp, i32 53, i32 0, i32 3, i32 0, ptr @icmp_namestr), !llfi_injectfault !20
-  %fi41 = call i1 @injectFault3(i64 26, i1 %fi38, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !18
-  br i1 %fi41, label %for.body, label %for.end, !dbg !66, !llfi_index !67
+  %2 = load i32, ptr %i, align 4, !dbg !59, !llfi_index !61
+  %fi13 = call i32 @injectFault0(i64 23, i32 %2, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !49
+  %3 = load i32, ptr %n, align 4, !dbg !62, !llfi_index !63
+  %fi14 = call i32 @injectFault0(i64 24, i32 %3, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !49
+  %fi16 = call i32 @injectFault0(i64 25, i32 %fi13, i32 53, i32 1, i32 3, i32 1, ptr @icmp_namestr), !llfi_injectfault !18
+  %fi17 = call i32 @injectFault0(i64 25, i32 %fi14, i32 53, i32 2, i32 3, i32 2, ptr @icmp_namestr), !llfi_injectfault !18
+  %cmp = icmp sle i32 %fi16, %fi17, !dbg !64, !llfi_index !65
+  %fi15 = call i1 @injectFault2(i64 25, i1 %cmp, i32 53, i32 0, i32 3, i32 0, ptr @icmp_namestr), !llfi_injectfault !49
+  %fi18 = call i1 @injectFault2(i64 26, i1 %fi15, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !18
+  br i1 %fi18, label %for.body, label %for.end, !dbg !66, !llfi_index !67
 
 for.body:                                         ; preds = %for.cond
-  %fi43 = call ptr @injectFault0(i64 27, ptr %fi8, i32 32, i32 1, i32 2, i32 1, ptr @load_namestr), !llfi_injectfault !18
-  %4 = load i32, ptr %fi43, align 4, !dbg !68, !llfi_index !70
-  %fi42 = call i32 @injectFault1(i64 27, i32 %4, i32 32, i32 0, i32 2, i32 0, ptr @load_namestr), !llfi_injectfault !20
-  %fi45 = call ptr @injectFault0(i64 28, ptr %fi6, i32 32, i32 1, i32 2, i32 1, ptr @load_namestr), !llfi_injectfault !18
-  %5 = load i32, ptr %fi45, align 4, !dbg !71, !llfi_index !72
-  %fi44 = call i32 @injectFault1(i64 28, i32 %5, i32 32, i32 0, i32 2, i32 0, ptr @load_namestr), !llfi_injectfault !20
-  %fi47 = call i32 @injectFault1(i64 29, i32 %fi42, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !18
-  %fi48 = call i32 @injectFault1(i64 29, i32 %fi44, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !18
-  %mul = mul nsw i32 %fi47, %fi48, !dbg !73, !llfi_index !74
-  %fi46 = call i32 @injectFault1(i64 29, i32 %mul, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !20
-  %fi49 = call i32 @injectFault1(i64 30, i32 %fi46, i32 33, i32 0, i32 2, i32 1, ptr @store_namestr), !llfi_injectfault !18
-  %fi50 = call ptr @injectFault0(i64 30, ptr %fi8, i32 33, i32 1, i32 2, i32 2, ptr @store_namestr), !llfi_injectfault !18
-  store i32 %fi49, ptr %fi50, align 4, !dbg !75, !llfi_index !76
+  %4 = load i32, ptr %fact, align 4, !dbg !68, !llfi_index !70
+  %fi19 = call i32 @injectFault0(i64 27, i32 %4, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !49
+  %5 = load i32, ptr %i, align 4, !dbg !71, !llfi_index !72
+  %fi20 = call i32 @injectFault0(i64 28, i32 %5, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !49
+  %fi22 = call i32 @injectFault0(i64 29, i32 %fi19, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !18
+  %fi23 = call i32 @injectFault0(i64 29, i32 %fi20, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !18
+  %mul = mul nsw i32 %fi22, %fi23, !dbg !73, !llfi_index !74
+  %fi21 = call i32 @injectFault0(i64 29, i32 %mul, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !49
+  %fi24 = call i32 @injectFault0(i64 30, i32 %fi21, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !18
+  store i32 %fi24, ptr %fact, align 4, !dbg !75, !llfi_index !76
   br label %for.inc, !dbg !77, !llfi_index !78
 
 for.inc:                                          ; preds = %for.body
-  %fi52 = call ptr @injectFault0(i64 32, ptr %fi6, i32 32, i32 1, i32 2, i32 1, ptr @load_namestr), !llfi_injectfault !18
-  %6 = load i32, ptr %fi52, align 4, !dbg !79, !llfi_index !80
-  %fi51 = call i32 @injectFault1(i64 32, i32 %6, i32 32, i32 0, i32 2, i32 0, ptr @load_namestr), !llfi_injectfault !20
-  %fi54 = call i32 @injectFault1(i64 33, i32 %fi51, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !18
-  %fi55 = call i32 @injectFault1(i64 33, i32 1, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !18
-  %inc = add nsw i32 %fi54, %fi55, !dbg !79, !llfi_index !81
-  %fi53 = call i32 @injectFault1(i64 33, i32 %inc, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !20
-  %fi56 = call i32 @injectFault1(i64 34, i32 %fi53, i32 33, i32 0, i32 2, i32 1, ptr @store_namestr), !llfi_injectfault !18
-  %fi57 = call ptr @injectFault0(i64 34, ptr %fi6, i32 33, i32 1, i32 2, i32 2, ptr @store_namestr), !llfi_injectfault !18
-  store i32 %fi56, ptr %fi57, align 4, !dbg !79, !llfi_index !82
+  %6 = load i32, ptr %i, align 4, !dbg !79, !llfi_index !80
+  %fi25 = call i32 @injectFault0(i64 32, i32 %6, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !49
+  %fi27 = call i32 @injectFault0(i64 33, i32 %fi25, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !18
+  %fi28 = call i32 @injectFault0(i64 33, i32 1, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !18
+  %inc = add nsw i32 %fi27, %fi28, !dbg !79, !llfi_index !81
+  %fi26 = call i32 @injectFault0(i64 33, i32 %inc, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !49
+  %fi29 = call i32 @injectFault0(i64 34, i32 %fi26, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !18
+  store i32 %fi29, ptr %i, align 4, !dbg !79, !llfi_index !82
   br label %for.cond, !dbg !83, !llvm.loop !84, !llfi_index !87
 
 for.end:                                          ; preds = %for.cond
-  %fi59 = call ptr @injectFault0(i64 36, ptr %fi8, i32 32, i32 1, i32 2, i32 1, ptr @load_namestr), !llfi_injectfault !18
-  %7 = load i32, ptr %fi59, align 4, !dbg !88, !llfi_index !89
-  %fi58 = call i32 @injectFault1(i64 36, i32 %7, i32 32, i32 0, i32 2, i32 0, ptr @load_namestr), !llfi_injectfault !20
-  %fi61 = call ptr @injectFault0(i64 37, ptr @.str, i32 56, i32 1, i32 4, i32 1, ptr @call_namestr), !llfi_injectfault !18
-  %fi62 = call i32 @injectFault1(i64 37, i32 %fi58, i32 56, i32 2, i32 4, i32 2, ptr @call_namestr), !llfi_injectfault !18
-  %fi63 = call ptr @injectFault0(i64 37, ptr @printf, i32 56, i32 3, i32 4, i32 3, ptr @call_namestr), !llfi_injectfault !18
-  %call1 = call i32 (ptr, ...) %fi63(ptr noundef %fi61, i32 noundef %fi62), !dbg !90, !llfi_index !91
-  %fi60 = call i32 @injectFault1(i64 37, i32 %call1, i32 56, i32 0, i32 4, i32 0, ptr @call_namestr), !llfi_injectfault !20
+  %7 = load i32, ptr %fact, align 4, !dbg !88, !llfi_index !89
+  %fi30 = call i32 @injectFault0(i64 36, i32 %7, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !49
+  %fi32 = call i32 @injectFault0(i64 37, i32 %fi30, i32 56, i32 1, i32 2, i32 2, ptr @call_namestr), !llfi_injectfault !18
+  %call1 = call i32 (ptr, ...) @printf(ptr noundef @.str, i32 noundef %fi32), !dbg !90, !llfi_index !91
+  %fi31 = call i32 @injectFault0(i64 37, i32 %call1, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !49
   call void @postInjections()
   ret i32 0, !dbg !92, !llfi_index !93
 }
@@ -139,24 +108,7 @@ declare i32 @atoi(ptr noundef) #2
 
 declare i32 @printf(ptr noundef, ...) #3
 
-define ptr @injectFault0(i64 %0, ptr %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
-entry:
-  %tmploc = alloca ptr, align 8
-  store ptr %1, ptr %tmploc, align 8
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast ptr %tmploc to ptr
-  call void @injectFunc(i64 %0, i32 64, ptr %tmploc_cast, i32 %3, i32 %5, ptr %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load ptr, ptr %tmploc, align 8
-  ret ptr %updateval
-}
-
-define i32 @injectFault1(i64 %0, i32 %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
+define i32 @injectFault0(i64 %0, i32 %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
 entry:
   %tmploc = alloca i32, align 4
   store i32 %1, ptr %tmploc, align 4
@@ -173,7 +125,7 @@ exit:                                             ; preds = %inject, %entry
   ret i32 %updateval
 }
 
-define i64 @injectFault2(i64 %0, i64 %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
+define i64 @injectFault1(i64 %0, i64 %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
 entry:
   %tmploc = alloca i64, align 8
   store i64 %1, ptr %tmploc, align 8
@@ -190,7 +142,7 @@ exit:                                             ; preds = %inject, %entry
   ret i64 %updateval
 }
 
-define i1 @injectFault3(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
+define i1 @injectFault2(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
 entry:
   %tmploc = alloca i1, align 1
   store i1 %1, ptr %tmploc, align 1
@@ -245,36 +197,36 @@ attributes #4 = { nounwind readonly willreturn }
 !17 = !{}
 !18 = !{!"before"}
 !19 = !{i64 1}
-!20 = !{!"after"}
-!21 = !{i64 2}
-!22 = !{i64 3}
-!23 = !{i64 4}
-!24 = !{i64 5}
-!25 = !{i64 6}
-!26 = !{i64 7}
-!27 = !{i64 8}
-!28 = !DILocalVariable(name: "argc", arg: 1, scope: !10, file: !1, line: 5, type: !13)
-!29 = !DILocation(line: 5, column: 5, scope: !10)
-!30 = !{i64 9}
-!31 = !{i64 10}
-!32 = !DILocalVariable(name: "argv", arg: 2, scope: !10, file: !1, line: 6, type: !14)
-!33 = !DILocation(line: 6, column: 7, scope: !10)
-!34 = !{i64 11}
-!35 = !DILocalVariable(name: "i", scope: !10, file: !1, line: 8, type: !13)
-!36 = !DILocation(line: 8, column: 7, scope: !10)
-!37 = !{i64 12}
-!38 = !DILocalVariable(name: "fact", scope: !10, file: !1, line: 8, type: !13)
-!39 = !DILocation(line: 8, column: 9, scope: !10)
-!40 = !{i64 13}
-!41 = !DILocalVariable(name: "n", scope: !10, file: !1, line: 8, type: !13)
-!42 = !DILocation(line: 8, column: 15, scope: !10)
-!43 = !{i64 14}
-!44 = !DILocation(line: 9, column: 12, scope: !10)
-!45 = !{i64 15}
-!46 = !{i64 16}
-!47 = !{i64 17}
-!48 = !DILocation(line: 9, column: 7, scope: !10)
-!49 = !{i64 18}
+!20 = !{i64 2}
+!21 = !{i64 3}
+!22 = !{i64 4}
+!23 = !{i64 5}
+!24 = !{i64 6}
+!25 = !{i64 7}
+!26 = !{i64 8}
+!27 = !DILocalVariable(name: "argc", arg: 1, scope: !10, file: !1, line: 5, type: !13)
+!28 = !DILocation(line: 5, column: 5, scope: !10)
+!29 = !{i64 9}
+!30 = !{i64 10}
+!31 = !DILocalVariable(name: "argv", arg: 2, scope: !10, file: !1, line: 6, type: !14)
+!32 = !DILocation(line: 6, column: 7, scope: !10)
+!33 = !{i64 11}
+!34 = !DILocalVariable(name: "i", scope: !10, file: !1, line: 8, type: !13)
+!35 = !DILocation(line: 8, column: 7, scope: !10)
+!36 = !{i64 12}
+!37 = !DILocalVariable(name: "fact", scope: !10, file: !1, line: 8, type: !13)
+!38 = !DILocation(line: 8, column: 9, scope: !10)
+!39 = !{i64 13}
+!40 = !DILocalVariable(name: "n", scope: !10, file: !1, line: 8, type: !13)
+!41 = !DILocation(line: 8, column: 15, scope: !10)
+!42 = !{i64 14}
+!43 = !DILocation(line: 9, column: 12, scope: !10)
+!44 = !{i64 15}
+!45 = !{i64 16}
+!46 = !{i64 17}
+!47 = !DILocation(line: 9, column: 7, scope: !10)
+!48 = !{i64 18}
+!49 = !{!"after"}
 !50 = !DILocation(line: 9, column: 5, scope: !10)
 !51 = !{i64 19}
 !52 = !DILocation(line: 10, column: 8, scope: !10)

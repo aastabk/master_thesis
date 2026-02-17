@@ -160,11 +160,11 @@ $_ZN12AxBenchTimer5resetEv = comdat any
 @.str.5.15 = private unnamed_addr constant [3 x i8] c" s\00", align 1, !taffo.info !2
 @invoke_namestr = internal constant [7 x i8] c"invoke\00"
 @call_namestr = internal constant [5 x i8] c"call\00"
-@icmp_namestr = internal constant [5 x i8] c"icmp\00"
 @lshr_namestr = internal constant [5 x i8] c"lshr\00"
 @phi_namestr = internal constant [4 x i8] c"phi\00"
 @sitofp_namestr = internal constant [7 x i8] c"sitofp\00"
 @fdiv_namestr = internal constant [5 x i8] c"fdiv\00"
+@icmp_namestr = internal constant [5 x i8] c"icmp\00"
 @br_namestr = internal constant [3 x i8] c"br\00"
 @fmul_namestr = internal constant [5 x i8] c"fmul\00"
 @sext_namestr = internal constant [5 x i8] c"sext\00"
@@ -205,16 +205,16 @@ define dso_local noundef float @_Z8convolvePA3_fS0_([3 x float]* noundef %0, [3 
   %fi3 = call i32 @injectFault1(i64 3, i32 %.02.s3_29fixp, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi6 = call i32 @injectFault1(i64 5, i32 %fi3, i32 44, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @sitofp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %5 = sitofp i32 %fi6 to float, !taffo.info !34, !llfi_index !37
-  %fi5 = call float @injectFault3(i64 5, float %5, i32 44, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @sitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi8 = call float @injectFault3(i64 6, float %fi5, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi9 = call float @injectFault3(i64 6, float 0x41C0000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi5 = call float @injectFault2(i64 5, float %5, i32 44, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @sitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi8 = call float @injectFault2(i64 6, float %fi5, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi9 = call float @injectFault2(i64 6, float 0x41C0000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %6 = fdiv float %fi8, %fi9, !taffo.info !34, !llfi_index !38
-  %fi7 = call float @injectFault3(i64 6, float %6, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi7 = call float @injectFault2(i64 6, float %6, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi11 = call i32 @injectFault1(i64 7, i32 %fi4, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi12 = call i32 @injectFault1(i64 7, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %7 = icmp slt i32 %fi11, %fi12, !llfi_index !39
-  %fi10 = call i1 @injectFault2(i64 7, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi13 = call i1 @injectFault2(i64 8, i1 %fi10, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi10 = call i1 @injectFault3(i64 7, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi13 = call i1 @injectFault3(i64 8, i1 %fi10, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi13, label %8, label %30, !llfi_index !40
 
 8:                                                ; preds = %4
@@ -228,8 +228,8 @@ define dso_local noundef float @_Z8convolvePA3_fS0_([3 x float]* noundef %0, [3 
   %fi20 = call i32 @injectFault1(i64 12, i32 %fi18, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi21 = call i32 @injectFault1(i64 12, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %10 = icmp slt i32 %fi20, %fi21, !llfi_index !44
-  %fi19 = call i1 @injectFault2(i64 12, i1 %10, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi22 = call i1 @injectFault2(i64 13, i1 %fi19, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi19 = call i1 @injectFault3(i64 12, i1 %10, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi22 = call i1 @injectFault3(i64 13, i1 %fi19, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi22, label %11, label %27, !llfi_index !45
 
 11:                                               ; preds = %9
@@ -245,7 +245,7 @@ define dso_local noundef float @_Z8convolvePA3_fS0_([3 x float]* noundef %0, [3 
   %fi29 = call i64 @injectFault0(i64 17, i64 %fi26, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %15 = getelementptr [3 x float], [3 x float]* %13, i64 %fi28, i64 %fi29, !taffo.info !47, !taffo.initweight !51, !llfi_index !52
   %16 = load float, float* %15, align 4, !taffo.info !47, !taffo.initweight !53, !llfi_index !54
-  %fi30 = call float @injectFault3(i64 18, float %16, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi30 = call float @injectFault2(i64 18, float %16, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi32 = call i32 @injectFault1(i64 19, i32 %fi4, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %17 = sext i32 %fi32 to i64, !llfi_index !55
   %fi31 = call i64 @injectFault0(i64 19, i64 %17, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -258,16 +258,16 @@ define dso_local noundef float @_Z8convolvePA3_fS0_([3 x float]* noundef %0, [3 
   %fi37 = call i64 @injectFault0(i64 22, i64 %fi34, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %20 = getelementptr [3 x float], [3 x float]* %18, i64 %fi36, i64 %fi37, !taffo.info !47, !taffo.initweight !51, !llfi_index !58
   %21 = load float, float* %20, align 4, !taffo.info !47, !taffo.initweight !53, !llfi_index !59
-  %fi38 = call float @injectFault3(i64 23, float %21, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi15 = call float @injectFault3(i64 24, float %fi30, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi16 = call float @injectFault3(i64 24, float %fi38, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi38 = call float @injectFault2(i64 23, float %21, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi15 = call float @injectFault2(i64 24, float %fi30, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi16 = call float @injectFault2(i64 24, float %fi38, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %22 = fmul float %fi15, %fi16, !taffo.info !47, !taffo.initweight !60, !llfi_index !61
-  %fi14 = call float @injectFault3(i64 24, float %22, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi40 = call float @injectFault3(i64 25, float 0x41C0000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi41 = call float @injectFault3(i64 25, float %fi14, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi14 = call float @injectFault2(i64 24, float %22, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi40 = call float @injectFault2(i64 25, float 0x41C0000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi41 = call float @injectFault2(i64 25, float %fi14, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %23 = fmul float %fi40, %fi41, !taffo.info !47, !llfi_index !62
-  %fi39 = call float @injectFault3(i64 25, float %23, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi43 = call float @injectFault3(i64 26, float %fi39, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi39 = call float @injectFault2(i64 25, float %23, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi43 = call float @injectFault2(i64 26, float %fi39, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %24 = fptosi float %fi43 to i32, !taffo.info !47, !llfi_index !63
   %fi42 = call i32 @injectFault1(i64 26, i32 %24, i32 42, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi45 = call i32 @injectFault1(i64 27, i32 %fi17, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
@@ -307,8 +307,8 @@ define dso_local noundef float @_Z5sobelPA3_f([3 x float]* noundef %0) #0 !taffo
   %fi2 = call i32 @injectFault1(i64 37, i32 %fi, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi3 = call i32 @injectFault1(i64 37, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %3 = icmp slt i32 %fi2, %fi3, !llfi_index !82
-  %fi1 = call i1 @injectFault2(i64 37, i1 %3, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi4 = call i1 @injectFault2(i64 38, i1 %fi1, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1 = call i1 @injectFault3(i64 37, i1 %3, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi4 = call i1 @injectFault3(i64 38, i1 %fi1, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi4, label %4, label %13, !llfi_index !83
 
 4:                                                ; preds = %2
@@ -320,8 +320,8 @@ define dso_local noundef float @_Z5sobelPA3_f([3 x float]* noundef %0) #0 !taffo
   %fi7 = call i32 @injectFault1(i64 41, i32 %fi5, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi8 = call i32 @injectFault1(i64 41, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %6 = icmp slt i32 %fi7, %fi8, !llfi_index !86
-  %fi6 = call i1 @injectFault2(i64 41, i1 %6, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi9 = call i1 @injectFault2(i64 42, i1 %fi6, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi6 = call i1 @injectFault3(i64 41, i1 %6, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi9 = call i1 @injectFault3(i64 42, i1 %fi6, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi9, label %7, label %10, !llfi_index !87
 
 7:                                                ; preds = %5
@@ -346,19 +346,19 @@ define dso_local noundef float @_Z5sobelPA3_f([3 x float]* noundef %0) #0 !taffo
 
 13:                                               ; preds = %2
   %matchop = call float @_Z8convolvePA3_fS0_.7_u0_0fixp([3 x float]* %0, [3 x float]* getelementptr inbounds ([3 x [3 x float]], [3 x [3 x float]]* @_ZL2ky, i64 0, i64 0)), !taffo.info !47, !llfi_index !96, !taffo.constinfo !97
-  %fi19 = call float @injectFault3(i64 49, float %matchop, i32 56, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi19 = call float @injectFault2(i64 49, float %matchop, i32 56, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %matchop1 = call float @_Z8convolvePA3_fS0_.7_u0_0fixp([3 x float]* %0, [3 x float]* getelementptr inbounds ([3 x [3 x float]], [3 x [3 x float]]* @_ZL2kx, i64 0, i64 0)), !taffo.info !47, !llfi_index !98, !taffo.constinfo !97
-  %fi20 = call float @injectFault3(i64 50, float %matchop1, i32 56, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi22 = call float @injectFault3(i64 51, float %fi20, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi23 = call float @injectFault3(i64 51, float %fi20, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi20 = call float @injectFault2(i64 50, float %matchop1, i32 56, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi22 = call float @injectFault2(i64 51, float %fi20, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi23 = call float @injectFault2(i64 51, float %fi20, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %14 = fmul float %fi22, %fi23, !taffo.info !47, !taffo.initweight !48, !llfi_index !99
-  %fi21 = call float @injectFault3(i64 51, float %14, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi21 = call float @injectFault2(i64 51, float %14, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %15 = call float @llvm.fmuladd.f32(float %fi19, float %fi19, float %fi21), !taffo.info !47, !taffo.initweight !48, !llfi_index !100, !taffo.constinfo !101
-  %fi25 = call float @injectFault3(i64 53, float 0x41B0000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi26 = call float @injectFault3(i64 53, float %15, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi25 = call float @injectFault2(i64 53, float 0x41B0000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi26 = call float @injectFault2(i64 53, float %15, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %16 = fmul float %fi25, %fi26, !taffo.info !47, !llfi_index !102
-  %fi24 = call float @injectFault3(i64 53, float %16, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi28 = call float @injectFault3(i64 54, float %fi24, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi24 = call float @injectFault2(i64 53, float %16, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi28 = call float @injectFault2(i64 54, float %fi24, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %u4_28fixp = fptoui float %fi28 to i32, !taffo.info !103, !llfi_index !106
   %fi27 = call i32 @injectFault1(i64 54, i32 %u4_28fixp, i32 41, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi30 = call i32 @injectFault1(i64 55, i32 %fi27, i32 43, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !30
@@ -398,8 +398,8 @@ define dso_local noundef float @_Z5sobelPA3_f([3 x float]* noundef %0) #0 !taffo
   %fi51 = call i33 @injectFault5(i64 65, i33 %fi43, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi52 = call i33 @injectFault5(i64 65, i33 %fi48, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %25 = icmp sge i33 %fi51, %fi52, !taffo.info !111, !llfi_index !124
-  %fi50 = call i1 @injectFault2(i64 65, i1 %25, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi53 = call i1 @injectFault2(i64 66, i1 %fi50, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi50 = call i1 @injectFault3(i64 65, i1 %25, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi53 = call i1 @injectFault3(i64 66, i1 %fi50, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi53, label %26, label %32, !taffo.info !47, !taffo.initweight !53, !llfi_index !125
 
 26:                                               ; preds = %13
@@ -412,12 +412,12 @@ define dso_local noundef float @_Z5sobelPA3_f([3 x float]* noundef %0) #0 !taffo
   %fi56 = call double @injectFault4(i64 68, double %28, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi60 = call double @injectFault4(i64 69, double %fi56, i32 45, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([8 x i8], [8 x i8]* @fptrunc_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %29 = fptrunc double %fi60 to float, !taffo.info !47, !taffo.initweight !48, !llfi_index !131
-  %fi59 = call float @injectFault3(i64 69, float %29, i32 45, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([8 x i8], [8 x i8]* @fptrunc_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi62 = call float @injectFault3(i64 70, float 0x41B0000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi63 = call float @injectFault3(i64 70, float %fi59, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi59 = call float @injectFault2(i64 69, float %29, i32 45, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([8 x i8], [8 x i8]* @fptrunc_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi62 = call float @injectFault2(i64 70, float 0x41B0000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi63 = call float @injectFault2(i64 70, float %fi59, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %30 = fmul float %fi62, %fi63, !taffo.info !47, !llfi_index !132
-  %fi61 = call float @injectFault3(i64 70, float %30, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi65 = call float @injectFault3(i64 71, float %fi61, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi61 = call float @injectFault2(i64 70, float %30, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi65 = call float @injectFault2(i64 71, float %fi61, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %31 = fptoui float %fi65 to i32, !taffo.info !47, !llfi_index !133
   %fi64 = call i32 @injectFault1(i64 71, i32 %31, i32 41, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %32, !llfi_index !134
@@ -427,11 +427,11 @@ define dso_local noundef float @_Z5sobelPA3_f([3 x float]* noundef %0) #0 !taffo
   %fi66 = call i32 @injectFault1(i64 73, i32 %.02.u4_28fixp, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi68 = call i32 @injectFault1(i64 74, i32 %fi66, i32 43, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %33 = uitofp i32 %fi68 to float, !taffo.info !111, !llfi_index !136
-  %fi67 = call float @injectFault3(i64 74, float %33, i32 43, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi70 = call float @injectFault3(i64 75, float %fi67, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi71 = call float @injectFault3(i64 75, float 0x41B0000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi67 = call float @injectFault2(i64 74, float %33, i32 43, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi70 = call float @injectFault2(i64 75, float %fi67, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi71 = call float @injectFault2(i64 75, float 0x41B0000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %34 = fdiv float %fi70, %fi71, !taffo.info !111, !llfi_index !137
-  %fi69 = call float @injectFault3(i64 75, float %34, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi69 = call float @injectFault2(i64 75, float %34, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
   ret float %fi69, !taffo.info !47, !taffo.initweight !48, !llfi_index !138
 }
 
@@ -458,8 +458,8 @@ define dso_local void @_ZN5Image10printPixelEii(%class.Image* noundef nonnull al
   %11 = getelementptr inbounds %class.Pixel, %class.Pixel* %9, i64 %fi3, !llfi_index !148
   %12 = getelementptr inbounds %class.Pixel, %class.Pixel* %11, i32 0, i32 0, !llfi_index !149
   %13 = load float, float* %12, align 4, !llfi_index !150
-  %fi5 = call float @injectFault3(i64 86, float %13, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi6 = call float @injectFault3(i64 87, float %fi5, i32 56, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi5 = call float @injectFault2(i64 86, float %13, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi6 = call float @injectFault2(i64 87, float %fi5, i32 56, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %14 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZNSolsEf(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %4, float noundef %fi6), !llfi_index !151, !taffo.constinfo !97
   %15 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZNSolsEPFRSoS_E(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %14, %"class.std::basic_ostream"* (%"class.std::basic_ostream"*)* noundef @_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_), !llfi_index !152, !taffo.constinfo !97
   %16 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.1.5, i64 0, i64 0)), !llfi_index !153, !taffo.constinfo !97
@@ -477,8 +477,8 @@ define dso_local void @_ZN5Image10printPixelEii(%class.Image* noundef nonnull al
   %23 = getelementptr inbounds %class.Pixel, %class.Pixel* %21, i64 %fi10, !llfi_index !160
   %24 = getelementptr inbounds %class.Pixel, %class.Pixel* %23, i32 0, i32 1, !llfi_index !161
   %25 = load float, float* %24, align 4, !llfi_index !162
-  %fi12 = call float @injectFault3(i64 98, float %25, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi13 = call float @injectFault3(i64 99, float %fi12, i32 56, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi12 = call float @injectFault2(i64 98, float %25, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi13 = call float @injectFault2(i64 99, float %fi12, i32 56, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %26 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZNSolsEf(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %16, float noundef %fi13), !llfi_index !163, !taffo.constinfo !97
   %27 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZNSolsEPFRSoS_E(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %26, %"class.std::basic_ostream"* (%"class.std::basic_ostream"*)* noundef @_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_), !llfi_index !164, !taffo.constinfo !97
   %28 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.2.6, i64 0, i64 0)), !llfi_index !165, !taffo.constinfo !97
@@ -496,8 +496,8 @@ define dso_local void @_ZN5Image10printPixelEii(%class.Image* noundef nonnull al
   %35 = getelementptr inbounds %class.Pixel, %class.Pixel* %33, i64 %fi17, !llfi_index !172
   %36 = getelementptr inbounds %class.Pixel, %class.Pixel* %35, i32 0, i32 2, !llfi_index !173
   %37 = load float, float* %36, align 4, !llfi_index !174
-  %fi19 = call float @injectFault3(i64 110, float %37, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi20 = call float @injectFault3(i64 111, float %fi19, i32 56, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi19 = call float @injectFault2(i64 110, float %37, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi20 = call float @injectFault2(i64 111, float %fi19, i32 56, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %38 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZNSolsEf(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %28, float noundef %fi20), !llfi_index !175, !taffo.constinfo !97
   %39 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZNSolsEPFRSoS_E(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %38, %"class.std::basic_ostream"* (%"class.std::basic_ostream"*)* noundef @_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_), !llfi_index !176, !taffo.constinfo !97
   ret void, !llfi_index !177
@@ -527,8 +527,8 @@ define dso_local noundef i8* @_Z7readIntPKcPi(i8* noundef %0, i32* noundef %1) #
   %fi7 = call i32 @injectFault1(i64 119, i32 %fi4, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi8 = call i32 @injectFault1(i64 119, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %7 = icmp ne i32 %fi7, %fi8, !taffo.info !183, !llfi_index !185
-  %fi6 = call i1 @injectFault2(i64 119, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi9 = call i1 @injectFault2(i64 120, i1 %fi6, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi6 = call i1 @injectFault3(i64 119, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi9 = call i1 @injectFault3(i64 120, i1 %fi6, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi9, label %8, label %23, !llfi_index !186
 
 8:                                                ; preds = %4
@@ -540,8 +540,8 @@ define dso_local noundef i8* @_Z7readIntPKcPi(i8* noundef %0, i32* noundef %1) #
   %fi14 = call i32 @injectFault1(i64 123, i32 48, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi15 = call i32 @injectFault1(i64 123, i32 %fi11, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %11 = icmp sle i32 %fi14, %fi15, !taffo.info !183, !llfi_index !189
-  %fi13 = call i1 @injectFault2(i64 123, i1 %11, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi16 = call i1 @injectFault2(i64 124, i1 %fi13, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi13 = call i1 @injectFault3(i64 123, i1 %11, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi16 = call i1 @injectFault3(i64 124, i1 %fi13, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi16, label %12, label %20, !llfi_index !190
 
 12:                                               ; preds = %8
@@ -553,8 +553,8 @@ define dso_local noundef i8* @_Z7readIntPKcPi(i8* noundef %0, i32* noundef %1) #
   %fi21 = call i32 @injectFault1(i64 127, i32 %fi18, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi22 = call i32 @injectFault1(i64 127, i32 57, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %15 = icmp sle i32 %fi21, %fi22, !taffo.info !183, !llfi_index !193
-  %fi20 = call i1 @injectFault2(i64 127, i1 %15, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi23 = call i1 @injectFault2(i64 128, i1 %fi20, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi20 = call i1 @injectFault3(i64 127, i1 %15, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi23 = call i1 @injectFault3(i64 128, i1 %fi20, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi23, label %16, label %20, !llfi_index !194
 
 16:                                               ; preds = %12
@@ -599,8 +599,8 @@ define dso_local void @_Z8tokenizeRSt6vectorIiSaIiEERNSt7__cxx1112basic_stringIc
 6:                                                ; preds = %8, %2
   %.0 = phi i8* [ %5, %2 ], [ %9, %8 ], !llfi_index !212
   %7 = icmp ne i8* %.0, null, !taffo.info !183, !llfi_index !213
-  %fi1 = call i1 @injectFault2(i64 145, i1 %7, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi2 = call i1 @injectFault2(i64 146, i1 %fi1, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1 = call i1 @injectFault3(i64 145, i1 %7, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi2 = call i1 @injectFault3(i64 146, i1 %fi1, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi2, label %8, label %10, !llfi_index !214
 
 8:                                                ; preds = %6
@@ -628,8 +628,8 @@ define linkonce_odr dso_local void @_ZNSt6vectorIiSaIiEE9push_backERKi(%"class.s
   %11 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %10, i32 0, i32 2, !llfi_index !229
   %12 = load i32*, i32** %11, align 8, !llfi_index !230
   %13 = icmp ne i32* %7, %12, !taffo.info !183, !llfi_index !231
-  %fi3 = call i1 @injectFault2(i64 161, i1 %13, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi4 = call i1 @injectFault2(i64 162, i1 %fi3, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi3 = call i1 @injectFault3(i64 161, i1 %13, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi4 = call i1 @injectFault3(i64 162, i1 %fi3, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi4, label %14, label %27, !llfi_index !232
 
 14:                                               ; preds = %2
@@ -674,8 +674,8 @@ define linkonce_odr dso_local void @_ZNSt6vectorIiSaIiEE17_M_realloc_appendIJRKi
   %fi6 = call i64 @injectFault0(i64 185, i64 %fi, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi7 = call i64 @injectFault0(i64 185, i64 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %7 = icmp ule i64 %fi6, %fi7, !taffo.info !183, !llfi_index !256
-  %fi5 = call i1 @injectFault2(i64 185, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi8 = call i1 @injectFault2(i64 186, i1 %fi5, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi5 = call i1 @injectFault3(i64 185, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi8 = call i1 @injectFault3(i64 186, i1 %fi5, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi8, label %8, label %9, !llfi_index !257
 
 8:                                                ; preds = %2
@@ -784,8 +784,8 @@ define linkonce_odr dso_local noundef i64 @_ZNKSt6vectorIiSaIiEE12_M_check_lenEm
   %fi13 = call i64 @injectFault0(i64 257, i64 %fi5, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi14 = call i64 @injectFault0(i64 257, i64 %fi11, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %10 = icmp ult i64 %fi13, %fi14, !taffo.info !183, !llfi_index !334
-  %fi12 = call i1 @injectFault2(i64 257, i1 %10, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi15 = call i1 @injectFault2(i64 258, i1 %fi12, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi12 = call i1 @injectFault3(i64 257, i1 %10, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi15 = call i1 @injectFault3(i64 258, i1 %fi12, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi15, label %11, label %12, !llfi_index !335
 
 11:                                               ; preds = %3
@@ -811,8 +811,8 @@ define linkonce_odr dso_local noundef i64 @_ZNKSt6vectorIiSaIiEE12_M_check_lenEm
   %fi22 = call i64 @injectFault0(i64 268, i64 %fi8, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi23 = call i64 @injectFault0(i64 268, i64 %fi20, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %19 = icmp ult i64 %fi22, %fi23, !taffo.info !183, !llfi_index !345
-  %fi21 = call i1 @injectFault2(i64 268, i1 %19, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi24 = call i1 @injectFault2(i64 269, i1 %fi21, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi21 = call i1 @injectFault3(i64 268, i1 %19, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi24 = call i1 @injectFault3(i64 269, i1 %fi21, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi24, label %23, label %20, !llfi_index !346
 
 20:                                               ; preds = %12
@@ -821,8 +821,8 @@ define linkonce_odr dso_local noundef i64 @_ZNKSt6vectorIiSaIiEE12_M_check_lenEm
   %fi27 = call i64 @injectFault0(i64 271, i64 %fi8, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi28 = call i64 @injectFault0(i64 271, i64 %fi25, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %22 = icmp ugt i64 %fi27, %fi28, !taffo.info !183, !llfi_index !348
-  %fi26 = call i1 @injectFault2(i64 271, i1 %22, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi29 = call i1 @injectFault2(i64 272, i1 %fi26, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi26 = call i1 @injectFault3(i64 271, i1 %22, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi29 = call i1 @injectFault3(i64 272, i1 %fi26, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi29, label %23, label %25, !llfi_index !349
 
 23:                                               ; preds = %20, %12
@@ -893,8 +893,8 @@ define linkonce_odr dso_local noundef i32* @_ZNSt12_Vector_baseIiSaIiEE11_M_allo
   %fi2 = call i64 @injectFault0(i64 305, i64 %1, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi3 = call i64 @injectFault0(i64 305, i64 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %3 = icmp ne i64 %fi2, %fi3, !taffo.info !183, !llfi_index !383
-  %fi1 = call i1 @injectFault2(i64 305, i1 %3, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi4 = call i1 @injectFault2(i64 306, i1 %fi1, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1 = call i1 @injectFault3(i64 305, i1 %3, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi4 = call i1 @injectFault3(i64 306, i1 %fi1, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi4, label %4, label %9, !llfi_index !384
 
 4:                                                ; preds = %2
@@ -948,8 +948,8 @@ define linkonce_odr dso_local void @_ZZNSt6vectorIiSaIiEE17_M_realloc_appendIJRK
   %2 = getelementptr inbounds %struct._Guard, %struct._Guard* %0, i32 0, i32 0, !llfi_index !410
   %3 = load i32*, i32** %2, align 8, !llfi_index !411
   %4 = icmp ne i32* %3, null, !taffo.info !183, !llfi_index !412
-  %fi1 = call i1 @injectFault2(i64 330, i1 %4, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi2 = call i1 @injectFault2(i64 331, i1 %fi1, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1 = call i1 @injectFault3(i64 330, i1 %4, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi2 = call i1 @injectFault3(i64 331, i1 %fi1, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi2, label %5, label %14, !llfi_index !413
 
 5:                                                ; preds = %1
@@ -1040,8 +1040,8 @@ define linkonce_odr dso_local noundef i32* @_ZSt14__relocate_a_1IiiENSt9enable_i
   %fi9 = call i64 @injectFault0(i64 365, i64 %fi5, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi10 = call i64 @injectFault0(i64 365, i64 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %9 = icmp sgt i64 %fi9, %fi10, !taffo.info !183, !llfi_index !447
-  %fi8 = call i1 @injectFault2(i64 365, i1 %9, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi11 = call i1 @injectFault2(i64 366, i1 %fi8, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi8 = call i1 @injectFault3(i64 365, i1 %9, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi11 = call i1 @injectFault3(i64 366, i1 %fi8, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi11, label %10, label %14, !llfi_index !448
 
 10:                                               ; preds = %4
@@ -1068,16 +1068,16 @@ define linkonce_odr dso_local noundef i32* @_ZNSt15__new_allocatorIiE8allocateEm
   %fi1 = call i64 @injectFault0(i64 374, i64 %1, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi2 = call i64 @injectFault0(i64 374, i64 2305843009213693951, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %4 = icmp ugt i64 %fi1, %fi2, !taffo.info !183, !llfi_index !456
-  %fi = call i1 @injectFault2(i64 374, i1 %4, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi3 = call i1 @injectFault2(i64 375, i1 %fi, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi = call i1 @injectFault3(i64 374, i1 %4, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi3 = call i1 @injectFault3(i64 375, i1 %fi, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi3, label %5, label %9, !llfi_index !457
 
 5:                                                ; preds = %3
   %fi5 = call i64 @injectFault0(i64 376, i64 %1, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi6 = call i64 @injectFault0(i64 376, i64 4611686018427387903, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %6 = icmp ugt i64 %fi5, %fi6, !taffo.info !183, !llfi_index !458
-  %fi4 = call i1 @injectFault2(i64 376, i1 %6, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi7 = call i1 @injectFault2(i64 377, i1 %fi4, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi4 = call i1 @injectFault3(i64 376, i1 %6, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi7 = call i1 @injectFault3(i64 377, i1 %fi4, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi7, label %7, label %8, !llfi_index !459
 
 7:                                                ; preds = %5
@@ -1170,8 +1170,8 @@ define linkonce_odr dso_local noundef nonnull align 8 dereferenceable(8) i64* @_
   %fi1 = call i64 @injectFault0(i64 413, i64 %fi3, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi2 = call i64 @injectFault0(i64 413, i64 %fi4, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %5 = icmp ult i64 %fi1, %fi2, !taffo.info !183, !llfi_index !496
-  %fi = call i1 @injectFault2(i64 413, i1 %5, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi5 = call i1 @injectFault2(i64 414, i1 %fi, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi = call i1 @injectFault3(i64 413, i1 %5, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi5 = call i1 @injectFault3(i64 414, i1 %fi, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi5, label %6, label %7, !llfi_index !497
 
 6:                                                ; preds = %2
@@ -1228,8 +1228,8 @@ define linkonce_odr dso_local noundef nonnull align 8 dereferenceable(8) i64* @_
   %fi1 = call i64 @injectFault0(i64 435, i64 %fi3, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi2 = call i64 @injectFault0(i64 435, i64 %fi4, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %5 = icmp ult i64 %fi1, %fi2, !taffo.info !0, !llfi_index !519
-  %fi = call i1 @injectFault2(i64 435, i1 %5, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi5 = call i1 @injectFault2(i64 436, i1 %fi, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi = call i1 @injectFault3(i64 435, i1 %5, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi5 = call i1 @injectFault3(i64 436, i1 %fi, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi5, label %6, label %7, !llfi_index !520
 
 6:                                                ; preds = %2
@@ -1245,14 +1245,14 @@ define linkonce_odr dso_local noundef nonnull align 8 dereferenceable(8) i64* @_
 
 ; Function Attrs: mustprogress noinline uwtable
 define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE(%class.Image* noundef nonnull align 8 dereferenceable(48) %0, %"class.std::__cxx11::basic_string"* noundef %1) #3 align 2 personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*) !taffo.initweight !27 !taffo.equivalentChild !525 !taffo.funinfo !29 {
-  %fi6 = call i32 @injectFault1(i64 441, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %3 = alloca %"class.std::basic_ifstream", i32 %fi6, align 8, !llfi_index !526
-  %fi7 = call i32 @injectFault1(i64 442, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %4 = alloca %"class.std::__cxx11::basic_string", i32 %fi7, align 8, !llfi_index !527
-  %fi8 = call i32 @injectFault1(i64 443, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %5 = alloca %"class.std::vector", i32 %fi8, align 8, !llfi_index !528
-  %fi9 = call i32 @injectFault1(i64 444, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %6 = alloca %"class.std::vector", i32 %fi9, align 8, !llfi_index !529
+  %fi3 = call i32 @injectFault1(i64 441, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %3 = alloca %"class.std::basic_ifstream", i32 %fi3, align 8, !llfi_index !526
+  %fi4 = call i32 @injectFault1(i64 442, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %4 = alloca %"class.std::__cxx11::basic_string", i32 %fi4, align 8, !llfi_index !527
+  %fi5 = call i32 @injectFault1(i64 443, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %5 = alloca %"class.std::vector", i32 %fi5, align 8, !llfi_index !528
+  %fi6 = call i32 @injectFault1(i64 444, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %6 = alloca %"class.std::vector", i32 %fi6, align 8, !llfi_index !529
   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEEC1Ev(%"class.std::basic_ifstream"* noundef nonnull align 8 dereferenceable(256) %3), !llfi_index !530, !taffo.constinfo !67
   %7 = call noundef i8* @_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %1) #15, !llfi_index !531, !taffo.constinfo !67
   %fi1 = call i32 @injectFault1(i64 447, i32 8, i32 5, i32 0, i32 1, i32 3, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @invoke_namestr, i32 0, i32 0)), !llfi_injectfault !30
@@ -1264,7 +1264,7 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
           to label %10 unwind label %16, !llfi_index !534, !taffo.constinfo !101
 
 10:                                               ; preds = %8
-  %fi11 = call i1 @injectFault2(i64 449, i1 %9, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi11 = call i1 @injectFault3(i64 449, i1 %9, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi11, label %20, label %11, !llfi_index !535
 
 11:                                               ; preds = %10
@@ -1323,11 +1323,11 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %34 = call { i64, i1 } @llvm.umul.with.overflow.i64(i64 %fi21, i64 8), !llfi_index !559, !taffo.constinfo !97
   %fi24 = call { i64, i1 } @injectFault8(i64 474, { i64, i1 } %34, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %35 = extractvalue { i64, i1 } %fi24, 1, !llfi_index !560
-  %fi23 = call i1 @injectFault2(i64 474, i1 %35, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi23 = call i1 @injectFault3(i64 474, i1 %35, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi26 = call { i64, i1 } @injectFault8(i64 475, { i64, i1 } %34, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %36 = extractvalue { i64, i1 } %fi26, 0, !llfi_index !561
   %fi25 = call i64 @injectFault0(i64 475, i64 %36, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi28 = call i1 @injectFault2(i64 476, i1 %fi23, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi28 = call i1 @injectFault3(i64 476, i1 %fi23, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi29 = call i64 @injectFault0(i64 476, i64 -1, i32 57, i32 2, i32 4, i32 2, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi30 = call i64 @injectFault0(i64 476, i64 %fi25, i32 57, i32 3, i32 4, i32 3, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %37 = select i1 %fi28, i64 %fi29, i64 %fi30, !llfi_index !562
@@ -1351,8 +1351,8 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %fi34 = call i32 @injectFault1(i64 485, i32 %fi31, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi35 = call i32 @injectFault1(i64 485, i32 %fi32, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %45 = icmp slt i32 %fi34, %fi35, !llfi_index !571
-  %fi33 = call i1 @injectFault2(i64 485, i1 %45, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi36 = call i1 @injectFault2(i64 486, i1 %fi33, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi33 = call i1 @injectFault3(i64 485, i1 %45, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi36 = call i1 @injectFault3(i64 486, i1 %fi33, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi36, label %46, label %143, !llfi_index !572
 
 46:                                               ; preds = %42
@@ -1375,11 +1375,11 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %54 = call { i64, i1 } @llvm.umul.with.overflow.i64(i64 %fi38, i64 12), !llfi_index !580, !taffo.constinfo !97
   %fi41 = call { i64, i1 } @injectFault8(i64 495, { i64, i1 } %54, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %55 = extractvalue { i64, i1 } %fi41, 1, !llfi_index !581
-  %fi40 = call i1 @injectFault2(i64 495, i1 %55, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi40 = call i1 @injectFault3(i64 495, i1 %55, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi43 = call { i64, i1 } @injectFault8(i64 496, { i64, i1 } %54, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %56 = extractvalue { i64, i1 } %fi43, 0, !llfi_index !582
   %fi42 = call i64 @injectFault0(i64 496, i64 %56, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi45 = call i1 @injectFault2(i64 497, i1 %fi40, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi45 = call i1 @injectFault3(i64 497, i1 %fi40, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi46 = call i64 @injectFault0(i64 497, i64 -1, i32 57, i32 2, i32 4, i32 2, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi47 = call i64 @injectFault0(i64 497, i64 %fi42, i32 57, i32 3, i32 4, i32 3, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %57 = select i1 %fi45, i64 %fi46, i64 %fi47, !llfi_index !583
@@ -1393,8 +1393,8 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %fi50 = call i64 @injectFault0(i64 500, i64 %fi38, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi51 = call i64 @injectFault0(i64 500, i64 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %61 = icmp eq i64 %fi50, %fi51, !llfi_index !586
-  %fi49 = call i1 @injectFault2(i64 500, i1 %61, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi52 = call i1 @injectFault2(i64 501, i1 %fi49, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi49 = call i1 @injectFault3(i64 500, i1 %61, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi52 = call i1 @injectFault3(i64 501, i1 %fi49, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi52, label %69, label %62, !llfi_index !587
 
 62:                                               ; preds = %59
@@ -1409,8 +1409,8 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
 66:                                               ; preds = %64
   %67 = getelementptr inbounds %class.Pixel, %class.Pixel* %65, i64 1, !llfi_index !592
   %68 = icmp eq %class.Pixel* %67, %63, !llfi_index !593
-  %fi53 = call i1 @injectFault2(i64 507, i1 %68, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi54 = call i1 @injectFault2(i64 508, i1 %fi53, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi53 = call i1 @injectFault3(i64 507, i1 %68, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi54 = call i1 @injectFault3(i64 508, i1 %fi53, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi54, label %69, label %64, !llfi_index !594
 
 69:                                               ; preds = %66, %59
@@ -1433,8 +1433,8 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %fi61 = call i32 @injectFault1(i64 518, i32 %fi58, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi62 = call i32 @injectFault1(i64 518, i32 %fi59, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %77 = icmp slt i32 %fi61, %fi62, !llfi_index !604
-  %fi60 = call i1 @injectFault2(i64 518, i1 %77, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi63 = call i1 @injectFault2(i64 519, i1 %fi60, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi60 = call i1 @injectFault3(i64 518, i1 %77, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi63 = call i1 @injectFault3(i64 519, i1 %fi60, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi63, label %78, label %139, !llfi_index !605
 
 78:                                               ; preds = %74
@@ -1446,11 +1446,11 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %fi69 = call i32 @injectFault1(i64 521, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %80 = add nsw i32 %fi68, %fi69, !llfi_index !607, !taffo.constinfo !67
   %fi67 = call i32 @injectFault1(i64 521, i32 %80, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi4 = call i32 @injectFault1(i64 522, i32 %fi64, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %81 = sext i32 %fi4 to i64, !llfi_index !608
-  %fi3 = call i64 @injectFault0(i64 522, i64 %81, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi5 = call i64 @injectFault0(i64 523, i64 %fi3, i32 56, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %82 = call noundef nonnull align 4 dereferenceable(4) i32* @_ZNSt6vectorIiSaIiEEixEm(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %6, i64 noundef %fi5) #15, !llfi_index !609, !taffo.constinfo !97
+  %fi8 = call i32 @injectFault1(i64 522, i32 %fi64, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %81 = sext i32 %fi8 to i64, !llfi_index !608
+  %fi7 = call i64 @injectFault0(i64 522, i64 %81, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi9 = call i64 @injectFault0(i64 523, i64 %fi7, i32 56, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %82 = call noundef nonnull align 4 dereferenceable(4) i32* @_ZNSt6vectorIiSaIiEEixEm(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %6, i64 noundef %fi9) #15, !llfi_index !609, !taffo.constinfo !97
   %83 = load i32, i32* %82, align 4, !llfi_index !610
   %fi70 = call i32 @injectFault1(i64 524, i32 %83, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi72 = call i32 @injectFault1(i64 525, i32 %fi70, i32 25, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @shl_namestr, i32 0, i32 0)), !llfi_injectfault !30
@@ -1459,11 +1459,11 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %fi71 = call i32 @injectFault1(i64 525, i32 %u8_24fixp2, i32 25, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @shl_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi75 = call i32 @injectFault1(i64 526, i32 %fi71, i32 43, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %84 = uitofp i32 %fi75 to float, !taffo.info !611, !llfi_index !615
-  %fi74 = call float @injectFault3(i64 526, float %84, i32 43, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi77 = call float @injectFault3(i64 527, float %fi74, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi78 = call float @injectFault3(i64 527, float 0x4170000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi74 = call float @injectFault2(i64 526, float %84, i32 43, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi77 = call float @injectFault2(i64 527, float %fi74, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi78 = call float @injectFault2(i64 527, float 0x4170000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %85 = fdiv float %fi77, %fi78, !taffo.info !611, !llfi_index !616
-  %fi76 = call float @injectFault3(i64 527, float %85, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi76 = call float @injectFault2(i64 527, float %85, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi80 = call i32 @injectFault1(i64 528, i32 %fi67, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi81 = call i32 @injectFault1(i64 528, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %86 = add nsw i32 %fi80, %fi81, !llfi_index !617, !taffo.constinfo !67
@@ -1481,11 +1481,11 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %fi86 = call i32 @injectFault1(i64 532, i32 %u8_24fixp1, i32 25, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @shl_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi90 = call i32 @injectFault1(i64 533, i32 %fi86, i32 43, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %90 = uitofp i32 %fi90 to float, !taffo.info !611, !llfi_index !622
-  %fi89 = call float @injectFault3(i64 533, float %90, i32 43, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi92 = call float @injectFault3(i64 534, float %fi89, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi93 = call float @injectFault3(i64 534, float 0x4170000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi89 = call float @injectFault2(i64 533, float %90, i32 43, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi92 = call float @injectFault2(i64 534, float %fi89, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi93 = call float @injectFault2(i64 534, float 0x4170000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %91 = fdiv float %fi92, %fi93, !taffo.info !611, !llfi_index !623
-  %fi91 = call float @injectFault3(i64 534, float %91, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi91 = call float @injectFault2(i64 534, float %91, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi95 = call i32 @injectFault1(i64 535, i32 %fi79, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %92 = sext i32 %fi95 to i64, !llfi_index !624
   %fi94 = call i64 @injectFault0(i64 535, i64 %92, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -1499,11 +1499,11 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %fi98 = call i32 @injectFault1(i64 538, i32 %u8_24fixp, i32 25, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @shl_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi102 = call i32 @injectFault1(i64 539, i32 %fi98, i32 43, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %95 = uitofp i32 %fi102 to float, !taffo.info !611, !llfi_index !628
-  %fi101 = call float @injectFault3(i64 539, float %95, i32 43, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi104 = call float @injectFault3(i64 540, float %fi101, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi105 = call float @injectFault3(i64 540, float 0x4170000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi101 = call float @injectFault2(i64 539, float %95, i32 43, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @uitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi104 = call float @injectFault2(i64 540, float %fi101, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi105 = call float @injectFault2(i64 540, float 0x4170000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %96 = fdiv float %fi104, %fi105, !taffo.info !611, !llfi_index !629
-  %fi103 = call float @injectFault3(i64 540, float %96, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi103 = call float @injectFault2(i64 540, float %96, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %97 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !630
   %98 = load %class.Pixel**, %class.Pixel*** %97, align 8, !llfi_index !631
   %fi107 = call i32 @injectFault1(i64 543, i32 %fi31, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
@@ -1517,7 +1517,7 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %fi109 = call i64 @injectFault0(i64 546, i64 %102, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %103 = getelementptr inbounds %class.Pixel, %class.Pixel* %101, i64 %fi109, !llfi_index !636
   %104 = getelementptr inbounds %class.Pixel, %class.Pixel* %103, i32 0, i32 0, !llfi_index !637
-  %fi111 = call float @injectFault3(i64 549, float %fi76, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi111 = call float @injectFault2(i64 549, float %fi76, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
   store float %fi111, float* %104, align 4, !taffo.info !638, !llfi_index !639
   %105 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !640
   %106 = load %class.Pixel**, %class.Pixel*** %105, align 8, !llfi_index !641
@@ -1532,7 +1532,7 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %fi115 = call i64 @injectFault0(i64 555, i64 %110, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %111 = getelementptr inbounds %class.Pixel, %class.Pixel* %109, i64 %fi115, !llfi_index !646
   %112 = getelementptr inbounds %class.Pixel, %class.Pixel* %111, i32 0, i32 1, !llfi_index !647
-  %fi117 = call float @injectFault3(i64 558, float %fi91, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi117 = call float @injectFault2(i64 558, float %fi91, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
   store float %fi117, float* %112, align 4, !taffo.info !638, !llfi_index !648
   %113 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !649
   %114 = load %class.Pixel**, %class.Pixel*** %113, align 8, !llfi_index !650
@@ -1547,7 +1547,7 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %fi121 = call i64 @injectFault0(i64 564, i64 %118, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %119 = getelementptr inbounds %class.Pixel, %class.Pixel* %117, i64 %fi121, !llfi_index !655
   %120 = getelementptr inbounds %class.Pixel, %class.Pixel* %119, i32 0, i32 2, !llfi_index !656
-  %fi123 = call float @injectFault3(i64 567, float %fi103, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi123 = call float @injectFault2(i64 567, float %fi103, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
   store float %fi123, float* %120, align 4, !taffo.info !638, !llfi_index !657
   br label %121, !llfi_index !658
 
@@ -1810,8 +1810,8 @@ define linkonce_odr dso_local void @_ZNSt12_Vector_baseIiSaIiEED2Ev(%"struct.std
 ; Function Attrs: mustprogress noinline uwtable
 define linkonce_odr dso_local void @_ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPim(%"struct.std::_Vector_base"* noundef nonnull align 8 dereferenceable(24) %0, i32* noundef %1, i64 noundef %2) #3 comdat align 2 !taffo.initweight !139 !taffo.funinfo !140 {
   %4 = icmp ne i32* %1, null, !taffo.info !183, !llfi_index !773
-  %fi1 = call i1 @injectFault2(i64 679, i1 %4, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi2 = call i1 @injectFault2(i64 680, i1 %fi1, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1 = call i1 @injectFault3(i64 679, i1 %4, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi2 = call i1 @injectFault3(i64 680, i1 %fi1, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi2, label %5, label %9, !llfi_index !774
 
 5:                                                ; preds = %3
@@ -1916,8 +1916,8 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   %fi3 = call i32 @injectFault1(i64 723, i32 %fi9, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi4 = call i32 @injectFault1(i64 723, i32 %fi10, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %23 = icmp slt i32 %fi3, %fi4, !llfi_index !820
-  %fi2 = call i1 @injectFault2(i64 723, i1 %23, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi11 = call i1 @injectFault2(i64 724, i1 %fi2, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi2 = call i1 @injectFault3(i64 723, i1 %23, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi11 = call i1 @injectFault3(i64 724, i1 %fi2, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi11, label %24, label %145, !llfi_index !821
 
 24:                                               ; preds = %20
@@ -1936,8 +1936,8 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   %fi18 = call i32 @injectFault1(i64 730, i32 %fi12, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi19 = call i32 @injectFault1(i64 730, i32 %fi14, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %29 = icmp slt i32 %fi18, %fi19, !llfi_index !827
-  %fi17 = call i1 @injectFault2(i64 730, i1 %29, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi20 = call i1 @injectFault2(i64 731, i1 %fi17, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi17 = call i1 @injectFault3(i64 730, i1 %29, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi20 = call i1 @injectFault3(i64 731, i1 %fi17, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi20, label %30, label %85, !llfi_index !828
 
 30:                                               ; preds = %25
@@ -1955,12 +1955,12 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   %37 = getelementptr inbounds %class.Pixel, %class.Pixel* %35, i64 %fi24, !llfi_index !835
   %38 = getelementptr inbounds %class.Pixel, %class.Pixel* %37, i32 0, i32 0, !llfi_index !836
   %39 = load float, float* %38, align 4, !llfi_index !837
-  %fi26 = call float @injectFault3(i64 740, float %39, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi28 = call float @injectFault3(i64 741, float %fi26, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi29 = call float @injectFault3(i64 741, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi26 = call float @injectFault2(i64 740, float %39, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi28 = call float @injectFault2(i64 741, float %fi26, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi29 = call float @injectFault2(i64 741, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %40 = fmul float %fi28, %fi29, !taffo.info !47, !taffo.initweight !48, !llfi_index !838, !taffo.target !839
-  %fi27 = call float @injectFault3(i64 741, float %40, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi31 = call float @injectFault3(i64 742, float %fi27, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi27 = call float @injectFault2(i64 741, float %40, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi31 = call float @injectFault2(i64 742, float %fi27, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %41 = fptosi float %fi31 to i32, !taffo.info !47, !taffo.initweight !51, !llfi_index !840, !taffo.target !839
   %fi30 = call i32 @injectFault1(i64 742, i32 %41, i32 42, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %42 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !841
@@ -1977,12 +1977,12 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   %48 = getelementptr inbounds %class.Pixel, %class.Pixel* %46, i64 %fi35, !llfi_index !847
   %49 = getelementptr inbounds %class.Pixel, %class.Pixel* %48, i32 0, i32 1, !llfi_index !848
   %50 = load float, float* %49, align 4, !llfi_index !849
-  %fi37 = call float @injectFault3(i64 751, float %50, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi39 = call float @injectFault3(i64 752, float %fi37, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi40 = call float @injectFault3(i64 752, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi37 = call float @injectFault2(i64 751, float %50, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi39 = call float @injectFault2(i64 752, float %fi37, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi40 = call float @injectFault2(i64 752, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %51 = fmul float %fi39, %fi40, !taffo.info !47, !taffo.initweight !48, !llfi_index !850, !taffo.target !839
-  %fi38 = call float @injectFault3(i64 752, float %51, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi42 = call float @injectFault3(i64 753, float %fi38, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi38 = call float @injectFault2(i64 752, float %51, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi42 = call float @injectFault2(i64 753, float %fi38, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %52 = fptosi float %fi42 to i32, !taffo.info !47, !taffo.initweight !51, !llfi_index !851, !taffo.target !839
   %fi41 = call i32 @injectFault1(i64 753, i32 %52, i32 42, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %53 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !852
@@ -1999,12 +1999,12 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   %59 = getelementptr inbounds %class.Pixel, %class.Pixel* %57, i64 %fi46, !llfi_index !858
   %60 = getelementptr inbounds %class.Pixel, %class.Pixel* %59, i32 0, i32 2, !llfi_index !859
   %61 = load float, float* %60, align 4, !llfi_index !860
-  %fi48 = call float @injectFault3(i64 762, float %61, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi50 = call float @injectFault3(i64 763, float %fi48, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi51 = call float @injectFault3(i64 763, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi48 = call float @injectFault2(i64 762, float %61, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi50 = call float @injectFault2(i64 763, float %fi48, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi51 = call float @injectFault2(i64 763, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %62 = fmul float %fi50, %fi51, !taffo.info !47, !taffo.initweight !48, !llfi_index !861, !taffo.target !839
-  %fi49 = call float @injectFault3(i64 763, float %62, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi53 = call float @injectFault3(i64 764, float %fi49, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi49 = call float @injectFault2(i64 763, float %62, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi53 = call float @injectFault2(i64 764, float %fi49, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %63 = fptosi float %fi53 to i32, !taffo.info !47, !taffo.initweight !51, !llfi_index !862, !taffo.target !839
   %fi52 = call i32 @injectFault1(i64 764, i32 %63, i32 42, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %64 = bitcast %"class.std::basic_ofstream"* %4 to %"class.std::basic_ostream"*, !llfi_index !863
@@ -2079,12 +2079,12 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   %95 = getelementptr inbounds %class.Pixel, %class.Pixel* %90, i64 %fi70, !llfi_index !890
   %96 = getelementptr inbounds %class.Pixel, %class.Pixel* %95, i32 0, i32 0, !llfi_index !891
   %97 = load float, float* %96, align 4, !llfi_index !892
-  %fi72 = call float @injectFault3(i64 793, float %97, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi74 = call float @injectFault3(i64 794, float %fi72, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi75 = call float @injectFault3(i64 794, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi72 = call float @injectFault2(i64 793, float %97, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi74 = call float @injectFault2(i64 794, float %fi72, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi75 = call float @injectFault2(i64 794, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %98 = fmul float %fi74, %fi75, !taffo.info !47, !taffo.initweight !48, !llfi_index !893, !taffo.target !839
-  %fi73 = call float @injectFault3(i64 794, float %98, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi77 = call float @injectFault3(i64 795, float %fi73, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi73 = call float @injectFault2(i64 794, float %98, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi77 = call float @injectFault2(i64 795, float %fi73, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %99 = fptosi float %fi77 to i32, !taffo.info !47, !taffo.initweight !51, !llfi_index !894, !taffo.target !839
   %fi76 = call i32 @injectFault1(i64 795, i32 %99, i32 42, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %100 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !895
@@ -2108,12 +2108,12 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   %109 = getelementptr inbounds %class.Pixel, %class.Pixel* %104, i64 %fi85, !llfi_index !904
   %110 = getelementptr inbounds %class.Pixel, %class.Pixel* %109, i32 0, i32 1, !llfi_index !905
   %111 = load float, float* %110, align 4, !llfi_index !906
-  %fi87 = call float @injectFault3(i64 807, float %111, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi89 = call float @injectFault3(i64 808, float %fi87, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi90 = call float @injectFault3(i64 808, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi87 = call float @injectFault2(i64 807, float %111, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi89 = call float @injectFault2(i64 808, float %fi87, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi90 = call float @injectFault2(i64 808, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %112 = fmul float %fi89, %fi90, !taffo.info !47, !taffo.initweight !48, !llfi_index !907, !taffo.target !839
-  %fi88 = call float @injectFault3(i64 808, float %112, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi92 = call float @injectFault3(i64 809, float %fi88, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi88 = call float @injectFault2(i64 808, float %112, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi92 = call float @injectFault2(i64 809, float %fi88, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %113 = fptosi float %fi92 to i32, !taffo.info !47, !taffo.initweight !51, !llfi_index !908, !taffo.target !839
   %fi91 = call i32 @injectFault1(i64 809, i32 %113, i32 42, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %114 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !909
@@ -2137,12 +2137,12 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   %123 = getelementptr inbounds %class.Pixel, %class.Pixel* %118, i64 %fi100, !llfi_index !918
   %124 = getelementptr inbounds %class.Pixel, %class.Pixel* %123, i32 0, i32 2, !llfi_index !919
   %125 = load float, float* %124, align 4, !llfi_index !920
-  %fi102 = call float @injectFault3(i64 821, float %125, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi104 = call float @injectFault3(i64 822, float %fi102, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi105 = call float @injectFault3(i64 822, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi102 = call float @injectFault2(i64 821, float %125, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi104 = call float @injectFault2(i64 822, float %fi102, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi105 = call float @injectFault2(i64 822, float %2, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %126 = fmul float %fi104, %fi105, !taffo.info !47, !taffo.initweight !48, !llfi_index !921, !taffo.target !839
-  %fi103 = call float @injectFault3(i64 822, float %126, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi107 = call float @injectFault3(i64 823, float %fi103, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi103 = call float @injectFault2(i64 822, float %126, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi107 = call float @injectFault2(i64 823, float %fi103, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %127 = fptosi float %fi107 to i32, !taffo.info !47, !taffo.initweight !51, !llfi_index !922, !taffo.target !839
   %fi106 = call i32 @injectFault1(i64 823, i32 %127, i32 42, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %128 = bitcast %"class.std::basic_ofstream"* %4 to %"class.std::basic_ostream"*, !llfi_index !923
@@ -2236,8 +2236,8 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
   %fi3 = call i32 @injectFault1(i64 849, i32 %fi, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi4 = call i32 @injectFault1(i64 849, i32 %fi1, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %5 = icmp slt i32 %fi3, %fi4, !llfi_index !950
-  %fi2 = call i1 @injectFault2(i64 849, i1 %5, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi5 = call i1 @injectFault2(i64 850, i1 %fi2, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi2 = call i1 @injectFault3(i64 849, i1 %5, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi5 = call i1 @injectFault3(i64 850, i1 %fi2, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi5, label %6, label %71, !llfi_index !951
 
 6:                                                ; preds = %2
@@ -2252,8 +2252,8 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
   %fi12 = call i32 @injectFault1(i64 855, i32 %fi6, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi13 = call i32 @injectFault1(i64 855, i32 %fi10, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %10 = icmp slt i32 %fi12, %fi13, !llfi_index !956
-  %fi11 = call i1 @injectFault2(i64 855, i1 %10, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi14 = call i1 @injectFault2(i64 856, i1 %fi11, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi11 = call i1 @injectFault3(i64 855, i1 %10, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi14 = call i1 @injectFault3(i64 856, i1 %fi11, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi14, label %11, label %68, !llfi_index !957
 
 11:                                               ; preds = %7
@@ -2271,7 +2271,7 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
   %18 = getelementptr inbounds %class.Pixel, %class.Pixel* %16, i64 %fi18, !llfi_index !964
   %19 = getelementptr inbounds %class.Pixel, %class.Pixel* %18, i32 0, i32 0, !llfi_index !965
   %20 = load float, float* %19, align 4, !llfi_index !966
-  %fi20 = call float @injectFault3(i64 865, float %20, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi20 = call float @injectFault2(i64 865, float %20, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %21 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !967
   %22 = load %class.Pixel**, %class.Pixel*** %21, align 8, !llfi_index !968
   %fi22 = call i32 @injectFault1(i64 868, i32 %fi, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
@@ -2286,11 +2286,11 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
   %27 = getelementptr inbounds %class.Pixel, %class.Pixel* %25, i64 %fi24, !llfi_index !973
   %28 = getelementptr inbounds %class.Pixel, %class.Pixel* %27, i32 0, i32 1, !llfi_index !974
   %29 = load float, float* %28, align 4, !llfi_index !975
-  %fi26 = call float @injectFault3(i64 874, float %29, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi8 = call float @injectFault3(i64 875, float 0x3F62E147A0000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi9 = call float @injectFault3(i64 875, float %fi26, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi26 = call float @injectFault2(i64 874, float %29, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi8 = call float @injectFault2(i64 875, float 0x3F62E147A0000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi9 = call float @injectFault2(i64 875, float %fi26, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %30 = fmul float %fi8, %fi9, !taffo.info !47, !taffo.initweight !48, !llfi_index !976, !taffo.constinfo !977
-  %fi7 = call float @injectFault3(i64 875, float %30, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi7 = call float @injectFault2(i64 875, float %30, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %31 = call float @llvm.fmuladd.f32(float 0x3F53333340000000, float %fi20, float %fi7), !taffo.info !47, !taffo.initweight !48, !llfi_index !980, !taffo.constinfo !981
   %32 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !984
   %33 = load %class.Pixel**, %class.Pixel*** %32, align 8, !llfi_index !985
@@ -2306,7 +2306,7 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
   %38 = getelementptr inbounds %class.Pixel, %class.Pixel* %36, i64 %fi30, !llfi_index !990
   %39 = getelementptr inbounds %class.Pixel, %class.Pixel* %38, i32 0, i32 2, !llfi_index !991
   %40 = load float, float* %39, align 4, !llfi_index !992
-  %fi32 = call float @injectFault3(i64 885, float %40, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi32 = call float @injectFault2(i64 885, float %40, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %41 = call float @llvm.fmuladd.f32(float 0x3F3C28F5C0000000, float %fi32, float %31), !taffo.info !47, !taffo.initweight !48, !llfi_index !993, !taffo.constinfo !994
   %42 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !997
   %43 = load %class.Pixel**, %class.Pixel*** %42, align 8, !llfi_index !998
@@ -2321,7 +2321,7 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
   %fi36 = call i64 @injectFault0(i64 892, i64 %47, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %48 = getelementptr inbounds %class.Pixel, %class.Pixel* %46, i64 %fi36, !llfi_index !1003
   %49 = getelementptr inbounds %class.Pixel, %class.Pixel* %48, i32 0, i32 0, !llfi_index !1004
-  %fi38 = call float @injectFault3(i64 895, float %41, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi38 = call float @injectFault2(i64 895, float %41, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
   store float %fi38, float* %49, align 4, !taffo.info !47, !llfi_index !1005
   %50 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !1006
   %51 = load %class.Pixel**, %class.Pixel*** %50, align 8, !llfi_index !1007
@@ -2336,7 +2336,7 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
   %fi42 = call i64 @injectFault0(i64 901, i64 %55, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %56 = getelementptr inbounds %class.Pixel, %class.Pixel* %54, i64 %fi42, !llfi_index !1012
   %57 = getelementptr inbounds %class.Pixel, %class.Pixel* %56, i32 0, i32 1, !llfi_index !1013
-  %fi44 = call float @injectFault3(i64 904, float %41, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi44 = call float @injectFault2(i64 904, float %41, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
   store float %fi44, float* %57, align 4, !taffo.info !47, !llfi_index !1014
   %58 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !1015
   %59 = load %class.Pixel**, %class.Pixel*** %58, align 8, !llfi_index !1016
@@ -2351,7 +2351,7 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
   %fi48 = call i64 @injectFault0(i64 910, i64 %63, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %64 = getelementptr inbounds %class.Pixel, %class.Pixel* %62, i64 %fi48, !llfi_index !1021
   %65 = getelementptr inbounds %class.Pixel, %class.Pixel* %64, i32 0, i32 2, !llfi_index !1022
-  %fi50 = call float @injectFault3(i64 913, float %41, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi50 = call float @injectFault2(i64 913, float %41, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
   store float %fi50, float* %65, align 4, !taffo.info !47, !llfi_index !1023
   br label %66, !llfi_index !1024
 
@@ -2379,26 +2379,26 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
 ; Function Attrs: noinline norecurse uwtable
 define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*) !taffo.initweight !27 !taffo.funinfo !29 !taffo.start !1033 {
   call void @initInjections()
-  %fi179 = call i32 @injectFault1(i64 921, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %3 = alloca { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, i32 %fi179, align 8, !llfi_index !1034
-  %fi180 = call i32 @injectFault1(i64 922, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %4 = alloca { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, i32 %fi180, align 8, !llfi_index !1035
-  %fi181 = call i32 @injectFault1(i64 923, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp = alloca [3 x [3 x i32]], i32 %fi181, align 16, !taffo.info !611, !llfi_index !1036, !taffo.target !1037
-  %fi182 = call i32 @injectFault1(i64 924, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %5 = alloca %"class.std::__cxx11::basic_string", i32 %fi182, align 8, !taffo.structinfo !16, !llfi_index !1038
-  %fi183 = call i32 @injectFault1(i64 925, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %6 = alloca %"class.std::__new_allocator.1", i32 %fi183, align 1, !taffo.structinfo !16, !llfi_index !1039
-  %fi184 = call i32 @injectFault1(i64 926, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %7 = alloca %"class.std::__cxx11::basic_string", i32 %fi184, align 8, !taffo.structinfo !16, !llfi_index !1040
-  %fi185 = call i32 @injectFault1(i64 927, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %8 = alloca %"class.std::__new_allocator.1", i32 %fi185, align 1, !taffo.structinfo !16, !llfi_index !1041
-  %fi186 = call i32 @injectFault1(i64 928, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %9 = alloca %class.AxBenchTimer, i32 %fi186, align 8, !taffo.structinfo !16, !llfi_index !1042
-  %fi187 = call i32 @injectFault1(i64 929, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %10 = alloca %"class.std::__cxx11::basic_string", i32 %fi187, align 8, !taffo.structinfo !16, !llfi_index !1043
-  %fi188 = call i32 @injectFault1(i64 930, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %11 = alloca %"class.std::__new_allocator.1", i32 %fi188, align 1, !taffo.structinfo !16, !llfi_index !1044
+  %fi182 = call i32 @injectFault1(i64 921, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %3 = alloca { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, i32 %fi182, align 8, !llfi_index !1034
+  %fi183 = call i32 @injectFault1(i64 922, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %4 = alloca { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, i32 %fi183, align 8, !llfi_index !1035
+  %fi184 = call i32 @injectFault1(i64 923, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp = alloca [3 x [3 x i32]], i32 %fi184, align 16, !taffo.info !611, !llfi_index !1036, !taffo.target !1037
+  %fi185 = call i32 @injectFault1(i64 924, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %5 = alloca %"class.std::__cxx11::basic_string", i32 %fi185, align 8, !taffo.structinfo !16, !llfi_index !1038
+  %fi186 = call i32 @injectFault1(i64 925, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %6 = alloca %"class.std::__new_allocator.1", i32 %fi186, align 1, !taffo.structinfo !16, !llfi_index !1039
+  %fi187 = call i32 @injectFault1(i64 926, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %7 = alloca %"class.std::__cxx11::basic_string", i32 %fi187, align 8, !taffo.structinfo !16, !llfi_index !1040
+  %fi188 = call i32 @injectFault1(i64 927, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %8 = alloca %"class.std::__new_allocator.1", i32 %fi188, align 1, !taffo.structinfo !16, !llfi_index !1041
+  %fi189 = call i32 @injectFault1(i64 928, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %9 = alloca %class.AxBenchTimer, i32 %fi189, align 8, !taffo.structinfo !16, !llfi_index !1042
+  %fi190 = call i32 @injectFault1(i64 929, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %10 = alloca %"class.std::__cxx11::basic_string", i32 %fi190, align 8, !taffo.structinfo !16, !llfi_index !1043
+  %fi191 = call i32 @injectFault1(i64 930, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %11 = alloca %"class.std::__new_allocator.1", i32 %fi191, align 1, !taffo.structinfo !16, !llfi_index !1044
   call void @_ZN5ImageC2Ev.3_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3), !taffo.info !47, !llfi_index !1045, !taffo.constinfo !67
   invoke void @_ZN5ImageC2Ev.6_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4)
           to label %12 unwind label %192, !taffo.info !47, !llfi_index !1046, !taffo.constinfo !101
@@ -2406,8 +2406,8 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 12:                                               ; preds = %2
   %13 = bitcast [3 x [3 x i32]]* %u8_24fixp to i8*, !taffo.info !1047, !llfi_index !1048, !taffo.target !1037
   call void @llvm.memset.p0i8.i64(i8* align 16 %13, i8 0, i64 36, i1 false), !taffo.info !47, !taffo.initweight !48, !llfi_index !1049, !taffo.constinfo !282, !taffo.target !1037
-  %fi195 = call i64 @injectFault0(i64 935, i64 1, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %14 = getelementptr i8*, i8** %1, i64 %fi195, !llfi_index !1050
+  %fi196 = call i64 @injectFault0(i64 935, i64 1, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %14 = getelementptr i8*, i8** %1, i64 %fi196, !llfi_index !1050
   %15 = load i8*, i8** %14, align 8, !llfi_index !1051
   invoke void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %5, i8* noundef %15, %"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %6)
           to label %16 unwind label %196, !llfi_index !1052, !taffo.constinfo !533
@@ -2420,8 +2420,8 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %5) #15, !llfi_index !1055, !taffo.constinfo !67
   %18 = bitcast %"class.std::__new_allocator.1"* %6 to %"class.std::__new_allocator.1"*, !llfi_index !1056
   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %18) #15, !llfi_index !1057, !taffo.constinfo !67
-  %fi196 = call i64 @injectFault0(i64 942, i64 1, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %19 = getelementptr i8*, i8** %1, i64 %fi196, !llfi_index !1058
+  %fi197 = call i64 @injectFault0(i64 942, i64 1, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %19 = getelementptr i8*, i8** %1, i64 %fi197, !llfi_index !1058
   %20 = load i8*, i8** %19, align 8, !llfi_index !1059
   invoke void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %7, i8* noundef %20, %"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %8)
           to label %21 unwind label %206, !llfi_index !1060, !taffo.constinfo !533
@@ -2445,7 +2445,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %26, !llfi_index !1067
 
 26:                                               ; preds = %190, %25
-  %.07 = phi i32 [ 0, %25 ], [ %fi511, %190 ], !taffo.info !183, !llfi_index !1068
+  %.07 = phi i32 [ 0, %25 ], [ %fi507, %190 ], !taffo.info !183, !llfi_index !1068
   %fi204 = call i32 @injectFault1(i64 952, i32 %.07, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %matchop91 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1069
   %27 = load i32, i32* %matchop91, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1070
@@ -2453,24 +2453,24 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi207 = call i32 @injectFault1(i64 955, i32 %fi204, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi208 = call i32 @injectFault1(i64 955, i32 %fi205, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %28 = icmp slt i32 %fi207, %fi208, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1071
-  %fi206 = call i1 @injectFault2(i64 955, i1 %28, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi209 = call i1 @injectFault2(i64 956, i1 %fi206, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi206 = call i1 @injectFault3(i64 955, i1 %28, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi209 = call i1 @injectFault3(i64 956, i1 %fi206, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi209, label %29, label %220, !taffo.info !47, !taffo.initweight !60, !llfi_index !1072
 
 29:                                               ; preds = %26
   %fi211 = call i32 @injectFault1(i64 957, i32 %fi204, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi212 = call i32 @injectFault1(i64 957, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %30 = icmp eq i32 %fi211, %fi212, !taffo.info !323, !llfi_index !1073
-  %fi210 = call i1 @injectFault2(i64 957, i1 %30, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi213 = call i1 @injectFault2(i64 958, i1 %fi210, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi210 = call i1 @injectFault3(i64 957, i1 %30, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi213 = call i1 @injectFault3(i64 958, i1 %fi210, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi213, label %33, label %31, !llfi_index !1074
 
 31:                                               ; preds = %29
   %fi215 = call i32 @injectFault1(i64 959, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi216 = call i32 @injectFault1(i64 959, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %32 = icmp eq i32 %fi215, %fi216, !taffo.info !323, !llfi_index !1075
-  %fi214 = call i1 @injectFault2(i64 959, i1 %32, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi217 = call i1 @injectFault2(i64 960, i1 %fi214, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi214 = call i1 @injectFault3(i64 959, i1 %32, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi217 = call i1 @injectFault3(i64 960, i1 %fi214, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi217, label %33, label %35, !llfi_index !1076
 
 33:                                               ; preds = %31, %29
@@ -2520,8 +2520,8 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi240 = call i32 @injectFault1(i64 979, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi241 = call i32 @injectFault1(i64 979, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %46 = icmp eq i32 %fi240, %fi241, !taffo.info !323, !llfi_index !1097
-  %fi239 = call i1 @injectFault2(i64 979, i1 %46, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi242 = call i1 @injectFault2(i64 980, i1 %fi239, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi239 = call i1 @injectFault3(i64 979, i1 %46, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi242 = call i1 @injectFault3(i64 980, i1 %fi239, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi242, label %47, label %49, !llfi_index !1098
 
 47:                                               ; preds = %45
@@ -2571,70 +2571,70 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi266 = call i32 @injectFault1(i64 1000, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %60 = sub nsw i32 %fi265, %fi266, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1118, !taffo.constinfo !67
   %fi264 = call i32 @injectFault1(i64 1000, i32 %60, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi268 = call i32 @injectFault1(i64 1001, i32 %fi204, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi269 = call i32 @injectFault1(i64 1001, i32 %fi264, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %61 = icmp eq i32 %fi268, %fi269, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1119
-  %fi267 = call i1 @injectFault2(i64 1001, i1 %61, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi270 = call i1 @injectFault2(i64 1002, i1 %fi267, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi270, label %64, label %62, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1121
+  %fi6 = call i32 @injectFault1(i64 1001, i32 %fi204, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi7 = call i32 @injectFault1(i64 1001, i32 %fi264, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %61 = icmp eq i32 %fi6, %fi7, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1119
+  %fi5 = call i1 @injectFault3(i64 1001, i1 %61, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi8 = call i1 @injectFault3(i64 1002, i1 %fi5, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi8, label %64, label %62, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1121
 
 62:                                               ; preds = %58
-  %fi272 = call i32 @injectFault1(i64 1003, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi273 = call i32 @injectFault1(i64 1003, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %63 = icmp eq i32 %fi272, %fi273, !taffo.info !323, !llfi_index !1122
-  %fi271 = call i1 @injectFault2(i64 1003, i1 %63, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi274 = call i1 @injectFault2(i64 1004, i1 %fi271, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi274, label %64, label %66, !llfi_index !1123
+  %fi179 = call i32 @injectFault1(i64 1003, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi180 = call i32 @injectFault1(i64 1003, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %63 = icmp eq i32 %fi179, %fi180, !taffo.info !323, !llfi_index !1122
+  %fi178 = call i1 @injectFault3(i64 1003, i1 %63, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi181 = call i1 @injectFault3(i64 1004, i1 %fi178, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi181, label %64, label %66, !llfi_index !1123
 
 64:                                               ; preds = %62, %58
-  %fi276 = call i32 @injectFault1(i64 1005, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi277 = call i32 @injectFault1(i64 1005, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %65 = lshr i32 %fi276, %fi277, !llfi_index !1124
-  %fi275 = call i32 @injectFault1(i64 1005, i32 %65, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi272 = call i32 @injectFault1(i64 1005, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi273 = call i32 @injectFault1(i64 1005, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %65 = lshr i32 %fi272, %fi273, !llfi_index !1124
+  %fi271 = call i32 @injectFault1(i64 1005, i32 %65, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %76, !llfi_index !1125
 
 66:                                               ; preds = %62
   %67 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1126
   %68 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %67, align 8, !llfi_index !1127
-  %fi279 = call i32 @injectFault1(i64 1009, i32 0, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi280 = call i32 @injectFault1(i64 1009, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %69 = sub nsw i32 %fi279, %fi280, !taffo.info !1081, !llfi_index !1128, !taffo.constinfo !67
-  %fi278 = call i32 @injectFault1(i64 1009, i32 %69, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi5 = call i32 @injectFault1(i64 1010, i32 %fi278, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %70 = sext i32 %fi5 to i64, !taffo.info !1081, !llfi_index !1129
-  %fi4 = call i64 @injectFault0(i64 1010, i64 %70, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi6 = call i64 @injectFault0(i64 1011, i64 %fi4, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %71 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %68, i64 %fi6, !llfi_index !1130
+  %fi275 = call i32 @injectFault1(i64 1009, i32 0, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi276 = call i32 @injectFault1(i64 1009, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %69 = sub nsw i32 %fi275, %fi276, !taffo.info !1081, !llfi_index !1128, !taffo.constinfo !67
+  %fi274 = call i32 @injectFault1(i64 1009, i32 %69, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi278 = call i32 @injectFault1(i64 1010, i32 %fi274, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %70 = sext i32 %fi278 to i64, !taffo.info !1081, !llfi_index !1129
+  %fi277 = call i64 @injectFault0(i64 1010, i64 %70, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi279 = call i64 @injectFault0(i64 1011, i64 %fi277, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %71 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %68, i64 %fi279, !llfi_index !1130
   %72 = load { i32, i32, i32 }*, { i32, i32, i32 }** %71, align 8, !llfi_index !1131
-  %fi8 = call i32 @injectFault1(i64 1013, i32 %fi204, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi9 = call i32 @injectFault1(i64 1013, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %73 = add nsw i32 %fi8, %fi9, !taffo.info !323, !llfi_index !1132, !taffo.constinfo !67
-  %fi7 = call i32 @injectFault1(i64 1013, i32 %73, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi11 = call i32 @injectFault1(i64 1014, i32 %fi7, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %74 = sext i32 %fi11 to i64, !taffo.info !323, !llfi_index !1133
-  %fi10 = call i64 @injectFault0(i64 1014, i64 %74, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %75 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %72, i64 %fi10, !llfi_index !1134
+  %fi281 = call i32 @injectFault1(i64 1013, i32 %fi204, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi282 = call i32 @injectFault1(i64 1013, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %73 = add nsw i32 %fi281, %fi282, !taffo.info !323, !llfi_index !1132, !taffo.constinfo !67
+  %fi280 = call i32 @injectFault1(i64 1013, i32 %73, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi268 = call i32 @injectFault1(i64 1014, i32 %fi280, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %74 = sext i32 %fi268 to i64, !taffo.info !323, !llfi_index !1133
+  %fi267 = call i64 @injectFault0(i64 1014, i64 %74, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %75 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %72, i64 %fi267, !llfi_index !1134
   %u8_24fixp221 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %75, i32 0, i32 0, !taffo.info !611, !llfi_index !1135
   %u8_24fixp269 = load i32, i32* %u8_24fixp221, align 4, !taffo.info !611, !llfi_index !1136
-  %fi281 = call i32 @injectFault1(i64 1017, i32 %u8_24fixp269, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi269 = call i32 @injectFault1(i64 1017, i32 %u8_24fixp269, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %76, !llfi_index !1137
 
 76:                                               ; preds = %66, %64
-  %u8_24fixp299 = phi i32 [ %fi275, %64 ], [ %fi281, %66 ], !taffo.info !611, !llfi_index !1138
-  %fi282 = call i32 @injectFault1(i64 1019, i32 %u8_24fixp299, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi283 = call i64 @injectFault0(i64 1020, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi284 = call i64 @injectFault0(i64 1020, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp142 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi283, i64 %fi284, !taffo.info !611, !llfi_index !1139, !taffo.target !1037
-  %fi285 = call i64 @injectFault0(i64 1021, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi286 = call i64 @injectFault0(i64 1021, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp191 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp142, i64 %fi285, i64 %fi286, !taffo.info !611, !llfi_index !1140, !taffo.target !1037
-  %fi294 = call i32 @injectFault1(i64 1022, i32 %fi282, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp299 = phi i32 [ %fi271, %64 ], [ %fi269, %66 ], !taffo.info !611, !llfi_index !1138
+  %fi270 = call i32 @injectFault1(i64 1019, i32 %u8_24fixp299, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi290 = call i64 @injectFault0(i64 1020, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi291 = call i64 @injectFault0(i64 1020, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp142 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi290, i64 %fi291, !taffo.info !611, !llfi_index !1139, !taffo.target !1037
+  %fi292 = call i64 @injectFault0(i64 1021, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi293 = call i64 @injectFault0(i64 1021, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp191 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp142, i64 %fi292, i64 %fi293, !taffo.info !611, !llfi_index !1140, !taffo.target !1037
+  %fi294 = call i32 @injectFault1(i64 1022, i32 %fi270, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
   store i32 %fi294, i32* %u8_24fixp191, align 8, !taffo.info !47, !llfi_index !1141, !taffo.target !1037
   %fi296 = call i32 @injectFault1(i64 1023, i32 %fi204, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi297 = call i32 @injectFault1(i64 1023, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %77 = icmp eq i32 %fi296, %fi297, !taffo.info !323, !llfi_index !1142
-  %fi295 = call i1 @injectFault2(i64 1023, i1 %77, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi298 = call i1 @injectFault2(i64 1024, i1 %fi295, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi295 = call i1 @injectFault3(i64 1023, i1 %77, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi298 = call i1 @injectFault3(i64 1024, i1 %fi295, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi298, label %78, label %80, !llfi_index !1143
 
 78:                                               ; preds = %76
@@ -2679,277 +2679,277 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   store i32 %fi314, i32* %u8_24fixp190, align 4, !taffo.info !47, !llfi_index !1160, !taffo.target !1037
   %90 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1161
   %91 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %90, align 8, !llfi_index !1162
-  %fi190 = call i32 @injectFault1(i64 1044, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %92 = sext i32 %fi190 to i64, !taffo.info !0, !llfi_index !1163
-  %fi189 = call i64 @injectFault0(i64 1044, i64 %92, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi322 = call i64 @injectFault0(i64 1045, i64 %fi189, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %93 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %91, i64 %fi322, !llfi_index !1164
+  %fi10 = call i32 @injectFault1(i64 1044, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %92 = sext i32 %fi10 to i64, !taffo.info !0, !llfi_index !1163
+  %fi9 = call i64 @injectFault0(i64 1044, i64 %92, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi320 = call i64 @injectFault0(i64 1045, i64 %fi9, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %93 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %91, i64 %fi320, !llfi_index !1164
   %94 = load { i32, i32, i32 }*, { i32, i32, i32 }** %93, align 8, !llfi_index !1165
-  %fi324 = call i32 @injectFault1(i64 1047, i32 %fi204, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %95 = sext i32 %fi324 to i64, !taffo.info !0, !llfi_index !1166
-  %fi323 = call i64 @injectFault0(i64 1047, i64 %95, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %96 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %94, i64 %fi323, !llfi_index !1167
+  %fi322 = call i32 @injectFault1(i64 1047, i32 %fi204, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %95 = sext i32 %fi322 to i64, !taffo.info !0, !llfi_index !1166
+  %fi321 = call i64 @injectFault0(i64 1047, i64 %95, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %96 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %94, i64 %fi321, !llfi_index !1167
   %u8_24fixp219 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %96, i32 0, i32 0, !taffo.info !611, !llfi_index !1168
   %u8_24fixp267 = load i32, i32* %u8_24fixp219, align 4, !taffo.info !611, !llfi_index !1169
-  %fi325 = call i32 @injectFault1(i64 1050, i32 %u8_24fixp267, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi326 = call i64 @injectFault0(i64 1051, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi327 = call i64 @injectFault0(i64 1051, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp140 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi326, i64 %fi327, !taffo.info !611, !llfi_index !1170, !taffo.target !1037
-  %fi328 = call i64 @injectFault0(i64 1052, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi329 = call i64 @injectFault0(i64 1052, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp189 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp140, i64 %fi328, i64 %fi329, !taffo.info !611, !llfi_index !1171, !taffo.target !1037
-  %fi330 = call i32 @injectFault1(i64 1053, i32 %fi325, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi330, i32* %u8_24fixp189, align 4, !taffo.info !47, !llfi_index !1172, !taffo.target !1037
+  %fi323 = call i32 @injectFault1(i64 1050, i32 %u8_24fixp267, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi324 = call i64 @injectFault0(i64 1051, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi325 = call i64 @injectFault0(i64 1051, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp140 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi324, i64 %fi325, !taffo.info !611, !llfi_index !1170, !taffo.target !1037
+  %fi326 = call i64 @injectFault0(i64 1052, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi327 = call i64 @injectFault0(i64 1052, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp189 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp140, i64 %fi326, i64 %fi327, !taffo.info !611, !llfi_index !1171, !taffo.target !1037
+  %fi328 = call i32 @injectFault1(i64 1053, i32 %fi323, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi328, i32* %u8_24fixp189, align 4, !taffo.info !47, !llfi_index !1172, !taffo.target !1037
   %matchop89 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1173
   %97 = load i32, i32* %matchop89, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1174
-  %fi331 = call i32 @injectFault1(i64 1055, i32 %97, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi333 = call i32 @injectFault1(i64 1056, i32 %fi331, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi334 = call i32 @injectFault1(i64 1056, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %98 = sub nsw i32 %fi333, %fi334, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1175, !taffo.constinfo !67
-  %fi332 = call i32 @injectFault1(i64 1056, i32 %98, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi336 = call i32 @injectFault1(i64 1057, i32 %fi204, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi337 = call i32 @injectFault1(i64 1057, i32 %fi332, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %99 = icmp eq i32 %fi336, %fi337, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1176
-  %fi335 = call i1 @injectFault2(i64 1057, i1 %99, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi338 = call i1 @injectFault2(i64 1058, i1 %fi335, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi338, label %100, label %102, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1177
+  %fi329 = call i32 @injectFault1(i64 1055, i32 %97, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi331 = call i32 @injectFault1(i64 1056, i32 %fi329, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi332 = call i32 @injectFault1(i64 1056, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %98 = sub nsw i32 %fi331, %fi332, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1175, !taffo.constinfo !67
+  %fi330 = call i32 @injectFault1(i64 1056, i32 %98, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi334 = call i32 @injectFault1(i64 1057, i32 %fi204, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi335 = call i32 @injectFault1(i64 1057, i32 %fi330, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %99 = icmp eq i32 %fi334, %fi335, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1176
+  %fi333 = call i1 @injectFault3(i64 1057, i1 %99, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi336 = call i1 @injectFault3(i64 1058, i1 %fi333, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi336, label %100, label %102, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1177
 
 100:                                              ; preds = %89
-  %fi340 = call i32 @injectFault1(i64 1059, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi341 = call i32 @injectFault1(i64 1059, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %101 = lshr i32 %fi340, %fi341, !llfi_index !1178
-  %fi339 = call i32 @injectFault1(i64 1059, i32 %101, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi338 = call i32 @injectFault1(i64 1059, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi339 = call i32 @injectFault1(i64 1059, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %101 = lshr i32 %fi338, %fi339, !llfi_index !1178
+  %fi337 = call i32 @injectFault1(i64 1059, i32 %101, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %111, !llfi_index !1179
 
 102:                                              ; preds = %89
   %103 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1180
   %104 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %103, align 8, !llfi_index !1181
-  %fi343 = call i32 @injectFault1(i64 1063, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %105 = sext i32 %fi343 to i64, !taffo.info !0, !llfi_index !1182
-  %fi342 = call i64 @injectFault0(i64 1063, i64 %105, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi344 = call i64 @injectFault0(i64 1064, i64 %fi342, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %106 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %104, i64 %fi344, !llfi_index !1183
+  %fi341 = call i32 @injectFault1(i64 1063, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %105 = sext i32 %fi341 to i64, !taffo.info !0, !llfi_index !1182
+  %fi340 = call i64 @injectFault0(i64 1063, i64 %105, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi342 = call i64 @injectFault0(i64 1064, i64 %fi340, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %106 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %104, i64 %fi342, !llfi_index !1183
   %107 = load { i32, i32, i32 }*, { i32, i32, i32 }** %106, align 8, !llfi_index !1184
-  %fi346 = call i32 @injectFault1(i64 1066, i32 %fi204, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi347 = call i32 @injectFault1(i64 1066, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %108 = add nsw i32 %fi346, %fi347, !taffo.info !323, !llfi_index !1185, !taffo.constinfo !67
-  %fi345 = call i32 @injectFault1(i64 1066, i32 %108, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi349 = call i32 @injectFault1(i64 1067, i32 %fi345, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %109 = sext i32 %fi349 to i64, !taffo.info !323, !llfi_index !1186
-  %fi348 = call i64 @injectFault0(i64 1067, i64 %109, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %110 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %107, i64 %fi348, !llfi_index !1187
+  %fi344 = call i32 @injectFault1(i64 1066, i32 %fi204, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi345 = call i32 @injectFault1(i64 1066, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %108 = add nsw i32 %fi344, %fi345, !taffo.info !323, !llfi_index !1185, !taffo.constinfo !67
+  %fi343 = call i32 @injectFault1(i64 1066, i32 %108, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi347 = call i32 @injectFault1(i64 1067, i32 %fi343, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %109 = sext i32 %fi347 to i64, !taffo.info !323, !llfi_index !1186
+  %fi346 = call i64 @injectFault0(i64 1067, i64 %109, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %110 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %107, i64 %fi346, !llfi_index !1187
   %u8_24fixp218 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %110, i32 0, i32 0, !taffo.info !611, !llfi_index !1188
   %u8_24fixp266 = load i32, i32* %u8_24fixp218, align 4, !taffo.info !611, !llfi_index !1189
-  %fi350 = call i32 @injectFault1(i64 1070, i32 %u8_24fixp266, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi348 = call i32 @injectFault1(i64 1070, i32 %u8_24fixp266, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %111, !llfi_index !1190
 
 111:                                              ; preds = %102, %100
-  %u8_24fixp297 = phi i32 [ %fi339, %100 ], [ %fi350, %102 ], !taffo.info !611, !llfi_index !1191
-  %fi351 = call i32 @injectFault1(i64 1072, i32 %u8_24fixp297, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi352 = call i64 @injectFault0(i64 1073, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi353 = call i64 @injectFault0(i64 1073, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp139 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi352, i64 %fi353, !taffo.info !611, !llfi_index !1192, !taffo.target !1037
-  %fi12 = call i64 @injectFault0(i64 1074, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi13 = call i64 @injectFault0(i64 1074, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp188 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp139, i64 %fi12, i64 %fi13, !taffo.info !611, !llfi_index !1193, !taffo.target !1037
-  %fi14 = call i32 @injectFault1(i64 1075, i32 %fi351, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi14, i32* %u8_24fixp188, align 4, !taffo.info !47, !llfi_index !1194, !taffo.target !1037
-  %fi358 = call i32 @injectFault1(i64 1076, i32 %fi204, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi359 = call i32 @injectFault1(i64 1076, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %112 = icmp eq i32 %fi358, %fi359, !taffo.info !323, !llfi_index !1195
-  %fi357 = call i1 @injectFault2(i64 1076, i1 %112, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi360 = call i1 @injectFault2(i64 1077, i1 %fi357, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi360, label %117, label %113, !llfi_index !1196
+  %u8_24fixp297 = phi i32 [ %fi337, %100 ], [ %fi348, %102 ], !taffo.info !611, !llfi_index !1191
+  %fi349 = call i32 @injectFault1(i64 1072, i32 %u8_24fixp297, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi11 = call i64 @injectFault0(i64 1073, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi12 = call i64 @injectFault0(i64 1073, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp139 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi11, i64 %fi12, !taffo.info !611, !llfi_index !1192, !taffo.target !1037
+  %fi13 = call i64 @injectFault0(i64 1074, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi14 = call i64 @injectFault0(i64 1074, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp188 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp139, i64 %fi13, i64 %fi14, !taffo.info !611, !llfi_index !1193, !taffo.target !1037
+  %fi353 = call i32 @injectFault1(i64 1075, i32 %fi349, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi353, i32* %u8_24fixp188, align 4, !taffo.info !47, !llfi_index !1194, !taffo.target !1037
+  %fi355 = call i32 @injectFault1(i64 1076, i32 %fi204, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi356 = call i32 @injectFault1(i64 1076, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %112 = icmp eq i32 %fi355, %fi356, !taffo.info !323, !llfi_index !1195
+  %fi354 = call i1 @injectFault3(i64 1076, i1 %112, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi357 = call i1 @injectFault3(i64 1077, i1 %fi354, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi357, label %117, label %113, !llfi_index !1196
 
 113:                                              ; preds = %111
   %matchop88 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1053, !llfi_index !1197
   %114 = load i32, i32* %matchop88, align 4, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1198
-  %fi361 = call i32 @injectFault1(i64 1079, i32 %114, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi363 = call i32 @injectFault1(i64 1080, i32 %fi361, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi364 = call i32 @injectFault1(i64 1080, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %115 = sub nsw i32 %fi363, %fi364, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1199, !taffo.constinfo !67
-  %fi362 = call i32 @injectFault1(i64 1080, i32 %115, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi366 = call i32 @injectFault1(i64 1081, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi367 = call i32 @injectFault1(i64 1081, i32 %fi362, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %116 = icmp eq i32 %fi366, %fi367, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1200
-  %fi365 = call i1 @injectFault2(i64 1081, i1 %116, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi368 = call i1 @injectFault2(i64 1082, i1 %fi365, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi368, label %117, label %119, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1201
+  %fi358 = call i32 @injectFault1(i64 1079, i32 %114, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi360 = call i32 @injectFault1(i64 1080, i32 %fi358, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi361 = call i32 @injectFault1(i64 1080, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %115 = sub nsw i32 %fi360, %fi361, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1199, !taffo.constinfo !67
+  %fi359 = call i32 @injectFault1(i64 1080, i32 %115, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi363 = call i32 @injectFault1(i64 1081, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi364 = call i32 @injectFault1(i64 1081, i32 %fi359, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %116 = icmp eq i32 %fi363, %fi364, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1200
+  %fi362 = call i1 @injectFault3(i64 1081, i1 %116, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi365 = call i1 @injectFault3(i64 1082, i1 %fi362, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi365, label %117, label %119, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1201
 
 117:                                              ; preds = %113, %111
-  %fi370 = call i32 @injectFault1(i64 1083, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi371 = call i32 @injectFault1(i64 1083, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %118 = lshr i32 %fi370, %fi371, !llfi_index !1202
-  %fi369 = call i32 @injectFault1(i64 1083, i32 %118, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi367 = call i32 @injectFault1(i64 1083, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi368 = call i32 @injectFault1(i64 1083, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %118 = lshr i32 %fi367, %fi368, !llfi_index !1202
+  %fi366 = call i32 @injectFault1(i64 1083, i32 %118, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %129, !llfi_index !1203
 
 119:                                              ; preds = %113
   %120 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1204
   %121 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %120, align 8, !llfi_index !1205
-  %fi373 = call i32 @injectFault1(i64 1087, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi374 = call i32 @injectFault1(i64 1087, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %122 = add nsw i32 %fi373, %fi374, !taffo.info !323, !llfi_index !1206, !taffo.constinfo !67
-  %fi372 = call i32 @injectFault1(i64 1087, i32 %122, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi376 = call i32 @injectFault1(i64 1088, i32 %fi372, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %123 = sext i32 %fi376 to i64, !taffo.info !323, !llfi_index !1207
-  %fi375 = call i64 @injectFault0(i64 1088, i64 %123, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi377 = call i64 @injectFault0(i64 1089, i64 %fi375, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %124 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %121, i64 %fi377, !llfi_index !1208
+  %fi370 = call i32 @injectFault1(i64 1087, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi371 = call i32 @injectFault1(i64 1087, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %122 = add nsw i32 %fi370, %fi371, !taffo.info !323, !llfi_index !1206, !taffo.constinfo !67
+  %fi369 = call i32 @injectFault1(i64 1087, i32 %122, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi373 = call i32 @injectFault1(i64 1088, i32 %fi369, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %123 = sext i32 %fi373 to i64, !taffo.info !323, !llfi_index !1207
+  %fi372 = call i64 @injectFault0(i64 1088, i64 %123, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi374 = call i64 @injectFault0(i64 1089, i64 %fi372, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %124 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %121, i64 %fi374, !llfi_index !1208
   %125 = load { i32, i32, i32 }*, { i32, i32, i32 }** %124, align 8, !llfi_index !1209
-  %fi379 = call i32 @injectFault1(i64 1091, i32 %fi204, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi380 = call i32 @injectFault1(i64 1091, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %126 = sub nsw i32 %fi379, %fi380, !taffo.info !1081, !llfi_index !1210, !taffo.constinfo !67
-  %fi378 = call i32 @injectFault1(i64 1091, i32 %126, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi382 = call i32 @injectFault1(i64 1092, i32 %fi378, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %127 = sext i32 %fi382 to i64, !taffo.info !1081, !llfi_index !1211
-  %fi381 = call i64 @injectFault0(i64 1092, i64 %127, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %128 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %125, i64 %fi381, !llfi_index !1212
+  %fi376 = call i32 @injectFault1(i64 1091, i32 %fi204, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi377 = call i32 @injectFault1(i64 1091, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %126 = sub nsw i32 %fi376, %fi377, !taffo.info !1081, !llfi_index !1210, !taffo.constinfo !67
+  %fi375 = call i32 @injectFault1(i64 1091, i32 %126, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi379 = call i32 @injectFault1(i64 1092, i32 %fi375, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %127 = sext i32 %fi379 to i64, !taffo.info !1081, !llfi_index !1211
+  %fi378 = call i64 @injectFault0(i64 1092, i64 %127, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %128 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %125, i64 %fi378, !llfi_index !1212
   %u8_24fixp217 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %128, i32 0, i32 0, !taffo.info !611, !llfi_index !1213
   %u8_24fixp265 = load i32, i32* %u8_24fixp217, align 4, !taffo.info !611, !llfi_index !1214
-  %fi391 = call i32 @injectFault1(i64 1095, i32 %u8_24fixp265, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi388 = call i32 @injectFault1(i64 1095, i32 %u8_24fixp265, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %129, !llfi_index !1215
 
 129:                                              ; preds = %119, %117
-  %u8_24fixp296 = phi i32 [ %fi369, %117 ], [ %fi391, %119 ], !taffo.info !611, !llfi_index !1216
-  %fi392 = call i32 @injectFault1(i64 1097, i32 %u8_24fixp296, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi393 = call i64 @injectFault0(i64 1098, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi394 = call i64 @injectFault0(i64 1098, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp138 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi393, i64 %fi394, !taffo.info !611, !llfi_index !1217, !taffo.target !1037
-  %fi395 = call i64 @injectFault0(i64 1099, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi396 = call i64 @injectFault0(i64 1099, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp187 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp138, i64 %fi395, i64 %fi396, !taffo.info !611, !llfi_index !1218, !taffo.target !1037
-  %fi397 = call i32 @injectFault1(i64 1100, i32 %fi392, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi397, i32* %u8_24fixp187, align 8, !taffo.info !47, !llfi_index !1219, !taffo.target !1037
+  %u8_24fixp296 = phi i32 [ %fi366, %117 ], [ %fi388, %119 ], !taffo.info !611, !llfi_index !1216
+  %fi389 = call i32 @injectFault1(i64 1097, i32 %u8_24fixp296, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi390 = call i64 @injectFault0(i64 1098, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi391 = call i64 @injectFault0(i64 1098, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp138 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi390, i64 %fi391, !taffo.info !611, !llfi_index !1217, !taffo.target !1037
+  %fi392 = call i64 @injectFault0(i64 1099, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi393 = call i64 @injectFault0(i64 1099, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp187 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp138, i64 %fi392, i64 %fi393, !taffo.info !611, !llfi_index !1218, !taffo.target !1037
+  %fi394 = call i32 @injectFault1(i64 1100, i32 %fi389, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi394, i32* %u8_24fixp187, align 8, !taffo.info !47, !llfi_index !1219, !taffo.target !1037
   %matchop87 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1053, !llfi_index !1220
   %130 = load i32, i32* %matchop87, align 4, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1221
-  %fi398 = call i32 @injectFault1(i64 1102, i32 %130, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi400 = call i32 @injectFault1(i64 1103, i32 %fi398, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi401 = call i32 @injectFault1(i64 1103, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %131 = sub nsw i32 %fi400, %fi401, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1222, !taffo.constinfo !67
-  %fi399 = call i32 @injectFault1(i64 1103, i32 %131, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi403 = call i32 @injectFault1(i64 1104, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi404 = call i32 @injectFault1(i64 1104, i32 %fi399, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %132 = icmp eq i32 %fi403, %fi404, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1223
-  %fi402 = call i1 @injectFault2(i64 1104, i1 %132, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi405 = call i1 @injectFault2(i64 1105, i1 %fi402, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi405, label %133, label %135, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1224
+  %fi395 = call i32 @injectFault1(i64 1102, i32 %130, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi397 = call i32 @injectFault1(i64 1103, i32 %fi395, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi398 = call i32 @injectFault1(i64 1103, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %131 = sub nsw i32 %fi397, %fi398, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1222, !taffo.constinfo !67
+  %fi396 = call i32 @injectFault1(i64 1103, i32 %131, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi400 = call i32 @injectFault1(i64 1104, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi401 = call i32 @injectFault1(i64 1104, i32 %fi396, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %132 = icmp eq i32 %fi400, %fi401, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1223
+  %fi399 = call i1 @injectFault3(i64 1104, i1 %132, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi402 = call i1 @injectFault3(i64 1105, i1 %fi399, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi402, label %133, label %135, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1224
 
 133:                                              ; preds = %129
-  %fi407 = call i32 @injectFault1(i64 1106, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi408 = call i32 @injectFault1(i64 1106, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %134 = lshr i32 %fi407, %fi408, !llfi_index !1225
-  %fi406 = call i32 @injectFault1(i64 1106, i32 %134, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi404 = call i32 @injectFault1(i64 1106, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi405 = call i32 @injectFault1(i64 1106, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %134 = lshr i32 %fi404, %fi405, !llfi_index !1225
+  %fi403 = call i32 @injectFault1(i64 1106, i32 %134, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %144, !llfi_index !1226
 
 135:                                              ; preds = %129
   %136 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1227
   %137 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %136, align 8, !llfi_index !1228
-  %fi410 = call i32 @injectFault1(i64 1110, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi411 = call i32 @injectFault1(i64 1110, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %138 = add nsw i32 %fi410, %fi411, !taffo.info !323, !llfi_index !1229, !taffo.constinfo !67
-  %fi409 = call i32 @injectFault1(i64 1110, i32 %138, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi413 = call i32 @injectFault1(i64 1111, i32 %fi409, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %139 = sext i32 %fi413 to i64, !taffo.info !323, !llfi_index !1230
-  %fi412 = call i64 @injectFault0(i64 1111, i64 %139, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi414 = call i64 @injectFault0(i64 1112, i64 %fi412, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %140 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %137, i64 %fi414, !llfi_index !1231
+  %fi407 = call i32 @injectFault1(i64 1110, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi408 = call i32 @injectFault1(i64 1110, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %138 = add nsw i32 %fi407, %fi408, !taffo.info !323, !llfi_index !1229, !taffo.constinfo !67
+  %fi406 = call i32 @injectFault1(i64 1110, i32 %138, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi410 = call i32 @injectFault1(i64 1111, i32 %fi406, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %139 = sext i32 %fi410 to i64, !taffo.info !323, !llfi_index !1230
+  %fi409 = call i64 @injectFault0(i64 1111, i64 %139, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi411 = call i64 @injectFault0(i64 1112, i64 %fi409, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %140 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %137, i64 %fi411, !llfi_index !1231
   %141 = load { i32, i32, i32 }*, { i32, i32, i32 }** %140, align 8, !llfi_index !1232
-  %fi416 = call i32 @injectFault1(i64 1114, i32 %fi204, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %142 = sext i32 %fi416 to i64, !taffo.info !0, !llfi_index !1233
-  %fi415 = call i64 @injectFault0(i64 1114, i64 %142, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %143 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %141, i64 %fi415, !llfi_index !1234
+  %fi413 = call i32 @injectFault1(i64 1114, i32 %fi204, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %142 = sext i32 %fi413 to i64, !taffo.info !0, !llfi_index !1233
+  %fi412 = call i64 @injectFault0(i64 1114, i64 %142, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %143 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %141, i64 %fi412, !llfi_index !1234
   %u8_24fixp216 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %143, i32 0, i32 0, !taffo.info !611, !llfi_index !1235
   %u8_24fixp264 = load i32, i32* %u8_24fixp216, align 4, !taffo.info !611, !llfi_index !1236
-  %fi417 = call i32 @injectFault1(i64 1117, i32 %u8_24fixp264, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi414 = call i32 @injectFault1(i64 1117, i32 %u8_24fixp264, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %144, !llfi_index !1237
 
 144:                                              ; preds = %135, %133
-  %u8_24fixp295 = phi i32 [ %fi406, %133 ], [ %fi417, %135 ], !taffo.info !611, !llfi_index !1238
-  %fi354 = call i32 @injectFault1(i64 1119, i32 %u8_24fixp295, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi355 = call i64 @injectFault0(i64 1120, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi356 = call i64 @injectFault0(i64 1120, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp137 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi355, i64 %fi356, !taffo.info !611, !llfi_index !1239, !taffo.target !1037
-  %fi418 = call i64 @injectFault0(i64 1121, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi419 = call i64 @injectFault0(i64 1121, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp186 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp137, i64 %fi418, i64 %fi419, !taffo.info !611, !llfi_index !1240, !taffo.target !1037
-  %fi420 = call i32 @injectFault1(i64 1122, i32 %fi354, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi420, i32* %u8_24fixp186, align 4, !taffo.info !47, !llfi_index !1241, !taffo.target !1037
+  %u8_24fixp295 = phi i32 [ %fi403, %133 ], [ %fi414, %135 ], !taffo.info !611, !llfi_index !1238
+  %fi350 = call i32 @injectFault1(i64 1119, i32 %u8_24fixp295, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi351 = call i64 @injectFault0(i64 1120, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi352 = call i64 @injectFault0(i64 1120, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp137 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi351, i64 %fi352, !taffo.info !611, !llfi_index !1239, !taffo.target !1037
+  %fi415 = call i64 @injectFault0(i64 1121, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi416 = call i64 @injectFault0(i64 1121, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp186 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp137, i64 %fi415, i64 %fi416, !taffo.info !611, !llfi_index !1240, !taffo.target !1037
+  %fi417 = call i32 @injectFault1(i64 1122, i32 %fi350, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi417, i32* %u8_24fixp186, align 4, !taffo.info !47, !llfi_index !1241, !taffo.target !1037
   %matchop86 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1242
   %145 = load i32, i32* %matchop86, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1243
-  %fi433 = call i32 @injectFault1(i64 1124, i32 %145, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi435 = call i32 @injectFault1(i64 1125, i32 %fi433, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi436 = call i32 @injectFault1(i64 1125, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %146 = sub nsw i32 %fi435, %fi436, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1244, !taffo.constinfo !67
-  %fi434 = call i32 @injectFault1(i64 1125, i32 %146, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi438 = call i32 @injectFault1(i64 1126, i32 %fi204, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi439 = call i32 @injectFault1(i64 1126, i32 %fi434, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %147 = icmp eq i32 %fi438, %fi439, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1245
-  %fi437 = call i1 @injectFault2(i64 1126, i1 %147, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi440 = call i1 @injectFault2(i64 1127, i1 %fi437, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi440, label %152, label %148, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1246
+  %fi429 = call i32 @injectFault1(i64 1124, i32 %145, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi431 = call i32 @injectFault1(i64 1125, i32 %fi429, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi432 = call i32 @injectFault1(i64 1125, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %146 = sub nsw i32 %fi431, %fi432, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1244, !taffo.constinfo !67
+  %fi430 = call i32 @injectFault1(i64 1125, i32 %146, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi434 = call i32 @injectFault1(i64 1126, i32 %fi204, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi435 = call i32 @injectFault1(i64 1126, i32 %fi430, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %147 = icmp eq i32 %fi434, %fi435, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1245
+  %fi433 = call i1 @injectFault3(i64 1126, i1 %147, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi436 = call i1 @injectFault3(i64 1127, i1 %fi433, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi436, label %152, label %148, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1246
 
 148:                                              ; preds = %144
   %matchop85 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1053, !llfi_index !1247
   %149 = load i32, i32* %matchop85, align 4, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1248
-  %fi441 = call i32 @injectFault1(i64 1129, i32 %149, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi443 = call i32 @injectFault1(i64 1130, i32 %fi441, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi444 = call i32 @injectFault1(i64 1130, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %150 = sub nsw i32 %fi443, %fi444, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1249, !taffo.constinfo !67
-  %fi442 = call i32 @injectFault1(i64 1130, i32 %150, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi446 = call i32 @injectFault1(i64 1131, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi447 = call i32 @injectFault1(i64 1131, i32 %fi442, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %151 = icmp eq i32 %fi446, %fi447, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1250
-  %fi445 = call i1 @injectFault2(i64 1131, i1 %151, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi448 = call i1 @injectFault2(i64 1132, i1 %fi445, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi448, label %152, label %154, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1251
+  %fi437 = call i32 @injectFault1(i64 1129, i32 %149, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi439 = call i32 @injectFault1(i64 1130, i32 %fi437, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi440 = call i32 @injectFault1(i64 1130, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %150 = sub nsw i32 %fi439, %fi440, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1249, !taffo.constinfo !67
+  %fi438 = call i32 @injectFault1(i64 1130, i32 %150, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi442 = call i32 @injectFault1(i64 1131, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi443 = call i32 @injectFault1(i64 1131, i32 %fi438, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %151 = icmp eq i32 %fi442, %fi443, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1250
+  %fi441 = call i1 @injectFault3(i64 1131, i1 %151, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi444 = call i1 @injectFault3(i64 1132, i1 %fi441, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi444, label %152, label %154, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1251
 
 152:                                              ; preds = %148, %144
-  %fi450 = call i32 @injectFault1(i64 1133, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi451 = call i32 @injectFault1(i64 1133, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %153 = lshr i32 %fi450, %fi451, !llfi_index !1252
-  %fi449 = call i32 @injectFault1(i64 1133, i32 %153, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi446 = call i32 @injectFault1(i64 1133, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi447 = call i32 @injectFault1(i64 1133, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %153 = lshr i32 %fi446, %fi447, !llfi_index !1252
+  %fi445 = call i32 @injectFault1(i64 1133, i32 %153, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %164, !llfi_index !1253
 
 154:                                              ; preds = %148
   %155 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1254
   %156 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %155, align 8, !llfi_index !1255
-  %fi453 = call i32 @injectFault1(i64 1137, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi454 = call i32 @injectFault1(i64 1137, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %157 = add nsw i32 %fi453, %fi454, !taffo.info !323, !llfi_index !1256, !taffo.constinfo !67
-  %fi452 = call i32 @injectFault1(i64 1137, i32 %157, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi456 = call i32 @injectFault1(i64 1138, i32 %fi452, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %158 = sext i32 %fi456 to i64, !taffo.info !323, !llfi_index !1257
-  %fi455 = call i64 @injectFault0(i64 1138, i64 %158, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi457 = call i64 @injectFault0(i64 1139, i64 %fi455, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %159 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %156, i64 %fi457, !llfi_index !1258
+  %fi449 = call i32 @injectFault1(i64 1137, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi450 = call i32 @injectFault1(i64 1137, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %157 = add nsw i32 %fi449, %fi450, !taffo.info !323, !llfi_index !1256, !taffo.constinfo !67
+  %fi448 = call i32 @injectFault1(i64 1137, i32 %157, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi452 = call i32 @injectFault1(i64 1138, i32 %fi448, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %158 = sext i32 %fi452 to i64, !taffo.info !323, !llfi_index !1257
+  %fi451 = call i64 @injectFault0(i64 1138, i64 %158, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi453 = call i64 @injectFault0(i64 1139, i64 %fi451, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %159 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %156, i64 %fi453, !llfi_index !1258
   %160 = load { i32, i32, i32 }*, { i32, i32, i32 }** %159, align 8, !llfi_index !1259
-  %fi459 = call i32 @injectFault1(i64 1141, i32 %fi204, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi460 = call i32 @injectFault1(i64 1141, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %161 = add nsw i32 %fi459, %fi460, !taffo.info !323, !llfi_index !1260, !taffo.constinfo !67
-  %fi458 = call i32 @injectFault1(i64 1141, i32 %161, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi462 = call i32 @injectFault1(i64 1142, i32 %fi458, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %162 = sext i32 %fi462 to i64, !taffo.info !323, !llfi_index !1261
-  %fi461 = call i64 @injectFault0(i64 1142, i64 %162, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %163 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %160, i64 %fi461, !llfi_index !1262
+  %fi455 = call i32 @injectFault1(i64 1141, i32 %fi204, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi456 = call i32 @injectFault1(i64 1141, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %161 = add nsw i32 %fi455, %fi456, !taffo.info !323, !llfi_index !1260, !taffo.constinfo !67
+  %fi454 = call i32 @injectFault1(i64 1141, i32 %161, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi458 = call i32 @injectFault1(i64 1142, i32 %fi454, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %162 = sext i32 %fi458 to i64, !taffo.info !323, !llfi_index !1261
+  %fi457 = call i64 @injectFault0(i64 1142, i64 %162, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %163 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %160, i64 %fi457, !llfi_index !1262
   %u8_24fixp215 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %163, i32 0, i32 0, !taffo.info !611, !llfi_index !1263
   %u8_24fixp263 = load i32, i32* %u8_24fixp215, align 4, !taffo.info !611, !llfi_index !1264
-  %fi463 = call i32 @injectFault1(i64 1145, i32 %u8_24fixp263, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi459 = call i32 @injectFault1(i64 1145, i32 %u8_24fixp263, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %164, !llfi_index !1265
 
 164:                                              ; preds = %154, %152
-  %u8_24fixp294 = phi i32 [ %fi449, %152 ], [ %fi463, %154 ], !taffo.info !611, !llfi_index !1266
-  %fi464 = call i32 @injectFault1(i64 1147, i32 %u8_24fixp294, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi465 = call i64 @injectFault0(i64 1148, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi466 = call i64 @injectFault0(i64 1148, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp136 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi465, i64 %fi466, !taffo.info !611, !llfi_index !1267, !taffo.target !1037
-  %fi467 = call i64 @injectFault0(i64 1149, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi468 = call i64 @injectFault0(i64 1149, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp185 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp136, i64 %fi467, i64 %fi468, !taffo.info !611, !llfi_index !1268, !taffo.target !1037
-  %fi469 = call i32 @injectFault1(i64 1150, i32 %fi464, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi469, i32* %u8_24fixp185, align 8, !taffo.info !47, !llfi_index !1269, !taffo.target !1037
-  %fi470 = call i64 @injectFault0(i64 1151, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi471 = call i64 @injectFault0(i64 1151, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp135 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi470, i64 %fi471, !taffo.info !611, !llfi_index !1270, !taffo.target !1037
+  %u8_24fixp294 = phi i32 [ %fi445, %152 ], [ %fi459, %154 ], !taffo.info !611, !llfi_index !1266
+  %fi460 = call i32 @injectFault1(i64 1147, i32 %u8_24fixp294, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi461 = call i64 @injectFault0(i64 1148, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi462 = call i64 @injectFault0(i64 1148, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp136 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi461, i64 %fi462, !taffo.info !611, !llfi_index !1267, !taffo.target !1037
+  %fi463 = call i64 @injectFault0(i64 1149, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi464 = call i64 @injectFault0(i64 1149, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp185 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp136, i64 %fi463, i64 %fi464, !taffo.info !611, !llfi_index !1268, !taffo.target !1037
+  %fi465 = call i32 @injectFault1(i64 1150, i32 %fi460, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi465, i32* %u8_24fixp185, align 8, !taffo.info !47, !llfi_index !1269, !taffo.target !1037
+  %fi466 = call i64 @injectFault0(i64 1151, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi467 = call i64 @injectFault0(i64 1151, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp135 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi466, i64 %fi467, !taffo.info !611, !llfi_index !1270, !taffo.target !1037
   %u2_30fixp184 = invoke i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* %u8_24fixp135)
           to label %165 unwind label %216, !taffo.info !1271, !llfi_index !1274, !taffo.constinfo !101, !taffo.target !1037
 
@@ -2971,90 +2971,90 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi22 = call i32 @injectFault1(i64 1161, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %173 = lshr i32 %fi21, %fi22, !taffo.info !1271, !llfi_index !1283, !taffo.target !1037
   %fi20 = call i32 @injectFault1(i64 1161, i32 %173, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi492 = call i32 @injectFault1(i64 1162, i32 %fi20, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi492, i32* %u8_24fixp235, align 4, !taffo.info !47, !llfi_index !1284, !taffo.target !1037
+  %fi488 = call i32 @injectFault1(i64 1162, i32 %fi20, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi488, i32* %u8_24fixp235, align 4, !taffo.info !47, !llfi_index !1284, !taffo.target !1037
   %174 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1285
   %175 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %174, align 8, !llfi_index !1286
-  %fi494 = call i32 @injectFault1(i64 1165, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %176 = sext i32 %fi494 to i64, !taffo.info !0, !llfi_index !1287
-  %fi493 = call i64 @injectFault0(i64 1165, i64 %176, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi495 = call i64 @injectFault0(i64 1166, i64 %fi493, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %177 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %175, i64 %fi495, !llfi_index !1288
+  %fi490 = call i32 @injectFault1(i64 1165, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %176 = sext i32 %fi490 to i64, !taffo.info !0, !llfi_index !1287
+  %fi489 = call i64 @injectFault0(i64 1165, i64 %176, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi491 = call i64 @injectFault0(i64 1166, i64 %fi489, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %177 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %175, i64 %fi491, !llfi_index !1288
   %178 = load { i32, i32, i32 }*, { i32, i32, i32 }** %177, align 8, !llfi_index !1289
-  %fi497 = call i32 @injectFault1(i64 1168, i32 %fi204, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %179 = sext i32 %fi497 to i64, !taffo.info !0, !llfi_index !1290
-  %fi496 = call i64 @injectFault0(i64 1168, i64 %179, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %180 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %178, i64 %fi496, !llfi_index !1291
+  %fi493 = call i32 @injectFault1(i64 1168, i32 %fi204, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %179 = sext i32 %fi493 to i64, !taffo.info !0, !llfi_index !1290
+  %fi492 = call i64 @injectFault0(i64 1168, i64 %179, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %180 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %178, i64 %fi492, !llfi_index !1291
   %u8_24fixp234 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %180, i32 0, i32 1, !taffo.info !611, !llfi_index !1292
-  %fi499 = call i32 @injectFault1(i64 1171, i32 %u2_30fixp184, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi500 = call i32 @injectFault1(i64 1171, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %181 = lshr i32 %fi499, %fi500, !taffo.info !1271, !llfi_index !1293, !taffo.target !1037
-  %fi498 = call i32 @injectFault1(i64 1171, i32 %181, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi501 = call i32 @injectFault1(i64 1172, i32 %fi498, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi501, i32* %u8_24fixp234, align 4, !taffo.info !47, !llfi_index !1294, !taffo.target !1037
+  %fi495 = call i32 @injectFault1(i64 1171, i32 %u2_30fixp184, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi496 = call i32 @injectFault1(i64 1171, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %181 = lshr i32 %fi495, %fi496, !taffo.info !1271, !llfi_index !1293, !taffo.target !1037
+  %fi494 = call i32 @injectFault1(i64 1171, i32 %181, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi497 = call i32 @injectFault1(i64 1172, i32 %fi494, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi497, i32* %u8_24fixp234, align 4, !taffo.info !47, !llfi_index !1294, !taffo.target !1037
   %182 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1295
   %183 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %182, align 8, !llfi_index !1296
-  %fi503 = call i32 @injectFault1(i64 1175, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %184 = sext i32 %fi503 to i64, !taffo.info !0, !llfi_index !1297
-  %fi502 = call i64 @injectFault0(i64 1175, i64 %184, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi504 = call i64 @injectFault0(i64 1176, i64 %fi502, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %185 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %183, i64 %fi504, !llfi_index !1298
+  %fi499 = call i32 @injectFault1(i64 1175, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %184 = sext i32 %fi499 to i64, !taffo.info !0, !llfi_index !1297
+  %fi498 = call i64 @injectFault0(i64 1175, i64 %184, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi500 = call i64 @injectFault0(i64 1176, i64 %fi498, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %185 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %183, i64 %fi500, !llfi_index !1298
   %186 = load { i32, i32, i32 }*, { i32, i32, i32 }** %185, align 8, !llfi_index !1299
-  %fi506 = call i32 @injectFault1(i64 1178, i32 %fi204, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %187 = sext i32 %fi506 to i64, !taffo.info !0, !llfi_index !1300
-  %fi505 = call i64 @injectFault0(i64 1178, i64 %187, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %188 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %186, i64 %fi505, !llfi_index !1301
+  %fi502 = call i32 @injectFault1(i64 1178, i32 %fi204, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %187 = sext i32 %fi502 to i64, !taffo.info !0, !llfi_index !1300
+  %fi501 = call i64 @injectFault0(i64 1178, i64 %187, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %188 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %186, i64 %fi501, !llfi_index !1301
   %u8_24fixp233 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %188, i32 0, i32 2, !taffo.info !611, !llfi_index !1302
-  %fi508 = call i32 @injectFault1(i64 1181, i32 %u2_30fixp184, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi509 = call i32 @injectFault1(i64 1181, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %189 = lshr i32 %fi508, %fi509, !taffo.info !1271, !llfi_index !1303, !taffo.target !1037
-  %fi507 = call i32 @injectFault1(i64 1181, i32 %189, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi510 = call i32 @injectFault1(i64 1182, i32 %fi507, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi510, i32* %u8_24fixp233, align 4, !taffo.info !47, !llfi_index !1304, !taffo.target !1037
+  %fi504 = call i32 @injectFault1(i64 1181, i32 %u2_30fixp184, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi505 = call i32 @injectFault1(i64 1181, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %189 = lshr i32 %fi504, %fi505, !taffo.info !1271, !llfi_index !1303, !taffo.target !1037
+  %fi503 = call i32 @injectFault1(i64 1181, i32 %189, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi506 = call i32 @injectFault1(i64 1182, i32 %fi503, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi506, i32* %u8_24fixp233, align 4, !taffo.info !47, !llfi_index !1304, !taffo.target !1037
   br label %190, !llfi_index !1305
 
 190:                                              ; preds = %165
-  %fi512 = call i32 @injectFault1(i64 1184, i32 %fi204, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi513 = call i32 @injectFault1(i64 1184, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %191 = add nsw i32 %fi512, %fi513, !taffo.info !323, !llfi_index !1306, !taffo.constinfo !67
-  %fi511 = call i32 @injectFault1(i64 1184, i32 %191, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi508 = call i32 @injectFault1(i64 1184, i32 %fi204, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi509 = call i32 @injectFault1(i64 1184, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %191 = add nsw i32 %fi508, %fi509, !taffo.info !323, !llfi_index !1306, !taffo.constinfo !67
+  %fi507 = call i32 @injectFault1(i64 1184, i32 %191, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %26, !llvm.loop !1307, !llfi_index !1308
 
 192:                                              ; preds = %2
   %193 = landingpad { i8*, i32 }
           cleanup, !llfi_index !1309
-  %fi514 = call { i8*, i32 } @injectFault7(i64 1187, { i8*, i32 } %193, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %194 = extractvalue { i8*, i32 } %fi514, 0, !llfi_index !1310
-  %fi516 = call { i8*, i32 } @injectFault7(i64 1188, { i8*, i32 } %193, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %195 = extractvalue { i8*, i32 } %fi516, 1, !llfi_index !1311
-  %fi515 = call i32 @injectFault1(i64 1188, i32 %195, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi510 = call { i8*, i32 } @injectFault7(i64 1187, { i8*, i32 } %193, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %194 = extractvalue { i8*, i32 } %fi510, 0, !llfi_index !1310
+  %fi512 = call { i8*, i32 } @injectFault7(i64 1188, { i8*, i32 } %193, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %195 = extractvalue { i8*, i32 } %fi512, 1, !llfi_index !1311
+  %fi511 = call i32 @injectFault1(i64 1188, i32 %195, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %857, !llfi_index !1312
 
 196:                                              ; preds = %12
   %197 = landingpad { i8*, i32 }
           cleanup, !llfi_index !1313
-  %fi517 = call { i8*, i32 } @injectFault7(i64 1191, { i8*, i32 } %197, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %198 = extractvalue { i8*, i32 } %fi517, 0, !llfi_index !1314
-  %fi519 = call { i8*, i32 } @injectFault7(i64 1192, { i8*, i32 } %197, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %199 = extractvalue { i8*, i32 } %fi519, 1, !llfi_index !1315
-  %fi518 = call i32 @injectFault1(i64 1192, i32 %199, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi513 = call { i8*, i32 } @injectFault7(i64 1191, { i8*, i32 } %197, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %198 = extractvalue { i8*, i32 } %fi513, 0, !llfi_index !1314
+  %fi515 = call { i8*, i32 } @injectFault7(i64 1192, { i8*, i32 } %197, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %199 = extractvalue { i8*, i32 } %fi515, 1, !llfi_index !1315
+  %fi514 = call i32 @injectFault1(i64 1192, i32 %199, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %204, !llfi_index !1316
 
 200:                                              ; preds = %16
   %201 = landingpad { i8*, i32 }
           cleanup, !llfi_index !1317
-  %fi520 = call { i8*, i32 } @injectFault7(i64 1195, { i8*, i32 } %201, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %202 = extractvalue { i8*, i32 } %fi520, 0, !llfi_index !1318
-  %fi522 = call { i8*, i32 } @injectFault7(i64 1196, { i8*, i32 } %201, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %203 = extractvalue { i8*, i32 } %fi522, 1, !llfi_index !1319
-  %fi521 = call i32 @injectFault1(i64 1196, i32 %203, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi516 = call { i8*, i32 } @injectFault7(i64 1195, { i8*, i32 } %201, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %202 = extractvalue { i8*, i32 } %fi516, 0, !llfi_index !1318
+  %fi518 = call { i8*, i32 } @injectFault7(i64 1196, { i8*, i32 } %201, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %203 = extractvalue { i8*, i32 } %fi518, 1, !llfi_index !1319
+  %fi517 = call i32 @injectFault1(i64 1196, i32 %203, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %5) #15, !llfi_index !1320, !taffo.constinfo !67
   br label %204, !llfi_index !1321
 
 204:                                              ; preds = %200, %196
   %.01 = phi i8* [ %202, %200 ], [ %198, %196 ], !llfi_index !1322
-  %.0 = phi i32 [ %fi521, %200 ], [ %fi518, %196 ], !llfi_index !1323
-  %fi523 = call i32 @injectFault1(i64 1200, i32 %.0, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %.0 = phi i32 [ %fi517, %200 ], [ %fi514, %196 ], !llfi_index !1323
+  %fi519 = call i32 @injectFault1(i64 1200, i32 %.0, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %205 = bitcast %"class.std::__new_allocator.1"* %6 to %"class.std::__new_allocator.1"*, !llfi_index !1324
   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %205) #15, !llfi_index !1325, !taffo.constinfo !67
   br label %856, !llfi_index !1326
@@ -3062,28 +3062,28 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 206:                                              ; preds = %17
   %207 = landingpad { i8*, i32 }
           cleanup, !llfi_index !1327
-  %fi524 = call { i8*, i32 } @injectFault7(i64 1205, { i8*, i32 } %207, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %208 = extractvalue { i8*, i32 } %fi524, 0, !llfi_index !1328
-  %fi526 = call { i8*, i32 } @injectFault7(i64 1206, { i8*, i32 } %207, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %209 = extractvalue { i8*, i32 } %fi526, 1, !llfi_index !1329
-  %fi525 = call i32 @injectFault1(i64 1206, i32 %209, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi520 = call { i8*, i32 } @injectFault7(i64 1205, { i8*, i32 } %207, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %208 = extractvalue { i8*, i32 } %fi520, 0, !llfi_index !1328
+  %fi522 = call { i8*, i32 } @injectFault7(i64 1206, { i8*, i32 } %207, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %209 = extractvalue { i8*, i32 } %fi522, 1, !llfi_index !1329
+  %fi521 = call i32 @injectFault1(i64 1206, i32 %209, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %214, !llfi_index !1330
 
 210:                                              ; preds = %21
   %211 = landingpad { i8*, i32 }
           cleanup, !llfi_index !1331
-  %fi527 = call { i8*, i32 } @injectFault7(i64 1209, { i8*, i32 } %211, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %212 = extractvalue { i8*, i32 } %fi527, 0, !llfi_index !1332
-  %fi529 = call { i8*, i32 } @injectFault7(i64 1210, { i8*, i32 } %211, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %213 = extractvalue { i8*, i32 } %fi529, 1, !llfi_index !1333
-  %fi528 = call i32 @injectFault1(i64 1210, i32 %213, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi523 = call { i8*, i32 } @injectFault7(i64 1209, { i8*, i32 } %211, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %212 = extractvalue { i8*, i32 } %fi523, 0, !llfi_index !1332
+  %fi525 = call { i8*, i32 } @injectFault7(i64 1210, { i8*, i32 } %211, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %213 = extractvalue { i8*, i32 } %fi525, 1, !llfi_index !1333
+  %fi524 = call i32 @injectFault1(i64 1210, i32 %213, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %7) #15, !llfi_index !1334, !taffo.constinfo !67
   br label %214, !llfi_index !1335
 
 214:                                              ; preds = %210, %206
   %.12 = phi i8* [ %212, %210 ], [ %208, %206 ], !llfi_index !1336
-  %.1 = phi i32 [ %fi528, %210 ], [ %fi525, %206 ], !llfi_index !1337
-  %fi530 = call i32 @injectFault1(i64 1214, i32 %.1, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %.1 = phi i32 [ %fi524, %210 ], [ %fi521, %206 ], !llfi_index !1337
+  %fi526 = call i32 @injectFault1(i64 1214, i32 %.1, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %215 = bitcast %"class.std::__new_allocator.1"* %8 to %"class.std::__new_allocator.1"*, !llfi_index !1338
   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %215) #15, !llfi_index !1339, !taffo.constinfo !67
   br label %856, !llfi_index !1340
@@ -3091,556 +3091,556 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 216:                                              ; preds = %837, %835, %831, %829, %827, %799, %630, %390, %360, %164, %24, %22
   %217 = landingpad { i8*, i32 }
           cleanup, !llfi_index !1341
-  %fi531 = call { i8*, i32 } @injectFault7(i64 1219, { i8*, i32 } %217, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %218 = extractvalue { i8*, i32 } %fi531, 0, !llfi_index !1342
-  %fi533 = call { i8*, i32 } @injectFault7(i64 1220, { i8*, i32 } %217, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %219 = extractvalue { i8*, i32 } %fi533, 1, !llfi_index !1343
-  %fi532 = call i32 @injectFault1(i64 1220, i32 %219, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi527 = call { i8*, i32 } @injectFault7(i64 1219, { i8*, i32 } %217, i32 64, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %218 = extractvalue { i8*, i32 } %fi527, 0, !llfi_index !1342
+  %fi529 = call { i8*, i32 } @injectFault7(i64 1220, { i8*, i32 } %217, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %219 = extractvalue { i8*, i32 } %fi529, 1, !llfi_index !1343
+  %fi528 = call i32 @injectFault1(i64 1220, i32 %219, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %856, !llfi_index !1344
 
 220:                                              ; preds = %26
   br label %221, !llfi_index !1345
 
 221:                                              ; preds = %656, %220
-  %.06 = phi i32 [ 1, %220 ], [ %fi1066, %656 ], !taffo.info !1346, !llfi_index !1348
-  %fi534 = call i32 @injectFault1(i64 1223, i32 %.06, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %.06 = phi i32 [ 1, %220 ], [ %fi1072, %656 ], !taffo.info !1346, !llfi_index !1348
+  %fi530 = call i32 @injectFault1(i64 1223, i32 %.06, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %matchop84 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1053, !llfi_index !1349
   %222 = load i32, i32* %matchop84, align 4, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1350
-  %fi535 = call i32 @injectFault1(i64 1225, i32 %222, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi537 = call i32 @injectFault1(i64 1226, i32 %fi535, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi538 = call i32 @injectFault1(i64 1226, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %223 = sub nsw i32 %fi537, %fi538, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1351, !taffo.constinfo !67
-  %fi536 = call i32 @injectFault1(i64 1226, i32 %223, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi540 = call i32 @injectFault1(i64 1227, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi541 = call i32 @injectFault1(i64 1227, i32 %fi536, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %224 = icmp slt i32 %fi540, %fi541, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1352
-  %fi539 = call i1 @injectFault2(i64 1227, i1 %224, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi542 = call i1 @injectFault2(i64 1228, i1 %fi539, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi542, label %225, label %658, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1353
+  %fi531 = call i32 @injectFault1(i64 1225, i32 %222, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi533 = call i32 @injectFault1(i64 1226, i32 %fi531, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi534 = call i32 @injectFault1(i64 1226, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %223 = sub nsw i32 %fi533, %fi534, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1351, !taffo.constinfo !67
+  %fi532 = call i32 @injectFault1(i64 1226, i32 %223, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi536 = call i32 @injectFault1(i64 1227, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi537 = call i32 @injectFault1(i64 1227, i32 %fi532, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %224 = icmp slt i32 %fi536, %fi537, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1352
+  %fi535 = call i1 @injectFault3(i64 1227, i1 %224, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi538 = call i1 @injectFault3(i64 1228, i1 %fi535, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi538, label %225, label %658, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1353
 
 225:                                              ; preds = %221
-  %fi544 = call i32 @injectFault1(i64 1229, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi545 = call i32 @injectFault1(i64 1229, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %226 = icmp eq i32 %fi544, %fi545, !taffo.info !323, !llfi_index !1354
-  %fi543 = call i1 @injectFault2(i64 1229, i1 %226, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi546 = call i1 @injectFault2(i64 1230, i1 %fi543, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi546, label %229, label %227, !llfi_index !1355
+  %fi540 = call i32 @injectFault1(i64 1229, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi541 = call i32 @injectFault1(i64 1229, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %226 = icmp eq i32 %fi540, %fi541, !taffo.info !323, !llfi_index !1354
+  %fi539 = call i1 @injectFault3(i64 1229, i1 %226, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi542 = call i1 @injectFault3(i64 1230, i1 %fi539, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi542, label %229, label %227, !llfi_index !1355
 
 227:                                              ; preds = %225
-  %fi548 = call i32 @injectFault1(i64 1231, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi549 = call i32 @injectFault1(i64 1231, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %228 = icmp eq i32 %fi548, %fi549, !taffo.info !0, !llfi_index !1356
-  %fi547 = call i1 @injectFault2(i64 1231, i1 %228, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi550 = call i1 @injectFault2(i64 1232, i1 %fi547, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi550, label %229, label %231, !llfi_index !1357
+  %fi544 = call i32 @injectFault1(i64 1231, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi545 = call i32 @injectFault1(i64 1231, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %228 = icmp eq i32 %fi544, %fi545, !taffo.info !0, !llfi_index !1356
+  %fi543 = call i1 @injectFault3(i64 1231, i1 %228, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi546 = call i1 @injectFault3(i64 1232, i1 %fi543, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi546, label %229, label %231, !llfi_index !1357
 
 229:                                              ; preds = %227, %225
-  %fi552 = call i32 @injectFault1(i64 1233, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi553 = call i32 @injectFault1(i64 1233, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %230 = lshr i32 %fi552, %fi553, !llfi_index !1358
-  %fi551 = call i32 @injectFault1(i64 1233, i32 %230, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi548 = call i32 @injectFault1(i64 1233, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi549 = call i32 @injectFault1(i64 1233, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %230 = lshr i32 %fi548, %fi549, !llfi_index !1358
+  %fi547 = call i32 @injectFault1(i64 1233, i32 %230, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %241, !llfi_index !1359
 
 231:                                              ; preds = %227
   %232 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1360
   %233 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %232, align 8, !llfi_index !1361
-  %fi555 = call i32 @injectFault1(i64 1237, i32 %fi534, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi556 = call i32 @injectFault1(i64 1237, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %234 = sub nsw i32 %fi555, %fi556, !taffo.info !0, !llfi_index !1362, !taffo.constinfo !67
-  %fi554 = call i32 @injectFault1(i64 1237, i32 %234, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi558 = call i32 @injectFault1(i64 1238, i32 %fi554, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %235 = sext i32 %fi558 to i64, !taffo.info !0, !llfi_index !1363
-  %fi557 = call i64 @injectFault0(i64 1238, i64 %235, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi559 = call i64 @injectFault0(i64 1239, i64 %fi557, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %236 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %233, i64 %fi559, !llfi_index !1364
+  %fi551 = call i32 @injectFault1(i64 1237, i32 %fi530, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi552 = call i32 @injectFault1(i64 1237, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %234 = sub nsw i32 %fi551, %fi552, !taffo.info !0, !llfi_index !1362, !taffo.constinfo !67
+  %fi550 = call i32 @injectFault1(i64 1237, i32 %234, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi554 = call i32 @injectFault1(i64 1238, i32 %fi550, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %235 = sext i32 %fi554 to i64, !taffo.info !0, !llfi_index !1363
+  %fi553 = call i64 @injectFault0(i64 1238, i64 %235, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi555 = call i64 @injectFault0(i64 1239, i64 %fi553, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %236 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %233, i64 %fi555, !llfi_index !1364
   %237 = load { i32, i32, i32 }*, { i32, i32, i32 }** %236, align 8, !llfi_index !1365
-  %fi561 = call i32 @injectFault1(i64 1241, i32 0, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi562 = call i32 @injectFault1(i64 1241, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %238 = sub nsw i32 %fi561, %fi562, !taffo.info !1081, !llfi_index !1366, !taffo.constinfo !67
-  %fi560 = call i32 @injectFault1(i64 1241, i32 %238, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi564 = call i32 @injectFault1(i64 1242, i32 %fi560, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %239 = sext i32 %fi564 to i64, !taffo.info !1081, !llfi_index !1367
-  %fi563 = call i64 @injectFault0(i64 1242, i64 %239, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %240 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %237, i64 %fi563, !llfi_index !1368
+  %fi557 = call i32 @injectFault1(i64 1241, i32 0, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi558 = call i32 @injectFault1(i64 1241, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %238 = sub nsw i32 %fi557, %fi558, !taffo.info !1081, !llfi_index !1366, !taffo.constinfo !67
+  %fi556 = call i32 @injectFault1(i64 1241, i32 %238, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi560 = call i32 @injectFault1(i64 1242, i32 %fi556, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %239 = sext i32 %fi560 to i64, !taffo.info !1081, !llfi_index !1367
+  %fi559 = call i64 @injectFault0(i64 1242, i64 %239, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %240 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %237, i64 %fi559, !llfi_index !1368
   %u8_24fixp214 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %240, i32 0, i32 0, !taffo.info !611, !llfi_index !1369
   %u8_24fixp262 = load i32, i32* %u8_24fixp214, align 4, !taffo.info !611, !llfi_index !1370
-  %fi565 = call i32 @injectFault1(i64 1245, i32 %u8_24fixp262, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi561 = call i32 @injectFault1(i64 1245, i32 %u8_24fixp262, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %241, !llfi_index !1371
 
 241:                                              ; preds = %231, %229
-  %u8_24fixp293 = phi i32 [ %fi551, %229 ], [ %fi565, %231 ], !taffo.info !611, !llfi_index !1372
-  %fi566 = call i32 @injectFault1(i64 1247, i32 %u8_24fixp293, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi567 = call i64 @injectFault0(i64 1248, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi568 = call i64 @injectFault0(i64 1248, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp134 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi567, i64 %fi568, !taffo.info !611, !llfi_index !1373, !taffo.target !1037
-  %fi569 = call i64 @injectFault0(i64 1249, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi570 = call i64 @injectFault0(i64 1249, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp183 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp134, i64 %fi569, i64 %fi570, !taffo.info !611, !llfi_index !1374, !taffo.target !1037
-  %fi571 = call i32 @injectFault1(i64 1250, i32 %fi566, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi571, i32* %u8_24fixp183, align 16, !taffo.info !47, !llfi_index !1375, !taffo.target !1037
-  %fi573 = call i32 @injectFault1(i64 1251, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi574 = call i32 @injectFault1(i64 1251, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %242 = icmp eq i32 %fi573, %fi574, !taffo.info !0, !llfi_index !1376
-  %fi572 = call i1 @injectFault2(i64 1251, i1 %242, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi575 = call i1 @injectFault2(i64 1252, i1 %fi572, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi575, label %243, label %245, !llfi_index !1377
+  %u8_24fixp293 = phi i32 [ %fi547, %229 ], [ %fi561, %231 ], !taffo.info !611, !llfi_index !1372
+  %fi562 = call i32 @injectFault1(i64 1247, i32 %u8_24fixp293, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi563 = call i64 @injectFault0(i64 1248, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi564 = call i64 @injectFault0(i64 1248, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp134 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi563, i64 %fi564, !taffo.info !611, !llfi_index !1373, !taffo.target !1037
+  %fi565 = call i64 @injectFault0(i64 1249, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi566 = call i64 @injectFault0(i64 1249, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp183 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp134, i64 %fi565, i64 %fi566, !taffo.info !611, !llfi_index !1374, !taffo.target !1037
+  %fi567 = call i32 @injectFault1(i64 1250, i32 %fi562, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi567, i32* %u8_24fixp183, align 16, !taffo.info !47, !llfi_index !1375, !taffo.target !1037
+  %fi569 = call i32 @injectFault1(i64 1251, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi570 = call i32 @injectFault1(i64 1251, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %242 = icmp eq i32 %fi569, %fi570, !taffo.info !0, !llfi_index !1376
+  %fi568 = call i1 @injectFault3(i64 1251, i1 %242, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi571 = call i1 @injectFault3(i64 1252, i1 %fi568, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi571, label %243, label %245, !llfi_index !1377
 
 243:                                              ; preds = %241
-  %fi577 = call i32 @injectFault1(i64 1253, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi578 = call i32 @injectFault1(i64 1253, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %244 = lshr i32 %fi577, %fi578, !llfi_index !1378
-  %fi576 = call i32 @injectFault1(i64 1253, i32 %244, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi573 = call i32 @injectFault1(i64 1253, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi574 = call i32 @injectFault1(i64 1253, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %244 = lshr i32 %fi573, %fi574, !llfi_index !1378
+  %fi572 = call i32 @injectFault1(i64 1253, i32 %244, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %254, !llfi_index !1379
 
 245:                                              ; preds = %241
   %246 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1380
   %247 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %246, align 8, !llfi_index !1381
-  %fi580 = call i32 @injectFault1(i64 1257, i32 %fi534, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi581 = call i32 @injectFault1(i64 1257, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %248 = sub nsw i32 %fi580, %fi581, !taffo.info !0, !llfi_index !1382, !taffo.constinfo !67
-  %fi579 = call i32 @injectFault1(i64 1257, i32 %248, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi583 = call i32 @injectFault1(i64 1258, i32 %fi579, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %249 = sext i32 %fi583 to i64, !taffo.info !0, !llfi_index !1383
-  %fi582 = call i64 @injectFault0(i64 1258, i64 %249, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi584 = call i64 @injectFault0(i64 1259, i64 %fi582, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %250 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %247, i64 %fi584, !llfi_index !1384
+  %fi576 = call i32 @injectFault1(i64 1257, i32 %fi530, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi577 = call i32 @injectFault1(i64 1257, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %248 = sub nsw i32 %fi576, %fi577, !taffo.info !0, !llfi_index !1382, !taffo.constinfo !67
+  %fi575 = call i32 @injectFault1(i64 1257, i32 %248, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi579 = call i32 @injectFault1(i64 1258, i32 %fi575, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %249 = sext i32 %fi579 to i64, !taffo.info !0, !llfi_index !1383
+  %fi578 = call i64 @injectFault0(i64 1258, i64 %249, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi580 = call i64 @injectFault0(i64 1259, i64 %fi578, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %250 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %247, i64 %fi580, !llfi_index !1384
   %251 = load { i32, i32, i32 }*, { i32, i32, i32 }** %250, align 8, !llfi_index !1385
-  %fi586 = call i32 @injectFault1(i64 1261, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %252 = sext i32 %fi586 to i64, !taffo.info !0, !llfi_index !1386
-  %fi585 = call i64 @injectFault0(i64 1261, i64 %252, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %253 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %251, i64 %fi585, !llfi_index !1387
+  %fi582 = call i32 @injectFault1(i64 1261, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %252 = sext i32 %fi582 to i64, !taffo.info !0, !llfi_index !1386
+  %fi581 = call i64 @injectFault0(i64 1261, i64 %252, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %253 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %251, i64 %fi581, !llfi_index !1387
   %u8_24fixp213 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %253, i32 0, i32 0, !taffo.info !611, !llfi_index !1388
   %u8_24fixp261 = load i32, i32* %u8_24fixp213, align 4, !taffo.info !611, !llfi_index !1389
-  %fi587 = call i32 @injectFault1(i64 1264, i32 %u8_24fixp261, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi583 = call i32 @injectFault1(i64 1264, i32 %u8_24fixp261, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %254, !llfi_index !1390
 
 254:                                              ; preds = %245, %243
-  %u8_24fixp292 = phi i32 [ %fi576, %243 ], [ %fi587, %245 ], !taffo.info !611, !llfi_index !1391
-  %fi588 = call i32 @injectFault1(i64 1266, i32 %u8_24fixp292, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi589 = call i64 @injectFault0(i64 1267, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi590 = call i64 @injectFault0(i64 1267, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp133 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi589, i64 %fi590, !taffo.info !611, !llfi_index !1392, !taffo.target !1037
-  %fi591 = call i64 @injectFault0(i64 1268, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi592 = call i64 @injectFault0(i64 1268, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp182 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp133, i64 %fi591, i64 %fi592, !taffo.info !611, !llfi_index !1393, !taffo.target !1037
-  %fi593 = call i32 @injectFault1(i64 1269, i32 %fi588, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi593, i32* %u8_24fixp182, align 4, !taffo.info !47, !llfi_index !1394, !taffo.target !1037
+  %u8_24fixp292 = phi i32 [ %fi572, %243 ], [ %fi583, %245 ], !taffo.info !611, !llfi_index !1391
+  %fi584 = call i32 @injectFault1(i64 1266, i32 %u8_24fixp292, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi585 = call i64 @injectFault0(i64 1267, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi586 = call i64 @injectFault0(i64 1267, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp133 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi585, i64 %fi586, !taffo.info !611, !llfi_index !1392, !taffo.target !1037
+  %fi587 = call i64 @injectFault0(i64 1268, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi588 = call i64 @injectFault0(i64 1268, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp182 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp133, i64 %fi587, i64 %fi588, !taffo.info !611, !llfi_index !1393, !taffo.target !1037
+  %fi589 = call i32 @injectFault1(i64 1269, i32 %fi584, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi589, i32* %u8_24fixp182, align 4, !taffo.info !47, !llfi_index !1394, !taffo.target !1037
   %matchop83 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1395
   %255 = load i32, i32* %matchop83, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1396
-  %fi594 = call i32 @injectFault1(i64 1271, i32 %255, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi596 = call i32 @injectFault1(i64 1272, i32 %fi594, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi597 = call i32 @injectFault1(i64 1272, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %256 = sub nsw i32 %fi596, %fi597, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1397, !taffo.constinfo !67
-  %fi595 = call i32 @injectFault1(i64 1272, i32 %256, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi384 = call i32 @injectFault1(i64 1273, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi385 = call i32 @injectFault1(i64 1273, i32 %fi595, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %257 = icmp eq i32 %fi384, %fi385, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1398
-  %fi383 = call i1 @injectFault2(i64 1273, i1 %257, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi386 = call i1 @injectFault2(i64 1274, i1 %fi383, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi386, label %260, label %258, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1399
+  %fi590 = call i32 @injectFault1(i64 1271, i32 %255, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi592 = call i32 @injectFault1(i64 1272, i32 %fi590, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi593 = call i32 @injectFault1(i64 1272, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %256 = sub nsw i32 %fi592, %fi593, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1397, !taffo.constinfo !67
+  %fi591 = call i32 @injectFault1(i64 1272, i32 %256, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi381 = call i32 @injectFault1(i64 1273, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi382 = call i32 @injectFault1(i64 1273, i32 %fi591, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %257 = icmp eq i32 %fi381, %fi382, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1398
+  %fi380 = call i1 @injectFault3(i64 1273, i1 %257, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi383 = call i1 @injectFault3(i64 1274, i1 %fi380, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi383, label %260, label %258, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1399
 
 258:                                              ; preds = %254
-  %fi388 = call i32 @injectFault1(i64 1275, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi389 = call i32 @injectFault1(i64 1275, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %259 = icmp eq i32 %fi388, %fi389, !taffo.info !0, !llfi_index !1400
-  %fi387 = call i1 @injectFault2(i64 1275, i1 %259, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi390 = call i1 @injectFault2(i64 1276, i1 %fi387, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi390, label %260, label %262, !llfi_index !1401
+  %fi385 = call i32 @injectFault1(i64 1275, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi386 = call i32 @injectFault1(i64 1275, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %259 = icmp eq i32 %fi385, %fi386, !taffo.info !0, !llfi_index !1400
+  %fi384 = call i1 @injectFault3(i64 1275, i1 %259, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi387 = call i1 @injectFault3(i64 1276, i1 %fi384, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi387, label %260, label %262, !llfi_index !1401
 
 260:                                              ; preds = %258, %254
-  %fi609 = call i32 @injectFault1(i64 1277, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi610 = call i32 @injectFault1(i64 1277, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %261 = lshr i32 %fi609, %fi610, !llfi_index !1402
-  %fi608 = call i32 @injectFault1(i64 1277, i32 %261, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi605 = call i32 @injectFault1(i64 1277, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi606 = call i32 @injectFault1(i64 1277, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %261 = lshr i32 %fi605, %fi606, !llfi_index !1402
+  %fi604 = call i32 @injectFault1(i64 1277, i32 %261, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %272, !llfi_index !1403
 
 262:                                              ; preds = %258
   %263 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1404
   %264 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %263, align 8, !llfi_index !1405
-  %fi612 = call i32 @injectFault1(i64 1281, i32 %fi534, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi613 = call i32 @injectFault1(i64 1281, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %265 = sub nsw i32 %fi612, %fi613, !taffo.info !0, !llfi_index !1406, !taffo.constinfo !67
-  %fi611 = call i32 @injectFault1(i64 1281, i32 %265, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi615 = call i32 @injectFault1(i64 1282, i32 %fi611, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %266 = sext i32 %fi615 to i64, !taffo.info !0, !llfi_index !1407
-  %fi614 = call i64 @injectFault0(i64 1282, i64 %266, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi616 = call i64 @injectFault0(i64 1283, i64 %fi614, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %267 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %264, i64 %fi616, !llfi_index !1408
+  %fi608 = call i32 @injectFault1(i64 1281, i32 %fi530, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi609 = call i32 @injectFault1(i64 1281, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %265 = sub nsw i32 %fi608, %fi609, !taffo.info !0, !llfi_index !1406, !taffo.constinfo !67
+  %fi607 = call i32 @injectFault1(i64 1281, i32 %265, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi611 = call i32 @injectFault1(i64 1282, i32 %fi607, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %266 = sext i32 %fi611 to i64, !taffo.info !0, !llfi_index !1407
+  %fi610 = call i64 @injectFault0(i64 1282, i64 %266, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi612 = call i64 @injectFault0(i64 1283, i64 %fi610, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %267 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %264, i64 %fi612, !llfi_index !1408
   %268 = load { i32, i32, i32 }*, { i32, i32, i32 }** %267, align 8, !llfi_index !1409
-  %fi618 = call i32 @injectFault1(i64 1285, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi619 = call i32 @injectFault1(i64 1285, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %269 = add nsw i32 %fi618, %fi619, !taffo.info !323, !llfi_index !1410, !taffo.constinfo !67
-  %fi617 = call i32 @injectFault1(i64 1285, i32 %269, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi621 = call i32 @injectFault1(i64 1286, i32 %fi617, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %270 = sext i32 %fi621 to i64, !taffo.info !323, !llfi_index !1411
-  %fi620 = call i64 @injectFault0(i64 1286, i64 %270, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %271 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %268, i64 %fi620, !llfi_index !1412
+  %fi614 = call i32 @injectFault1(i64 1285, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi615 = call i32 @injectFault1(i64 1285, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %269 = add nsw i32 %fi614, %fi615, !taffo.info !323, !llfi_index !1410, !taffo.constinfo !67
+  %fi613 = call i32 @injectFault1(i64 1285, i32 %269, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi617 = call i32 @injectFault1(i64 1286, i32 %fi613, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %270 = sext i32 %fi617 to i64, !taffo.info !323, !llfi_index !1411
+  %fi616 = call i64 @injectFault0(i64 1286, i64 %270, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %271 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %268, i64 %fi616, !llfi_index !1412
   %u8_24fixp212 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %271, i32 0, i32 0, !taffo.info !611, !llfi_index !1413
   %u8_24fixp260 = load i32, i32* %u8_24fixp212, align 4, !taffo.info !611, !llfi_index !1414
-  %fi622 = call i32 @injectFault1(i64 1289, i32 %u8_24fixp260, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi618 = call i32 @injectFault1(i64 1289, i32 %u8_24fixp260, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %272, !llfi_index !1415
 
 272:                                              ; preds = %262, %260
-  %u8_24fixp291 = phi i32 [ %fi608, %260 ], [ %fi622, %262 ], !taffo.info !611, !llfi_index !1416
-  %fi623 = call i32 @injectFault1(i64 1291, i32 %u8_24fixp291, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi624 = call i64 @injectFault0(i64 1292, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi625 = call i64 @injectFault0(i64 1292, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp132 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi624, i64 %fi625, !taffo.info !611, !llfi_index !1417, !taffo.target !1037
-  %fi626 = call i64 @injectFault0(i64 1293, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi627 = call i64 @injectFault0(i64 1293, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp181 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp132, i64 %fi626, i64 %fi627, !taffo.info !611, !llfi_index !1418, !taffo.target !1037
-  %fi628 = call i32 @injectFault1(i64 1294, i32 %fi623, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi628, i32* %u8_24fixp181, align 8, !taffo.info !47, !llfi_index !1419, !taffo.target !1037
-  %fi192 = call i32 @injectFault1(i64 1295, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi193 = call i32 @injectFault1(i64 1295, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %273 = icmp eq i32 %fi192, %fi193, !taffo.info !323, !llfi_index !1420
-  %fi191 = call i1 @injectFault2(i64 1295, i1 %273, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi194 = call i1 @injectFault2(i64 1296, i1 %fi191, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi194, label %274, label %276, !llfi_index !1421
+  %u8_24fixp291 = phi i32 [ %fi604, %260 ], [ %fi618, %262 ], !taffo.info !611, !llfi_index !1416
+  %fi619 = call i32 @injectFault1(i64 1291, i32 %u8_24fixp291, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi620 = call i64 @injectFault0(i64 1292, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi621 = call i64 @injectFault0(i64 1292, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp132 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi620, i64 %fi621, !taffo.info !611, !llfi_index !1417, !taffo.target !1037
+  %fi622 = call i64 @injectFault0(i64 1293, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi623 = call i64 @injectFault0(i64 1293, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp181 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp132, i64 %fi622, i64 %fi623, !taffo.info !611, !llfi_index !1418, !taffo.target !1037
+  %fi624 = call i32 @injectFault1(i64 1294, i32 %fi619, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi624, i32* %u8_24fixp181, align 8, !taffo.info !47, !llfi_index !1419, !taffo.target !1037
+  %fi193 = call i32 @injectFault1(i64 1295, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi194 = call i32 @injectFault1(i64 1295, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %273 = icmp eq i32 %fi193, %fi194, !taffo.info !323, !llfi_index !1420
+  %fi192 = call i1 @injectFault3(i64 1295, i1 %273, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi195 = call i1 @injectFault3(i64 1296, i1 %fi192, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi195, label %274, label %276, !llfi_index !1421
 
 274:                                              ; preds = %272
-  %fi638 = call i32 @injectFault1(i64 1297, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi639 = call i32 @injectFault1(i64 1297, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %275 = lshr i32 %fi638, %fi639, !llfi_index !1422
-  %fi637 = call i32 @injectFault1(i64 1297, i32 %275, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi634 = call i32 @injectFault1(i64 1297, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi635 = call i32 @injectFault1(i64 1297, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %275 = lshr i32 %fi634, %fi635, !llfi_index !1422
+  %fi633 = call i32 @injectFault1(i64 1297, i32 %275, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %285, !llfi_index !1423
 
 276:                                              ; preds = %272
   %277 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1424
   %278 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %277, align 8, !llfi_index !1425
-  %fi641 = call i32 @injectFault1(i64 1301, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %279 = sext i32 %fi641 to i64, !taffo.info !323, !llfi_index !1426
-  %fi640 = call i64 @injectFault0(i64 1301, i64 %279, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi642 = call i64 @injectFault0(i64 1302, i64 %fi640, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %280 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %278, i64 %fi642, !llfi_index !1427
+  %fi637 = call i32 @injectFault1(i64 1301, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %279 = sext i32 %fi637 to i64, !taffo.info !323, !llfi_index !1426
+  %fi636 = call i64 @injectFault0(i64 1301, i64 %279, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi638 = call i64 @injectFault0(i64 1302, i64 %fi636, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %280 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %278, i64 %fi638, !llfi_index !1427
   %281 = load { i32, i32, i32 }*, { i32, i32, i32 }** %280, align 8, !llfi_index !1428
-  %fi644 = call i32 @injectFault1(i64 1304, i32 0, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi645 = call i32 @injectFault1(i64 1304, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %282 = sub nsw i32 %fi644, %fi645, !taffo.info !1081, !llfi_index !1429, !taffo.constinfo !67
-  %fi643 = call i32 @injectFault1(i64 1304, i32 %282, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi647 = call i32 @injectFault1(i64 1305, i32 %fi643, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %283 = sext i32 %fi647 to i64, !taffo.info !1081, !llfi_index !1430
-  %fi646 = call i64 @injectFault0(i64 1305, i64 %283, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %284 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %281, i64 %fi646, !llfi_index !1431
+  %fi640 = call i32 @injectFault1(i64 1304, i32 0, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi641 = call i32 @injectFault1(i64 1304, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %282 = sub nsw i32 %fi640, %fi641, !taffo.info !1081, !llfi_index !1429, !taffo.constinfo !67
+  %fi639 = call i32 @injectFault1(i64 1304, i32 %282, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi643 = call i32 @injectFault1(i64 1305, i32 %fi639, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %283 = sext i32 %fi643 to i64, !taffo.info !1081, !llfi_index !1430
+  %fi642 = call i64 @injectFault0(i64 1305, i64 %283, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %284 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %281, i64 %fi642, !llfi_index !1431
   %u8_24fixp211 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %284, i32 0, i32 0, !taffo.info !611, !llfi_index !1432
   %u8_24fixp259 = load i32, i32* %u8_24fixp211, align 4, !taffo.info !611, !llfi_index !1433
-  %fi648 = call i32 @injectFault1(i64 1308, i32 %u8_24fixp259, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi644 = call i32 @injectFault1(i64 1308, i32 %u8_24fixp259, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %285, !llfi_index !1434
 
 285:                                              ; preds = %276, %274
-  %u8_24fixp290 = phi i32 [ %fi637, %274 ], [ %fi648, %276 ], !taffo.info !611, !llfi_index !1435
-  %fi649 = call i32 @injectFault1(i64 1310, i32 %u8_24fixp290, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi650 = call i64 @injectFault0(i64 1311, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi651 = call i64 @injectFault0(i64 1311, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp131 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi650, i64 %fi651, !taffo.info !611, !llfi_index !1436, !taffo.target !1037
-  %fi652 = call i64 @injectFault0(i64 1312, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi653 = call i64 @injectFault0(i64 1312, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp180 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp131, i64 %fi652, i64 %fi653, !taffo.info !611, !llfi_index !1437, !taffo.target !1037
-  %fi654 = call i32 @injectFault1(i64 1313, i32 %fi649, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi654, i32* %u8_24fixp180, align 4, !taffo.info !47, !llfi_index !1438, !taffo.target !1037
+  %u8_24fixp290 = phi i32 [ %fi633, %274 ], [ %fi644, %276 ], !taffo.info !611, !llfi_index !1435
+  %fi645 = call i32 @injectFault1(i64 1310, i32 %u8_24fixp290, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi646 = call i64 @injectFault0(i64 1311, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi647 = call i64 @injectFault0(i64 1311, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp131 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi646, i64 %fi647, !taffo.info !611, !llfi_index !1436, !taffo.target !1037
+  %fi648 = call i64 @injectFault0(i64 1312, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi649 = call i64 @injectFault0(i64 1312, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp180 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp131, i64 %fi648, i64 %fi649, !taffo.info !611, !llfi_index !1437, !taffo.target !1037
+  %fi650 = call i32 @injectFault1(i64 1313, i32 %fi645, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi650, i32* %u8_24fixp180, align 4, !taffo.info !47, !llfi_index !1438, !taffo.target !1037
   %286 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1439
   %287 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %286, align 8, !llfi_index !1440
-  %fi656 = call i32 @injectFault1(i64 1316, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %288 = sext i32 %fi656 to i64, !taffo.info !323, !llfi_index !1441
-  %fi655 = call i64 @injectFault0(i64 1316, i64 %288, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi657 = call i64 @injectFault0(i64 1317, i64 %fi655, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %289 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %287, i64 %fi657, !llfi_index !1442
+  %fi652 = call i32 @injectFault1(i64 1316, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %288 = sext i32 %fi652 to i64, !taffo.info !323, !llfi_index !1441
+  %fi651 = call i64 @injectFault0(i64 1316, i64 %288, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi653 = call i64 @injectFault0(i64 1317, i64 %fi651, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %289 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %287, i64 %fi653, !llfi_index !1442
   %290 = load { i32, i32, i32 }*, { i32, i32, i32 }** %289, align 8, !llfi_index !1443
-  %fi659 = call i32 @injectFault1(i64 1319, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %291 = sext i32 %fi659 to i64, !taffo.info !0, !llfi_index !1444
-  %fi658 = call i64 @injectFault0(i64 1319, i64 %291, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %292 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %290, i64 %fi658, !llfi_index !1445
+  %fi655 = call i32 @injectFault1(i64 1319, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %291 = sext i32 %fi655 to i64, !taffo.info !0, !llfi_index !1444
+  %fi654 = call i64 @injectFault0(i64 1319, i64 %291, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %292 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %290, i64 %fi654, !llfi_index !1445
   %u8_24fixp210 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %292, i32 0, i32 0, !taffo.info !611, !llfi_index !1446
   %u8_24fixp258 = load i32, i32* %u8_24fixp210, align 4, !taffo.info !611, !llfi_index !1447
-  %fi660 = call i32 @injectFault1(i64 1322, i32 %u8_24fixp258, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi661 = call i64 @injectFault0(i64 1323, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi662 = call i64 @injectFault0(i64 1323, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp130 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi661, i64 %fi662, !taffo.info !611, !llfi_index !1448, !taffo.target !1037
-  %fi663 = call i64 @injectFault0(i64 1324, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi664 = call i64 @injectFault0(i64 1324, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp179 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp130, i64 %fi663, i64 %fi664, !taffo.info !611, !llfi_index !1449, !taffo.target !1037
-  %fi665 = call i32 @injectFault1(i64 1325, i32 %fi660, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi665, i32* %u8_24fixp179, align 4, !taffo.info !47, !llfi_index !1450, !taffo.target !1037
+  %fi656 = call i32 @injectFault1(i64 1322, i32 %u8_24fixp258, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi657 = call i64 @injectFault0(i64 1323, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi658 = call i64 @injectFault0(i64 1323, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp130 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi657, i64 %fi658, !taffo.info !611, !llfi_index !1448, !taffo.target !1037
+  %fi659 = call i64 @injectFault0(i64 1324, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi660 = call i64 @injectFault0(i64 1324, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp179 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp130, i64 %fi659, i64 %fi660, !taffo.info !611, !llfi_index !1449, !taffo.target !1037
+  %fi661 = call i32 @injectFault1(i64 1325, i32 %fi656, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi661, i32* %u8_24fixp179, align 4, !taffo.info !47, !llfi_index !1450, !taffo.target !1037
   %matchop82 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1451
   %293 = load i32, i32* %matchop82, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1452
-  %fi666 = call i32 @injectFault1(i64 1327, i32 %293, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi668 = call i32 @injectFault1(i64 1328, i32 %fi666, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi669 = call i32 @injectFault1(i64 1328, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %294 = sub nsw i32 %fi668, %fi669, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1453, !taffo.constinfo !67
-  %fi667 = call i32 @injectFault1(i64 1328, i32 %294, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi671 = call i32 @injectFault1(i64 1329, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi672 = call i32 @injectFault1(i64 1329, i32 %fi667, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %295 = icmp eq i32 %fi671, %fi672, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1454
-  %fi670 = call i1 @injectFault2(i64 1329, i1 %295, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi673 = call i1 @injectFault2(i64 1330, i1 %fi670, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi673, label %296, label %298, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1455
+  %fi662 = call i32 @injectFault1(i64 1327, i32 %293, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi199 = call i32 @injectFault1(i64 1328, i32 %fi662, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi200 = call i32 @injectFault1(i64 1328, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %294 = sub nsw i32 %fi199, %fi200, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1453, !taffo.constinfo !67
+  %fi198 = call i32 @injectFault1(i64 1328, i32 %294, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi202 = call i32 @injectFault1(i64 1329, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi203 = call i32 @injectFault1(i64 1329, i32 %fi198, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %295 = icmp eq i32 %fi202, %fi203, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1454
+  %fi201 = call i1 @injectFault3(i64 1329, i1 %295, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi669 = call i1 @injectFault3(i64 1330, i1 %fi201, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi669, label %296, label %298, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1455
 
 296:                                              ; preds = %285
-  %fi675 = call i32 @injectFault1(i64 1331, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi676 = call i32 @injectFault1(i64 1331, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %297 = lshr i32 %fi675, %fi676, !llfi_index !1456
-  %fi674 = call i32 @injectFault1(i64 1331, i32 %297, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi671 = call i32 @injectFault1(i64 1331, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi672 = call i32 @injectFault1(i64 1331, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %297 = lshr i32 %fi671, %fi672, !llfi_index !1456
+  %fi670 = call i32 @injectFault1(i64 1331, i32 %297, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %307, !llfi_index !1457
 
 298:                                              ; preds = %285
   %299 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1458
   %300 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %299, align 8, !llfi_index !1459
-  %fi678 = call i32 @injectFault1(i64 1335, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %301 = sext i32 %fi678 to i64, !taffo.info !323, !llfi_index !1460
-  %fi677 = call i64 @injectFault0(i64 1335, i64 %301, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi679 = call i64 @injectFault0(i64 1336, i64 %fi677, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %302 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %300, i64 %fi679, !llfi_index !1461
+  %fi674 = call i32 @injectFault1(i64 1335, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %301 = sext i32 %fi674 to i64, !taffo.info !323, !llfi_index !1460
+  %fi673 = call i64 @injectFault0(i64 1335, i64 %301, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi675 = call i64 @injectFault0(i64 1336, i64 %fi673, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %302 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %300, i64 %fi675, !llfi_index !1461
   %303 = load { i32, i32, i32 }*, { i32, i32, i32 }** %302, align 8, !llfi_index !1462
-  %fi681 = call i32 @injectFault1(i64 1338, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi682 = call i32 @injectFault1(i64 1338, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %304 = add nsw i32 %fi681, %fi682, !taffo.info !323, !llfi_index !1463, !taffo.constinfo !67
-  %fi680 = call i32 @injectFault1(i64 1338, i32 %304, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi684 = call i32 @injectFault1(i64 1339, i32 %fi680, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %305 = sext i32 %fi684 to i64, !taffo.info !323, !llfi_index !1464
-  %fi683 = call i64 @injectFault0(i64 1339, i64 %305, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %306 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %303, i64 %fi683, !llfi_index !1465
+  %fi677 = call i32 @injectFault1(i64 1338, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi678 = call i32 @injectFault1(i64 1338, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %304 = add nsw i32 %fi677, %fi678, !taffo.info !323, !llfi_index !1463, !taffo.constinfo !67
+  %fi676 = call i32 @injectFault1(i64 1338, i32 %304, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi680 = call i32 @injectFault1(i64 1339, i32 %fi676, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %305 = sext i32 %fi680 to i64, !taffo.info !323, !llfi_index !1464
+  %fi679 = call i64 @injectFault0(i64 1339, i64 %305, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %306 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %303, i64 %fi679, !llfi_index !1465
   %u8_24fixp209 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %306, i32 0, i32 0, !taffo.info !611, !llfi_index !1466
   %u8_24fixp257 = load i32, i32* %u8_24fixp209, align 4, !taffo.info !611, !llfi_index !1467
-  %fi685 = call i32 @injectFault1(i64 1342, i32 %u8_24fixp257, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi681 = call i32 @injectFault1(i64 1342, i32 %u8_24fixp257, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %307, !llfi_index !1468
 
 307:                                              ; preds = %298, %296
-  %u8_24fixp289 = phi i32 [ %fi674, %296 ], [ %fi685, %298 ], !taffo.info !611, !llfi_index !1469
-  %fi686 = call i32 @injectFault1(i64 1344, i32 %u8_24fixp289, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi687 = call i64 @injectFault0(i64 1345, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi688 = call i64 @injectFault0(i64 1345, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp129 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi687, i64 %fi688, !taffo.info !611, !llfi_index !1470, !taffo.target !1037
-  %fi689 = call i64 @injectFault0(i64 1346, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi690 = call i64 @injectFault0(i64 1346, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp178 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp129, i64 %fi689, i64 %fi690, !taffo.info !611, !llfi_index !1471, !taffo.target !1037
-  %fi428 = call i32 @injectFault1(i64 1347, i32 %fi686, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi428, i32* %u8_24fixp178, align 4, !taffo.info !47, !llfi_index !1472, !taffo.target !1037
-  %fi430 = call i32 @injectFault1(i64 1348, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi431 = call i32 @injectFault1(i64 1348, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %308 = icmp eq i32 %fi430, %fi431, !taffo.info !323, !llfi_index !1473
-  %fi429 = call i1 @injectFault2(i64 1348, i1 %308, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi432 = call i1 @injectFault2(i64 1349, i1 %fi429, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi432, label %313, label %309, !llfi_index !1474
+  %u8_24fixp289 = phi i32 [ %fi670, %296 ], [ %fi681, %298 ], !taffo.info !611, !llfi_index !1469
+  %fi682 = call i32 @injectFault1(i64 1344, i32 %u8_24fixp289, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi683 = call i64 @injectFault0(i64 1345, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi684 = call i64 @injectFault0(i64 1345, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp129 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi683, i64 %fi684, !taffo.info !611, !llfi_index !1470, !taffo.target !1037
+  %fi685 = call i64 @injectFault0(i64 1346, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi686 = call i64 @injectFault0(i64 1346, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp178 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp129, i64 %fi685, i64 %fi686, !taffo.info !611, !llfi_index !1471, !taffo.target !1037
+  %fi424 = call i32 @injectFault1(i64 1347, i32 %fi682, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi424, i32* %u8_24fixp178, align 4, !taffo.info !47, !llfi_index !1472, !taffo.target !1037
+  %fi426 = call i32 @injectFault1(i64 1348, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi427 = call i32 @injectFault1(i64 1348, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %308 = icmp eq i32 %fi426, %fi427, !taffo.info !323, !llfi_index !1473
+  %fi425 = call i1 @injectFault3(i64 1348, i1 %308, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi428 = call i1 @injectFault3(i64 1349, i1 %fi425, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi428, label %313, label %309, !llfi_index !1474
 
 309:                                              ; preds = %307
   %matchop81 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1053, !llfi_index !1475
   %310 = load i32, i32* %matchop81, align 4, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1476
-  %fi197 = call i32 @injectFault1(i64 1351, i32 %310, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi199 = call i32 @injectFault1(i64 1352, i32 %fi197, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi200 = call i32 @injectFault1(i64 1352, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %311 = sub nsw i32 %fi199, %fi200, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1477, !taffo.constinfo !67
-  %fi198 = call i32 @injectFault1(i64 1352, i32 %311, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi202 = call i32 @injectFault1(i64 1353, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi203 = call i32 @injectFault1(i64 1353, i32 %fi198, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %312 = icmp eq i32 %fi202, %fi203, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1478
-  %fi201 = call i1 @injectFault2(i64 1353, i1 %312, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi706 = call i1 @injectFault2(i64 1354, i1 %fi201, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi706, label %313, label %315, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1479
+  %fi696 = call i32 @injectFault1(i64 1351, i32 %310, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi698 = call i32 @injectFault1(i64 1352, i32 %fi696, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi699 = call i32 @injectFault1(i64 1352, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %311 = sub nsw i32 %fi698, %fi699, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1477, !taffo.constinfo !67
+  %fi697 = call i32 @injectFault1(i64 1352, i32 %311, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi701 = call i32 @injectFault1(i64 1353, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi702 = call i32 @injectFault1(i64 1353, i32 %fi697, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %312 = icmp eq i32 %fi701, %fi702, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1478
+  %fi700 = call i1 @injectFault3(i64 1353, i1 %312, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi703 = call i1 @injectFault3(i64 1354, i1 %fi700, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi703, label %313, label %315, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1479
 
 313:                                              ; preds = %309, %307
-  %fi708 = call i32 @injectFault1(i64 1355, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi709 = call i32 @injectFault1(i64 1355, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %314 = lshr i32 %fi708, %fi709, !llfi_index !1480
-  %fi707 = call i32 @injectFault1(i64 1355, i32 %314, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi705 = call i32 @injectFault1(i64 1355, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi706 = call i32 @injectFault1(i64 1355, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %314 = lshr i32 %fi705, %fi706, !llfi_index !1480
+  %fi704 = call i32 @injectFault1(i64 1355, i32 %314, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %325, !llfi_index !1481
 
 315:                                              ; preds = %309
   %316 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1482
   %317 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %316, align 8, !llfi_index !1483
-  %fi711 = call i32 @injectFault1(i64 1359, i32 %fi534, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi712 = call i32 @injectFault1(i64 1359, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %318 = add nsw i32 %fi711, %fi712, !taffo.info !1484, !llfi_index !1486, !taffo.constinfo !67
-  %fi710 = call i32 @injectFault1(i64 1359, i32 %318, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi714 = call i32 @injectFault1(i64 1360, i32 %fi710, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %319 = sext i32 %fi714 to i64, !taffo.info !1484, !llfi_index !1487
-  %fi713 = call i64 @injectFault0(i64 1360, i64 %319, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi715 = call i64 @injectFault0(i64 1361, i64 %fi713, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %320 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %317, i64 %fi715, !llfi_index !1488
+  %fi708 = call i32 @injectFault1(i64 1359, i32 %fi530, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi709 = call i32 @injectFault1(i64 1359, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %318 = add nsw i32 %fi708, %fi709, !taffo.info !1484, !llfi_index !1486, !taffo.constinfo !67
+  %fi707 = call i32 @injectFault1(i64 1359, i32 %318, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi711 = call i32 @injectFault1(i64 1360, i32 %fi707, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %319 = sext i32 %fi711 to i64, !taffo.info !1484, !llfi_index !1487
+  %fi710 = call i64 @injectFault0(i64 1360, i64 %319, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi712 = call i64 @injectFault0(i64 1361, i64 %fi710, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %320 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %317, i64 %fi712, !llfi_index !1488
   %321 = load { i32, i32, i32 }*, { i32, i32, i32 }** %320, align 8, !llfi_index !1489
-  %fi717 = call i32 @injectFault1(i64 1363, i32 0, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi718 = call i32 @injectFault1(i64 1363, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %322 = sub nsw i32 %fi717, %fi718, !taffo.info !1081, !llfi_index !1490, !taffo.constinfo !67
-  %fi716 = call i32 @injectFault1(i64 1363, i32 %322, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi720 = call i32 @injectFault1(i64 1364, i32 %fi716, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %323 = sext i32 %fi720 to i64, !taffo.info !1081, !llfi_index !1491
-  %fi719 = call i64 @injectFault0(i64 1364, i64 %323, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %324 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %321, i64 %fi719, !llfi_index !1492
+  %fi714 = call i32 @injectFault1(i64 1363, i32 0, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi715 = call i32 @injectFault1(i64 1363, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %322 = sub nsw i32 %fi714, %fi715, !taffo.info !1081, !llfi_index !1490, !taffo.constinfo !67
+  %fi713 = call i32 @injectFault1(i64 1363, i32 %322, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi717 = call i32 @injectFault1(i64 1364, i32 %fi713, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %323 = sext i32 %fi717 to i64, !taffo.info !1081, !llfi_index !1491
+  %fi716 = call i64 @injectFault0(i64 1364, i64 %323, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %324 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %321, i64 %fi716, !llfi_index !1492
   %u8_24fixp208 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %324, i32 0, i32 0, !taffo.info !611, !llfi_index !1493
   %u8_24fixp256 = load i32, i32* %u8_24fixp208, align 4, !taffo.info !611, !llfi_index !1494
-  %fi721 = call i32 @injectFault1(i64 1367, i32 %u8_24fixp256, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi718 = call i32 @injectFault1(i64 1367, i32 %u8_24fixp256, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %325, !llfi_index !1495
 
 325:                                              ; preds = %315, %313
-  %u8_24fixp288 = phi i32 [ %fi707, %313 ], [ %fi721, %315 ], !taffo.info !611, !llfi_index !1496
-  %fi722 = call i32 @injectFault1(i64 1369, i32 %u8_24fixp288, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi723 = call i64 @injectFault0(i64 1370, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi724 = call i64 @injectFault0(i64 1370, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp128 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi723, i64 %fi724, !taffo.info !611, !llfi_index !1497, !taffo.target !1037
-  %fi725 = call i64 @injectFault0(i64 1371, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi726 = call i64 @injectFault0(i64 1371, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp177 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp128, i64 %fi725, i64 %fi726, !taffo.info !611, !llfi_index !1498, !taffo.target !1037
-  %fi727 = call i32 @injectFault1(i64 1372, i32 %fi722, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi727, i32* %u8_24fixp177, align 8, !taffo.info !47, !llfi_index !1499, !taffo.target !1037
+  %u8_24fixp288 = phi i32 [ %fi704, %313 ], [ %fi718, %315 ], !taffo.info !611, !llfi_index !1496
+  %fi719 = call i32 @injectFault1(i64 1369, i32 %u8_24fixp288, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi720 = call i64 @injectFault0(i64 1370, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi721 = call i64 @injectFault0(i64 1370, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp128 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi720, i64 %fi721, !taffo.info !611, !llfi_index !1497, !taffo.target !1037
+  %fi722 = call i64 @injectFault0(i64 1371, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi723 = call i64 @injectFault0(i64 1371, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp177 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp128, i64 %fi722, i64 %fi723, !taffo.info !611, !llfi_index !1498, !taffo.target !1037
+  %fi724 = call i32 @injectFault1(i64 1372, i32 %fi719, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi724, i32* %u8_24fixp177, align 8, !taffo.info !47, !llfi_index !1499, !taffo.target !1037
   %matchop80 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1053, !llfi_index !1500
   %326 = load i32, i32* %matchop80, align 4, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1501
-  %fi728 = call i32 @injectFault1(i64 1374, i32 %326, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi701 = call i32 @injectFault1(i64 1375, i32 %fi728, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi702 = call i32 @injectFault1(i64 1375, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %327 = sub nsw i32 %fi701, %fi702, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1502, !taffo.constinfo !67
-  %fi700 = call i32 @injectFault1(i64 1375, i32 %327, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi704 = call i32 @injectFault1(i64 1376, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi705 = call i32 @injectFault1(i64 1376, i32 %fi700, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %328 = icmp eq i32 %fi704, %fi705, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1503
-  %fi703 = call i1 @injectFault2(i64 1376, i1 %328, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi734 = call i1 @injectFault2(i64 1377, i1 %fi703, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi734, label %329, label %331, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1504
+  %fi725 = call i32 @injectFault1(i64 1374, i32 %326, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi664 = call i32 @injectFault1(i64 1375, i32 %fi725, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi665 = call i32 @injectFault1(i64 1375, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %327 = sub nsw i32 %fi664, %fi665, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1502, !taffo.constinfo !67
+  %fi663 = call i32 @injectFault1(i64 1375, i32 %327, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi667 = call i32 @injectFault1(i64 1376, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi668 = call i32 @injectFault1(i64 1376, i32 %fi663, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %328 = icmp eq i32 %fi667, %fi668, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1503
+  %fi666 = call i1 @injectFault3(i64 1376, i1 %328, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi733 = call i1 @injectFault3(i64 1377, i1 %fi666, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi733, label %329, label %331, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1504
 
 329:                                              ; preds = %325
-  %fi736 = call i32 @injectFault1(i64 1378, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi737 = call i32 @injectFault1(i64 1378, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %330 = lshr i32 %fi736, %fi737, !llfi_index !1505
-  %fi735 = call i32 @injectFault1(i64 1378, i32 %330, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi735 = call i32 @injectFault1(i64 1378, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi736 = call i32 @injectFault1(i64 1378, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %330 = lshr i32 %fi735, %fi736, !llfi_index !1505
+  %fi734 = call i32 @injectFault1(i64 1378, i32 %330, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %340, !llfi_index !1506
 
 331:                                              ; preds = %325
   %332 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1507
   %333 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %332, align 8, !llfi_index !1508
-  %fi739 = call i32 @injectFault1(i64 1382, i32 %fi534, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi740 = call i32 @injectFault1(i64 1382, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %334 = add nsw i32 %fi739, %fi740, !taffo.info !1484, !llfi_index !1509, !taffo.constinfo !67
-  %fi738 = call i32 @injectFault1(i64 1382, i32 %334, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi742 = call i32 @injectFault1(i64 1383, i32 %fi738, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %335 = sext i32 %fi742 to i64, !taffo.info !1484, !llfi_index !1510
-  %fi741 = call i64 @injectFault0(i64 1383, i64 %335, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi743 = call i64 @injectFault0(i64 1384, i64 %fi741, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %336 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %333, i64 %fi743, !llfi_index !1511
+  %fi738 = call i32 @injectFault1(i64 1382, i32 %fi530, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi739 = call i32 @injectFault1(i64 1382, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %334 = add nsw i32 %fi738, %fi739, !taffo.info !1484, !llfi_index !1509, !taffo.constinfo !67
+  %fi737 = call i32 @injectFault1(i64 1382, i32 %334, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi741 = call i32 @injectFault1(i64 1383, i32 %fi737, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %335 = sext i32 %fi741 to i64, !taffo.info !1484, !llfi_index !1510
+  %fi740 = call i64 @injectFault0(i64 1383, i64 %335, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi742 = call i64 @injectFault0(i64 1384, i64 %fi740, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %336 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %333, i64 %fi742, !llfi_index !1511
   %337 = load { i32, i32, i32 }*, { i32, i32, i32 }** %336, align 8, !llfi_index !1512
-  %fi745 = call i32 @injectFault1(i64 1386, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %338 = sext i32 %fi745 to i64, !taffo.info !0, !llfi_index !1513
-  %fi744 = call i64 @injectFault0(i64 1386, i64 %338, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %339 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %337, i64 %fi744, !llfi_index !1514
+  %fi744 = call i32 @injectFault1(i64 1386, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %338 = sext i32 %fi744 to i64, !taffo.info !0, !llfi_index !1513
+  %fi743 = call i64 @injectFault0(i64 1386, i64 %338, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %339 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %337, i64 %fi743, !llfi_index !1514
   %u8_24fixp207 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %339, i32 0, i32 0, !taffo.info !611, !llfi_index !1515
   %u8_24fixp255 = load i32, i32* %u8_24fixp207, align 4, !taffo.info !611, !llfi_index !1516
-  %fi421 = call i32 @injectFault1(i64 1389, i32 %u8_24fixp255, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi745 = call i32 @injectFault1(i64 1389, i32 %u8_24fixp255, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %340, !llfi_index !1517
 
 340:                                              ; preds = %331, %329
-  %u8_24fixp287 = phi i32 [ %fi735, %329 ], [ %fi421, %331 ], !taffo.info !611, !llfi_index !1518
-  %fi422 = call i32 @injectFault1(i64 1391, i32 %u8_24fixp287, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi423 = call i64 @injectFault0(i64 1392, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi424 = call i64 @injectFault0(i64 1392, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp127 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi423, i64 %fi424, !taffo.info !611, !llfi_index !1519, !taffo.target !1037
-  %fi425 = call i64 @injectFault0(i64 1393, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi426 = call i64 @injectFault0(i64 1393, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp176 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp127, i64 %fi425, i64 %fi426, !taffo.info !611, !llfi_index !1520, !taffo.target !1037
-  %fi427 = call i32 @injectFault1(i64 1394, i32 %fi422, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi427, i32* %u8_24fixp176, align 4, !taffo.info !47, !llfi_index !1521, !taffo.target !1037
+  %u8_24fixp287 = phi i32 [ %fi734, %329 ], [ %fi745, %331 ], !taffo.info !611, !llfi_index !1518
+  %fi746 = call i32 @injectFault1(i64 1391, i32 %u8_24fixp287, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi418 = call i64 @injectFault0(i64 1392, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi419 = call i64 @injectFault0(i64 1392, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp127 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi418, i64 %fi419, !taffo.info !611, !llfi_index !1519, !taffo.target !1037
+  %fi420 = call i64 @injectFault0(i64 1393, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi421 = call i64 @injectFault0(i64 1393, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp176 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp127, i64 %fi420, i64 %fi421, !taffo.info !611, !llfi_index !1520, !taffo.target !1037
+  %fi422 = call i32 @injectFault1(i64 1394, i32 %fi746, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi422, i32* %u8_24fixp176, align 4, !taffo.info !47, !llfi_index !1521, !taffo.target !1037
   %matchop79 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1522
   %341 = load i32, i32* %matchop79, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1523
-  %fi746 = call i32 @injectFault1(i64 1396, i32 %341, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi748 = call i32 @injectFault1(i64 1397, i32 %fi746, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi749 = call i32 @injectFault1(i64 1397, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %342 = sub nsw i32 %fi748, %fi749, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1524, !taffo.constinfo !67
-  %fi747 = call i32 @injectFault1(i64 1397, i32 %342, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi751 = call i32 @injectFault1(i64 1398, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi752 = call i32 @injectFault1(i64 1398, i32 %fi747, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %343 = icmp eq i32 %fi751, %fi752, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1525
-  %fi750 = call i1 @injectFault2(i64 1398, i1 %343, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi753 = call i1 @injectFault2(i64 1399, i1 %fi750, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi753, label %348, label %344, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1526
+  %fi423 = call i32 @injectFault1(i64 1396, i32 %341, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi761 = call i32 @injectFault1(i64 1397, i32 %fi423, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi762 = call i32 @injectFault1(i64 1397, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %342 = sub nsw i32 %fi761, %fi762, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1524, !taffo.constinfo !67
+  %fi760 = call i32 @injectFault1(i64 1397, i32 %342, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi764 = call i32 @injectFault1(i64 1398, i32 0, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi765 = call i32 @injectFault1(i64 1398, i32 %fi760, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %343 = icmp eq i32 %fi764, %fi765, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1525
+  %fi763 = call i1 @injectFault3(i64 1398, i1 %343, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi766 = call i1 @injectFault3(i64 1399, i1 %fi763, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi766, label %348, label %344, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1526
 
 344:                                              ; preds = %340
   %matchop78 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1053, !llfi_index !1527
   %345 = load i32, i32* %matchop78, align 4, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1528
-  %fi765 = call i32 @injectFault1(i64 1401, i32 %345, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi767 = call i32 @injectFault1(i64 1402, i32 %fi765, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi768 = call i32 @injectFault1(i64 1402, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %346 = sub nsw i32 %fi767, %fi768, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1529, !taffo.constinfo !67
-  %fi766 = call i32 @injectFault1(i64 1402, i32 %346, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi770 = call i32 @injectFault1(i64 1403, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi771 = call i32 @injectFault1(i64 1403, i32 %fi766, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %347 = icmp eq i32 %fi770, %fi771, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1530
-  %fi769 = call i1 @injectFault2(i64 1403, i1 %347, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi772 = call i1 @injectFault2(i64 1404, i1 %fi769, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi772, label %348, label %350, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1531
+  %fi767 = call i32 @injectFault1(i64 1401, i32 %345, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi769 = call i32 @injectFault1(i64 1402, i32 %fi767, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi770 = call i32 @injectFault1(i64 1402, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %346 = sub nsw i32 %fi769, %fi770, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1529, !taffo.constinfo !67
+  %fi768 = call i32 @injectFault1(i64 1402, i32 %346, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi772 = call i32 @injectFault1(i64 1403, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi773 = call i32 @injectFault1(i64 1403, i32 %fi768, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %347 = icmp eq i32 %fi772, %fi773, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1530
+  %fi771 = call i1 @injectFault3(i64 1403, i1 %347, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi774 = call i1 @injectFault3(i64 1404, i1 %fi771, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi774, label %348, label %350, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1531
 
 348:                                              ; preds = %344, %340
-  %fi774 = call i32 @injectFault1(i64 1405, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi775 = call i32 @injectFault1(i64 1405, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %349 = lshr i32 %fi774, %fi775, !llfi_index !1532
-  %fi773 = call i32 @injectFault1(i64 1405, i32 %349, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi776 = call i32 @injectFault1(i64 1405, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi777 = call i32 @injectFault1(i64 1405, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %349 = lshr i32 %fi776, %fi777, !llfi_index !1532
+  %fi775 = call i32 @injectFault1(i64 1405, i32 %349, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %360, !llfi_index !1533
 
 350:                                              ; preds = %344
   %351 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1534
   %352 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %351, align 8, !llfi_index !1535
-  %fi777 = call i32 @injectFault1(i64 1409, i32 %fi534, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi778 = call i32 @injectFault1(i64 1409, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %353 = add nsw i32 %fi777, %fi778, !taffo.info !1484, !llfi_index !1536, !taffo.constinfo !67
-  %fi776 = call i32 @injectFault1(i64 1409, i32 %353, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi780 = call i32 @injectFault1(i64 1410, i32 %fi776, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %354 = sext i32 %fi780 to i64, !taffo.info !1484, !llfi_index !1537
-  %fi779 = call i64 @injectFault0(i64 1410, i64 %354, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi781 = call i64 @injectFault0(i64 1411, i64 %fi779, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %355 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %352, i64 %fi781, !llfi_index !1538
+  %fi779 = call i32 @injectFault1(i64 1409, i32 %fi530, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi780 = call i32 @injectFault1(i64 1409, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %353 = add nsw i32 %fi779, %fi780, !taffo.info !1484, !llfi_index !1536, !taffo.constinfo !67
+  %fi778 = call i32 @injectFault1(i64 1409, i32 %353, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi782 = call i32 @injectFault1(i64 1410, i32 %fi778, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %354 = sext i32 %fi782 to i64, !taffo.info !1484, !llfi_index !1537
+  %fi781 = call i64 @injectFault0(i64 1410, i64 %354, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi783 = call i64 @injectFault0(i64 1411, i64 %fi781, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %355 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %352, i64 %fi783, !llfi_index !1538
   %356 = load { i32, i32, i32 }*, { i32, i32, i32 }** %355, align 8, !llfi_index !1539
-  %fi783 = call i32 @injectFault1(i64 1413, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi784 = call i32 @injectFault1(i64 1413, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %357 = add nsw i32 %fi783, %fi784, !taffo.info !323, !llfi_index !1540, !taffo.constinfo !67
-  %fi782 = call i32 @injectFault1(i64 1413, i32 %357, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1 = call i32 @injectFault1(i64 1414, i32 %fi782, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %358 = sext i32 %fi1 to i64, !taffo.info !323, !llfi_index !1541
-  %fi = call i64 @injectFault0(i64 1414, i64 %358, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %359 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %356, i64 %fi, !llfi_index !1542
+  %fi785 = call i32 @injectFault1(i64 1413, i32 0, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi786 = call i32 @injectFault1(i64 1413, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %357 = add nsw i32 %fi785, %fi786, !taffo.info !323, !llfi_index !1540, !taffo.constinfo !67
+  %fi784 = call i32 @injectFault1(i64 1413, i32 %357, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi788 = call i32 @injectFault1(i64 1414, i32 %fi784, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %358 = sext i32 %fi788 to i64, !taffo.info !323, !llfi_index !1541
+  %fi787 = call i64 @injectFault0(i64 1414, i64 %358, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %359 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %356, i64 %fi787, !llfi_index !1542
   %u8_24fixp206 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %359, i32 0, i32 0, !taffo.info !611, !llfi_index !1543
   %u8_24fixp254 = load i32, i32* %u8_24fixp206, align 4, !taffo.info !611, !llfi_index !1544
-  %fi787 = call i32 @injectFault1(i64 1417, i32 %u8_24fixp254, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi789 = call i32 @injectFault1(i64 1417, i32 %u8_24fixp254, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %360, !llfi_index !1545
 
 360:                                              ; preds = %350, %348
-  %u8_24fixp286 = phi i32 [ %fi773, %348 ], [ %fi787, %350 ], !taffo.info !611, !llfi_index !1546
-  %fi788 = call i32 @injectFault1(i64 1419, i32 %u8_24fixp286, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi789 = call i64 @injectFault0(i64 1420, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi790 = call i64 @injectFault0(i64 1420, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp126 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi789, i64 %fi790, !taffo.info !611, !llfi_index !1547, !taffo.target !1037
-  %fi791 = call i64 @injectFault0(i64 1421, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi792 = call i64 @injectFault0(i64 1421, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp175 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp126, i64 %fi791, i64 %fi792, !taffo.info !611, !llfi_index !1548, !taffo.target !1037
-  %fi793 = call i32 @injectFault1(i64 1422, i32 %fi788, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi793, i32* %u8_24fixp175, align 8, !taffo.info !47, !llfi_index !1549, !taffo.target !1037
-  %fi794 = call i64 @injectFault0(i64 1423, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi795 = call i64 @injectFault0(i64 1423, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp125 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi794, i64 %fi795, !taffo.info !611, !llfi_index !1550, !taffo.target !1037
+  %u8_24fixp286 = phi i32 [ %fi775, %348 ], [ %fi789, %350 ], !taffo.info !611, !llfi_index !1546
+  %fi790 = call i32 @injectFault1(i64 1419, i32 %u8_24fixp286, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi791 = call i64 @injectFault0(i64 1420, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi792 = call i64 @injectFault0(i64 1420, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp126 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi791, i64 %fi792, !taffo.info !611, !llfi_index !1547, !taffo.target !1037
+  %fi793 = call i64 @injectFault0(i64 1421, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi794 = call i64 @injectFault0(i64 1421, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp175 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp126, i64 %fi793, i64 %fi794, !taffo.info !611, !llfi_index !1548, !taffo.target !1037
+  %fi795 = call i32 @injectFault1(i64 1422, i32 %fi790, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi795, i32* %u8_24fixp175, align 8, !taffo.info !47, !llfi_index !1549, !taffo.target !1037
+  %fi796 = call i64 @injectFault0(i64 1423, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi797 = call i64 @injectFault0(i64 1423, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp125 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi796, i64 %fi797, !taffo.info !611, !llfi_index !1550, !taffo.target !1037
   %u2_30fixp174 = invoke i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* %u8_24fixp125)
           to label %361 unwind label %216, !taffo.info !1271, !llfi_index !1551, !taffo.constinfo !101, !taffo.target !1037
 
 361:                                              ; preds = %360
   %362 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1552
   %363 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %362, align 8, !llfi_index !1553
-  %fi797 = call i32 @injectFault1(i64 1427, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %364 = sext i32 %fi797 to i64, !taffo.info !323, !llfi_index !1554
-  %fi796 = call i64 @injectFault0(i64 1427, i64 %364, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi798 = call i64 @injectFault0(i64 1428, i64 %fi796, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %365 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %363, i64 %fi798, !llfi_index !1555
+  %fi799 = call i32 @injectFault1(i64 1427, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %364 = sext i32 %fi799 to i64, !taffo.info !323, !llfi_index !1554
+  %fi798 = call i64 @injectFault0(i64 1427, i64 %364, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi800 = call i64 @injectFault0(i64 1428, i64 %fi798, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %365 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %363, i64 %fi800, !llfi_index !1555
   %366 = load { i32, i32, i32 }*, { i32, i32, i32 }** %365, align 8, !llfi_index !1556
-  %fi800 = call i32 @injectFault1(i64 1430, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %367 = sext i32 %fi800 to i64, !taffo.info !0, !llfi_index !1557
-  %fi799 = call i64 @injectFault0(i64 1430, i64 %367, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %368 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %366, i64 %fi799, !llfi_index !1558
+  %fi802 = call i32 @injectFault1(i64 1430, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %367 = sext i32 %fi802 to i64, !taffo.info !0, !llfi_index !1557
+  %fi801 = call i64 @injectFault0(i64 1430, i64 %367, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %368 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %366, i64 %fi801, !llfi_index !1558
   %u8_24fixp232 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %368, i32 0, i32 0, !taffo.info !611, !llfi_index !1559
-  %fi802 = call i32 @injectFault1(i64 1433, i32 %u2_30fixp174, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi803 = call i32 @injectFault1(i64 1433, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %369 = lshr i32 %fi802, %fi803, !taffo.info !1271, !llfi_index !1560, !taffo.target !1037
-  %fi801 = call i32 @injectFault1(i64 1433, i32 %369, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi804 = call i32 @injectFault1(i64 1434, i32 %fi801, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi804, i32* %u8_24fixp232, align 4, !taffo.info !47, !llfi_index !1561, !taffo.target !1037
+  %fi804 = call i32 @injectFault1(i64 1433, i32 %u2_30fixp174, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi805 = call i32 @injectFault1(i64 1433, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %369 = lshr i32 %fi804, %fi805, !taffo.info !1271, !llfi_index !1560, !taffo.target !1037
+  %fi803 = call i32 @injectFault1(i64 1433, i32 %369, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi806 = call i32 @injectFault1(i64 1434, i32 %fi803, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi806, i32* %u8_24fixp232, align 4, !taffo.info !47, !llfi_index !1561, !taffo.target !1037
   %370 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1562
   %371 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %370, align 8, !llfi_index !1563
-  %fi806 = call i32 @injectFault1(i64 1437, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %372 = sext i32 %fi806 to i64, !taffo.info !323, !llfi_index !1564
-  %fi805 = call i64 @injectFault0(i64 1437, i64 %372, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi807 = call i64 @injectFault0(i64 1438, i64 %fi805, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %373 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %371, i64 %fi807, !llfi_index !1565
+  %fi808 = call i32 @injectFault1(i64 1437, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %372 = sext i32 %fi808 to i64, !taffo.info !323, !llfi_index !1564
+  %fi807 = call i64 @injectFault0(i64 1437, i64 %372, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi809 = call i64 @injectFault0(i64 1438, i64 %fi807, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %373 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %371, i64 %fi809, !llfi_index !1565
   %374 = load { i32, i32, i32 }*, { i32, i32, i32 }** %373, align 8, !llfi_index !1566
   %fi24 = call i32 @injectFault1(i64 1440, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %375 = sext i32 %fi24 to i64, !taffo.info !0, !llfi_index !1567
@@ -3655,978 +3655,978 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   store i32 %fi28, i32* %u8_24fixp231, align 4, !taffo.info !47, !llfi_index !1571, !taffo.target !1037
   %378 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1572
   %379 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %378, align 8, !llfi_index !1573
-  %fi30 = call i32 @injectFault1(i64 1447, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi30 = call i32 @injectFault1(i64 1447, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %380 = sext i32 %fi30 to i64, !taffo.info !323, !llfi_index !1574
   %fi29 = call i64 @injectFault0(i64 1447, i64 %380, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi31 = call i64 @injectFault0(i64 1448, i64 %fi29, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %381 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %379, i64 %fi31, !llfi_index !1575
+  %fi = call i64 @injectFault0(i64 1448, i64 %fi29, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %381 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %379, i64 %fi, !llfi_index !1575
   %382 = load { i32, i32, i32 }*, { i32, i32, i32 }** %381, align 8, !llfi_index !1576
-  %fi33 = call i32 @injectFault1(i64 1450, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %383 = sext i32 %fi33 to i64, !taffo.info !0, !llfi_index !1577
-  %fi32 = call i64 @injectFault0(i64 1450, i64 %383, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %384 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %382, i64 %fi32, !llfi_index !1578
+  %fi2 = call i32 @injectFault1(i64 1450, i32 0, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %383 = sext i32 %fi2 to i64, !taffo.info !0, !llfi_index !1577
+  %fi1 = call i64 @injectFault0(i64 1450, i64 %383, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %384 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %382, i64 %fi1, !llfi_index !1578
   %u8_24fixp230 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %384, i32 0, i32 2, !taffo.info !611, !llfi_index !1579
-  %fi35 = call i32 @injectFault1(i64 1453, i32 %u2_30fixp174, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi36 = call i32 @injectFault1(i64 1453, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %385 = lshr i32 %fi35, %fi36, !taffo.info !1271, !llfi_index !1580, !taffo.target !1037
-  %fi34 = call i32 @injectFault1(i64 1453, i32 %385, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi37 = call i32 @injectFault1(i64 1454, i32 %fi34, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi37, i32* %u8_24fixp230, align 4, !taffo.info !47, !llfi_index !1581, !taffo.target !1037
+  %fi34 = call i32 @injectFault1(i64 1453, i32 %u2_30fixp174, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi35 = call i32 @injectFault1(i64 1453, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %385 = lshr i32 %fi34, %fi35, !taffo.info !1271, !llfi_index !1580, !taffo.target !1037
+  %fi33 = call i32 @injectFault1(i64 1453, i32 %385, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi36 = call i32 @injectFault1(i64 1454, i32 %fi33, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi36, i32* %u8_24fixp230, align 4, !taffo.info !47, !llfi_index !1581, !taffo.target !1037
   br label %386, !llfi_index !1582
 
 386:                                              ; preds = %491, %361
-  %.18 = phi i32 [ 1, %361 ], [ %fi315, %491 ], !taffo.info !1346, !llfi_index !1583
-  %fi38 = call i32 @injectFault1(i64 1456, i32 %.18, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %.18 = phi i32 [ 1, %361 ], [ %fi834, %491 ], !taffo.info !1346, !llfi_index !1583
+  %fi37 = call i32 @injectFault1(i64 1456, i32 %.18, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %matchop77 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1584
   %387 = load i32, i32* %matchop77, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1585
-  %fi39 = call i32 @injectFault1(i64 1458, i32 %387, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi41 = call i32 @injectFault1(i64 1459, i32 %fi39, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi42 = call i32 @injectFault1(i64 1459, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %388 = sub nsw i32 %fi41, %fi42, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1586, !taffo.constinfo !67
-  %fi40 = call i32 @injectFault1(i64 1459, i32 %388, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi44 = call i32 @injectFault1(i64 1460, i32 %fi38, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi45 = call i32 @injectFault1(i64 1460, i32 %fi40, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %389 = icmp slt i32 %fi44, %fi45, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1587
-  %fi43 = call i1 @injectFault2(i64 1460, i1 %389, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi46 = call i1 @injectFault2(i64 1461, i1 %fi43, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi46, label %390, label %493, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1588
+  %fi38 = call i32 @injectFault1(i64 1458, i32 %387, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi40 = call i32 @injectFault1(i64 1459, i32 %fi38, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi41 = call i32 @injectFault1(i64 1459, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %388 = sub nsw i32 %fi40, %fi41, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1586, !taffo.constinfo !67
+  %fi39 = call i32 @injectFault1(i64 1459, i32 %388, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi43 = call i32 @injectFault1(i64 1460, i32 %fi37, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi44 = call i32 @injectFault1(i64 1460, i32 %fi39, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %389 = icmp slt i32 %fi43, %fi44, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1587
+  %fi42 = call i1 @injectFault3(i64 1460, i1 %389, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi45 = call i1 @injectFault3(i64 1461, i1 %fi42, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi45, label %390, label %493, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1588
 
 390:                                              ; preds = %386
   %391 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1589
   %392 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %391, align 8, !llfi_index !1590
-  %fi48 = call i32 @injectFault1(i64 1464, i32 %fi534, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi49 = call i32 @injectFault1(i64 1464, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %393 = sub nsw i32 %fi48, %fi49, !taffo.info !0, !llfi_index !1591, !taffo.constinfo !67
-  %fi47 = call i32 @injectFault1(i64 1464, i32 %393, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi51 = call i32 @injectFault1(i64 1465, i32 %fi47, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %394 = sext i32 %fi51 to i64, !taffo.info !0, !llfi_index !1592
-  %fi50 = call i64 @injectFault0(i64 1465, i64 %394, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi52 = call i64 @injectFault0(i64 1466, i64 %fi50, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %395 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %392, i64 %fi52, !llfi_index !1593
+  %fi47 = call i32 @injectFault1(i64 1464, i32 %fi530, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi48 = call i32 @injectFault1(i64 1464, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %393 = sub nsw i32 %fi47, %fi48, !taffo.info !0, !llfi_index !1591, !taffo.constinfo !67
+  %fi46 = call i32 @injectFault1(i64 1464, i32 %393, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi50 = call i32 @injectFault1(i64 1465, i32 %fi46, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %394 = sext i32 %fi50 to i64, !taffo.info !0, !llfi_index !1592
+  %fi49 = call i64 @injectFault0(i64 1465, i64 %394, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi51 = call i64 @injectFault0(i64 1466, i64 %fi49, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %395 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %392, i64 %fi51, !llfi_index !1593
   %396 = load { i32, i32, i32 }*, { i32, i32, i32 }** %395, align 8, !llfi_index !1594
-  %fi54 = call i32 @injectFault1(i64 1468, i32 %fi38, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi55 = call i32 @injectFault1(i64 1468, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %397 = sub nsw i32 %fi54, %fi55, !taffo.info !0, !llfi_index !1595, !taffo.constinfo !67
-  %fi53 = call i32 @injectFault1(i64 1468, i32 %397, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi57 = call i32 @injectFault1(i64 1469, i32 %fi53, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %398 = sext i32 %fi57 to i64, !taffo.info !0, !llfi_index !1596
-  %fi56 = call i64 @injectFault0(i64 1469, i64 %398, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %399 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %396, i64 %fi56, !llfi_index !1597
+  %fi53 = call i32 @injectFault1(i64 1468, i32 %fi37, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi54 = call i32 @injectFault1(i64 1468, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %397 = sub nsw i32 %fi53, %fi54, !taffo.info !0, !llfi_index !1595, !taffo.constinfo !67
+  %fi52 = call i32 @injectFault1(i64 1468, i32 %397, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi56 = call i32 @injectFault1(i64 1469, i32 %fi52, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %398 = sext i32 %fi56 to i64, !taffo.info !0, !llfi_index !1596
+  %fi55 = call i64 @injectFault0(i64 1469, i64 %398, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %399 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %396, i64 %fi55, !llfi_index !1597
   %u8_24fixp205 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %399, i32 0, i32 0, !taffo.info !611, !llfi_index !1598
   %u8_24fixp253 = load i32, i32* %u8_24fixp205, align 4, !taffo.info !611, !llfi_index !1599
-  %fi58 = call i32 @injectFault1(i64 1472, i32 %u8_24fixp253, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi59 = call i64 @injectFault0(i64 1473, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi60 = call i64 @injectFault0(i64 1473, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp124 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi59, i64 %fi60, !taffo.info !611, !llfi_index !1600, !taffo.target !1037
-  %fi61 = call i64 @injectFault0(i64 1474, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi62 = call i64 @injectFault0(i64 1474, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp173 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp124, i64 %fi61, i64 %fi62, !taffo.info !611, !llfi_index !1601, !taffo.target !1037
-  %fi63 = call i32 @injectFault1(i64 1475, i32 %fi58, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi63, i32* %u8_24fixp173, align 16, !taffo.info !47, !llfi_index !1602, !taffo.target !1037
+  %fi57 = call i32 @injectFault1(i64 1472, i32 %u8_24fixp253, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi58 = call i64 @injectFault0(i64 1473, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi59 = call i64 @injectFault0(i64 1473, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp124 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi58, i64 %fi59, !taffo.info !611, !llfi_index !1600, !taffo.target !1037
+  %fi60 = call i64 @injectFault0(i64 1474, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi61 = call i64 @injectFault0(i64 1474, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp173 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp124, i64 %fi60, i64 %fi61, !taffo.info !611, !llfi_index !1601, !taffo.target !1037
+  %fi62 = call i32 @injectFault1(i64 1475, i32 %fi57, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi62, i32* %u8_24fixp173, align 16, !taffo.info !47, !llfi_index !1602, !taffo.target !1037
   %400 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1603
   %401 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %400, align 8, !llfi_index !1604
-  %fi65 = call i32 @injectFault1(i64 1478, i32 %fi534, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi66 = call i32 @injectFault1(i64 1478, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %402 = sub nsw i32 %fi65, %fi66, !taffo.info !0, !llfi_index !1605, !taffo.constinfo !67
-  %fi64 = call i32 @injectFault1(i64 1478, i32 %402, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi68 = call i32 @injectFault1(i64 1479, i32 %fi64, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %403 = sext i32 %fi68 to i64, !taffo.info !0, !llfi_index !1606
-  %fi67 = call i64 @injectFault0(i64 1479, i64 %403, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi69 = call i64 @injectFault0(i64 1480, i64 %fi67, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %404 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %401, i64 %fi69, !llfi_index !1607
+  %fi64 = call i32 @injectFault1(i64 1478, i32 %fi530, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi65 = call i32 @injectFault1(i64 1478, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %402 = sub nsw i32 %fi64, %fi65, !taffo.info !0, !llfi_index !1605, !taffo.constinfo !67
+  %fi63 = call i32 @injectFault1(i64 1478, i32 %402, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi67 = call i32 @injectFault1(i64 1479, i32 %fi63, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %403 = sext i32 %fi67 to i64, !taffo.info !0, !llfi_index !1606
+  %fi66 = call i64 @injectFault0(i64 1479, i64 %403, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi68 = call i64 @injectFault0(i64 1480, i64 %fi66, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %404 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %401, i64 %fi68, !llfi_index !1607
   %405 = load { i32, i32, i32 }*, { i32, i32, i32 }** %404, align 8, !llfi_index !1608
-  %fi71 = call i32 @injectFault1(i64 1482, i32 %fi38, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %406 = sext i32 %fi71 to i64, !taffo.info !323, !llfi_index !1609
-  %fi70 = call i64 @injectFault0(i64 1482, i64 %406, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %407 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %405, i64 %fi70, !llfi_index !1610
+  %fi70 = call i32 @injectFault1(i64 1482, i32 %fi37, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %406 = sext i32 %fi70 to i64, !taffo.info !323, !llfi_index !1609
+  %fi69 = call i64 @injectFault0(i64 1482, i64 %406, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %407 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %405, i64 %fi69, !llfi_index !1610
   %u8_24fixp204 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %407, i32 0, i32 0, !taffo.info !611, !llfi_index !1611
   %u8_24fixp252 = load i32, i32* %u8_24fixp204, align 4, !taffo.info !611, !llfi_index !1612
-  %fi72 = call i32 @injectFault1(i64 1485, i32 %u8_24fixp252, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi73 = call i64 @injectFault0(i64 1486, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi74 = call i64 @injectFault0(i64 1486, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp123 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi73, i64 %fi74, !taffo.info !611, !llfi_index !1613, !taffo.target !1037
-  %fi75 = call i64 @injectFault0(i64 1487, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi76 = call i64 @injectFault0(i64 1487, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp172 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp123, i64 %fi75, i64 %fi76, !taffo.info !611, !llfi_index !1614, !taffo.target !1037
-  %fi77 = call i32 @injectFault1(i64 1488, i32 %fi72, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi77, i32* %u8_24fixp172, align 4, !taffo.info !47, !llfi_index !1615, !taffo.target !1037
+  %fi71 = call i32 @injectFault1(i64 1485, i32 %u8_24fixp252, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi72 = call i64 @injectFault0(i64 1486, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi73 = call i64 @injectFault0(i64 1486, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp123 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi72, i64 %fi73, !taffo.info !611, !llfi_index !1613, !taffo.target !1037
+  %fi74 = call i64 @injectFault0(i64 1487, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi75 = call i64 @injectFault0(i64 1487, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp172 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp123, i64 %fi74, i64 %fi75, !taffo.info !611, !llfi_index !1614, !taffo.target !1037
+  %fi76 = call i32 @injectFault1(i64 1488, i32 %fi71, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi76, i32* %u8_24fixp172, align 4, !taffo.info !47, !llfi_index !1615, !taffo.target !1037
   %408 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1616
   %409 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %408, align 8, !llfi_index !1617
-  %fi79 = call i32 @injectFault1(i64 1491, i32 %fi534, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi80 = call i32 @injectFault1(i64 1491, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %410 = sub nsw i32 %fi79, %fi80, !taffo.info !0, !llfi_index !1618, !taffo.constinfo !67
-  %fi78 = call i32 @injectFault1(i64 1491, i32 %410, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi82 = call i32 @injectFault1(i64 1492, i32 %fi78, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %411 = sext i32 %fi82 to i64, !taffo.info !0, !llfi_index !1619
-  %fi81 = call i64 @injectFault0(i64 1492, i64 %411, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi83 = call i64 @injectFault0(i64 1493, i64 %fi81, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %412 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %409, i64 %fi83, !llfi_index !1620
+  %fi78 = call i32 @injectFault1(i64 1491, i32 %fi530, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi79 = call i32 @injectFault1(i64 1491, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %410 = sub nsw i32 %fi78, %fi79, !taffo.info !0, !llfi_index !1618, !taffo.constinfo !67
+  %fi77 = call i32 @injectFault1(i64 1491, i32 %410, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi81 = call i32 @injectFault1(i64 1492, i32 %fi77, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %411 = sext i32 %fi81 to i64, !taffo.info !0, !llfi_index !1619
+  %fi80 = call i64 @injectFault0(i64 1492, i64 %411, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi82 = call i64 @injectFault0(i64 1493, i64 %fi80, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %412 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %409, i64 %fi82, !llfi_index !1620
   %413 = load { i32, i32, i32 }*, { i32, i32, i32 }** %412, align 8, !llfi_index !1621
-  %fi85 = call i32 @injectFault1(i64 1495, i32 %fi38, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi86 = call i32 @injectFault1(i64 1495, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %414 = add nsw i32 %fi85, %fi86, !taffo.info !1484, !llfi_index !1622, !taffo.constinfo !67
-  %fi84 = call i32 @injectFault1(i64 1495, i32 %414, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi88 = call i32 @injectFault1(i64 1496, i32 %fi84, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %415 = sext i32 %fi88 to i64, !taffo.info !1484, !llfi_index !1623
-  %fi87 = call i64 @injectFault0(i64 1496, i64 %415, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %416 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %413, i64 %fi87, !llfi_index !1624
+  %fi84 = call i32 @injectFault1(i64 1495, i32 %fi37, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi85 = call i32 @injectFault1(i64 1495, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %414 = add nsw i32 %fi84, %fi85, !taffo.info !1484, !llfi_index !1622, !taffo.constinfo !67
+  %fi83 = call i32 @injectFault1(i64 1495, i32 %414, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi87 = call i32 @injectFault1(i64 1496, i32 %fi83, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %415 = sext i32 %fi87 to i64, !taffo.info !1484, !llfi_index !1623
+  %fi86 = call i64 @injectFault0(i64 1496, i64 %415, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %416 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %413, i64 %fi86, !llfi_index !1624
   %u8_24fixp203 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %416, i32 0, i32 0, !taffo.info !611, !llfi_index !1625
   %u8_24fixp251 = load i32, i32* %u8_24fixp203, align 4, !taffo.info !611, !llfi_index !1626
-  %fi89 = call i32 @injectFault1(i64 1499, i32 %u8_24fixp251, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi90 = call i64 @injectFault0(i64 1500, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi91 = call i64 @injectFault0(i64 1500, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp122 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi90, i64 %fi91, !taffo.info !611, !llfi_index !1627, !taffo.target !1037
-  %fi92 = call i64 @injectFault0(i64 1501, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi93 = call i64 @injectFault0(i64 1501, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp171 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp122, i64 %fi92, i64 %fi93, !taffo.info !611, !llfi_index !1628, !taffo.target !1037
-  %fi94 = call i32 @injectFault1(i64 1502, i32 %fi89, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi94, i32* %u8_24fixp171, align 8, !taffo.info !47, !llfi_index !1629, !taffo.target !1037
+  %fi88 = call i32 @injectFault1(i64 1499, i32 %u8_24fixp251, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi89 = call i64 @injectFault0(i64 1500, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi90 = call i64 @injectFault0(i64 1500, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp122 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi89, i64 %fi90, !taffo.info !611, !llfi_index !1627, !taffo.target !1037
+  %fi91 = call i64 @injectFault0(i64 1501, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi92 = call i64 @injectFault0(i64 1501, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp171 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp122, i64 %fi91, i64 %fi92, !taffo.info !611, !llfi_index !1628, !taffo.target !1037
+  %fi93 = call i32 @injectFault1(i64 1502, i32 %fi88, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi93, i32* %u8_24fixp171, align 8, !taffo.info !47, !llfi_index !1629, !taffo.target !1037
   %417 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1630
   %418 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %417, align 8, !llfi_index !1631
-  %fi96 = call i32 @injectFault1(i64 1505, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %419 = sext i32 %fi96 to i64, !taffo.info !323, !llfi_index !1632
-  %fi95 = call i64 @injectFault0(i64 1505, i64 %419, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi97 = call i64 @injectFault0(i64 1506, i64 %fi95, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %420 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %418, i64 %fi97, !llfi_index !1633
+  %fi95 = call i32 @injectFault1(i64 1505, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %419 = sext i32 %fi95 to i64, !taffo.info !323, !llfi_index !1632
+  %fi94 = call i64 @injectFault0(i64 1505, i64 %419, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi96 = call i64 @injectFault0(i64 1506, i64 %fi94, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %420 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %418, i64 %fi96, !llfi_index !1633
   %421 = load { i32, i32, i32 }*, { i32, i32, i32 }** %420, align 8, !llfi_index !1634
-  %fi99 = call i32 @injectFault1(i64 1508, i32 %fi38, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi100 = call i32 @injectFault1(i64 1508, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %422 = sub nsw i32 %fi99, %fi100, !taffo.info !0, !llfi_index !1635, !taffo.constinfo !67
-  %fi98 = call i32 @injectFault1(i64 1508, i32 %422, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi3 = call i32 @injectFault1(i64 1509, i32 %fi98, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %423 = sext i32 %fi3 to i64, !taffo.info !0, !llfi_index !1636
-  %fi2 = call i64 @injectFault0(i64 1509, i64 %423, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %424 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %421, i64 %fi2, !llfi_index !1637
+  %fi98 = call i32 @injectFault1(i64 1508, i32 %fi37, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi99 = call i32 @injectFault1(i64 1508, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %422 = sub nsw i32 %fi98, %fi99, !taffo.info !0, !llfi_index !1635, !taffo.constinfo !67
+  %fi97 = call i32 @injectFault1(i64 1508, i32 %422, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi4 = call i32 @injectFault1(i64 1509, i32 %fi97, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %423 = sext i32 %fi4 to i64, !taffo.info !0, !llfi_index !1636
+  %fi3 = call i64 @injectFault0(i64 1509, i64 %423, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %424 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %421, i64 %fi3, !llfi_index !1637
   %u8_24fixp202 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %424, i32 0, i32 0, !taffo.info !611, !llfi_index !1638
   %u8_24fixp250 = load i32, i32* %u8_24fixp202, align 4, !taffo.info !611, !llfi_index !1639
-  %fi103 = call i32 @injectFault1(i64 1512, i32 %u8_24fixp250, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi104 = call i64 @injectFault0(i64 1513, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi105 = call i64 @injectFault0(i64 1513, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp121 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi104, i64 %fi105, !taffo.info !611, !llfi_index !1640, !taffo.target !1037
-  %fi106 = call i64 @injectFault0(i64 1514, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi107 = call i64 @injectFault0(i64 1514, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp170 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp121, i64 %fi106, i64 %fi107, !taffo.info !611, !llfi_index !1641, !taffo.target !1037
-  %fi108 = call i32 @injectFault1(i64 1515, i32 %fi103, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi108, i32* %u8_24fixp170, align 4, !taffo.info !47, !llfi_index !1642, !taffo.target !1037
+  %fi102 = call i32 @injectFault1(i64 1512, i32 %u8_24fixp250, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi103 = call i64 @injectFault0(i64 1513, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi104 = call i64 @injectFault0(i64 1513, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp121 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi103, i64 %fi104, !taffo.info !611, !llfi_index !1640, !taffo.target !1037
+  %fi105 = call i64 @injectFault0(i64 1514, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi106 = call i64 @injectFault0(i64 1514, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp170 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp121, i64 %fi105, i64 %fi106, !taffo.info !611, !llfi_index !1641, !taffo.target !1037
+  %fi107 = call i32 @injectFault1(i64 1515, i32 %fi102, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi107, i32* %u8_24fixp170, align 4, !taffo.info !47, !llfi_index !1642, !taffo.target !1037
   %425 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1643
   %426 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %425, align 8, !llfi_index !1644
-  %fi110 = call i32 @injectFault1(i64 1518, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %427 = sext i32 %fi110 to i64, !taffo.info !323, !llfi_index !1645
-  %fi109 = call i64 @injectFault0(i64 1518, i64 %427, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi111 = call i64 @injectFault0(i64 1519, i64 %fi109, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %428 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %426, i64 %fi111, !llfi_index !1646
+  %fi109 = call i32 @injectFault1(i64 1518, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %427 = sext i32 %fi109 to i64, !taffo.info !323, !llfi_index !1645
+  %fi108 = call i64 @injectFault0(i64 1518, i64 %427, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi110 = call i64 @injectFault0(i64 1519, i64 %fi108, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %428 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %426, i64 %fi110, !llfi_index !1646
   %429 = load { i32, i32, i32 }*, { i32, i32, i32 }** %428, align 8, !llfi_index !1647
-  %fi113 = call i32 @injectFault1(i64 1521, i32 %fi38, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %430 = sext i32 %fi113 to i64, !taffo.info !323, !llfi_index !1648
-  %fi112 = call i64 @injectFault0(i64 1521, i64 %430, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %431 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %429, i64 %fi112, !llfi_index !1649
+  %fi112 = call i32 @injectFault1(i64 1521, i32 %fi37, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %430 = sext i32 %fi112 to i64, !taffo.info !323, !llfi_index !1648
+  %fi111 = call i64 @injectFault0(i64 1521, i64 %430, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %431 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %429, i64 %fi111, !llfi_index !1649
   %u8_24fixp201 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %431, i32 0, i32 0, !taffo.info !611, !llfi_index !1650
   %u8_24fixp249 = load i32, i32* %u8_24fixp201, align 4, !taffo.info !611, !llfi_index !1651
-  %fi114 = call i32 @injectFault1(i64 1524, i32 %u8_24fixp249, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi115 = call i64 @injectFault0(i64 1525, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi116 = call i64 @injectFault0(i64 1525, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp120 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi115, i64 %fi116, !taffo.info !611, !llfi_index !1652, !taffo.target !1037
-  %fi117 = call i64 @injectFault0(i64 1526, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi118 = call i64 @injectFault0(i64 1526, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp169 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp120, i64 %fi117, i64 %fi118, !taffo.info !611, !llfi_index !1653, !taffo.target !1037
-  %fi119 = call i32 @injectFault1(i64 1527, i32 %fi114, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi119, i32* %u8_24fixp169, align 4, !taffo.info !47, !llfi_index !1654, !taffo.target !1037
+  %fi113 = call i32 @injectFault1(i64 1524, i32 %u8_24fixp249, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi114 = call i64 @injectFault0(i64 1525, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi115 = call i64 @injectFault0(i64 1525, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp120 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi114, i64 %fi115, !taffo.info !611, !llfi_index !1652, !taffo.target !1037
+  %fi116 = call i64 @injectFault0(i64 1526, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi117 = call i64 @injectFault0(i64 1526, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp169 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp120, i64 %fi116, i64 %fi117, !taffo.info !611, !llfi_index !1653, !taffo.target !1037
+  %fi118 = call i32 @injectFault1(i64 1527, i32 %fi113, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi118, i32* %u8_24fixp169, align 4, !taffo.info !47, !llfi_index !1654, !taffo.target !1037
   %432 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1655
   %433 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %432, align 8, !llfi_index !1656
-  %fi121 = call i32 @injectFault1(i64 1530, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %434 = sext i32 %fi121 to i64, !taffo.info !323, !llfi_index !1657
-  %fi120 = call i64 @injectFault0(i64 1530, i64 %434, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi122 = call i64 @injectFault0(i64 1531, i64 %fi120, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %435 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %433, i64 %fi122, !llfi_index !1658
+  %fi120 = call i32 @injectFault1(i64 1530, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %434 = sext i32 %fi120 to i64, !taffo.info !323, !llfi_index !1657
+  %fi119 = call i64 @injectFault0(i64 1530, i64 %434, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi121 = call i64 @injectFault0(i64 1531, i64 %fi119, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %435 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %433, i64 %fi121, !llfi_index !1658
   %436 = load { i32, i32, i32 }*, { i32, i32, i32 }** %435, align 8, !llfi_index !1659
-  %fi124 = call i32 @injectFault1(i64 1533, i32 %fi38, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi125 = call i32 @injectFault1(i64 1533, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %437 = add nsw i32 %fi124, %fi125, !taffo.info !1484, !llfi_index !1660, !taffo.constinfo !67
-  %fi123 = call i32 @injectFault1(i64 1533, i32 %437, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi127 = call i32 @injectFault1(i64 1534, i32 %fi123, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %438 = sext i32 %fi127 to i64, !taffo.info !1484, !llfi_index !1661
-  %fi126 = call i64 @injectFault0(i64 1534, i64 %438, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %439 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %436, i64 %fi126, !llfi_index !1662
+  %fi123 = call i32 @injectFault1(i64 1533, i32 %fi37, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi124 = call i32 @injectFault1(i64 1533, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %437 = add nsw i32 %fi123, %fi124, !taffo.info !1484, !llfi_index !1660, !taffo.constinfo !67
+  %fi122 = call i32 @injectFault1(i64 1533, i32 %437, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi126 = call i32 @injectFault1(i64 1534, i32 %fi122, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %438 = sext i32 %fi126 to i64, !taffo.info !1484, !llfi_index !1661
+  %fi125 = call i64 @injectFault0(i64 1534, i64 %438, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %439 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %436, i64 %fi125, !llfi_index !1662
   %u8_24fixp200 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %439, i32 0, i32 0, !taffo.info !611, !llfi_index !1663
   %u8_24fixp248 = load i32, i32* %u8_24fixp200, align 4, !taffo.info !611, !llfi_index !1664
-  %fi128 = call i32 @injectFault1(i64 1537, i32 %u8_24fixp248, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi129 = call i64 @injectFault0(i64 1538, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi130 = call i64 @injectFault0(i64 1538, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp119 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi129, i64 %fi130, !taffo.info !611, !llfi_index !1665, !taffo.target !1037
-  %fi131 = call i64 @injectFault0(i64 1539, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi132 = call i64 @injectFault0(i64 1539, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp168 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp119, i64 %fi131, i64 %fi132, !taffo.info !611, !llfi_index !1666, !taffo.target !1037
-  %fi133 = call i32 @injectFault1(i64 1540, i32 %fi128, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi133, i32* %u8_24fixp168, align 4, !taffo.info !47, !llfi_index !1667, !taffo.target !1037
+  %fi127 = call i32 @injectFault1(i64 1537, i32 %u8_24fixp248, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi128 = call i64 @injectFault0(i64 1538, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi129 = call i64 @injectFault0(i64 1538, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp119 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi128, i64 %fi129, !taffo.info !611, !llfi_index !1665, !taffo.target !1037
+  %fi130 = call i64 @injectFault0(i64 1539, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi131 = call i64 @injectFault0(i64 1539, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp168 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp119, i64 %fi130, i64 %fi131, !taffo.info !611, !llfi_index !1666, !taffo.target !1037
+  %fi132 = call i32 @injectFault1(i64 1540, i32 %fi127, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi132, i32* %u8_24fixp168, align 4, !taffo.info !47, !llfi_index !1667, !taffo.target !1037
   %440 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1668
   %441 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %440, align 8, !llfi_index !1669
-  %fi135 = call i32 @injectFault1(i64 1543, i32 %fi534, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi136 = call i32 @injectFault1(i64 1543, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %442 = add nsw i32 %fi135, %fi136, !taffo.info !1484, !llfi_index !1670, !taffo.constinfo !67
-  %fi134 = call i32 @injectFault1(i64 1543, i32 %442, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi138 = call i32 @injectFault1(i64 1544, i32 %fi134, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %443 = sext i32 %fi138 to i64, !taffo.info !1484, !llfi_index !1671
-  %fi137 = call i64 @injectFault0(i64 1544, i64 %443, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi139 = call i64 @injectFault0(i64 1545, i64 %fi137, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %444 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %441, i64 %fi139, !llfi_index !1672
+  %fi134 = call i32 @injectFault1(i64 1543, i32 %fi530, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi135 = call i32 @injectFault1(i64 1543, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %442 = add nsw i32 %fi134, %fi135, !taffo.info !1484, !llfi_index !1670, !taffo.constinfo !67
+  %fi133 = call i32 @injectFault1(i64 1543, i32 %442, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi137 = call i32 @injectFault1(i64 1544, i32 %fi133, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %443 = sext i32 %fi137 to i64, !taffo.info !1484, !llfi_index !1671
+  %fi136 = call i64 @injectFault0(i64 1544, i64 %443, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi138 = call i64 @injectFault0(i64 1545, i64 %fi136, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %444 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %441, i64 %fi138, !llfi_index !1672
   %445 = load { i32, i32, i32 }*, { i32, i32, i32 }** %444, align 8, !llfi_index !1673
-  %fi141 = call i32 @injectFault1(i64 1547, i32 %fi38, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi142 = call i32 @injectFault1(i64 1547, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %446 = sub nsw i32 %fi141, %fi142, !taffo.info !0, !llfi_index !1674, !taffo.constinfo !67
-  %fi140 = call i32 @injectFault1(i64 1547, i32 %446, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi144 = call i32 @injectFault1(i64 1548, i32 %fi140, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %447 = sext i32 %fi144 to i64, !taffo.info !0, !llfi_index !1675
-  %fi143 = call i64 @injectFault0(i64 1548, i64 %447, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %448 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %445, i64 %fi143, !llfi_index !1676
+  %fi140 = call i32 @injectFault1(i64 1547, i32 %fi37, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi141 = call i32 @injectFault1(i64 1547, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %446 = sub nsw i32 %fi140, %fi141, !taffo.info !0, !llfi_index !1674, !taffo.constinfo !67
+  %fi139 = call i32 @injectFault1(i64 1547, i32 %446, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi143 = call i32 @injectFault1(i64 1548, i32 %fi139, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %447 = sext i32 %fi143 to i64, !taffo.info !0, !llfi_index !1675
+  %fi142 = call i64 @injectFault0(i64 1548, i64 %447, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %448 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %445, i64 %fi142, !llfi_index !1676
   %u8_24fixp199 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %448, i32 0, i32 0, !taffo.info !611, !llfi_index !1677
   %u8_24fixp247 = load i32, i32* %u8_24fixp199, align 4, !taffo.info !611, !llfi_index !1678
-  %fi145 = call i32 @injectFault1(i64 1551, i32 %u8_24fixp247, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi146 = call i64 @injectFault0(i64 1552, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi147 = call i64 @injectFault0(i64 1552, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp118 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi146, i64 %fi147, !taffo.info !611, !llfi_index !1679, !taffo.target !1037
-  %fi148 = call i64 @injectFault0(i64 1553, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi149 = call i64 @injectFault0(i64 1553, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp167 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp118, i64 %fi148, i64 %fi149, !taffo.info !611, !llfi_index !1680, !taffo.target !1037
-  %fi150 = call i32 @injectFault1(i64 1554, i32 %fi145, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi150, i32* %u8_24fixp167, align 8, !taffo.info !47, !llfi_index !1681, !taffo.target !1037
+  %fi144 = call i32 @injectFault1(i64 1551, i32 %u8_24fixp247, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi145 = call i64 @injectFault0(i64 1552, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi146 = call i64 @injectFault0(i64 1552, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp118 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi145, i64 %fi146, !taffo.info !611, !llfi_index !1679, !taffo.target !1037
+  %fi147 = call i64 @injectFault0(i64 1553, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi148 = call i64 @injectFault0(i64 1553, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp167 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp118, i64 %fi147, i64 %fi148, !taffo.info !611, !llfi_index !1680, !taffo.target !1037
+  %fi149 = call i32 @injectFault1(i64 1554, i32 %fi144, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi149, i32* %u8_24fixp167, align 8, !taffo.info !47, !llfi_index !1681, !taffo.target !1037
   %449 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1682
   %450 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %449, align 8, !llfi_index !1683
-  %fi152 = call i32 @injectFault1(i64 1557, i32 %fi534, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi153 = call i32 @injectFault1(i64 1557, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %451 = add nsw i32 %fi152, %fi153, !taffo.info !1484, !llfi_index !1684, !taffo.constinfo !67
-  %fi151 = call i32 @injectFault1(i64 1557, i32 %451, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi155 = call i32 @injectFault1(i64 1558, i32 %fi151, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %452 = sext i32 %fi155 to i64, !taffo.info !1484, !llfi_index !1685
-  %fi154 = call i64 @injectFault0(i64 1558, i64 %452, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi156 = call i64 @injectFault0(i64 1559, i64 %fi154, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %453 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %450, i64 %fi156, !llfi_index !1686
+  %fi151 = call i32 @injectFault1(i64 1557, i32 %fi530, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi152 = call i32 @injectFault1(i64 1557, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %451 = add nsw i32 %fi151, %fi152, !taffo.info !1484, !llfi_index !1684, !taffo.constinfo !67
+  %fi150 = call i32 @injectFault1(i64 1557, i32 %451, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi154 = call i32 @injectFault1(i64 1558, i32 %fi150, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %452 = sext i32 %fi154 to i64, !taffo.info !1484, !llfi_index !1685
+  %fi153 = call i64 @injectFault0(i64 1558, i64 %452, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi155 = call i64 @injectFault0(i64 1559, i64 %fi153, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %453 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %450, i64 %fi155, !llfi_index !1686
   %454 = load { i32, i32, i32 }*, { i32, i32, i32 }** %453, align 8, !llfi_index !1687
-  %fi158 = call i32 @injectFault1(i64 1561, i32 %fi38, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %455 = sext i32 %fi158 to i64, !taffo.info !323, !llfi_index !1688
-  %fi157 = call i64 @injectFault0(i64 1561, i64 %455, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %456 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %454, i64 %fi157, !llfi_index !1689
+  %fi157 = call i32 @injectFault1(i64 1561, i32 %fi37, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %455 = sext i32 %fi157 to i64, !taffo.info !323, !llfi_index !1688
+  %fi156 = call i64 @injectFault0(i64 1561, i64 %455, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %456 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %454, i64 %fi156, !llfi_index !1689
   %u8_24fixp198 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %456, i32 0, i32 0, !taffo.info !611, !llfi_index !1690
   %u8_24fixp246 = load i32, i32* %u8_24fixp198, align 4, !taffo.info !611, !llfi_index !1691
-  %fi159 = call i32 @injectFault1(i64 1564, i32 %u8_24fixp246, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi160 = call i64 @injectFault0(i64 1565, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi161 = call i64 @injectFault0(i64 1565, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp117 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi160, i64 %fi161, !taffo.info !611, !llfi_index !1692, !taffo.target !1037
-  %fi629 = call i64 @injectFault0(i64 1566, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi630 = call i64 @injectFault0(i64 1566, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp166 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp117, i64 %fi629, i64 %fi630, !taffo.info !611, !llfi_index !1693, !taffo.target !1037
-  %fi631 = call i32 @injectFault1(i64 1567, i32 %fi159, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi631, i32* %u8_24fixp166, align 4, !taffo.info !47, !llfi_index !1694, !taffo.target !1037
+  %fi158 = call i32 @injectFault1(i64 1564, i32 %u8_24fixp246, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi159 = call i64 @injectFault0(i64 1565, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi160 = call i64 @injectFault0(i64 1565, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp117 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi159, i64 %fi160, !taffo.info !611, !llfi_index !1692, !taffo.target !1037
+  %fi625 = call i64 @injectFault0(i64 1566, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi626 = call i64 @injectFault0(i64 1566, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp166 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp117, i64 %fi625, i64 %fi626, !taffo.info !611, !llfi_index !1693, !taffo.target !1037
+  %fi627 = call i32 @injectFault1(i64 1567, i32 %fi158, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi627, i32* %u8_24fixp166, align 4, !taffo.info !47, !llfi_index !1694, !taffo.target !1037
   %457 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1695
   %458 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %457, align 8, !llfi_index !1696
-  %fi633 = call i32 @injectFault1(i64 1570, i32 %fi534, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi634 = call i32 @injectFault1(i64 1570, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %459 = add nsw i32 %fi633, %fi634, !taffo.info !1484, !llfi_index !1697, !taffo.constinfo !67
-  %fi632 = call i32 @injectFault1(i64 1570, i32 %459, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi636 = call i32 @injectFault1(i64 1571, i32 %fi632, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %460 = sext i32 %fi636 to i64, !taffo.info !1484, !llfi_index !1698
-  %fi635 = call i64 @injectFault0(i64 1571, i64 %460, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi162 = call i64 @injectFault0(i64 1572, i64 %fi635, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %461 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %458, i64 %fi162, !llfi_index !1699
+  %fi629 = call i32 @injectFault1(i64 1570, i32 %fi530, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi630 = call i32 @injectFault1(i64 1570, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %459 = add nsw i32 %fi629, %fi630, !taffo.info !1484, !llfi_index !1697, !taffo.constinfo !67
+  %fi628 = call i32 @injectFault1(i64 1570, i32 %459, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi632 = call i32 @injectFault1(i64 1571, i32 %fi628, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %460 = sext i32 %fi632 to i64, !taffo.info !1484, !llfi_index !1698
+  %fi631 = call i64 @injectFault0(i64 1571, i64 %460, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi161 = call i64 @injectFault0(i64 1572, i64 %fi631, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %461 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %458, i64 %fi161, !llfi_index !1699
   %462 = load { i32, i32, i32 }*, { i32, i32, i32 }** %461, align 8, !llfi_index !1700
-  %fi164 = call i32 @injectFault1(i64 1574, i32 %fi38, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi165 = call i32 @injectFault1(i64 1574, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %463 = add nsw i32 %fi164, %fi165, !taffo.info !1484, !llfi_index !1701, !taffo.constinfo !67
-  %fi163 = call i32 @injectFault1(i64 1574, i32 %463, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi167 = call i32 @injectFault1(i64 1575, i32 %fi163, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %464 = sext i32 %fi167 to i64, !taffo.info !1484, !llfi_index !1702
-  %fi166 = call i64 @injectFault0(i64 1575, i64 %464, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %465 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %462, i64 %fi166, !llfi_index !1703
+  %fi163 = call i32 @injectFault1(i64 1574, i32 %fi37, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi164 = call i32 @injectFault1(i64 1574, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %463 = add nsw i32 %fi163, %fi164, !taffo.info !1484, !llfi_index !1701, !taffo.constinfo !67
+  %fi162 = call i32 @injectFault1(i64 1574, i32 %463, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi166 = call i32 @injectFault1(i64 1575, i32 %fi162, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %464 = sext i32 %fi166 to i64, !taffo.info !1484, !llfi_index !1702
+  %fi165 = call i64 @injectFault0(i64 1575, i64 %464, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %465 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %462, i64 %fi165, !llfi_index !1703
   %u8_24fixp197 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %465, i32 0, i32 0, !taffo.info !611, !llfi_index !1704
   %u8_24fixp245 = load i32, i32* %u8_24fixp197, align 4, !taffo.info !611, !llfi_index !1705
-  %fi168 = call i32 @injectFault1(i64 1578, i32 %u8_24fixp245, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi169 = call i64 @injectFault0(i64 1579, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi170 = call i64 @injectFault0(i64 1579, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp116 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi169, i64 %fi170, !taffo.info !611, !llfi_index !1706, !taffo.target !1037
-  %fi171 = call i64 @injectFault0(i64 1580, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi172 = call i64 @injectFault0(i64 1580, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp165 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp116, i64 %fi171, i64 %fi172, !taffo.info !611, !llfi_index !1707, !taffo.target !1037
-  %fi173 = call i32 @injectFault1(i64 1581, i32 %fi168, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi173, i32* %u8_24fixp165, align 8, !taffo.info !47, !llfi_index !1708, !taffo.target !1037
-  %fi174 = call i64 @injectFault0(i64 1582, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi175 = call i64 @injectFault0(i64 1582, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp115 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi174, i64 %fi175, !taffo.info !611, !llfi_index !1709, !taffo.target !1037
+  %fi167 = call i32 @injectFault1(i64 1578, i32 %u8_24fixp245, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi168 = call i64 @injectFault0(i64 1579, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi169 = call i64 @injectFault0(i64 1579, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp116 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi168, i64 %fi169, !taffo.info !611, !llfi_index !1706, !taffo.target !1037
+  %fi170 = call i64 @injectFault0(i64 1580, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi171 = call i64 @injectFault0(i64 1580, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp165 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp116, i64 %fi170, i64 %fi171, !taffo.info !611, !llfi_index !1707, !taffo.target !1037
+  %fi172 = call i32 @injectFault1(i64 1581, i32 %fi167, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi172, i32* %u8_24fixp165, align 8, !taffo.info !47, !llfi_index !1708, !taffo.target !1037
+  %fi173 = call i64 @injectFault0(i64 1582, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi174 = call i64 @injectFault0(i64 1582, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp115 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi173, i64 %fi174, !taffo.info !611, !llfi_index !1709, !taffo.target !1037
   %u2_30fixp164 = invoke i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* %u8_24fixp115)
           to label %466 unwind label %216, !taffo.info !1271, !llfi_index !1710, !taffo.constinfo !101, !taffo.target !1037
 
 466:                                              ; preds = %390
   %467 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1711
   %468 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %467, align 8, !llfi_index !1712
-  %fi177 = call i32 @injectFault1(i64 1586, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %469 = sext i32 %fi177 to i64, !taffo.info !323, !llfi_index !1713
-  %fi176 = call i64 @injectFault0(i64 1586, i64 %469, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi178 = call i64 @injectFault0(i64 1587, i64 %fi176, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %470 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %468, i64 %fi178, !llfi_index !1714
+  %fi176 = call i32 @injectFault1(i64 1586, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %469 = sext i32 %fi176 to i64, !taffo.info !323, !llfi_index !1713
+  %fi175 = call i64 @injectFault0(i64 1586, i64 %469, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi177 = call i64 @injectFault0(i64 1587, i64 %fi175, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %470 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %468, i64 %fi177, !llfi_index !1714
   %471 = load { i32, i32, i32 }*, { i32, i32, i32 }** %470, align 8, !llfi_index !1715
-  %fi786 = call i32 @injectFault1(i64 1589, i32 %fi38, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %472 = sext i32 %fi786 to i64, !taffo.info !323, !llfi_index !1716
-  %fi785 = call i64 @injectFault0(i64 1589, i64 %472, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %473 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %471, i64 %fi785, !llfi_index !1717
+  %fi32 = call i32 @injectFault1(i64 1589, i32 %fi37, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %472 = sext i32 %fi32 to i64, !taffo.info !323, !llfi_index !1716
+  %fi31 = call i64 @injectFault0(i64 1589, i64 %472, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %473 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %471, i64 %fi31, !llfi_index !1717
   %u8_24fixp229 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %473, i32 0, i32 0, !taffo.info !611, !llfi_index !1718
-  %fi809 = call i32 @injectFault1(i64 1592, i32 %u2_30fixp164, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi810 = call i32 @injectFault1(i64 1592, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %474 = lshr i32 %fi809, %fi810, !taffo.info !1271, !llfi_index !1719, !taffo.target !1037
-  %fi808 = call i32 @injectFault1(i64 1592, i32 %474, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi811 = call i32 @injectFault1(i64 1593, i32 %fi808, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi811, i32* %u8_24fixp229, align 4, !taffo.info !47, !llfi_index !1720, !taffo.target !1037
+  %fi811 = call i32 @injectFault1(i64 1592, i32 %u2_30fixp164, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi812 = call i32 @injectFault1(i64 1592, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %474 = lshr i32 %fi811, %fi812, !taffo.info !1271, !llfi_index !1719, !taffo.target !1037
+  %fi810 = call i32 @injectFault1(i64 1592, i32 %474, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi813 = call i32 @injectFault1(i64 1593, i32 %fi810, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi813, i32* %u8_24fixp229, align 4, !taffo.info !47, !llfi_index !1720, !taffo.target !1037
   %475 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1721
   %476 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %475, align 8, !llfi_index !1722
-  %fi813 = call i32 @injectFault1(i64 1596, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %477 = sext i32 %fi813 to i64, !taffo.info !323, !llfi_index !1723
-  %fi812 = call i64 @injectFault0(i64 1596, i64 %477, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi814 = call i64 @injectFault0(i64 1597, i64 %fi812, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %478 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %476, i64 %fi814, !llfi_index !1724
+  %fi815 = call i32 @injectFault1(i64 1596, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %477 = sext i32 %fi815 to i64, !taffo.info !323, !llfi_index !1723
+  %fi814 = call i64 @injectFault0(i64 1596, i64 %477, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi816 = call i64 @injectFault0(i64 1597, i64 %fi814, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %478 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %476, i64 %fi816, !llfi_index !1724
   %479 = load { i32, i32, i32 }*, { i32, i32, i32 }** %478, align 8, !llfi_index !1725
-  %fi816 = call i32 @injectFault1(i64 1599, i32 %fi38, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %480 = sext i32 %fi816 to i64, !taffo.info !323, !llfi_index !1726
-  %fi815 = call i64 @injectFault0(i64 1599, i64 %480, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %481 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %479, i64 %fi815, !llfi_index !1727
+  %fi818 = call i32 @injectFault1(i64 1599, i32 %fi37, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %480 = sext i32 %fi818 to i64, !taffo.info !323, !llfi_index !1726
+  %fi817 = call i64 @injectFault0(i64 1599, i64 %480, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %481 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %479, i64 %fi817, !llfi_index !1727
   %u8_24fixp228 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %481, i32 0, i32 1, !taffo.info !611, !llfi_index !1728
-  %fi818 = call i32 @injectFault1(i64 1602, i32 %u2_30fixp164, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi819 = call i32 @injectFault1(i64 1602, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %482 = lshr i32 %fi818, %fi819, !taffo.info !1271, !llfi_index !1729, !taffo.target !1037
-  %fi817 = call i32 @injectFault1(i64 1602, i32 %482, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi820 = call i32 @injectFault1(i64 1603, i32 %fi817, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi820, i32* %u8_24fixp228, align 4, !taffo.info !47, !llfi_index !1730, !taffo.target !1037
+  %fi820 = call i32 @injectFault1(i64 1602, i32 %u2_30fixp164, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi821 = call i32 @injectFault1(i64 1602, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %482 = lshr i32 %fi820, %fi821, !taffo.info !1271, !llfi_index !1729, !taffo.target !1037
+  %fi819 = call i32 @injectFault1(i64 1602, i32 %482, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi822 = call i32 @injectFault1(i64 1603, i32 %fi819, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi822, i32* %u8_24fixp228, align 4, !taffo.info !47, !llfi_index !1730, !taffo.target !1037
   %483 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1731
   %484 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %483, align 8, !llfi_index !1732
-  %fi822 = call i32 @injectFault1(i64 1606, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %485 = sext i32 %fi822 to i64, !taffo.info !323, !llfi_index !1733
-  %fi821 = call i64 @injectFault0(i64 1606, i64 %485, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi823 = call i64 @injectFault0(i64 1607, i64 %fi821, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %486 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %484, i64 %fi823, !llfi_index !1734
+  %fi316 = call i32 @injectFault1(i64 1606, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %485 = sext i32 %fi316 to i64, !taffo.info !323, !llfi_index !1733
+  %fi315 = call i64 @injectFault0(i64 1606, i64 %485, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi317 = call i64 @injectFault0(i64 1607, i64 %fi315, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %486 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %484, i64 %fi317, !llfi_index !1734
   %487 = load { i32, i32, i32 }*, { i32, i32, i32 }** %486, align 8, !llfi_index !1735
-  %fi825 = call i32 @injectFault1(i64 1609, i32 %fi38, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %488 = sext i32 %fi825 to i64, !taffo.info !323, !llfi_index !1736
-  %fi824 = call i64 @injectFault0(i64 1609, i64 %488, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %489 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %487, i64 %fi824, !llfi_index !1737
+  %fi319 = call i32 @injectFault1(i64 1609, i32 %fi37, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %488 = sext i32 %fi319 to i64, !taffo.info !323, !llfi_index !1736
+  %fi318 = call i64 @injectFault0(i64 1609, i64 %488, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %489 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %487, i64 %fi318, !llfi_index !1737
   %u8_24fixp227 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %489, i32 0, i32 2, !taffo.info !611, !llfi_index !1738
-  %fi827 = call i32 @injectFault1(i64 1612, i32 %u2_30fixp164, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi828 = call i32 @injectFault1(i64 1612, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %490 = lshr i32 %fi827, %fi828, !taffo.info !1271, !llfi_index !1739, !taffo.target !1037
-  %fi826 = call i32 @injectFault1(i64 1612, i32 %490, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi829 = call i32 @injectFault1(i64 1613, i32 %fi826, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi829, i32* %u8_24fixp227, align 4, !taffo.info !47, !llfi_index !1740, !taffo.target !1037
+  %fi831 = call i32 @injectFault1(i64 1612, i32 %u2_30fixp164, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi832 = call i32 @injectFault1(i64 1612, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %490 = lshr i32 %fi831, %fi832, !taffo.info !1271, !llfi_index !1739, !taffo.target !1037
+  %fi830 = call i32 @injectFault1(i64 1612, i32 %490, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi833 = call i32 @injectFault1(i64 1613, i32 %fi830, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi833, i32* %u8_24fixp227, align 4, !taffo.info !47, !llfi_index !1740, !taffo.target !1037
   br label %491, !llfi_index !1741
 
 491:                                              ; preds = %466
-  %fi316 = call i32 @injectFault1(i64 1615, i32 %fi38, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi317 = call i32 @injectFault1(i64 1615, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %492 = add nsw i32 %fi316, %fi317, !taffo.info !1484, !llfi_index !1742, !taffo.constinfo !67
-  %fi315 = call i32 @injectFault1(i64 1615, i32 %492, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi835 = call i32 @injectFault1(i64 1615, i32 %fi37, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi836 = call i32 @injectFault1(i64 1615, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %492 = add nsw i32 %fi835, %fi836, !taffo.info !1484, !llfi_index !1742, !taffo.constinfo !67
+  %fi834 = call i32 @injectFault1(i64 1615, i32 %492, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %386, !llvm.loop !1743, !llfi_index !1744
 
 493:                                              ; preds = %386
   %matchop76 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1745
   %494 = load i32, i32* %matchop76, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1746
-  %fi318 = call i32 @injectFault1(i64 1618, i32 %494, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi320 = call i32 @injectFault1(i64 1619, i32 %fi318, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi321 = call i32 @injectFault1(i64 1619, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %495 = sub nsw i32 %fi320, %fi321, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1747, !taffo.constinfo !67
-  %fi319 = call i32 @injectFault1(i64 1619, i32 %495, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi838 = call i32 @injectFault1(i64 1620, i32 %fi319, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi839 = call i32 @injectFault1(i64 1620, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %496 = icmp eq i32 %fi838, %fi839, !taffo.info !0, !llfi_index !1748
-  %fi837 = call i1 @injectFault2(i64 1620, i1 %496, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi840 = call i1 @injectFault2(i64 1621, i1 %fi837, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi840, label %499, label %497, !llfi_index !1749
+  %fi837 = call i32 @injectFault1(i64 1618, i32 %494, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi839 = call i32 @injectFault1(i64 1619, i32 %fi837, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi840 = call i32 @injectFault1(i64 1619, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %495 = sub nsw i32 %fi839, %fi840, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1747, !taffo.constinfo !67
+  %fi838 = call i32 @injectFault1(i64 1619, i32 %495, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi842 = call i32 @injectFault1(i64 1620, i32 %fi838, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi843 = call i32 @injectFault1(i64 1620, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %496 = icmp eq i32 %fi842, %fi843, !taffo.info !0, !llfi_index !1748
+  %fi841 = call i1 @injectFault3(i64 1620, i1 %496, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi844 = call i1 @injectFault3(i64 1621, i1 %fi841, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi844, label %499, label %497, !llfi_index !1749
 
 497:                                              ; preds = %493
-  %fi842 = call i32 @injectFault1(i64 1622, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi843 = call i32 @injectFault1(i64 1622, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %498 = icmp eq i32 %fi842, %fi843, !taffo.info !0, !llfi_index !1750
-  %fi841 = call i1 @injectFault2(i64 1622, i1 %498, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi844 = call i1 @injectFault2(i64 1623, i1 %fi841, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi844, label %499, label %501, !llfi_index !1751
+  %fi846 = call i32 @injectFault1(i64 1622, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi847 = call i32 @injectFault1(i64 1622, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %498 = icmp eq i32 %fi846, %fi847, !taffo.info !0, !llfi_index !1750
+  %fi845 = call i1 @injectFault3(i64 1622, i1 %498, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi848 = call i1 @injectFault3(i64 1623, i1 %fi845, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi848, label %499, label %501, !llfi_index !1751
 
 499:                                              ; preds = %497, %493
-  %fi846 = call i32 @injectFault1(i64 1624, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi847 = call i32 @injectFault1(i64 1624, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %500 = lshr i32 %fi846, %fi847, !llfi_index !1752
-  %fi845 = call i32 @injectFault1(i64 1624, i32 %500, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi850 = call i32 @injectFault1(i64 1624, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi851 = call i32 @injectFault1(i64 1624, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %500 = lshr i32 %fi850, %fi851, !llfi_index !1752
+  %fi849 = call i32 @injectFault1(i64 1624, i32 %500, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %511, !llfi_index !1753
 
 501:                                              ; preds = %497
   %502 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1754
   %503 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %502, align 8, !llfi_index !1755
-  %fi849 = call i32 @injectFault1(i64 1628, i32 %fi534, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi850 = call i32 @injectFault1(i64 1628, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %504 = sub nsw i32 %fi849, %fi850, !taffo.info !0, !llfi_index !1756, !taffo.constinfo !67
-  %fi848 = call i32 @injectFault1(i64 1628, i32 %504, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi852 = call i32 @injectFault1(i64 1629, i32 %fi848, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %505 = sext i32 %fi852 to i64, !taffo.info !0, !llfi_index !1757
-  %fi851 = call i64 @injectFault0(i64 1629, i64 %505, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi853 = call i64 @injectFault0(i64 1630, i64 %fi851, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %506 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %503, i64 %fi853, !llfi_index !1758
+  %fi853 = call i32 @injectFault1(i64 1628, i32 %fi530, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi854 = call i32 @injectFault1(i64 1628, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %504 = sub nsw i32 %fi853, %fi854, !taffo.info !0, !llfi_index !1756, !taffo.constinfo !67
+  %fi852 = call i32 @injectFault1(i64 1628, i32 %504, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi856 = call i32 @injectFault1(i64 1629, i32 %fi852, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %505 = sext i32 %fi856 to i64, !taffo.info !0, !llfi_index !1757
+  %fi855 = call i64 @injectFault0(i64 1629, i64 %505, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi857 = call i64 @injectFault0(i64 1630, i64 %fi855, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %506 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %503, i64 %fi857, !llfi_index !1758
   %507 = load { i32, i32, i32 }*, { i32, i32, i32 }** %506, align 8, !llfi_index !1759
-  %fi855 = call i32 @injectFault1(i64 1632, i32 %fi319, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi856 = call i32 @injectFault1(i64 1632, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %508 = sub nsw i32 %fi855, %fi856, !taffo.info !1760, !llfi_index !1762, !taffo.constinfo !67
-  %fi854 = call i32 @injectFault1(i64 1632, i32 %508, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi858 = call i32 @injectFault1(i64 1633, i32 %fi854, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %509 = sext i32 %fi858 to i64, !taffo.info !1760, !llfi_index !1763
-  %fi857 = call i64 @injectFault0(i64 1633, i64 %509, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %510 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %507, i64 %fi857, !llfi_index !1764
+  %fi859 = call i32 @injectFault1(i64 1632, i32 %fi838, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi860 = call i32 @injectFault1(i64 1632, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %508 = sub nsw i32 %fi859, %fi860, !taffo.info !1760, !llfi_index !1762, !taffo.constinfo !67
+  %fi858 = call i32 @injectFault1(i64 1632, i32 %508, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi862 = call i32 @injectFault1(i64 1633, i32 %fi858, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %509 = sext i32 %fi862 to i64, !taffo.info !1760, !llfi_index !1763
+  %fi861 = call i64 @injectFault0(i64 1633, i64 %509, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %510 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %507, i64 %fi861, !llfi_index !1764
   %u8_24fixp244 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %510, i32 0, i32 0, !taffo.info !611, !llfi_index !1765
   %u8_24fixp285 = load i32, i32* %u8_24fixp244, align 4, !taffo.info !611, !llfi_index !1766
-  %fi859 = call i32 @injectFault1(i64 1636, i32 %u8_24fixp285, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi863 = call i32 @injectFault1(i64 1636, i32 %u8_24fixp285, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %511, !llfi_index !1767
 
 511:                                              ; preds = %501, %499
-  %u8_24fixp316 = phi i32 [ %fi845, %499 ], [ %fi859, %501 ], !taffo.info !611, !llfi_index !1768
-  %fi860 = call i32 @injectFault1(i64 1638, i32 %u8_24fixp316, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi861 = call i64 @injectFault0(i64 1639, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi862 = call i64 @injectFault0(i64 1639, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp114 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi861, i64 %fi862, !taffo.info !611, !llfi_index !1769, !taffo.target !1037
-  %fi863 = call i64 @injectFault0(i64 1640, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi864 = call i64 @injectFault0(i64 1640, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp163 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp114, i64 %fi863, i64 %fi864, !taffo.info !611, !llfi_index !1770, !taffo.target !1037
-  %fi865 = call i32 @injectFault1(i64 1641, i32 %fi860, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi865, i32* %u8_24fixp163, align 16, !taffo.info !47, !llfi_index !1771, !taffo.target !1037
-  %fi867 = call i32 @injectFault1(i64 1642, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi868 = call i32 @injectFault1(i64 1642, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %512 = icmp eq i32 %fi867, %fi868, !taffo.info !0, !llfi_index !1772
-  %fi866 = call i1 @injectFault2(i64 1642, i1 %512, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi598 = call i1 @injectFault2(i64 1643, i1 %fi866, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi598, label %513, label %515, !llfi_index !1773
+  %u8_24fixp316 = phi i32 [ %fi849, %499 ], [ %fi863, %501 ], !taffo.info !611, !llfi_index !1768
+  %fi864 = call i32 @injectFault1(i64 1638, i32 %u8_24fixp316, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi865 = call i64 @injectFault0(i64 1639, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi866 = call i64 @injectFault0(i64 1639, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp114 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi865, i64 %fi866, !taffo.info !611, !llfi_index !1769, !taffo.target !1037
+  %fi867 = call i64 @injectFault0(i64 1640, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi868 = call i64 @injectFault0(i64 1640, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp163 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp114, i64 %fi867, i64 %fi868, !taffo.info !611, !llfi_index !1770, !taffo.target !1037
+  %fi869 = call i32 @injectFault1(i64 1641, i32 %fi864, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi869, i32* %u8_24fixp163, align 16, !taffo.info !47, !llfi_index !1771, !taffo.target !1037
+  %fi871 = call i32 @injectFault1(i64 1642, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi872 = call i32 @injectFault1(i64 1642, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %512 = icmp eq i32 %fi871, %fi872, !taffo.info !0, !llfi_index !1772
+  %fi870 = call i1 @injectFault3(i64 1642, i1 %512, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi594 = call i1 @injectFault3(i64 1643, i1 %fi870, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi594, label %513, label %515, !llfi_index !1773
 
 513:                                              ; preds = %511
-  %fi600 = call i32 @injectFault1(i64 1644, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi601 = call i32 @injectFault1(i64 1644, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %514 = lshr i32 %fi600, %fi601, !llfi_index !1774
-  %fi599 = call i32 @injectFault1(i64 1644, i32 %514, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi596 = call i32 @injectFault1(i64 1644, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi597 = call i32 @injectFault1(i64 1644, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %514 = lshr i32 %fi596, %fi597, !llfi_index !1774
+  %fi595 = call i32 @injectFault1(i64 1644, i32 %514, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %524, !llfi_index !1775
 
 515:                                              ; preds = %511
   %516 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1776
   %517 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %516, align 8, !llfi_index !1777
-  %fi603 = call i32 @injectFault1(i64 1648, i32 %fi534, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi604 = call i32 @injectFault1(i64 1648, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %518 = sub nsw i32 %fi603, %fi604, !taffo.info !0, !llfi_index !1778, !taffo.constinfo !67
-  %fi602 = call i32 @injectFault1(i64 1648, i32 %518, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi606 = call i32 @injectFault1(i64 1649, i32 %fi602, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %519 = sext i32 %fi606 to i64, !taffo.info !0, !llfi_index !1779
-  %fi605 = call i64 @injectFault0(i64 1649, i64 %519, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi607 = call i64 @injectFault0(i64 1650, i64 %fi605, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %520 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %517, i64 %fi607, !llfi_index !1780
+  %fi599 = call i32 @injectFault1(i64 1648, i32 %fi530, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi600 = call i32 @injectFault1(i64 1648, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %518 = sub nsw i32 %fi599, %fi600, !taffo.info !0, !llfi_index !1778, !taffo.constinfo !67
+  %fi598 = call i32 @injectFault1(i64 1648, i32 %518, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi602 = call i32 @injectFault1(i64 1649, i32 %fi598, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %519 = sext i32 %fi602 to i64, !taffo.info !0, !llfi_index !1779
+  %fi601 = call i64 @injectFault0(i64 1649, i64 %519, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi603 = call i64 @injectFault0(i64 1650, i64 %fi601, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %520 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %517, i64 %fi603, !llfi_index !1780
   %521 = load { i32, i32, i32 }*, { i32, i32, i32 }** %520, align 8, !llfi_index !1781
-  %fi102 = call i32 @injectFault1(i64 1652, i32 %fi319, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %522 = sext i32 %fi102 to i64, !taffo.info !1081, !llfi_index !1782
-  %fi101 = call i64 @injectFault0(i64 1652, i64 %522, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %523 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %521, i64 %fi101, !llfi_index !1783
+  %fi101 = call i32 @injectFault1(i64 1652, i32 %fi838, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %522 = sext i32 %fi101 to i64, !taffo.info !1081, !llfi_index !1782
+  %fi100 = call i64 @injectFault0(i64 1652, i64 %522, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %523 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %521, i64 %fi100, !llfi_index !1783
   %u8_24fixp196 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %523, i32 0, i32 0, !taffo.info !611, !llfi_index !1784
   %u8_24fixp243 = load i32, i32* %u8_24fixp196, align 4, !taffo.info !611, !llfi_index !1785
-  %fi869 = call i32 @injectFault1(i64 1655, i32 %u8_24fixp243, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi873 = call i32 @injectFault1(i64 1655, i32 %u8_24fixp243, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %524, !llfi_index !1786
 
 524:                                              ; preds = %515, %513
-  %u8_24fixp284 = phi i32 [ %fi599, %513 ], [ %fi869, %515 ], !taffo.info !611, !llfi_index !1787
-  %fi870 = call i32 @injectFault1(i64 1657, i32 %u8_24fixp284, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi871 = call i64 @injectFault0(i64 1658, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi872 = call i64 @injectFault0(i64 1658, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp113 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi871, i64 %fi872, !taffo.info !611, !llfi_index !1788, !taffo.target !1037
-  %fi873 = call i64 @injectFault0(i64 1659, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi874 = call i64 @injectFault0(i64 1659, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp162 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp113, i64 %fi873, i64 %fi874, !taffo.info !611, !llfi_index !1789, !taffo.target !1037
-  %fi875 = call i32 @injectFault1(i64 1660, i32 %fi870, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi875, i32* %u8_24fixp162, align 4, !taffo.info !47, !llfi_index !1790, !taffo.target !1037
+  %u8_24fixp284 = phi i32 [ %fi595, %513 ], [ %fi873, %515 ], !taffo.info !611, !llfi_index !1787
+  %fi874 = call i32 @injectFault1(i64 1657, i32 %u8_24fixp284, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi875 = call i64 @injectFault0(i64 1658, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi876 = call i64 @injectFault0(i64 1658, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp113 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi875, i64 %fi876, !taffo.info !611, !llfi_index !1788, !taffo.target !1037
+  %fi877 = call i64 @injectFault0(i64 1659, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi878 = call i64 @injectFault0(i64 1659, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp162 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp113, i64 %fi877, i64 %fi878, !taffo.info !611, !llfi_index !1789, !taffo.target !1037
+  %fi879 = call i32 @injectFault1(i64 1660, i32 %fi874, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi879, i32* %u8_24fixp162, align 4, !taffo.info !47, !llfi_index !1790, !taffo.target !1037
   %matchop75 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1791
   %525 = load i32, i32* %matchop75, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1792
-  %fi876 = call i32 @injectFault1(i64 1662, i32 %525, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi878 = call i32 @injectFault1(i64 1663, i32 %fi876, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi879 = call i32 @injectFault1(i64 1663, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %526 = sub nsw i32 %fi878, %fi879, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1793, !taffo.constinfo !67
-  %fi877 = call i32 @injectFault1(i64 1663, i32 %526, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi881 = call i32 @injectFault1(i64 1664, i32 %fi319, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi882 = call i32 @injectFault1(i64 1664, i32 %fi877, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %527 = icmp eq i32 %fi881, %fi882, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1794
-  %fi880 = call i1 @injectFault2(i64 1664, i1 %527, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi883 = call i1 @injectFault2(i64 1665, i1 %fi880, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi883, label %530, label %528, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1795
+  %fi880 = call i32 @injectFault1(i64 1662, i32 %525, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi882 = call i32 @injectFault1(i64 1663, i32 %fi880, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi883 = call i32 @injectFault1(i64 1663, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %526 = sub nsw i32 %fi882, %fi883, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1793, !taffo.constinfo !67
+  %fi881 = call i32 @injectFault1(i64 1663, i32 %526, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi885 = call i32 @injectFault1(i64 1664, i32 %fi838, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi886 = call i32 @injectFault1(i64 1664, i32 %fi881, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %527 = icmp eq i32 %fi885, %fi886, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1794
+  %fi884 = call i1 @injectFault3(i64 1664, i1 %527, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi887 = call i1 @injectFault3(i64 1665, i1 %fi884, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi887, label %530, label %528, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1795
 
 528:                                              ; preds = %524
-  %fi831 = call i32 @injectFault1(i64 1666, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi832 = call i32 @injectFault1(i64 1666, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %529 = icmp eq i32 %fi831, %fi832, !taffo.info !0, !llfi_index !1796
-  %fi830 = call i1 @injectFault2(i64 1666, i1 %529, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi833 = call i1 @injectFault2(i64 1667, i1 %fi830, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi833, label %530, label %532, !llfi_index !1797
+  %fi824 = call i32 @injectFault1(i64 1666, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi825 = call i32 @injectFault1(i64 1666, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %529 = icmp eq i32 %fi824, %fi825, !taffo.info !0, !llfi_index !1796
+  %fi823 = call i1 @injectFault3(i64 1666, i1 %529, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi826 = call i1 @injectFault3(i64 1667, i1 %fi823, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi826, label %530, label %532, !llfi_index !1797
 
 530:                                              ; preds = %528, %524
-  %fi835 = call i32 @injectFault1(i64 1668, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi836 = call i32 @injectFault1(i64 1668, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %531 = lshr i32 %fi835, %fi836, !llfi_index !1798
-  %fi834 = call i32 @injectFault1(i64 1668, i32 %531, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi828 = call i32 @injectFault1(i64 1668, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi829 = call i32 @injectFault1(i64 1668, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %531 = lshr i32 %fi828, %fi829, !llfi_index !1798
+  %fi827 = call i32 @injectFault1(i64 1668, i32 %531, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %542, !llfi_index !1799
 
 532:                                              ; preds = %528
   %533 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1800
   %534 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %533, align 8, !llfi_index !1801
-  %fi885 = call i32 @injectFault1(i64 1672, i32 %fi534, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi886 = call i32 @injectFault1(i64 1672, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %535 = sub nsw i32 %fi885, %fi886, !taffo.info !0, !llfi_index !1802, !taffo.constinfo !67
-  %fi884 = call i32 @injectFault1(i64 1672, i32 %535, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi888 = call i32 @injectFault1(i64 1673, i32 %fi884, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %536 = sext i32 %fi888 to i64, !taffo.info !0, !llfi_index !1803
-  %fi887 = call i64 @injectFault0(i64 1673, i64 %536, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi889 = call i64 @injectFault0(i64 1674, i64 %fi887, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %537 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %534, i64 %fi889, !llfi_index !1804
+  %fi889 = call i32 @injectFault1(i64 1672, i32 %fi530, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi890 = call i32 @injectFault1(i64 1672, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %535 = sub nsw i32 %fi889, %fi890, !taffo.info !0, !llfi_index !1802, !taffo.constinfo !67
+  %fi888 = call i32 @injectFault1(i64 1672, i32 %535, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi892 = call i32 @injectFault1(i64 1673, i32 %fi888, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %536 = sext i32 %fi892 to i64, !taffo.info !0, !llfi_index !1803
+  %fi891 = call i64 @injectFault0(i64 1673, i64 %536, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi893 = call i64 @injectFault0(i64 1674, i64 %fi891, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %537 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %534, i64 %fi893, !llfi_index !1804
   %538 = load { i32, i32, i32 }*, { i32, i32, i32 }** %537, align 8, !llfi_index !1805
-  %fi891 = call i32 @injectFault1(i64 1676, i32 %fi319, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi892 = call i32 @injectFault1(i64 1676, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %539 = add nsw i32 %fi891, %fi892, !taffo.info !0, !llfi_index !1806, !taffo.constinfo !67
-  %fi890 = call i32 @injectFault1(i64 1676, i32 %539, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi894 = call i32 @injectFault1(i64 1677, i32 %fi890, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %540 = sext i32 %fi894 to i64, !taffo.info !0, !llfi_index !1807
-  %fi893 = call i64 @injectFault0(i64 1677, i64 %540, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %541 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %538, i64 %fi893, !llfi_index !1808
+  %fi895 = call i32 @injectFault1(i64 1676, i32 %fi838, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi896 = call i32 @injectFault1(i64 1676, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %539 = add nsw i32 %fi895, %fi896, !taffo.info !0, !llfi_index !1806, !taffo.constinfo !67
+  %fi894 = call i32 @injectFault1(i64 1676, i32 %539, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi898 = call i32 @injectFault1(i64 1677, i32 %fi894, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %540 = sext i32 %fi898 to i64, !taffo.info !0, !llfi_index !1807
+  %fi897 = call i64 @injectFault0(i64 1677, i64 %540, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %541 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %538, i64 %fi897, !llfi_index !1808
   %u8_24fixp242 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %541, i32 0, i32 0, !taffo.info !611, !llfi_index !1809
   %u8_24fixp283 = load i32, i32* %u8_24fixp242, align 4, !taffo.info !611, !llfi_index !1810
-  %fi895 = call i32 @injectFault1(i64 1680, i32 %u8_24fixp283, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi899 = call i32 @injectFault1(i64 1680, i32 %u8_24fixp283, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %542, !llfi_index !1811
 
 542:                                              ; preds = %532, %530
-  %u8_24fixp315 = phi i32 [ %fi834, %530 ], [ %fi895, %532 ], !taffo.info !611, !llfi_index !1812
-  %fi896 = call i32 @injectFault1(i64 1682, i32 %u8_24fixp315, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi897 = call i64 @injectFault0(i64 1683, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi898 = call i64 @injectFault0(i64 1683, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp112 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi897, i64 %fi898, !taffo.info !611, !llfi_index !1813, !taffo.target !1037
-  %fi899 = call i64 @injectFault0(i64 1684, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi900 = call i64 @injectFault0(i64 1684, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp161 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp112, i64 %fi899, i64 %fi900, !taffo.info !611, !llfi_index !1814, !taffo.target !1037
-  %fi901 = call i32 @injectFault1(i64 1685, i32 %fi896, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi901, i32* %u8_24fixp161, align 8, !taffo.info !47, !llfi_index !1815, !taffo.target !1037
-  %fi903 = call i32 @injectFault1(i64 1686, i32 %fi319, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi904 = call i32 @injectFault1(i64 1686, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %543 = icmp eq i32 %fi903, %fi904, !taffo.info !0, !llfi_index !1816
-  %fi902 = call i1 @injectFault2(i64 1686, i1 %543, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi905 = call i1 @injectFault2(i64 1687, i1 %fi902, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi905, label %544, label %546, !llfi_index !1817
+  %u8_24fixp315 = phi i32 [ %fi827, %530 ], [ %fi899, %532 ], !taffo.info !611, !llfi_index !1812
+  %fi900 = call i32 @injectFault1(i64 1682, i32 %u8_24fixp315, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi901 = call i64 @injectFault0(i64 1683, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi902 = call i64 @injectFault0(i64 1683, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp112 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi901, i64 %fi902, !taffo.info !611, !llfi_index !1813, !taffo.target !1037
+  %fi903 = call i64 @injectFault0(i64 1684, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi904 = call i64 @injectFault0(i64 1684, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp161 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp112, i64 %fi903, i64 %fi904, !taffo.info !611, !llfi_index !1814, !taffo.target !1037
+  %fi905 = call i32 @injectFault1(i64 1685, i32 %fi900, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi905, i32* %u8_24fixp161, align 8, !taffo.info !47, !llfi_index !1815, !taffo.target !1037
+  %fi907 = call i32 @injectFault1(i64 1686, i32 %fi838, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi908 = call i32 @injectFault1(i64 1686, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %543 = icmp eq i32 %fi907, %fi908, !taffo.info !0, !llfi_index !1816
+  %fi906 = call i1 @injectFault3(i64 1686, i1 %543, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi909 = call i1 @injectFault3(i64 1687, i1 %fi906, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi909, label %544, label %546, !llfi_index !1817
 
 544:                                              ; preds = %542
-  %fi907 = call i32 @injectFault1(i64 1688, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi908 = call i32 @injectFault1(i64 1688, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %545 = lshr i32 %fi907, %fi908, !llfi_index !1818
-  %fi906 = call i32 @injectFault1(i64 1688, i32 %545, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi911 = call i32 @injectFault1(i64 1688, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi912 = call i32 @injectFault1(i64 1688, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %545 = lshr i32 %fi911, %fi912, !llfi_index !1818
+  %fi910 = call i32 @injectFault1(i64 1688, i32 %545, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %555, !llfi_index !1819
 
 546:                                              ; preds = %542
   %547 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1820
   %548 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %547, align 8, !llfi_index !1821
-  %fi910 = call i32 @injectFault1(i64 1692, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %549 = sext i32 %fi910 to i64, !taffo.info !323, !llfi_index !1822
-  %fi909 = call i64 @injectFault0(i64 1692, i64 %549, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi911 = call i64 @injectFault0(i64 1693, i64 %fi909, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %550 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %548, i64 %fi911, !llfi_index !1823
+  %fi914 = call i32 @injectFault1(i64 1692, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %549 = sext i32 %fi914 to i64, !taffo.info !323, !llfi_index !1822
+  %fi913 = call i64 @injectFault0(i64 1692, i64 %549, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi915 = call i64 @injectFault0(i64 1693, i64 %fi913, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %550 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %548, i64 %fi915, !llfi_index !1823
   %551 = load { i32, i32, i32 }*, { i32, i32, i32 }** %550, align 8, !llfi_index !1824
-  %fi913 = call i32 @injectFault1(i64 1695, i32 %fi319, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi914 = call i32 @injectFault1(i64 1695, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %552 = sub nsw i32 %fi913, %fi914, !taffo.info !1760, !llfi_index !1825, !taffo.constinfo !67
-  %fi912 = call i32 @injectFault1(i64 1695, i32 %552, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi916 = call i32 @injectFault1(i64 1696, i32 %fi912, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %553 = sext i32 %fi916 to i64, !taffo.info !1760, !llfi_index !1826
-  %fi915 = call i64 @injectFault0(i64 1696, i64 %553, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %554 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %551, i64 %fi915, !llfi_index !1827
+  %fi917 = call i32 @injectFault1(i64 1695, i32 %fi838, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi918 = call i32 @injectFault1(i64 1695, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %552 = sub nsw i32 %fi917, %fi918, !taffo.info !1760, !llfi_index !1825, !taffo.constinfo !67
+  %fi916 = call i32 @injectFault1(i64 1695, i32 %552, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi920 = call i32 @injectFault1(i64 1696, i32 %fi916, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %553 = sext i32 %fi920 to i64, !taffo.info !1760, !llfi_index !1826
+  %fi919 = call i64 @injectFault0(i64 1696, i64 %553, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %554 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %551, i64 %fi919, !llfi_index !1827
   %u8_24fixp241 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %554, i32 0, i32 0, !taffo.info !611, !llfi_index !1828
   %u8_24fixp282 = load i32, i32* %u8_24fixp241, align 4, !taffo.info !611, !llfi_index !1829
-  %fi917 = call i32 @injectFault1(i64 1699, i32 %u8_24fixp282, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi921 = call i32 @injectFault1(i64 1699, i32 %u8_24fixp282, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %555, !llfi_index !1830
 
 555:                                              ; preds = %546, %544
-  %u8_24fixp314 = phi i32 [ %fi906, %544 ], [ %fi917, %546 ], !taffo.info !611, !llfi_index !1831
-  %fi918 = call i32 @injectFault1(i64 1701, i32 %u8_24fixp314, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi919 = call i64 @injectFault0(i64 1702, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi920 = call i64 @injectFault0(i64 1702, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp111 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi919, i64 %fi920, !taffo.info !611, !llfi_index !1832, !taffo.target !1037
-  %fi921 = call i64 @injectFault0(i64 1703, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi922 = call i64 @injectFault0(i64 1703, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp160 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp111, i64 %fi921, i64 %fi922, !taffo.info !611, !llfi_index !1833, !taffo.target !1037
-  %fi923 = call i32 @injectFault1(i64 1704, i32 %fi918, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi923, i32* %u8_24fixp160, align 4, !taffo.info !47, !llfi_index !1834, !taffo.target !1037
+  %u8_24fixp314 = phi i32 [ %fi910, %544 ], [ %fi921, %546 ], !taffo.info !611, !llfi_index !1831
+  %fi922 = call i32 @injectFault1(i64 1701, i32 %u8_24fixp314, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi923 = call i64 @injectFault0(i64 1702, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi924 = call i64 @injectFault0(i64 1702, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp111 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi923, i64 %fi924, !taffo.info !611, !llfi_index !1832, !taffo.target !1037
+  %fi925 = call i64 @injectFault0(i64 1703, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi926 = call i64 @injectFault0(i64 1703, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp160 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp111, i64 %fi925, i64 %fi926, !taffo.info !611, !llfi_index !1833, !taffo.target !1037
+  %fi927 = call i32 @injectFault1(i64 1704, i32 %fi922, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi927, i32* %u8_24fixp160, align 4, !taffo.info !47, !llfi_index !1834, !taffo.target !1037
   %556 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1835
   %557 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %556, align 8, !llfi_index !1836
-  %fi925 = call i32 @injectFault1(i64 1707, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %558 = sext i32 %fi925 to i64, !taffo.info !323, !llfi_index !1837
-  %fi924 = call i64 @injectFault0(i64 1707, i64 %558, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi926 = call i64 @injectFault0(i64 1708, i64 %fi924, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %559 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %557, i64 %fi926, !llfi_index !1838
+  %fi929 = call i32 @injectFault1(i64 1707, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %558 = sext i32 %fi929 to i64, !taffo.info !323, !llfi_index !1837
+  %fi928 = call i64 @injectFault0(i64 1707, i64 %558, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi930 = call i64 @injectFault0(i64 1708, i64 %fi928, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %559 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %557, i64 %fi930, !llfi_index !1838
   %560 = load { i32, i32, i32 }*, { i32, i32, i32 }** %559, align 8, !llfi_index !1839
-  %fi928 = call i32 @injectFault1(i64 1710, i32 %fi319, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %561 = sext i32 %fi928 to i64, !taffo.info !1081, !llfi_index !1840
-  %fi927 = call i64 @injectFault0(i64 1710, i64 %561, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %562 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %560, i64 %fi927, !llfi_index !1841
+  %fi932 = call i32 @injectFault1(i64 1710, i32 %fi838, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %561 = sext i32 %fi932 to i64, !taffo.info !1081, !llfi_index !1840
+  %fi931 = call i64 @injectFault0(i64 1710, i64 %561, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %562 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %560, i64 %fi931, !llfi_index !1841
   %u8_24fixp195 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %562, i32 0, i32 0, !taffo.info !611, !llfi_index !1842
   %u8_24fixp240 = load i32, i32* %u8_24fixp195, align 4, !taffo.info !611, !llfi_index !1843
-  %fi929 = call i32 @injectFault1(i64 1713, i32 %u8_24fixp240, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi930 = call i64 @injectFault0(i64 1714, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi931 = call i64 @injectFault0(i64 1714, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp110 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi930, i64 %fi931, !taffo.info !611, !llfi_index !1844, !taffo.target !1037
-  %fi932 = call i64 @injectFault0(i64 1715, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi933 = call i64 @injectFault0(i64 1715, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp159 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp110, i64 %fi932, i64 %fi933, !taffo.info !611, !llfi_index !1845, !taffo.target !1037
-  %fi934 = call i32 @injectFault1(i64 1716, i32 %fi929, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi934, i32* %u8_24fixp159, align 4, !taffo.info !47, !llfi_index !1846, !taffo.target !1037
+  %fi933 = call i32 @injectFault1(i64 1713, i32 %u8_24fixp240, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi934 = call i64 @injectFault0(i64 1714, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi935 = call i64 @injectFault0(i64 1714, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp110 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi934, i64 %fi935, !taffo.info !611, !llfi_index !1844, !taffo.target !1037
+  %fi936 = call i64 @injectFault0(i64 1715, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi937 = call i64 @injectFault0(i64 1715, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp159 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp110, i64 %fi936, i64 %fi937, !taffo.info !611, !llfi_index !1845, !taffo.target !1037
+  %fi938 = call i32 @injectFault1(i64 1716, i32 %fi933, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi938, i32* %u8_24fixp159, align 4, !taffo.info !47, !llfi_index !1846, !taffo.target !1037
   %matchop74 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1847
   %563 = load i32, i32* %matchop74, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1848
-  %fi935 = call i32 @injectFault1(i64 1718, i32 %563, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi937 = call i32 @injectFault1(i64 1719, i32 %fi935, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi938 = call i32 @injectFault1(i64 1719, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %564 = sub nsw i32 %fi937, %fi938, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1849, !taffo.constinfo !67
-  %fi936 = call i32 @injectFault1(i64 1719, i32 %564, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi940 = call i32 @injectFault1(i64 1720, i32 %fi319, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi941 = call i32 @injectFault1(i64 1720, i32 %fi936, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %565 = icmp eq i32 %fi940, %fi941, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1850
-  %fi939 = call i1 @injectFault2(i64 1720, i1 %565, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi942 = call i1 @injectFault2(i64 1721, i1 %fi939, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi942, label %566, label %568, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1851
+  %fi939 = call i32 @injectFault1(i64 1718, i32 %563, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi941 = call i32 @injectFault1(i64 1719, i32 %fi939, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi942 = call i32 @injectFault1(i64 1719, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %564 = sub nsw i32 %fi941, %fi942, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1849, !taffo.constinfo !67
+  %fi940 = call i32 @injectFault1(i64 1719, i32 %564, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi944 = call i32 @injectFault1(i64 1720, i32 %fi838, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi945 = call i32 @injectFault1(i64 1720, i32 %fi940, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %565 = icmp eq i32 %fi944, %fi945, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1850
+  %fi943 = call i1 @injectFault3(i64 1720, i1 %565, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi946 = call i1 @injectFault3(i64 1721, i1 %fi943, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi946, label %566, label %568, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1851
 
 566:                                              ; preds = %555
-  %fi944 = call i32 @injectFault1(i64 1722, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi945 = call i32 @injectFault1(i64 1722, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %567 = lshr i32 %fi944, %fi945, !llfi_index !1852
-  %fi943 = call i32 @injectFault1(i64 1722, i32 %567, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi948 = call i32 @injectFault1(i64 1722, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi949 = call i32 @injectFault1(i64 1722, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %567 = lshr i32 %fi948, %fi949, !llfi_index !1852
+  %fi947 = call i32 @injectFault1(i64 1722, i32 %567, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %577, !llfi_index !1853
 
 568:                                              ; preds = %555
   %569 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1854
   %570 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %569, align 8, !llfi_index !1855
-  %fi947 = call i32 @injectFault1(i64 1726, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %571 = sext i32 %fi947 to i64, !taffo.info !323, !llfi_index !1856
-  %fi946 = call i64 @injectFault0(i64 1726, i64 %571, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi948 = call i64 @injectFault0(i64 1727, i64 %fi946, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %572 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %570, i64 %fi948, !llfi_index !1857
+  %fi951 = call i32 @injectFault1(i64 1726, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %571 = sext i32 %fi951 to i64, !taffo.info !323, !llfi_index !1856
+  %fi950 = call i64 @injectFault0(i64 1726, i64 %571, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi952 = call i64 @injectFault0(i64 1727, i64 %fi950, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %572 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %570, i64 %fi952, !llfi_index !1857
   %573 = load { i32, i32, i32 }*, { i32, i32, i32 }** %572, align 8, !llfi_index !1858
-  %fi950 = call i32 @injectFault1(i64 1729, i32 %fi319, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi951 = call i32 @injectFault1(i64 1729, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %574 = add nsw i32 %fi950, %fi951, !taffo.info !0, !llfi_index !1859, !taffo.constinfo !67
-  %fi949 = call i32 @injectFault1(i64 1729, i32 %574, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi953 = call i32 @injectFault1(i64 1730, i32 %fi949, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %575 = sext i32 %fi953 to i64, !taffo.info !0, !llfi_index !1860
-  %fi952 = call i64 @injectFault0(i64 1730, i64 %575, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %576 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %573, i64 %fi952, !llfi_index !1861
+  %fi954 = call i32 @injectFault1(i64 1729, i32 %fi838, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi955 = call i32 @injectFault1(i64 1729, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %574 = add nsw i32 %fi954, %fi955, !taffo.info !0, !llfi_index !1859, !taffo.constinfo !67
+  %fi953 = call i32 @injectFault1(i64 1729, i32 %574, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi957 = call i32 @injectFault1(i64 1730, i32 %fi953, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %575 = sext i32 %fi957 to i64, !taffo.info !0, !llfi_index !1860
+  %fi956 = call i64 @injectFault0(i64 1730, i64 %575, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %576 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %573, i64 %fi956, !llfi_index !1861
   %u8_24fixp239 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %576, i32 0, i32 0, !taffo.info !611, !llfi_index !1862
   %u8_24fixp281 = load i32, i32* %u8_24fixp239, align 4, !taffo.info !611, !llfi_index !1863
-  %fi954 = call i32 @injectFault1(i64 1733, i32 %u8_24fixp281, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi958 = call i32 @injectFault1(i64 1733, i32 %u8_24fixp281, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %577, !llfi_index !1864
 
 577:                                              ; preds = %568, %566
-  %u8_24fixp313 = phi i32 [ %fi943, %566 ], [ %fi954, %568 ], !taffo.info !611, !llfi_index !1865
-  %fi691 = call i32 @injectFault1(i64 1735, i32 %u8_24fixp313, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi692 = call i64 @injectFault0(i64 1736, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi693 = call i64 @injectFault0(i64 1736, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp109 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi692, i64 %fi693, !taffo.info !611, !llfi_index !1866, !taffo.target !1037
-  %fi694 = call i64 @injectFault0(i64 1737, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi695 = call i64 @injectFault0(i64 1737, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp158 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp109, i64 %fi694, i64 %fi695, !taffo.info !611, !llfi_index !1867, !taffo.target !1037
-  %fi696 = call i32 @injectFault1(i64 1738, i32 %fi691, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi696, i32* %u8_24fixp158, align 4, !taffo.info !47, !llfi_index !1868, !taffo.target !1037
-  %fi698 = call i32 @injectFault1(i64 1739, i32 %fi319, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi699 = call i32 @injectFault1(i64 1739, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %578 = icmp eq i32 %fi698, %fi699, !taffo.info !0, !llfi_index !1869
-  %fi697 = call i1 @injectFault2(i64 1739, i1 %578, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi955 = call i1 @injectFault2(i64 1740, i1 %fi697, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi955, label %583, label %579, !llfi_index !1870
+  %u8_24fixp313 = phi i32 [ %fi947, %566 ], [ %fi958, %568 ], !taffo.info !611, !llfi_index !1865
+  %fi687 = call i32 @injectFault1(i64 1735, i32 %u8_24fixp313, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi688 = call i64 @injectFault0(i64 1736, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi689 = call i64 @injectFault0(i64 1736, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp109 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi688, i64 %fi689, !taffo.info !611, !llfi_index !1866, !taffo.target !1037
+  %fi690 = call i64 @injectFault0(i64 1737, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi691 = call i64 @injectFault0(i64 1737, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp158 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp109, i64 %fi690, i64 %fi691, !taffo.info !611, !llfi_index !1867, !taffo.target !1037
+  %fi692 = call i32 @injectFault1(i64 1738, i32 %fi687, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi692, i32* %u8_24fixp158, align 4, !taffo.info !47, !llfi_index !1868, !taffo.target !1037
+  %fi694 = call i32 @injectFault1(i64 1739, i32 %fi838, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi695 = call i32 @injectFault1(i64 1739, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %578 = icmp eq i32 %fi694, %fi695, !taffo.info !0, !llfi_index !1869
+  %fi693 = call i1 @injectFault3(i64 1739, i1 %578, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi959 = call i1 @injectFault3(i64 1740, i1 %fi693, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi959, label %583, label %579, !llfi_index !1870
 
 579:                                              ; preds = %577
   %matchop73 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1053, !llfi_index !1871
   %580 = load i32, i32* %matchop73, align 4, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1872
-  %fi956 = call i32 @injectFault1(i64 1742, i32 %580, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi958 = call i32 @injectFault1(i64 1743, i32 %fi956, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi959 = call i32 @injectFault1(i64 1743, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %581 = sub nsw i32 %fi958, %fi959, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1873, !taffo.constinfo !67
-  %fi957 = call i32 @injectFault1(i64 1743, i32 %581, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi961 = call i32 @injectFault1(i64 1744, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi962 = call i32 @injectFault1(i64 1744, i32 %fi957, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %582 = icmp eq i32 %fi961, %fi962, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1874
-  %fi960 = call i1 @injectFault2(i64 1744, i1 %582, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi963 = call i1 @injectFault2(i64 1745, i1 %fi960, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi963, label %583, label %585, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1875
+  %fi960 = call i32 @injectFault1(i64 1742, i32 %580, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi962 = call i32 @injectFault1(i64 1743, i32 %fi960, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi963 = call i32 @injectFault1(i64 1743, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %581 = sub nsw i32 %fi962, %fi963, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1873, !taffo.constinfo !67
+  %fi961 = call i32 @injectFault1(i64 1743, i32 %581, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi965 = call i32 @injectFault1(i64 1744, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi966 = call i32 @injectFault1(i64 1744, i32 %fi961, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %582 = icmp eq i32 %fi965, %fi966, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1874
+  %fi964 = call i1 @injectFault3(i64 1744, i1 %582, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi967 = call i1 @injectFault3(i64 1745, i1 %fi964, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi967, label %583, label %585, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1875
 
 583:                                              ; preds = %579, %577
-  %fi965 = call i32 @injectFault1(i64 1746, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi966 = call i32 @injectFault1(i64 1746, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %584 = lshr i32 %fi965, %fi966, !llfi_index !1876
-  %fi964 = call i32 @injectFault1(i64 1746, i32 %584, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi969 = call i32 @injectFault1(i64 1746, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi970 = call i32 @injectFault1(i64 1746, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %584 = lshr i32 %fi969, %fi970, !llfi_index !1876
+  %fi968 = call i32 @injectFault1(i64 1746, i32 %584, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %595, !llfi_index !1877
 
 585:                                              ; preds = %579
   %586 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1878
   %587 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %586, align 8, !llfi_index !1879
-  %fi968 = call i32 @injectFault1(i64 1750, i32 %fi534, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi969 = call i32 @injectFault1(i64 1750, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %588 = add nsw i32 %fi968, %fi969, !taffo.info !1484, !llfi_index !1880, !taffo.constinfo !67
-  %fi967 = call i32 @injectFault1(i64 1750, i32 %588, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi971 = call i32 @injectFault1(i64 1751, i32 %fi967, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %589 = sext i32 %fi971 to i64, !taffo.info !1484, !llfi_index !1881
-  %fi970 = call i64 @injectFault0(i64 1751, i64 %589, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi972 = call i64 @injectFault0(i64 1752, i64 %fi970, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %590 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %587, i64 %fi972, !llfi_index !1882
+  %fi972 = call i32 @injectFault1(i64 1750, i32 %fi530, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi973 = call i32 @injectFault1(i64 1750, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %588 = add nsw i32 %fi972, %fi973, !taffo.info !1484, !llfi_index !1880, !taffo.constinfo !67
+  %fi971 = call i32 @injectFault1(i64 1750, i32 %588, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi975 = call i32 @injectFault1(i64 1751, i32 %fi971, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %589 = sext i32 %fi975 to i64, !taffo.info !1484, !llfi_index !1881
+  %fi974 = call i64 @injectFault0(i64 1751, i64 %589, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi976 = call i64 @injectFault0(i64 1752, i64 %fi974, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %590 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %587, i64 %fi976, !llfi_index !1882
   %591 = load { i32, i32, i32 }*, { i32, i32, i32 }** %590, align 8, !llfi_index !1883
-  %fi974 = call i32 @injectFault1(i64 1754, i32 %fi319, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi975 = call i32 @injectFault1(i64 1754, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %592 = sub nsw i32 %fi974, %fi975, !taffo.info !1760, !llfi_index !1884, !taffo.constinfo !67
-  %fi973 = call i32 @injectFault1(i64 1754, i32 %592, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi977 = call i32 @injectFault1(i64 1755, i32 %fi973, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %593 = sext i32 %fi977 to i64, !taffo.info !1760, !llfi_index !1885
-  %fi976 = call i64 @injectFault0(i64 1755, i64 %593, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %594 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %591, i64 %fi976, !llfi_index !1886
+  %fi978 = call i32 @injectFault1(i64 1754, i32 %fi838, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi979 = call i32 @injectFault1(i64 1754, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %592 = sub nsw i32 %fi978, %fi979, !taffo.info !1760, !llfi_index !1884, !taffo.constinfo !67
+  %fi977 = call i32 @injectFault1(i64 1754, i32 %592, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi981 = call i32 @injectFault1(i64 1755, i32 %fi977, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %593 = sext i32 %fi981 to i64, !taffo.info !1760, !llfi_index !1885
+  %fi980 = call i64 @injectFault0(i64 1755, i64 %593, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %594 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %591, i64 %fi980, !llfi_index !1886
   %u8_24fixp238 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %594, i32 0, i32 0, !taffo.info !611, !llfi_index !1887
   %u8_24fixp280 = load i32, i32* %u8_24fixp238, align 4, !taffo.info !611, !llfi_index !1888
-  %fi978 = call i32 @injectFault1(i64 1758, i32 %u8_24fixp280, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi982 = call i32 @injectFault1(i64 1758, i32 %u8_24fixp280, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %595, !llfi_index !1889
 
 595:                                              ; preds = %585, %583
-  %u8_24fixp312 = phi i32 [ %fi964, %583 ], [ %fi978, %585 ], !taffo.info !611, !llfi_index !1890
-  %fi979 = call i32 @injectFault1(i64 1760, i32 %u8_24fixp312, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi980 = call i64 @injectFault0(i64 1761, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi981 = call i64 @injectFault0(i64 1761, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp108 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi980, i64 %fi981, !taffo.info !611, !llfi_index !1891, !taffo.target !1037
-  %fi982 = call i64 @injectFault0(i64 1762, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi983 = call i64 @injectFault0(i64 1762, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp157 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp108, i64 %fi982, i64 %fi983, !taffo.info !611, !llfi_index !1892, !taffo.target !1037
-  %fi984 = call i32 @injectFault1(i64 1763, i32 %fi979, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi984, i32* %u8_24fixp157, align 8, !taffo.info !47, !llfi_index !1893, !taffo.target !1037
+  %u8_24fixp312 = phi i32 [ %fi968, %583 ], [ %fi982, %585 ], !taffo.info !611, !llfi_index !1890
+  %fi983 = call i32 @injectFault1(i64 1760, i32 %u8_24fixp312, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi984 = call i64 @injectFault0(i64 1761, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi985 = call i64 @injectFault0(i64 1761, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp108 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi984, i64 %fi985, !taffo.info !611, !llfi_index !1891, !taffo.target !1037
+  %fi986 = call i64 @injectFault0(i64 1762, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi987 = call i64 @injectFault0(i64 1762, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp157 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp108, i64 %fi986, i64 %fi987, !taffo.info !611, !llfi_index !1892, !taffo.target !1037
+  %fi988 = call i32 @injectFault1(i64 1763, i32 %fi983, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi988, i32* %u8_24fixp157, align 8, !taffo.info !47, !llfi_index !1893, !taffo.target !1037
   %matchop72 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1053, !llfi_index !1894
   %596 = load i32, i32* %matchop72, align 4, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1895
-  %fi985 = call i32 @injectFault1(i64 1765, i32 %596, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi987 = call i32 @injectFault1(i64 1766, i32 %fi985, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi988 = call i32 @injectFault1(i64 1766, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %597 = sub nsw i32 %fi987, %fi988, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1896, !taffo.constinfo !67
-  %fi986 = call i32 @injectFault1(i64 1766, i32 %597, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi990 = call i32 @injectFault1(i64 1767, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi991 = call i32 @injectFault1(i64 1767, i32 %fi986, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %598 = icmp eq i32 %fi990, %fi991, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1897
-  %fi989 = call i1 @injectFault2(i64 1767, i1 %598, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi992 = call i1 @injectFault2(i64 1768, i1 %fi989, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi992, label %599, label %601, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1898
+  %fi989 = call i32 @injectFault1(i64 1765, i32 %596, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi991 = call i32 @injectFault1(i64 1766, i32 %fi989, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi992 = call i32 @injectFault1(i64 1766, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %597 = sub nsw i32 %fi991, %fi992, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1896, !taffo.constinfo !67
+  %fi990 = call i32 @injectFault1(i64 1766, i32 %597, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi994 = call i32 @injectFault1(i64 1767, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi995 = call i32 @injectFault1(i64 1767, i32 %fi990, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %598 = icmp eq i32 %fi994, %fi995, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1897
+  %fi993 = call i1 @injectFault3(i64 1767, i1 %598, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi996 = call i1 @injectFault3(i64 1768, i1 %fi993, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi996, label %599, label %601, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1898
 
 599:                                              ; preds = %595
-  %fi994 = call i32 @injectFault1(i64 1769, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi995 = call i32 @injectFault1(i64 1769, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %600 = lshr i32 %fi994, %fi995, !llfi_index !1899
-  %fi993 = call i32 @injectFault1(i64 1769, i32 %600, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi998 = call i32 @injectFault1(i64 1769, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi999 = call i32 @injectFault1(i64 1769, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %600 = lshr i32 %fi998, %fi999, !llfi_index !1899
+  %fi997 = call i32 @injectFault1(i64 1769, i32 %600, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %610, !llfi_index !1900
 
 601:                                              ; preds = %595
   %602 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1901
   %603 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %602, align 8, !llfi_index !1902
-  %fi997 = call i32 @injectFault1(i64 1773, i32 %fi534, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi998 = call i32 @injectFault1(i64 1773, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %604 = add nsw i32 %fi997, %fi998, !taffo.info !1484, !llfi_index !1903, !taffo.constinfo !67
-  %fi996 = call i32 @injectFault1(i64 1773, i32 %604, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1000 = call i32 @injectFault1(i64 1774, i32 %fi996, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %605 = sext i32 %fi1000 to i64, !taffo.info !1484, !llfi_index !1904
-  %fi999 = call i64 @injectFault0(i64 1774, i64 %605, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1001 = call i64 @injectFault0(i64 1775, i64 %fi999, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %606 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %603, i64 %fi1001, !llfi_index !1905
+  %fi1001 = call i32 @injectFault1(i64 1773, i32 %fi530, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1002 = call i32 @injectFault1(i64 1773, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %604 = add nsw i32 %fi1001, %fi1002, !taffo.info !1484, !llfi_index !1903, !taffo.constinfo !67
+  %fi1000 = call i32 @injectFault1(i64 1773, i32 %604, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1004 = call i32 @injectFault1(i64 1774, i32 %fi1000, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %605 = sext i32 %fi1004 to i64, !taffo.info !1484, !llfi_index !1904
+  %fi1003 = call i64 @injectFault0(i64 1774, i64 %605, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1005 = call i64 @injectFault0(i64 1775, i64 %fi1003, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %606 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %603, i64 %fi1005, !llfi_index !1905
   %607 = load { i32, i32, i32 }*, { i32, i32, i32 }** %606, align 8, !llfi_index !1906
-  %fi1003 = call i32 @injectFault1(i64 1777, i32 %fi319, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %608 = sext i32 %fi1003 to i64, !taffo.info !1081, !llfi_index !1907
-  %fi1002 = call i64 @injectFault0(i64 1777, i64 %608, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %609 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %607, i64 %fi1002, !llfi_index !1908
+  %fi1007 = call i32 @injectFault1(i64 1777, i32 %fi838, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %608 = sext i32 %fi1007 to i64, !taffo.info !1081, !llfi_index !1907
+  %fi1006 = call i64 @injectFault0(i64 1777, i64 %608, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %609 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %607, i64 %fi1006, !llfi_index !1908
   %u8_24fixp194 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %609, i32 0, i32 0, !taffo.info !611, !llfi_index !1909
   %u8_24fixp237 = load i32, i32* %u8_24fixp194, align 4, !taffo.info !611, !llfi_index !1910
-  %fi1004 = call i32 @injectFault1(i64 1780, i32 %u8_24fixp237, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1008 = call i32 @injectFault1(i64 1780, i32 %u8_24fixp237, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %610, !llfi_index !1911
 
 610:                                              ; preds = %601, %599
-  %u8_24fixp279 = phi i32 [ %fi993, %599 ], [ %fi1004, %601 ], !taffo.info !611, !llfi_index !1912
-  %fi1005 = call i32 @injectFault1(i64 1782, i32 %u8_24fixp279, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1006 = call i64 @injectFault0(i64 1783, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1007 = call i64 @injectFault0(i64 1783, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp107 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi1006, i64 %fi1007, !taffo.info !611, !llfi_index !1913, !taffo.target !1037
-  %fi1008 = call i64 @injectFault0(i64 1784, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1009 = call i64 @injectFault0(i64 1784, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp156 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp107, i64 %fi1008, i64 %fi1009, !taffo.info !611, !llfi_index !1914, !taffo.target !1037
-  %fi1010 = call i32 @injectFault1(i64 1785, i32 %fi1005, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi1010, i32* %u8_24fixp156, align 4, !taffo.info !47, !llfi_index !1915, !taffo.target !1037
+  %u8_24fixp279 = phi i32 [ %fi997, %599 ], [ %fi1008, %601 ], !taffo.info !611, !llfi_index !1912
+  %fi1009 = call i32 @injectFault1(i64 1782, i32 %u8_24fixp279, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1010 = call i64 @injectFault0(i64 1783, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1011 = call i64 @injectFault0(i64 1783, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp107 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi1010, i64 %fi1011, !taffo.info !611, !llfi_index !1913, !taffo.target !1037
+  %fi1012 = call i64 @injectFault0(i64 1784, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1013 = call i64 @injectFault0(i64 1784, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp156 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp107, i64 %fi1012, i64 %fi1013, !taffo.info !611, !llfi_index !1914, !taffo.target !1037
+  %fi1014 = call i32 @injectFault1(i64 1785, i32 %fi1009, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi1014, i32* %u8_24fixp156, align 4, !taffo.info !47, !llfi_index !1915, !taffo.target !1037
   %matchop71 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1916
   %611 = load i32, i32* %matchop71, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1917
-  %fi1011 = call i32 @injectFault1(i64 1787, i32 %611, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1013 = call i32 @injectFault1(i64 1788, i32 %fi1011, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1014 = call i32 @injectFault1(i64 1788, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %612 = sub nsw i32 %fi1013, %fi1014, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1918, !taffo.constinfo !67
-  %fi1012 = call i32 @injectFault1(i64 1788, i32 %612, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1016 = call i32 @injectFault1(i64 1789, i32 %fi319, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1017 = call i32 @injectFault1(i64 1789, i32 %fi1012, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %613 = icmp eq i32 %fi1016, %fi1017, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1919
-  %fi1015 = call i1 @injectFault2(i64 1789, i1 %613, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1018 = call i1 @injectFault2(i64 1790, i1 %fi1015, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi1018, label %618, label %614, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1920
+  %fi1015 = call i32 @injectFault1(i64 1787, i32 %611, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1017 = call i32 @injectFault1(i64 1788, i32 %fi1015, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1018 = call i32 @injectFault1(i64 1788, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %612 = sub nsw i32 %fi1017, %fi1018, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1918, !taffo.constinfo !67
+  %fi1016 = call i32 @injectFault1(i64 1788, i32 %612, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1020 = call i32 @injectFault1(i64 1789, i32 %fi838, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1021 = call i32 @injectFault1(i64 1789, i32 %fi1016, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %613 = icmp eq i32 %fi1020, %fi1021, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1919
+  %fi1019 = call i1 @injectFault3(i64 1789, i1 %613, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1022 = call i1 @injectFault3(i64 1790, i1 %fi1019, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi1022, label %618, label %614, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1920
 
 614:                                              ; preds = %610
   %matchop70 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1053, !llfi_index !1921
   %615 = load i32, i32* %matchop70, align 4, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1922
-  %fi1019 = call i32 @injectFault1(i64 1792, i32 %615, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1021 = call i32 @injectFault1(i64 1793, i32 %fi1019, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1022 = call i32 @injectFault1(i64 1793, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %616 = sub nsw i32 %fi1021, %fi1022, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1923, !taffo.constinfo !67
-  %fi1020 = call i32 @injectFault1(i64 1793, i32 %616, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1024 = call i32 @injectFault1(i64 1794, i32 %fi534, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1025 = call i32 @injectFault1(i64 1794, i32 %fi1020, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %617 = icmp eq i32 %fi1024, %fi1025, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1924
-  %fi1023 = call i1 @injectFault2(i64 1794, i1 %617, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1026 = call i1 @injectFault2(i64 1795, i1 %fi1023, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi1026, label %618, label %620, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1925
+  %fi1023 = call i32 @injectFault1(i64 1792, i32 %615, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1025 = call i32 @injectFault1(i64 1793, i32 %fi1023, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1026 = call i32 @injectFault1(i64 1793, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %616 = sub nsw i32 %fi1025, %fi1026, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1923, !taffo.constinfo !67
+  %fi1024 = call i32 @injectFault1(i64 1793, i32 %616, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1028 = call i32 @injectFault1(i64 1794, i32 %fi530, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1029 = call i32 @injectFault1(i64 1794, i32 %fi1024, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %617 = icmp eq i32 %fi1028, %fi1029, !taffo.info !1053, !taffo.initweight !60, !llfi_index !1924
+  %fi1027 = call i1 @injectFault3(i64 1794, i1 %617, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi726 = call i1 @injectFault3(i64 1795, i1 %fi1027, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi726, label %618, label %620, !taffo.info !47, !taffo.initweight !1120, !llfi_index !1925
 
 618:                                              ; preds = %614, %610
-  %fi1028 = call i32 @injectFault1(i64 1796, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1029 = call i32 @injectFault1(i64 1796, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %619 = lshr i32 %fi1028, %fi1029, !llfi_index !1926
-  %fi1027 = call i32 @injectFault1(i64 1796, i32 %619, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi728 = call i32 @injectFault1(i64 1796, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi729 = call i32 @injectFault1(i64 1796, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %619 = lshr i32 %fi728, %fi729, !llfi_index !1926
+  %fi727 = call i32 @injectFault1(i64 1796, i32 %619, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %630, !llfi_index !1927
 
 620:                                              ; preds = %614
   %621 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1928
   %622 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %621, align 8, !llfi_index !1929
-  %fi1031 = call i32 @injectFault1(i64 1800, i32 %fi534, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1032 = call i32 @injectFault1(i64 1800, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %623 = add nsw i32 %fi1031, %fi1032, !taffo.info !1484, !llfi_index !1930, !taffo.constinfo !67
-  %fi1030 = call i32 @injectFault1(i64 1800, i32 %623, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1034 = call i32 @injectFault1(i64 1801, i32 %fi1030, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %624 = sext i32 %fi1034 to i64, !taffo.info !1484, !llfi_index !1931
-  %fi1033 = call i64 @injectFault0(i64 1801, i64 %624, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1035 = call i64 @injectFault0(i64 1802, i64 %fi1033, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %625 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %622, i64 %fi1035, !llfi_index !1932
+  %fi731 = call i32 @injectFault1(i64 1800, i32 %fi530, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi732 = call i32 @injectFault1(i64 1800, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %623 = add nsw i32 %fi731, %fi732, !taffo.info !1484, !llfi_index !1930, !taffo.constinfo !67
+  %fi730 = call i32 @injectFault1(i64 1800, i32 %623, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1042 = call i32 @injectFault1(i64 1801, i32 %fi730, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %624 = sext i32 %fi1042 to i64, !taffo.info !1484, !llfi_index !1931
+  %fi1041 = call i64 @injectFault0(i64 1801, i64 %624, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1043 = call i64 @injectFault0(i64 1802, i64 %fi1041, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %625 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %622, i64 %fi1043, !llfi_index !1932
   %626 = load { i32, i32, i32 }*, { i32, i32, i32 }** %625, align 8, !llfi_index !1933
-  %fi1037 = call i32 @injectFault1(i64 1804, i32 %fi319, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1038 = call i32 @injectFault1(i64 1804, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %627 = add nsw i32 %fi1037, %fi1038, !taffo.info !0, !llfi_index !1934, !taffo.constinfo !67
-  %fi1036 = call i32 @injectFault1(i64 1804, i32 %627, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1040 = call i32 @injectFault1(i64 1805, i32 %fi1036, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %628 = sext i32 %fi1040 to i64, !taffo.info !0, !llfi_index !1935
-  %fi1039 = call i64 @injectFault0(i64 1805, i64 %628, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %629 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %626, i64 %fi1039, !llfi_index !1936
+  %fi1045 = call i32 @injectFault1(i64 1804, i32 %fi838, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1046 = call i32 @injectFault1(i64 1804, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %627 = add nsw i32 %fi1045, %fi1046, !taffo.info !0, !llfi_index !1934, !taffo.constinfo !67
+  %fi1044 = call i32 @injectFault1(i64 1804, i32 %627, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1048 = call i32 @injectFault1(i64 1805, i32 %fi1044, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %628 = sext i32 %fi1048 to i64, !taffo.info !0, !llfi_index !1935
+  %fi1047 = call i64 @injectFault0(i64 1805, i64 %628, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %629 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %626, i64 %fi1047, !llfi_index !1936
   %u8_24fixp236 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %629, i32 0, i32 0, !taffo.info !611, !llfi_index !1937
   %u8_24fixp278 = load i32, i32* %u8_24fixp236, align 4, !taffo.info !611, !llfi_index !1938
-  %fi754 = call i32 @injectFault1(i64 1808, i32 %u8_24fixp278, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1049 = call i32 @injectFault1(i64 1808, i32 %u8_24fixp278, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %630, !llfi_index !1939
 
 630:                                              ; preds = %620, %618
-  %u8_24fixp311 = phi i32 [ %fi1027, %618 ], [ %fi754, %620 ], !taffo.info !611, !llfi_index !1940
-  %fi755 = call i32 @injectFault1(i64 1810, i32 %u8_24fixp311, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi756 = call i64 @injectFault0(i64 1811, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi757 = call i64 @injectFault0(i64 1811, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp106 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi756, i64 %fi757, !taffo.info !611, !llfi_index !1941, !taffo.target !1037
-  %fi758 = call i64 @injectFault0(i64 1812, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi759 = call i64 @injectFault0(i64 1812, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp155 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp106, i64 %fi758, i64 %fi759, !taffo.info !611, !llfi_index !1942, !taffo.target !1037
-  %fi760 = call i32 @injectFault1(i64 1813, i32 %fi755, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi760, i32* %u8_24fixp155, align 8, !taffo.info !47, !llfi_index !1943, !taffo.target !1037
-  %fi761 = call i64 @injectFault0(i64 1814, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi762 = call i64 @injectFault0(i64 1814, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp105 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi761, i64 %fi762, !taffo.info !611, !llfi_index !1944, !taffo.target !1037
+  %u8_24fixp311 = phi i32 [ %fi727, %618 ], [ %fi1049, %620 ], !taffo.info !611, !llfi_index !1940
+  %fi1050 = call i32 @injectFault1(i64 1810, i32 %u8_24fixp311, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1051 = call i64 @injectFault0(i64 1811, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1052 = call i64 @injectFault0(i64 1811, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp106 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi1051, i64 %fi1052, !taffo.info !611, !llfi_index !1941, !taffo.target !1037
+  %fi747 = call i64 @injectFault0(i64 1812, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi748 = call i64 @injectFault0(i64 1812, i64 2, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp155 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp106, i64 %fi747, i64 %fi748, !taffo.info !611, !llfi_index !1942, !taffo.target !1037
+  %fi749 = call i32 @injectFault1(i64 1813, i32 %fi1050, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi749, i32* %u8_24fixp155, align 8, !taffo.info !47, !llfi_index !1943, !taffo.target !1037
+  %fi750 = call i64 @injectFault0(i64 1814, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi751 = call i64 @injectFault0(i64 1814, i64 0, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp105 = getelementptr [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 %fi750, i64 %fi751, !taffo.info !611, !llfi_index !1944, !taffo.target !1037
   %u2_30fixp154 = invoke i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* %u8_24fixp105)
           to label %631 unwind label %216, !taffo.info !1271, !llfi_index !1945, !taffo.constinfo !101, !taffo.target !1037
 
 631:                                              ; preds = %630
   %632 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1946
   %633 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %632, align 8, !llfi_index !1947
-  %fi764 = call i32 @injectFault1(i64 1818, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %634 = sext i32 %fi764 to i64, !taffo.info !323, !llfi_index !1948
-  %fi763 = call i64 @injectFault0(i64 1818, i64 %634, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1041 = call i64 @injectFault0(i64 1819, i64 %fi763, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %635 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %633, i64 %fi1041, !llfi_index !1949
+  %fi753 = call i32 @injectFault1(i64 1818, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %634 = sext i32 %fi753 to i64, !taffo.info !323, !llfi_index !1948
+  %fi752 = call i64 @injectFault0(i64 1818, i64 %634, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi754 = call i64 @injectFault0(i64 1819, i64 %fi752, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %635 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %633, i64 %fi754, !llfi_index !1949
   %636 = load { i32, i32, i32 }*, { i32, i32, i32 }** %635, align 8, !llfi_index !1950
-  %fi1043 = call i32 @injectFault1(i64 1821, i32 %fi319, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %637 = sext i32 %fi1043 to i64, !taffo.info !1081, !llfi_index !1951
-  %fi1042 = call i64 @injectFault0(i64 1821, i64 %637, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %638 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %636, i64 %fi1042, !llfi_index !1952
+  %fi756 = call i32 @injectFault1(i64 1821, i32 %fi838, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %637 = sext i32 %fi756 to i64, !taffo.info !1081, !llfi_index !1951
+  %fi755 = call i64 @injectFault0(i64 1821, i64 %637, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %638 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %636, i64 %fi755, !llfi_index !1952
   %u8_24fixp226 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %638, i32 0, i32 0, !taffo.info !611, !llfi_index !1953
-  %fi1045 = call i32 @injectFault1(i64 1824, i32 %u2_30fixp154, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1046 = call i32 @injectFault1(i64 1824, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %639 = lshr i32 %fi1045, %fi1046, !taffo.info !1271, !llfi_index !1954, !taffo.target !1037
-  %fi1044 = call i32 @injectFault1(i64 1824, i32 %639, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1047 = call i32 @injectFault1(i64 1825, i32 %fi1044, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi1047, i32* %u8_24fixp226, align 4, !taffo.info !47, !llfi_index !1955, !taffo.target !1037
+  %fi758 = call i32 @injectFault1(i64 1824, i32 %u2_30fixp154, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi759 = call i32 @injectFault1(i64 1824, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %639 = lshr i32 %fi758, %fi759, !taffo.info !1271, !llfi_index !1954, !taffo.target !1037
+  %fi757 = call i32 @injectFault1(i64 1824, i32 %639, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1053 = call i32 @injectFault1(i64 1825, i32 %fi757, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi1053, i32* %u8_24fixp226, align 4, !taffo.info !47, !llfi_index !1955, !taffo.target !1037
   %640 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1956
   %641 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %640, align 8, !llfi_index !1957
-  %fi1049 = call i32 @injectFault1(i64 1828, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %642 = sext i32 %fi1049 to i64, !taffo.info !323, !llfi_index !1958
-  %fi1048 = call i64 @injectFault0(i64 1828, i64 %642, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1050 = call i64 @injectFault0(i64 1829, i64 %fi1048, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %643 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %641, i64 %fi1050, !llfi_index !1959
+  %fi1055 = call i32 @injectFault1(i64 1828, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %642 = sext i32 %fi1055 to i64, !taffo.info !323, !llfi_index !1958
+  %fi1054 = call i64 @injectFault0(i64 1828, i64 %642, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1056 = call i64 @injectFault0(i64 1829, i64 %fi1054, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %643 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %641, i64 %fi1056, !llfi_index !1959
   %644 = load { i32, i32, i32 }*, { i32, i32, i32 }** %643, align 8, !llfi_index !1960
-  %fi1052 = call i32 @injectFault1(i64 1831, i32 %fi319, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %645 = sext i32 %fi1052 to i64, !taffo.info !1081, !llfi_index !1961
-  %fi1051 = call i64 @injectFault0(i64 1831, i64 %645, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %646 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %644, i64 %fi1051, !llfi_index !1962
+  %fi1058 = call i32 @injectFault1(i64 1831, i32 %fi838, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %645 = sext i32 %fi1058 to i64, !taffo.info !1081, !llfi_index !1961
+  %fi1057 = call i64 @injectFault0(i64 1831, i64 %645, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %646 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %644, i64 %fi1057, !llfi_index !1962
   %u8_24fixp225 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %646, i32 0, i32 1, !taffo.info !611, !llfi_index !1963
-  %fi1054 = call i32 @injectFault1(i64 1834, i32 %u2_30fixp154, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1055 = call i32 @injectFault1(i64 1834, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %647 = lshr i32 %fi1054, %fi1055, !taffo.info !1271, !llfi_index !1964, !taffo.target !1037
-  %fi1053 = call i32 @injectFault1(i64 1834, i32 %647, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1056 = call i32 @injectFault1(i64 1835, i32 %fi1053, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi1056, i32* %u8_24fixp225, align 4, !taffo.info !47, !llfi_index !1965, !taffo.target !1037
+  %fi1060 = call i32 @injectFault1(i64 1834, i32 %u2_30fixp154, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1061 = call i32 @injectFault1(i64 1834, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %647 = lshr i32 %fi1060, %fi1061, !taffo.info !1271, !llfi_index !1964, !taffo.target !1037
+  %fi1059 = call i32 @injectFault1(i64 1834, i32 %647, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1062 = call i32 @injectFault1(i64 1835, i32 %fi1059, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi1062, i32* %u8_24fixp225, align 4, !taffo.info !47, !llfi_index !1965, !taffo.target !1037
   %648 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1966
   %649 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %648, align 8, !llfi_index !1967
-  %fi1058 = call i32 @injectFault1(i64 1838, i32 %fi534, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %650 = sext i32 %fi1058 to i64, !taffo.info !323, !llfi_index !1968
-  %fi1057 = call i64 @injectFault0(i64 1838, i64 %650, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1059 = call i64 @injectFault0(i64 1839, i64 %fi1057, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %651 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %649, i64 %fi1059, !llfi_index !1969
+  %fi1064 = call i32 @injectFault1(i64 1838, i32 %fi530, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %650 = sext i32 %fi1064 to i64, !taffo.info !323, !llfi_index !1968
+  %fi1063 = call i64 @injectFault0(i64 1838, i64 %650, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1065 = call i64 @injectFault0(i64 1839, i64 %fi1063, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %651 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %649, i64 %fi1065, !llfi_index !1969
   %652 = load { i32, i32, i32 }*, { i32, i32, i32 }** %651, align 8, !llfi_index !1970
-  %fi1061 = call i32 @injectFault1(i64 1841, i32 %fi319, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %653 = sext i32 %fi1061 to i64, !taffo.info !1081, !llfi_index !1971
-  %fi1060 = call i64 @injectFault0(i64 1841, i64 %653, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %654 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %652, i64 %fi1060, !llfi_index !1972
+  %fi1067 = call i32 @injectFault1(i64 1841, i32 %fi838, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %653 = sext i32 %fi1067 to i64, !taffo.info !1081, !llfi_index !1971
+  %fi1066 = call i64 @injectFault0(i64 1841, i64 %653, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %654 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %652, i64 %fi1066, !llfi_index !1972
   %u8_24fixp224 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %654, i32 0, i32 2, !taffo.info !611, !llfi_index !1973
-  %fi1063 = call i32 @injectFault1(i64 1844, i32 %u2_30fixp154, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1064 = call i32 @injectFault1(i64 1844, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %655 = lshr i32 %fi1063, %fi1064, !taffo.info !1271, !llfi_index !1974, !taffo.target !1037
-  %fi1062 = call i32 @injectFault1(i64 1844, i32 %655, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1065 = call i32 @injectFault1(i64 1845, i32 %fi1062, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi1065, i32* %u8_24fixp224, align 4, !taffo.info !47, !llfi_index !1975, !taffo.target !1037
+  %fi1069 = call i32 @injectFault1(i64 1844, i32 %u2_30fixp154, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1070 = call i32 @injectFault1(i64 1844, i32 6, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %655 = lshr i32 %fi1069, %fi1070, !taffo.info !1271, !llfi_index !1974, !taffo.target !1037
+  %fi1068 = call i32 @injectFault1(i64 1844, i32 %655, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1071 = call i32 @injectFault1(i64 1845, i32 %fi1068, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi1071, i32* %u8_24fixp224, align 4, !taffo.info !47, !llfi_index !1975, !taffo.target !1037
   br label %656, !llfi_index !1976
 
 656:                                              ; preds = %631
-  %fi1067 = call i32 @injectFault1(i64 1847, i32 %fi534, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1068 = call i32 @injectFault1(i64 1847, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %657 = add nsw i32 %fi1067, %fi1068, !taffo.info !1484, !llfi_index !1977, !taffo.constinfo !67
-  %fi1066 = call i32 @injectFault1(i64 1847, i32 %657, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1073 = call i32 @injectFault1(i64 1847, i32 %fi530, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1074 = call i32 @injectFault1(i64 1847, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %657 = add nsw i32 %fi1073, %fi1074, !taffo.info !1484, !llfi_index !1977, !taffo.constinfo !67
+  %fi1072 = call i32 @injectFault1(i64 1847, i32 %657, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %221, !llvm.loop !1978, !llfi_index !1979
 
 658:                                              ; preds = %221
   %matchop69 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1053, !llfi_index !1980
   %659 = load i32, i32* %matchop69, align 4, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1981
-  %fi1069 = call i32 @injectFault1(i64 1850, i32 %659, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi730 = call i32 @injectFault1(i64 1851, i32 %fi1069, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi731 = call i32 @injectFault1(i64 1851, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %660 = sub nsw i32 %fi730, %fi731, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1982, !taffo.constinfo !67
-  %fi729 = call i32 @injectFault1(i64 1851, i32 %660, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1075 = call i32 @injectFault1(i64 1850, i32 %659, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1077 = call i32 @injectFault1(i64 1851, i32 %fi1075, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1078 = call i32 @injectFault1(i64 1851, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %660 = sub nsw i32 %fi1077, %fi1078, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1982, !taffo.constinfo !67
+  %fi1076 = call i32 @injectFault1(i64 1851, i32 %660, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %661, !llfi_index !1983
 
 661:                                              ; preds = %825, %658
   %.29 = phi i32 [ 0, %658 ], [ %fi1322, %825 ], !taffo.info !183, !llfi_index !1984
-  %fi732 = call i32 @injectFault1(i64 1853, i32 %.29, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1079 = call i32 @injectFault1(i64 1853, i32 %.29, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %matchop68 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !1985
   %662 = load i32, i32* %matchop68, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !1986
-  %fi733 = call i32 @injectFault1(i64 1855, i32 %662, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1082 = call i32 @injectFault1(i64 1856, i32 %fi732, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1083 = call i32 @injectFault1(i64 1856, i32 %fi733, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1080 = call i32 @injectFault1(i64 1855, i32 %662, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1082 = call i32 @injectFault1(i64 1856, i32 %fi1079, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1083 = call i32 @injectFault1(i64 1856, i32 %fi1080, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %663 = icmp slt i32 %fi1082, %fi1083, !taffo.info !1053, !taffo.initweight !53, !llfi_index !1987
-  %fi1081 = call i1 @injectFault2(i64 1856, i1 %663, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1084 = call i1 @injectFault2(i64 1857, i1 %fi1081, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1081 = call i1 @injectFault3(i64 1856, i1 %663, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1084 = call i1 @injectFault3(i64 1857, i1 %fi1081, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi1084, label %664, label %827, !taffo.info !47, !taffo.initweight !60, !llfi_index !1988
 
 664:                                              ; preds = %661
-  %fi1086 = call i32 @injectFault1(i64 1858, i32 %fi732, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1086 = call i32 @injectFault1(i64 1858, i32 %fi1079, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1087 = call i32 @injectFault1(i64 1858, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %665 = icmp eq i32 %fi1086, %fi1087, !taffo.info !323, !llfi_index !1989
-  %fi1085 = call i1 @injectFault2(i64 1858, i1 %665, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1088 = call i1 @injectFault2(i64 1859, i1 %fi1085, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1085 = call i1 @injectFault3(i64 1858, i1 %665, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1088 = call i1 @injectFault3(i64 1859, i1 %fi1085, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi1088, label %668, label %666, !llfi_index !1990
 
 666:                                              ; preds = %664
-  %fi1090 = call i32 @injectFault1(i64 1860, i32 %fi729, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1090 = call i32 @injectFault1(i64 1860, i32 %fi1076, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1091 = call i32 @injectFault1(i64 1860, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %667 = icmp eq i32 %fi1090, %fi1091, !taffo.info !0, !llfi_index !1991
-  %fi1089 = call i1 @injectFault2(i64 1860, i1 %667, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1092 = call i1 @injectFault2(i64 1861, i1 %fi1089, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1089 = call i1 @injectFault3(i64 1860, i1 %667, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1092 = call i1 @injectFault3(i64 1861, i1 %fi1089, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi1092, label %668, label %670, !llfi_index !1992
 
 668:                                              ; preds = %666, %664
@@ -4639,7 +4639,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 670:                                              ; preds = %666
   %671 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1995
   %672 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %671, align 8, !llfi_index !1996
-  %fi1097 = call i32 @injectFault1(i64 1866, i32 %fi729, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1097 = call i32 @injectFault1(i64 1866, i32 %fi1076, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1098 = call i32 @injectFault1(i64 1866, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %673 = sub nsw i32 %fi1097, %fi1098, !taffo.info !1760, !llfi_index !1997, !taffo.constinfo !67
   %fi1096 = call i32 @injectFault1(i64 1866, i32 %673, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -4649,7 +4649,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi1101 = call i64 @injectFault0(i64 1868, i64 %fi1099, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %675 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %672, i64 %fi1101, !llfi_index !1999
   %676 = load { i32, i32, i32 }*, { i32, i32, i32 }** %675, align 8, !llfi_index !2000
-  %fi1103 = call i32 @injectFault1(i64 1870, i32 %fi732, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1103 = call i32 @injectFault1(i64 1870, i32 %fi1079, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1104 = call i32 @injectFault1(i64 1870, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %677 = sub nsw i32 %fi1103, %fi1104, !taffo.info !1081, !llfi_index !2001, !taffo.constinfo !67
   %fi1102 = call i32 @injectFault1(i64 1870, i32 %677, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -4673,11 +4673,11 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %u8_24fixp153 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp104, i64 %fi1111, i64 %fi1112, !taffo.info !611, !llfi_index !2009, !taffo.target !1037
   %fi1113 = call i32 @injectFault1(i64 1879, i32 %fi1108, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
   store i32 %fi1113, i32* %u8_24fixp153, align 16, !taffo.info !47, !llfi_index !2010, !taffo.target !1037
-  %fi1115 = call i32 @injectFault1(i64 1880, i32 %fi729, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1115 = call i32 @injectFault1(i64 1880, i32 %fi1076, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1116 = call i32 @injectFault1(i64 1880, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %681 = icmp eq i32 %fi1115, %fi1116, !taffo.info !0, !llfi_index !2011
-  %fi1114 = call i1 @injectFault2(i64 1880, i1 %681, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1117 = call i1 @injectFault2(i64 1881, i1 %fi1114, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1114 = call i1 @injectFault3(i64 1880, i1 %681, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1117 = call i1 @injectFault3(i64 1881, i1 %fi1114, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi1117, label %682, label %684, !llfi_index !2012
 
 682:                                              ; preds = %680
@@ -4690,7 +4690,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 684:                                              ; preds = %680
   %685 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2015
   %686 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %685, align 8, !llfi_index !2016
-  %fi1122 = call i32 @injectFault1(i64 1886, i32 %fi729, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1122 = call i32 @injectFault1(i64 1886, i32 %fi1076, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1123 = call i32 @injectFault1(i64 1886, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %687 = sub nsw i32 %fi1122, %fi1123, !taffo.info !1760, !llfi_index !2017, !taffo.constinfo !67
   %fi1121 = call i32 @injectFault1(i64 1886, i32 %687, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -4700,7 +4700,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi1126 = call i64 @injectFault0(i64 1888, i64 %fi1124, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %689 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %686, i64 %fi1126, !llfi_index !2019
   %690 = load { i32, i32, i32 }*, { i32, i32, i32 }** %689, align 8, !llfi_index !2020
-  %fi1128 = call i32 @injectFault1(i64 1890, i32 %fi732, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1128 = call i32 @injectFault1(i64 1890, i32 %fi1079, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %691 = sext i32 %fi1128 to i64, !taffo.info !0, !llfi_index !2021
   %fi1127 = call i64 @injectFault0(i64 1890, i64 %691, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %692 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %690, i64 %fi1127, !llfi_index !2022
@@ -4722,24 +4722,24 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   store i32 %fi1135, i32* %u8_24fixp152, align 4, !taffo.info !47, !llfi_index !2029, !taffo.target !1037
   %matchop67 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !2030
   %694 = load i32, i32* %matchop67, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !2031
-  %fi1070 = call i32 @injectFault1(i64 1900, i32 %694, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1072 = call i32 @injectFault1(i64 1901, i32 %fi1070, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1073 = call i32 @injectFault1(i64 1901, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %695 = sub nsw i32 %fi1072, %fi1073, !taffo.info !1053, !taffo.initweight !53, !llfi_index !2032, !taffo.constinfo !67
-  %fi1071 = call i32 @injectFault1(i64 1901, i32 %695, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1075 = call i32 @injectFault1(i64 1902, i32 %fi732, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1076 = call i32 @injectFault1(i64 1902, i32 %fi1071, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %696 = icmp eq i32 %fi1075, %fi1076, !taffo.info !1053, !taffo.initweight !60, !llfi_index !2033
-  %fi1074 = call i1 @injectFault2(i64 1902, i1 %696, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1077 = call i1 @injectFault2(i64 1903, i1 %fi1074, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi1077, label %699, label %697, !taffo.info !47, !taffo.initweight !1120, !llfi_index !2034
+  %fi1030 = call i32 @injectFault1(i64 1900, i32 %694, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1032 = call i32 @injectFault1(i64 1901, i32 %fi1030, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1033 = call i32 @injectFault1(i64 1901, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %695 = sub nsw i32 %fi1032, %fi1033, !taffo.info !1053, !taffo.initweight !53, !llfi_index !2032, !taffo.constinfo !67
+  %fi1031 = call i32 @injectFault1(i64 1901, i32 %695, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1035 = call i32 @injectFault1(i64 1902, i32 %fi1079, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1036 = call i32 @injectFault1(i64 1902, i32 %fi1031, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %696 = icmp eq i32 %fi1035, %fi1036, !taffo.info !1053, !taffo.initweight !60, !llfi_index !2033
+  %fi1034 = call i1 @injectFault3(i64 1902, i1 %696, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1037 = call i1 @injectFault3(i64 1903, i1 %fi1034, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi1037, label %699, label %697, !taffo.info !47, !taffo.initweight !1120, !llfi_index !2034
 
 697:                                              ; preds = %693
-  %fi1079 = call i32 @injectFault1(i64 1904, i32 %fi729, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi1080 = call i32 @injectFault1(i64 1904, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %698 = icmp eq i32 %fi1079, %fi1080, !taffo.info !0, !llfi_index !2035
-  %fi1078 = call i1 @injectFault2(i64 1904, i1 %698, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1136 = call i1 @injectFault2(i64 1905, i1 %fi1078, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1039 = call i32 @injectFault1(i64 1904, i32 %fi1076, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1040 = call i32 @injectFault1(i64 1904, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %698 = icmp eq i32 %fi1039, %fi1040, !taffo.info !0, !llfi_index !2035
+  %fi1038 = call i1 @injectFault3(i64 1904, i1 %698, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1136 = call i1 @injectFault3(i64 1905, i1 %fi1038, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi1136, label %699, label %701, !llfi_index !2036
 
 699:                                              ; preds = %697, %693
@@ -4752,7 +4752,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 701:                                              ; preds = %697
   %702 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2039
   %703 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %702, align 8, !llfi_index !2040
-  %fi1141 = call i32 @injectFault1(i64 1910, i32 %fi729, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1141 = call i32 @injectFault1(i64 1910, i32 %fi1076, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1142 = call i32 @injectFault1(i64 1910, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %704 = sub nsw i32 %fi1141, %fi1142, !taffo.info !1760, !llfi_index !2041, !taffo.constinfo !67
   %fi1140 = call i32 @injectFault1(i64 1910, i32 %704, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -4762,7 +4762,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi1145 = call i64 @injectFault0(i64 1912, i64 %fi1143, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %706 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %703, i64 %fi1145, !llfi_index !2043
   %707 = load { i32, i32, i32 }*, { i32, i32, i32 }** %706, align 8, !llfi_index !2044
-  %fi1147 = call i32 @injectFault1(i64 1914, i32 %fi732, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1147 = call i32 @injectFault1(i64 1914, i32 %fi1079, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1148 = call i32 @injectFault1(i64 1914, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %708 = add nsw i32 %fi1147, %fi1148, !taffo.info !323, !llfi_index !2045, !taffo.constinfo !67
   %fi1146 = call i32 @injectFault1(i64 1914, i32 %708, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -4786,11 +4786,11 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %u8_24fixp151 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp102, i64 %fi1155, i64 %fi1156, !taffo.info !611, !llfi_index !2053, !taffo.target !1037
   %fi1157 = call i32 @injectFault1(i64 1923, i32 %fi1152, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
   store i32 %fi1157, i32* %u8_24fixp151, align 8, !taffo.info !47, !llfi_index !2054, !taffo.target !1037
-  %fi1159 = call i32 @injectFault1(i64 1924, i32 %fi732, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1159 = call i32 @injectFault1(i64 1924, i32 %fi1079, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1160 = call i32 @injectFault1(i64 1924, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %712 = icmp eq i32 %fi1159, %fi1160, !taffo.info !323, !llfi_index !2055
-  %fi1158 = call i1 @injectFault2(i64 1924, i1 %712, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1161 = call i1 @injectFault2(i64 1925, i1 %fi1158, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1158 = call i1 @injectFault3(i64 1924, i1 %712, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1161 = call i1 @injectFault3(i64 1925, i1 %fi1158, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi1161, label %713, label %715, !llfi_index !2056
 
 713:                                              ; preds = %711
@@ -4803,13 +4803,13 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 715:                                              ; preds = %711
   %716 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2059
   %717 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %716, align 8, !llfi_index !2060
-  %fi1166 = call i32 @injectFault1(i64 1930, i32 %fi729, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1166 = call i32 @injectFault1(i64 1930, i32 %fi1076, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %718 = sext i32 %fi1166 to i64, !taffo.info !1081, !llfi_index !2061
   %fi1165 = call i64 @injectFault0(i64 1930, i64 %718, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi1167 = call i64 @injectFault0(i64 1931, i64 %fi1165, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %719 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %717, i64 %fi1167, !llfi_index !2062
   %720 = load { i32, i32, i32 }*, { i32, i32, i32 }** %719, align 8, !llfi_index !2063
-  %fi1169 = call i32 @injectFault1(i64 1933, i32 %fi732, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1169 = call i32 @injectFault1(i64 1933, i32 %fi1079, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1170 = call i32 @injectFault1(i64 1933, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %721 = sub nsw i32 %fi1169, %fi1170, !taffo.info !1081, !llfi_index !2064, !taffo.constinfo !67
   %fi1168 = call i32 @injectFault1(i64 1933, i32 %721, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -4835,13 +4835,13 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   store i32 %fi1179, i32* %u8_24fixp150, align 4, !taffo.info !47, !llfi_index !2073, !taffo.target !1037
   %725 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2074
   %726 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %725, align 8, !llfi_index !2075
-  %fi1181 = call i32 @injectFault1(i64 1945, i32 %fi729, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1181 = call i32 @injectFault1(i64 1945, i32 %fi1076, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %727 = sext i32 %fi1181 to i64, !taffo.info !1081, !llfi_index !2076
   %fi1180 = call i64 @injectFault0(i64 1945, i64 %727, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi1182 = call i64 @injectFault0(i64 1946, i64 %fi1180, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %728 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %726, i64 %fi1182, !llfi_index !2077
   %729 = load { i32, i32, i32 }*, { i32, i32, i32 }** %728, align 8, !llfi_index !2078
-  %fi1184 = call i32 @injectFault1(i64 1948, i32 %fi732, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1184 = call i32 @injectFault1(i64 1948, i32 %fi1079, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %730 = sext i32 %fi1184 to i64, !taffo.info !0, !llfi_index !2079
   %fi1183 = call i64 @injectFault0(i64 1948, i64 %730, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %731 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %729, i64 %fi1183, !llfi_index !2080
@@ -4858,49 +4858,49 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   store i32 %fi1190, i32* %u8_24fixp149, align 4, !taffo.info !47, !llfi_index !2085, !taffo.target !1037
   %matchop66 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1053, !llfi_index !2086
   %732 = load i32, i32* %matchop66, align 8, !taffo.info !1053, !taffo.initweight !51, !llfi_index !2087
-  %fi472 = call i32 @injectFault1(i64 1956, i32 %732, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi474 = call i32 @injectFault1(i64 1957, i32 %fi472, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi475 = call i32 @injectFault1(i64 1957, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %733 = sub nsw i32 %fi474, %fi475, !taffo.info !1053, !taffo.initweight !53, !llfi_index !2088, !taffo.constinfo !67
-  %fi473 = call i32 @injectFault1(i64 1957, i32 %733, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi477 = call i32 @injectFault1(i64 1958, i32 %fi732, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi478 = call i32 @injectFault1(i64 1958, i32 %fi473, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %734 = icmp eq i32 %fi477, %fi478, !taffo.info !1053, !taffo.initweight !60, !llfi_index !2089
-  %fi476 = call i1 @injectFault2(i64 1958, i1 %734, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi479 = call i1 @injectFault2(i64 1959, i1 %fi476, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi479, label %735, label %737, !taffo.info !47, !taffo.initweight !1120, !llfi_index !2090
+  %fi468 = call i32 @injectFault1(i64 1956, i32 %732, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi470 = call i32 @injectFault1(i64 1957, i32 %fi468, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi471 = call i32 @injectFault1(i64 1957, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %733 = sub nsw i32 %fi470, %fi471, !taffo.info !1053, !taffo.initweight !53, !llfi_index !2088, !taffo.constinfo !67
+  %fi469 = call i32 @injectFault1(i64 1957, i32 %733, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi473 = call i32 @injectFault1(i64 1958, i32 %fi1079, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi474 = call i32 @injectFault1(i64 1958, i32 %fi469, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %734 = icmp eq i32 %fi473, %fi474, !taffo.info !1053, !taffo.initweight !60, !llfi_index !2089
+  %fi472 = call i1 @injectFault3(i64 1958, i1 %734, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi475 = call i1 @injectFault3(i64 1959, i1 %fi472, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi475, label %735, label %737, !taffo.info !47, !taffo.initweight !1120, !llfi_index !2090
 
 735:                                              ; preds = %724
-  %fi481 = call i32 @injectFault1(i64 1960, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi482 = call i32 @injectFault1(i64 1960, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %736 = lshr i32 %fi481, %fi482, !llfi_index !2091
-  %fi480 = call i32 @injectFault1(i64 1960, i32 %736, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi477 = call i32 @injectFault1(i64 1960, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi478 = call i32 @injectFault1(i64 1960, i32 8, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %736 = lshr i32 %fi477, %fi478, !llfi_index !2091
+  %fi476 = call i32 @injectFault1(i64 1960, i32 %736, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %746, !llfi_index !2092
 
 737:                                              ; preds = %724
   %738 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2093
   %739 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %738, align 8, !llfi_index !2094
-  %fi484 = call i32 @injectFault1(i64 1964, i32 %fi729, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %740 = sext i32 %fi484 to i64, !taffo.info !1081, !llfi_index !2095
-  %fi483 = call i64 @injectFault0(i64 1964, i64 %740, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi485 = call i64 @injectFault0(i64 1965, i64 %fi483, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %741 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %739, i64 %fi485, !llfi_index !2096
+  %fi480 = call i32 @injectFault1(i64 1964, i32 %fi1076, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %740 = sext i32 %fi480 to i64, !taffo.info !1081, !llfi_index !2095
+  %fi479 = call i64 @injectFault0(i64 1964, i64 %740, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi481 = call i64 @injectFault0(i64 1965, i64 %fi479, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %741 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %739, i64 %fi481, !llfi_index !2096
   %742 = load { i32, i32, i32 }*, { i32, i32, i32 }** %741, align 8, !llfi_index !2097
-  %fi487 = call i32 @injectFault1(i64 1967, i32 %fi732, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi488 = call i32 @injectFault1(i64 1967, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %743 = add nsw i32 %fi487, %fi488, !taffo.info !323, !llfi_index !2098, !taffo.constinfo !67
-  %fi486 = call i32 @injectFault1(i64 1967, i32 %743, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi490 = call i32 @injectFault1(i64 1968, i32 %fi486, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %744 = sext i32 %fi490 to i64, !taffo.info !323, !llfi_index !2099
-  %fi489 = call i64 @injectFault0(i64 1968, i64 %744, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %745 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %742, i64 %fi489, !llfi_index !2100
+  %fi483 = call i32 @injectFault1(i64 1967, i32 %fi1079, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi484 = call i32 @injectFault1(i64 1967, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %743 = add nsw i32 %fi483, %fi484, !taffo.info !323, !llfi_index !2098, !taffo.constinfo !67
+  %fi482 = call i32 @injectFault1(i64 1967, i32 %743, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi486 = call i32 @injectFault1(i64 1968, i32 %fi482, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %744 = sext i32 %fi486 to i64, !taffo.info !323, !llfi_index !2099
+  %fi485 = call i64 @injectFault0(i64 1968, i64 %744, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %745 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %742, i64 %fi485, !llfi_index !2100
   %u8_24fixp275 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %745, i32 0, i32 0, !taffo.info !611, !llfi_index !2101
   %u8_24fixp305 = load i32, i32* %u8_24fixp275, align 4, !taffo.info !611, !llfi_index !2102
-  %fi491 = call i32 @injectFault1(i64 1971, i32 %u8_24fixp305, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi487 = call i32 @injectFault1(i64 1971, i32 %u8_24fixp305, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %746, !llfi_index !2103
 
 746:                                              ; preds = %737, %735
-  %u8_24fixp320 = phi i32 [ %fi480, %735 ], [ %fi491, %737 ], !taffo.info !611, !llfi_index !2104
+  %u8_24fixp320 = phi i32 [ %fi476, %735 ], [ %fi487, %737 ], !taffo.info !611, !llfi_index !2104
   %fi1191 = call i32 @injectFault1(i64 1973, i32 %u8_24fixp320, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi1192 = call i64 @injectFault0(i64 1974, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1193 = call i64 @injectFault0(i64 1974, i64 1, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
@@ -4910,11 +4910,11 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %u8_24fixp148 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp99, i64 %fi1194, i64 %fi1195, !taffo.info !611, !llfi_index !2106, !taffo.target !1037
   %fi1196 = call i32 @injectFault1(i64 1976, i32 %fi1191, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
   store i32 %fi1196, i32* %u8_24fixp148, align 4, !taffo.info !47, !llfi_index !2107, !taffo.target !1037
-  %fi1198 = call i32 @injectFault1(i64 1977, i32 %fi732, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1198 = call i32 @injectFault1(i64 1977, i32 %fi1079, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1199 = call i32 @injectFault1(i64 1977, i32 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %747 = icmp eq i32 %fi1198, %fi1199, !taffo.info !323, !llfi_index !2108
-  %fi1197 = call i1 @injectFault2(i64 1977, i1 %747, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1200 = call i1 @injectFault2(i64 1978, i1 %fi1197, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1197 = call i1 @injectFault3(i64 1977, i1 %747, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1200 = call i1 @injectFault3(i64 1978, i1 %fi1197, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi1200, label %752, label %748, !llfi_index !2109
 
 748:                                              ; preds = %746
@@ -4925,11 +4925,11 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi1204 = call i32 @injectFault1(i64 1981, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %750 = sub nsw i32 %fi1203, %fi1204, !taffo.info !1053, !taffo.initweight !53, !llfi_index !2112, !taffo.constinfo !67
   %fi1202 = call i32 @injectFault1(i64 1981, i32 %750, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1206 = call i32 @injectFault1(i64 1982, i32 %fi729, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1206 = call i32 @injectFault1(i64 1982, i32 %fi1076, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1207 = call i32 @injectFault1(i64 1982, i32 %fi1202, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %751 = icmp eq i32 %fi1206, %fi1207, !taffo.info !1053, !taffo.initweight !60, !llfi_index !2113
-  %fi1205 = call i1 @injectFault2(i64 1982, i1 %751, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1208 = call i1 @injectFault2(i64 1983, i1 %fi1205, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1205 = call i1 @injectFault3(i64 1982, i1 %751, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1208 = call i1 @injectFault3(i64 1983, i1 %fi1205, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi1208, label %752, label %754, !taffo.info !47, !taffo.initweight !1120, !llfi_index !2114
 
 752:                                              ; preds = %748, %746
@@ -4942,7 +4942,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 754:                                              ; preds = %748
   %755 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2117
   %756 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %755, align 8, !llfi_index !2118
-  %fi1213 = call i32 @injectFault1(i64 1988, i32 %fi729, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1213 = call i32 @injectFault1(i64 1988, i32 %fi1076, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1214 = call i32 @injectFault1(i64 1988, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %757 = add nsw i32 %fi1213, %fi1214, !taffo.info !0, !llfi_index !2119, !taffo.constinfo !67
   %fi1212 = call i32 @injectFault1(i64 1988, i32 %757, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -4952,7 +4952,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi1217 = call i64 @injectFault0(i64 1990, i64 %fi1215, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %759 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %756, i64 %fi1217, !llfi_index !2121
   %760 = load { i32, i32, i32 }*, { i32, i32, i32 }** %759, align 8, !llfi_index !2122
-  %fi1219 = call i32 @injectFault1(i64 1992, i32 %fi732, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1219 = call i32 @injectFault1(i64 1992, i32 %fi1079, i32 15, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1220 = call i32 @injectFault1(i64 1992, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %761 = sub nsw i32 %fi1219, %fi1220, !taffo.info !1081, !llfi_index !2123, !taffo.constinfo !67
   %fi1218 = call i32 @injectFault1(i64 1992, i32 %761, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -4983,11 +4983,11 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi1233 = call i32 @injectFault1(i64 2004, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %766 = sub nsw i32 %fi1232, %fi1233, !taffo.info !1053, !taffo.initweight !53, !llfi_index !2135, !taffo.constinfo !67
   %fi1231 = call i32 @injectFault1(i64 2004, i32 %766, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1235 = call i32 @injectFault1(i64 2005, i32 %fi729, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1235 = call i32 @injectFault1(i64 2005, i32 %fi1076, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1236 = call i32 @injectFault1(i64 2005, i32 %fi1231, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %767 = icmp eq i32 %fi1235, %fi1236, !taffo.info !1053, !taffo.initweight !60, !llfi_index !2136
-  %fi1234 = call i1 @injectFault2(i64 2005, i1 %767, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1237 = call i1 @injectFault2(i64 2006, i1 %fi1234, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1234 = call i1 @injectFault3(i64 2005, i1 %767, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1237 = call i1 @injectFault3(i64 2006, i1 %fi1234, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi1237, label %768, label %770, !taffo.info !47, !taffo.initweight !1120, !llfi_index !2137
 
 768:                                              ; preds = %764
@@ -5000,7 +5000,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 770:                                              ; preds = %764
   %771 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2140
   %772 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %771, align 8, !llfi_index !2141
-  %fi1242 = call i32 @injectFault1(i64 2011, i32 %fi729, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1242 = call i32 @injectFault1(i64 2011, i32 %fi1076, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1243 = call i32 @injectFault1(i64 2011, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %773 = add nsw i32 %fi1242, %fi1243, !taffo.info !0, !llfi_index !2142, !taffo.constinfo !67
   %fi1241 = call i32 @injectFault1(i64 2011, i32 %773, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -5010,7 +5010,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi1246 = call i64 @injectFault0(i64 2013, i64 %fi1244, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %775 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %772, i64 %fi1246, !llfi_index !2144
   %776 = load { i32, i32, i32 }*, { i32, i32, i32 }** %775, align 8, !llfi_index !2145
-  %fi1248 = call i32 @injectFault1(i64 2015, i32 %fi732, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1248 = call i32 @injectFault1(i64 2015, i32 %fi1079, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %777 = sext i32 %fi1248 to i64, !taffo.info !0, !llfi_index !2146
   %fi1247 = call i64 @injectFault0(i64 2015, i64 %777, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %778 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %776, i64 %fi1247, !llfi_index !2147
@@ -5037,11 +5037,11 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi1259 = call i32 @injectFault1(i64 2026, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %781 = sub nsw i32 %fi1258, %fi1259, !taffo.info !1053, !taffo.initweight !53, !llfi_index !2157, !taffo.constinfo !67
   %fi1257 = call i32 @injectFault1(i64 2026, i32 %781, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1261 = call i32 @injectFault1(i64 2027, i32 %fi732, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1261 = call i32 @injectFault1(i64 2027, i32 %fi1079, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1262 = call i32 @injectFault1(i64 2027, i32 %fi1257, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %782 = icmp eq i32 %fi1261, %fi1262, !taffo.info !1053, !taffo.initweight !60, !llfi_index !2158
-  %fi1260 = call i1 @injectFault2(i64 2027, i1 %782, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1263 = call i1 @injectFault2(i64 2028, i1 %fi1260, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1260 = call i1 @injectFault3(i64 2027, i1 %782, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1263 = call i1 @injectFault3(i64 2028, i1 %fi1260, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi1263, label %787, label %783, !taffo.info !47, !taffo.initweight !1120, !llfi_index !2159
 
 783:                                              ; preds = %779
@@ -5052,11 +5052,11 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi1267 = call i32 @injectFault1(i64 2031, i32 1, i32 15, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %785 = sub nsw i32 %fi1266, %fi1267, !taffo.info !1053, !taffo.initweight !53, !llfi_index !2162, !taffo.constinfo !67
   %fi1265 = call i32 @injectFault1(i64 2031, i32 %785, i32 15, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @sub_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1269 = call i32 @injectFault1(i64 2032, i32 %fi729, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1269 = call i32 @injectFault1(i64 2032, i32 %fi1076, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1270 = call i32 @injectFault1(i64 2032, i32 %fi1265, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %786 = icmp eq i32 %fi1269, %fi1270, !taffo.info !1053, !taffo.initweight !60, !llfi_index !2163
-  %fi1268 = call i1 @injectFault2(i64 2032, i1 %786, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1271 = call i1 @injectFault2(i64 2033, i1 %fi1268, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1268 = call i1 @injectFault3(i64 2032, i1 %786, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1271 = call i1 @injectFault3(i64 2033, i1 %fi1268, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi1271, label %787, label %789, !taffo.info !47, !taffo.initweight !1120, !llfi_index !2164
 
 787:                                              ; preds = %783, %779
@@ -5069,7 +5069,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 789:                                              ; preds = %783
   %790 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2167
   %791 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %790, align 8, !llfi_index !2168
-  %fi1276 = call i32 @injectFault1(i64 2038, i32 %fi729, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1276 = call i32 @injectFault1(i64 2038, i32 %fi1076, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1277 = call i32 @injectFault1(i64 2038, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %792 = add nsw i32 %fi1276, %fi1277, !taffo.info !0, !llfi_index !2169, !taffo.constinfo !67
   %fi1275 = call i32 @injectFault1(i64 2038, i32 %792, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -5079,7 +5079,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %fi1280 = call i64 @injectFault0(i64 2040, i64 %fi1278, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %794 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %791, i64 %fi1280, !llfi_index !2171
   %795 = load { i32, i32, i32 }*, { i32, i32, i32 }** %794, align 8, !llfi_index !2172
-  %fi1282 = call i32 @injectFault1(i64 2042, i32 %fi732, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1282 = call i32 @injectFault1(i64 2042, i32 %fi1079, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1283 = call i32 @injectFault1(i64 2042, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %796 = add nsw i32 %fi1282, %fi1283, !taffo.info !323, !llfi_index !2173, !taffo.constinfo !67
   %fi1281 = call i32 @injectFault1(i64 2042, i32 %796, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -5112,13 +5112,13 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 800:                                              ; preds = %799
   %801 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !2185
   %802 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %801, align 8, !llfi_index !2186
-  %fi1296 = call i32 @injectFault1(i64 2056, i32 %fi729, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1296 = call i32 @injectFault1(i64 2056, i32 %fi1076, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %803 = sext i32 %fi1296 to i64, !taffo.info !1081, !llfi_index !2187
   %fi1295 = call i64 @injectFault0(i64 2056, i64 %803, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi1297 = call i64 @injectFault0(i64 2057, i64 %fi1295, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %804 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %802, i64 %fi1297, !llfi_index !2188
   %805 = load { i32, i32, i32 }*, { i32, i32, i32 }** %804, align 8, !llfi_index !2189
-  %fi1299 = call i32 @injectFault1(i64 2059, i32 %fi732, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1299 = call i32 @injectFault1(i64 2059, i32 %fi1079, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %806 = sext i32 %fi1299 to i64, !taffo.info !0, !llfi_index !2190
   %fi1298 = call i64 @injectFault0(i64 2059, i64 %806, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %807 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %805, i64 %fi1298, !llfi_index !2191
@@ -5131,13 +5131,13 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   store i32 %fi1303, i32* %u8_24fixp274, align 4, !taffo.info !47, !llfi_index !2194, !taffo.target !1037
   %809 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !2195
   %810 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %809, align 8, !llfi_index !2196
-  %fi1305 = call i32 @injectFault1(i64 2066, i32 %fi729, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1305 = call i32 @injectFault1(i64 2066, i32 %fi1076, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %811 = sext i32 %fi1305 to i64, !taffo.info !1081, !llfi_index !2197
   %fi1304 = call i64 @injectFault0(i64 2066, i64 %811, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi1306 = call i64 @injectFault0(i64 2067, i64 %fi1304, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %812 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %810, i64 %fi1306, !llfi_index !2198
   %813 = load { i32, i32, i32 }*, { i32, i32, i32 }** %812, align 8, !llfi_index !2199
-  %fi1308 = call i32 @injectFault1(i64 2069, i32 %fi732, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1308 = call i32 @injectFault1(i64 2069, i32 %fi1079, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %814 = sext i32 %fi1308 to i64, !taffo.info !0, !llfi_index !2200
   %fi1307 = call i64 @injectFault0(i64 2069, i64 %814, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %815 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %813, i64 %fi1307, !llfi_index !2201
@@ -5150,13 +5150,13 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   store i32 %fi1312, i32* %u8_24fixp273, align 4, !taffo.info !47, !llfi_index !2204, !taffo.target !1037
   %817 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !2205
   %818 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %817, align 8, !llfi_index !2206
-  %fi1314 = call i32 @injectFault1(i64 2076, i32 %fi729, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1314 = call i32 @injectFault1(i64 2076, i32 %fi1076, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %819 = sext i32 %fi1314 to i64, !taffo.info !1081, !llfi_index !2207
   %fi1313 = call i64 @injectFault0(i64 2076, i64 %819, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi1315 = call i64 @injectFault0(i64 2077, i64 %fi1313, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %820 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %818, i64 %fi1315, !llfi_index !2208
   %821 = load { i32, i32, i32 }*, { i32, i32, i32 }** %820, align 8, !llfi_index !2209
-  %fi1317 = call i32 @injectFault1(i64 2079, i32 %fi732, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1317 = call i32 @injectFault1(i64 2079, i32 %fi1079, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %822 = sext i32 %fi1317 to i64, !taffo.info !0, !llfi_index !2210
   %fi1316 = call i64 @injectFault0(i64 2079, i64 %822, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %823 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %821, i64 %fi1316, !llfi_index !2211
@@ -5170,7 +5170,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %825, !llfi_index !2215
 
 825:                                              ; preds = %800
-  %fi1323 = call i32 @injectFault1(i64 2085, i32 %fi732, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1323 = call i32 @injectFault1(i64 2085, i32 %fi1079, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi1324 = call i32 @injectFault1(i64 2085, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %826 = add nsw i32 %fi1323, %fi1324, !taffo.info !323, !llfi_index !2216, !taffo.constinfo !67
   %fi1322 = call i32 @injectFault1(i64 2085, i32 %826, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -5212,10 +5212,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
           to label %842 unwind label %846, !llfi_index !2231, !taffo.constinfo !533
 
 842:                                              ; preds = %839
-  %fi1333 = call float @injectFault3(i64 2097, float 1.310720e+05, i32 56, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1333 = call float @injectFault2(i64 2097, float 1.310720e+05, i32 56, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %843 = call float @sqrtf(float noundef %fi1333) #15, !taffo.info !2232, !llfi_index !2234, !taffo.constinfo !114
-  %fi1332 = call float @injectFault3(i64 2097, float %843, i32 56, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1334 = call float @injectFault3(i64 2098, float %fi1332, i32 5, i32 0, i32 1, i32 3, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @invoke_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1332 = call float @injectFault2(i64 2097, float %843, i32 56, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @call_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1334 = call float @injectFault2(i64 2098, float %fi1332, i32 5, i32 0, i32 1, i32 3, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @invoke_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %matchop93 = invoke i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEf.11_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, %"class.std::__cxx11::basic_string"* %10, float %fi1334)
           to label %844 unwind label %850, !taffo.info !1053, !llfi_index !2235, !taffo.constinfo !533
 
@@ -5259,27 +5259,27 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 856:                                              ; preds = %854, %216, %214, %204
   %.34 = phi i8* [ %218, %216 ], [ %.23, %854 ], [ %.12, %214 ], [ %.01, %204 ], !llfi_index !2256
-  %.3 = phi i32 [ %fi532, %216 ], [ %fi1341, %854 ], [ %fi530, %214 ], [ %fi523, %204 ], !llfi_index !2257
-  %fi287 = call i32 @injectFault1(i64 2120, i32 %.3, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %.3 = phi i32 [ %fi528, %216 ], [ %fi1341, %854 ], [ %fi526, %214 ], [ %fi519, %204 ], !llfi_index !2257
+  %fi283 = call i32 @injectFault1(i64 2120, i32 %.3, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   call void @_ZN5ImageD2Ev.4_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4), !taffo.info !47, !llfi_index !2258, !taffo.constinfo !67
   br label %857, !llfi_index !2259
 
 857:                                              ; preds = %856, %192
   %.45 = phi i8* [ %.34, %856 ], [ %194, %192 ], !llfi_index !2260
-  %.4 = phi i32 [ %fi287, %856 ], [ %fi515, %192 ], !llfi_index !2261
-  %fi288 = call i32 @injectFault1(i64 2124, i32 %.4, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %.4 = phi i32 [ %fi283, %856 ], [ %fi511, %192 ], !llfi_index !2261
+  %fi284 = call i32 @injectFault1(i64 2124, i32 %.4, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   call void @_ZN5ImageD2Ev.1_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3), !taffo.info !47, !llfi_index !2262, !taffo.constinfo !67
   br label %858, !llfi_index !2263
 
 858:                                              ; preds = %857
-  %fi290 = call { i8*, i32 } @injectFault7(i64 2127, { i8*, i32 } undef, i32 65, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([12 x i8], [12 x i8]* @insertvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %859 = insertvalue { i8*, i32 } %fi290, i8* %.45, 0, !llfi_index !2264
-  %fi289 = call { i8*, i32 } @injectFault7(i64 2127, { i8*, i32 } %859, i32 65, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([12 x i8], [12 x i8]* @insertvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi292 = call { i8*, i32 } @injectFault7(i64 2128, { i8*, i32 } %fi289, i32 65, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([12 x i8], [12 x i8]* @insertvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi293 = call i32 @injectFault1(i64 2128, i32 %fi288, i32 65, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([12 x i8], [12 x i8]* @insertvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %860 = insertvalue { i8*, i32 } %fi292, i32 %fi293, 1, !llfi_index !2265
-  %fi291 = call { i8*, i32 } @injectFault7(i64 2128, { i8*, i32 } %860, i32 65, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([12 x i8], [12 x i8]* @insertvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi1342 = call { i8*, i32 } @injectFault7(i64 2129, { i8*, i32 } %fi291, i32 6, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @resume_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi286 = call { i8*, i32 } @injectFault7(i64 2127, { i8*, i32 } undef, i32 65, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([12 x i8], [12 x i8]* @insertvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %859 = insertvalue { i8*, i32 } %fi286, i8* %.45, 0, !llfi_index !2264
+  %fi285 = call { i8*, i32 } @injectFault7(i64 2127, { i8*, i32 } %859, i32 65, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([12 x i8], [12 x i8]* @insertvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi288 = call { i8*, i32 } @injectFault7(i64 2128, { i8*, i32 } %fi285, i32 65, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([12 x i8], [12 x i8]* @insertvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi289 = call i32 @injectFault1(i64 2128, i32 %fi284, i32 65, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([12 x i8], [12 x i8]* @insertvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %860 = insertvalue { i8*, i32 } %fi288, i32 %fi289, 1, !llfi_index !2265
+  %fi287 = call { i8*, i32 } @injectFault7(i64 2128, { i8*, i32 } %860, i32 65, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([12 x i8], [12 x i8]* @insertvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi1342 = call { i8*, i32 } @injectFault7(i64 2129, { i8*, i32 } %fi287, i32 6, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @resume_namestr, i32 0, i32 0)), !llfi_injectfault !30
   call void @postInjections()
   resume { i8*, i32 } %fi1342, !llfi_index !2266
 }
@@ -5388,8 +5388,8 @@ define internal void @_ZN5Image13makeGrayscaleEv.9_fixp({ i32, i32, { i32, i32, 
   %fi1 = call i32 @injectFault1(i64 2164, i32 %fi3, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi2 = call i32 @injectFault1(i64 2164, i32 %fi4, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %3 = icmp slt i32 %fi1, %fi2, !taffo.info !1053, !taffo.initweight !2308, !llfi_index !2309
-  %fi = call i1 @injectFault2(i64 2164, i1 %3, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi5 = call i1 @injectFault2(i64 2165, i1 %fi, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi = call i1 @injectFault3(i64 2164, i1 %3, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi5 = call i1 @injectFault3(i64 2165, i1 %fi, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi5, label %4, label %73, !taffo.info !47, !taffo.initweight !2310, !llfi_index !2311
 
 4:                                                ; preds = %1
@@ -5404,8 +5404,8 @@ define internal void @_ZN5Image13makeGrayscaleEv.9_fixp({ i32, i32, { i32, i32, 
   %fi9 = call i32 @injectFault1(i64 2170, i32 %fi6, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi10 = call i32 @injectFault1(i64 2170, i32 %fi7, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %7 = icmp slt i32 %fi9, %fi10, !taffo.info !1053, !taffo.initweight !2308, !llfi_index !2316
-  %fi8 = call i1 @injectFault2(i64 2170, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi11 = call i1 @injectFault2(i64 2171, i1 %fi8, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi8 = call i1 @injectFault3(i64 2170, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi11 = call i1 @injectFault3(i64 2171, i1 %fi8, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi11, label %8, label %70, !taffo.info !47, !taffo.initweight !2310, !llfi_index !2317
 
 8:                                                ; preds = %5
@@ -5614,7 +5614,7 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
           to label %9 unwind label %15, !llfi_index !2422, !taffo.constinfo !101
 
 9:                                                ; preds = %7
-  %fi11 = call i1 @injectFault2(i64 2261, i1 %8, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi11 = call i1 @injectFault3(i64 2261, i1 %8, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi11, label %19, label %10, !llfi_index !2423
 
 10:                                               ; preds = %9
@@ -5673,11 +5673,11 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %30 = call { i64, i1 } @llvm.umul.with.overflow.i64(i64 %fi21, i64 8), !taffo.initweight !2310, !taffo.structinfo !67, !llfi_index !2447, !taffo.constinfo !97
   %fi24 = call { i64, i1 } @injectFault8(i64 2286, { i64, i1 } %30, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %31 = extractvalue { i64, i1 } %fi24, 1, !taffo.info !47, !taffo.initweight !2448, !llfi_index !2449
-  %fi23 = call i1 @injectFault2(i64 2286, i1 %31, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi23 = call i1 @injectFault3(i64 2286, i1 %31, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi26 = call { i64, i1 } @injectFault8(i64 2287, { i64, i1 } %30, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %32 = extractvalue { i64, i1 } %fi26, 0, !taffo.info !47, !taffo.initweight !2448, !llfi_index !2450
   %fi25 = call i64 @injectFault0(i64 2287, i64 %32, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi28 = call i1 @injectFault2(i64 2288, i1 %fi23, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi28 = call i1 @injectFault3(i64 2288, i1 %fi23, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi29 = call i64 @injectFault0(i64 2288, i64 -1, i32 57, i32 2, i32 4, i32 2, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi30 = call i64 @injectFault0(i64 2288, i64 %fi25, i32 57, i32 3, i32 4, i32 3, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %33 = select i1 %fi28, i64 %fi29, i64 %fi30, !taffo.info !2451, !taffo.initweight !2452, !llfi_index !2453
@@ -5702,8 +5702,8 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %fi35 = call i32 @injectFault1(i64 2298, i32 %fi32, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi36 = call i32 @injectFault1(i64 2298, i32 %fi33, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %41 = icmp slt i32 %fi35, %fi36, !taffo.info !1053, !taffo.initweight !2308, !llfi_index !2465
-  %fi34 = call i1 @injectFault2(i64 2298, i1 %41, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi37 = call i1 @injectFault2(i64 2299, i1 %fi34, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi34 = call i1 @injectFault3(i64 2298, i1 %41, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi37 = call i1 @injectFault3(i64 2299, i1 %fi34, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi37, label %42, label %129, !taffo.info !47, !taffo.initweight !2310, !llfi_index !2466
 
 42:                                               ; preds = %39
@@ -5726,11 +5726,11 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %49 = call { i64, i1 } @llvm.umul.with.overflow.i64(i64 %fi39, i64 12), !taffo.initweight !2310, !taffo.structinfo !67, !llfi_index !2474, !taffo.constinfo !97
   %fi42 = call { i64, i1 } @injectFault8(i64 2308, { i64, i1 } %49, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %50 = extractvalue { i64, i1 } %fi42, 1, !taffo.info !47, !taffo.initweight !2448, !llfi_index !2475
-  %fi41 = call i1 @injectFault2(i64 2308, i1 %50, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi41 = call i1 @injectFault3(i64 2308, i1 %50, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi44 = call { i64, i1 } @injectFault8(i64 2309, { i64, i1 } %49, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %51 = extractvalue { i64, i1 } %fi44, 0, !taffo.info !47, !taffo.initweight !2448, !llfi_index !2476
   %fi43 = call i64 @injectFault0(i64 2309, i64 %51, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi46 = call i1 @injectFault2(i64 2310, i1 %fi41, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi46 = call i1 @injectFault3(i64 2310, i1 %fi41, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi47 = call i64 @injectFault0(i64 2310, i64 -1, i32 57, i32 2, i32 4, i32 2, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi48 = call i64 @injectFault0(i64 2310, i64 %fi43, i32 57, i32 3, i32 4, i32 3, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %52 = select i1 %fi46, i64 %fi47, i64 %fi48, !taffo.info !2451, !taffo.initweight !2452, !llfi_index !2477
@@ -5744,8 +5744,8 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %fi51 = call i64 @injectFault0(i64 2313, i64 %fi39, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi52 = call i64 @injectFault0(i64 2313, i64 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %56 = icmp eq i64 %fi51, %fi52, !taffo.info !1053, !taffo.initweight !2310, !llfi_index !2480
-  %fi50 = call i1 @injectFault2(i64 2313, i1 %56, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi53 = call i1 @injectFault2(i64 2314, i1 %fi50, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi50 = call i1 @injectFault3(i64 2313, i1 %56, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi53 = call i1 @injectFault3(i64 2314, i1 %fi50, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi53, label %64, label %57, !taffo.info !47, !taffo.initweight !2448, !llfi_index !2481
 
 57:                                               ; preds = %54
@@ -5760,8 +5760,8 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 61:                                               ; preds = %59
   %62 = getelementptr inbounds %class.Pixel, %class.Pixel* %60, i64 1, !taffo.initweight !2487, !taffo.structinfo !97, !llfi_index !2488
   %63 = icmp eq %class.Pixel* %62, %58, !taffo.info !2489, !taffo.initweight !2448, !llfi_index !2490
-  %fi54 = call i1 @injectFault2(i64 2320, i1 %63, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi55 = call i1 @injectFault2(i64 2321, i1 %fi54, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi54 = call i1 @injectFault3(i64 2320, i1 %63, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi55 = call i1 @injectFault3(i64 2321, i1 %fi54, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi55, label %64, label %59, !taffo.info !47, !taffo.initweight !2452, !llfi_index !2491
 
 64:                                               ; preds = %61, %54
@@ -5777,7 +5777,7 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   br label %70, !llfi_index !2498
 
 70:                                               ; preds = %107, %64
-  %.01 = phi i32 [ 0, %64 ], [ %fi107, %107 ], !taffo.info !183, !llfi_index !2499
+  %.01 = phi i32 [ 0, %64 ], [ %fi104, %107 ], !taffo.info !183, !llfi_index !2499
   %fi59 = call i32 @injectFault1(i64 2329, i32 %.01, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %matchop7 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1053, !llfi_index !2500
   %71 = load i32, i32* %matchop7, align 8, !taffo.info !1053, !taffo.initweight !1120, !llfi_index !2501
@@ -5785,8 +5785,8 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %fi62 = call i32 @injectFault1(i64 2332, i32 %fi59, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi63 = call i32 @injectFault1(i64 2332, i32 %fi60, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %72 = icmp slt i32 %fi62, %fi63, !taffo.info !1053, !taffo.initweight !2308, !llfi_index !2502
-  %fi61 = call i1 @injectFault2(i64 2332, i1 %72, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi64 = call i1 @injectFault2(i64 2333, i1 %fi61, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi61 = call i1 @injectFault3(i64 2332, i1 %72, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi64 = call i1 @injectFault3(i64 2333, i1 %fi61, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi64, label %73, label %125, !taffo.info !47, !taffo.initweight !2310, !llfi_index !2503
 
 73:                                               ; preds = %70
@@ -5855,38 +5855,38 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %fi102 = call i32 @injectFault1(i64 2360, i32 %fi32, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %95 = sext i32 %fi102 to i64, !taffo.info !0, !llfi_index !2530
   %fi101 = call i64 @injectFault0(i64 2360, i64 %95, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi103 = call i64 @injectFault0(i64 2361, i64 %fi101, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %96 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %94, i64 %fi103, !llfi_index !2531
+  %fi2 = call i64 @injectFault0(i64 2361, i64 %fi101, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %96 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %94, i64 %fi2, !llfi_index !2531
   %97 = load { i32, i32, i32 }*, { i32, i32, i32 }** %96, align 8, !llfi_index !2532
-  %fi105 = call i32 @injectFault1(i64 2363, i32 %fi59, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %98 = sext i32 %fi105 to i64, !taffo.info !0, !llfi_index !2533
-  %fi104 = call i64 @injectFault0(i64 2363, i64 %98, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %99 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %97, i64 %fi104, !llfi_index !2534
+  %fi4 = call i32 @injectFault1(i64 2363, i32 %fi59, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %98 = sext i32 %fi4 to i64, !taffo.info !0, !llfi_index !2533
+  %fi3 = call i64 @injectFault0(i64 2363, i64 %98, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %99 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %97, i64 %fi3, !llfi_index !2534
   %u8_24fixp10 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %99, i32 0, i32 1, !taffo.info !611, !llfi_index !2535
-  %fi2 = call i32 @injectFault1(i64 2366, i32 %fi85, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi2, i32* %u8_24fixp10, align 4, !taffo.info !638, !llfi_index !2536
+  %fi5 = call i32 @injectFault1(i64 2366, i32 %fi85, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi5, i32* %u8_24fixp10, align 4, !taffo.info !638, !llfi_index !2536
   %100 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2537
   %101 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %100, align 8, !llfi_index !2538
-  %fi4 = call i32 @injectFault1(i64 2369, i32 %fi32, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %102 = sext i32 %fi4 to i64, !taffo.info !0, !llfi_index !2539
-  %fi3 = call i64 @injectFault0(i64 2369, i64 %102, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi5 = call i64 @injectFault0(i64 2370, i64 %fi3, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %103 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %101, i64 %fi5, !llfi_index !2540
+  %fi108 = call i32 @injectFault1(i64 2369, i32 %fi32, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %102 = sext i32 %fi108 to i64, !taffo.info !0, !llfi_index !2539
+  %fi107 = call i64 @injectFault0(i64 2369, i64 %102, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi109 = call i64 @injectFault0(i64 2370, i64 %fi107, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %103 = getelementptr { i32, i32, i32 }*, { i32, i32, i32 }** %101, i64 %fi109, !llfi_index !2540
   %104 = load { i32, i32, i32 }*, { i32, i32, i32 }** %103, align 8, !llfi_index !2541
   %fi111 = call i32 @injectFault1(i64 2372, i32 %fi59, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %105 = sext i32 %fi111 to i64, !taffo.info !0, !llfi_index !2542
   %fi110 = call i64 @injectFault0(i64 2372, i64 %105, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %106 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %104, i64 %fi110, !llfi_index !2543
   %u8_24fixp11 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %106, i32 0, i32 2, !taffo.info !611, !llfi_index !2544
-  %fi106 = call i32 @injectFault1(i64 2375, i32 %fi92, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  store i32 %fi106, i32* %u8_24fixp11, align 4, !taffo.info !638, !llfi_index !2545
+  %fi103 = call i32 @injectFault1(i64 2375, i32 %fi92, i32 33, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @store_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  store i32 %fi103, i32* %u8_24fixp11, align 4, !taffo.info !638, !llfi_index !2545
   br label %107, !llfi_index !2546
 
 107:                                              ; preds = %73
-  %fi108 = call i32 @injectFault1(i64 2377, i32 %fi59, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi109 = call i32 @injectFault1(i64 2377, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %108 = add nsw i32 %fi108, %fi109, !taffo.info !323, !llfi_index !2547, !taffo.constinfo !67
-  %fi107 = call i32 @injectFault1(i64 2377, i32 %108, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi105 = call i32 @injectFault1(i64 2377, i32 %fi59, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi106 = call i32 @injectFault1(i64 2377, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %108 = add nsw i32 %fi105, %fi106, !taffo.info !323, !llfi_index !2547, !taffo.constinfo !67
+  %fi104 = call i32 @injectFault1(i64 2377, i32 %108, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %70, !llvm.loop !2548, !llfi_index !2549
 
 109:                                              ; preds = %19
@@ -6031,46 +6031,46 @@ define internal void @_ZN5ImageD2Ev.5_fixp({ i32, i32, { i32, i32, i32 }**, %"cl
 
 ; Function Attrs: mustprogress noinline uwtable
 define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEf.11_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* noundef nonnull align 8 dereferenceable(48) %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", %"class.std::__cxx11::basic_string"* noundef %0, float noundef %1) #3 align 2 personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*) !taffo.initweight !2617 !taffo.funinfo !2618 !taffo.sourceFunction !2619 {
-  %fi1 = call float @injectFault3(i64 2442, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi2 = call float @injectFault3(i64 2442, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi1 = call float @injectFault2(i64 2442, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi2 = call float @injectFault2(i64 2442, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %3 = fmul float %fi1, %fi2, !taffo.info !2232, !llfi_index !2620
-  %fi = call float @injectFault3(i64 2442, float %3, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi4 = call float @injectFault3(i64 2443, float %fi, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi = call float @injectFault2(i64 2442, float %3, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi4 = call float @injectFault2(i64 2443, float %fi, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %4 = fptoui float %fi4 to i32, !taffo.info !2232, !llfi_index !2621
   %fi3 = call i32 @injectFault1(i64 2443, i32 %4, i32 41, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi6 = call float @injectFault3(i64 2444, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi7 = call float @injectFault3(i64 2444, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi6 = call float @injectFault2(i64 2444, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi7 = call float @injectFault2(i64 2444, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %5 = fmul float %fi6, %fi7, !taffo.info !2232, !llfi_index !2622
-  %fi5 = call float @injectFault3(i64 2444, float %5, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi9 = call float @injectFault3(i64 2445, float %fi5, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi5 = call float @injectFault2(i64 2444, float %5, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi9 = call float @injectFault2(i64 2445, float %fi5, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %6 = fptoui float %fi9 to i32, !taffo.info !2232, !llfi_index !2623
   %fi8 = call i32 @injectFault1(i64 2445, i32 %6, i32 41, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi11 = call float @injectFault3(i64 2446, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi12 = call float @injectFault3(i64 2446, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi11 = call float @injectFault2(i64 2446, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi12 = call float @injectFault2(i64 2446, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %7 = fmul float %fi11, %fi12, !taffo.info !2232, !llfi_index !2624
-  %fi10 = call float @injectFault3(i64 2446, float %7, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi14 = call float @injectFault3(i64 2447, float %fi10, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi10 = call float @injectFault2(i64 2446, float %7, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi14 = call float @injectFault2(i64 2447, float %fi10, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %8 = fptoui float %fi14 to i32, !taffo.info !2232, !llfi_index !2625
   %fi13 = call i32 @injectFault1(i64 2447, i32 %8, i32 41, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi19 = call float @injectFault3(i64 2448, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi20 = call float @injectFault3(i64 2448, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi19 = call float @injectFault2(i64 2448, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi20 = call float @injectFault2(i64 2448, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %9 = fmul float %fi19, %fi20, !taffo.info !2232, !llfi_index !2626
-  %fi18 = call float @injectFault3(i64 2448, float %9, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi22 = call float @injectFault3(i64 2449, float %fi18, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi18 = call float @injectFault2(i64 2448, float %9, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi22 = call float @injectFault2(i64 2449, float %fi18, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %10 = fptoui float %fi22 to i32, !taffo.info !2232, !llfi_index !2627
   %fi21 = call i32 @injectFault1(i64 2449, i32 %10, i32 41, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi24 = call float @injectFault3(i64 2450, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi25 = call float @injectFault3(i64 2450, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi24 = call float @injectFault2(i64 2450, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi25 = call float @injectFault2(i64 2450, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %11 = fmul float %fi24, %fi25, !taffo.info !2232, !llfi_index !2628
-  %fi23 = call float @injectFault3(i64 2450, float %11, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi27 = call float @injectFault3(i64 2451, float %fi23, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi23 = call float @injectFault2(i64 2450, float %11, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi27 = call float @injectFault2(i64 2451, float %fi23, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %12 = fptoui float %fi27 to i32, !taffo.info !2232, !llfi_index !2629
   %fi26 = call i32 @injectFault1(i64 2451, i32 %12, i32 41, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi29 = call float @injectFault3(i64 2452, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi30 = call float @injectFault3(i64 2452, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi29 = call float @injectFault2(i64 2452, float 0x4160000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi30 = call float @injectFault2(i64 2452, float %1, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %13 = fmul float %fi29, %fi30, !taffo.info !2232, !llfi_index !2630
-  %fi28 = call float @injectFault3(i64 2452, float %13, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi32 = call float @injectFault3(i64 2453, float %fi28, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi28 = call float @injectFault2(i64 2452, float %13, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi32 = call float @injectFault2(i64 2453, float %fi28, i32 41, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %14 = fptoui float %fi32 to i32, !taffo.info !2232, !llfi_index !2631
   %fi31 = call i32 @injectFault1(i64 2453, i32 %14, i32 41, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptoui_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi33 = call i32 @injectFault1(i64 2454, i32 1, i32 31, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @alloca_namestr, i32 0, i32 0)), !llfi_injectfault !30
@@ -6118,8 +6118,8 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
   %fi16 = call i32 @injectFault1(i64 2471, i32 %fi39, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi17 = call i32 @injectFault1(i64 2471, i32 %fi40, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %31 = icmp slt i32 %fi16, %fi17, !taffo.info !1053, !taffo.initweight !2308, !llfi_index !2649
-  %fi15 = call i1 @injectFault2(i64 2471, i1 %31, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi41 = call i1 @injectFault2(i64 2472, i1 %fi15, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi15 = call i1 @injectFault3(i64 2471, i1 %31, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi41 = call i1 @injectFault3(i64 2472, i1 %fi15, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi41, label %32, label %155, !taffo.info !47, !taffo.initweight !2310, !llfi_index !2650
 
 32:                                               ; preds = %29
@@ -6138,8 +6138,8 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
   %fi48 = call i32 @injectFault1(i64 2478, i32 %fi42, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi49 = call i32 @injectFault1(i64 2478, i32 %fi44, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %36 = icmp slt i32 %fi48, %fi49, !taffo.info !1053, !taffo.initweight !2310, !llfi_index !2656
-  %fi47 = call i1 @injectFault2(i64 2478, i1 %36, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi50 = call i1 @injectFault2(i64 2479, i1 %fi47, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi47 = call i1 @injectFault3(i64 2478, i1 %36, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi50 = call i1 @injectFault3(i64 2479, i1 %fi47, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi50, label %37, label %95, !taffo.info !47, !taffo.initweight !2448, !llfi_index !2657
 
 37:                                               ; preds = %33
@@ -6517,7 +6517,7 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
           to label %9 unwind label %15, !llfi_index !2810, !taffo.constinfo !101
 
 9:                                                ; preds = %7
-  %fi6 = call i1 @injectFault2(i64 2625, i1 %8, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi6 = call i1 @injectFault3(i64 2625, i1 %8, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi6, label %19, label %10, !llfi_index !2811
 
 10:                                               ; preds = %9
@@ -6576,11 +6576,11 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %30 = call { i64, i1 } @llvm.umul.with.overflow.i64(i64 %fi16, i64 8), !taffo.initweight !2310, !taffo.structinfo !67, !llfi_index !2835, !taffo.constinfo !97
   %fi19 = call { i64, i1 } @injectFault8(i64 2650, { i64, i1 } %30, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %31 = extractvalue { i64, i1 } %fi19, 1, !taffo.info !47, !taffo.initweight !2448, !llfi_index !2836
-  %fi18 = call i1 @injectFault2(i64 2650, i1 %31, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi18 = call i1 @injectFault3(i64 2650, i1 %31, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi21 = call { i64, i1 } @injectFault8(i64 2651, { i64, i1 } %30, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %32 = extractvalue { i64, i1 } %fi21, 0, !taffo.info !47, !taffo.initweight !2448, !llfi_index !2837
   %fi20 = call i64 @injectFault0(i64 2651, i64 %32, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi23 = call i1 @injectFault2(i64 2652, i1 %fi18, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi23 = call i1 @injectFault3(i64 2652, i1 %fi18, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi24 = call i64 @injectFault0(i64 2652, i64 -1, i32 57, i32 2, i32 4, i32 2, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi25 = call i64 @injectFault0(i64 2652, i64 %fi20, i32 57, i32 3, i32 4, i32 3, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %33 = select i1 %fi23, i64 %fi24, i64 %fi25, !taffo.info !2451, !taffo.initweight !2452, !llfi_index !2838
@@ -6605,8 +6605,8 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %fi30 = call i32 @injectFault1(i64 2662, i32 %fi27, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi31 = call i32 @injectFault1(i64 2662, i32 %fi28, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %41 = icmp slt i32 %fi30, %fi31, !taffo.info !1053, !taffo.initweight !2308, !llfi_index !2848
-  %fi29 = call i1 @injectFault2(i64 2662, i1 %41, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi32 = call i1 @injectFault2(i64 2663, i1 %fi29, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi29 = call i1 @injectFault3(i64 2662, i1 %41, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi32 = call i1 @injectFault3(i64 2663, i1 %fi29, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi32, label %42, label %129, !taffo.info !47, !taffo.initweight !2310, !llfi_index !2849
 
 42:                                               ; preds = %39
@@ -6629,11 +6629,11 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %49 = call { i64, i1 } @llvm.umul.with.overflow.i64(i64 %fi34, i64 12), !taffo.initweight !2310, !taffo.structinfo !67, !llfi_index !2857, !taffo.constinfo !97
   %fi37 = call { i64, i1 } @injectFault8(i64 2672, { i64, i1 } %49, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %50 = extractvalue { i64, i1 } %fi37, 1, !taffo.info !47, !taffo.initweight !2448, !llfi_index !2858
-  %fi36 = call i1 @injectFault2(i64 2672, i1 %50, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi36 = call i1 @injectFault3(i64 2672, i1 %50, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi39 = call { i64, i1 } @injectFault8(i64 2673, { i64, i1 } %49, i32 64, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %51 = extractvalue { i64, i1 } %fi39, 0, !taffo.info !47, !taffo.initweight !2448, !llfi_index !2859
   %fi38 = call i64 @injectFault0(i64 2673, i64 %51, i32 64, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([13 x i8], [13 x i8]* @extractvalue_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi41 = call i1 @injectFault2(i64 2674, i1 %fi36, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi41 = call i1 @injectFault3(i64 2674, i1 %fi36, i32 57, i32 1, i32 4, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi42 = call i64 @injectFault0(i64 2674, i64 -1, i32 57, i32 2, i32 4, i32 2, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi43 = call i64 @injectFault0(i64 2674, i64 %fi38, i32 57, i32 3, i32 4, i32 3, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @select_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %52 = select i1 %fi41, i64 %fi42, i64 %fi43, !taffo.info !2451, !taffo.initweight !2452, !llfi_index !2860
@@ -6647,8 +6647,8 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %fi46 = call i64 @injectFault0(i64 2677, i64 %fi34, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi47 = call i64 @injectFault0(i64 2677, i64 0, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %56 = icmp eq i64 %fi46, %fi47, !taffo.info !1053, !taffo.initweight !2310, !llfi_index !2863
-  %fi45 = call i1 @injectFault2(i64 2677, i1 %56, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi48 = call i1 @injectFault2(i64 2678, i1 %fi45, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi45 = call i1 @injectFault3(i64 2677, i1 %56, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi48 = call i1 @injectFault3(i64 2678, i1 %fi45, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi48, label %64, label %57, !taffo.info !47, !taffo.initweight !2448, !llfi_index !2864
 
 57:                                               ; preds = %54
@@ -6663,8 +6663,8 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 61:                                               ; preds = %59
   %62 = getelementptr inbounds %class.Pixel, %class.Pixel* %60, i64 1, !taffo.initweight !2487, !taffo.structinfo !97, !llfi_index !2869
   %63 = icmp eq %class.Pixel* %62, %58, !taffo.info !2489, !taffo.initweight !2448, !llfi_index !2870
-  %fi49 = call i1 @injectFault2(i64 2684, i1 %63, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi50 = call i1 @injectFault2(i64 2685, i1 %fi49, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi49 = call i1 @injectFault3(i64 2684, i1 %63, i32 53, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi50 = call i1 @injectFault3(i64 2685, i1 %fi49, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi50, label %64, label %59, !taffo.info !47, !taffo.initweight !2452, !llfi_index !2871
 
 64:                                               ; preds = %61, %54
@@ -6688,8 +6688,8 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %fi57 = call i32 @injectFault1(i64 2696, i32 %fi54, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi58 = call i32 @injectFault1(i64 2696, i32 %fi55, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %72 = icmp slt i32 %fi57, %fi58, !taffo.info !1053, !taffo.initweight !2308, !llfi_index !2882
-  %fi56 = call i1 @injectFault2(i64 2696, i1 %72, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi59 = call i1 @injectFault2(i64 2697, i1 %fi56, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi56 = call i1 @injectFault3(i64 2696, i1 %72, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi59 = call i1 @injectFault3(i64 2697, i1 %fi56, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi59, label %73, label %125, !taffo.info !47, !taffo.initweight !2310, !llfi_index !2883
 
 73:                                               ; preds = %70
@@ -6927,102 +6927,102 @@ define internal noundef float @_Z8convolvePA3_fS0_.7_u0_0fixp([3 x float]* nound
   br label %4, !llfi_index !2994
 
 4:                                                ; preds = %28, %2
-  %.02.s3_29fixp = phi i32 [ %fi, %2 ], [ %fi37, %28 ], !taffo.info !34, !llfi_index !2995
+  %.02.s3_29fixp = phi i32 [ %fi, %2 ], [ %fi17, %28 ], !taffo.info !34, !llfi_index !2995
   %.01 = phi i32 [ 0, %2 ], [ %fi50, %28 ], !llfi_index !2996
-  %fi24 = call i32 @injectFault1(i64 2803, i32 %.01, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi23 = call i32 @injectFault1(i64 2802, i32 %.02.s3_29fixp, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi26 = call i32 @injectFault1(i64 2804, i32 %fi23, i32 44, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @sitofp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %5 = sitofp i32 %fi26 to float, !taffo.info !34, !llfi_index !2997
-  %fi25 = call float @injectFault3(i64 2804, float %5, i32 44, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @sitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi28 = call float @injectFault3(i64 2805, float %fi25, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi29 = call float @injectFault3(i64 2805, float 0x41C0000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %6 = fdiv float %fi28, %fi29, !taffo.info !34, !llfi_index !2998
-  %fi27 = call float @injectFault3(i64 2805, float %6, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi31 = call i32 @injectFault1(i64 2806, i32 %fi24, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi32 = call i32 @injectFault1(i64 2806, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %7 = icmp slt i32 %fi31, %fi32, !llfi_index !2999
-  %fi30 = call i1 @injectFault2(i64 2806, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi33 = call i1 @injectFault2(i64 2807, i1 %fi30, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi33, label %8, label %30, !llfi_index !3000
+  %fi4 = call i32 @injectFault1(i64 2803, i32 %.01, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi3 = call i32 @injectFault1(i64 2802, i32 %.02.s3_29fixp, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi6 = call i32 @injectFault1(i64 2804, i32 %fi3, i32 44, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @sitofp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %5 = sitofp i32 %fi6 to float, !taffo.info !34, !llfi_index !2997
+  %fi5 = call float @injectFault2(i64 2804, float %5, i32 44, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @sitofp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi8 = call float @injectFault2(i64 2805, float %fi5, i32 21, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi9 = call float @injectFault2(i64 2805, float 0x41C0000000000000, i32 21, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %6 = fdiv float %fi8, %fi9, !taffo.info !34, !llfi_index !2998
+  %fi7 = call float @injectFault2(i64 2805, float %6, i32 21, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fdiv_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi11 = call i32 @injectFault1(i64 2806, i32 %fi4, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi12 = call i32 @injectFault1(i64 2806, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %7 = icmp slt i32 %fi11, %fi12, !llfi_index !2999
+  %fi10 = call i1 @injectFault3(i64 2806, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi13 = call i1 @injectFault3(i64 2807, i1 %fi10, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi13, label %8, label %30, !llfi_index !3000
 
 8:                                                ; preds = %4
   br label %9, !llfi_index !3001
 
 9:                                                ; preds = %25, %8
-  %.1.s3_29fixp = phi i32 [ %fi23, %8 ], [ %fi17, %25 ], !taffo.info !34, !llfi_index !3002
-  %.0 = phi i32 [ 0, %8 ], [ %fi20, %25 ], !llfi_index !3003
-  %fi38 = call i32 @injectFault1(i64 2810, i32 %.0, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi37 = call i32 @injectFault1(i64 2809, i32 %.1.s3_29fixp, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi40 = call i32 @injectFault1(i64 2811, i32 %fi38, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi41 = call i32 @injectFault1(i64 2811, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %10 = icmp slt i32 %fi40, %fi41, !llfi_index !3004
-  %fi39 = call i1 @injectFault2(i64 2811, i1 %10, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi42 = call i1 @injectFault2(i64 2812, i1 %fi39, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi42, label %11, label %27, !llfi_index !3005
+  %.1.s3_29fixp = phi i32 [ %fi3, %8 ], [ %fi44, %25 ], !taffo.info !34, !llfi_index !3002
+  %.0 = phi i32 [ 0, %8 ], [ %fi47, %25 ], !llfi_index !3003
+  %fi18 = call i32 @injectFault1(i64 2810, i32 %.0, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi17 = call i32 @injectFault1(i64 2809, i32 %.1.s3_29fixp, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi20 = call i32 @injectFault1(i64 2811, i32 %fi18, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi21 = call i32 @injectFault1(i64 2811, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %10 = icmp slt i32 %fi20, %fi21, !llfi_index !3004
+  %fi19 = call i1 @injectFault3(i64 2811, i1 %10, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi22 = call i1 @injectFault3(i64 2812, i1 %fi19, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi22, label %11, label %27, !llfi_index !3005
 
 11:                                               ; preds = %9
-  %fi44 = call i32 @injectFault1(i64 2813, i32 %fi38, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %12 = sext i32 %fi44 to i64, !llfi_index !3006
-  %fi43 = call i64 @injectFault0(i64 2813, i64 %12, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi45 = call i64 @injectFault0(i64 2814, i64 %fi43, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %13 = getelementptr [3 x float], [3 x float]* %0, i64 %fi45, !taffo.info !47, !taffo.initweight !48, !llfi_index !3007
-  %fi47 = call i32 @injectFault1(i64 2815, i32 %fi24, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %14 = sext i32 %fi47 to i64, !llfi_index !3008
-  %fi46 = call i64 @injectFault0(i64 2815, i64 %14, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi48 = call i64 @injectFault0(i64 2816, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi49 = call i64 @injectFault0(i64 2816, i64 %fi46, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %15 = getelementptr [3 x float], [3 x float]* %13, i64 %fi48, i64 %fi49, !taffo.info !47, !taffo.initweight !51, !llfi_index !3009
+  %fi24 = call i32 @injectFault1(i64 2813, i32 %fi18, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %12 = sext i32 %fi24 to i64, !llfi_index !3006
+  %fi23 = call i64 @injectFault0(i64 2813, i64 %12, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi25 = call i64 @injectFault0(i64 2814, i64 %fi23, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %13 = getelementptr [3 x float], [3 x float]* %0, i64 %fi25, !taffo.info !47, !taffo.initweight !48, !llfi_index !3007
+  %fi27 = call i32 @injectFault1(i64 2815, i32 %fi4, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %14 = sext i32 %fi27 to i64, !llfi_index !3008
+  %fi26 = call i64 @injectFault0(i64 2815, i64 %14, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi28 = call i64 @injectFault0(i64 2816, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi29 = call i64 @injectFault0(i64 2816, i64 %fi26, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %15 = getelementptr [3 x float], [3 x float]* %13, i64 %fi28, i64 %fi29, !taffo.info !47, !taffo.initweight !51, !llfi_index !3009
   %16 = load float, float* %15, align 4, !taffo.info !47, !taffo.initweight !53, !llfi_index !3010
-  %fi3 = call float @injectFault3(i64 2817, float %16, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi5 = call i32 @injectFault1(i64 2818, i32 %fi24, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %17 = sext i32 %fi5 to i64, !llfi_index !3011
-  %fi4 = call i64 @injectFault0(i64 2818, i64 %17, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi6 = call i64 @injectFault0(i64 2819, i64 %fi4, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %18 = getelementptr [3 x float], [3 x float]* %1, i64 %fi6, !taffo.info !47, !taffo.initweight !48, !llfi_index !3012
-  %fi8 = call i32 @injectFault1(i64 2820, i32 %fi38, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %19 = sext i32 %fi8 to i64, !llfi_index !3013
-  %fi7 = call i64 @injectFault0(i64 2820, i64 %19, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi9 = call i64 @injectFault0(i64 2821, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi10 = call i64 @injectFault0(i64 2821, i64 %fi7, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %20 = getelementptr [3 x float], [3 x float]* %18, i64 %fi9, i64 %fi10, !taffo.info !47, !taffo.initweight !51, !llfi_index !3014
+  %fi30 = call float @injectFault2(i64 2817, float %16, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi32 = call i32 @injectFault1(i64 2818, i32 %fi4, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %17 = sext i32 %fi32 to i64, !llfi_index !3011
+  %fi31 = call i64 @injectFault0(i64 2818, i64 %17, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi33 = call i64 @injectFault0(i64 2819, i64 %fi31, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %18 = getelementptr [3 x float], [3 x float]* %1, i64 %fi33, !taffo.info !47, !taffo.initweight !48, !llfi_index !3012
+  %fi35 = call i32 @injectFault1(i64 2820, i32 %fi18, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %19 = sext i32 %fi35 to i64, !llfi_index !3013
+  %fi34 = call i64 @injectFault0(i64 2820, i64 %19, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi36 = call i64 @injectFault0(i64 2821, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi37 = call i64 @injectFault0(i64 2821, i64 %fi34, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %20 = getelementptr [3 x float], [3 x float]* %18, i64 %fi36, i64 %fi37, !taffo.info !47, !taffo.initweight !51, !llfi_index !3014
   %21 = load float, float* %20, align 4, !taffo.info !47, !taffo.initweight !53, !llfi_index !3015
-  %fi11 = call float @injectFault3(i64 2822, float %21, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi35 = call float @injectFault3(i64 2823, float %fi3, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi36 = call float @injectFault3(i64 2823, float %fi11, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %22 = fmul float %fi35, %fi36, !taffo.info !47, !taffo.initweight !60, !llfi_index !3016
-  %fi34 = call float @injectFault3(i64 2823, float %22, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi13 = call float @injectFault3(i64 2824, float 0x41C0000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi14 = call float @injectFault3(i64 2824, float %fi34, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %23 = fmul float %fi13, %fi14, !taffo.info !47, !llfi_index !3017
-  %fi12 = call float @injectFault3(i64 2824, float %23, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi16 = call float @injectFault3(i64 2825, float %fi12, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %24 = fptosi float %fi16 to i32, !taffo.info !47, !llfi_index !3018
-  %fi15 = call i32 @injectFault1(i64 2825, i32 %24, i32 42, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi18 = call i32 @injectFault1(i64 2826, i32 %fi37, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi19 = call i32 @injectFault1(i64 2826, i32 %fi15, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %s3_29fixp = add i32 %fi18, %fi19, !taffo.info !34, !llfi_index !3019
-  %fi17 = call i32 @injectFault1(i64 2826, i32 %s3_29fixp, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi38 = call float @injectFault2(i64 2822, float %21, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi15 = call float @injectFault2(i64 2823, float %fi30, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi16 = call float @injectFault2(i64 2823, float %fi38, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %22 = fmul float %fi15, %fi16, !taffo.info !47, !taffo.initweight !60, !llfi_index !3016
+  %fi14 = call float @injectFault2(i64 2823, float %22, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi40 = call float @injectFault2(i64 2824, float 0x41C0000000000000, i32 18, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi41 = call float @injectFault2(i64 2824, float %fi14, i32 18, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %23 = fmul float %fi40, %fi41, !taffo.info !47, !llfi_index !3017
+  %fi39 = call float @injectFault2(i64 2824, float %23, i32 18, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @fmul_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi43 = call float @injectFault2(i64 2825, float %fi39, i32 42, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %24 = fptosi float %fi43 to i32, !taffo.info !47, !llfi_index !3018
+  %fi42 = call i32 @injectFault1(i64 2825, i32 %24, i32 42, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @fptosi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi45 = call i32 @injectFault1(i64 2826, i32 %fi17, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi46 = call i32 @injectFault1(i64 2826, i32 %fi42, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %s3_29fixp = add i32 %fi45, %fi46, !taffo.info !34, !llfi_index !3019
+  %fi44 = call i32 @injectFault1(i64 2826, i32 %s3_29fixp, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %25, !llfi_index !3020
 
 25:                                               ; preds = %11
-  %fi21 = call i32 @injectFault1(i64 2828, i32 %fi38, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi22 = call i32 @injectFault1(i64 2828, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %26 = add nsw i32 %fi21, %fi22, !llfi_index !3021, !taffo.constinfo !67
-  %fi20 = call i32 @injectFault1(i64 2828, i32 %26, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi48 = call i32 @injectFault1(i64 2828, i32 %fi18, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi49 = call i32 @injectFault1(i64 2828, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %26 = add nsw i32 %fi48, %fi49, !llfi_index !3021, !taffo.constinfo !67
+  %fi47 = call i32 @injectFault1(i64 2828, i32 %26, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %9, !llvm.loop !3022, !llfi_index !3023
 
 27:                                               ; preds = %9
   br label %28, !llfi_index !3024
 
 28:                                               ; preds = %27
-  %fi51 = call i32 @injectFault1(i64 2831, i32 %fi24, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi51 = call i32 @injectFault1(i64 2831, i32 %fi4, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi52 = call i32 @injectFault1(i64 2831, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %29 = add nsw i32 %fi51, %fi52, !llfi_index !3025, !taffo.constinfo !67
   %fi50 = call i32 @injectFault1(i64 2831, i32 %29, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %4, !llvm.loop !3026, !llfi_index !3027
 
 30:                                               ; preds = %4
-  ret float %fi27, !taffo.info !75, !taffo.initweight !48, !llfi_index !3028
+  ret float %fi7, !taffo.info !75, !taffo.initweight !48, !llfi_index !3028
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
@@ -7035,8 +7035,8 @@ define internal noundef i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* noundef %.u8_
   %fi1 = call i32 @injectFault1(i64 2836, i32 %fi3, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi2 = call i32 @injectFault1(i64 2836, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %2 = icmp slt i32 %fi1, %fi2, !taffo.info !323, !llfi_index !3033
-  %fi = call i1 @injectFault2(i64 2836, i1 %2, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi4 = call i1 @injectFault2(i64 2837, i1 %fi, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi = call i1 @injectFault3(i64 2836, i1 %2, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi4 = call i1 @injectFault3(i64 2837, i1 %fi, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi4, label %3, label %12, !llfi_index !3034
 
 3:                                                ; preds = %1
@@ -7048,8 +7048,8 @@ define internal noundef i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* noundef %.u8_
   %fi7 = call i32 @injectFault1(i64 2840, i32 %fi5, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi8 = call i32 @injectFault1(i64 2840, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %5 = icmp slt i32 %fi7, %fi8, !taffo.info !323, !llfi_index !3037
-  %fi6 = call i1 @injectFault2(i64 2840, i1 %5, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi9 = call i1 @injectFault2(i64 2841, i1 %fi6, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi6 = call i1 @injectFault3(i64 2840, i1 %5, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi9 = call i1 @injectFault3(i64 2841, i1 %fi6, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi9, label %6, label %9, !llfi_index !3038
 
 6:                                                ; preds = %4
@@ -7170,8 +7170,8 @@ define internal noundef i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* noundef %.u8_
   %fi82 = call i33 @injectFault5(i64 2877, i33 %fi71, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi83 = call i33 @injectFault5(i64 2877, i33 %fi78, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %32 = icmp sge i33 %fi82, %fi83, !taffo.info !3092, !llfi_index !3093
-  %fi81 = call i1 @injectFault2(i64 2877, i1 %32, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi84 = call i1 @injectFault2(i64 2878, i1 %fi81, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi81 = call i1 @injectFault3(i64 2877, i1 %32, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi84 = call i1 @injectFault3(i64 2878, i1 %fi81, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi84, label %33, label %38, !taffo.info !47, !taffo.initweight !53, !llfi_index !3094
 
 33:                                               ; preds = %12
@@ -7226,8 +7226,8 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.8.21_s5_27fixp([3 x i32]* nound
   %fi9 = call i32 @injectFault1(i64 2893, i32 %fi4, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi10 = call i32 @injectFault1(i64 2893, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %4 = icmp slt i32 %fi9, %fi10, !taffo.info !323, !llfi_index !3117
-  %fi8 = call i1 @injectFault2(i64 2893, i1 %4, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi11 = call i1 @injectFault2(i64 2894, i1 %fi8, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi8 = call i1 @injectFault3(i64 2893, i1 %4, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi11 = call i1 @injectFault3(i64 2894, i1 %fi8, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi11, label %5, label %24, !llfi_index !3118
 
 5:                                                ; preds = %2
@@ -7241,8 +7241,8 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.8.21_s5_27fixp([3 x i32]* nound
   %fi15 = call i32 @injectFault1(i64 2898, i32 %fi13, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi16 = call i32 @injectFault1(i64 2898, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %7 = icmp slt i32 %fi15, %fi16, !taffo.info !323, !llfi_index !3122
-  %fi14 = call i1 @injectFault2(i64 2898, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi17 = call i1 @injectFault2(i64 2899, i1 %fi14, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi14 = call i1 @injectFault3(i64 2898, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi17 = call i1 @injectFault3(i64 2899, i1 %fi14, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
   br i1 %fi17, label %8, label %21, !llfi_index !3123
 
 8:                                                ; preds = %6
@@ -7326,63 +7326,63 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.8.21_s5_27fixp([3 x i32]* nound
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
 define internal noundef i32 @_Z8convolvePA3_fS0_.7.20_s4_28fixp([3 x i32]* noundef %.u8_24fixp, [3 x i32]* noundef %.s3_29fixp) #0 !taffo.initweight !2989 !taffo.funinfo !3110 !taffo.sourceFunction !3158 {
-  %fi1 = call i32 @injectFault1(i64 2925, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi2 = call i32 @injectFault1(i64 2925, i32 3, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %1 = lshr i32 %fi1, %fi2, !llfi_index !3159
-  %fi = call i32 @injectFault1(i64 2925, i32 %1, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi12 = call i32 @injectFault1(i64 2925, i32 0, i32 26, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi13 = call i32 @injectFault1(i64 2925, i32 3, i32 26, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %1 = lshr i32 %fi12, %fi13, !llfi_index !3159
+  %fi11 = call i32 @injectFault1(i64 2925, i32 %1, i32 26, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @lshr_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %2, !llfi_index !3160
 
 2:                                                ; preds = %22, %0
-  %.02.s3_29fixp = phi i32 [ %fi, %0 ], [ %fi12, %22 ], !taffo.info !34, !llfi_index !3161
+  %.02.s3_29fixp = phi i32 [ %fi11, %0 ], [ %fi23, %22 ], !taffo.info !34, !llfi_index !3161
   %.01 = phi i32 [ 0, %0 ], [ %fi58, %22 ], !taffo.info !183, !llfi_index !3162
-  %fi4 = call i32 @injectFault1(i64 2928, i32 %.01, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi3 = call i32 @injectFault1(i64 2927, i32 %.02.s3_29fixp, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi6 = call i32 @injectFault1(i64 2929, i32 %fi3, i32 27, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi7 = call i32 @injectFault1(i64 2929, i32 1, i32 27, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %3 = ashr i32 %fi6, %fi7, !taffo.info !34, !llfi_index !3163
-  %fi5 = call i32 @injectFault1(i64 2929, i32 %3, i32 27, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi9 = call i32 @injectFault1(i64 2930, i32 %fi4, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi10 = call i32 @injectFault1(i64 2930, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %4 = icmp slt i32 %fi9, %fi10, !taffo.info !323, !llfi_index !3164
-  %fi8 = call i1 @injectFault2(i64 2930, i1 %4, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi11 = call i1 @injectFault2(i64 2931, i1 %fi8, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi11, label %5, label %24, !llfi_index !3165
+  %fi15 = call i32 @injectFault1(i64 2928, i32 %.01, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi14 = call i32 @injectFault1(i64 2927, i32 %.02.s3_29fixp, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi17 = call i32 @injectFault1(i64 2929, i32 %fi14, i32 27, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi18 = call i32 @injectFault1(i64 2929, i32 1, i32 27, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %3 = ashr i32 %fi17, %fi18, !taffo.info !34, !llfi_index !3163
+  %fi16 = call i32 @injectFault1(i64 2929, i32 %3, i32 27, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi20 = call i32 @injectFault1(i64 2930, i32 %fi15, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi21 = call i32 @injectFault1(i64 2930, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %4 = icmp slt i32 %fi20, %fi21, !taffo.info !323, !llfi_index !3164
+  %fi19 = call i1 @injectFault3(i64 2930, i1 %4, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi22 = call i1 @injectFault3(i64 2931, i1 %fi19, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi22, label %5, label %24, !llfi_index !3165
 
 5:                                                ; preds = %2
   br label %6, !llfi_index !3166
 
 6:                                                ; preds = %18, %5
-  %.1.s3_29fixp = phi i32 [ %fi3, %5 ], [ %fi55, %18 ], !taffo.info !34, !llfi_index !3167
+  %.1.s3_29fixp = phi i32 [ %fi14, %5 ], [ %fi55, %18 ], !taffo.info !34, !llfi_index !3167
   %.0 = phi i32 [ 0, %5 ], [ %fi52, %18 ], !taffo.info !183, !llfi_index !3168
-  %fi13 = call i32 @injectFault1(i64 2934, i32 %.0, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi12 = call i32 @injectFault1(i64 2933, i32 %.1.s3_29fixp, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi15 = call i32 @injectFault1(i64 2935, i32 %fi13, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi16 = call i32 @injectFault1(i64 2935, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %7 = icmp slt i32 %fi15, %fi16, !taffo.info !323, !llfi_index !3169
-  %fi14 = call i1 @injectFault2(i64 2935, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi17 = call i1 @injectFault2(i64 2936, i1 %fi14, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  br i1 %fi17, label %8, label %21, !llfi_index !3170
+  %fi24 = call i32 @injectFault1(i64 2934, i32 %.0, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi23 = call i32 @injectFault1(i64 2933, i32 %.1.s3_29fixp, i32 55, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @phi_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi26 = call i32 @injectFault1(i64 2935, i32 %fi24, i32 53, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi27 = call i32 @injectFault1(i64 2935, i32 3, i32 53, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %7 = icmp slt i32 %fi26, %fi27, !taffo.info !323, !llfi_index !3169
+  %fi25 = call i1 @injectFault3(i64 2935, i1 %7, i32 53, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @icmp_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi = call i1 @injectFault3(i64 2936, i1 %fi25, i32 2, i32 0, i32 1, i32 1, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @br_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  br i1 %fi, label %8, label %21, !llfi_index !3170
 
 8:                                                ; preds = %6
-  %fi22 = call i32 @injectFault1(i64 2937, i32 %fi13, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %9 = sext i32 %fi22 to i64, !taffo.info !0, !llfi_index !3171
-  %fi21 = call i64 @injectFault0(i64 2937, i64 %9, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi23 = call i64 @injectFault0(i64 2938, i64 %fi21, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp = getelementptr [3 x i32], [3 x i32]* %.u8_24fixp, i64 %fi23, !taffo.info !611, !llfi_index !3172
-  %fi25 = call i32 @injectFault1(i64 2939, i32 %fi4, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %10 = sext i32 %fi25 to i64, !taffo.info !0, !llfi_index !3173
-  %fi24 = call i64 @injectFault0(i64 2939, i64 %10, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi26 = call i64 @injectFault0(i64 2940, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi27 = call i64 @injectFault0(i64 2940, i64 %fi24, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %u8_24fixp3 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp, i64 %fi26, i64 %fi27, !taffo.info !611, !llfi_index !3174
+  %fi5 = call i32 @injectFault1(i64 2937, i32 %fi24, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %9 = sext i32 %fi5 to i64, !taffo.info !0, !llfi_index !3171
+  %fi4 = call i64 @injectFault0(i64 2937, i64 %9, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi6 = call i64 @injectFault0(i64 2938, i64 %fi4, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp = getelementptr [3 x i32], [3 x i32]* %.u8_24fixp, i64 %fi6, !taffo.info !611, !llfi_index !3172
+  %fi8 = call i32 @injectFault1(i64 2939, i32 %fi15, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %10 = sext i32 %fi8 to i64, !taffo.info !0, !llfi_index !3173
+  %fi7 = call i64 @injectFault0(i64 2939, i64 %10, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi9 = call i64 @injectFault0(i64 2940, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi10 = call i64 @injectFault0(i64 2940, i64 %fi7, i32 34, i32 1, i32 2, i32 3, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %u8_24fixp3 = getelementptr [3 x i32], [3 x i32]* %u8_24fixp, i64 %fi9, i64 %fi10, !taffo.info !611, !llfi_index !3174
   %u8_24fixp5 = load i32, i32* %u8_24fixp3, align 4, !taffo.info !611, !llfi_index !3175
   %fi28 = call i32 @injectFault1(i64 2941, i32 %u8_24fixp5, i32 32, i32 0, i32 1, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @load_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi30 = call i32 @injectFault1(i64 2942, i32 %fi4, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi30 = call i32 @injectFault1(i64 2942, i32 %fi15, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %11 = sext i32 %fi30 to i64, !taffo.info !0, !llfi_index !3176
   %fi29 = call i64 @injectFault0(i64 2942, i64 %11, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi31 = call i64 @injectFault0(i64 2943, i64 %fi29, i32 34, i32 0, i32 1, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %s3_29fixp = getelementptr [3 x i32], [3 x i32]* %.s3_29fixp, i64 %fi31, !taffo.info !6, !llfi_index !3177
-  %fi33 = call i32 @injectFault1(i64 2944, i32 %fi13, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi33 = call i32 @injectFault1(i64 2944, i32 %fi24, i32 40, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %12 = sext i32 %fi33 to i64, !taffo.info !0, !llfi_index !3178
   %fi32 = call i64 @injectFault0(i64 2944, i64 %12, i32 40, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @sext_namestr, i32 0, i32 0)), !llfi_injectfault !32
   %fi34 = call i64 @injectFault0(i64 2945, i64 0, i32 34, i32 0, i32 2, i32 2, i8* getelementptr inbounds ([14 x i8], [14 x i8]* @getelementptr_namestr, i32 0, i32 0)), !llfi_injectfault !30
@@ -7407,18 +7407,18 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.7.20_s4_28fixp([3 x i32]* nound
   %fi48 = call i64 @injectFault0(i64 2951, i64 %fi44, i32 38, i32 1, i32 2, i32 1, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @trunc_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %s11_21fixp = trunc i64 %fi48 to i32, !taffo.info !3141, !llfi_index !3185
   %fi47 = call i32 @injectFault1(i64 2951, i32 %s11_21fixp, i32 38, i32 0, i32 2, i32 0, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @trunc_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi19 = call i32 @injectFault1(i64 2952, i32 %fi12, i32 27, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %fi20 = call i32 @injectFault1(i64 2952, i32 8, i32 27, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !30
-  %17 = ashr i32 %fi19, %fi20, !taffo.info !34, !llfi_index !3186
-  %fi18 = call i32 @injectFault1(i64 2952, i32 %17, i32 27, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !32
-  %fi50 = call i32 @injectFault1(i64 2953, i32 %fi18, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi2 = call i32 @injectFault1(i64 2952, i32 %fi23, i32 27, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi3 = call i32 @injectFault1(i64 2952, i32 8, i32 27, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %17 = ashr i32 %fi2, %fi3, !taffo.info !34, !llfi_index !3186
+  %fi1 = call i32 @injectFault1(i64 2952, i32 %17, i32 27, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @ashr_namestr, i32 0, i32 0)), !llfi_injectfault !32
+  %fi50 = call i32 @injectFault1(i64 2953, i32 %fi1, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi51 = call i32 @injectFault1(i64 2953, i32 %fi47, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %s11_21fixp7 = add i32 %fi50, %fi51, !taffo.info !3145, !llfi_index !3187
   %fi49 = call i32 @injectFault1(i64 2953, i32 %s11_21fixp7, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %18, !llfi_index !3188
 
 18:                                               ; preds = %8
-  %fi53 = call i32 @injectFault1(i64 2955, i32 %fi13, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi53 = call i32 @injectFault1(i64 2955, i32 %fi24, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi54 = call i32 @injectFault1(i64 2955, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %19 = add nsw i32 %fi53, %fi54, !taffo.info !323, !llfi_index !3189, !taffo.constinfo !67
   %fi52 = call i32 @injectFault1(i64 2955, i32 %19, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
@@ -7432,14 +7432,14 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.7.20_s4_28fixp([3 x i32]* nound
   br label %22, !llfi_index !3193
 
 22:                                               ; preds = %21
-  %fi59 = call i32 @injectFault1(i64 2959, i32 %fi4, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
+  %fi59 = call i32 @injectFault1(i64 2959, i32 %fi15, i32 13, i32 1, i32 3, i32 1, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %fi60 = call i32 @injectFault1(i64 2959, i32 1, i32 13, i32 2, i32 3, i32 2, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !30
   %23 = add nsw i32 %fi59, %fi60, !taffo.info !323, !llfi_index !3194, !taffo.constinfo !67
   %fi58 = call i32 @injectFault1(i64 2959, i32 %23, i32 13, i32 0, i32 3, i32 0, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @add_namestr, i32 0, i32 0)), !llfi_injectfault !32
   br label %2, !llvm.loop !3195, !llfi_index !3196
 
 24:                                               ; preds = %2
-  ret i32 %fi5, !taffo.info !75, !taffo.initweight !48, !llfi_index !3197
+  ret i32 %fi16, !taffo.info !75, !taffo.initweight !48, !llfi_index !3197
 }
 
 define i64 @injectFault0(i64 %0, i64 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
@@ -7476,24 +7476,7 @@ exit:                                             ; preds = %inject, %entry
   ret i32 %updateval
 }
 
-define i1 @injectFault2(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
-entry:
-  %tmploc = alloca i1, align 1
-  store i1 %1, i1* %tmploc, align 1
-  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
-  br i1 %pre_cond, label %inject, label %exit
-
-inject:                                           ; preds = %entry
-  %tmploc_cast = bitcast i1* %tmploc to i8*
-  call void @injectFunc(i64 %0, i32 1, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
-  br label %exit
-
-exit:                                             ; preds = %inject, %entry
-  %updateval = load i1, i1* %tmploc, align 1
-  ret i1 %updateval
-}
-
-define float @injectFault3(i64 %0, float %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
+define float @injectFault2(i64 %0, float %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
 entry:
   %tmploc = alloca float, align 4
   store float %1, float* %tmploc, align 4
@@ -7508,6 +7491,23 @@ inject:                                           ; preds = %entry
 exit:                                             ; preds = %inject, %entry
   %updateval = load float, float* %tmploc, align 4
   ret float %updateval
+}
+
+define i1 @injectFault3(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {
+entry:
+  %tmploc = alloca i1, align 1
+  store i1 %1, i1* %tmploc, align 1
+  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
+  br i1 %pre_cond, label %inject, label %exit
+
+inject:                                           ; preds = %entry
+  %tmploc_cast = bitcast i1* %tmploc to i8*
+  call void @injectFunc(i64 %0, i32 1, i8* %tmploc_cast, i32 %3, i32 %5, i8* %6)
+  br label %exit
+
+exit:                                             ; preds = %inject, %entry
+  %updateval = load i1, i1* %tmploc, align 1
+  ret i1 %updateval
 }
 
 define double @injectFault4(i64 %0, double %1, i32 %2, i32 %3, i32 %4, i32 %5, i8* %6) {

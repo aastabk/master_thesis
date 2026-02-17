@@ -1,1 +1,3 @@
-FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2, fi_cycle=5, fi_reg_index=0, fi_reg_pos=1, fi_reg_width=32, fi_bit=14, opcode=alloca
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=209, fi_cycle=114, fi_reg_index=1, fi_reg_pos=1, fi_reg_width=64, fi_bit=49, opcode=uitofp
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=210, fi_cycle=116, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=64, fi_bit=33, opcode=fdiv
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=219, fi_cycle=117, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=32, fi_bit=30, opcode=phi

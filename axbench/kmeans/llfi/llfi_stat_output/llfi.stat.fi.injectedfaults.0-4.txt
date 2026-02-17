@@ -1,0 +1,8 @@
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2025, fi_cycle=26633060, fi_reg_index=1, fi_reg_pos=3, fi_reg_width=64, fi_bit=2, opcode=getelementptr
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2027, fi_cycle=26633062, fi_reg_index=2, fi_reg_pos=2, fi_reg_width=32, fi_bit=27, opcode=shl
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2028, fi_cycle=26633064, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=64, fi_bit=22, opcode=zext
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2030, fi_cycle=26633065, fi_reg_index=1, fi_reg_pos=1, fi_reg_width=32, fi_bit=14, opcode=zext
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2032, fi_cycle=26633067, fi_reg_index=1, fi_reg_pos=1, fi_reg_width=64, fi_bit=61, opcode=trunc
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2034, fi_cycle=26633069, fi_reg_index=1, fi_reg_pos=1, fi_reg_width=32, fi_bit=28, opcode=fdiv
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2034, fi_cycle=26633070, fi_reg_index=0, fi_reg_pos=0, fi_reg_width=32, fi_bit=23, opcode=fdiv
+FI stat: fi_type=bitflip, fi_max_multiple=100, fi_index=2036, fi_cycle=26633071, fi_reg_index=0, fi_reg_pos=2, fi_reg_width=64, fi_bit=3, opcode=getelementptr

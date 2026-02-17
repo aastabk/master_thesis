@@ -2,55 +2,159 @@
 
 Start of a pass
 LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %argv.addr, metadata !30, metadata !DIExpression()), !dbg !31, !llfi_index !32
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare void @llvm.dbg.declare(metadata, metadata, metadata) #1
+ of instruction   call void @llvm.dbg.declare(metadata ptr %argv.addr, metadata !30, metadata !DIExpression()), !dbg !31, !llfi_index !32
 LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %argc.addr, metadata !26, metadata !DIExpression()), !dbg !27, !llfi_index !28
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare void @llvm.dbg.declare(metadata, metadata, metadata) #1
+ of instruction   call void @llvm.dbg.declare(metadata ptr %argc.addr, metadata !26, metadata !DIExpression()), !dbg !27, !llfi_index !28
+LLFI cannot inject faults in destination reg of   %retval = alloca i32, align 4, !llfi_index !18
+LLFI cannot inject faults in destination reg of   %argc.addr = alloca i32, align 4, !llfi_index !19
+LLFI cannot inject faults in destination reg of   %argv.addr = alloca ptr, align 8, !llfi_index !20
+LLFI cannot inject faults in destination reg of   %i = alloca i32, align 4, !llfi_index !21
+LLFI cannot inject faults in destination reg of   %fact = alloca i32, align 4, !llfi_index !22
+LLFI cannot inject faults in destination reg of   %n = alloca i32, align 4, !llfi_index !23
 LLFI cannot inject faults in destination reg of   store i32 0, ptr %retval, align 4, !llfi_index !24
+LLFI cannot inject faults in source reg   %retval = alloca i32, align 4, !llfi_index !18 of instruction   store i32 0, ptr %retval, align 4, !llfi_index !24
 LLFI cannot inject faults in destination reg of   store i32 %argc, ptr %argc.addr, align 4, !llfi_index !25
+LLFI cannot inject faults in source reg   %argc.addr = alloca i32, align 4, !llfi_index !19 of instruction   store i32 %argc, ptr %argc.addr, align 4, !llfi_index !25
 LLFI cannot inject faults in destination reg of   store ptr %argv, ptr %argv.addr, align 8, !llfi_index !29
+LLFI cannot inject faults in source reg ptr %argv of instruction   store ptr %argv, ptr %argv.addr, align 8, !llfi_index !29
+LLFI cannot inject faults in source reg   %argv.addr = alloca ptr, align 8, !llfi_index !20 of instruction   store ptr %argv, ptr %argv.addr, align 8, !llfi_index !29
+The selected instruction   store ptr %argv, ptr %argv.addr, align 8, !llfi_index !29does not have any valid registers for fault injection
 LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %i, metadata !33, metadata !DIExpression()), !dbg !34, !llfi_index !35
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare void @llvm.dbg.declare(metadata, metadata, metadata) #1
+ of instruction   call void @llvm.dbg.declare(metadata ptr %i, metadata !33, metadata !DIExpression()), !dbg !34, !llfi_index !35
 LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %fact, metadata !36, metadata !DIExpression()), !dbg !37, !llfi_index !38
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare void @llvm.dbg.declare(metadata, metadata, metadata) #1
+ of instruction   call void @llvm.dbg.declare(metadata ptr %fact, metadata !36, metadata !DIExpression()), !dbg !37, !llfi_index !38
 LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %n, metadata !39, metadata !DIExpression()), !dbg !40, !llfi_index !41
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare void @llvm.dbg.declare(metadata, metadata, metadata) #1
+ of instruction   call void @llvm.dbg.declare(metadata ptr %n, metadata !39, metadata !DIExpression()), !dbg !40, !llfi_index !41
+LLFI cannot inject faults in destination reg of   %0 = load ptr, ptr %argv.addr, align 8, !dbg !42, !llfi_index !43
+LLFI cannot inject faults in source reg   %argv.addr = alloca ptr, align 8, !llfi_index !20 of instruction   %0 = load ptr, ptr %argv.addr, align 8, !dbg !42, !llfi_index !43
+The selected instruction   %0 = load ptr, ptr %argv.addr, align 8, !dbg !42, !llfi_index !43does not have any valid registers for fault injection
+LLFI cannot inject faults in destination reg of   %arrayidx = getelementptr inbounds ptr, ptr %0, i64 1, !dbg !42, !llfi_index !44
+LLFI cannot inject faults in source reg   %0 = load ptr, ptr %argv.addr, align 8, !dbg !42, !llfi_index !43 of instruction   %arrayidx = getelementptr inbounds ptr, ptr %0, i64 1, !dbg !42, !llfi_index !44
+LLFI cannot inject faults in destination reg of   %1 = load ptr, ptr %arrayidx, align 8, !dbg !42, !llfi_index !45
+LLFI cannot inject faults in source reg   %arrayidx = getelementptr inbounds ptr, ptr %0, i64 1, !dbg !42, !llfi_index !44 of instruction   %1 = load ptr, ptr %arrayidx, align 8, !dbg !42, !llfi_index !45
+The selected instruction   %1 = load ptr, ptr %arrayidx, align 8, !dbg !42, !llfi_index !45does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg   %1 = load ptr, ptr %arrayidx, align 8, !dbg !42, !llfi_index !45 of instruction   %call = call i32 @atoi(ptr noundef %1) #4, !dbg !46, !llfi_index !47
+LLFI cannot inject faults in source reg ; Function Attrs: nounwind readonly willreturn
+declare i32 @atoi(ptr noundef) #2
+ of instruction   %call = call i32 @atoi(ptr noundef %1) #4, !dbg !46, !llfi_index !47
 LLFI cannot inject faults in destination reg of   store i32 %call, ptr %n, align 4, !dbg !48, !llfi_index !49
+LLFI cannot inject faults in source reg   %n = alloca i32, align 4, !llfi_index !23 of instruction   store i32 %call, ptr %n, align 4, !dbg !48, !llfi_index !49
 LLFI cannot inject faults in destination reg of   store i32 1, ptr %fact, align 4, !dbg !50, !llfi_index !51
+LLFI cannot inject faults in source reg   %fact = alloca i32, align 4, !llfi_index !22 of instruction   store i32 1, ptr %fact, align 4, !dbg !50, !llfi_index !51
 LLFI cannot inject faults in destination reg of   store i32 1, ptr %i, align 4, !dbg !52, !llfi_index !54
+LLFI cannot inject faults in source reg   %i = alloca i32, align 4, !llfi_index !21 of instruction   store i32 1, ptr %i, align 4, !dbg !52, !llfi_index !54
 LLFI cannot inject faults in destination reg of   br label %for.cond, !dbg !55, !llfi_index !56
 LLFI cannot inject faults in source reg for.cond of instruction   br label %for.cond, !dbg !55, !llfi_index !56
 The selected instruction   br label %for.cond, !dbg !55, !llfi_index !56does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg   %i = alloca i32, align 4, !llfi_index !21 of instruction   %2 = load i32, ptr %i, align 4, !dbg !57, !llfi_index !59
+LLFI cannot inject faults in source reg   %n = alloca i32, align 4, !llfi_index !23 of instruction   %3 = load i32, ptr %n, align 4, !dbg !60, !llfi_index !61
 LLFI cannot inject faults in destination reg of   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
 LLFI cannot inject faults in source reg for.end of instruction   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
 LLFI cannot inject faults in source reg for.body of instruction   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
+LLFI cannot inject faults in source reg   %fact = alloca i32, align 4, !llfi_index !22 of instruction   %4 = load i32, ptr %fact, align 4, !dbg !66, !llfi_index !68
+LLFI cannot inject faults in source reg   %i = alloca i32, align 4, !llfi_index !21 of instruction   %5 = load i32, ptr %i, align 4, !dbg !69, !llfi_index !70
 LLFI cannot inject faults in destination reg of   store i32 %mul, ptr %fact, align 4, !dbg !73, !llfi_index !74
+LLFI cannot inject faults in source reg   %fact = alloca i32, align 4, !llfi_index !22 of instruction   store i32 %mul, ptr %fact, align 4, !dbg !73, !llfi_index !74
 LLFI cannot inject faults in destination reg of   br label %for.inc, !dbg !75, !llfi_index !76
 LLFI cannot inject faults in source reg for.inc of instruction   br label %for.inc, !dbg !75, !llfi_index !76
 The selected instruction   br label %for.inc, !dbg !75, !llfi_index !76does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg   %i = alloca i32, align 4, !llfi_index !21 of instruction   %6 = load i32, ptr %i, align 4, !dbg !77, !llfi_index !78
 LLFI cannot inject faults in destination reg of   store i32 %inc, ptr %i, align 4, !dbg !77, !llfi_index !80
+LLFI cannot inject faults in source reg   %i = alloca i32, align 4, !llfi_index !21 of instruction   store i32 %inc, ptr %i, align 4, !dbg !77, !llfi_index !80
 LLFI cannot inject faults in destination reg of   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85
 LLFI cannot inject faults in source reg for.cond of instruction   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85
 The selected instruction   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg   %fact = alloca i32, align 4, !llfi_index !22 of instruction   %7 = load i32, ptr %fact, align 4, !dbg !86, !llfi_index !87
+LLFI cannot inject faults in source reg @.str = private unnamed_addr constant [4 x i8] c"%d\0A\00", align 1 of instruction   %call1 = call i32 (ptr, ...) @printf(ptr noundef @.str, i32 noundef %7), !dbg !88, !llfi_index !89
+LLFI cannot inject faults in source reg declare i32 @printf(ptr noundef, ...) #3
+ of instruction   %call1 = call i32 (ptr, ...) @printf(ptr noundef @.str, i32 noundef %7), !dbg !88, !llfi_index !89
 
 
 Start of a pass
 LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %argv.addr, metadata !30, metadata !DIExpression()), !dbg !31, !llfi_index !32
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare void @llvm.dbg.declare(metadata, metadata, metadata) #1
+ of instruction   call void @llvm.dbg.declare(metadata ptr %argv.addr, metadata !30, metadata !DIExpression()), !dbg !31, !llfi_index !32
 LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %argc.addr, metadata !26, metadata !DIExpression()), !dbg !27, !llfi_index !28
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare void @llvm.dbg.declare(metadata, metadata, metadata) #1
+ of instruction   call void @llvm.dbg.declare(metadata ptr %argc.addr, metadata !26, metadata !DIExpression()), !dbg !27, !llfi_index !28
+LLFI cannot inject faults in destination reg of   %retval = alloca i32, align 4, !llfi_index !18
+LLFI cannot inject faults in destination reg of   %argc.addr = alloca i32, align 4, !llfi_index !19
+LLFI cannot inject faults in destination reg of   %argv.addr = alloca ptr, align 8, !llfi_index !20
+LLFI cannot inject faults in destination reg of   %i = alloca i32, align 4, !llfi_index !21
+LLFI cannot inject faults in destination reg of   %fact = alloca i32, align 4, !llfi_index !22
+LLFI cannot inject faults in destination reg of   %n = alloca i32, align 4, !llfi_index !23
 LLFI cannot inject faults in destination reg of   store i32 0, ptr %retval, align 4, !llfi_index !24
+LLFI cannot inject faults in source reg   %retval = alloca i32, align 4, !llfi_index !18 of instruction   store i32 0, ptr %retval, align 4, !llfi_index !24
 LLFI cannot inject faults in destination reg of   store i32 %argc, ptr %argc.addr, align 4, !llfi_index !25
+LLFI cannot inject faults in source reg   %argc.addr = alloca i32, align 4, !llfi_index !19 of instruction   store i32 %argc, ptr %argc.addr, align 4, !llfi_index !25
 LLFI cannot inject faults in destination reg of   store ptr %argv, ptr %argv.addr, align 8, !llfi_index !29
+LLFI cannot inject faults in source reg ptr %argv of instruction   store ptr %argv, ptr %argv.addr, align 8, !llfi_index !29
+LLFI cannot inject faults in source reg   %argv.addr = alloca ptr, align 8, !llfi_index !20 of instruction   store ptr %argv, ptr %argv.addr, align 8, !llfi_index !29
+The selected instruction   store ptr %argv, ptr %argv.addr, align 8, !llfi_index !29does not have any valid registers for fault injection
 LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %i, metadata !33, metadata !DIExpression()), !dbg !34, !llfi_index !35
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare void @llvm.dbg.declare(metadata, metadata, metadata) #1
+ of instruction   call void @llvm.dbg.declare(metadata ptr %i, metadata !33, metadata !DIExpression()), !dbg !34, !llfi_index !35
 LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %fact, metadata !36, metadata !DIExpression()), !dbg !37, !llfi_index !38
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare void @llvm.dbg.declare(metadata, metadata, metadata) #1
+ of instruction   call void @llvm.dbg.declare(metadata ptr %fact, metadata !36, metadata !DIExpression()), !dbg !37, !llfi_index !38
 LLFI cannot inject faults in destination reg of   call void @llvm.dbg.declare(metadata ptr %n, metadata !39, metadata !DIExpression()), !dbg !40, !llfi_index !41
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare void @llvm.dbg.declare(metadata, metadata, metadata) #1
+ of instruction   call void @llvm.dbg.declare(metadata ptr %n, metadata !39, metadata !DIExpression()), !dbg !40, !llfi_index !41
+LLFI cannot inject faults in destination reg of   %0 = load ptr, ptr %argv.addr, align 8, !dbg !42, !llfi_index !43
+LLFI cannot inject faults in source reg   %argv.addr = alloca ptr, align 8, !llfi_index !20 of instruction   %0 = load ptr, ptr %argv.addr, align 8, !dbg !42, !llfi_index !43
+The selected instruction   %0 = load ptr, ptr %argv.addr, align 8, !dbg !42, !llfi_index !43does not have any valid registers for fault injection
+LLFI cannot inject faults in destination reg of   %arrayidx = getelementptr inbounds ptr, ptr %0, i64 1, !dbg !42, !llfi_index !44
+LLFI cannot inject faults in source reg   %0 = load ptr, ptr %argv.addr, align 8, !dbg !42, !llfi_index !43 of instruction   %arrayidx = getelementptr inbounds ptr, ptr %0, i64 1, !dbg !42, !llfi_index !44
+LLFI cannot inject faults in destination reg of   %1 = load ptr, ptr %arrayidx, align 8, !dbg !42, !llfi_index !45
+LLFI cannot inject faults in source reg   %arrayidx = getelementptr inbounds ptr, ptr %0, i64 1, !dbg !42, !llfi_index !44 of instruction   %1 = load ptr, ptr %arrayidx, align 8, !dbg !42, !llfi_index !45
+The selected instruction   %1 = load ptr, ptr %arrayidx, align 8, !dbg !42, !llfi_index !45does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg   %1 = load ptr, ptr %arrayidx, align 8, !dbg !42, !llfi_index !45 of instruction   %call = call i32 @atoi(ptr noundef %1) #4, !dbg !46, !llfi_index !47
+LLFI cannot inject faults in source reg ; Function Attrs: nounwind readonly willreturn
+declare i32 @atoi(ptr noundef) #2
+ of instruction   %call = call i32 @atoi(ptr noundef %1) #4, !dbg !46, !llfi_index !47
 LLFI cannot inject faults in destination reg of   store i32 %call, ptr %n, align 4, !dbg !48, !llfi_index !49
+LLFI cannot inject faults in source reg   %n = alloca i32, align 4, !llfi_index !23 of instruction   store i32 %call, ptr %n, align 4, !dbg !48, !llfi_index !49
 LLFI cannot inject faults in destination reg of   store i32 1, ptr %fact, align 4, !dbg !50, !llfi_index !51
+LLFI cannot inject faults in source reg   %fact = alloca i32, align 4, !llfi_index !22 of instruction   store i32 1, ptr %fact, align 4, !dbg !50, !llfi_index !51
 LLFI cannot inject faults in destination reg of   store i32 1, ptr %i, align 4, !dbg !52, !llfi_index !54
+LLFI cannot inject faults in source reg   %i = alloca i32, align 4, !llfi_index !21 of instruction   store i32 1, ptr %i, align 4, !dbg !52, !llfi_index !54
 LLFI cannot inject faults in destination reg of   br label %for.cond, !dbg !55, !llfi_index !56
 LLFI cannot inject faults in source reg for.cond of instruction   br label %for.cond, !dbg !55, !llfi_index !56
 The selected instruction   br label %for.cond, !dbg !55, !llfi_index !56does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg   %i = alloca i32, align 4, !llfi_index !21 of instruction   %2 = load i32, ptr %i, align 4, !dbg !57, !llfi_index !59
+LLFI cannot inject faults in source reg   %n = alloca i32, align 4, !llfi_index !23 of instruction   %3 = load i32, ptr %n, align 4, !dbg !60, !llfi_index !61
 LLFI cannot inject faults in destination reg of   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
 LLFI cannot inject faults in source reg for.end of instruction   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
 LLFI cannot inject faults in source reg for.body of instruction   br i1 %cmp, label %for.body, label %for.end, !dbg !64, !llfi_index !65
+LLFI cannot inject faults in source reg   %fact = alloca i32, align 4, !llfi_index !22 of instruction   %4 = load i32, ptr %fact, align 4, !dbg !66, !llfi_index !68
+LLFI cannot inject faults in source reg   %i = alloca i32, align 4, !llfi_index !21 of instruction   %5 = load i32, ptr %i, align 4, !dbg !69, !llfi_index !70
 LLFI cannot inject faults in destination reg of   store i32 %mul, ptr %fact, align 4, !dbg !73, !llfi_index !74
+LLFI cannot inject faults in source reg   %fact = alloca i32, align 4, !llfi_index !22 of instruction   store i32 %mul, ptr %fact, align 4, !dbg !73, !llfi_index !74
 LLFI cannot inject faults in destination reg of   br label %for.inc, !dbg !75, !llfi_index !76
 LLFI cannot inject faults in source reg for.inc of instruction   br label %for.inc, !dbg !75, !llfi_index !76
 The selected instruction   br label %for.inc, !dbg !75, !llfi_index !76does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg   %i = alloca i32, align 4, !llfi_index !21 of instruction   %6 = load i32, ptr %i, align 4, !dbg !77, !llfi_index !78
 LLFI cannot inject faults in destination reg of   store i32 %inc, ptr %i, align 4, !dbg !77, !llfi_index !80
+LLFI cannot inject faults in source reg   %i = alloca i32, align 4, !llfi_index !21 of instruction   store i32 %inc, ptr %i, align 4, !dbg !77, !llfi_index !80
 LLFI cannot inject faults in destination reg of   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85
 LLFI cannot inject faults in source reg for.cond of instruction   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85
 The selected instruction   br label %for.cond, !dbg !81, !llvm.loop !82, !llfi_index !85does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg   %fact = alloca i32, align 4, !llfi_index !22 of instruction   %7 = load i32, ptr %fact, align 4, !dbg !86, !llfi_index !87
+LLFI cannot inject faults in source reg @.str = private unnamed_addr constant [4 x i8] c"%d\0A\00", align 1 of instruction   %call1 = call i32 (ptr, ...) @printf(ptr noundef @.str, i32 noundef %7), !dbg !88, !llfi_index !89
+LLFI cannot inject faults in source reg declare i32 @printf(ptr noundef, ...) #3
+ of instruction   %call1 = call i32 (ptr, ...) @printf(ptr noundef @.str, i32 noundef %7), !dbg !88, !llfi_index !89

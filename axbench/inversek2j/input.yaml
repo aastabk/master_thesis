@@ -1,28 +1,28 @@
 compileOption:
-  instSelMethod:
-  - insttype:
-      include:
-      - all
-      exclude:
-      - ret
+    instSelMethod:
+      - insttype:
+            include:
+              - all
+            exclude:
+              - ret
 
-  regSelMethod: regloc
-  regloc: allreg
+    regSelMethod: regloc
+    regloc: allreg
 
-  tracingPropagation: False # trace dynamic instruction values.
+    tracingPropagation: False # trace dynamic instruction values.
 
-  tracingPropagationOption:
-    maxTrace: 250 # max number of instructions to trace during fault injection run
-    debugTrace: False
-    generateCDFG: True
+    tracingPropagationOption:
+        maxTrace: 250 # max number of instructions to trace during fault injection run
+        debugTrace: False
+        generateCDFG: True
 
 runOption:
-- run:
-    numOfRuns: 5
-    fi_type: bitflip
-    verbose: true
-    # fi_index: 10
-    # fi_cycle: 6
-    window_len_multiple: 2
-    # fi_max_multiple: 3
-    # fi_num_bits: 3
+  - run:
+        numOfRuns: 5
+        fi_type: bitflip
+        verbose: true
+        fi_index: 1
+        # fi_cycle: 6
+        # window_len_multiple: 2
+        # fi_max_multiple: 3
+        # fi_num_bits: 1

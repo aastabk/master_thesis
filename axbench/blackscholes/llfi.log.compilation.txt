@@ -7,9 +7,6 @@ declare !taffo.initweight !254 !taffo.funinfo !255 double @llvm.fmuladd.f64(doub
 LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
 declare !taffo.initweight !254 !taffo.funinfo !255 float @llvm.fmuladd.f32(float, float, float) #1
  of instruction   %51 = call float @llvm.fmuladd.f32(float %36, float %48, float %50), !taffo.info !40, !taffo.initweight !41, !llfi_index !99, !taffo.constinfo !86
-LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
-declare !taffo.initweight !254 !taffo.funinfo !255 float @llvm.fmuladd.f32(float, float, float) #1
- of instruction   %41 = call float @llvm.fmuladd.f32(float %0, float %23, float %40), !taffo.info !40, !taffo.initweight !41, !llfi_index !85, !taffo.constinfo !86
 LLFI cannot inject faults in source reg   %10 = call noalias %struct._IO_FILE* @fopen(i8* noundef %7, i8* noundef getelementptr inbounds ([2 x i8], [2 x i8]* @.str.10, i64 0, i64 0)), !llfi_index !47, !taffo.constinfo !48 of instruction   %80 = call i32 (%struct._IO_FILE*, i8*, ...) @__isoc23_fscanf(%struct._IO_FILE* noundef %10, i8* noundef getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0), float* noundef %55, float* noundef %59, float* noundef %63, float* noundef %67, i8* noundef %71, float* noundef %75, float* noundef %79), !llfi_index !127, !taffo.constinfo !128
 LLFI cannot inject faults in source reg i8* getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0) of instruction   %80 = call i32 (%struct._IO_FILE*, i8*, ...) @__isoc23_fscanf(%struct._IO_FILE* noundef %10, i8* noundef getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0), float* noundef %55, float* noundef %59, float* noundef %63, float* noundef %67, i8* noundef %71, float* noundef %75, float* noundef %79), !llfi_index !127, !taffo.constinfo !128
 LLFI cannot inject faults in source reg   %55 = getelementptr inbounds %struct.OptionData_, %struct.OptionData_* %54, i32 0, i32 0, !llfi_index !102 of instruction   %80 = call i32 (%struct._IO_FILE*, i8*, ...) @__isoc23_fscanf(%struct._IO_FILE* noundef %10, i8* noundef getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0), float* noundef %55, float* noundef %59, float* noundef %63, float* noundef %67, i8* noundef %71, float* noundef %75, float* noundef %79), !llfi_index !127, !taffo.constinfo !128
@@ -21,9 +18,6 @@ LLFI cannot inject faults in source reg   %75 = getelementptr inbounds %struct.O
 LLFI cannot inject faults in source reg   %79 = getelementptr inbounds %struct.OptionData_, %struct.OptionData_* %78, i32 0, i32 6, !llfi_index !126 of instruction   %80 = call i32 (%struct._IO_FILE*, i8*, ...) @__isoc23_fscanf(%struct._IO_FILE* noundef %10, i8* noundef getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0), float* noundef %55, float* noundef %59, float* noundef %63, float* noundef %67, i8* noundef %71, float* noundef %75, float* noundef %79), !llfi_index !127, !taffo.constinfo !128
 LLFI cannot inject faults in source reg declare !taffo.initweight !343 !taffo.funinfo !344 i32 @__isoc23_fscanf(%struct._IO_FILE* noundef, i8* noundef, ...) #4
  of instruction   %80 = call i32 (%struct._IO_FILE*, i8*, ...) @__isoc23_fscanf(%struct._IO_FILE* noundef %10, i8* noundef getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0), float* noundef %55, float* noundef %59, float* noundef %63, float* noundef %67, i8* noundef %71, float* noundef %75, float* noundef %79), !llfi_index !127, !taffo.constinfo !128
-LLFI cannot inject faults in destination reg of   br label %52, !llfi_index !87
-LLFI cannot inject faults in source reg  of instruction   br label %52, !llfi_index !87
-The selected instruction   br label %52, !llfi_index !87does not have any valid registers for fault injection
 LLFI cannot inject faults in destination reg of   br i1 %3, label %4, label %6, !taffo.info !40, !taffo.initweight !44, !llfi_index !45
 LLFI cannot inject faults in source reg  of instruction   br i1 %3, label %4, label %6, !taffo.info !40, !taffo.initweight !44, !llfi_index !45
 LLFI cannot inject faults in source reg  of instruction   br i1 %3, label %4, label %6, !taffo.info !40, !taffo.initweight !44, !llfi_index !45
@@ -35,6 +29,9 @@ LLFI cannot inject faults in source reg  of instruction   br label %7, !llfi_ind
 The selected instruction   br label %7, !llfi_index !48does not have any valid registers for fault injection
 LLFI cannot inject faults in source reg i32 1 of instruction   %.01 = phi i32 [ 1, %4 ], [ 0, %6 ], !llfi_index !49
 LLFI cannot inject faults in source reg i32 0 of instruction   %.01 = phi i32 [ 1, %4 ], [ 0, %6 ], !llfi_index !49
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare !taffo.initweight !254 !taffo.funinfo !255 float @llvm.fmuladd.f32(float, float, float) #1
+ of instruction   %41 = call float @llvm.fmuladd.f32(float %0, float %23, float %40), !taffo.info !40, !taffo.initweight !41, !llfi_index !85, !taffo.constinfo !86
 LLFI cannot inject faults in source reg   %5 = fneg float %0, !taffo.info !40, !taffo.initweight !37, !llfi_index !46 of instruction   %.0 = phi float [ %5, %4 ], [ %0, %6 ], !taffo.info !40, !taffo.initweight !8, !llfi_index !50
 LLFI cannot inject faults in source reg float %0 of instruction   %.0 = phi float [ %5, %4 ], [ %0, %6 ], !taffo.info !40, !taffo.initweight !8, !llfi_index !50
 LLFI cannot inject faults in source reg ; Function Attrs: mustprogress noinline nounwind uwtable
@@ -380,6 +377,9 @@ define internal noundef float @_ZSt3expf.7(float noundef %0) #2 !taffo.initweigh
 LLFI cannot inject faults in destination reg of   br i1 %37, label %38, label %42, !llfi_index !82
 LLFI cannot inject faults in source reg  of instruction   br i1 %37, label %38, label %42, !llfi_index !82
 LLFI cannot inject faults in source reg  of instruction   br i1 %37, label %38, label %42, !llfi_index !82
+LLFI cannot inject faults in destination reg of   br label %52, !llfi_index !87
+LLFI cannot inject faults in source reg  of instruction   br label %52, !llfi_index !87
+The selected instruction   br label %52, !llfi_index !87does not have any valid registers for fault injection
 LLFI cannot inject faults in destination reg of   br label %52, !llfi_index !100
 LLFI cannot inject faults in source reg  of instruction   br label %52, !llfi_index !100
 The selected instruction   br label %52, !llfi_index !100does not have any valid registers for fault injection
@@ -450,8 +450,6 @@ LLFI cannot inject faults in source reg   %139 = getelementptr inbounds i32, i32
 LLFI cannot inject faults in destination reg of   %140 = load float*, float** @s, align 8, !llfi_index !213
 LLFI cannot inject faults in source reg @s = dso_local global float* null, align 8 of instruction   %140 = load float*, float** @s, align 8, !llfi_index !213
 The selected instruction   %140 = load float*, float** @s, align 8, !llfi_index !213does not have any valid registers for fault injection
-LLFI cannot inject faults in destination reg of   %142 = getelementptr inbounds float, float* %140, i64 %141, !llfi_index !215
-LLFI cannot inject faults in source reg   %140 = load float*, float** @s, align 8, !llfi_index !213 of instruction   %142 = getelementptr inbounds float, float* %140, i64 %141, !llfi_index !215
 LLFI cannot inject faults in source reg   %2 = bitcast i8* %0 to i32*, !llfi_index !45 of instruction   %3 = load i32, i32* %2, align 4, !llfi_index !46
 LLFI cannot inject faults in source reg @numOptions = dso_local global i32 0, align 4, !taffo.info !2 of instruction   %4 = load i32, i32* @numOptions, align 4, !taffo.info !2, !llfi_index !47
 LLFI cannot inject faults in source reg @numOptions = dso_local global i32 0, align 4, !taffo.info !2 of instruction   %6 = load i32, i32* @numOptions, align 4, !taffo.info !2, !llfi_index !49
@@ -507,13 +505,13 @@ The selected instruction   %19 = load i32*, i32** @otype, align 8, !llfi_index !
 LLFI cannot inject faults in destination reg of   %21 = getelementptr inbounds i32, i32* %19, i64 %20, !llfi_index !89
 LLFI cannot inject faults in source reg   %19 = load i32*, i32** @otype, align 8, !llfi_index !87 of instruction   %21 = getelementptr inbounds i32, i32* %19, i64 %20, !llfi_index !89
 LLFI cannot inject faults in source reg   %21 = getelementptr inbounds i32, i32* %19, i64 %20, !llfi_index !89 of instruction   %22 = load i32, i32* %21, align 4, !llfi_index !90
-LLFI cannot inject faults in destination reg of   store float %29, float* %32, align 4, !taffo.info !104, !llfi_index !105, !taffo.target !106
-LLFI cannot inject faults in source reg   %32 = getelementptr inbounds float, float* %30, i64 %31, !taffo.info !0, !llfi_index !103 of instruction   store float %29, float* %32, align 4, !taffo.info !104, !llfi_index !105, !taffo.target !106
 LLFI cannot inject faults in destination reg of   %30 = load float*, float** @prices, align 8, !taffo.info !0, !llfi_index !101
 LLFI cannot inject faults in source reg @prices = dso_local global float* null, align 8, !taffo.info !0 of instruction   %30 = load float*, float** @prices, align 8, !taffo.info !0, !llfi_index !101
 The selected instruction   %30 = load float*, float** @prices, align 8, !taffo.info !0, !llfi_index !101does not have any valid registers for fault injection
 LLFI cannot inject faults in destination reg of   %32 = getelementptr inbounds float, float* %30, i64 %31, !taffo.info !0, !llfi_index !103
 LLFI cannot inject faults in source reg   %30 = load float*, float** @prices, align 8, !taffo.info !0, !llfi_index !101 of instruction   %32 = getelementptr inbounds float, float* %30, i64 %31, !taffo.info !0, !llfi_index !103
+LLFI cannot inject faults in destination reg of   store float %29, float* %32, align 4, !taffo.info !104, !llfi_index !105, !taffo.target !106
+LLFI cannot inject faults in source reg   %32 = getelementptr inbounds float, float* %30, i64 %31, !taffo.info !0, !llfi_index !103 of instruction   store float %29, float* %32, align 4, !taffo.info !104, !llfi_index !105, !taffo.target !106
 LLFI cannot inject faults in destination reg of   br label %33, !llfi_index !107
 LLFI cannot inject faults in source reg  of instruction   br label %33, !llfi_index !107
 The selected instruction   br label %33, !llfi_index !107does not have any valid registers for fault injection
@@ -805,6 +803,8 @@ define internal noundef i32 @_ZSt3expf.8.15_u1_31fixp(i32 noundef %.s15_17fixp) 
   ret i32 %.flt.fallback.u1_31fixp, !taffo.info !732, !taffo.initweight !733, !llfi_index !1262
 }
  of instruction   %u1_31fixp = call i32 @_ZSt3expf.8.15_u1_31fixp(i32 %s15_17fixp4), !taffo.info !82, !llfi_index !84, !taffo.constinfo !85
+LLFI cannot inject faults in destination reg of   %142 = getelementptr inbounds float, float* %140, i64 %141, !llfi_index !215
+LLFI cannot inject faults in source reg   %140 = load float*, float** @s, align 8, !llfi_index !213 of instruction   %142 = getelementptr inbounds float, float* %140, i64 %141, !llfi_index !215
 LLFI cannot inject faults in source reg   %142 = getelementptr inbounds float, float* %140, i64 %141, !llfi_index !215 of instruction   %143 = load float, float* %142, align 4, !llfi_index !216
 LLFI cannot inject faults in destination reg of   %u1_31fixp4 = load i32*, i32** @sptprice.fixp, align 8, !taffo.info !4, !llfi_index !224
 LLFI cannot inject faults in source reg @sptprice.fixp = global i32* null, align 8, !taffo.info !4 of instruction   %u1_31fixp4 = load i32*, i32** @sptprice.fixp, align 8, !taffo.info !4, !llfi_index !224
@@ -1549,9 +1549,6 @@ declare !taffo.initweight !254 !taffo.funinfo !255 double @llvm.fmuladd.f64(doub
 LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
 declare !taffo.initweight !254 !taffo.funinfo !255 float @llvm.fmuladd.f32(float, float, float) #1
  of instruction   %51 = call float @llvm.fmuladd.f32(float %36, float %48, float %50), !taffo.info !40, !taffo.initweight !41, !llfi_index !99, !taffo.constinfo !86
-LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
-declare !taffo.initweight !254 !taffo.funinfo !255 float @llvm.fmuladd.f32(float, float, float) #1
- of instruction   %41 = call float @llvm.fmuladd.f32(float %0, float %23, float %40), !taffo.info !40, !taffo.initweight !41, !llfi_index !85, !taffo.constinfo !86
 LLFI cannot inject faults in source reg   %10 = call noalias %struct._IO_FILE* @fopen(i8* noundef %7, i8* noundef getelementptr inbounds ([2 x i8], [2 x i8]* @.str.10, i64 0, i64 0)), !llfi_index !47, !taffo.constinfo !48 of instruction   %80 = call i32 (%struct._IO_FILE*, i8*, ...) @__isoc23_fscanf(%struct._IO_FILE* noundef %10, i8* noundef getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0), float* noundef %55, float* noundef %59, float* noundef %63, float* noundef %67, i8* noundef %71, float* noundef %75, float* noundef %79), !llfi_index !127, !taffo.constinfo !128
 LLFI cannot inject faults in source reg i8* getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0) of instruction   %80 = call i32 (%struct._IO_FILE*, i8*, ...) @__isoc23_fscanf(%struct._IO_FILE* noundef %10, i8* noundef getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0), float* noundef %55, float* noundef %59, float* noundef %63, float* noundef %67, i8* noundef %71, float* noundef %75, float* noundef %79), !llfi_index !127, !taffo.constinfo !128
 LLFI cannot inject faults in source reg   %55 = getelementptr inbounds %struct.OptionData_, %struct.OptionData_* %54, i32 0, i32 0, !llfi_index !102 of instruction   %80 = call i32 (%struct._IO_FILE*, i8*, ...) @__isoc23_fscanf(%struct._IO_FILE* noundef %10, i8* noundef getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0), float* noundef %55, float* noundef %59, float* noundef %63, float* noundef %67, i8* noundef %71, float* noundef %75, float* noundef %79), !llfi_index !127, !taffo.constinfo !128
@@ -1563,8 +1560,6 @@ LLFI cannot inject faults in source reg   %75 = getelementptr inbounds %struct.O
 LLFI cannot inject faults in source reg   %79 = getelementptr inbounds %struct.OptionData_, %struct.OptionData_* %78, i32 0, i32 6, !llfi_index !126 of instruction   %80 = call i32 (%struct._IO_FILE*, i8*, ...) @__isoc23_fscanf(%struct._IO_FILE* noundef %10, i8* noundef getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0), float* noundef %55, float* noundef %59, float* noundef %63, float* noundef %67, i8* noundef %71, float* noundef %75, float* noundef %79), !llfi_index !127, !taffo.constinfo !128
 LLFI cannot inject faults in source reg declare !taffo.initweight !343 !taffo.funinfo !344 i32 @__isoc23_fscanf(%struct._IO_FILE* noundef, i8* noundef, ...) #4
  of instruction   %80 = call i32 (%struct._IO_FILE*, i8*, ...) @__isoc23_fscanf(%struct._IO_FILE* noundef %10, i8* noundef getelementptr inbounds ([21 x i8], [21 x i8]* @.str.15, i64 0, i64 0), float* noundef %55, float* noundef %59, float* noundef %63, float* noundef %67, i8* noundef %71, float* noundef %75, float* noundef %79), !llfi_index !127, !taffo.constinfo !128
-LLFI cannot inject faults in destination reg of   store float %28, float* %8, align 4, !taffo.info !40, !llfi_index !75
-LLFI cannot inject faults in source reg float* %8 of instruction   store float %28, float* %8, align 4, !taffo.info !40, !llfi_index !75
 LLFI cannot inject faults in destination reg of   br i1 %3, label %4, label %6, !taffo.info !40, !taffo.initweight !44, !llfi_index !45
 LLFI cannot inject faults in source reg  of instruction   br i1 %3, label %4, label %6, !taffo.info !40, !taffo.initweight !44, !llfi_index !45
 LLFI cannot inject faults in source reg  of instruction   br i1 %3, label %4, label %6, !taffo.info !40, !taffo.initweight !44, !llfi_index !45
@@ -1576,6 +1571,9 @@ LLFI cannot inject faults in source reg  of instruction   br label %7, !llfi_ind
 The selected instruction   br label %7, !llfi_index !48does not have any valid registers for fault injection
 LLFI cannot inject faults in source reg i32 1 of instruction   %.01 = phi i32 [ 1, %4 ], [ 0, %6 ], !llfi_index !49
 LLFI cannot inject faults in source reg i32 0 of instruction   %.01 = phi i32 [ 1, %4 ], [ 0, %6 ], !llfi_index !49
+LLFI cannot inject faults in source reg ; Function Attrs: nocallback nofree nosync nounwind readnone speculatable willreturn
+declare !taffo.initweight !254 !taffo.funinfo !255 float @llvm.fmuladd.f32(float, float, float) #1
+ of instruction   %41 = call float @llvm.fmuladd.f32(float %0, float %23, float %40), !taffo.info !40, !taffo.initweight !41, !llfi_index !85, !taffo.constinfo !86
 LLFI cannot inject faults in source reg   %5 = fneg float %0, !taffo.info !40, !taffo.initweight !37, !llfi_index !46 of instruction   %.0 = phi float [ %5, %4 ], [ %0, %6 ], !taffo.info !40, !taffo.initweight !8, !llfi_index !50
 LLFI cannot inject faults in source reg float %0 of instruction   %.0 = phi float [ %5, %4 ], [ %0, %6 ], !taffo.info !40, !taffo.initweight !8, !llfi_index !50
 LLFI cannot inject faults in source reg ; Function Attrs: mustprogress noinline nounwind uwtable
@@ -1588,11 +1586,6 @@ define internal noundef i32 @_ZSt3expf.6_u14_18fixp(i32 noundef %.u14_18fixp) #2
   ret i32 %.flt.fallback.u14_18fixp, !taffo.info !732, !taffo.initweight !733, !llfi_index !743
 }
  of instruction   %u14_18fixp4 = call i32 @_ZSt3expf.6_u14_18fixp(i32 %u14_18fixp3), !taffo.info !75, !llfi_index !76, !taffo.constinfo !77
-LLFI cannot inject faults in destination reg of   br label %78, !llfi_index !191
-LLFI cannot inject faults in source reg  of instruction   br label %78, !llfi_index !191
-The selected instruction   br label %78, !llfi_index !191does not have any valid registers for fault injection
-LLFI cannot inject faults in source reg   %u14_18fixp23 = sub i32 %77, %u14_18fixp22, !taffo.info !75, !llfi_index !190, !taffo.constinfo !101 of instruction   %.02.u14_18fixp = phi i32 [ %u14_18fixp23, %76 ], [ %u14_18fixp22, %7 ], !taffo.info !75, !llfi_index !192
-LLFI cannot inject faults in source reg   %u14_18fixp22 = sub i32 %74, %u14_18fixp21, !taffo.info !75, !llfi_index !186, !taffo.constinfo !101 of instruction   %.02.u14_18fixp = phi i32 [ %u14_18fixp23, %76 ], [ %u14_18fixp22, %7 ], !taffo.info !75, !llfi_index !192
 LLFI cannot inject faults in source reg @numOptions = dso_local global i32 0, align 4, !taffo.info !2 of instruction   %109 = load i32, i32* @numOptions, align 4, !llfi_index !168
 LLFI cannot inject faults in destination reg of   %u1_31fixp16 = getelementptr inbounds i32, i32* %u1_31fixp7, i64 %110, !taffo.info !11, !llfi_index !170
 LLFI cannot inject faults in source reg   %u1_31fixp7 = load i32*, i32** @strike.fixp, align 8, !taffo.info !11, !llfi_index !167 of instruction   %u1_31fixp16 = getelementptr inbounds i32, i32* %u1_31fixp7, i64 %110, !taffo.info !11, !llfi_index !170
@@ -1736,17 +1729,27 @@ The selected instruction   %2 = bitcast i8* %0 to i32*, !llfi_index !45does not 
 LLFI cannot inject faults in destination reg of   br i1 %75, label %76, label %78, !llfi_index !188
 LLFI cannot inject faults in source reg  of instruction   br i1 %75, label %76, label %78, !llfi_index !188
 LLFI cannot inject faults in source reg  of instruction   br i1 %75, label %76, label %78, !llfi_index !188
+LLFI cannot inject faults in destination reg of   br label %78, !llfi_index !191
+LLFI cannot inject faults in source reg  of instruction   br label %78, !llfi_index !191
+The selected instruction   br label %78, !llfi_index !191does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg   %u14_18fixp23 = sub i32 %77, %u14_18fixp22, !taffo.info !75, !llfi_index !190, !taffo.constinfo !101 of instruction   %.02.u14_18fixp = phi i32 [ %u14_18fixp23, %76 ], [ %u14_18fixp22, %7 ], !taffo.info !75, !llfi_index !192
+LLFI cannot inject faults in source reg   %u14_18fixp22 = sub i32 %74, %u14_18fixp21, !taffo.info !75, !llfi_index !186, !taffo.constinfo !101 of instruction   %.02.u14_18fixp = phi i32 [ %u14_18fixp23, %76 ], [ %u14_18fixp22, %7 ], !taffo.info !75, !llfi_index !192
 LLFI cannot inject faults in source reg ; Function Attrs: mustprogress noinline nounwind uwtable
 define internal noundef float @_ZSt4sqrtf.1(float noundef %0) #2 !taffo.initweight !37 !taffo.equivalentChild !662 !taffo.funinfo !39 !taffo.sourceFunction !200 {
   %2 = call float @sqrtf(float noundef %0) #9, !taffo.info !40, !taffo.initweight !663, !llfi_index !664, !taffo.constinfo !77
   ret float %2, !taffo.info !40, !taffo.initweight !665, !llfi_index !666
 }
  of instruction   %10 = call noundef float @_ZSt4sqrtf.1(float noundef %4), !taffo.info !40, !taffo.initweight !41, !llfi_index !42, !taffo.constinfo !43, !taffo.originalCall !44
-LLFI cannot inject faults in destination reg of   %124 = inttoptr i64 %123 to i32*, !llfi_index !194
-LLFI cannot inject faults in destination reg of   store i32* %124, i32** @otype, align 8, !llfi_index !195, !taffo.constinfo !42
-LLFI cannot inject faults in source reg   %124 = inttoptr i64 %123 to i32*, !llfi_index !194 of instruction   store i32* %124, i32** @otype, align 8, !llfi_index !195, !taffo.constinfo !42
-LLFI cannot inject faults in source reg @otype = dso_local global i32* null, align 8 of instruction   store i32* %124, i32** @otype, align 8, !llfi_index !195, !taffo.constinfo !42
-The selected instruction   store i32* %124, i32** @otype, align 8, !llfi_index !195, !taffo.constinfo !42does not have any valid registers for fault injection
+LLFI cannot inject faults in destination reg of   %119 = call noalias i8* @malloc(i64 noundef %118) #10, !llfi_index !189, !taffo.constinfo !42
+LLFI cannot inject faults in source reg ; Function Attrs: nounwind allocsize(0)
+declare !taffo.initweight !264 !taffo.funinfo !265 noalias i8* @malloc(i64 noundef) #6
+ of instruction   %119 = call noalias i8* @malloc(i64 noundef %118) #10, !llfi_index !189, !taffo.constinfo !42
+LLFI cannot inject faults in destination reg of   %120 = bitcast i8* %119 to i32*, !llfi_index !190
+LLFI cannot inject faults in source reg   %119 = call noalias i8* @malloc(i64 noundef %118) #10, !llfi_index !189, !taffo.constinfo !42 of instruction   %120 = bitcast i8* %119 to i32*, !llfi_index !190
+The selected instruction   %120 = bitcast i8* %119 to i32*, !llfi_index !190does not have any valid registers for fault injection
+LLFI cannot inject faults in destination reg of   %129 = load %struct.OptionData_*, %struct.OptionData_** @data, align 8, !llfi_index !201
+LLFI cannot inject faults in source reg @data = dso_local global %struct.OptionData_* null, align 8 of instruction   %129 = load %struct.OptionData_*, %struct.OptionData_** @data, align 8, !llfi_index !201
+The selected instruction   %129 = load %struct.OptionData_*, %struct.OptionData_** @data, align 8, !llfi_index !201does not have any valid registers for fault injection
 LLFI cannot inject faults in source reg ; Function Attrs: mustprogress noinline nounwind uwtable
 define internal noundef float @_ZSt3logf.4(float noundef %0) #2 !taffo.initweight !42 !taffo.equivalentChild !726 !taffo.funinfo !39 !taffo.sourceFunction !203 {
   %2 = call float @logf(float noundef %0) #9, !taffo.info !40, !taffo.initweight !665, !llfi_index !727, !taffo.constinfo !77
@@ -1911,6 +1914,8 @@ LLFI cannot inject faults in source reg  of instruction   br label %32, !llfi_in
 The selected instruction   br label %32, !llfi_index !73does not have any valid registers for fault injection
 LLFI cannot inject faults in destination reg of   store float %23, float* %7, align 4, !taffo.info !40, !llfi_index !74
 LLFI cannot inject faults in source reg float* %7 of instruction   store float %23, float* %7, align 4, !taffo.info !40, !llfi_index !74
+LLFI cannot inject faults in destination reg of   store float %28, float* %8, align 4, !taffo.info !40, !llfi_index !75
+LLFI cannot inject faults in source reg float* %8 of instruction   store float %28, float* %8, align 4, !taffo.info !40, !llfi_index !75
 LLFI cannot inject faults in source reg ; Function Attrs: mustprogress noinline nounwind uwtable
 define internal noundef float @_ZSt3expf.7(float noundef %0) #2 !taffo.initweight !42 !taffo.funinfo !39 !taffo.sourceFunction !233 {
   %2 = call float @expf(float noundef %0) #9, !taffo.info !40, !taffo.initweight !665, !llfi_index !735, !taffo.constinfo !77
@@ -1945,14 +1950,6 @@ LLFI cannot inject faults in source reg   %u1_31fixp20 = getelementptr inbounds 
 LLFI cannot inject faults in source reg @otime.fixp = global i32* null, align 8, !taffo.info !18 of instruction   store i32* %u1_31fixp20, i32** @otime.fixp, align 8, !taffo.info !183, !llfi_index !184, !taffo.constinfo !42
 The selected instruction   store i32* %u1_31fixp20, i32** @otime.fixp, align 8, !taffo.info !183, !llfi_index !184, !taffo.constinfo !42does not have any valid registers for fault injection
 LLFI cannot inject faults in source reg @numOptions = dso_local global i32 0, align 4, !taffo.info !2 of instruction   %115 = load i32, i32* @numOptions, align 4, !llfi_index !185
-LLFI cannot inject faults in destination reg of   %119 = call noalias i8* @malloc(i64 noundef %118) #10, !llfi_index !189, !taffo.constinfo !42
-LLFI cannot inject faults in source reg ; Function Attrs: nounwind allocsize(0)
-declare !taffo.initweight !264 !taffo.funinfo !265 noalias i8* @malloc(i64 noundef) #6
- of instruction   %119 = call noalias i8* @malloc(i64 noundef %118) #10, !llfi_index !189, !taffo.constinfo !42
-LLFI cannot inject faults in destination reg of   %120 = bitcast i8* %119 to i32*, !llfi_index !190
-LLFI cannot inject faults in source reg   %119 = call noalias i8* @malloc(i64 noundef %118) #10, !llfi_index !189, !taffo.constinfo !42 of instruction   %120 = bitcast i8* %119 to i32*, !llfi_index !190
-The selected instruction   %120 = bitcast i8* %119 to i32*, !llfi_index !190does not have any valid registers for fault injection
-LLFI cannot inject faults in source reg   %120 = bitcast i8* %119 to i32*, !llfi_index !190 of instruction   %121 = ptrtoint i32* %120 to i64, !llfi_index !191
 LLFI cannot inject faults in destination reg of   br label %125, !llvm.loop !276, !llfi_index !277
 LLFI cannot inject faults in source reg  of instruction   br label %125, !llvm.loop !276, !llfi_index !277
 The selected instruction   br label %125, !llvm.loop !276, !llfi_index !277does not have any valid registers for fault injection
@@ -1965,6 +1962,12 @@ define linkonce_odr dso_local void @_ZN12AxBenchTimerC2Ev(%class.AxBenchTimer* n
 }
  of instruction   call void @_ZN12AxBenchTimerC2Ev(%class.AxBenchTimer* noundef nonnull align 8 dereferenceable(16) %3), !llfi_index !278, !taffo.constinfo !42
 The selected instruction   call void @_ZN12AxBenchTimerC2Ev(%class.AxBenchTimer* noundef nonnull align 8 dereferenceable(16) %3), !llfi_index !278, !taffo.constinfo !42does not have any valid registers for fault injection
+LLFI cannot inject faults in source reg   %120 = bitcast i8* %119 to i32*, !llfi_index !190 of instruction   %121 = ptrtoint i32* %120 to i64, !llfi_index !191
+LLFI cannot inject faults in destination reg of   %124 = inttoptr i64 %123 to i32*, !llfi_index !194
+LLFI cannot inject faults in destination reg of   store i32* %124, i32** @otype, align 8, !llfi_index !195, !taffo.constinfo !42
+LLFI cannot inject faults in source reg   %124 = inttoptr i64 %123 to i32*, !llfi_index !194 of instruction   store i32* %124, i32** @otype, align 8, !llfi_index !195, !taffo.constinfo !42
+LLFI cannot inject faults in source reg @otype = dso_local global i32* null, align 8 of instruction   store i32* %124, i32** @otype, align 8, !llfi_index !195, !taffo.constinfo !42
+The selected instruction   store i32* %124, i32** @otype, align 8, !llfi_index !195, !taffo.constinfo !42does not have any valid registers for fault injection
 LLFI cannot inject faults in destination reg of   br label %125, !llfi_index !196
 LLFI cannot inject faults in source reg  of instruction   br label %125, !llfi_index !196
 The selected instruction   br label %125, !llfi_index !196does not have any valid registers for fault injection
@@ -1974,9 +1977,6 @@ LLFI cannot inject faults in source reg @numOptions = dso_local global i32 0, al
 LLFI cannot inject faults in destination reg of   br i1 %127, label %128, label %176, !llfi_index !200
 LLFI cannot inject faults in source reg  of instruction   br i1 %127, label %128, label %176, !llfi_index !200
 LLFI cannot inject faults in source reg  of instruction   br i1 %127, label %128, label %176, !llfi_index !200
-LLFI cannot inject faults in destination reg of   %129 = load %struct.OptionData_*, %struct.OptionData_** @data, align 8, !llfi_index !201
-LLFI cannot inject faults in source reg @data = dso_local global %struct.OptionData_* null, align 8 of instruction   %129 = load %struct.OptionData_*, %struct.OptionData_** @data, align 8, !llfi_index !201
-The selected instruction   %129 = load %struct.OptionData_*, %struct.OptionData_** @data, align 8, !llfi_index !201does not have any valid registers for fault injection
 LLFI cannot inject faults in destination reg of   %131 = getelementptr inbounds %struct.OptionData_, %struct.OptionData_* %129, i64 %130, !llfi_index !203
 LLFI cannot inject faults in source reg   %129 = load %struct.OptionData_*, %struct.OptionData_** @data, align 8, !llfi_index !201 of instruction   %131 = getelementptr inbounds %struct.OptionData_, %struct.OptionData_* %129, i64 %130, !llfi_index !203
 LLFI cannot inject faults in destination reg of   %132 = getelementptr inbounds %struct.OptionData_, %struct.OptionData_* %131, i32 0, i32 4, !llfi_index !204
@@ -1992,8 +1992,6 @@ LLFI cannot inject faults in source reg   %139 = getelementptr inbounds i32, i32
 LLFI cannot inject faults in destination reg of   %140 = load float*, float** @s, align 8, !llfi_index !213
 LLFI cannot inject faults in source reg @s = dso_local global float* null, align 8 of instruction   %140 = load float*, float** @s, align 8, !llfi_index !213
 The selected instruction   %140 = load float*, float** @s, align 8, !llfi_index !213does not have any valid registers for fault injection
-LLFI cannot inject faults in destination reg of   %142 = getelementptr inbounds float, float* %140, i64 %141, !llfi_index !215
-LLFI cannot inject faults in source reg   %140 = load float*, float** @s, align 8, !llfi_index !213 of instruction   %142 = getelementptr inbounds float, float* %140, i64 %141, !llfi_index !215
 LLFI cannot inject faults in source reg   %2 = bitcast i8* %0 to i32*, !llfi_index !45 of instruction   %3 = load i32, i32* %2, align 4, !llfi_index !46
 LLFI cannot inject faults in source reg @numOptions = dso_local global i32 0, align 4, !taffo.info !2 of instruction   %4 = load i32, i32* @numOptions, align 4, !taffo.info !2, !llfi_index !47
 LLFI cannot inject faults in source reg @numOptions = dso_local global i32 0, align 4, !taffo.info !2 of instruction   %6 = load i32, i32* @numOptions, align 4, !taffo.info !2, !llfi_index !49
@@ -2049,13 +2047,13 @@ The selected instruction   %19 = load i32*, i32** @otype, align 8, !llfi_index !
 LLFI cannot inject faults in destination reg of   %21 = getelementptr inbounds i32, i32* %19, i64 %20, !llfi_index !89
 LLFI cannot inject faults in source reg   %19 = load i32*, i32** @otype, align 8, !llfi_index !87 of instruction   %21 = getelementptr inbounds i32, i32* %19, i64 %20, !llfi_index !89
 LLFI cannot inject faults in source reg   %21 = getelementptr inbounds i32, i32* %19, i64 %20, !llfi_index !89 of instruction   %22 = load i32, i32* %21, align 4, !llfi_index !90
-LLFI cannot inject faults in destination reg of   store float %29, float* %32, align 4, !taffo.info !104, !llfi_index !105, !taffo.target !106
-LLFI cannot inject faults in source reg   %32 = getelementptr inbounds float, float* %30, i64 %31, !taffo.info !0, !llfi_index !103 of instruction   store float %29, float* %32, align 4, !taffo.info !104, !llfi_index !105, !taffo.target !106
 LLFI cannot inject faults in destination reg of   %30 = load float*, float** @prices, align 8, !taffo.info !0, !llfi_index !101
 LLFI cannot inject faults in source reg @prices = dso_local global float* null, align 8, !taffo.info !0 of instruction   %30 = load float*, float** @prices, align 8, !taffo.info !0, !llfi_index !101
 The selected instruction   %30 = load float*, float** @prices, align 8, !taffo.info !0, !llfi_index !101does not have any valid registers for fault injection
 LLFI cannot inject faults in destination reg of   %32 = getelementptr inbounds float, float* %30, i64 %31, !taffo.info !0, !llfi_index !103
 LLFI cannot inject faults in source reg   %30 = load float*, float** @prices, align 8, !taffo.info !0, !llfi_index !101 of instruction   %32 = getelementptr inbounds float, float* %30, i64 %31, !taffo.info !0, !llfi_index !103
+LLFI cannot inject faults in destination reg of   store float %29, float* %32, align 4, !taffo.info !104, !llfi_index !105, !taffo.target !106
+LLFI cannot inject faults in source reg   %32 = getelementptr inbounds float, float* %30, i64 %31, !taffo.info !0, !llfi_index !103 of instruction   store float %29, float* %32, align 4, !taffo.info !104, !llfi_index !105, !taffo.target !106
 LLFI cannot inject faults in destination reg of   br label %33, !llfi_index !107
 LLFI cannot inject faults in source reg  of instruction   br label %33, !llfi_index !107
 The selected instruction   br label %33, !llfi_index !107does not have any valid registers for fault injection
@@ -2347,6 +2345,8 @@ define internal noundef i32 @_ZSt3expf.8.15_u1_31fixp(i32 noundef %.s15_17fixp) 
   ret i32 %.flt.fallback.u1_31fixp, !taffo.info !732, !taffo.initweight !733, !llfi_index !1262
 }
  of instruction   %u1_31fixp = call i32 @_ZSt3expf.8.15_u1_31fixp(i32 %s15_17fixp4), !taffo.info !82, !llfi_index !84, !taffo.constinfo !85
+LLFI cannot inject faults in destination reg of   %142 = getelementptr inbounds float, float* %140, i64 %141, !llfi_index !215
+LLFI cannot inject faults in source reg   %140 = load float*, float** @s, align 8, !llfi_index !213 of instruction   %142 = getelementptr inbounds float, float* %140, i64 %141, !llfi_index !215
 LLFI cannot inject faults in source reg   %142 = getelementptr inbounds float, float* %140, i64 %141, !llfi_index !215 of instruction   %143 = load float, float* %142, align 4, !llfi_index !216
 LLFI cannot inject faults in destination reg of   %u1_31fixp4 = load i32*, i32** @sptprice.fixp, align 8, !taffo.info !4, !llfi_index !224
 LLFI cannot inject faults in source reg @sptprice.fixp = global i32* null, align 8, !taffo.info !4 of instruction   %u1_31fixp4 = load i32*, i32** @sptprice.fixp, align 8, !taffo.info !4, !llfi_index !224

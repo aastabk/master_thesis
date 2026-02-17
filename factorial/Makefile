@@ -1,5 +1,5 @@
 CC=clang
-LINKER=/usr/local/bin/llvm-link
+LINKER=/home/aastabk/lltfi_attempt/llvm-project/build/bin/llvm-link
 OUTPUT=factorial.ll
 CFLAGS=-w -emit-llvm -fno-use-cxa-atexit -g -S
 LINKER_FLAGS=-o $(OUTPUT) -S

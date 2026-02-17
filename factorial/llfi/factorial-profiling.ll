@@ -8,6 +8,7 @@ target triple = "x86_64-unknown-linux-gnu"
 ; Function Attrs: noinline nounwind optnone uwtable
 define dso_local i32 @main(i32 noundef %argc, ptr noundef %argv) #0 !dbg !10 {
 entry:
+  call void @doProfiling(i32 31)
   %retval = alloca i32, align 4, !llfi_index !18
   call void @doProfiling(i32 31)
   %argc.addr = alloca i32, align 4, !llfi_index !19
@@ -19,14 +20,12 @@ entry:
   %fact = alloca i32, align 4, !llfi_index !22
   call void @doProfiling(i32 31)
   %n = alloca i32, align 4, !llfi_index !23
-  call void @doProfiling(i32 31)
   call void @doProfiling(i32 33)
   store i32 0, ptr %retval, align 4, !llfi_index !24
   call void @doProfiling(i32 33)
   store i32 %argc, ptr %argc.addr, align 4, !llfi_index !25
   call void @doProfiling(i32 56)
   call void @llvm.dbg.declare(metadata ptr %argc.addr, metadata !26, metadata !DIExpression()), !dbg !27, !llfi_index !28
-  call void @doProfiling(i32 33)
   store ptr %argv, ptr %argv.addr, align 8, !llfi_index !29
   call void @doProfiling(i32 56)
   call void @llvm.dbg.declare(metadata ptr %argv.addr, metadata !30, metadata !DIExpression()), !dbg !31, !llfi_index !32
@@ -37,11 +36,9 @@ entry:
   call void @doProfiling(i32 56)
   call void @llvm.dbg.declare(metadata ptr %n, metadata !39, metadata !DIExpression()), !dbg !40, !llfi_index !41
   %0 = load ptr, ptr %argv.addr, align 8, !dbg !42, !llfi_index !43
-  call void @doProfiling(i32 32)
-  %arrayidx = getelementptr inbounds ptr, ptr %0, i64 1, !dbg !42, !llfi_index !44
   call void @doProfiling(i32 34)
+  %arrayidx = getelementptr inbounds ptr, ptr %0, i64 1, !dbg !42, !llfi_index !44
   %1 = load ptr, ptr %arrayidx, align 8, !dbg !42, !llfi_index !45
-  call void @doProfiling(i32 32)
   %call = call i32 @atoi(ptr noundef %1) #4, !dbg !46, !llfi_index !47
   call void @doProfiling(i32 56)
   call void @doProfiling(i32 33)
