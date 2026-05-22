@@ -168,8 +168,6 @@ define dso_local noundef float @_Z8convolvePA3_fS0_([3 x float]* noundef %0, [3 
 4:                                                ; preds = %28, %2
   %.02.s3_29fixp = phi i32 [ %3, %2 ], [ %.1.s3_29fixp, %28 ], !taffo.info !32, !llfi_index !33
   %.01 = phi i32 [ 0, %2 ], [ %29, %28 ], !llfi_index !34
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %5 = sitofp i32 %.02.s3_29fixp to float, !taffo.info !32, !llfi_index !35
   call void @doProfiling(i32 44)
   %6 = fdiv float %5, 0x41C0000000000000, !taffo.info !32, !llfi_index !36
@@ -185,8 +183,6 @@ define dso_local noundef float @_Z8convolvePA3_fS0_([3 x float]* noundef %0, [3 
 9:                                                ; preds = %25, %8
   %.1.s3_29fixp = phi i32 [ %.02.s3_29fixp, %8 ], [ %s3_29fixp, %25 ], !taffo.info !32, !llfi_index !40
   %.0 = phi i32 [ 0, %8 ], [ %26, %25 ], !llfi_index !41
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %10 = icmp slt i32 %.0, 3, !llfi_index !42
   call void @doProfiling(i32 53)
   call void @doProfiling(i32 2)
@@ -195,21 +191,17 @@ define dso_local noundef float @_Z8convolvePA3_fS0_([3 x float]* noundef %0, [3 
 11:                                               ; preds = %9
   %12 = sext i32 %.0 to i64, !llfi_index !44
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %13 = getelementptr inbounds [3 x float], [3 x float]* %0, i64 %12, !taffo.info !45, !taffo.initweight !46, !llfi_index !47
   %14 = sext i32 %.01 to i64, !llfi_index !48
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %15 = getelementptr inbounds [3 x float], [3 x float]* %13, i64 0, i64 %14, !taffo.info !45, !taffo.initweight !49, !llfi_index !50
   %16 = load float, float* %15, align 4, !taffo.info !45, !taffo.initweight !51, !llfi_index !52
   call void @doProfiling(i32 32)
   %17 = sext i32 %.01 to i64, !llfi_index !53
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %18 = getelementptr inbounds [3 x float], [3 x float]* %1, i64 %17, !taffo.info !45, !taffo.initweight !46, !llfi_index !54
   %19 = sext i32 %.0 to i64, !llfi_index !55
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %20 = getelementptr inbounds [3 x float], [3 x float]* %18, i64 0, i64 %19, !taffo.info !45, !taffo.initweight !49, !llfi_index !56
   %21 = load float, float* %20, align 4, !taffo.info !45, !taffo.initweight !51, !llfi_index !57
   call void @doProfiling(i32 32)
@@ -237,6 +229,7 @@ define dso_local noundef float @_Z8convolvePA3_fS0_([3 x float]* noundef %0, [3 
   br label %4, !llvm.loop !71, !llfi_index !72
 
 30:                                               ; preds = %4
+  call void @doProfiling(i32 1)
   ret float %6, !taffo.info !73, !taffo.initweight !46, !llfi_index !74
 }
 
@@ -246,7 +239,6 @@ define dso_local noundef float @_Z5sobelPA3_f([3 x float]* noundef %0) #0 !taffo
 
 2:                                                ; preds = %11, %1
   %.01 = phi i32 [ 0, %1 ], [ %12, %11 ], !llfi_index !79
-  call void @doProfiling(i32 55)
   %3 = icmp slt i32 %.01, 3, !llfi_index !80
   call void @doProfiling(i32 53)
   call void @doProfiling(i32 2)
@@ -257,7 +249,6 @@ define dso_local noundef float @_Z5sobelPA3_f([3 x float]* noundef %0) #0 !taffo
 
 5:                                                ; preds = %8, %4
   %.0 = phi i32 [ 0, %4 ], [ %9, %8 ], !llfi_index !83
-  call void @doProfiling(i32 55)
   %6 = icmp slt i32 %.0, 3, !llfi_index !84
   call void @doProfiling(i32 53)
   call void @doProfiling(i32 2)
@@ -332,11 +323,11 @@ define dso_local noundef float @_Z5sobelPA3_f([3 x float]* noundef %0) #0 !taffo
 
 32:                                               ; preds = %26, %13
   %.02.u4_28fixp = phi i32 [ %31, %26 ], [ %.flt.fallback.u4_28fixp, %13 ], !taffo.info !109, !llfi_index !133
-  call void @doProfiling(i32 55)
   %33 = uitofp i32 %.02.u4_28fixp to float, !taffo.info !109, !llfi_index !134
   call void @doProfiling(i32 43)
   %34 = fdiv float %33, 0x41B0000000000000, !taffo.info !109, !llfi_index !135
   call void @doProfiling(i32 21)
+  call void @doProfiling(i32 1)
   ret float %34, !taffo.info !45, !taffo.initweight !46, !llfi_index !136
 }
 
@@ -349,19 +340,15 @@ declare !taffo.initweight !75 !taffo.funinfo !77 double @sqrt(double noundef) #2
 ; Function Attrs: mustprogress noinline uwtable
 define dso_local void @_ZN5Image10printPixelEii(%class.Image* noundef nonnull align 8 dereferenceable(48) %0, i32 noundef %1, i32 noundef %2) #3 align 2 !taffo.initweight !137 !taffo.funinfo !138 {
   %4 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, i8* noundef getelementptr inbounds ([9 x i8], [9 x i8]* @.str.4, i64 0, i64 0)), !llfi_index !139, !taffo.constinfo !95
-  call void @doProfiling(i32 34)
   %5 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !140
   %6 = load %class.Pixel**, %class.Pixel*** %5, align 8, !llfi_index !141
   %7 = sext i32 %1 to i64, !llfi_index !142
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %8 = getelementptr inbounds %class.Pixel*, %class.Pixel** %6, i64 %7, !llfi_index !143
   %9 = load %class.Pixel*, %class.Pixel** %8, align 8, !llfi_index !144
   %10 = sext i32 %2 to i64, !llfi_index !145
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %11 = getelementptr inbounds %class.Pixel, %class.Pixel* %9, i64 %10, !llfi_index !146
-  call void @doProfiling(i32 34)
   %12 = getelementptr inbounds %class.Pixel, %class.Pixel* %11, i32 0, i32 0, !llfi_index !147
   %13 = load float, float* %12, align 4, !llfi_index !148
   call void @doProfiling(i32 32)
@@ -369,19 +356,15 @@ define dso_local void @_ZN5Image10printPixelEii(%class.Image* noundef nonnull al
   %14 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZNSolsEf(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %4, float noundef %13), !llfi_index !149, !taffo.constinfo !95
   %15 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZNSolsEPFRSoS_E(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %14, %"class.std::basic_ostream"* (%"class.std::basic_ostream"*)* noundef @_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_), !llfi_index !150, !taffo.constinfo !95
   %16 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.1.5, i64 0, i64 0)), !llfi_index !151, !taffo.constinfo !95
-  call void @doProfiling(i32 34)
   %17 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !152
   %18 = load %class.Pixel**, %class.Pixel*** %17, align 8, !llfi_index !153
   %19 = sext i32 %1 to i64, !llfi_index !154
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %20 = getelementptr inbounds %class.Pixel*, %class.Pixel** %18, i64 %19, !llfi_index !155
   %21 = load %class.Pixel*, %class.Pixel** %20, align 8, !llfi_index !156
   %22 = sext i32 %2 to i64, !llfi_index !157
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %23 = getelementptr inbounds %class.Pixel, %class.Pixel* %21, i64 %22, !llfi_index !158
-  call void @doProfiling(i32 34)
   %24 = getelementptr inbounds %class.Pixel, %class.Pixel* %23, i32 0, i32 1, !llfi_index !159
   %25 = load float, float* %24, align 4, !llfi_index !160
   call void @doProfiling(i32 32)
@@ -389,19 +372,15 @@ define dso_local void @_ZN5Image10printPixelEii(%class.Image* noundef nonnull al
   %26 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZNSolsEf(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %16, float noundef %25), !llfi_index !161, !taffo.constinfo !95
   %27 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZNSolsEPFRSoS_E(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %26, %"class.std::basic_ostream"* (%"class.std::basic_ostream"*)* noundef @_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_), !llfi_index !162, !taffo.constinfo !95
   %28 = call noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.2.6, i64 0, i64 0)), !llfi_index !163, !taffo.constinfo !95
-  call void @doProfiling(i32 34)
   %29 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !164
   %30 = load %class.Pixel**, %class.Pixel*** %29, align 8, !llfi_index !165
   %31 = sext i32 %1 to i64, !llfi_index !166
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %32 = getelementptr inbounds %class.Pixel*, %class.Pixel** %30, i64 %31, !llfi_index !167
   %33 = load %class.Pixel*, %class.Pixel** %32, align 8, !llfi_index !168
   %34 = sext i32 %2 to i64, !llfi_index !169
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %35 = getelementptr inbounds %class.Pixel, %class.Pixel* %33, i64 %34, !llfi_index !170
-  call void @doProfiling(i32 34)
   %36 = getelementptr inbounds %class.Pixel, %class.Pixel* %35, i32 0, i32 2, !llfi_index !171
   %37 = load float, float* %36, align 4, !llfi_index !172
   call void @doProfiling(i32 32)
@@ -467,7 +446,6 @@ define dso_local noundef i8* @_Z7readIntPKcPi(i8* noundef %0, i32* noundef %1) #
   br label %24, !llfi_index !197
 
 20:                                               ; preds = %12, %8
-  call void @doProfiling(i32 34)
   %21 = getelementptr inbounds i8, i8* %.01, i32 1, !llfi_index !198
   br label %22, !llfi_index !199
 
@@ -515,17 +493,13 @@ declare !taffo.initweight !75 !taffo.funinfo !77 noundef i8* @_ZNKSt7__cxx1112ba
 ; Function Attrs: mustprogress noinline uwtable
 define linkonce_odr dso_local void @_ZNSt6vectorIiSaIiEE9push_backERKi(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %0, i32* noundef nonnull align 4 dereferenceable(4) %1) #3 comdat align 2 !taffo.initweight !27 !taffo.funinfo !218 {
   %3 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !219
-  call void @doProfiling(i32 34)
   %4 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %3, i32 0, i32 0, !llfi_index !220
   %5 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %4 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !221
-  call void @doProfiling(i32 34)
   %6 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %5, i32 0, i32 1, !llfi_index !222
   %7 = load i32*, i32** %6, align 8, !llfi_index !223
   %8 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !224
-  call void @doProfiling(i32 34)
   %9 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %8, i32 0, i32 0, !llfi_index !225
   %10 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %9 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !226
-  call void @doProfiling(i32 34)
   %11 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %10, i32 0, i32 2, !llfi_index !227
   %12 = load i32*, i32** %11, align 8, !llfi_index !228
   %13 = icmp ne i32* %7, %12, !taffo.info !181, !llfi_index !229
@@ -535,10 +509,8 @@ define linkonce_odr dso_local void @_ZNSt6vectorIiSaIiEE9push_backERKi(%"class.s
 
 14:                                               ; preds = %2
   %15 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !231
-  call void @doProfiling(i32 34)
   %16 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %15, i32 0, i32 0, !llfi_index !232
   %17 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %16 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !233
-  call void @doProfiling(i32 34)
   %18 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %17, i32 0, i32 1, !llfi_index !234
   %19 = load i32*, i32** %18, align 8, !llfi_index !235
   %20 = load i32, i32* %1, align 4, !llfi_index !236
@@ -546,13 +518,10 @@ define linkonce_odr dso_local void @_ZNSt6vectorIiSaIiEE9push_backERKi(%"class.s
   call void @doProfiling(i32 33)
   store i32 %20, i32* %19, align 4, !llfi_index !237
   %21 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !238
-  call void @doProfiling(i32 34)
   %22 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %21, i32 0, i32 0, !llfi_index !239
   %23 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %22 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !240
-  call void @doProfiling(i32 34)
   %24 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %23, i32 0, i32 1, !llfi_index !241
   %25 = load i32*, i32** %24, align 8, !llfi_index !242
-  call void @doProfiling(i32 34)
   %26 = getelementptr inbounds i32, i32* %25, i32 1, !llfi_index !243
   store i32* %26, i32** %24, align 8, !llfi_index !244
   br label %28, !llfi_index !245
@@ -585,25 +554,19 @@ define linkonce_odr dso_local void @_ZNSt6vectorIiSaIiEE17_M_realloc_appendIJRKi
 
 9:                                                ; preds = %2
   %10 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !257
-  call void @doProfiling(i32 34)
   %11 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %10, i32 0, i32 0, !llfi_index !258
   %12 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %11 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !259
-  call void @doProfiling(i32 34)
   %13 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %12, i32 0, i32 0, !llfi_index !260
   %14 = load i32*, i32** %13, align 8, !llfi_index !261
   %15 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !262
-  call void @doProfiling(i32 34)
   %16 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %15, i32 0, i32 0, !llfi_index !263
   %17 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %16 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !264
-  call void @doProfiling(i32 34)
   %18 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %17, i32 0, i32 1, !llfi_index !265
   %19 = load i32*, i32** %18, align 8, !llfi_index !266
   %20 = call i32* @_ZNSt6vectorIiSaIiEE3endEv(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %0) #15, !llfi_index !267, !taffo.constinfo !65
-  call void @doProfiling(i32 34)
   %21 = getelementptr inbounds %"class.__gnu_cxx::__normal_iterator", %"class.__gnu_cxx::__normal_iterator"* %3, i32 0, i32 0, !llfi_index !268
   store i32* %20, i32** %21, align 8, !llfi_index !269
   %22 = call i32* @_ZNSt6vectorIiSaIiEE5beginEv(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %0) #15, !llfi_index !270, !taffo.constinfo !65
-  call void @doProfiling(i32 34)
   %23 = getelementptr inbounds %"class.__gnu_cxx::__normal_iterator", %"class.__gnu_cxx::__normal_iterator"* %4, i32 0, i32 0, !llfi_index !271
   store i32* %22, i32** %23, align 8, !llfi_index !272
   %24 = call noundef i64 @_ZN9__gnu_cxxmiIPiSt6vectorIiSaIiEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKS8_SB_(%"class.__gnu_cxx::__normal_iterator"* noundef nonnull align 8 dereferenceable(8) %3, %"class.__gnu_cxx::__normal_iterator"* noundef nonnull align 8 dereferenceable(8) %4) #15, !llfi_index !273, !taffo.constinfo !95
@@ -612,12 +575,10 @@ define linkonce_odr dso_local void @_ZNSt6vectorIiSaIiEE17_M_realloc_appendIJRKi
   call void @doProfiling(i32 56)
   %26 = call noundef i32* @_ZNSt12_Vector_baseIiSaIiEE11_M_allocateEm(%"struct.std::_Vector_base"* noundef nonnull align 8 dereferenceable(24) %25, i64 noundef %6), !llfi_index !275, !taffo.constinfo !95
   %27 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !276
-  call void @doProfiling(i32 34)
   %28 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %27, i32 0, i32 0, !llfi_index !277
   %29 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %28 to %"class.std::__new_allocator.1"*, !llfi_index !278
   call void @doProfiling(i32 56)
   call void @_ZZNSt6vectorIiSaIiEE17_M_realloc_appendIJRKiEEEvDpOT_EN6_GuardC2EPimRS0_(%struct._Guard* noundef nonnull align 8 dereferenceable(24) %5, i32* noundef %26, i64 noundef %6, %"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %29), !llfi_index !279, !taffo.constinfo !280
-  call void @doProfiling(i32 34)
   %30 = getelementptr inbounds i32, i32* %26, i64 %24, !llfi_index !281
   %31 = call noundef i32* @_ZSt12__to_addressIiEPT_S1_(i32* noundef %30) #15, !llfi_index !282, !taffo.constinfo !65
   %32 = load i32, i32* %1, align 4, !llfi_index !283
@@ -627,16 +588,12 @@ define linkonce_odr dso_local void @_ZNSt6vectorIiSaIiEE17_M_realloc_appendIJRKi
   %33 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !285
   %34 = call noundef nonnull align 1 dereferenceable(1) %"class.std::__new_allocator.1"* @_ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv(%"struct.std::_Vector_base"* noundef nonnull align 8 dereferenceable(24) %33) #15, !llfi_index !286, !taffo.constinfo !65
   %35 = call noundef i32* @_ZNSt6vectorIiSaIiEE11_S_relocateEPiS2_S2_RS0_(i32* noundef %14, i32* noundef %19, i32* noundef %26, %"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %34) #15, !llfi_index !287, !taffo.constinfo !280
-  call void @doProfiling(i32 34)
   %36 = getelementptr inbounds i32, i32* %35, i32 1, !llfi_index !288
-  call void @doProfiling(i32 34)
   %37 = getelementptr inbounds %struct._Guard, %struct._Guard* %5, i32 0, i32 0, !llfi_index !289
   store i32* %14, i32** %37, align 8, !llfi_index !290
   %38 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !291
-  call void @doProfiling(i32 34)
   %39 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %38, i32 0, i32 0, !llfi_index !292
   %40 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %39 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !293
-  call void @doProfiling(i32 34)
   %41 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %40, i32 0, i32 2, !llfi_index !294
   %42 = load i32*, i32** %41, align 8, !llfi_index !295
   %43 = ptrtoint i32* %42 to i64, !llfi_index !296
@@ -647,32 +604,24 @@ define linkonce_odr dso_local void @_ZNSt6vectorIiSaIiEE17_M_realloc_appendIJRKi
   call void @doProfiling(i32 15)
   %46 = sdiv exact i64 %45, 4, !llfi_index !299, !taffo.constinfo !65
   call void @doProfiling(i32 20)
-  call void @doProfiling(i32 34)
   %47 = getelementptr inbounds %struct._Guard, %struct._Guard* %5, i32 0, i32 1, !llfi_index !300
   call void @doProfiling(i32 33)
   store i64 %46, i64* %47, align 8, !llfi_index !301
   call void @_ZZNSt6vectorIiSaIiEE17_M_realloc_appendIJRKiEEEvDpOT_EN6_GuardD2Ev(%struct._Guard* noundef nonnull align 8 dereferenceable(24) %5) #15, !llfi_index !302, !taffo.constinfo !65
   %48 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !303
-  call void @doProfiling(i32 34)
   %49 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %48, i32 0, i32 0, !llfi_index !304
   %50 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %49 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !305
-  call void @doProfiling(i32 34)
   %51 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %50, i32 0, i32 0, !llfi_index !306
   store i32* %26, i32** %51, align 8, !llfi_index !307
   %52 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !308
-  call void @doProfiling(i32 34)
   %53 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %52, i32 0, i32 0, !llfi_index !309
   %54 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %53 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !310
-  call void @doProfiling(i32 34)
   %55 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %54, i32 0, i32 1, !llfi_index !311
   store i32* %36, i32** %55, align 8, !llfi_index !312
-  call void @doProfiling(i32 34)
   %56 = getelementptr inbounds i32, i32* %26, i64 %6, !llfi_index !313
   %57 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !314
-  call void @doProfiling(i32 34)
   %58 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %57, i32 0, i32 0, !llfi_index !315
   %59 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %58 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !316
-  call void @doProfiling(i32 34)
   %60 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %59, i32 0, i32 2, !llfi_index !317
   store i32* %56, i32** %60, align 8, !llfi_index !318
   ret void, !llfi_index !319
@@ -740,7 +689,7 @@ define linkonce_odr dso_local noundef i64 @_ZNKSt6vectorIiSaIiEE12_M_check_lenEm
 
 26:                                               ; preds = %25, %23
   %27 = phi i64 [ %24, %23 ], [ %17, %25 ], !llfi_index !351
-  call void @doProfiling(i32 55)
+  call void @doProfiling(i32 1)
   ret i64 %27, !llfi_index !352
 }
 
@@ -749,13 +698,10 @@ define linkonce_odr dso_local i32* @_ZNSt6vectorIiSaIiEE3endEv(%"class.std::vect
   call void @doProfiling(i32 31)
   %2 = alloca %"class.__gnu_cxx::__normal_iterator", align 8, !taffo.structinfo !16, !llfi_index !354
   %3 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !355
-  call void @doProfiling(i32 34)
   %4 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %3, i32 0, i32 0, !llfi_index !356
   %5 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %4 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !357
-  call void @doProfiling(i32 34)
   %6 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %5, i32 0, i32 1, !llfi_index !358
   call void @_ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_(%"class.__gnu_cxx::__normal_iterator"* noundef nonnull align 8 dereferenceable(8) %2, i32** noundef nonnull align 8 dereferenceable(8) %6) #15, !llfi_index !359, !taffo.constinfo !95
-  call void @doProfiling(i32 34)
   %7 = getelementptr inbounds %"class.__gnu_cxx::__normal_iterator", %"class.__gnu_cxx::__normal_iterator"* %2, i32 0, i32 0, !llfi_index !360
   %8 = load i32*, i32** %7, align 8, !llfi_index !361
   ret i32* %8, !llfi_index !362
@@ -766,13 +712,10 @@ define linkonce_odr dso_local i32* @_ZNSt6vectorIiSaIiEE5beginEv(%"class.std::ve
   call void @doProfiling(i32 31)
   %2 = alloca %"class.__gnu_cxx::__normal_iterator", align 8, !taffo.structinfo !16, !llfi_index !363
   %3 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !364
-  call void @doProfiling(i32 34)
   %4 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %3, i32 0, i32 0, !llfi_index !365
   %5 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %4 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !366
-  call void @doProfiling(i32 34)
   %6 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %5, i32 0, i32 0, !llfi_index !367
   call void @_ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_(%"class.__gnu_cxx::__normal_iterator"* noundef nonnull align 8 dereferenceable(8) %2, i32** noundef nonnull align 8 dereferenceable(8) %6) #15, !llfi_index !368, !taffo.constinfo !95
-  call void @doProfiling(i32 34)
   %7 = getelementptr inbounds %"class.__gnu_cxx::__normal_iterator", %"class.__gnu_cxx::__normal_iterator"* %2, i32 0, i32 0, !llfi_index !369
   %8 = load i32*, i32** %7, align 8, !llfi_index !370
   ret i32* %8, !llfi_index !371
@@ -792,6 +735,7 @@ define linkonce_odr dso_local noundef i64 @_ZN9__gnu_cxxmiIPiSt6vectorIiSaIiEEEE
   call void @doProfiling(i32 15)
   %10 = sdiv exact i64 %9, 4, !llfi_index !379, !taffo.constinfo !65
   call void @doProfiling(i32 20)
+  call void @doProfiling(i32 1)
   ret i64 %10, !llfi_index !380
 }
 
@@ -803,7 +747,6 @@ define linkonce_odr dso_local noundef i32* @_ZNSt12_Vector_baseIiSaIiEE11_M_allo
   br i1 %3, label %4, label %9, !llfi_index !382
 
 4:                                                ; preds = %2
-  call void @doProfiling(i32 34)
   %5 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %0, i32 0, i32 0, !llfi_index !383
   %6 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %5 to %"class.std::__new_allocator.1"*, !llfi_index !384
   %7 = bitcast %"class.std::__new_allocator.1"* %6 to %"class.std::__new_allocator.1"*, !llfi_index !385
@@ -821,14 +764,11 @@ define linkonce_odr dso_local noundef i32* @_ZNSt12_Vector_baseIiSaIiEE11_M_allo
 
 ; Function Attrs: noinline nounwind uwtable
 define linkonce_odr dso_local void @_ZZNSt6vectorIiSaIiEE17_M_realloc_appendIJRKiEEEvDpOT_EN6_GuardC2EPimRS0_(%struct._Guard* noundef nonnull align 8 dereferenceable(24) %0, i32* noundef %1, i64 noundef %2, %"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %3) unnamed_addr #5 comdat align 2 !taffo.initweight !391 !taffo.funinfo !392 {
-  call void @doProfiling(i32 34)
   %5 = getelementptr inbounds %struct._Guard, %struct._Guard* %0, i32 0, i32 0, !llfi_index !393
   store i32* %1, i32** %5, align 8, !llfi_index !394
-  call void @doProfiling(i32 34)
   %6 = getelementptr inbounds %struct._Guard, %struct._Guard* %0, i32 0, i32 1, !llfi_index !395
   call void @doProfiling(i32 33)
   store i64 %2, i64* %6, align 8, !llfi_index !396
-  call void @doProfiling(i32 34)
   %7 = getelementptr inbounds %struct._Guard, %struct._Guard* %0, i32 0, i32 2, !llfi_index !397
   store %"class.std::__new_allocator.1"* %3, %"class.std::__new_allocator.1"** %7, align 8, !llfi_index !398
   ret void, !llfi_index !399
@@ -841,7 +781,6 @@ define linkonce_odr dso_local noundef i32* @_ZSt12__to_addressIiEPT_S1_(i32* nou
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
 define linkonce_odr dso_local noundef nonnull align 1 dereferenceable(1) %"class.std::__new_allocator.1"* @_ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv(%"struct.std::_Vector_base"* noundef nonnull align 8 dereferenceable(24) %0) #0 comdat align 2 !taffo.initweight !75 !taffo.funinfo !77 {
-  call void @doProfiling(i32 34)
   %2 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %0, i32 0, i32 0, !llfi_index !401
   %3 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %2 to %"class.std::__new_allocator.1"*, !llfi_index !402
   ret %"class.std::__new_allocator.1"* %3, !llfi_index !403
@@ -855,7 +794,6 @@ define linkonce_odr dso_local noundef i32* @_ZNSt6vectorIiSaIiEE11_S_relocateEPi
 
 ; Function Attrs: noinline nounwind uwtable
 define linkonce_odr dso_local void @_ZZNSt6vectorIiSaIiEE17_M_realloc_appendIJRKiEEEvDpOT_EN6_GuardD2Ev(%struct._Guard* noundef nonnull align 8 dereferenceable(24) %0) unnamed_addr #5 comdat align 2 personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*) !taffo.initweight !75 !taffo.funinfo !407 {
-  call void @doProfiling(i32 34)
   %2 = getelementptr inbounds %struct._Guard, %struct._Guard* %0, i32 0, i32 0, !llfi_index !408
   %3 = load i32*, i32** %2, align 8, !llfi_index !409
   %4 = icmp ne i32* %3, null, !taffo.info !181, !llfi_index !410
@@ -864,13 +802,10 @@ define linkonce_odr dso_local void @_ZZNSt6vectorIiSaIiEE17_M_realloc_appendIJRK
   br i1 %4, label %5, label %14, !llfi_index !411
 
 5:                                                ; preds = %1
-  call void @doProfiling(i32 34)
   %6 = getelementptr inbounds %struct._Guard, %struct._Guard* %0, i32 0, i32 2, !llfi_index !412
   %7 = load %"class.std::__new_allocator.1"*, %"class.std::__new_allocator.1"** %6, align 8, !llfi_index !413
-  call void @doProfiling(i32 34)
   %8 = getelementptr inbounds %struct._Guard, %struct._Guard* %0, i32 0, i32 0, !llfi_index !414
   %9 = load i32*, i32** %8, align 8, !llfi_index !415
-  call void @doProfiling(i32 34)
   %10 = getelementptr inbounds %struct._Guard, %struct._Guard* %0, i32 0, i32 1, !llfi_index !416
   %11 = load i64, i64* %10, align 8, !llfi_index !417
   call void @doProfiling(i32 32)
@@ -962,7 +897,6 @@ define linkonce_odr dso_local noundef i32* @_ZSt14__relocate_a_1IiiENSt9enable_i
   br label %14, !llfi_index !451
 
 14:                                               ; preds = %10, %4
-  call void @doProfiling(i32 34)
   %15 = getelementptr inbounds i32, i32* %2, i64 %8, !llfi_index !452
   ret i32* %15, !llfi_index !453
 }
@@ -1011,14 +945,12 @@ declare !taffo.initweight !75 !taffo.funinfo !77 noundef nonnull i8* @_Znwm(i64 
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
 define linkonce_odr dso_local noundef nonnull align 8 dereferenceable(8) i32** @_ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEE4baseEv(%"class.__gnu_cxx::__normal_iterator"* noundef nonnull align 8 dereferenceable(8) %0) #0 comdat align 2 !taffo.initweight !75 !taffo.funinfo !353 {
-  call void @doProfiling(i32 34)
   %2 = getelementptr inbounds %"class.__gnu_cxx::__normal_iterator", %"class.__gnu_cxx::__normal_iterator"* %0, i32 0, i32 0, !llfi_index !466
   ret i32** %2, !llfi_index !467
 }
 
 ; Function Attrs: noinline nounwind uwtable
 define linkonce_odr dso_local void @_ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_(%"class.__gnu_cxx::__normal_iterator"* noundef nonnull align 8 dereferenceable(8) %0, i32** noundef nonnull align 8 dereferenceable(8) %1) unnamed_addr #5 comdat align 2 !taffo.initweight !27 !taffo.funinfo !218 {
-  call void @doProfiling(i32 34)
   %3 = getelementptr inbounds %"class.__gnu_cxx::__normal_iterator", %"class.__gnu_cxx::__normal_iterator"* %0, i32 0, i32 0, !llfi_index !468
   %4 = load i32*, i32** %1, align 8, !llfi_index !469
   store i32* %4, i32** %3, align 8, !llfi_index !470
@@ -1031,23 +963,20 @@ define linkonce_odr dso_local noundef i64 @_ZNKSt6vectorIiSaIiEE8max_sizeEv(%"cl
   %3 = call noundef nonnull align 1 dereferenceable(1) %"class.std::__new_allocator.1"* @_ZNKSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv(%"struct.std::_Vector_base"* noundef nonnull align 8 dereferenceable(24) %2) #15, !llfi_index !473, !taffo.constinfo !65
   %4 = call noundef i64 @_ZNSt6vectorIiSaIiEE11_S_max_sizeERKS0_(%"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %3) #15, !taffo.info !326, !llfi_index !474, !taffo.constinfo !65
   call void @doProfiling(i32 56)
+  call void @doProfiling(i32 1)
   ret i64 %4, !llfi_index !475
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
 define linkonce_odr dso_local noundef i64 @_ZNKSt6vectorIiSaIiEE4sizeEv(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %0) #0 comdat align 2 !taffo.initweight !75 !taffo.funinfo !353 {
   %2 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !476
-  call void @doProfiling(i32 34)
   %3 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %2, i32 0, i32 0, !llfi_index !477
   %4 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %3 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !478
-  call void @doProfiling(i32 34)
   %5 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %4, i32 0, i32 1, !llfi_index !479
   %6 = load i32*, i32** %5, align 8, !llfi_index !480
   %7 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !481
-  call void @doProfiling(i32 34)
   %8 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %7, i32 0, i32 0, !llfi_index !482
   %9 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %8 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !483
-  call void @doProfiling(i32 34)
   %10 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %9, i32 0, i32 0, !llfi_index !484
   %11 = load i32*, i32** %10, align 8, !llfi_index !485
   %12 = ptrtoint i32* %6 to i64, !llfi_index !486
@@ -1058,6 +987,7 @@ define linkonce_odr dso_local noundef i64 @_ZNKSt6vectorIiSaIiEE4sizeEv(%"class.
   call void @doProfiling(i32 15)
   %15 = sdiv exact i64 %14, 4, !llfi_index !489, !taffo.constinfo !65
   call void @doProfiling(i32 20)
+  call void @doProfiling(i32 1)
   ret i64 %15, !llfi_index !490
 }
 
@@ -1088,7 +1018,6 @@ define linkonce_odr dso_local noundef nonnull align 8 dereferenceable(8) i64* @_
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
 define linkonce_odr dso_local noundef nonnull align 1 dereferenceable(1) %"class.std::__new_allocator.1"* @_ZNKSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv(%"struct.std::_Vector_base"* noundef nonnull align 8 dereferenceable(24) %0) #0 comdat align 2 !taffo.initweight !75 !taffo.funinfo !77 {
-  call void @doProfiling(i32 34)
   %2 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %0, i32 0, i32 0, !llfi_index !500
   %3 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %2 to %"class.std::__new_allocator.1"*, !llfi_index !501
   ret %"class.std::__new_allocator.1"* %3, !llfi_index !502
@@ -1110,6 +1039,7 @@ define linkonce_odr dso_local noundef i64 @_ZNSt6vectorIiSaIiEE11_S_max_sizeERKS
 5:                                                ; preds = %1
   %6 = load i64, i64* %4, align 8, !taffo.info !326, !llfi_index !508
   call void @doProfiling(i32 32)
+  call void @doProfiling(i32 1)
   ret i64 %6, !llfi_index !509
 
 7:                                                ; preds = %1
@@ -1203,7 +1133,6 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %25 = call noundef nonnull align 4 dereferenceable(4) i32* @_ZNSt6vectorIiSaIiEEixEm(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %5, i64 noundef 0) #15, !llfi_index !546, !taffo.constinfo !95
   %26 = load i32, i32* %25, align 4, !llfi_index !547
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %27 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 0, !llfi_index !548
   call void @doProfiling(i32 33)
   store i32 %26, i32* %27, align 8, !llfi_index !549
@@ -1211,11 +1140,9 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   %28 = call noundef nonnull align 4 dereferenceable(4) i32* @_ZNSt6vectorIiSaIiEEixEm(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %5, i64 noundef 1) #15, !llfi_index !550, !taffo.constinfo !95
   %29 = load i32, i32* %28, align 4, !llfi_index !551
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %30 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 1, !llfi_index !552
   call void @doProfiling(i32 33)
   store i32 %29, i32* %30, align 4, !llfi_index !553
-  call void @doProfiling(i32 34)
   %31 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 1, !llfi_index !554
   %32 = load i32, i32* %31, align 4, !llfi_index !555
   call void @doProfiling(i32 32)
@@ -1235,15 +1162,12 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
 
 39:                                               ; preds = %24
   %40 = bitcast i8* %38 to %class.Pixel**, !llfi_index !562
-  call void @doProfiling(i32 34)
   %41 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !563
   store %class.Pixel** %40, %class.Pixel*** %41, align 8, !llfi_index !564
   br label %42, !llfi_index !565
 
 42:                                               ; preds = %140, %39
   %.07 = phi i32 [ 0, %39 ], [ %141, %140 ], !llfi_index !566
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %43 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 1, !llfi_index !567
   %44 = load i32, i32* %43, align 4, !llfi_index !568
   call void @doProfiling(i32 32)
@@ -1263,7 +1187,6 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
           to label %50 unwind label %131, !llfi_index !574, !taffo.constinfo !280
 
 50:                                               ; preds = %49
-  call void @doProfiling(i32 34)
   %51 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 0, !llfi_index !575
   %52 = load i32, i32* %51, align 8, !llfi_index !576
   call void @doProfiling(i32 32)
@@ -1289,7 +1212,6 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   br i1 %61, label %69, label %62, !llfi_index !585
 
 62:                                               ; preds = %59
-  call void @doProfiling(i32 34)
   %63 = getelementptr inbounds %class.Pixel, %class.Pixel* %60, i64 %53, !llfi_index !586
   br label %64, !llfi_index !587
 
@@ -1299,7 +1221,6 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
           to label %66 unwind label %135, !llfi_index !589, !taffo.constinfo !99
 
 66:                                               ; preds = %64
-  call void @doProfiling(i32 34)
   %67 = getelementptr inbounds %class.Pixel, %class.Pixel* %65, i64 1, !llfi_index !590
   %68 = icmp eq %class.Pixel* %67, %63, !llfi_index !591
   call void @doProfiling(i32 53)
@@ -1307,20 +1228,16 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   br i1 %68, label %69, label %64, !llfi_index !592
 
 69:                                               ; preds = %66, %59
-  call void @doProfiling(i32 34)
   %70 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !593
   %71 = load %class.Pixel**, %class.Pixel*** %70, align 8, !llfi_index !594
   %72 = sext i32 %.07 to i64, !llfi_index !595
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %73 = getelementptr inbounds %class.Pixel*, %class.Pixel** %71, i64 %72, !llfi_index !596
   store %class.Pixel* %60, %class.Pixel** %73, align 8, !llfi_index !597
   br label %74, !llfi_index !598
 
 74:                                               ; preds = %121, %69
   %.01 = phi i32 [ 0, %69 ], [ %122, %121 ], !llfi_index !599
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %75 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 0, !llfi_index !600
   %76 = load i32, i32* %75, align 8, !llfi_index !601
   call void @doProfiling(i32 32)
@@ -1372,51 +1289,39 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
   call void @doProfiling(i32 43)
   %96 = fdiv float %95, 0x4170000000000000, !taffo.info !609, !llfi_index !627
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %97 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !628
   %98 = load %class.Pixel**, %class.Pixel*** %97, align 8, !llfi_index !629
   %99 = sext i32 %.07 to i64, !llfi_index !630
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %100 = getelementptr inbounds %class.Pixel*, %class.Pixel** %98, i64 %99, !llfi_index !631
   %101 = load %class.Pixel*, %class.Pixel** %100, align 8, !llfi_index !632
   %102 = sext i32 %.01 to i64, !llfi_index !633
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %103 = getelementptr inbounds %class.Pixel, %class.Pixel* %101, i64 %102, !llfi_index !634
-  call void @doProfiling(i32 34)
   %104 = getelementptr inbounds %class.Pixel, %class.Pixel* %103, i32 0, i32 0, !llfi_index !635
   call void @doProfiling(i32 33)
   store float %85, float* %104, align 4, !taffo.info !636, !llfi_index !637
-  call void @doProfiling(i32 34)
   %105 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !638
   %106 = load %class.Pixel**, %class.Pixel*** %105, align 8, !llfi_index !639
   %107 = sext i32 %.07 to i64, !llfi_index !640
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %108 = getelementptr inbounds %class.Pixel*, %class.Pixel** %106, i64 %107, !llfi_index !641
   %109 = load %class.Pixel*, %class.Pixel** %108, align 8, !llfi_index !642
   %110 = sext i32 %.01 to i64, !llfi_index !643
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %111 = getelementptr inbounds %class.Pixel, %class.Pixel* %109, i64 %110, !llfi_index !644
-  call void @doProfiling(i32 34)
   %112 = getelementptr inbounds %class.Pixel, %class.Pixel* %111, i32 0, i32 1, !llfi_index !645
   call void @doProfiling(i32 33)
   store float %91, float* %112, align 4, !taffo.info !636, !llfi_index !646
-  call void @doProfiling(i32 34)
   %113 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !647
   %114 = load %class.Pixel**, %class.Pixel*** %113, align 8, !llfi_index !648
   %115 = sext i32 %.07 to i64, !llfi_index !649
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %116 = getelementptr inbounds %class.Pixel*, %class.Pixel** %114, i64 %115, !llfi_index !650
   %117 = load %class.Pixel*, %class.Pixel** %116, align 8, !llfi_index !651
   %118 = sext i32 %.01 to i64, !llfi_index !652
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %119 = getelementptr inbounds %class.Pixel, %class.Pixel* %117, i64 %118, !llfi_index !653
-  call void @doProfiling(i32 34)
   %120 = getelementptr inbounds %class.Pixel, %class.Pixel* %119, i32 0, i32 2, !llfi_index !654
   call void @doProfiling(i32 33)
   store float %96, float* %120, align 4, !taffo.info !636, !llfi_index !655
@@ -1476,7 +1381,6 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
 142:                                              ; preds = %135, %131
   %.03 = phi i32 [ %138, %135 ], [ %134, %131 ], !llfi_index !682
   %.02 = phi i8* [ %137, %135 ], [ %133, %131 ], !llfi_index !683
-  call void @doProfiling(i32 55)
   call void @_ZNSt6vectorIiSaIiEED2Ev(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %6) #15, !llfi_index !684, !taffo.constinfo !65
   br label %150, !llfi_index !685
 
@@ -1486,7 +1390,6 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
           to label %146 unwind label %127, !llfi_index !687, !taffo.constinfo !280
 
 146:                                              ; preds = %143
-  call void @doProfiling(i32 34)
   %147 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 3, !llfi_index !688
   %148 = invoke noundef nonnull align 8 dereferenceable(32) %"class.std::__cxx11::basic_string"* @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSERKS4_(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %147, %"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4)
           to label %149 unwind label %127, !llfi_index !689, !taffo.constinfo !280
@@ -1499,27 +1402,24 @@ define dso_local noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringI
 150:                                              ; preds = %142, %127
   %.14 = phi i32 [ %.03, %142 ], [ %130, %127 ], !llfi_index !693
   %.1 = phi i8* [ %.02, %142 ], [ %129, %127 ], !llfi_index !694
-  call void @doProfiling(i32 55)
   call void @_ZNSt6vectorIiSaIiEED2Ev(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %5) #15, !llfi_index !695, !taffo.constinfo !65
   br label %151, !llfi_index !696
 
 151:                                              ; preds = %150, %123
   %.25 = phi i32 [ %.14, %150 ], [ %126, %123 ], !llfi_index !697
   %.2 = phi i8* [ %.1, %150 ], [ %125, %123 ], !llfi_index !698
-  call void @doProfiling(i32 55)
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #15, !llfi_index !699, !taffo.constinfo !65
   br label %153, !llfi_index !700
 
 152:                                              ; preds = %149, %15
   %.0 = phi i32 [ 1, %149 ], [ 0, %15 ], !llfi_index !701
-  call void @doProfiling(i32 55)
   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ifstream"* noundef nonnull align 8 dereferenceable(256) %3) #15, !llfi_index !702, !taffo.constinfo !65
+  call void @doProfiling(i32 1)
   ret i32 %.0, !llfi_index !703
 
 153:                                              ; preds = %151, %16
   %.36 = phi i32 [ %.25, %151 ], [ %19, %16 ], !llfi_index !704
   %.3 = phi i8* [ %.2, %151 ], [ %18, %16 ], !llfi_index !705
-  call void @doProfiling(i32 55)
   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ifstream"* noundef nonnull align 8 dereferenceable(256) %3) #15, !llfi_index !706, !taffo.constinfo !65
   br label %154, !llfi_index !707
 
@@ -1553,13 +1453,10 @@ define linkonce_odr dso_local void @_ZNSt6vectorIiSaIiEEC2Ev(%"class.std::vector
 ; Function Attrs: mustprogress noinline nounwind uwtable
 define linkonce_odr dso_local noundef nonnull align 4 dereferenceable(4) i32* @_ZNSt6vectorIiSaIiEEixEm(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %0, i64 noundef %1) #0 comdat align 2 !taffo.initweight !27 !taffo.funinfo !714 {
   %3 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !715
-  call void @doProfiling(i32 34)
   %4 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %3, i32 0, i32 0, !llfi_index !716
   %5 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %4 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !717
-  call void @doProfiling(i32 34)
   %6 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %5, i32 0, i32 0, !llfi_index !718
   %7 = load i32*, i32** %6, align 8, !llfi_index !719
-  call void @doProfiling(i32 34)
   %8 = getelementptr inbounds i32, i32* %7, i64 %1, !llfi_index !720
   ret i32* %8, !llfi_index !721
 }
@@ -1581,17 +1478,13 @@ declare !taffo.initweight !75 !taffo.funinfo !77 void @_ZdaPv(i8* noundef) #7
 ; Function Attrs: noinline nounwind uwtable
 define linkonce_odr dso_local void @_ZNSt6vectorIiSaIiEED2Ev(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %0) unnamed_addr #5 comdat align 2 personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*) !taffo.initweight !75 !taffo.funinfo !353 {
   %2 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !724
-  call void @doProfiling(i32 34)
   %3 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %2, i32 0, i32 0, !llfi_index !725
   %4 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %3 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !726
-  call void @doProfiling(i32 34)
   %5 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %4, i32 0, i32 0, !llfi_index !727
   %6 = load i32*, i32** %5, align 8, !llfi_index !728
   %7 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !729
-  call void @doProfiling(i32 34)
   %8 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %7, i32 0, i32 0, !llfi_index !730
   %9 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %8 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !731
-  call void @doProfiling(i32 34)
   %10 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %9, i32 0, i32 1, !llfi_index !732
   %11 = load i32*, i32** %10, align 8, !llfi_index !733
   %12 = bitcast %"class.std::vector"* %0 to %"struct.std::_Vector_base"*, !llfi_index !734
@@ -1632,22 +1525,16 @@ define linkonce_odr dso_local void @_ZSt8_DestroyIPiEvT_S1_(i32* noundef %0, i32
 
 ; Function Attrs: noinline nounwind uwtable
 define linkonce_odr dso_local void @_ZNSt12_Vector_baseIiSaIiEED2Ev(%"struct.std::_Vector_base"* noundef nonnull align 8 dereferenceable(24) %0) unnamed_addr #5 comdat align 2 personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*) !taffo.initweight !75 !taffo.funinfo !77 {
-  call void @doProfiling(i32 34)
   %2 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %0, i32 0, i32 0, !llfi_index !747
   %3 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %2 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !748
-  call void @doProfiling(i32 34)
   %4 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %3, i32 0, i32 0, !llfi_index !749
   %5 = load i32*, i32** %4, align 8, !llfi_index !750
-  call void @doProfiling(i32 34)
   %6 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %0, i32 0, i32 0, !llfi_index !751
   %7 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %6 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !752
-  call void @doProfiling(i32 34)
   %8 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %7, i32 0, i32 2, !llfi_index !753
   %9 = load i32*, i32** %8, align 8, !llfi_index !754
-  call void @doProfiling(i32 34)
   %10 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %0, i32 0, i32 0, !llfi_index !755
   %11 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %10 to %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"*, !llfi_index !756
-  call void @doProfiling(i32 34)
   %12 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %11, i32 0, i32 0, !llfi_index !757
   %13 = load i32*, i32** %12, align 8, !llfi_index !758
   %14 = ptrtoint i32* %9 to i64, !llfi_index !759
@@ -1663,7 +1550,6 @@ define linkonce_odr dso_local void @_ZNSt12_Vector_baseIiSaIiEED2Ev(%"struct.std
           to label %18 unwind label %20, !llfi_index !763, !taffo.constinfo !531
 
 18:                                               ; preds = %1
-  call void @doProfiling(i32 34)
   %19 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %0, i32 0, i32 0, !llfi_index !764
   call void @_ZNSt12_Vector_baseIiSaIiEE12_Vector_implD2Ev(%"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* noundef nonnull align 8 dereferenceable(24) %19) #15, !llfi_index !765, !taffo.constinfo !65
   ret void, !llfi_index !766
@@ -1685,7 +1571,6 @@ define linkonce_odr dso_local void @_ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEP
   br i1 %4, label %5, label %9, !llfi_index !772
 
 5:                                                ; preds = %3
-  call void @doProfiling(i32 34)
   %6 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %0, i32 0, i32 0, !llfi_index !773
   %7 = bitcast %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* %6 to %"class.std::__new_allocator.1"*, !llfi_index !774
   %8 = bitcast %"class.std::__new_allocator.1"* %7 to %"class.std::__new_allocator.1"*, !llfi_index !775
@@ -1717,7 +1602,6 @@ define linkonce_odr dso_local void @_ZNSt12_Destroy_auxILb1EE9__destroyIPiEEvT_S
 
 ; Function Attrs: noinline nounwind uwtable
 define linkonce_odr dso_local void @_ZNSt12_Vector_baseIiSaIiEEC2Ev(%"struct.std::_Vector_base"* noundef nonnull align 8 dereferenceable(24) %0) unnamed_addr #5 comdat align 2 !taffo.initweight !75 !taffo.funinfo !77 {
-  call void @doProfiling(i32 34)
   %2 = getelementptr inbounds %"struct.std::_Vector_base", %"struct.std::_Vector_base"* %0, i32 0, i32 0, !llfi_index !785
   call void @_ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2Ev(%"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl"* noundef nonnull align 8 dereferenceable(24) %2) #15, !llfi_index !786, !taffo.constinfo !65
   ret void, !llfi_index !787
@@ -1732,13 +1616,10 @@ define linkonce_odr dso_local void @_ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2E
 
 ; Function Attrs: noinline nounwind uwtable
 define linkonce_odr dso_local void @_ZNSt12_Vector_baseIiSaIiEE17_Vector_impl_dataC2Ev(%"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* noundef nonnull align 8 dereferenceable(24) %0) unnamed_addr #5 comdat align 2 !taffo.initweight !75 !taffo.funinfo !77 {
-  call void @doProfiling(i32 34)
   %2 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %0, i32 0, i32 0, !llfi_index !791
   store i32* null, i32** %2, align 8, !llfi_index !792, !taffo.constinfo !65
-  call void @doProfiling(i32 34)
   %3 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %0, i32 0, i32 1, !llfi_index !793
   store i32* null, i32** %3, align 8, !llfi_index !794, !taffo.constinfo !65
-  call void @doProfiling(i32 34)
   %4 = getelementptr inbounds %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data", %"struct.std::_Vector_base<int, std::allocator<int>>::_Vector_impl_data"* %0, i32 0, i32 2, !llfi_index !795
   store i32* null, i32** %4, align 8, !llfi_index !796, !taffo.constinfo !65
   ret void, !llfi_index !797
@@ -1756,7 +1637,6 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
 
 6:                                                ; preds = %3
   %7 = bitcast %"class.std::basic_ofstream"* %4 to %"class.std::basic_ostream"*, !llfi_index !805
-  call void @doProfiling(i32 34)
   %8 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 0, !llfi_index !806
   %9 = load i32, i32* %8, align 8, !llfi_index !807
   call void @doProfiling(i32 32)
@@ -1769,7 +1649,6 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
           to label %13 unwind label %81, !llfi_index !809, !taffo.constinfo !280
 
 13:                                               ; preds = %11
-  call void @doProfiling(i32 34)
   %14 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 1, !llfi_index !810
   %15 = load i32, i32* %14, align 4, !llfi_index !811
   call void @doProfiling(i32 32)
@@ -1786,8 +1665,6 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
 
 20:                                               ; preds = %143, %19
   %.01 = phi i32 [ 0, %19 ], [ %144, %143 ], !llfi_index !815
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %21 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 1, !llfi_index !816
   %22 = load i32, i32* %21, align 4, !llfi_index !817
   call void @doProfiling(i32 32)
@@ -1801,8 +1678,6 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
 
 25:                                               ; preds = %79, %24
   %.0 = phi i32 [ 0, %24 ], [ %80, %79 ], !llfi_index !821
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %26 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 0, !llfi_index !822
   %27 = load i32, i32* %26, align 8, !llfi_index !823
   call void @doProfiling(i32 32)
@@ -1814,19 +1689,15 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   br i1 %29, label %30, label %85, !llfi_index !826
 
 30:                                               ; preds = %25
-  call void @doProfiling(i32 34)
   %31 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !827
   %32 = load %class.Pixel**, %class.Pixel*** %31, align 8, !llfi_index !828
   %33 = sext i32 %.01 to i64, !llfi_index !829
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %34 = getelementptr inbounds %class.Pixel*, %class.Pixel** %32, i64 %33, !llfi_index !830
   %35 = load %class.Pixel*, %class.Pixel** %34, align 8, !llfi_index !831
   %36 = sext i32 %.0 to i64, !llfi_index !832
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %37 = getelementptr inbounds %class.Pixel, %class.Pixel* %35, i64 %36, !llfi_index !833
-  call void @doProfiling(i32 34)
   %38 = getelementptr inbounds %class.Pixel, %class.Pixel* %37, i32 0, i32 0, !llfi_index !834
   %39 = load float, float* %38, align 4, !llfi_index !835
   call void @doProfiling(i32 32)
@@ -1834,19 +1705,15 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   call void @doProfiling(i32 18)
   %41 = fptosi float %40 to i32, !taffo.info !45, !taffo.initweight !49, !llfi_index !838, !taffo.target !837
   call void @doProfiling(i32 42)
-  call void @doProfiling(i32 34)
   %42 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !839
   %43 = load %class.Pixel**, %class.Pixel*** %42, align 8, !llfi_index !840
   %44 = sext i32 %.01 to i64, !llfi_index !841
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %45 = getelementptr inbounds %class.Pixel*, %class.Pixel** %43, i64 %44, !llfi_index !842
   %46 = load %class.Pixel*, %class.Pixel** %45, align 8, !llfi_index !843
   %47 = sext i32 %.0 to i64, !llfi_index !844
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %48 = getelementptr inbounds %class.Pixel, %class.Pixel* %46, i64 %47, !llfi_index !845
-  call void @doProfiling(i32 34)
   %49 = getelementptr inbounds %class.Pixel, %class.Pixel* %48, i32 0, i32 1, !llfi_index !846
   %50 = load float, float* %49, align 4, !llfi_index !847
   call void @doProfiling(i32 32)
@@ -1854,19 +1721,15 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   call void @doProfiling(i32 18)
   %52 = fptosi float %51 to i32, !taffo.info !45, !taffo.initweight !49, !llfi_index !849, !taffo.target !837
   call void @doProfiling(i32 42)
-  call void @doProfiling(i32 34)
   %53 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !850
   %54 = load %class.Pixel**, %class.Pixel*** %53, align 8, !llfi_index !851
   %55 = sext i32 %.01 to i64, !llfi_index !852
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %56 = getelementptr inbounds %class.Pixel*, %class.Pixel** %54, i64 %55, !llfi_index !853
   %57 = load %class.Pixel*, %class.Pixel** %56, align 8, !llfi_index !854
   %58 = sext i32 %.0 to i64, !llfi_index !855
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %59 = getelementptr inbounds %class.Pixel, %class.Pixel* %57, i64 %58, !llfi_index !856
-  call void @doProfiling(i32 34)
   %60 = getelementptr inbounds %class.Pixel, %class.Pixel* %59, i32 0, i32 2, !llfi_index !857
   %61 = load float, float* %60, align 4, !llfi_index !858
   call void @doProfiling(i32 32)
@@ -1922,15 +1785,12 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   br label %151, !llfi_index !878
 
 85:                                               ; preds = %25
-  call void @doProfiling(i32 34)
   %86 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !879
   %87 = load %class.Pixel**, %class.Pixel*** %86, align 8, !llfi_index !880
   %88 = sext i32 %.01 to i64, !llfi_index !881
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %89 = getelementptr inbounds %class.Pixel*, %class.Pixel** %87, i64 %88, !llfi_index !882
   %90 = load %class.Pixel*, %class.Pixel** %89, align 8, !llfi_index !883
-  call void @doProfiling(i32 34)
   %91 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 0, !llfi_index !884
   %92 = load i32, i32* %91, align 8, !llfi_index !885
   call void @doProfiling(i32 32)
@@ -1938,9 +1798,7 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   call void @doProfiling(i32 15)
   %94 = sext i32 %93 to i64, !llfi_index !887
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %95 = getelementptr inbounds %class.Pixel, %class.Pixel* %90, i64 %94, !llfi_index !888
-  call void @doProfiling(i32 34)
   %96 = getelementptr inbounds %class.Pixel, %class.Pixel* %95, i32 0, i32 0, !llfi_index !889
   %97 = load float, float* %96, align 4, !llfi_index !890
   call void @doProfiling(i32 32)
@@ -1948,15 +1806,12 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   call void @doProfiling(i32 18)
   %99 = fptosi float %98 to i32, !taffo.info !45, !taffo.initweight !49, !llfi_index !892, !taffo.target !837
   call void @doProfiling(i32 42)
-  call void @doProfiling(i32 34)
   %100 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !893
   %101 = load %class.Pixel**, %class.Pixel*** %100, align 8, !llfi_index !894
   %102 = sext i32 %.01 to i64, !llfi_index !895
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %103 = getelementptr inbounds %class.Pixel*, %class.Pixel** %101, i64 %102, !llfi_index !896
   %104 = load %class.Pixel*, %class.Pixel** %103, align 8, !llfi_index !897
-  call void @doProfiling(i32 34)
   %105 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 0, !llfi_index !898
   %106 = load i32, i32* %105, align 8, !llfi_index !899
   call void @doProfiling(i32 32)
@@ -1964,9 +1819,7 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   call void @doProfiling(i32 15)
   %108 = sext i32 %107 to i64, !llfi_index !901
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %109 = getelementptr inbounds %class.Pixel, %class.Pixel* %104, i64 %108, !llfi_index !902
-  call void @doProfiling(i32 34)
   %110 = getelementptr inbounds %class.Pixel, %class.Pixel* %109, i32 0, i32 1, !llfi_index !903
   %111 = load float, float* %110, align 4, !llfi_index !904
   call void @doProfiling(i32 32)
@@ -1974,15 +1827,12 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   call void @doProfiling(i32 18)
   %113 = fptosi float %112 to i32, !taffo.info !45, !taffo.initweight !49, !llfi_index !906, !taffo.target !837
   call void @doProfiling(i32 42)
-  call void @doProfiling(i32 34)
   %114 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !907
   %115 = load %class.Pixel**, %class.Pixel*** %114, align 8, !llfi_index !908
   %116 = sext i32 %.01 to i64, !llfi_index !909
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %117 = getelementptr inbounds %class.Pixel*, %class.Pixel** %115, i64 %116, !llfi_index !910
   %118 = load %class.Pixel*, %class.Pixel** %117, align 8, !llfi_index !911
-  call void @doProfiling(i32 34)
   %119 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 0, !llfi_index !912
   %120 = load i32, i32* %119, align 8, !llfi_index !913
   call void @doProfiling(i32 32)
@@ -1990,9 +1840,7 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
   call void @doProfiling(i32 15)
   %122 = sext i32 %121 to i64, !llfi_index !915
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %123 = getelementptr inbounds %class.Pixel, %class.Pixel* %118, i64 %122, !llfi_index !916
-  call void @doProfiling(i32 34)
   %124 = getelementptr inbounds %class.Pixel, %class.Pixel* %123, i32 0, i32 2, !llfi_index !917
   %125 = load float, float* %124, align 4, !llfi_index !918
   call void @doProfiling(i32 32)
@@ -2039,7 +1887,6 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
 
 145:                                              ; preds = %20
   %146 = bitcast %"class.std::basic_ofstream"* %4 to %"class.std::basic_ostream"*, !llfi_index !934
-  call void @doProfiling(i32 34)
   %147 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 3, !llfi_index !935
   %148 = invoke noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %146, %"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %147)
           to label %149 unwind label %81, !llfi_index !936, !taffo.constinfo !280
@@ -2050,6 +1897,7 @@ define dso_local noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringI
 
 150:                                              ; preds = %149
   call void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ofstream"* noundef nonnull align 8 dereferenceable(248) %4) #15, !llfi_index !938, !taffo.constinfo !65
+  call void @doProfiling(i32 1)
   ret i32 1, !llfi_index !939
 
 151:                                              ; preds = %81
@@ -2080,8 +1928,6 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
 
 2:                                                ; preds = %69, %1
   %.01 = phi i32 [ 0, %1 ], [ %70, %69 ], !llfi_index !945
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %3 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 1, !llfi_index !946
   %4 = load i32, i32* %3, align 4, !llfi_index !947
   call void @doProfiling(i32 32)
@@ -2095,8 +1941,6 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
 
 7:                                                ; preds = %66, %6
   %.0 = phi i32 [ 0, %6 ], [ %67, %66 ], !llfi_index !951
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %8 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 0, !llfi_index !952
   %9 = load i32, i32* %8, align 8, !llfi_index !953
   call void @doProfiling(i32 32)
@@ -2106,35 +1950,27 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
   br i1 %10, label %11, label %68, !llfi_index !955
 
 11:                                               ; preds = %7
-  call void @doProfiling(i32 34)
   %12 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !956
   %13 = load %class.Pixel**, %class.Pixel*** %12, align 8, !llfi_index !957
   %14 = sext i32 %.01 to i64, !llfi_index !958
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %15 = getelementptr inbounds %class.Pixel*, %class.Pixel** %13, i64 %14, !llfi_index !959
   %16 = load %class.Pixel*, %class.Pixel** %15, align 8, !llfi_index !960
   %17 = sext i32 %.0 to i64, !llfi_index !961
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %18 = getelementptr inbounds %class.Pixel, %class.Pixel* %16, i64 %17, !llfi_index !962
-  call void @doProfiling(i32 34)
   %19 = getelementptr inbounds %class.Pixel, %class.Pixel* %18, i32 0, i32 0, !llfi_index !963
   %20 = load float, float* %19, align 4, !llfi_index !964
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %21 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !965
   %22 = load %class.Pixel**, %class.Pixel*** %21, align 8, !llfi_index !966
   %23 = sext i32 %.01 to i64, !llfi_index !967
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %24 = getelementptr inbounds %class.Pixel*, %class.Pixel** %22, i64 %23, !llfi_index !968
   %25 = load %class.Pixel*, %class.Pixel** %24, align 8, !llfi_index !969
   %26 = sext i32 %.0 to i64, !llfi_index !970
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %27 = getelementptr inbounds %class.Pixel, %class.Pixel* %25, i64 %26, !llfi_index !971
-  call void @doProfiling(i32 34)
   %28 = getelementptr inbounds %class.Pixel, %class.Pixel* %27, i32 0, i32 1, !llfi_index !972
   %29 = load float, float* %28, align 4, !llfi_index !973
   call void @doProfiling(i32 32)
@@ -2142,69 +1978,53 @@ define dso_local void @_ZN5Image13makeGrayscaleEv(%class.Image* noundef nonnull 
   call void @doProfiling(i32 18)
   %31 = call float @llvm.fmuladd.f32(float 0x3F53333340000000, float %20, float %30), !taffo.info !45, !taffo.initweight !46, !llfi_index !978, !taffo.constinfo !979
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %32 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !982
   %33 = load %class.Pixel**, %class.Pixel*** %32, align 8, !llfi_index !983
   %34 = sext i32 %.01 to i64, !llfi_index !984
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %35 = getelementptr inbounds %class.Pixel*, %class.Pixel** %33, i64 %34, !llfi_index !985
   %36 = load %class.Pixel*, %class.Pixel** %35, align 8, !llfi_index !986
   %37 = sext i32 %.0 to i64, !llfi_index !987
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %38 = getelementptr inbounds %class.Pixel, %class.Pixel* %36, i64 %37, !llfi_index !988
-  call void @doProfiling(i32 34)
   %39 = getelementptr inbounds %class.Pixel, %class.Pixel* %38, i32 0, i32 2, !llfi_index !989
   %40 = load float, float* %39, align 4, !llfi_index !990
   call void @doProfiling(i32 32)
   %41 = call float @llvm.fmuladd.f32(float 0x3F3C28F5C0000000, float %40, float %31), !taffo.info !45, !taffo.initweight !46, !llfi_index !991, !taffo.constinfo !992
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %42 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !995
   %43 = load %class.Pixel**, %class.Pixel*** %42, align 8, !llfi_index !996
   %44 = sext i32 %.01 to i64, !llfi_index !997
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %45 = getelementptr inbounds %class.Pixel*, %class.Pixel** %43, i64 %44, !llfi_index !998
   %46 = load %class.Pixel*, %class.Pixel** %45, align 8, !llfi_index !999
   %47 = sext i32 %.0 to i64, !llfi_index !1000
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %48 = getelementptr inbounds %class.Pixel, %class.Pixel* %46, i64 %47, !llfi_index !1001
-  call void @doProfiling(i32 34)
   %49 = getelementptr inbounds %class.Pixel, %class.Pixel* %48, i32 0, i32 0, !llfi_index !1002
   call void @doProfiling(i32 33)
   store float %41, float* %49, align 4, !taffo.info !45, !llfi_index !1003
-  call void @doProfiling(i32 34)
   %50 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !1004
   %51 = load %class.Pixel**, %class.Pixel*** %50, align 8, !llfi_index !1005
   %52 = sext i32 %.01 to i64, !llfi_index !1006
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %53 = getelementptr inbounds %class.Pixel*, %class.Pixel** %51, i64 %52, !llfi_index !1007
   %54 = load %class.Pixel*, %class.Pixel** %53, align 8, !llfi_index !1008
   %55 = sext i32 %.0 to i64, !llfi_index !1009
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %56 = getelementptr inbounds %class.Pixel, %class.Pixel* %54, i64 %55, !llfi_index !1010
-  call void @doProfiling(i32 34)
   %57 = getelementptr inbounds %class.Pixel, %class.Pixel* %56, i32 0, i32 1, !llfi_index !1011
   call void @doProfiling(i32 33)
   store float %41, float* %57, align 4, !taffo.info !45, !llfi_index !1012
-  call void @doProfiling(i32 34)
   %58 = getelementptr inbounds %class.Image, %class.Image* %0, i32 0, i32 2, !llfi_index !1013
   %59 = load %class.Pixel**, %class.Pixel*** %58, align 8, !llfi_index !1014
   %60 = sext i32 %.01 to i64, !llfi_index !1015
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %61 = getelementptr inbounds %class.Pixel*, %class.Pixel** %59, i64 %60, !llfi_index !1016
   %62 = load %class.Pixel*, %class.Pixel** %61, align 8, !llfi_index !1017
   %63 = sext i32 %.0 to i64, !llfi_index !1018
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %64 = getelementptr inbounds %class.Pixel, %class.Pixel* %62, i64 %63, !llfi_index !1019
-  call void @doProfiling(i32 34)
   %65 = getelementptr inbounds %class.Pixel, %class.Pixel* %64, i32 0, i32 2, !llfi_index !1020
   call void @doProfiling(i32 33)
   store float %41, float* %65, align 4, !taffo.info !45, !llfi_index !1021
@@ -2257,7 +2077,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   %13 = bitcast [3 x [3 x i32]]* %u8_24fixp to i8*, !taffo.info !1045, !llfi_index !1046, !taffo.target !1035
   call void @doProfiling(i32 56)
   call void @llvm.memset.p0i8.i64(i8* align 16 %13, i8 0, i64 36, i1 false), !taffo.info !45, !taffo.initweight !46, !llfi_index !1047, !taffo.constinfo !280, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %14 = getelementptr inbounds i8*, i8** %1, i64 1, !llfi_index !1048
   %15 = load i8*, i8** %14, align 8, !llfi_index !1049
   invoke void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %5, i8* noundef %15, %"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %6)
@@ -2271,7 +2090,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %5) #15, !llfi_index !1053, !taffo.constinfo !65
   %18 = bitcast %"class.std::__new_allocator.1"* %6 to %"class.std::__new_allocator.1"*, !llfi_index !1054
   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %18) #15, !llfi_index !1055, !taffo.constinfo !65
-  call void @doProfiling(i32 34)
   %19 = getelementptr inbounds i8*, i8** %1, i64 1, !llfi_index !1056
   %20 = load i8*, i8** %19, align 8, !llfi_index !1057
   invoke void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %7, i8* noundef %20, %"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %8)
@@ -2297,8 +2115,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 26:                                               ; preds = %190, %25
   %.07 = phi i32 [ 0, %25 ], [ %191, %190 ], !taffo.info !181, !llfi_index !1066
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop91 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1067
   %27 = load i32, i32* %matchop91, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1068
   call void @doProfiling(i32 32)
@@ -2325,23 +2141,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %45, !llfi_index !1076
 
 35:                                               ; preds = %31
-  call void @doProfiling(i32 34)
   %36 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1077
   %37 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %36, align 8, !llfi_index !1078
   %38 = sub nsw i32 0, 1, !taffo.info !1079, !llfi_index !1081, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %39 = sext i32 %38 to i64, !taffo.info !1079, !llfi_index !1082
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %40 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %37, i64 %39, !llfi_index !1083
   %41 = load { i32, i32, i32 }*, { i32, i32, i32 }** %40, align 8, !llfi_index !1084
   %42 = sub nsw i32 %.07, 1, !taffo.info !1079, !llfi_index !1085, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %43 = sext i32 %42 to i64, !taffo.info !1079, !llfi_index !1086
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %44 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %41, i64 %43, !llfi_index !1087
-  call void @doProfiling(i32 34)
   %u8_24fixp223 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %44, i32 0, i32 0, !taffo.info !609, !llfi_index !1088
   %u8_24fixp271 = load i32, i32* %u8_24fixp223, align 4, !taffo.info !609, !llfi_index !1089
   call void @doProfiling(i32 32)
@@ -2349,10 +2161,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 45:                                               ; preds = %35, %33
   %u8_24fixp301 = phi i32 [ %34, %33 ], [ %u8_24fixp271, %35 ], !taffo.info !609, !llfi_index !1091
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp144 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1092, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp193 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp144, i64 0, i64 0, !taffo.info !609, !llfi_index !1093, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp301, i32* %u8_24fixp193, align 16, !taffo.info !45, !llfi_index !1094, !taffo.target !1035
@@ -2367,21 +2176,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %58, !llfi_index !1098
 
 49:                                               ; preds = %45
-  call void @doProfiling(i32 34)
   %50 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1099
   %51 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %50, align 8, !llfi_index !1100
   %52 = sub nsw i32 0, 1, !taffo.info !1079, !llfi_index !1101, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %53 = sext i32 %52 to i64, !taffo.info !1079, !llfi_index !1102
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %54 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %51, i64 %53, !llfi_index !1103
   %55 = load { i32, i32, i32 }*, { i32, i32, i32 }** %54, align 8, !llfi_index !1104
   %56 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !1105
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %57 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %55, i64 %56, !llfi_index !1106
-  call void @doProfiling(i32 34)
   %u8_24fixp222 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %57, i32 0, i32 0, !taffo.info !609, !llfi_index !1107
   %u8_24fixp270 = load i32, i32* %u8_24fixp222, align 4, !taffo.info !609, !llfi_index !1108
   call void @doProfiling(i32 32)
@@ -2389,14 +2194,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 58:                                               ; preds = %49, %47
   %u8_24fixp300 = phi i32 [ %48, %47 ], [ %u8_24fixp270, %49 ], !taffo.info !609, !llfi_index !1110
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp143 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1111, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp192 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp143, i64 0, i64 1, !taffo.info !609, !llfi_index !1112, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp300, i32* %u8_24fixp192, align 4, !taffo.info !45, !llfi_index !1113, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop90 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1114
   %59 = load i32, i32* %matchop90, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1115
   call void @doProfiling(i32 32)
@@ -2419,23 +2220,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %76, !llfi_index !1123
 
 66:                                               ; preds = %62
-  call void @doProfiling(i32 34)
   %67 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1124
   %68 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %67, align 8, !llfi_index !1125
   %69 = sub nsw i32 0, 1, !taffo.info !1079, !llfi_index !1126, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %70 = sext i32 %69 to i64, !taffo.info !1079, !llfi_index !1127
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %71 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %68, i64 %70, !llfi_index !1128
   %72 = load { i32, i32, i32 }*, { i32, i32, i32 }** %71, align 8, !llfi_index !1129
   %73 = add nsw i32 %.07, 1, !taffo.info !321, !llfi_index !1130, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %74 = sext i32 %73 to i64, !taffo.info !321, !llfi_index !1131
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %75 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %72, i64 %74, !llfi_index !1132
-  call void @doProfiling(i32 34)
   %u8_24fixp221 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %75, i32 0, i32 0, !taffo.info !609, !llfi_index !1133
   %u8_24fixp269 = load i32, i32* %u8_24fixp221, align 4, !taffo.info !609, !llfi_index !1134
   call void @doProfiling(i32 32)
@@ -2443,10 +2240,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 76:                                               ; preds = %66, %64
   %u8_24fixp299 = phi i32 [ %65, %64 ], [ %u8_24fixp269, %66 ], !taffo.info !609, !llfi_index !1136
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp142 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1137, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp191 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp142, i64 0, i64 2, !taffo.info !609, !llfi_index !1138, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp299, i32* %u8_24fixp191, align 8, !taffo.info !45, !llfi_index !1139, !taffo.target !1035
@@ -2461,21 +2255,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %89, !llfi_index !1143
 
 80:                                               ; preds = %76
-  call void @doProfiling(i32 34)
   %81 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1144
   %82 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %81, align 8, !llfi_index !1145
   %83 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1146
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %84 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %82, i64 %83, !llfi_index !1147
   %85 = load { i32, i32, i32 }*, { i32, i32, i32 }** %84, align 8, !llfi_index !1148
   %86 = sub nsw i32 %.07, 1, !taffo.info !1079, !llfi_index !1149, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %87 = sext i32 %86 to i64, !taffo.info !1079, !llfi_index !1150
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %88 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %85, i64 %87, !llfi_index !1151
-  call void @doProfiling(i32 34)
   %u8_24fixp220 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %88, i32 0, i32 0, !taffo.info !609, !llfi_index !1152
   %u8_24fixp268 = load i32, i32* %u8_24fixp220, align 4, !taffo.info !609, !llfi_index !1153
   call void @doProfiling(i32 32)
@@ -2483,36 +2273,26 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 89:                                               ; preds = %80, %78
   %u8_24fixp298 = phi i32 [ %79, %78 ], [ %u8_24fixp268, %80 ], !taffo.info !609, !llfi_index !1155
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp141 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1156, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp190 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp141, i64 0, i64 0, !taffo.info !609, !llfi_index !1157, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp298, i32* %u8_24fixp190, align 4, !taffo.info !45, !llfi_index !1158, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %90 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1159
   %91 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %90, align 8, !llfi_index !1160
   %92 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1161
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %93 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %91, i64 %92, !llfi_index !1162
   %94 = load { i32, i32, i32 }*, { i32, i32, i32 }** %93, align 8, !llfi_index !1163
   %95 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !1164
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %96 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %94, i64 %95, !llfi_index !1165
-  call void @doProfiling(i32 34)
   %u8_24fixp219 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %96, i32 0, i32 0, !taffo.info !609, !llfi_index !1166
   %u8_24fixp267 = load i32, i32* %u8_24fixp219, align 4, !taffo.info !609, !llfi_index !1167
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp140 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1168, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp189 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp140, i64 0, i64 1, !taffo.info !609, !llfi_index !1169, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp267, i32* %u8_24fixp189, align 4, !taffo.info !45, !llfi_index !1170, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop89 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1171
   %97 = load i32, i32* %matchop89, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1172
   call void @doProfiling(i32 32)
@@ -2529,21 +2309,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %111, !llfi_index !1177
 
 102:                                              ; preds = %89
-  call void @doProfiling(i32 34)
   %103 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1178
   %104 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %103, align 8, !llfi_index !1179
   %105 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1180
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %106 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %104, i64 %105, !llfi_index !1181
   %107 = load { i32, i32, i32 }*, { i32, i32, i32 }** %106, align 8, !llfi_index !1182
   %108 = add nsw i32 %.07, 1, !taffo.info !321, !llfi_index !1183, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %109 = sext i32 %108 to i64, !taffo.info !321, !llfi_index !1184
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %110 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %107, i64 %109, !llfi_index !1185
-  call void @doProfiling(i32 34)
   %u8_24fixp218 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %110, i32 0, i32 0, !taffo.info !609, !llfi_index !1186
   %u8_24fixp266 = load i32, i32* %u8_24fixp218, align 4, !taffo.info !609, !llfi_index !1187
   call void @doProfiling(i32 32)
@@ -2551,10 +2327,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 111:                                              ; preds = %102, %100
   %u8_24fixp297 = phi i32 [ %101, %100 ], [ %u8_24fixp266, %102 ], !taffo.info !609, !llfi_index !1189
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp139 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1190, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp188 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp139, i64 0, i64 2, !taffo.info !609, !llfi_index !1191, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp297, i32* %u8_24fixp188, align 4, !taffo.info !45, !llfi_index !1192, !taffo.target !1035
@@ -2564,7 +2337,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br i1 %112, label %117, label %113, !llfi_index !1194
 
 113:                                              ; preds = %111
-  call void @doProfiling(i32 34)
   %matchop88 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !1195
   %114 = load i32, i32* %matchop88, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1196
   call void @doProfiling(i32 32)
@@ -2581,23 +2353,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %129, !llfi_index !1201
 
 119:                                              ; preds = %113
-  call void @doProfiling(i32 34)
   %120 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1202
   %121 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %120, align 8, !llfi_index !1203
   %122 = add nsw i32 0, 1, !taffo.info !321, !llfi_index !1204, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %123 = sext i32 %122 to i64, !taffo.info !321, !llfi_index !1205
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %124 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %121, i64 %123, !llfi_index !1206
   %125 = load { i32, i32, i32 }*, { i32, i32, i32 }** %124, align 8, !llfi_index !1207
   %126 = sub nsw i32 %.07, 1, !taffo.info !1079, !llfi_index !1208, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %127 = sext i32 %126 to i64, !taffo.info !1079, !llfi_index !1209
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %128 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %125, i64 %127, !llfi_index !1210
-  call void @doProfiling(i32 34)
   %u8_24fixp217 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %128, i32 0, i32 0, !taffo.info !609, !llfi_index !1211
   %u8_24fixp265 = load i32, i32* %u8_24fixp217, align 4, !taffo.info !609, !llfi_index !1212
   call void @doProfiling(i32 32)
@@ -2605,14 +2373,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 129:                                              ; preds = %119, %117
   %u8_24fixp296 = phi i32 [ %118, %117 ], [ %u8_24fixp265, %119 ], !taffo.info !609, !llfi_index !1214
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp138 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1215, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp187 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp138, i64 0, i64 0, !taffo.info !609, !llfi_index !1216, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp296, i32* %u8_24fixp187, align 8, !taffo.info !45, !llfi_index !1217, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop87 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !1218
   %130 = load i32, i32* %matchop87, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1219
   call void @doProfiling(i32 32)
@@ -2629,21 +2393,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %144, !llfi_index !1224
 
 135:                                              ; preds = %129
-  call void @doProfiling(i32 34)
   %136 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1225
   %137 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %136, align 8, !llfi_index !1226
   %138 = add nsw i32 0, 1, !taffo.info !321, !llfi_index !1227, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %139 = sext i32 %138 to i64, !taffo.info !321, !llfi_index !1228
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %140 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %137, i64 %139, !llfi_index !1229
   %141 = load { i32, i32, i32 }*, { i32, i32, i32 }** %140, align 8, !llfi_index !1230
   %142 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !1231
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %143 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %141, i64 %142, !llfi_index !1232
-  call void @doProfiling(i32 34)
   %u8_24fixp216 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %143, i32 0, i32 0, !taffo.info !609, !llfi_index !1233
   %u8_24fixp264 = load i32, i32* %u8_24fixp216, align 4, !taffo.info !609, !llfi_index !1234
   call void @doProfiling(i32 32)
@@ -2651,14 +2411,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 144:                                              ; preds = %135, %133
   %u8_24fixp295 = phi i32 [ %134, %133 ], [ %u8_24fixp264, %135 ], !taffo.info !609, !llfi_index !1236
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp137 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1237, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp186 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp137, i64 0, i64 1, !taffo.info !609, !llfi_index !1238, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp295, i32* %u8_24fixp186, align 4, !taffo.info !45, !llfi_index !1239, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop86 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1240
   %145 = load i32, i32* %matchop86, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1241
   call void @doProfiling(i32 32)
@@ -2670,7 +2426,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br i1 %147, label %152, label %148, !taffo.info !45, !taffo.initweight !1118, !llfi_index !1244
 
 148:                                              ; preds = %144
-  call void @doProfiling(i32 34)
   %matchop85 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !1245
   %149 = load i32, i32* %matchop85, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1246
   call void @doProfiling(i32 32)
@@ -2687,23 +2442,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %164, !llfi_index !1251
 
 154:                                              ; preds = %148
-  call void @doProfiling(i32 34)
   %155 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1252
   %156 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %155, align 8, !llfi_index !1253
   %157 = add nsw i32 0, 1, !taffo.info !321, !llfi_index !1254, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %158 = sext i32 %157 to i64, !taffo.info !321, !llfi_index !1255
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %159 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %156, i64 %158, !llfi_index !1256
   %160 = load { i32, i32, i32 }*, { i32, i32, i32 }** %159, align 8, !llfi_index !1257
   %161 = add nsw i32 %.07, 1, !taffo.info !321, !llfi_index !1258, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %162 = sext i32 %161 to i64, !taffo.info !321, !llfi_index !1259
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %163 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %160, i64 %162, !llfi_index !1260
-  call void @doProfiling(i32 34)
   %u8_24fixp215 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %163, i32 0, i32 0, !taffo.info !609, !llfi_index !1261
   %u8_24fixp263 = load i32, i32* %u8_24fixp215, align 4, !taffo.info !609, !llfi_index !1262
   call void @doProfiling(i32 32)
@@ -2711,68 +2462,52 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 164:                                              ; preds = %154, %152
   %u8_24fixp294 = phi i32 [ %153, %152 ], [ %u8_24fixp263, %154 ], !taffo.info !609, !llfi_index !1264
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp136 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1265, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp185 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp136, i64 0, i64 2, !taffo.info !609, !llfi_index !1266, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp294, i32* %u8_24fixp185, align 8, !taffo.info !45, !llfi_index !1267, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp135 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1268, !taffo.target !1035
   %u2_30fixp184 = invoke i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* %u8_24fixp135)
           to label %165 unwind label %216, !taffo.info !1269, !llfi_index !1272, !taffo.constinfo !99, !taffo.target !1035
 
 165:                                              ; preds = %164
-  call void @doProfiling(i32 34)
   %166 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1273
   %167 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %166, align 8, !llfi_index !1274
   %168 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1275
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %169 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %167, i64 %168, !llfi_index !1276
   %170 = load { i32, i32, i32 }*, { i32, i32, i32 }** %169, align 8, !llfi_index !1277
   %171 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !1278
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %172 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %170, i64 %171, !llfi_index !1279
-  call void @doProfiling(i32 34)
   %u8_24fixp235 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %172, i32 0, i32 0, !taffo.info !609, !llfi_index !1280
   %173 = lshr i32 %u2_30fixp184, 6, !taffo.info !1269, !llfi_index !1281, !taffo.target !1035
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %173, i32* %u8_24fixp235, align 4, !taffo.info !45, !llfi_index !1282, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %174 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1283
   %175 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %174, align 8, !llfi_index !1284
   %176 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1285
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %177 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %175, i64 %176, !llfi_index !1286
   %178 = load { i32, i32, i32 }*, { i32, i32, i32 }** %177, align 8, !llfi_index !1287
   %179 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !1288
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %180 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %178, i64 %179, !llfi_index !1289
-  call void @doProfiling(i32 34)
   %u8_24fixp234 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %180, i32 0, i32 1, !taffo.info !609, !llfi_index !1290
   %181 = lshr i32 %u2_30fixp184, 6, !taffo.info !1269, !llfi_index !1291, !taffo.target !1035
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %181, i32* %u8_24fixp234, align 4, !taffo.info !45, !llfi_index !1292, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %182 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1293
   %183 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %182, align 8, !llfi_index !1294
   %184 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1295
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %185 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %183, i64 %184, !llfi_index !1296
   %186 = load { i32, i32, i32 }*, { i32, i32, i32 }** %185, align 8, !llfi_index !1297
   %187 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !1298
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %188 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %186, i64 %187, !llfi_index !1299
-  call void @doProfiling(i32 34)
   %u8_24fixp233 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %188, i32 0, i32 2, !taffo.info !609, !llfi_index !1300
   %189 = lshr i32 %u2_30fixp184, 6, !taffo.info !1269, !llfi_index !1301, !taffo.target !1035
   call void @doProfiling(i32 26)
@@ -2816,7 +2551,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 204:                                              ; preds = %200, %196
   %.01 = phi i8* [ %202, %200 ], [ %198, %196 ], !llfi_index !1320
   %.0 = phi i32 [ %203, %200 ], [ %199, %196 ], !llfi_index !1321
-  call void @doProfiling(i32 55)
   %205 = bitcast %"class.std::__new_allocator.1"* %6 to %"class.std::__new_allocator.1"*, !llfi_index !1322
   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %205) #15, !llfi_index !1323, !taffo.constinfo !65
   br label %856, !llfi_index !1324
@@ -2843,7 +2577,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 214:                                              ; preds = %210, %206
   %.12 = phi i8* [ %212, %210 ], [ %208, %206 ], !llfi_index !1334
   %.1 = phi i32 [ %213, %210 ], [ %209, %206 ], !llfi_index !1335
-  call void @doProfiling(i32 55)
   %215 = bitcast %"class.std::__new_allocator.1"* %8 to %"class.std::__new_allocator.1"*, !llfi_index !1336
   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %215) #15, !llfi_index !1337, !taffo.constinfo !65
   br label %856, !llfi_index !1338
@@ -2862,8 +2595,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 221:                                              ; preds = %656, %220
   %.06 = phi i32 [ 1, %220 ], [ %657, %656 ], !taffo.info !1344, !llfi_index !1346
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop84 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !1347
   %222 = load i32, i32* %matchop84, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1348
   call void @doProfiling(i32 32)
@@ -2892,23 +2623,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %241, !llfi_index !1357
 
 231:                                              ; preds = %227
-  call void @doProfiling(i32 34)
   %232 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1358
   %233 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %232, align 8, !llfi_index !1359
   %234 = sub nsw i32 %.06, 1, !taffo.info !0, !llfi_index !1360, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %235 = sext i32 %234 to i64, !taffo.info !0, !llfi_index !1361
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %236 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %233, i64 %235, !llfi_index !1362
   %237 = load { i32, i32, i32 }*, { i32, i32, i32 }** %236, align 8, !llfi_index !1363
   %238 = sub nsw i32 0, 1, !taffo.info !1079, !llfi_index !1364, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %239 = sext i32 %238 to i64, !taffo.info !1079, !llfi_index !1365
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %240 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %237, i64 %239, !llfi_index !1366
-  call void @doProfiling(i32 34)
   %u8_24fixp214 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %240, i32 0, i32 0, !taffo.info !609, !llfi_index !1367
   %u8_24fixp262 = load i32, i32* %u8_24fixp214, align 4, !taffo.info !609, !llfi_index !1368
   call void @doProfiling(i32 32)
@@ -2916,10 +2643,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 241:                                              ; preds = %231, %229
   %u8_24fixp293 = phi i32 [ %230, %229 ], [ %u8_24fixp262, %231 ], !taffo.info !609, !llfi_index !1370
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp134 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1371, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp183 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp134, i64 0, i64 0, !taffo.info !609, !llfi_index !1372, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp293, i32* %u8_24fixp183, align 16, !taffo.info !45, !llfi_index !1373, !taffo.target !1035
@@ -2934,21 +2658,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %254, !llfi_index !1377
 
 245:                                              ; preds = %241
-  call void @doProfiling(i32 34)
   %246 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1378
   %247 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %246, align 8, !llfi_index !1379
   %248 = sub nsw i32 %.06, 1, !taffo.info !0, !llfi_index !1380, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %249 = sext i32 %248 to i64, !taffo.info !0, !llfi_index !1381
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %250 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %247, i64 %249, !llfi_index !1382
   %251 = load { i32, i32, i32 }*, { i32, i32, i32 }** %250, align 8, !llfi_index !1383
   %252 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1384
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %253 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %251, i64 %252, !llfi_index !1385
-  call void @doProfiling(i32 34)
   %u8_24fixp213 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %253, i32 0, i32 0, !taffo.info !609, !llfi_index !1386
   %u8_24fixp261 = load i32, i32* %u8_24fixp213, align 4, !taffo.info !609, !llfi_index !1387
   call void @doProfiling(i32 32)
@@ -2956,14 +2676,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 254:                                              ; preds = %245, %243
   %u8_24fixp292 = phi i32 [ %244, %243 ], [ %u8_24fixp261, %245 ], !taffo.info !609, !llfi_index !1389
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp133 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1390, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp182 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp133, i64 0, i64 1, !taffo.info !609, !llfi_index !1391, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp292, i32* %u8_24fixp182, align 4, !taffo.info !45, !llfi_index !1392, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop83 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1393
   %255 = load i32, i32* %matchop83, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1394
   call void @doProfiling(i32 32)
@@ -2986,23 +2702,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %272, !llfi_index !1401
 
 262:                                              ; preds = %258
-  call void @doProfiling(i32 34)
   %263 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1402
   %264 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %263, align 8, !llfi_index !1403
   %265 = sub nsw i32 %.06, 1, !taffo.info !0, !llfi_index !1404, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %266 = sext i32 %265 to i64, !taffo.info !0, !llfi_index !1405
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %267 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %264, i64 %266, !llfi_index !1406
   %268 = load { i32, i32, i32 }*, { i32, i32, i32 }** %267, align 8, !llfi_index !1407
   %269 = add nsw i32 0, 1, !taffo.info !321, !llfi_index !1408, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %270 = sext i32 %269 to i64, !taffo.info !321, !llfi_index !1409
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %271 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %268, i64 %270, !llfi_index !1410
-  call void @doProfiling(i32 34)
   %u8_24fixp212 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %271, i32 0, i32 0, !taffo.info !609, !llfi_index !1411
   %u8_24fixp260 = load i32, i32* %u8_24fixp212, align 4, !taffo.info !609, !llfi_index !1412
   call void @doProfiling(i32 32)
@@ -3010,10 +2722,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 272:                                              ; preds = %262, %260
   %u8_24fixp291 = phi i32 [ %261, %260 ], [ %u8_24fixp260, %262 ], !taffo.info !609, !llfi_index !1414
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp132 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1415, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp181 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp132, i64 0, i64 2, !taffo.info !609, !llfi_index !1416, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp291, i32* %u8_24fixp181, align 8, !taffo.info !45, !llfi_index !1417, !taffo.target !1035
@@ -3028,21 +2737,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %285, !llfi_index !1421
 
 276:                                              ; preds = %272
-  call void @doProfiling(i32 34)
   %277 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1422
   %278 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %277, align 8, !llfi_index !1423
   %279 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1424
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %280 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %278, i64 %279, !llfi_index !1425
   %281 = load { i32, i32, i32 }*, { i32, i32, i32 }** %280, align 8, !llfi_index !1426
   %282 = sub nsw i32 0, 1, !taffo.info !1079, !llfi_index !1427, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %283 = sext i32 %282 to i64, !taffo.info !1079, !llfi_index !1428
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %284 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %281, i64 %283, !llfi_index !1429
-  call void @doProfiling(i32 34)
   %u8_24fixp211 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %284, i32 0, i32 0, !taffo.info !609, !llfi_index !1430
   %u8_24fixp259 = load i32, i32* %u8_24fixp211, align 4, !taffo.info !609, !llfi_index !1431
   call void @doProfiling(i32 32)
@@ -3050,36 +2755,26 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 285:                                              ; preds = %276, %274
   %u8_24fixp290 = phi i32 [ %275, %274 ], [ %u8_24fixp259, %276 ], !taffo.info !609, !llfi_index !1433
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp131 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1434, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp180 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp131, i64 0, i64 0, !taffo.info !609, !llfi_index !1435, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp290, i32* %u8_24fixp180, align 4, !taffo.info !45, !llfi_index !1436, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %286 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1437
   %287 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %286, align 8, !llfi_index !1438
   %288 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1439
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %289 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %287, i64 %288, !llfi_index !1440
   %290 = load { i32, i32, i32 }*, { i32, i32, i32 }** %289, align 8, !llfi_index !1441
   %291 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1442
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %292 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %290, i64 %291, !llfi_index !1443
-  call void @doProfiling(i32 34)
   %u8_24fixp210 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %292, i32 0, i32 0, !taffo.info !609, !llfi_index !1444
   %u8_24fixp258 = load i32, i32* %u8_24fixp210, align 4, !taffo.info !609, !llfi_index !1445
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp130 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1446, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp179 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp130, i64 0, i64 1, !taffo.info !609, !llfi_index !1447, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp258, i32* %u8_24fixp179, align 4, !taffo.info !45, !llfi_index !1448, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop82 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1449
   %293 = load i32, i32* %matchop82, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1450
   call void @doProfiling(i32 32)
@@ -3096,21 +2791,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %307, !llfi_index !1455
 
 298:                                              ; preds = %285
-  call void @doProfiling(i32 34)
   %299 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1456
   %300 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %299, align 8, !llfi_index !1457
   %301 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1458
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %302 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %300, i64 %301, !llfi_index !1459
   %303 = load { i32, i32, i32 }*, { i32, i32, i32 }** %302, align 8, !llfi_index !1460
   %304 = add nsw i32 0, 1, !taffo.info !321, !llfi_index !1461, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %305 = sext i32 %304 to i64, !taffo.info !321, !llfi_index !1462
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %306 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %303, i64 %305, !llfi_index !1463
-  call void @doProfiling(i32 34)
   %u8_24fixp209 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %306, i32 0, i32 0, !taffo.info !609, !llfi_index !1464
   %u8_24fixp257 = load i32, i32* %u8_24fixp209, align 4, !taffo.info !609, !llfi_index !1465
   call void @doProfiling(i32 32)
@@ -3118,10 +2809,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 307:                                              ; preds = %298, %296
   %u8_24fixp289 = phi i32 [ %297, %296 ], [ %u8_24fixp257, %298 ], !taffo.info !609, !llfi_index !1467
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp129 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1468, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp178 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp129, i64 0, i64 2, !taffo.info !609, !llfi_index !1469, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp289, i32* %u8_24fixp178, align 4, !taffo.info !45, !llfi_index !1470, !taffo.target !1035
@@ -3131,7 +2819,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br i1 %308, label %313, label %309, !llfi_index !1472
 
 309:                                              ; preds = %307
-  call void @doProfiling(i32 34)
   %matchop81 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !1473
   %310 = load i32, i32* %matchop81, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1474
   call void @doProfiling(i32 32)
@@ -3148,23 +2835,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %325, !llfi_index !1479
 
 315:                                              ; preds = %309
-  call void @doProfiling(i32 34)
   %316 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1480
   %317 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %316, align 8, !llfi_index !1481
   %318 = add nsw i32 %.06, 1, !taffo.info !1482, !llfi_index !1484, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %319 = sext i32 %318 to i64, !taffo.info !1482, !llfi_index !1485
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %320 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %317, i64 %319, !llfi_index !1486
   %321 = load { i32, i32, i32 }*, { i32, i32, i32 }** %320, align 8, !llfi_index !1487
   %322 = sub nsw i32 0, 1, !taffo.info !1079, !llfi_index !1488, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %323 = sext i32 %322 to i64, !taffo.info !1079, !llfi_index !1489
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %324 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %321, i64 %323, !llfi_index !1490
-  call void @doProfiling(i32 34)
   %u8_24fixp208 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %324, i32 0, i32 0, !taffo.info !609, !llfi_index !1491
   %u8_24fixp256 = load i32, i32* %u8_24fixp208, align 4, !taffo.info !609, !llfi_index !1492
   call void @doProfiling(i32 32)
@@ -3172,14 +2855,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 325:                                              ; preds = %315, %313
   %u8_24fixp288 = phi i32 [ %314, %313 ], [ %u8_24fixp256, %315 ], !taffo.info !609, !llfi_index !1494
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp128 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1495, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp177 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp128, i64 0, i64 0, !taffo.info !609, !llfi_index !1496, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp288, i32* %u8_24fixp177, align 8, !taffo.info !45, !llfi_index !1497, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop80 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !1498
   %326 = load i32, i32* %matchop80, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1499
   call void @doProfiling(i32 32)
@@ -3196,21 +2875,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %340, !llfi_index !1504
 
 331:                                              ; preds = %325
-  call void @doProfiling(i32 34)
   %332 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1505
   %333 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %332, align 8, !llfi_index !1506
   %334 = add nsw i32 %.06, 1, !taffo.info !1482, !llfi_index !1507, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %335 = sext i32 %334 to i64, !taffo.info !1482, !llfi_index !1508
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %336 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %333, i64 %335, !llfi_index !1509
   %337 = load { i32, i32, i32 }*, { i32, i32, i32 }** %336, align 8, !llfi_index !1510
   %338 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1511
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %339 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %337, i64 %338, !llfi_index !1512
-  call void @doProfiling(i32 34)
   %u8_24fixp207 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %339, i32 0, i32 0, !taffo.info !609, !llfi_index !1513
   %u8_24fixp255 = load i32, i32* %u8_24fixp207, align 4, !taffo.info !609, !llfi_index !1514
   call void @doProfiling(i32 32)
@@ -3218,14 +2893,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 340:                                              ; preds = %331, %329
   %u8_24fixp287 = phi i32 [ %330, %329 ], [ %u8_24fixp255, %331 ], !taffo.info !609, !llfi_index !1516
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp127 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1517, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp176 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp127, i64 0, i64 1, !taffo.info !609, !llfi_index !1518, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp287, i32* %u8_24fixp176, align 4, !taffo.info !45, !llfi_index !1519, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop79 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1520
   %341 = load i32, i32* %matchop79, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1521
   call void @doProfiling(i32 32)
@@ -3237,7 +2908,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br i1 %343, label %348, label %344, !taffo.info !45, !taffo.initweight !1118, !llfi_index !1524
 
 344:                                              ; preds = %340
-  call void @doProfiling(i32 34)
   %matchop78 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !1525
   %345 = load i32, i32* %matchop78, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1526
   call void @doProfiling(i32 32)
@@ -3254,23 +2924,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %360, !llfi_index !1531
 
 350:                                              ; preds = %344
-  call void @doProfiling(i32 34)
   %351 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1532
   %352 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %351, align 8, !llfi_index !1533
   %353 = add nsw i32 %.06, 1, !taffo.info !1482, !llfi_index !1534, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %354 = sext i32 %353 to i64, !taffo.info !1482, !llfi_index !1535
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %355 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %352, i64 %354, !llfi_index !1536
   %356 = load { i32, i32, i32 }*, { i32, i32, i32 }** %355, align 8, !llfi_index !1537
   %357 = add nsw i32 0, 1, !taffo.info !321, !llfi_index !1538, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %358 = sext i32 %357 to i64, !taffo.info !321, !llfi_index !1539
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %359 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %356, i64 %358, !llfi_index !1540
-  call void @doProfiling(i32 34)
   %u8_24fixp206 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %359, i32 0, i32 0, !taffo.info !609, !llfi_index !1541
   %u8_24fixp254 = load i32, i32* %u8_24fixp206, align 4, !taffo.info !609, !llfi_index !1542
   call void @doProfiling(i32 32)
@@ -3278,68 +2944,52 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 360:                                              ; preds = %350, %348
   %u8_24fixp286 = phi i32 [ %349, %348 ], [ %u8_24fixp254, %350 ], !taffo.info !609, !llfi_index !1544
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp126 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1545, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp175 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp126, i64 0, i64 2, !taffo.info !609, !llfi_index !1546, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp286, i32* %u8_24fixp175, align 8, !taffo.info !45, !llfi_index !1547, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp125 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1548, !taffo.target !1035
   %u2_30fixp174 = invoke i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* %u8_24fixp125)
           to label %361 unwind label %216, !taffo.info !1269, !llfi_index !1549, !taffo.constinfo !99, !taffo.target !1035
 
 361:                                              ; preds = %360
-  call void @doProfiling(i32 34)
   %362 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1550
   %363 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %362, align 8, !llfi_index !1551
   %364 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1552
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %365 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %363, i64 %364, !llfi_index !1553
   %366 = load { i32, i32, i32 }*, { i32, i32, i32 }** %365, align 8, !llfi_index !1554
   %367 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1555
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %368 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %366, i64 %367, !llfi_index !1556
-  call void @doProfiling(i32 34)
   %u8_24fixp232 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %368, i32 0, i32 0, !taffo.info !609, !llfi_index !1557
   %369 = lshr i32 %u2_30fixp174, 6, !taffo.info !1269, !llfi_index !1558, !taffo.target !1035
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %369, i32* %u8_24fixp232, align 4, !taffo.info !45, !llfi_index !1559, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %370 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1560
   %371 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %370, align 8, !llfi_index !1561
   %372 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1562
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %373 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %371, i64 %372, !llfi_index !1563
   %374 = load { i32, i32, i32 }*, { i32, i32, i32 }** %373, align 8, !llfi_index !1564
   %375 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1565
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %376 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %374, i64 %375, !llfi_index !1566
-  call void @doProfiling(i32 34)
   %u8_24fixp231 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %376, i32 0, i32 1, !taffo.info !609, !llfi_index !1567
   %377 = lshr i32 %u2_30fixp174, 6, !taffo.info !1269, !llfi_index !1568, !taffo.target !1035
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %377, i32* %u8_24fixp231, align 4, !taffo.info !45, !llfi_index !1569, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %378 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1570
   %379 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %378, align 8, !llfi_index !1571
   %380 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1572
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %381 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %379, i64 %380, !llfi_index !1573
   %382 = load { i32, i32, i32 }*, { i32, i32, i32 }** %381, align 8, !llfi_index !1574
   %383 = sext i32 0 to i64, !taffo.info !0, !llfi_index !1575
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %384 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %382, i64 %383, !llfi_index !1576
-  call void @doProfiling(i32 34)
   %u8_24fixp230 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %384, i32 0, i32 2, !taffo.info !609, !llfi_index !1577
   %385 = lshr i32 %u2_30fixp174, 6, !taffo.info !1269, !llfi_index !1578, !taffo.target !1035
   call void @doProfiling(i32 26)
@@ -3349,8 +2999,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 386:                                              ; preds = %491, %361
   %.18 = phi i32 [ 1, %361 ], [ %492, %491 ], !taffo.info !1344, !llfi_index !1581
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop77 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1582
   %387 = load i32, i32* %matchop77, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1583
   call void @doProfiling(i32 32)
@@ -3362,283 +3010,216 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br i1 %389, label %390, label %493, !taffo.info !45, !taffo.initweight !1118, !llfi_index !1586
 
 390:                                              ; preds = %386
-  call void @doProfiling(i32 34)
   %391 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1587
   %392 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %391, align 8, !llfi_index !1588
   %393 = sub nsw i32 %.06, 1, !taffo.info !0, !llfi_index !1589, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %394 = sext i32 %393 to i64, !taffo.info !0, !llfi_index !1590
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %395 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %392, i64 %394, !llfi_index !1591
   %396 = load { i32, i32, i32 }*, { i32, i32, i32 }** %395, align 8, !llfi_index !1592
   %397 = sub nsw i32 %.18, 1, !taffo.info !0, !llfi_index !1593, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %398 = sext i32 %397 to i64, !taffo.info !0, !llfi_index !1594
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %399 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %396, i64 %398, !llfi_index !1595
-  call void @doProfiling(i32 34)
   %u8_24fixp205 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %399, i32 0, i32 0, !taffo.info !609, !llfi_index !1596
   %u8_24fixp253 = load i32, i32* %u8_24fixp205, align 4, !taffo.info !609, !llfi_index !1597
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp124 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1598, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp173 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp124, i64 0, i64 0, !taffo.info !609, !llfi_index !1599, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp253, i32* %u8_24fixp173, align 16, !taffo.info !45, !llfi_index !1600, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %400 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1601
   %401 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %400, align 8, !llfi_index !1602
   %402 = sub nsw i32 %.06, 1, !taffo.info !0, !llfi_index !1603, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %403 = sext i32 %402 to i64, !taffo.info !0, !llfi_index !1604
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %404 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %401, i64 %403, !llfi_index !1605
   %405 = load { i32, i32, i32 }*, { i32, i32, i32 }** %404, align 8, !llfi_index !1606
   %406 = sext i32 %.18 to i64, !taffo.info !321, !llfi_index !1607
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %407 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %405, i64 %406, !llfi_index !1608
-  call void @doProfiling(i32 34)
   %u8_24fixp204 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %407, i32 0, i32 0, !taffo.info !609, !llfi_index !1609
   %u8_24fixp252 = load i32, i32* %u8_24fixp204, align 4, !taffo.info !609, !llfi_index !1610
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp123 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1611, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp172 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp123, i64 0, i64 1, !taffo.info !609, !llfi_index !1612, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp252, i32* %u8_24fixp172, align 4, !taffo.info !45, !llfi_index !1613, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %408 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1614
   %409 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %408, align 8, !llfi_index !1615
   %410 = sub nsw i32 %.06, 1, !taffo.info !0, !llfi_index !1616, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %411 = sext i32 %410 to i64, !taffo.info !0, !llfi_index !1617
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %412 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %409, i64 %411, !llfi_index !1618
   %413 = load { i32, i32, i32 }*, { i32, i32, i32 }** %412, align 8, !llfi_index !1619
   %414 = add nsw i32 %.18, 1, !taffo.info !1482, !llfi_index !1620, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %415 = sext i32 %414 to i64, !taffo.info !1482, !llfi_index !1621
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %416 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %413, i64 %415, !llfi_index !1622
-  call void @doProfiling(i32 34)
   %u8_24fixp203 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %416, i32 0, i32 0, !taffo.info !609, !llfi_index !1623
   %u8_24fixp251 = load i32, i32* %u8_24fixp203, align 4, !taffo.info !609, !llfi_index !1624
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp122 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1625, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp171 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp122, i64 0, i64 2, !taffo.info !609, !llfi_index !1626, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp251, i32* %u8_24fixp171, align 8, !taffo.info !45, !llfi_index !1627, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %417 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1628
   %418 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %417, align 8, !llfi_index !1629
   %419 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1630
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %420 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %418, i64 %419, !llfi_index !1631
   %421 = load { i32, i32, i32 }*, { i32, i32, i32 }** %420, align 8, !llfi_index !1632
   %422 = sub nsw i32 %.18, 1, !taffo.info !0, !llfi_index !1633, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %423 = sext i32 %422 to i64, !taffo.info !0, !llfi_index !1634
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %424 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %421, i64 %423, !llfi_index !1635
-  call void @doProfiling(i32 34)
   %u8_24fixp202 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %424, i32 0, i32 0, !taffo.info !609, !llfi_index !1636
   %u8_24fixp250 = load i32, i32* %u8_24fixp202, align 4, !taffo.info !609, !llfi_index !1637
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp121 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1638, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp170 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp121, i64 0, i64 0, !taffo.info !609, !llfi_index !1639, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp250, i32* %u8_24fixp170, align 4, !taffo.info !45, !llfi_index !1640, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %425 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1641
   %426 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %425, align 8, !llfi_index !1642
   %427 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1643
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %428 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %426, i64 %427, !llfi_index !1644
   %429 = load { i32, i32, i32 }*, { i32, i32, i32 }** %428, align 8, !llfi_index !1645
   %430 = sext i32 %.18 to i64, !taffo.info !321, !llfi_index !1646
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %431 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %429, i64 %430, !llfi_index !1647
-  call void @doProfiling(i32 34)
   %u8_24fixp201 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %431, i32 0, i32 0, !taffo.info !609, !llfi_index !1648
   %u8_24fixp249 = load i32, i32* %u8_24fixp201, align 4, !taffo.info !609, !llfi_index !1649
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp120 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1650, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp169 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp120, i64 0, i64 1, !taffo.info !609, !llfi_index !1651, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp249, i32* %u8_24fixp169, align 4, !taffo.info !45, !llfi_index !1652, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %432 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1653
   %433 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %432, align 8, !llfi_index !1654
   %434 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1655
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %435 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %433, i64 %434, !llfi_index !1656
   %436 = load { i32, i32, i32 }*, { i32, i32, i32 }** %435, align 8, !llfi_index !1657
   %437 = add nsw i32 %.18, 1, !taffo.info !1482, !llfi_index !1658, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %438 = sext i32 %437 to i64, !taffo.info !1482, !llfi_index !1659
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %439 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %436, i64 %438, !llfi_index !1660
-  call void @doProfiling(i32 34)
   %u8_24fixp200 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %439, i32 0, i32 0, !taffo.info !609, !llfi_index !1661
   %u8_24fixp248 = load i32, i32* %u8_24fixp200, align 4, !taffo.info !609, !llfi_index !1662
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp119 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1663, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp168 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp119, i64 0, i64 2, !taffo.info !609, !llfi_index !1664, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp248, i32* %u8_24fixp168, align 4, !taffo.info !45, !llfi_index !1665, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %440 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1666
   %441 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %440, align 8, !llfi_index !1667
   %442 = add nsw i32 %.06, 1, !taffo.info !1482, !llfi_index !1668, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %443 = sext i32 %442 to i64, !taffo.info !1482, !llfi_index !1669
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %444 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %441, i64 %443, !llfi_index !1670
   %445 = load { i32, i32, i32 }*, { i32, i32, i32 }** %444, align 8, !llfi_index !1671
   %446 = sub nsw i32 %.18, 1, !taffo.info !0, !llfi_index !1672, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %447 = sext i32 %446 to i64, !taffo.info !0, !llfi_index !1673
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %448 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %445, i64 %447, !llfi_index !1674
-  call void @doProfiling(i32 34)
   %u8_24fixp199 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %448, i32 0, i32 0, !taffo.info !609, !llfi_index !1675
   %u8_24fixp247 = load i32, i32* %u8_24fixp199, align 4, !taffo.info !609, !llfi_index !1676
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp118 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1677, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp167 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp118, i64 0, i64 0, !taffo.info !609, !llfi_index !1678, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp247, i32* %u8_24fixp167, align 8, !taffo.info !45, !llfi_index !1679, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %449 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1680
   %450 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %449, align 8, !llfi_index !1681
   %451 = add nsw i32 %.06, 1, !taffo.info !1482, !llfi_index !1682, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %452 = sext i32 %451 to i64, !taffo.info !1482, !llfi_index !1683
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %453 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %450, i64 %452, !llfi_index !1684
   %454 = load { i32, i32, i32 }*, { i32, i32, i32 }** %453, align 8, !llfi_index !1685
   %455 = sext i32 %.18 to i64, !taffo.info !321, !llfi_index !1686
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %456 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %454, i64 %455, !llfi_index !1687
-  call void @doProfiling(i32 34)
   %u8_24fixp198 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %456, i32 0, i32 0, !taffo.info !609, !llfi_index !1688
   %u8_24fixp246 = load i32, i32* %u8_24fixp198, align 4, !taffo.info !609, !llfi_index !1689
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp117 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1690, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp166 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp117, i64 0, i64 1, !taffo.info !609, !llfi_index !1691, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp246, i32* %u8_24fixp166, align 4, !taffo.info !45, !llfi_index !1692, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %457 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1693
   %458 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %457, align 8, !llfi_index !1694
   %459 = add nsw i32 %.06, 1, !taffo.info !1482, !llfi_index !1695, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %460 = sext i32 %459 to i64, !taffo.info !1482, !llfi_index !1696
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %461 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %458, i64 %460, !llfi_index !1697
   %462 = load { i32, i32, i32 }*, { i32, i32, i32 }** %461, align 8, !llfi_index !1698
   %463 = add nsw i32 %.18, 1, !taffo.info !1482, !llfi_index !1699, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %464 = sext i32 %463 to i64, !taffo.info !1482, !llfi_index !1700
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %465 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %462, i64 %464, !llfi_index !1701
-  call void @doProfiling(i32 34)
   %u8_24fixp197 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %465, i32 0, i32 0, !taffo.info !609, !llfi_index !1702
   %u8_24fixp245 = load i32, i32* %u8_24fixp197, align 4, !taffo.info !609, !llfi_index !1703
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp116 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1704, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp165 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp116, i64 0, i64 2, !taffo.info !609, !llfi_index !1705, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp245, i32* %u8_24fixp165, align 8, !taffo.info !45, !llfi_index !1706, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp115 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1707, !taffo.target !1035
   %u2_30fixp164 = invoke i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* %u8_24fixp115)
           to label %466 unwind label %216, !taffo.info !1269, !llfi_index !1708, !taffo.constinfo !99, !taffo.target !1035
 
 466:                                              ; preds = %390
-  call void @doProfiling(i32 34)
   %467 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1709
   %468 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %467, align 8, !llfi_index !1710
   %469 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1711
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %470 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %468, i64 %469, !llfi_index !1712
   %471 = load { i32, i32, i32 }*, { i32, i32, i32 }** %470, align 8, !llfi_index !1713
   %472 = sext i32 %.18 to i64, !taffo.info !321, !llfi_index !1714
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %473 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %471, i64 %472, !llfi_index !1715
-  call void @doProfiling(i32 34)
   %u8_24fixp229 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %473, i32 0, i32 0, !taffo.info !609, !llfi_index !1716
   %474 = lshr i32 %u2_30fixp164, 6, !taffo.info !1269, !llfi_index !1717, !taffo.target !1035
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %474, i32* %u8_24fixp229, align 4, !taffo.info !45, !llfi_index !1718, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %475 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1719
   %476 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %475, align 8, !llfi_index !1720
   %477 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1721
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %478 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %476, i64 %477, !llfi_index !1722
   %479 = load { i32, i32, i32 }*, { i32, i32, i32 }** %478, align 8, !llfi_index !1723
   %480 = sext i32 %.18 to i64, !taffo.info !321, !llfi_index !1724
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %481 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %479, i64 %480, !llfi_index !1725
-  call void @doProfiling(i32 34)
   %u8_24fixp228 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %481, i32 0, i32 1, !taffo.info !609, !llfi_index !1726
   %482 = lshr i32 %u2_30fixp164, 6, !taffo.info !1269, !llfi_index !1727, !taffo.target !1035
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %482, i32* %u8_24fixp228, align 4, !taffo.info !45, !llfi_index !1728, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %483 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1729
   %484 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %483, align 8, !llfi_index !1730
   %485 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1731
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %486 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %484, i64 %485, !llfi_index !1732
   %487 = load { i32, i32, i32 }*, { i32, i32, i32 }** %486, align 8, !llfi_index !1733
   %488 = sext i32 %.18 to i64, !taffo.info !321, !llfi_index !1734
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %489 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %487, i64 %488, !llfi_index !1735
-  call void @doProfiling(i32 34)
   %u8_24fixp227 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %489, i32 0, i32 2, !taffo.info !609, !llfi_index !1736
   %490 = lshr i32 %u2_30fixp164, 6, !taffo.info !1269, !llfi_index !1737, !taffo.target !1035
   call void @doProfiling(i32 26)
@@ -3652,7 +3233,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %386, !llvm.loop !1741, !llfi_index !1742
 
 493:                                              ; preds = %386
-  call void @doProfiling(i32 34)
   %matchop76 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1743
   %494 = load i32, i32* %matchop76, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1744
   call void @doProfiling(i32 32)
@@ -3675,23 +3255,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %511, !llfi_index !1751
 
 501:                                              ; preds = %497
-  call void @doProfiling(i32 34)
   %502 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1752
   %503 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %502, align 8, !llfi_index !1753
   %504 = sub nsw i32 %.06, 1, !taffo.info !0, !llfi_index !1754, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %505 = sext i32 %504 to i64, !taffo.info !0, !llfi_index !1755
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %506 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %503, i64 %505, !llfi_index !1756
   %507 = load { i32, i32, i32 }*, { i32, i32, i32 }** %506, align 8, !llfi_index !1757
   %508 = sub nsw i32 %495, 1, !taffo.info !1758, !llfi_index !1760, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %509 = sext i32 %508 to i64, !taffo.info !1758, !llfi_index !1761
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %510 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %507, i64 %509, !llfi_index !1762
-  call void @doProfiling(i32 34)
   %u8_24fixp244 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %510, i32 0, i32 0, !taffo.info !609, !llfi_index !1763
   %u8_24fixp285 = load i32, i32* %u8_24fixp244, align 4, !taffo.info !609, !llfi_index !1764
   call void @doProfiling(i32 32)
@@ -3699,10 +3275,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 511:                                              ; preds = %501, %499
   %u8_24fixp316 = phi i32 [ %500, %499 ], [ %u8_24fixp285, %501 ], !taffo.info !609, !llfi_index !1766
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp114 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1767, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp163 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp114, i64 0, i64 0, !taffo.info !609, !llfi_index !1768, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp316, i32* %u8_24fixp163, align 16, !taffo.info !45, !llfi_index !1769, !taffo.target !1035
@@ -3717,21 +3290,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %524, !llfi_index !1773
 
 515:                                              ; preds = %511
-  call void @doProfiling(i32 34)
   %516 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1774
   %517 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %516, align 8, !llfi_index !1775
   %518 = sub nsw i32 %.06, 1, !taffo.info !0, !llfi_index !1776, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %519 = sext i32 %518 to i64, !taffo.info !0, !llfi_index !1777
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %520 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %517, i64 %519, !llfi_index !1778
   %521 = load { i32, i32, i32 }*, { i32, i32, i32 }** %520, align 8, !llfi_index !1779
   %522 = sext i32 %495 to i64, !taffo.info !1079, !llfi_index !1780
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %523 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %521, i64 %522, !llfi_index !1781
-  call void @doProfiling(i32 34)
   %u8_24fixp196 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %523, i32 0, i32 0, !taffo.info !609, !llfi_index !1782
   %u8_24fixp243 = load i32, i32* %u8_24fixp196, align 4, !taffo.info !609, !llfi_index !1783
   call void @doProfiling(i32 32)
@@ -3739,14 +3308,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 524:                                              ; preds = %515, %513
   %u8_24fixp284 = phi i32 [ %514, %513 ], [ %u8_24fixp243, %515 ], !taffo.info !609, !llfi_index !1785
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp113 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1786, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp162 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp113, i64 0, i64 1, !taffo.info !609, !llfi_index !1787, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp284, i32* %u8_24fixp162, align 4, !taffo.info !45, !llfi_index !1788, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop75 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1789
   %525 = load i32, i32* %matchop75, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1790
   call void @doProfiling(i32 32)
@@ -3769,23 +3334,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %542, !llfi_index !1797
 
 532:                                              ; preds = %528
-  call void @doProfiling(i32 34)
   %533 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1798
   %534 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %533, align 8, !llfi_index !1799
   %535 = sub nsw i32 %.06, 1, !taffo.info !0, !llfi_index !1800, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %536 = sext i32 %535 to i64, !taffo.info !0, !llfi_index !1801
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %537 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %534, i64 %536, !llfi_index !1802
   %538 = load { i32, i32, i32 }*, { i32, i32, i32 }** %537, align 8, !llfi_index !1803
   %539 = add nsw i32 %495, 1, !taffo.info !0, !llfi_index !1804, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %540 = sext i32 %539 to i64, !taffo.info !0, !llfi_index !1805
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %541 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %538, i64 %540, !llfi_index !1806
-  call void @doProfiling(i32 34)
   %u8_24fixp242 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %541, i32 0, i32 0, !taffo.info !609, !llfi_index !1807
   %u8_24fixp283 = load i32, i32* %u8_24fixp242, align 4, !taffo.info !609, !llfi_index !1808
   call void @doProfiling(i32 32)
@@ -3793,10 +3354,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 542:                                              ; preds = %532, %530
   %u8_24fixp315 = phi i32 [ %531, %530 ], [ %u8_24fixp283, %532 ], !taffo.info !609, !llfi_index !1810
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp112 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1811, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp161 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp112, i64 0, i64 2, !taffo.info !609, !llfi_index !1812, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp315, i32* %u8_24fixp161, align 8, !taffo.info !45, !llfi_index !1813, !taffo.target !1035
@@ -3811,21 +3369,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %555, !llfi_index !1817
 
 546:                                              ; preds = %542
-  call void @doProfiling(i32 34)
   %547 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1818
   %548 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %547, align 8, !llfi_index !1819
   %549 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1820
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %550 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %548, i64 %549, !llfi_index !1821
   %551 = load { i32, i32, i32 }*, { i32, i32, i32 }** %550, align 8, !llfi_index !1822
   %552 = sub nsw i32 %495, 1, !taffo.info !1758, !llfi_index !1823, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %553 = sext i32 %552 to i64, !taffo.info !1758, !llfi_index !1824
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %554 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %551, i64 %553, !llfi_index !1825
-  call void @doProfiling(i32 34)
   %u8_24fixp241 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %554, i32 0, i32 0, !taffo.info !609, !llfi_index !1826
   %u8_24fixp282 = load i32, i32* %u8_24fixp241, align 4, !taffo.info !609, !llfi_index !1827
   call void @doProfiling(i32 32)
@@ -3833,36 +3387,26 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 555:                                              ; preds = %546, %544
   %u8_24fixp314 = phi i32 [ %545, %544 ], [ %u8_24fixp282, %546 ], !taffo.info !609, !llfi_index !1829
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp111 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1830, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp160 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp111, i64 0, i64 0, !taffo.info !609, !llfi_index !1831, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp314, i32* %u8_24fixp160, align 4, !taffo.info !45, !llfi_index !1832, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %556 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1833
   %557 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %556, align 8, !llfi_index !1834
   %558 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1835
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %559 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %557, i64 %558, !llfi_index !1836
   %560 = load { i32, i32, i32 }*, { i32, i32, i32 }** %559, align 8, !llfi_index !1837
   %561 = sext i32 %495 to i64, !taffo.info !1079, !llfi_index !1838
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %562 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %560, i64 %561, !llfi_index !1839
-  call void @doProfiling(i32 34)
   %u8_24fixp195 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %562, i32 0, i32 0, !taffo.info !609, !llfi_index !1840
   %u8_24fixp240 = load i32, i32* %u8_24fixp195, align 4, !taffo.info !609, !llfi_index !1841
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp110 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1842, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp159 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp110, i64 0, i64 1, !taffo.info !609, !llfi_index !1843, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp240, i32* %u8_24fixp159, align 4, !taffo.info !45, !llfi_index !1844, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop74 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1845
   %563 = load i32, i32* %matchop74, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1846
   call void @doProfiling(i32 32)
@@ -3879,21 +3423,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %577, !llfi_index !1851
 
 568:                                              ; preds = %555
-  call void @doProfiling(i32 34)
   %569 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1852
   %570 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %569, align 8, !llfi_index !1853
   %571 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1854
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %572 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %570, i64 %571, !llfi_index !1855
   %573 = load { i32, i32, i32 }*, { i32, i32, i32 }** %572, align 8, !llfi_index !1856
   %574 = add nsw i32 %495, 1, !taffo.info !0, !llfi_index !1857, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %575 = sext i32 %574 to i64, !taffo.info !0, !llfi_index !1858
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %576 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %573, i64 %575, !llfi_index !1859
-  call void @doProfiling(i32 34)
   %u8_24fixp239 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %576, i32 0, i32 0, !taffo.info !609, !llfi_index !1860
   %u8_24fixp281 = load i32, i32* %u8_24fixp239, align 4, !taffo.info !609, !llfi_index !1861
   call void @doProfiling(i32 32)
@@ -3901,10 +3441,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 577:                                              ; preds = %568, %566
   %u8_24fixp313 = phi i32 [ %567, %566 ], [ %u8_24fixp281, %568 ], !taffo.info !609, !llfi_index !1863
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp109 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !1864, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp158 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp109, i64 0, i64 2, !taffo.info !609, !llfi_index !1865, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp313, i32* %u8_24fixp158, align 4, !taffo.info !45, !llfi_index !1866, !taffo.target !1035
@@ -3914,7 +3451,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br i1 %578, label %583, label %579, !llfi_index !1868
 
 579:                                              ; preds = %577
-  call void @doProfiling(i32 34)
   %matchop73 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !1869
   %580 = load i32, i32* %matchop73, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1870
   call void @doProfiling(i32 32)
@@ -3931,23 +3467,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %595, !llfi_index !1875
 
 585:                                              ; preds = %579
-  call void @doProfiling(i32 34)
   %586 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1876
   %587 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %586, align 8, !llfi_index !1877
   %588 = add nsw i32 %.06, 1, !taffo.info !1482, !llfi_index !1878, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %589 = sext i32 %588 to i64, !taffo.info !1482, !llfi_index !1879
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %590 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %587, i64 %589, !llfi_index !1880
   %591 = load { i32, i32, i32 }*, { i32, i32, i32 }** %590, align 8, !llfi_index !1881
   %592 = sub nsw i32 %495, 1, !taffo.info !1758, !llfi_index !1882, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %593 = sext i32 %592 to i64, !taffo.info !1758, !llfi_index !1883
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %594 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %591, i64 %593, !llfi_index !1884
-  call void @doProfiling(i32 34)
   %u8_24fixp238 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %594, i32 0, i32 0, !taffo.info !609, !llfi_index !1885
   %u8_24fixp280 = load i32, i32* %u8_24fixp238, align 4, !taffo.info !609, !llfi_index !1886
   call void @doProfiling(i32 32)
@@ -3955,14 +3487,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 595:                                              ; preds = %585, %583
   %u8_24fixp312 = phi i32 [ %584, %583 ], [ %u8_24fixp280, %585 ], !taffo.info !609, !llfi_index !1888
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp108 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1889, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp157 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp108, i64 0, i64 0, !taffo.info !609, !llfi_index !1890, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp312, i32* %u8_24fixp157, align 8, !taffo.info !45, !llfi_index !1891, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop72 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !1892
   %596 = load i32, i32* %matchop72, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1893
   call void @doProfiling(i32 32)
@@ -3979,21 +3507,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %610, !llfi_index !1898
 
 601:                                              ; preds = %595
-  call void @doProfiling(i32 34)
   %602 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1899
   %603 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %602, align 8, !llfi_index !1900
   %604 = add nsw i32 %.06, 1, !taffo.info !1482, !llfi_index !1901, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %605 = sext i32 %604 to i64, !taffo.info !1482, !llfi_index !1902
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %606 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %603, i64 %605, !llfi_index !1903
   %607 = load { i32, i32, i32 }*, { i32, i32, i32 }** %606, align 8, !llfi_index !1904
   %608 = sext i32 %495 to i64, !taffo.info !1079, !llfi_index !1905
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %609 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %607, i64 %608, !llfi_index !1906
-  call void @doProfiling(i32 34)
   %u8_24fixp194 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %609, i32 0, i32 0, !taffo.info !609, !llfi_index !1907
   %u8_24fixp237 = load i32, i32* %u8_24fixp194, align 4, !taffo.info !609, !llfi_index !1908
   call void @doProfiling(i32 32)
@@ -4001,14 +3525,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 610:                                              ; preds = %601, %599
   %u8_24fixp279 = phi i32 [ %600, %599 ], [ %u8_24fixp237, %601 ], !taffo.info !609, !llfi_index !1910
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp107 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1911, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp156 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp107, i64 0, i64 1, !taffo.info !609, !llfi_index !1912, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp279, i32* %u8_24fixp156, align 4, !taffo.info !45, !llfi_index !1913, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop71 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1914
   %611 = load i32, i32* %matchop71, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1915
   call void @doProfiling(i32 32)
@@ -4020,7 +3540,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br i1 %613, label %618, label %614, !taffo.info !45, !taffo.initweight !1118, !llfi_index !1918
 
 614:                                              ; preds = %610
-  call void @doProfiling(i32 34)
   %matchop70 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !1919
   %615 = load i32, i32* %matchop70, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1920
   call void @doProfiling(i32 32)
@@ -4037,23 +3556,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %630, !llfi_index !1925
 
 620:                                              ; preds = %614
-  call void @doProfiling(i32 34)
   %621 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1926
   %622 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %621, align 8, !llfi_index !1927
   %623 = add nsw i32 %.06, 1, !taffo.info !1482, !llfi_index !1928, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %624 = sext i32 %623 to i64, !taffo.info !1482, !llfi_index !1929
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %625 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %622, i64 %624, !llfi_index !1930
   %626 = load { i32, i32, i32 }*, { i32, i32, i32 }** %625, align 8, !llfi_index !1931
   %627 = add nsw i32 %495, 1, !taffo.info !0, !llfi_index !1932, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %628 = sext i32 %627 to i64, !taffo.info !0, !llfi_index !1933
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %629 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %626, i64 %628, !llfi_index !1934
-  call void @doProfiling(i32 34)
   %u8_24fixp236 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %629, i32 0, i32 0, !taffo.info !609, !llfi_index !1935
   %u8_24fixp278 = load i32, i32* %u8_24fixp236, align 4, !taffo.info !609, !llfi_index !1936
   call void @doProfiling(i32 32)
@@ -4061,68 +3576,52 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 630:                                              ; preds = %620, %618
   %u8_24fixp311 = phi i32 [ %619, %618 ], [ %u8_24fixp278, %620 ], !taffo.info !609, !llfi_index !1938
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp106 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !1939, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp155 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp106, i64 0, i64 2, !taffo.info !609, !llfi_index !1940, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp311, i32* %u8_24fixp155, align 8, !taffo.info !45, !llfi_index !1941, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp105 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !1942, !taffo.target !1035
   %u2_30fixp154 = invoke i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* %u8_24fixp105)
           to label %631 unwind label %216, !taffo.info !1269, !llfi_index !1943, !taffo.constinfo !99, !taffo.target !1035
 
 631:                                              ; preds = %630
-  call void @doProfiling(i32 34)
   %632 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1944
   %633 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %632, align 8, !llfi_index !1945
   %634 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1946
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %635 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %633, i64 %634, !llfi_index !1947
   %636 = load { i32, i32, i32 }*, { i32, i32, i32 }** %635, align 8, !llfi_index !1948
   %637 = sext i32 %495 to i64, !taffo.info !1079, !llfi_index !1949
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %638 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %636, i64 %637, !llfi_index !1950
-  call void @doProfiling(i32 34)
   %u8_24fixp226 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %638, i32 0, i32 0, !taffo.info !609, !llfi_index !1951
   %639 = lshr i32 %u2_30fixp154, 6, !taffo.info !1269, !llfi_index !1952, !taffo.target !1035
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %639, i32* %u8_24fixp226, align 4, !taffo.info !45, !llfi_index !1953, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %640 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1954
   %641 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %640, align 8, !llfi_index !1955
   %642 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1956
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %643 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %641, i64 %642, !llfi_index !1957
   %644 = load { i32, i32, i32 }*, { i32, i32, i32 }** %643, align 8, !llfi_index !1958
   %645 = sext i32 %495 to i64, !taffo.info !1079, !llfi_index !1959
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %646 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %644, i64 %645, !llfi_index !1960
-  call void @doProfiling(i32 34)
   %u8_24fixp225 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %646, i32 0, i32 1, !taffo.info !609, !llfi_index !1961
   %647 = lshr i32 %u2_30fixp154, 6, !taffo.info !1269, !llfi_index !1962, !taffo.target !1035
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %647, i32* %u8_24fixp225, align 4, !taffo.info !45, !llfi_index !1963, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %648 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !1964
   %649 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %648, align 8, !llfi_index !1965
   %650 = sext i32 %.06 to i64, !taffo.info !321, !llfi_index !1966
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %651 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %649, i64 %650, !llfi_index !1967
   %652 = load { i32, i32, i32 }*, { i32, i32, i32 }** %651, align 8, !llfi_index !1968
   %653 = sext i32 %495 to i64, !taffo.info !1079, !llfi_index !1969
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %654 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %652, i64 %653, !llfi_index !1970
-  call void @doProfiling(i32 34)
   %u8_24fixp224 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %654, i32 0, i32 2, !taffo.info !609, !llfi_index !1971
   %655 = lshr i32 %u2_30fixp154, 6, !taffo.info !1269, !llfi_index !1972, !taffo.target !1035
   call void @doProfiling(i32 26)
@@ -4136,7 +3635,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %221, !llvm.loop !1976, !llfi_index !1977
 
 658:                                              ; preds = %221
-  call void @doProfiling(i32 34)
   %matchop69 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !1978
   %659 = load i32, i32* %matchop69, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1979
   call void @doProfiling(i32 32)
@@ -4146,8 +3644,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 661:                                              ; preds = %825, %658
   %.29 = phi i32 [ 0, %658 ], [ %826, %825 ], !taffo.info !181, !llfi_index !1982
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop68 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !1983
   %662 = load i32, i32* %matchop68, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !1984
   call void @doProfiling(i32 32)
@@ -4174,23 +3670,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %680, !llfi_index !1992
 
 670:                                              ; preds = %666
-  call void @doProfiling(i32 34)
   %671 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !1993
   %672 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %671, align 8, !llfi_index !1994
   %673 = sub nsw i32 %660, 1, !taffo.info !1758, !llfi_index !1995, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %674 = sext i32 %673 to i64, !taffo.info !1758, !llfi_index !1996
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %675 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %672, i64 %674, !llfi_index !1997
   %676 = load { i32, i32, i32 }*, { i32, i32, i32 }** %675, align 8, !llfi_index !1998
   %677 = sub nsw i32 %.29, 1, !taffo.info !1079, !llfi_index !1999, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %678 = sext i32 %677 to i64, !taffo.info !1079, !llfi_index !2000
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %679 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %676, i64 %678, !llfi_index !2001
-  call void @doProfiling(i32 34)
   %u8_24fixp310 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %679, i32 0, i32 0, !taffo.info !609, !llfi_index !2002
   %u8_24fixp324 = load i32, i32* %u8_24fixp310, align 4, !taffo.info !609, !llfi_index !2003
   call void @doProfiling(i32 32)
@@ -4198,10 +3690,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 680:                                              ; preds = %670, %668
   %u8_24fixp330 = phi i32 [ %669, %668 ], [ %u8_24fixp324, %670 ], !taffo.info !609, !llfi_index !2005
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp104 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !2006, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp153 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp104, i64 0, i64 0, !taffo.info !609, !llfi_index !2007, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp330, i32* %u8_24fixp153, align 16, !taffo.info !45, !llfi_index !2008, !taffo.target !1035
@@ -4216,21 +3705,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %693, !llfi_index !2012
 
 684:                                              ; preds = %680
-  call void @doProfiling(i32 34)
   %685 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2013
   %686 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %685, align 8, !llfi_index !2014
   %687 = sub nsw i32 %660, 1, !taffo.info !1758, !llfi_index !2015, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %688 = sext i32 %687 to i64, !taffo.info !1758, !llfi_index !2016
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %689 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %686, i64 %688, !llfi_index !2017
   %690 = load { i32, i32, i32 }*, { i32, i32, i32 }** %689, align 8, !llfi_index !2018
   %691 = sext i32 %.29 to i64, !taffo.info !0, !llfi_index !2019
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %692 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %690, i64 %691, !llfi_index !2020
-  call void @doProfiling(i32 34)
   %u8_24fixp309 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %692, i32 0, i32 0, !taffo.info !609, !llfi_index !2021
   %u8_24fixp323 = load i32, i32* %u8_24fixp309, align 4, !taffo.info !609, !llfi_index !2022
   call void @doProfiling(i32 32)
@@ -4238,14 +3723,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 693:                                              ; preds = %684, %682
   %u8_24fixp329 = phi i32 [ %683, %682 ], [ %u8_24fixp323, %684 ], !taffo.info !609, !llfi_index !2024
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp103 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !2025, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp152 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp103, i64 0, i64 1, !taffo.info !609, !llfi_index !2026, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp329, i32* %u8_24fixp152, align 4, !taffo.info !45, !llfi_index !2027, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop67 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !2028
   %694 = load i32, i32* %matchop67, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !2029
   call void @doProfiling(i32 32)
@@ -4268,23 +3749,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %711, !llfi_index !2036
 
 701:                                              ; preds = %697
-  call void @doProfiling(i32 34)
   %702 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2037
   %703 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %702, align 8, !llfi_index !2038
   %704 = sub nsw i32 %660, 1, !taffo.info !1758, !llfi_index !2039, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %705 = sext i32 %704 to i64, !taffo.info !1758, !llfi_index !2040
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %706 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %703, i64 %705, !llfi_index !2041
   %707 = load { i32, i32, i32 }*, { i32, i32, i32 }** %706, align 8, !llfi_index !2042
   %708 = add nsw i32 %.29, 1, !taffo.info !321, !llfi_index !2043, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %709 = sext i32 %708 to i64, !taffo.info !321, !llfi_index !2044
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %710 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %707, i64 %709, !llfi_index !2045
-  call void @doProfiling(i32 34)
   %u8_24fixp308 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %710, i32 0, i32 0, !taffo.info !609, !llfi_index !2046
   %u8_24fixp322 = load i32, i32* %u8_24fixp308, align 4, !taffo.info !609, !llfi_index !2047
   call void @doProfiling(i32 32)
@@ -4292,10 +3769,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 711:                                              ; preds = %701, %699
   %u8_24fixp328 = phi i32 [ %700, %699 ], [ %u8_24fixp322, %701 ], !taffo.info !609, !llfi_index !2049
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp102 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !2050, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp151 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp102, i64 0, i64 2, !taffo.info !609, !llfi_index !2051, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp328, i32* %u8_24fixp151, align 8, !taffo.info !45, !llfi_index !2052, !taffo.target !1035
@@ -4310,21 +3784,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %724, !llfi_index !2056
 
 715:                                              ; preds = %711
-  call void @doProfiling(i32 34)
   %716 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2057
   %717 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %716, align 8, !llfi_index !2058
   %718 = sext i32 %660 to i64, !taffo.info !1079, !llfi_index !2059
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %719 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %717, i64 %718, !llfi_index !2060
   %720 = load { i32, i32, i32 }*, { i32, i32, i32 }** %719, align 8, !llfi_index !2061
   %721 = sub nsw i32 %.29, 1, !taffo.info !1079, !llfi_index !2062, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %722 = sext i32 %721 to i64, !taffo.info !1079, !llfi_index !2063
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %723 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %720, i64 %722, !llfi_index !2064
-  call void @doProfiling(i32 34)
   %u8_24fixp277 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %723, i32 0, i32 0, !taffo.info !609, !llfi_index !2065
   %u8_24fixp307 = load i32, i32* %u8_24fixp277, align 4, !taffo.info !609, !llfi_index !2066
   call void @doProfiling(i32 32)
@@ -4332,36 +3802,26 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 724:                                              ; preds = %715, %713
   %u8_24fixp321 = phi i32 [ %714, %713 ], [ %u8_24fixp307, %715 ], !taffo.info !609, !llfi_index !2068
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp101 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !2069, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp150 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp101, i64 0, i64 0, !taffo.info !609, !llfi_index !2070, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp321, i32* %u8_24fixp150, align 4, !taffo.info !45, !llfi_index !2071, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %725 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2072
   %726 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %725, align 8, !llfi_index !2073
   %727 = sext i32 %660 to i64, !taffo.info !1079, !llfi_index !2074
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %728 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %726, i64 %727, !llfi_index !2075
   %729 = load { i32, i32, i32 }*, { i32, i32, i32 }** %728, align 8, !llfi_index !2076
   %730 = sext i32 %.29 to i64, !taffo.info !0, !llfi_index !2077
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %731 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %729, i64 %730, !llfi_index !2078
-  call void @doProfiling(i32 34)
   %u8_24fixp276 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %731, i32 0, i32 0, !taffo.info !609, !llfi_index !2079
   %u8_24fixp306 = load i32, i32* %u8_24fixp276, align 4, !taffo.info !609, !llfi_index !2080
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u8_24fixp100 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !2081, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp149 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp100, i64 0, i64 1, !taffo.info !609, !llfi_index !2082, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp306, i32* %u8_24fixp149, align 4, !taffo.info !45, !llfi_index !2083, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop66 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !2084
   %732 = load i32, i32* %matchop66, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !2085
   call void @doProfiling(i32 32)
@@ -4378,21 +3838,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %746, !llfi_index !2090
 
 737:                                              ; preds = %724
-  call void @doProfiling(i32 34)
   %738 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2091
   %739 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %738, align 8, !llfi_index !2092
   %740 = sext i32 %660 to i64, !taffo.info !1079, !llfi_index !2093
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %741 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %739, i64 %740, !llfi_index !2094
   %742 = load { i32, i32, i32 }*, { i32, i32, i32 }** %741, align 8, !llfi_index !2095
   %743 = add nsw i32 %.29, 1, !taffo.info !321, !llfi_index !2096, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %744 = sext i32 %743 to i64, !taffo.info !321, !llfi_index !2097
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %745 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %742, i64 %744, !llfi_index !2098
-  call void @doProfiling(i32 34)
   %u8_24fixp275 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %745, i32 0, i32 0, !taffo.info !609, !llfi_index !2099
   %u8_24fixp305 = load i32, i32* %u8_24fixp275, align 4, !taffo.info !609, !llfi_index !2100
   call void @doProfiling(i32 32)
@@ -4400,10 +3856,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 746:                                              ; preds = %737, %735
   %u8_24fixp320 = phi i32 [ %736, %735 ], [ %u8_24fixp305, %737 ], !taffo.info !609, !llfi_index !2102
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp99 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 1, !taffo.info !609, !llfi_index !2103, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp148 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp99, i64 0, i64 2, !taffo.info !609, !llfi_index !2104, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp320, i32* %u8_24fixp148, align 4, !taffo.info !45, !llfi_index !2105, !taffo.target !1035
@@ -4413,7 +3866,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br i1 %747, label %752, label %748, !llfi_index !2107
 
 748:                                              ; preds = %746
-  call void @doProfiling(i32 34)
   %matchop65 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !2108
   %749 = load i32, i32* %matchop65, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !2109
   call void @doProfiling(i32 32)
@@ -4430,23 +3882,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %764, !llfi_index !2114
 
 754:                                              ; preds = %748
-  call void @doProfiling(i32 34)
   %755 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2115
   %756 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %755, align 8, !llfi_index !2116
   %757 = add nsw i32 %660, 1, !taffo.info !0, !llfi_index !2117, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %758 = sext i32 %757 to i64, !taffo.info !0, !llfi_index !2118
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %759 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %756, i64 %758, !llfi_index !2119
   %760 = load { i32, i32, i32 }*, { i32, i32, i32 }** %759, align 8, !llfi_index !2120
   %761 = sub nsw i32 %.29, 1, !taffo.info !1079, !llfi_index !2121, !taffo.constinfo !65
   call void @doProfiling(i32 15)
   %762 = sext i32 %761 to i64, !taffo.info !1079, !llfi_index !2122
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %763 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %760, i64 %762, !llfi_index !2123
-  call void @doProfiling(i32 34)
   %u8_24fixp304 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %763, i32 0, i32 0, !taffo.info !609, !llfi_index !2124
   %u8_24fixp319 = load i32, i32* %u8_24fixp304, align 4, !taffo.info !609, !llfi_index !2125
   call void @doProfiling(i32 32)
@@ -4454,14 +3902,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 764:                                              ; preds = %754, %752
   %u8_24fixp327 = phi i32 [ %753, %752 ], [ %u8_24fixp319, %754 ], !taffo.info !609, !llfi_index !2127
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp98 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !2128, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp147 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp98, i64 0, i64 0, !taffo.info !609, !llfi_index !2129, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp327, i32* %u8_24fixp147, align 8, !taffo.info !45, !llfi_index !2130, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop64 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !2131
   %765 = load i32, i32* %matchop64, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !2132
   call void @doProfiling(i32 32)
@@ -4478,21 +3922,17 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %779, !llfi_index !2137
 
 770:                                              ; preds = %764
-  call void @doProfiling(i32 34)
   %771 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2138
   %772 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %771, align 8, !llfi_index !2139
   %773 = add nsw i32 %660, 1, !taffo.info !0, !llfi_index !2140, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %774 = sext i32 %773 to i64, !taffo.info !0, !llfi_index !2141
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %775 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %772, i64 %774, !llfi_index !2142
   %776 = load { i32, i32, i32 }*, { i32, i32, i32 }** %775, align 8, !llfi_index !2143
   %777 = sext i32 %.29 to i64, !taffo.info !0, !llfi_index !2144
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %778 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %776, i64 %777, !llfi_index !2145
-  call void @doProfiling(i32 34)
   %u8_24fixp303 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %778, i32 0, i32 0, !taffo.info !609, !llfi_index !2146
   %u8_24fixp318 = load i32, i32* %u8_24fixp303, align 4, !taffo.info !609, !llfi_index !2147
   call void @doProfiling(i32 32)
@@ -4500,14 +3940,10 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 779:                                              ; preds = %770, %768
   %u8_24fixp326 = phi i32 [ %769, %768 ], [ %u8_24fixp318, %770 ], !taffo.info !609, !llfi_index !2149
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp97 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !2150, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp146 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp97, i64 0, i64 1, !taffo.info !609, !llfi_index !2151, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp326, i32* %u8_24fixp146, align 4, !taffo.info !45, !llfi_index !2152, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %matchop63 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 0, !taffo.info !1051, !llfi_index !2153
   %780 = load i32, i32* %matchop63, align 8, !taffo.info !1051, !taffo.initweight !49, !llfi_index !2154
   call void @doProfiling(i32 32)
@@ -4519,7 +3955,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br i1 %782, label %787, label %783, !taffo.info !45, !taffo.initweight !1118, !llfi_index !2157
 
 783:                                              ; preds = %779
-  call void @doProfiling(i32 34)
   %matchop = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 1, !taffo.info !1051, !llfi_index !2158
   %784 = load i32, i32* %matchop, align 4, !taffo.info !1051, !taffo.initweight !49, !llfi_index !2159
   call void @doProfiling(i32 32)
@@ -4536,23 +3971,19 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   br label %799, !llfi_index !2164
 
 789:                                              ; preds = %783
-  call void @doProfiling(i32 34)
   %790 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3, i32 0, i32 2, !llfi_index !2165
   %791 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %790, align 8, !llfi_index !2166
   %792 = add nsw i32 %660, 1, !taffo.info !0, !llfi_index !2167, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %793 = sext i32 %792 to i64, !taffo.info !0, !llfi_index !2168
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %794 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %791, i64 %793, !llfi_index !2169
   %795 = load { i32, i32, i32 }*, { i32, i32, i32 }** %794, align 8, !llfi_index !2170
   %796 = add nsw i32 %.29, 1, !taffo.info !321, !llfi_index !2171, !taffo.constinfo !65
   call void @doProfiling(i32 13)
   %797 = sext i32 %796 to i64, !taffo.info !321, !llfi_index !2172
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %798 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %795, i64 %797, !llfi_index !2173
-  call void @doProfiling(i32 34)
   %u8_24fixp302 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %798, i32 0, i32 0, !taffo.info !609, !llfi_index !2174
   %u8_24fixp317 = load i32, i32* %u8_24fixp302, align 4, !taffo.info !609, !llfi_index !2175
   call void @doProfiling(i32 32)
@@ -4560,68 +3991,52 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 
 799:                                              ; preds = %789, %787
   %u8_24fixp325 = phi i32 [ %788, %787 ], [ %u8_24fixp317, %789 ], !taffo.info !609, !llfi_index !2177
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %u8_24fixp96 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 2, !taffo.info !609, !llfi_index !2178, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp145 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp96, i64 0, i64 2, !taffo.info !609, !llfi_index !2179, !taffo.target !1035
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp325, i32* %u8_24fixp145, align 8, !taffo.info !45, !llfi_index !2180, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %u8_24fixp95 = getelementptr inbounds [3 x [3 x i32]], [3 x [3 x i32]]* %u8_24fixp, i64 0, i64 0, !taffo.info !609, !llfi_index !2181, !taffo.target !1035
   %u2_30fixp = invoke i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* %u8_24fixp95)
           to label %800 unwind label %216, !taffo.info !1269, !llfi_index !2182, !taffo.constinfo !99, !taffo.target !1035
 
 800:                                              ; preds = %799
-  call void @doProfiling(i32 34)
   %801 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !2183
   %802 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %801, align 8, !llfi_index !2184
   %803 = sext i32 %660 to i64, !taffo.info !1079, !llfi_index !2185
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %804 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %802, i64 %803, !llfi_index !2186
   %805 = load { i32, i32, i32 }*, { i32, i32, i32 }** %804, align 8, !llfi_index !2187
   %806 = sext i32 %.29 to i64, !taffo.info !0, !llfi_index !2188
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %807 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %805, i64 %806, !llfi_index !2189
-  call void @doProfiling(i32 34)
   %u8_24fixp274 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %807, i32 0, i32 0, !taffo.info !609, !llfi_index !2190
   %808 = lshr i32 %u2_30fixp, 6, !taffo.info !1269, !llfi_index !2191, !taffo.target !1035
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %808, i32* %u8_24fixp274, align 4, !taffo.info !45, !llfi_index !2192, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %809 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !2193
   %810 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %809, align 8, !llfi_index !2194
   %811 = sext i32 %660 to i64, !taffo.info !1079, !llfi_index !2195
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %812 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %810, i64 %811, !llfi_index !2196
   %813 = load { i32, i32, i32 }*, { i32, i32, i32 }** %812, align 8, !llfi_index !2197
   %814 = sext i32 %.29 to i64, !taffo.info !0, !llfi_index !2198
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %815 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %813, i64 %814, !llfi_index !2199
-  call void @doProfiling(i32 34)
   %u8_24fixp273 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %815, i32 0, i32 1, !taffo.info !609, !llfi_index !2200
   %816 = lshr i32 %u2_30fixp, 6, !taffo.info !1269, !llfi_index !2201, !taffo.target !1035
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %816, i32* %u8_24fixp273, align 4, !taffo.info !45, !llfi_index !2202, !taffo.target !1035
-  call void @doProfiling(i32 34)
   %817 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4, i32 0, i32 2, !llfi_index !2203
   %818 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %817, align 8, !llfi_index !2204
   %819 = sext i32 %660 to i64, !taffo.info !1079, !llfi_index !2205
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %820 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %818, i64 %819, !llfi_index !2206
   %821 = load { i32, i32, i32 }*, { i32, i32, i32 }** %820, align 8, !llfi_index !2207
   %822 = sext i32 %.29 to i64, !taffo.info !0, !llfi_index !2208
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %823 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %821, i64 %822, !llfi_index !2209
-  call void @doProfiling(i32 34)
   %u8_24fixp272 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %823, i32 0, i32 2, !taffo.info !609, !llfi_index !2210
   %824 = lshr i32 %u2_30fixp, 6, !taffo.info !1269, !llfi_index !2211, !taffo.target !1035
   call void @doProfiling(i32 26)
@@ -4660,7 +4075,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
           to label %839 unwind label %216, !llfi_index !2226, !taffo.constinfo !280
 
 839:                                              ; preds = %837
-  call void @doProfiling(i32 34)
   %840 = getelementptr inbounds i8*, i8** %1, i64 2, !llfi_index !2227
   %841 = load i8*, i8** %840, align 8, !llfi_index !2228
   invoke void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %10, i8* noundef %841, %"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %11)
@@ -4679,6 +4093,7 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %845) #15, !llfi_index !2236, !taffo.constinfo !65
   call void @_ZN5ImageD2Ev.5_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4), !taffo.info !45, !llfi_index !2237, !taffo.constinfo !65
   call void @_ZN5ImageD2Ev.2_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3), !taffo.info !45, !llfi_index !2238, !taffo.constinfo !65
+  call void @doProfiling(i32 1)
   call void @endProfiling()
   ret i32 0, !llfi_index !2239
 
@@ -4704,7 +4119,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 854:                                              ; preds = %850, %846
   %.23 = phi i8* [ %852, %850 ], [ %848, %846 ], !llfi_index !2249
   %.2 = phi i32 [ %853, %850 ], [ %849, %846 ], !llfi_index !2250
-  call void @doProfiling(i32 55)
   %855 = bitcast %"class.std::__new_allocator.1"* %11 to %"class.std::__new_allocator.1"*, !llfi_index !2251
   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator.1"* noundef nonnull align 1 dereferenceable(1) %855) #15, !llfi_index !2252, !taffo.constinfo !65
   br label %856, !llfi_index !2253
@@ -4712,14 +4126,12 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #12 personal
 856:                                              ; preds = %854, %216, %214, %204
   %.34 = phi i8* [ %218, %216 ], [ %.23, %854 ], [ %.12, %214 ], [ %.01, %204 ], !llfi_index !2254
   %.3 = phi i32 [ %219, %216 ], [ %.2, %854 ], [ %.1, %214 ], [ %.0, %204 ], !llfi_index !2255
-  call void @doProfiling(i32 55)
   call void @_ZN5ImageD2Ev.4_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %4), !taffo.info !45, !llfi_index !2256, !taffo.constinfo !65
   br label %857, !llfi_index !2257
 
 857:                                              ; preds = %856, %192
   %.45 = phi i8* [ %.34, %856 ], [ %194, %192 ], !llfi_index !2258
   %.4 = phi i32 [ %.3, %856 ], [ %195, %192 ], !llfi_index !2259
-  call void @doProfiling(i32 55)
   call void @_ZN5ImageD2Ev.1_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %3), !taffo.info !45, !llfi_index !2260, !taffo.constinfo !65
   br label %858, !llfi_index !2261
 
@@ -4755,15 +4167,11 @@ define linkonce_odr dso_local noundef i64 @_ZN12AxBenchTimer20nanosecondsSinceIn
   %2 = alloca %struct.timespec, align 8, !taffo.structinfo !16, !llfi_index !2268
   %3 = call i32 @clock_gettime(i32 noundef 4, %struct.timespec* noundef %2) #15, !llfi_index !2269, !taffo.constinfo !95
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %4 = getelementptr inbounds %class.AxBenchTimer, %class.AxBenchTimer* %0, i32 0, i32 0, !llfi_index !2270
-  call void @doProfiling(i32 34)
   %5 = getelementptr inbounds %struct.timespec, %struct.timespec* %4, i32 0, i32 1, !llfi_index !2271
   %6 = load i64, i64* %5, align 8, !llfi_index !2272
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %7 = getelementptr inbounds %class.AxBenchTimer, %class.AxBenchTimer* %0, i32 0, i32 0, !llfi_index !2273
-  call void @doProfiling(i32 34)
   %8 = getelementptr inbounds %struct.timespec, %struct.timespec* %7, i32 0, i32 0, !llfi_index !2274
   %9 = load i64, i64* %8, align 8, !llfi_index !2275
   call void @doProfiling(i32 32)
@@ -4771,11 +4179,9 @@ define linkonce_odr dso_local noundef i64 @_ZN12AxBenchTimer20nanosecondsSinceIn
   call void @doProfiling(i32 17)
   %11 = add nsw i64 %6, %10, !llfi_index !2277
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %12 = getelementptr inbounds %struct.timespec, %struct.timespec* %2, i32 0, i32 1, !llfi_index !2278
   %13 = load i64, i64* %12, align 8, !llfi_index !2279
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %14 = getelementptr inbounds %struct.timespec, %struct.timespec* %2, i32 0, i32 0, !llfi_index !2280
   %15 = load i64, i64* %14, align 8, !llfi_index !2281
   call void @doProfiling(i32 32)
@@ -4785,6 +4191,7 @@ define linkonce_odr dso_local noundef i64 @_ZN12AxBenchTimer20nanosecondsSinceIn
   call void @doProfiling(i32 13)
   %18 = sub i64 %17, %11, !llfi_index !2284
   call void @doProfiling(i32 15)
+  call void @doProfiling(i32 1)
   ret i64 %18, !llfi_index !2285
 }
 
@@ -4798,7 +4205,6 @@ declare !taffo.initweight !27 !taffo.funinfo !29 i32 @clock_gettime(i32 noundef,
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
 define linkonce_odr dso_local void @_ZN12AxBenchTimer5resetEv(%class.AxBenchTimer* noundef nonnull align 8 dereferenceable(16) %0) #0 comdat align 2 !taffo.initweight !75 !taffo.funinfo !353 {
-  call void @doProfiling(i32 34)
   %2 = getelementptr inbounds %class.AxBenchTimer, %class.AxBenchTimer* %0, i32 0, i32 0, !llfi_index !2286
   %3 = call i32 @clock_gettime(i32 noundef 4, %struct.timespec* noundef %2) #15, !llfi_index !2287, !taffo.constinfo !95
   call void @doProfiling(i32 56)
@@ -4807,7 +4213,6 @@ define linkonce_odr dso_local void @_ZN12AxBenchTimer5resetEv(%class.AxBenchTime
 
 ; Function Attrs: noinline nounwind uwtable
 define internal void @_ZN5ImageD2Ev.1_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* noundef nonnull align 8 dereferenceable(48) %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>") unnamed_addr #5 align 2 !taffo.initweight !2289 !taffo.funinfo !2290 !taffo.sourceFunction !2293 {
-  call void @doProfiling(i32 34)
   %matchop = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 3, !llfi_index !2294
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %matchop) #15, !taffo.info !45, !taffo.initweight !58, !llfi_index !2295, !taffo.constinfo !65
   ret void, !llfi_index !2296
@@ -4815,7 +4220,6 @@ define internal void @_ZN5ImageD2Ev.1_fixp({ i32, i32, { i32, i32, i32 }**, %"cl
 
 ; Function Attrs: noinline nounwind uwtable
 define internal void @_ZN5ImageD2Ev.2_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* noundef nonnull align 8 dereferenceable(48) %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>") unnamed_addr #5 align 2 !taffo.initweight !2289 !taffo.funinfo !2290 !taffo.sourceFunction !2297 {
-  call void @doProfiling(i32 34)
   %matchop = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 3, !llfi_index !2298
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %matchop) #15, !taffo.info !45, !taffo.initweight !58, !llfi_index !2299, !taffo.constinfo !65
   ret void, !llfi_index !2300
@@ -4827,8 +4231,6 @@ define internal void @_ZN5Image13makeGrayscaleEv.9_fixp({ i32, i32, { i32, i32, 
 
 1:                                                ; preds = %71, %0
   %.01 = phi i32 [ 0, %0 ], [ %72, %71 ], !taffo.info !181, !llfi_index !2303
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 1, !taffo.info !1051, !llfi_index !2304
   %2 = load i32, i32* %matchop, align 4, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2305
   call void @doProfiling(i32 32)
@@ -4842,8 +4244,6 @@ define internal void @_ZN5Image13makeGrayscaleEv.9_fixp({ i32, i32, { i32, i32, 
 
 5:                                                ; preds = %68, %4
   %.0 = phi i32 [ 0, %4 ], [ %69, %68 ], !taffo.info !181, !llfi_index !2311
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop1 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2312
   %6 = load i32, i32* %matchop1, align 8, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2313
   call void @doProfiling(i32 32)
@@ -4853,35 +4253,27 @@ define internal void @_ZN5Image13makeGrayscaleEv.9_fixp({ i32, i32, { i32, i32, 
   br i1 %7, label %8, label %70, !taffo.info !45, !taffo.initweight !2308, !llfi_index !2315
 
 8:                                                ; preds = %5
-  call void @doProfiling(i32 34)
   %9 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2316
   %10 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %9, align 8, !llfi_index !2317
   %11 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2318
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %12 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %10, i64 %11, !llfi_index !2319
   %13 = load { i32, i32, i32 }*, { i32, i32, i32 }** %12, align 8, !llfi_index !2320
   %14 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !2321
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %15 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %13, i64 %14, !llfi_index !2322
-  call void @doProfiling(i32 34)
   %u8_24fixp = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %15, i32 0, i32 0, !taffo.info !609, !llfi_index !2323
   %u8_24fixp7 = load i32, i32* %u8_24fixp, align 4, !taffo.info !609, !llfi_index !2324
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %16 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2325
   %17 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %16, align 8, !llfi_index !2326
   %18 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2327
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %19 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %17, i64 %18, !llfi_index !2328
   %20 = load { i32, i32, i32 }*, { i32, i32, i32 }** %19, align 8, !llfi_index !2329
   %21 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !2330
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %22 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %20, i64 %21, !llfi_index !2331
-  call void @doProfiling(i32 34)
   %u8_24fixp2 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %22, i32 0, i32 1, !taffo.info !609, !llfi_index !2332
   %u8_24fixp8 = load i32, i32* %u8_24fixp2, align 4, !taffo.info !609, !llfi_index !2333
   call void @doProfiling(i32 32)
@@ -4907,19 +4299,15 @@ define internal void @_ZN5Image13makeGrayscaleEv.9_fixp({ i32, i32, { i32, i32, 
   call void @doProfiling(i32 38)
   %u1_31fixp10 = add i32 %31, %u1_31fixp, !taffo.info !2351, !llfi_index !2352
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %32 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2353
   %33 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %32, align 8, !llfi_index !2354
   %34 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2355
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %35 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %33, i64 %34, !llfi_index !2356
   %36 = load { i32, i32, i32 }*, { i32, i32, i32 }** %35, align 8, !llfi_index !2357
   %37 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !2358
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %38 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %36, i64 %37, !llfi_index !2359
-  call void @doProfiling(i32 34)
   %u8_24fixp3 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %38, i32 0, i32 2, !taffo.info !609, !llfi_index !2360
   %u8_24fixp9 = load i32, i32* %u8_24fixp3, align 4, !taffo.info !609, !llfi_index !2361
   call void @doProfiling(i32 32)
@@ -4935,55 +4323,43 @@ define internal void @_ZN5Image13makeGrayscaleEv.9_fixp({ i32, i32, { i32, i32, 
   call void @doProfiling(i32 38)
   %u1_31fixp11 = add i32 %43, %u1_31fixp10, !taffo.info !2369, !llfi_index !2370
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %44 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2371
   %45 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %44, align 8, !llfi_index !2372
   %46 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2373
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %47 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %45, i64 %46, !llfi_index !2374
   %48 = load { i32, i32, i32 }*, { i32, i32, i32 }** %47, align 8, !llfi_index !2375
   %49 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !2376
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %50 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %48, i64 %49, !llfi_index !2377
-  call void @doProfiling(i32 34)
   %u8_24fixp4 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %50, i32 0, i32 0, !taffo.info !609, !llfi_index !2378
   %51 = lshr i32 %u1_31fixp11, 7, !taffo.info !2369, !llfi_index !2379
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %51, i32* %u8_24fixp4, align 4, !taffo.info !45, !llfi_index !2380
-  call void @doProfiling(i32 34)
   %52 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2381
   %53 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %52, align 8, !llfi_index !2382
   %54 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2383
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %55 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %53, i64 %54, !llfi_index !2384
   %56 = load { i32, i32, i32 }*, { i32, i32, i32 }** %55, align 8, !llfi_index !2385
   %57 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !2386
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %58 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %56, i64 %57, !llfi_index !2387
-  call void @doProfiling(i32 34)
   %u8_24fixp5 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %58, i32 0, i32 1, !taffo.info !609, !llfi_index !2388
   %59 = lshr i32 %u1_31fixp11, 7, !taffo.info !2369, !llfi_index !2389
   call void @doProfiling(i32 26)
   call void @doProfiling(i32 33)
   store i32 %59, i32* %u8_24fixp5, align 4, !taffo.info !45, !llfi_index !2390
-  call void @doProfiling(i32 34)
   %60 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2391
   %61 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %60, align 8, !llfi_index !2392
   %62 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2393
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %63 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %61, i64 %62, !llfi_index !2394
   %64 = load { i32, i32, i32 }*, { i32, i32, i32 }** %63, align 8, !llfi_index !2395
   %65 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !2396
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %66 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %64, i64 %65, !llfi_index !2397
-  call void @doProfiling(i32 34)
   %u8_24fixp6 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %66, i32 0, i32 2, !taffo.info !609, !llfi_index !2398
   %67 = lshr i32 %u1_31fixp11, 7, !taffo.info !2369, !llfi_index !2399
   call void @doProfiling(i32 26)
@@ -5068,7 +4444,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %24 = call noundef nonnull align 4 dereferenceable(4) i32* @_ZNSt6vectorIiSaIiEEixEm(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %4, i64 noundef 0) #15, !llfi_index !2434, !taffo.constinfo !95
   %25 = load i32, i32* %24, align 4, !llfi_index !2435
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %matchop = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2436
   call void @doProfiling(i32 33)
   store i32 %25, i32* %matchop, align 8, !taffo.info !45, !llfi_index !2437
@@ -5076,11 +4451,9 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %26 = call noundef nonnull align 4 dereferenceable(4) i32* @_ZNSt6vectorIiSaIiEEixEm(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %4, i64 noundef 1) #15, !llfi_index !2438, !taffo.constinfo !95
   %27 = load i32, i32* %26, align 4, !llfi_index !2439
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %matchop3 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 1, !taffo.info !1051, !llfi_index !2440
   call void @doProfiling(i32 33)
   store i32 %27, i32* %matchop3, align 4, !taffo.info !45, !llfi_index !2441
-  call void @doProfiling(i32 34)
   %matchop4 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 1, !taffo.info !1051, !llfi_index !2442
   %28 = load i32, i32* %matchop4, align 4, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2443
   call void @doProfiling(i32 32)
@@ -5100,7 +4473,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 
 35:                                               ; preds = %23
   %36 = bitcast i8* %34 to %class.Pixel**, !taffo.initweight !2454, !taffo.structinfo !95, !llfi_index !2455
-  call void @doProfiling(i32 34)
   %37 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2456
   %38 = bitcast %class.Pixel** %36 to { i32, i32, i32 }**, !llfi_index !2457
   store { i32, i32, i32 }** %38, { i32, i32, i32 }*** %37, align 8, !llfi_index !2458
@@ -5108,8 +4480,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 
 39:                                               ; preds = %126, %35
   %.07 = phi i32 [ 0, %35 ], [ %127, %126 ], !taffo.info !181, !llfi_index !2460
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop5 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 1, !taffo.info !1051, !llfi_index !2461
   %40 = load i32, i32* %matchop5, align 4, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2462
   call void @doProfiling(i32 32)
@@ -5129,7 +4499,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
           to label %46 unwind label %117, !llfi_index !2468, !taffo.constinfo !280
 
 46:                                               ; preds = %45
-  call void @doProfiling(i32 34)
   %matchop6 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2469
   %47 = load i32, i32* %matchop6, align 8, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2470
   call void @doProfiling(i32 32)
@@ -5155,7 +4524,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   br i1 %56, label %64, label %57, !taffo.info !45, !taffo.initweight !2446, !llfi_index !2479
 
 57:                                               ; preds = %54
-  call void @doProfiling(i32 34)
   %58 = getelementptr inbounds %class.Pixel, %class.Pixel* %55, i64 %48, !taffo.initweight !2308, !taffo.structinfo !95, !llfi_index !2480
   br label %59, !llfi_index !2481
 
@@ -5165,7 +4533,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
           to label %61 unwind label %121, !taffo.info !45, !llfi_index !2484, !taffo.constinfo !99
 
 61:                                               ; preds = %59
-  call void @doProfiling(i32 34)
   %62 = getelementptr inbounds %class.Pixel, %class.Pixel* %60, i64 1, !taffo.initweight !2485, !taffo.structinfo !95, !llfi_index !2486
   %63 = icmp eq %class.Pixel* %62, %58, !taffo.info !2487, !taffo.initweight !2446, !llfi_index !2488
   call void @doProfiling(i32 53)
@@ -5173,12 +4540,10 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   br i1 %63, label %64, label %59, !taffo.info !45, !taffo.initweight !2450, !llfi_index !2489
 
 64:                                               ; preds = %61, %54
-  call void @doProfiling(i32 34)
   %65 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2490
   %66 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %65, align 8, !llfi_index !2491
   %67 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !2492
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %68 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %66, i64 %67, !llfi_index !2493
   %69 = bitcast %class.Pixel* %55 to { i32, i32, i32 }*, !llfi_index !2494
   store { i32, i32, i32 }* %69, { i32, i32, i32 }** %68, align 8, !llfi_index !2495
@@ -5186,8 +4551,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 
 70:                                               ; preds = %107, %64
   %.01 = phi i32 [ 0, %64 ], [ %108, %107 ], !taffo.info !181, !llfi_index !2497
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop7 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2498
   %71 = load i32, i32* %matchop7, align 8, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2499
   call void @doProfiling(i32 32)
@@ -5227,51 +4590,39 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   call void @doProfiling(i32 32)
   %u8_24fixp2 = shl i32 %85, 24, !taffo.info !609, !llfi_index !2516
   call void @doProfiling(i32 25)
-  call void @doProfiling(i32 34)
   %86 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2517
   %87 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %86, align 8, !llfi_index !2518
   %88 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !2519
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %89 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %87, i64 %88, !llfi_index !2520
   %90 = load { i32, i32, i32 }*, { i32, i32, i32 }** %89, align 8, !llfi_index !2521
   %91 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2522
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %92 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %90, i64 %91, !llfi_index !2523
-  call void @doProfiling(i32 34)
   %u8_24fixp9 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %92, i32 0, i32 0, !taffo.info !609, !llfi_index !2524
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp, i32* %u8_24fixp9, align 4, !taffo.info !636, !llfi_index !2525
-  call void @doProfiling(i32 34)
   %93 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2526
   %94 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %93, align 8, !llfi_index !2527
   %95 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !2528
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %96 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %94, i64 %95, !llfi_index !2529
   %97 = load { i32, i32, i32 }*, { i32, i32, i32 }** %96, align 8, !llfi_index !2530
   %98 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2531
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %99 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %97, i64 %98, !llfi_index !2532
-  call void @doProfiling(i32 34)
   %u8_24fixp10 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %99, i32 0, i32 1, !taffo.info !609, !llfi_index !2533
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp1, i32* %u8_24fixp10, align 4, !taffo.info !636, !llfi_index !2534
-  call void @doProfiling(i32 34)
   %100 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2535
   %101 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %100, align 8, !llfi_index !2536
   %102 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !2537
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %103 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %101, i64 %102, !llfi_index !2538
   %104 = load { i32, i32, i32 }*, { i32, i32, i32 }** %103, align 8, !llfi_index !2539
   %105 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2540
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %106 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %104, i64 %105, !llfi_index !2541
-  call void @doProfiling(i32 34)
   %u8_24fixp11 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %106, i32 0, i32 2, !taffo.info !609, !llfi_index !2542
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp2, i32* %u8_24fixp11, align 4, !taffo.info !636, !llfi_index !2543
@@ -5331,7 +4682,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 128:                                              ; preds = %121, %117
   %.03 = phi i32 [ %124, %121 ], [ %120, %117 ], !llfi_index !2570
   %.02 = phi i8* [ %123, %121 ], [ %119, %117 ], !llfi_index !2571
-  call void @doProfiling(i32 55)
   call void @_ZNSt6vectorIiSaIiEED2Ev(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %5) #15, !llfi_index !2572, !taffo.constinfo !65
   br label %135, !llfi_index !2573
 
@@ -5341,7 +4691,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
           to label %132 unwind label %113, !llfi_index !2575, !taffo.constinfo !280
 
 132:                                              ; preds = %129
-  call void @doProfiling(i32 34)
   %matchop8 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 3, !llfi_index !2576
   %133 = invoke noundef nonnull align 8 dereferenceable(32) %"class.std::__cxx11::basic_string"* @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSERKS4_(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %matchop8, %"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %3)
           to label %134 unwind label %113, !taffo.initweight !1118, !taffo.structinfo !95, !llfi_index !2577, !taffo.constinfo !280
@@ -5354,27 +4703,24 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 135:                                              ; preds = %128, %113
   %.14 = phi i32 [ %.03, %128 ], [ %116, %113 ], !llfi_index !2581
   %.1 = phi i8* [ %.02, %128 ], [ %115, %113 ], !llfi_index !2582
-  call void @doProfiling(i32 55)
   call void @_ZNSt6vectorIiSaIiEED2Ev(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %4) #15, !llfi_index !2583, !taffo.constinfo !65
   br label %136, !llfi_index !2584
 
 136:                                              ; preds = %135, %109
   %.25 = phi i32 [ %.14, %135 ], [ %112, %109 ], !llfi_index !2585
   %.2 = phi i8* [ %.1, %135 ], [ %111, %109 ], !llfi_index !2586
-  call void @doProfiling(i32 55)
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %3) #15, !llfi_index !2587, !taffo.constinfo !65
   br label %138, !llfi_index !2588
 
 137:                                              ; preds = %134, %14
   %.0 = phi i32 [ 1, %134 ], [ 0, %14 ], !taffo.info !181, !llfi_index !2589
-  call void @doProfiling(i32 55)
   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ifstream"* noundef nonnull align 8 dereferenceable(256) %2) #15, !llfi_index !2590, !taffo.constinfo !65
+  call void @doProfiling(i32 1)
   ret i32 %.0, !llfi_index !2591
 
 138:                                              ; preds = %136, %15
   %.36 = phi i32 [ %.25, %136 ], [ %18, %15 ], !llfi_index !2592
   %.3 = phi i8* [ %.2, %136 ], [ %17, %15 ], !llfi_index !2593
-  call void @doProfiling(i32 55)
   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ifstream"* noundef nonnull align 8 dereferenceable(256) %2) #15, !llfi_index !2594, !taffo.constinfo !65
   br label %139, !llfi_index !2595
 
@@ -5389,14 +4735,11 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 
 ; Function Attrs: noinline nounwind uwtable
 define internal void @_ZN5ImageC2Ev.3_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* noundef nonnull align 8 dereferenceable(48) %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>") unnamed_addr #5 align 2 !taffo.initweight !2289 !taffo.funinfo !2290 !taffo.sourceFunction !2599 {
-  call void @doProfiling(i32 34)
   %matchop = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 3, !llfi_index !2600
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %matchop) #15, !taffo.info !45, !taffo.initweight !58, !llfi_index !2601, !taffo.constinfo !65
-  call void @doProfiling(i32 34)
   %matchop1 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2602
   call void @doProfiling(i32 33)
   store i32 0, i32* %matchop1, align 8, !taffo.info !45, !llfi_index !2603, !taffo.constinfo !65
-  call void @doProfiling(i32 34)
   %matchop2 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 1, !taffo.info !1051, !llfi_index !2604
   call void @doProfiling(i32 33)
   store i32 0, i32* %matchop2, align 4, !taffo.info !45, !llfi_index !2605, !taffo.constinfo !65
@@ -5405,7 +4748,6 @@ define internal void @_ZN5ImageC2Ev.3_fixp({ i32, i32, { i32, i32, i32 }**, %"cl
 
 ; Function Attrs: noinline nounwind uwtable
 define internal void @_ZN5ImageD2Ev.4_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* noundef nonnull align 8 dereferenceable(48) %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>") unnamed_addr #5 align 2 !taffo.initweight !2289 !taffo.funinfo !2290 !taffo.sourceFunction !2607 {
-  call void @doProfiling(i32 34)
   %matchop = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 3, !llfi_index !2608
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %matchop) #15, !taffo.info !45, !taffo.initweight !58, !llfi_index !2609, !taffo.constinfo !65
   ret void, !llfi_index !2610
@@ -5413,7 +4755,6 @@ define internal void @_ZN5ImageD2Ev.4_fixp({ i32, i32, { i32, i32, i32 }**, %"cl
 
 ; Function Attrs: noinline nounwind uwtable
 define internal void @_ZN5ImageD2Ev.5_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* noundef nonnull align 8 dereferenceable(48) %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>") unnamed_addr #5 align 2 !taffo.initweight !2289 !taffo.funinfo !2290 !taffo.sourceFunction !2611 {
-  call void @doProfiling(i32 34)
   %matchop = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 3, !llfi_index !2612
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %matchop) #15, !taffo.info !45, !taffo.initweight !58, !llfi_index !2613, !taffo.constinfo !65
   ret void, !llfi_index !2614
@@ -5455,7 +4796,6 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
 
 17:                                               ; preds = %2
   %18 = bitcast %"class.std::basic_ofstream"* %15 to %"class.std::basic_ostream"*, !llfi_index !2634
-  call void @doProfiling(i32 34)
   %matchop = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2635
   %19 = load i32, i32* %matchop, align 8, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2636
   call void @doProfiling(i32 32)
@@ -5468,7 +4808,6 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
           to label %23 unwind label %91, !taffo.initweight !2308, !taffo.structinfo !65, !llfi_index !2638, !taffo.constinfo !280
 
 23:                                               ; preds = %21
-  call void @doProfiling(i32 34)
   %matchop1 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 1, !taffo.info !1051, !llfi_index !2639
   %24 = load i32, i32* %matchop1, align 4, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2640
   call void @doProfiling(i32 32)
@@ -5485,8 +4824,6 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
 
 29:                                               ; preds = %153, %28
   %.01 = phi i32 [ 0, %28 ], [ %154, %153 ], !taffo.info !181, !llfi_index !2644
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop2 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 1, !taffo.info !1051, !llfi_index !2645
   %30 = load i32, i32* %matchop2, align 4, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2646
   call void @doProfiling(i32 32)
@@ -5500,8 +4837,6 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
 
 33:                                               ; preds = %89, %32
   %.0 = phi i32 [ 0, %32 ], [ %90, %89 ], !taffo.info !181, !llfi_index !2650
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop3 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2651
   %34 = load i32, i32* %matchop3, align 8, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2652
   call void @doProfiling(i32 32)
@@ -5513,19 +4848,15 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
   br i1 %36, label %37, label %95, !taffo.info !45, !taffo.initweight !2446, !llfi_index !2655
 
 37:                                               ; preds = %33
-  call void @doProfiling(i32 34)
   %38 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2656
   %39 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %38, align 8, !llfi_index !2657
   %40 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2658
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %41 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %39, i64 %40, !llfi_index !2659
   %42 = load { i32, i32, i32 }*, { i32, i32, i32 }** %41, align 8, !llfi_index !2660
   %43 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !2661
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %44 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %42, i64 %43, !llfi_index !2662
-  call void @doProfiling(i32 34)
   %u8_24fixp = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %44, i32 0, i32 0, !taffo.info !609, !llfi_index !2663
   %u8_24fixp13 = load i32, i32* %u8_24fixp, align 4, !taffo.info !609, !llfi_index !2664
   call void @doProfiling(i32 32)
@@ -5541,19 +4872,15 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
   call void @doProfiling(i32 38)
   %49 = lshr i32 %u17_15fixp, 15, !taffo.info !2675, !llfi_index !2676, !taffo.target !837
   call void @doProfiling(i32 26)
-  call void @doProfiling(i32 34)
   %50 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2677
   %51 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %50, align 8, !llfi_index !2678
   %52 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2679
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %53 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %51, i64 %52, !llfi_index !2680
   %54 = load { i32, i32, i32 }*, { i32, i32, i32 }** %53, align 8, !llfi_index !2681
   %55 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !2682
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %56 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %54, i64 %55, !llfi_index !2683
-  call void @doProfiling(i32 34)
   %u8_24fixp8 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %56, i32 0, i32 1, !taffo.info !609, !llfi_index !2684
   %u8_24fixp14 = load i32, i32* %u8_24fixp8, align 4, !taffo.info !609, !llfi_index !2685
   call void @doProfiling(i32 32)
@@ -5569,19 +4896,15 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
   call void @doProfiling(i32 38)
   %61 = lshr i32 %u17_15fixp19, 15, !taffo.info !2675, !llfi_index !2691, !taffo.target !837
   call void @doProfiling(i32 26)
-  call void @doProfiling(i32 34)
   %62 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2692
   %63 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %62, align 8, !llfi_index !2693
   %64 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2694
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %65 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %63, i64 %64, !llfi_index !2695
   %66 = load { i32, i32, i32 }*, { i32, i32, i32 }** %65, align 8, !llfi_index !2696
   %67 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !2697
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %68 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %66, i64 %67, !llfi_index !2698
-  call void @doProfiling(i32 34)
   %u8_24fixp9 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %68, i32 0, i32 2, !taffo.info !609, !llfi_index !2699
   %u8_24fixp15 = load i32, i32* %u8_24fixp9, align 4, !taffo.info !609, !llfi_index !2700
   call void @doProfiling(i32 32)
@@ -5645,15 +4968,12 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
   br label %160, !llfi_index !2724
 
 95:                                               ; preds = %33
-  call void @doProfiling(i32 34)
   %96 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2725
   %97 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %96, align 8, !llfi_index !2726
   %98 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2727
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %99 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %97, i64 %98, !llfi_index !2728
   %100 = load { i32, i32, i32 }*, { i32, i32, i32 }** %99, align 8, !llfi_index !2729
-  call void @doProfiling(i32 34)
   %matchop4 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2730
   %101 = load i32, i32* %matchop4, align 8, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2731
   call void @doProfiling(i32 32)
@@ -5661,9 +4981,7 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
   call void @doProfiling(i32 15)
   %103 = sext i32 %102 to i64, !taffo.info !1051, !taffo.initweight !2308, !llfi_index !2733
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %104 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %100, i64 %103, !llfi_index !2734
-  call void @doProfiling(i32 34)
   %u8_24fixp10 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %104, i32 0, i32 0, !taffo.info !609, !llfi_index !2735
   %u8_24fixp16 = load i32, i32* %u8_24fixp10, align 4, !taffo.info !609, !llfi_index !2736
   call void @doProfiling(i32 32)
@@ -5679,15 +4997,12 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
   call void @doProfiling(i32 38)
   %109 = lshr i32 %u17_15fixp21, 15, !taffo.info !2675, !llfi_index !2742, !taffo.target !837
   call void @doProfiling(i32 26)
-  call void @doProfiling(i32 34)
   %110 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2743
   %111 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %110, align 8, !llfi_index !2744
   %112 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2745
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %113 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %111, i64 %112, !llfi_index !2746
   %114 = load { i32, i32, i32 }*, { i32, i32, i32 }** %113, align 8, !llfi_index !2747
-  call void @doProfiling(i32 34)
   %matchop5 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2748
   %115 = load i32, i32* %matchop5, align 8, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2749
   call void @doProfiling(i32 32)
@@ -5695,9 +5010,7 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
   call void @doProfiling(i32 15)
   %117 = sext i32 %116 to i64, !taffo.info !1051, !taffo.initweight !2308, !llfi_index !2751
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %118 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %114, i64 %117, !llfi_index !2752
-  call void @doProfiling(i32 34)
   %u8_24fixp11 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %118, i32 0, i32 1, !taffo.info !609, !llfi_index !2753
   %u8_24fixp17 = load i32, i32* %u8_24fixp11, align 4, !taffo.info !609, !llfi_index !2754
   call void @doProfiling(i32 32)
@@ -5713,15 +5026,12 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
   call void @doProfiling(i32 38)
   %123 = lshr i32 %u17_15fixp22, 15, !taffo.info !2675, !llfi_index !2760, !taffo.target !837
   call void @doProfiling(i32 26)
-  call void @doProfiling(i32 34)
   %124 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2761
   %125 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %124, align 8, !llfi_index !2762
   %126 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2763
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %127 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %125, i64 %126, !llfi_index !2764
   %128 = load { i32, i32, i32 }*, { i32, i32, i32 }** %127, align 8, !llfi_index !2765
-  call void @doProfiling(i32 34)
   %matchop6 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2766
   %129 = load i32, i32* %matchop6, align 8, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2767
   call void @doProfiling(i32 32)
@@ -5729,9 +5039,7 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
   call void @doProfiling(i32 15)
   %131 = sext i32 %130 to i64, !taffo.info !1051, !taffo.initweight !2308, !llfi_index !2769
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %132 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %128, i64 %131, !llfi_index !2770
-  call void @doProfiling(i32 34)
   %u8_24fixp12 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %132, i32 0, i32 2, !taffo.info !609, !llfi_index !2771
   %u8_24fixp18 = load i32, i32* %u8_24fixp12, align 4, !taffo.info !609, !llfi_index !2772
   call void @doProfiling(i32 32)
@@ -5786,7 +5094,6 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
 
 155:                                              ; preds = %29
   %156 = bitcast %"class.std::basic_ofstream"* %15 to %"class.std::basic_ostream"*, !llfi_index !2792
-  call void @doProfiling(i32 34)
   %matchop7 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 3, !llfi_index !2793
   %157 = invoke noundef nonnull align 8 dereferenceable(8) %"class.std::basic_ostream"* @_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE(%"class.std::basic_ostream"* noundef nonnull align 8 dereferenceable(8) %156, %"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %matchop7)
           to label %158 unwind label %91, !taffo.initweight !1118, !taffo.structinfo !65, !llfi_index !2794, !taffo.constinfo !280
@@ -5797,6 +5104,7 @@ define internal noundef i32 @_ZN5Image12saveRgbImageENSt7__cxx1112basic_stringIc
 
 159:                                              ; preds = %158
   call void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ofstream"* noundef nonnull align 8 dereferenceable(248) %15) #15, !llfi_index !2796, !taffo.constinfo !65
+  call void @doProfiling(i32 1)
   ret i32 1, !llfi_index !2797
 
 160:                                              ; preds = %91
@@ -5868,7 +5176,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %24 = call noundef nonnull align 4 dereferenceable(4) i32* @_ZNSt6vectorIiSaIiEEixEm(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %4, i64 noundef 0) #15, !llfi_index !2822, !taffo.constinfo !95
   %25 = load i32, i32* %24, align 4, !llfi_index !2823
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %matchop = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2824
   call void @doProfiling(i32 33)
   store i32 %25, i32* %matchop, align 8, !taffo.info !45, !llfi_index !2825
@@ -5876,11 +5183,9 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   %26 = call noundef nonnull align 4 dereferenceable(4) i32* @_ZNSt6vectorIiSaIiEEixEm(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %4, i64 noundef 1) #15, !llfi_index !2826, !taffo.constinfo !95
   %27 = load i32, i32* %26, align 4, !llfi_index !2827
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %matchop3 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 1, !taffo.info !1051, !llfi_index !2828
   call void @doProfiling(i32 33)
   store i32 %27, i32* %matchop3, align 4, !taffo.info !45, !llfi_index !2829
-  call void @doProfiling(i32 34)
   %matchop4 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 1, !taffo.info !1051, !llfi_index !2830
   %28 = load i32, i32* %matchop4, align 4, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2831
   call void @doProfiling(i32 32)
@@ -5900,7 +5205,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 
 35:                                               ; preds = %23
   %36 = bitcast i8* %34 to %class.Pixel**, !taffo.initweight !2454, !taffo.structinfo !95, !llfi_index !2838
-  call void @doProfiling(i32 34)
   %37 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2839
   %38 = bitcast %class.Pixel** %36 to { i32, i32, i32 }**, !llfi_index !2840
   store { i32, i32, i32 }** %38, { i32, i32, i32 }*** %37, align 8, !llfi_index !2841
@@ -5908,8 +5212,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 
 39:                                               ; preds = %126, %35
   %.07 = phi i32 [ 0, %35 ], [ %127, %126 ], !taffo.info !181, !llfi_index !2843
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop5 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 1, !taffo.info !1051, !llfi_index !2844
   %40 = load i32, i32* %matchop5, align 4, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2845
   call void @doProfiling(i32 32)
@@ -5929,7 +5231,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
           to label %46 unwind label %117, !llfi_index !2851, !taffo.constinfo !280
 
 46:                                               ; preds = %45
-  call void @doProfiling(i32 34)
   %matchop6 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2852
   %47 = load i32, i32* %matchop6, align 8, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2853
   call void @doProfiling(i32 32)
@@ -5955,7 +5256,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   br i1 %56, label %64, label %57, !taffo.info !45, !taffo.initweight !2446, !llfi_index !2862
 
 57:                                               ; preds = %54
-  call void @doProfiling(i32 34)
   %58 = getelementptr inbounds %class.Pixel, %class.Pixel* %55, i64 %48, !taffo.initweight !2308, !taffo.structinfo !95, !llfi_index !2863
   br label %59, !llfi_index !2864
 
@@ -5965,7 +5265,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
           to label %61 unwind label %121, !taffo.info !45, !llfi_index !2866, !taffo.constinfo !99
 
 61:                                               ; preds = %59
-  call void @doProfiling(i32 34)
   %62 = getelementptr inbounds %class.Pixel, %class.Pixel* %60, i64 1, !taffo.initweight !2485, !taffo.structinfo !95, !llfi_index !2867
   %63 = icmp eq %class.Pixel* %62, %58, !taffo.info !2487, !taffo.initweight !2446, !llfi_index !2868
   call void @doProfiling(i32 53)
@@ -5973,12 +5272,10 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   br i1 %63, label %64, label %59, !taffo.info !45, !taffo.initweight !2450, !llfi_index !2869
 
 64:                                               ; preds = %61, %54
-  call void @doProfiling(i32 34)
   %65 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2870
   %66 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %65, align 8, !llfi_index !2871
   %67 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !2872
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %68 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %66, i64 %67, !llfi_index !2873
   %69 = bitcast %class.Pixel* %55 to { i32, i32, i32 }*, !llfi_index !2874
   store { i32, i32, i32 }* %69, { i32, i32, i32 }** %68, align 8, !llfi_index !2875
@@ -5986,8 +5283,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 
 70:                                               ; preds = %107, %64
   %.01 = phi i32 [ 0, %64 ], [ %108, %107 ], !taffo.info !181, !llfi_index !2877
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 34)
   %matchop7 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2878
   %71 = load i32, i32* %matchop7, align 8, !taffo.info !1051, !taffo.initweight !1118, !llfi_index !2879
   call void @doProfiling(i32 32)
@@ -6027,51 +5322,39 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
   call void @doProfiling(i32 32)
   %u8_24fixp2 = shl i32 %85, 24, !taffo.info !609, !llfi_index !2896
   call void @doProfiling(i32 25)
-  call void @doProfiling(i32 34)
   %86 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2897
   %87 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %86, align 8, !llfi_index !2898
   %88 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !2899
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %89 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %87, i64 %88, !llfi_index !2900
   %90 = load { i32, i32, i32 }*, { i32, i32, i32 }** %89, align 8, !llfi_index !2901
   %91 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2902
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %92 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %90, i64 %91, !llfi_index !2903
-  call void @doProfiling(i32 34)
   %u8_24fixp9 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %92, i32 0, i32 0, !taffo.info !609, !llfi_index !2904
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp1, i32* %u8_24fixp9, align 4, !taffo.info !636, !llfi_index !2905
-  call void @doProfiling(i32 34)
   %93 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2906
   %94 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %93, align 8, !llfi_index !2907
   %95 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !2908
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %96 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %94, i64 %95, !llfi_index !2909
   %97 = load { i32, i32, i32 }*, { i32, i32, i32 }** %96, align 8, !llfi_index !2910
   %98 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2911
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %99 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %97, i64 %98, !llfi_index !2912
-  call void @doProfiling(i32 34)
   %u8_24fixp10 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %99, i32 0, i32 1, !taffo.info !609, !llfi_index !2913
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp, i32* %u8_24fixp10, align 4, !taffo.info !636, !llfi_index !2914
-  call void @doProfiling(i32 34)
   %100 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 2, !llfi_index !2915
   %101 = load { i32, i32, i32 }**, { i32, i32, i32 }*** %100, align 8, !llfi_index !2916
   %102 = sext i32 %.07 to i64, !taffo.info !0, !llfi_index !2917
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %103 = getelementptr inbounds { i32, i32, i32 }*, { i32, i32, i32 }** %101, i64 %102, !llfi_index !2918
   %104 = load { i32, i32, i32 }*, { i32, i32, i32 }** %103, align 8, !llfi_index !2919
   %105 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !2920
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %106 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %104, i64 %105, !llfi_index !2921
-  call void @doProfiling(i32 34)
   %u8_24fixp11 = getelementptr inbounds { i32, i32, i32 }, { i32, i32, i32 }* %106, i32 0, i32 2, !taffo.info !609, !llfi_index !2922
   call void @doProfiling(i32 33)
   store i32 %u8_24fixp2, i32* %u8_24fixp11, align 4, !taffo.info !636, !llfi_index !2923
@@ -6131,7 +5414,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 128:                                              ; preds = %121, %117
   %.03 = phi i32 [ %124, %121 ], [ %120, %117 ], !llfi_index !2950
   %.02 = phi i8* [ %123, %121 ], [ %119, %117 ], !llfi_index !2951
-  call void @doProfiling(i32 55)
   call void @_ZNSt6vectorIiSaIiEED2Ev(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %5) #15, !llfi_index !2952, !taffo.constinfo !65
   br label %135, !llfi_index !2953
 
@@ -6141,7 +5423,6 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
           to label %132 unwind label %113, !llfi_index !2955, !taffo.constinfo !280
 
 132:                                              ; preds = %129
-  call void @doProfiling(i32 34)
   %matchop8 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 3, !llfi_index !2956
   %133 = invoke noundef nonnull align 8 dereferenceable(32) %"class.std::__cxx11::basic_string"* @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSERKS4_(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %matchop8, %"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %3)
           to label %134 unwind label %113, !taffo.initweight !1118, !taffo.structinfo !95, !llfi_index !2957, !taffo.constinfo !280
@@ -6154,27 +5435,24 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 135:                                              ; preds = %128, %113
   %.14 = phi i32 [ %.03, %128 ], [ %116, %113 ], !llfi_index !2961
   %.1 = phi i8* [ %.02, %128 ], [ %115, %113 ], !llfi_index !2962
-  call void @doProfiling(i32 55)
   call void @_ZNSt6vectorIiSaIiEED2Ev(%"class.std::vector"* noundef nonnull align 8 dereferenceable(24) %4) #15, !llfi_index !2963, !taffo.constinfo !65
   br label %136, !llfi_index !2964
 
 136:                                              ; preds = %135, %109
   %.25 = phi i32 [ %.14, %135 ], [ %112, %109 ], !llfi_index !2965
   %.2 = phi i8* [ %.1, %135 ], [ %111, %109 ], !llfi_index !2966
-  call void @doProfiling(i32 55)
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %3) #15, !llfi_index !2967, !taffo.constinfo !65
   br label %138, !llfi_index !2968
 
 137:                                              ; preds = %134, %14
   %.0 = phi i32 [ 1, %134 ], [ 0, %14 ], !taffo.info !181, !llfi_index !2969
-  call void @doProfiling(i32 55)
   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ifstream"* noundef nonnull align 8 dereferenceable(256) %2) #15, !llfi_index !2970, !taffo.constinfo !65
+  call void @doProfiling(i32 1)
   ret i32 %.0, !llfi_index !2971
 
 138:                                              ; preds = %136, %15
   %.36 = phi i32 [ %.25, %136 ], [ %18, %15 ], !llfi_index !2972
   %.3 = phi i8* [ %.2, %136 ], [ %17, %15 ], !llfi_index !2973
-  call void @doProfiling(i32 55)
   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ifstream"* noundef nonnull align 8 dereferenceable(256) %2) #15, !llfi_index !2974, !taffo.constinfo !65
   br label %139, !llfi_index !2975
 
@@ -6189,14 +5467,11 @@ define internal noundef i32 @_ZN5Image12loadRgbImageENSt7__cxx1112basic_stringIc
 
 ; Function Attrs: noinline nounwind uwtable
 define internal void @_ZN5ImageC2Ev.6_fixp({ i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* noundef nonnull align 8 dereferenceable(48) %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>") unnamed_addr #5 align 2 !taffo.initweight !2289 !taffo.funinfo !2290 !taffo.sourceFunction !2979 {
-  call void @doProfiling(i32 34)
   %matchop = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 3, !llfi_index !2980
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %matchop) #15, !taffo.info !45, !taffo.initweight !58, !llfi_index !2981, !taffo.constinfo !65
-  call void @doProfiling(i32 34)
   %matchop1 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 0, !taffo.info !1051, !llfi_index !2982
   call void @doProfiling(i32 33)
   store i32 0, i32* %matchop1, align 8, !taffo.info !45, !llfi_index !2983, !taffo.constinfo !65
-  call void @doProfiling(i32 34)
   %matchop2 = getelementptr inbounds { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }, { i32, i32, { i32, i32, i32 }**, %"class.std::__cxx11::basic_string" }* %".<u0_0fixp,u0_0fixp,<u8_24fixp,u8_24fixp,u8_24fixp>,u0_0fixp>", i32 0, i32 1, !taffo.info !1051, !llfi_index !2984
   call void @doProfiling(i32 33)
   store i32 0, i32* %matchop2, align 4, !taffo.info !45, !llfi_index !2985, !taffo.constinfo !65
@@ -6212,8 +5487,6 @@ define internal noundef float @_Z8convolvePA3_fS0_.7_u0_0fixp([3 x float]* nound
 4:                                                ; preds = %28, %2
   %.02.s3_29fixp = phi i32 [ %3, %2 ], [ %.1.s3_29fixp, %28 ], !taffo.info !32, !llfi_index !2993
   %.01 = phi i32 [ 0, %2 ], [ %29, %28 ], !llfi_index !2994
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %5 = sitofp i32 %.02.s3_29fixp to float, !taffo.info !32, !llfi_index !2995
   call void @doProfiling(i32 44)
   %6 = fdiv float %5, 0x41C0000000000000, !taffo.info !32, !llfi_index !2996
@@ -6229,8 +5502,6 @@ define internal noundef float @_Z8convolvePA3_fS0_.7_u0_0fixp([3 x float]* nound
 9:                                                ; preds = %25, %8
   %.1.s3_29fixp = phi i32 [ %.02.s3_29fixp, %8 ], [ %s3_29fixp, %25 ], !taffo.info !32, !llfi_index !3000
   %.0 = phi i32 [ 0, %8 ], [ %26, %25 ], !llfi_index !3001
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %10 = icmp slt i32 %.0, 3, !llfi_index !3002
   call void @doProfiling(i32 53)
   call void @doProfiling(i32 2)
@@ -6239,21 +5510,17 @@ define internal noundef float @_Z8convolvePA3_fS0_.7_u0_0fixp([3 x float]* nound
 11:                                               ; preds = %9
   %12 = sext i32 %.0 to i64, !llfi_index !3004
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %13 = getelementptr inbounds [3 x float], [3 x float]* %0, i64 %12, !taffo.info !45, !taffo.initweight !46, !llfi_index !3005
   %14 = sext i32 %.01 to i64, !llfi_index !3006
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %15 = getelementptr inbounds [3 x float], [3 x float]* %13, i64 0, i64 %14, !taffo.info !45, !taffo.initweight !49, !llfi_index !3007
   %16 = load float, float* %15, align 4, !taffo.info !45, !taffo.initweight !51, !llfi_index !3008
   call void @doProfiling(i32 32)
   %17 = sext i32 %.01 to i64, !llfi_index !3009
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %18 = getelementptr inbounds [3 x float], [3 x float]* %1, i64 %17, !taffo.info !45, !taffo.initweight !46, !llfi_index !3010
   %19 = sext i32 %.0 to i64, !llfi_index !3011
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %20 = getelementptr inbounds [3 x float], [3 x float]* %18, i64 0, i64 %19, !taffo.info !45, !taffo.initweight !49, !llfi_index !3012
   %21 = load float, float* %20, align 4, !taffo.info !45, !taffo.initweight !51, !llfi_index !3013
   call void @doProfiling(i32 32)
@@ -6281,6 +5548,7 @@ define internal noundef float @_Z8convolvePA3_fS0_.7_u0_0fixp([3 x float]* nound
   br label %4, !llvm.loop !3024, !llfi_index !3025
 
 30:                                               ; preds = %4
+  call void @doProfiling(i32 1)
   ret float %6, !taffo.info !73, !taffo.initweight !46, !llfi_index !3026
 }
 
@@ -6290,7 +5558,6 @@ define internal noundef i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* noundef %.u8_
 
 1:                                                ; preds = %10, %0
   %.01 = phi i32 [ 0, %0 ], [ %11, %10 ], !taffo.info !181, !llfi_index !3030
-  call void @doProfiling(i32 55)
   %2 = icmp slt i32 %.01, 3, !taffo.info !321, !llfi_index !3031
   call void @doProfiling(i32 53)
   call void @doProfiling(i32 2)
@@ -6301,7 +5568,6 @@ define internal noundef i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* noundef %.u8_
 
 4:                                                ; preds = %7, %3
   %.0 = phi i32 [ 0, %3 ], [ %8, %7 ], !taffo.info !181, !llfi_index !3034
-  call void @doProfiling(i32 55)
   %5 = icmp slt i32 %.0, 3, !taffo.info !321, !llfi_index !3035
   call void @doProfiling(i32 53)
   call void @doProfiling(i32 2)
@@ -6400,7 +5666,7 @@ define internal noundef i32 @_Z5sobelPA3_f.13_u2_30fixp([3 x i32]* noundef %.u8_
 
 38:                                               ; preds = %33, %12
   %.02.u2_30fixp = phi i32 [ %u2_30fixp, %33 ], [ %u2_30fixp4, %12 ], !taffo.info !1269, !llfi_index !3103
-  call void @doProfiling(i32 55)
+  call void @doProfiling(i32 1)
   ret i32 %.02.u2_30fixp, !taffo.info !45, !taffo.initweight !46, !llfi_index !3104
 }
 
@@ -6418,8 +5684,6 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.8.21_s5_27fixp([3 x i32]* nound
 2:                                                ; preds = %22, %0
   %.02.s3_29fixp = phi i32 [ %1, %0 ], [ %.1.s3_29fixp, %22 ], !taffo.info !32, !llfi_index !3112
   %.01 = phi i32 [ 0, %0 ], [ %23, %22 ], !taffo.info !181, !llfi_index !3113
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %3 = ashr i32 %.02.s3_29fixp, 2, !taffo.info !32, !llfi_index !3114
   call void @doProfiling(i32 27)
   %4 = icmp slt i32 %.01, 3, !taffo.info !321, !llfi_index !3115
@@ -6433,8 +5697,6 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.8.21_s5_27fixp([3 x i32]* nound
 6:                                                ; preds = %18, %5
   %.1.s3_29fixp = phi i32 [ %.02.s3_29fixp, %5 ], [ %20, %18 ], !taffo.info !32, !llfi_index !3118
   %.0 = phi i32 [ 0, %5 ], [ %19, %18 ], !taffo.info !181, !llfi_index !3119
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %7 = icmp slt i32 %.0, 3, !taffo.info !321, !llfi_index !3120
   call void @doProfiling(i32 53)
   call void @doProfiling(i32 2)
@@ -6443,21 +5705,17 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.8.21_s5_27fixp([3 x i32]* nound
 8:                                                ; preds = %6
   %9 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !3122
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %u8_24fixp = getelementptr inbounds [3 x i32], [3 x i32]* %.u8_24fixp, i64 %9, !taffo.info !609, !llfi_index !3123
   %10 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !3124
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %u8_24fixp3 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp, i64 0, i64 %10, !taffo.info !609, !llfi_index !3125
   %u8_24fixp5 = load i32, i32* %u8_24fixp3, align 4, !taffo.info !609, !llfi_index !3126
   call void @doProfiling(i32 32)
   %11 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !3127
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s3_29fixp = getelementptr inbounds [3 x i32], [3 x i32]* %.s3_29fixp, i64 %11, !taffo.info !6, !llfi_index !3128
   %12 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !3129
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s3_29fixp4 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 %12, !taffo.info !6, !llfi_index !3130
   %s3_29fixp6 = load i32, i32* %s3_29fixp4, align 4, !taffo.info !6, !llfi_index !3131
   call void @doProfiling(i32 32)
@@ -6493,6 +5751,7 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.8.21_s5_27fixp([3 x i32]* nound
   br label %2, !llvm.loop !3153, !llfi_index !3154
 
 24:                                               ; preds = %2
+  call void @doProfiling(i32 1)
   ret i32 %3, !taffo.info !73, !taffo.initweight !46, !llfi_index !3155
 }
 
@@ -6505,8 +5764,6 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.7.20_s4_28fixp([3 x i32]* nound
 2:                                                ; preds = %22, %0
   %.02.s3_29fixp = phi i32 [ %1, %0 ], [ %.1.s3_29fixp, %22 ], !taffo.info !32, !llfi_index !3159
   %.01 = phi i32 [ 0, %0 ], [ %23, %22 ], !taffo.info !181, !llfi_index !3160
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %3 = ashr i32 %.02.s3_29fixp, 1, !taffo.info !32, !llfi_index !3161
   call void @doProfiling(i32 27)
   %4 = icmp slt i32 %.01, 3, !taffo.info !321, !llfi_index !3162
@@ -6520,8 +5777,6 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.7.20_s4_28fixp([3 x i32]* nound
 6:                                                ; preds = %18, %5
   %.1.s3_29fixp = phi i32 [ %.02.s3_29fixp, %5 ], [ %20, %18 ], !taffo.info !32, !llfi_index !3165
   %.0 = phi i32 [ 0, %5 ], [ %19, %18 ], !taffo.info !181, !llfi_index !3166
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %7 = icmp slt i32 %.0, 3, !taffo.info !321, !llfi_index !3167
   call void @doProfiling(i32 53)
   call void @doProfiling(i32 2)
@@ -6530,21 +5785,17 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.7.20_s4_28fixp([3 x i32]* nound
 8:                                                ; preds = %6
   %9 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !3169
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %u8_24fixp = getelementptr inbounds [3 x i32], [3 x i32]* %.u8_24fixp, i64 %9, !taffo.info !609, !llfi_index !3170
   %10 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !3171
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %u8_24fixp3 = getelementptr inbounds [3 x i32], [3 x i32]* %u8_24fixp, i64 0, i64 %10, !taffo.info !609, !llfi_index !3172
   %u8_24fixp5 = load i32, i32* %u8_24fixp3, align 4, !taffo.info !609, !llfi_index !3173
   call void @doProfiling(i32 32)
   %11 = sext i32 %.01 to i64, !taffo.info !0, !llfi_index !3174
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s3_29fixp = getelementptr inbounds [3 x i32], [3 x i32]* %.s3_29fixp, i64 %11, !taffo.info !6, !llfi_index !3175
   %12 = sext i32 %.0 to i64, !taffo.info !0, !llfi_index !3176
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s3_29fixp4 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 %12, !taffo.info !6, !llfi_index !3177
   %s3_29fixp6 = load i32, i32* %s3_29fixp4, align 4, !taffo.info !6, !llfi_index !3178
   call void @doProfiling(i32 32)
@@ -6580,6 +5831,7 @@ define internal noundef i32 @_Z8convolvePA3_fS0_.7.20_s4_28fixp([3 x i32]* nound
   br label %2, !llvm.loop !3193, !llfi_index !3194
 
 24:                                               ; preds = %2
+  call void @doProfiling(i32 1)
   ret i32 %3, !taffo.info !73, !taffo.initweight !46, !llfi_index !3195
 }
 

@@ -1,33 +1,29 @@
 #!/bin/bash
 #
 # LLFI_BUILD_ROOT must be set to the directory where LLFI is installed (same as that in setup)
-echo "BEFORE RUN:"
-ls llfi.stat.fi.injectedfaults.txt 2>/dev/null || echo "NOT PRESENT"
-
-rm -rf ./llfi*
-
 # fname=$1
 fname="jmeint"
+export OMP_NUM_THREADS=1
 
 # ---- Force execution in this script's directory ----
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
+rm -rf ./llfi*
+rm -f *.out
+rm -rf ./runs/run_*/llfi*
+rm -rf ./runs/run_*/*.data
+rm -rf ./runs/run_*/input.yaml
 
 INPUT_NAME="${1}"
-OUTPUT_NAME="${1}.out"
+OUTPUT_NAME="${2}"
+ROUNDS="${3}"
 
-INPUT_SRC="inputs/${INPUT_NAME}"
-OUTPUT_DST="outputs/${OUTPUT_NAME}"
-
-echo "${INPUT_SRC}"
-echo "${OUTPUT_DST}"
-
-if [ ! -f ${OUTPUT_DST} ]; then
-    echo "Output file was not found. Creates a new output file"
+if [ -z "$OUTPUT_NAME" ]; then
+    OUTPUT_NAME="${INPUT_NAME}.out"
 fi
 
+INPUT_SRC="inputs/${INPUT_NAME}"
 cp "$INPUT_SRC" .
-touch "$OUTPUT_NAME"
 
 # Instrument it
 # creates the files
@@ -37,14 +33,34 @@ $LLFI_BUILD_ROOT/bin/instrument --readable "$fname.ll" # THIS IS USED
 # creates llfi.stat.prof.txt
 $LLFI_BUILD_ROOT/bin/profile ./llfi/"$fname-profiling.exe" "$INPUT_NAME" "$OUTPUT_NAME" # THIS IS USED
 
-echo "AFTER RUN:"
-ls llfi.stat.fi.injectedfaults.txt 2>/dev/null || echo "NOT PRESENT"
+# Get assembly files
+clang -S -O3 -march=native -ffast-math llfi/"$fname-faultinjection.ll" -o llfi/"$fname-faultinjection.s"
+mv llfi/"$fname-faultinjection.s" /home/aastabk/lltfi_attempt/axbench/llfi_assembly_files
 
-# Inject the faults
-# creates llfi.config.runtime.txt
-$LLFI_BUILD_ROOT/bin/injectfault ./llfi/"$fname-faultinjection.exe" "$INPUT_NAME" "$OUTPUT_NAME" # THIS IS USED
+# Find random cycle to inject into
+YAML_FILE="input.yaml"
+MAX=$(grep '^total_cycle=' llfi.stat.prof.txt | cut -d= -f2)
+BASELINE_TIME=$(grep '^kernel time = ' llfi/baseline/golden_std_output | cut -d= -f2 | cut -d "s" -f1)
+TIMEOUT=$(echo "scale=4; $BASELINE_TIME * 100" | bc) # WAS 100
+sed -i "s/defaultTimeout:.*/defaultTimeout: "$TIMEOUT"/" "$YAML_FILE"
+runs=8
 
-mv "$OUTPUT_NAME" "$OUTPUT_DST"
+for ((i=1; i<=runs; i++)) # parallelize
+do
+    mkdir -p runs/run_${i}
+    cp -r llfi runs/run_${i}/
+    cp -r results runs/run_${i}/
+    cp input.yaml runs/run_${i}/
+    cp run_script.sh runs/run_${i}/
+    cp llfi.stat.prof.txt runs/run_${i}/
+    cp "$INPUT_SRC" runs/run_${i}/
+    (
+        cd runs/run_${i}
+        ./run_script.sh "$INPUT_NAME" "$OUTPUT_NAME" $MAX $ROUNDS
+    ) &
+done
+
 rm -f "$INPUT_NAME"
 
+wait
 echo "Done injecting faults" 

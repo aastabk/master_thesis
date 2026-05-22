@@ -2,9 +2,9 @@
 
 echo "Starts running the benchmarks!"
 
-blackscholes/run.sh
-fft/run.sh
-inversek2j/run.sh
-jmeint/run.sh
-kmeans/run.sh
-sobel/run.sh
+blackscholes/run.sh 4500 # 500 for sdc
+fft/run.sh 4500 # 500 for sdc
+inversek2j/run.sh 4500 # 500 for sdc
+jmeint/run.sh 4500
+kmeans/run.sh 4500 
+sobel/run.sh 4500 

@@ -1,3 +1,0 @@
-fi_cycle=7957925328
-fi_type=bitflip
-fi_num_bits=1

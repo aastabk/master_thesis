@@ -88,17 +88,14 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
   call void @doProfiling(i32 31)
   %13 = alloca i32, align 4, !taffo.info !36, !llfi_index !38
   %14 = load i8*, i8** bitcast (%"class.std::basic_ostream"* @_ZSt4cout to i8**), align 8, !llfi_index !39
-  call void @doProfiling(i32 34)
   %15 = getelementptr i8, i8* %14, i64 -24, !llfi_index !40
   %16 = bitcast i8* %15 to i64*, !llfi_index !41
   %17 = load i64, i64* %16, align 8, !llfi_index !42
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %18 = getelementptr inbounds i8, i8* bitcast (%"class.std::basic_ostream"* @_ZSt4cout to i8*), i64 %17, !llfi_index !43
   %19 = bitcast i8* %18 to %"class.std::ios_base"*, !llfi_index !44
   %20 = call noundef i64 @_ZNSt8ios_base9precisionEl(%"class.std::ios_base"* noundef nonnull align 8 dereferenceable(216) %19, i64 noundef 8), !llfi_index !45, !taffo.constinfo !46
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %21 = getelementptr inbounds i8*, i8** %1, i64 1, !llfi_index !47
   %22 = load i8*, i8** %21, align 8, !llfi_index !48
   invoke void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4, i8* noundef %22, %"class.std::__new_allocator"* noundef nonnull align 1 dereferenceable(1) %5)
@@ -107,7 +104,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
 23:                                               ; preds = %2
   %24 = bitcast %"class.std::__new_allocator"* %5 to %"class.std::__new_allocator"*, !llfi_index !51
   call void @_ZNSt15__new_allocatorIcED2Ev(%"class.std::__new_allocator"* noundef nonnull align 1 dereferenceable(1) %24) #9, !llfi_index !52, !taffo.constinfo !53
-  call void @doProfiling(i32 34)
   %25 = getelementptr inbounds i8*, i8** %1, i64 2, !llfi_index !54
   %26 = load i8*, i8** %25, align 8, !llfi_index !55
   invoke void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %6, i8* noundef %26, %"class.std::__new_allocator"* noundef nonnull align 1 dereferenceable(1) %7)
@@ -127,13 +123,11 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
 30:                                               ; preds = %29
   %31 = bitcast %"class.std::basic_ofstream"* %8 to i8**, !llfi_index !62
   %32 = load i8*, i8** %31, align 8, !llfi_index !63
-  call void @doProfiling(i32 34)
   %33 = getelementptr i8, i8* %32, i64 -24, !llfi_index !64
   %34 = bitcast i8* %33 to i64*, !llfi_index !65
   %35 = load i64, i64* %34, align 8, !llfi_index !66
   call void @doProfiling(i32 32)
   %36 = bitcast %"class.std::basic_ofstream"* %8 to i8*, !llfi_index !67
-  call void @doProfiling(i32 34)
   %37 = getelementptr inbounds i8, i8* %36, i64 %35, !llfi_index !68
   %38 = bitcast i8* %37 to %"class.std::ios_base"*, !llfi_index !69
   call void @doProfiling(i32 5)
@@ -236,7 +230,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
 
 80:                                               ; preds = %152, %79
   %.08 = phi i32 [ 0, %79 ], [ %153, %152 ], !taffo.info !122, !llfi_index !124
-  call void @doProfiling(i32 55)
   %81 = load i32, i32* %3, align 4, !llfi_index !125
   call void @doProfiling(i32 32)
   %82 = icmp slt i32 %.08, %81, !taffo.info !122, !llfi_index !126
@@ -246,109 +239,91 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
 
 83:                                               ; preds = %80
   %84 = bitcast %"class.std::basic_ifstream"* %9 to %"class.std::basic_istream"*, !llfi_index !128
-  call void @doProfiling(i32 34)
   %85 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 0, !taffo.info !25, !taffo.initweight !129, !llfi_index !130
   %86 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %84, float* noundef nonnull align 4 dereferenceable(4) %85)
           to label %87 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !131, !taffo.constinfo !71
 
 87:                                               ; preds = %83
-  call void @doProfiling(i32 34)
   %88 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 1, !taffo.info !25, !taffo.initweight !129, !llfi_index !132
   %89 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %86, float* noundef nonnull align 4 dereferenceable(4) %88)
           to label %90 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !133, !taffo.constinfo !71
 
 90:                                               ; preds = %87
-  call void @doProfiling(i32 34)
   %91 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 2, !taffo.info !25, !taffo.initweight !129, !llfi_index !134
   %92 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %89, float* noundef nonnull align 4 dereferenceable(4) %91)
           to label %93 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !135, !taffo.constinfo !71
 
 93:                                               ; preds = %90
-  call void @doProfiling(i32 34)
   %94 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 3, !taffo.info !25, !taffo.initweight !129, !llfi_index !136
   %95 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %92, float* noundef nonnull align 4 dereferenceable(4) %94)
           to label %96 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !137, !taffo.constinfo !71
 
 96:                                               ; preds = %93
-  call void @doProfiling(i32 34)
   %97 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 4, !taffo.info !25, !taffo.initweight !129, !llfi_index !138
   %98 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %95, float* noundef nonnull align 4 dereferenceable(4) %97)
           to label %99 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !139, !taffo.constinfo !71
 
 99:                                               ; preds = %96
-  call void @doProfiling(i32 34)
   %100 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 5, !taffo.info !25, !taffo.initweight !129, !llfi_index !140
   %101 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %98, float* noundef nonnull align 4 dereferenceable(4) %100)
           to label %102 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !141, !taffo.constinfo !71
 
 102:                                              ; preds = %99
-  call void @doProfiling(i32 34)
   %103 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 6, !taffo.info !25, !taffo.initweight !129, !llfi_index !142
   %104 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %101, float* noundef nonnull align 4 dereferenceable(4) %103)
           to label %105 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !143, !taffo.constinfo !71
 
 105:                                              ; preds = %102
-  call void @doProfiling(i32 34)
   %106 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 7, !taffo.info !25, !taffo.initweight !129, !llfi_index !144
   %107 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %104, float* noundef nonnull align 4 dereferenceable(4) %106)
           to label %108 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !145, !taffo.constinfo !71
 
 108:                                              ; preds = %105
-  call void @doProfiling(i32 34)
   %109 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 8, !taffo.info !25, !taffo.initweight !129, !llfi_index !146
   %110 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %107, float* noundef nonnull align 4 dereferenceable(4) %109)
           to label %111 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !147, !taffo.constinfo !71
 
 111:                                              ; preds = %108
-  call void @doProfiling(i32 34)
   %112 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 9, !taffo.info !25, !taffo.initweight !129, !llfi_index !148
   %113 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %110, float* noundef nonnull align 4 dereferenceable(4) %112)
           to label %114 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !149, !taffo.constinfo !71
 
 114:                                              ; preds = %111
-  call void @doProfiling(i32 34)
   %115 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 10, !taffo.info !25, !taffo.initweight !129, !llfi_index !150
   %116 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %113, float* noundef nonnull align 4 dereferenceable(4) %115)
           to label %117 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !151, !taffo.constinfo !71
 
 117:                                              ; preds = %114
-  call void @doProfiling(i32 34)
   %118 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 11, !taffo.info !25, !taffo.initweight !129, !llfi_index !152
   %119 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %116, float* noundef nonnull align 4 dereferenceable(4) %118)
           to label %120 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !153, !taffo.constinfo !71
 
 120:                                              ; preds = %117
-  call void @doProfiling(i32 34)
   %121 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 12, !taffo.info !25, !taffo.initweight !129, !llfi_index !154
   %122 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %119, float* noundef nonnull align 4 dereferenceable(4) %121)
           to label %123 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !155, !taffo.constinfo !71
 
 123:                                              ; preds = %120
-  call void @doProfiling(i32 34)
   %124 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 13, !taffo.info !25, !taffo.initweight !129, !llfi_index !156
   %125 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %122, float* noundef nonnull align 4 dereferenceable(4) %124)
           to label %126 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !157, !taffo.constinfo !71
 
 126:                                              ; preds = %123
-  call void @doProfiling(i32 34)
   %127 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 14, !taffo.info !25, !taffo.initweight !129, !llfi_index !158
   %128 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %125, float* noundef nonnull align 4 dereferenceable(4) %127)
           to label %129 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !159, !taffo.constinfo !71
 
 129:                                              ; preds = %126
-  call void @doProfiling(i32 34)
   %130 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 15, !taffo.info !25, !taffo.initweight !129, !llfi_index !160
   %131 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %128, float* noundef nonnull align 4 dereferenceable(4) %130)
           to label %132 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !161, !taffo.constinfo !71
 
 132:                                              ; preds = %129
-  call void @doProfiling(i32 34)
   %133 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 16, !taffo.info !25, !taffo.initweight !129, !llfi_index !162
   %134 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %131, float* noundef nonnull align 4 dereferenceable(4) %133)
           to label %135 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !163, !taffo.constinfo !71
 
 135:                                              ; preds = %132
-  call void @doProfiling(i32 34)
   %136 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 17, !taffo.info !25, !taffo.initweight !129, !llfi_index !164
   %137 = invoke noundef nonnull align 8 dereferenceable(16) %"class.std::basic_istream"* @_ZNSirsERf(%"class.std::basic_istream"* noundef nonnull align 8 dereferenceable(16) %134, float* noundef nonnull align 4 dereferenceable(4) %136)
           to label %138 unwind label %75, !taffo.structinfo !46, !taffo.initweight !88, !llfi_index !165, !taffo.constinfo !71
@@ -358,7 +333,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
 
 139:                                              ; preds = %150, %138
   %.02 = phi i32 [ 0, %138 ], [ %151, %150 ], !taffo.info !122, !llfi_index !167
-  call void @doProfiling(i32 55)
   %140 = icmp slt i32 %.02, 18, !taffo.info !168, !llfi_index !170
   call void @doProfiling(i32 53)
   call void @doProfiling(i32 2)
@@ -367,7 +341,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
 141:                                              ; preds = %139
   %142 = sext i32 %.02 to i64, !taffo.info !172, !llfi_index !174
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %143 = getelementptr inbounds [18 x float], [18 x float]* %10, i64 0, i64 %142, !taffo.info !25, !taffo.initweight !129, !llfi_index !175
   %144 = load float, float* %143, align 4, !taffo.info !25, !taffo.initweight !88, !llfi_index !176
   call void @doProfiling(i32 32)
@@ -381,7 +354,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
   call void @doProfiling(i32 13)
   %149 = sext i32 %148 to i64, !taffo.info !172, !llfi_index !181
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp8 = getelementptr inbounds i32, i32* %s2_30fixp, i64 %149, !taffo.info !82, !llfi_index !182
   call void @doProfiling(i32 33)
   store i32 %146, i32* %s2_30fixp8, align 4, !taffo.info !90, !llfi_index !183
@@ -410,8 +382,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
 157:                                              ; preds = %193, %156
   %.19 = phi i32 [ 0, %156 ], [ %194, %193 ], !taffo.info !196, !llfi_index !198
   %.01 = phi i64 [ 0, %156 ], [ %173, %193 ], !taffo.info !172, !llfi_index !199
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %158 = load i32, i32* %3, align 4, !llfi_index !200
   call void @doProfiling(i32 32)
   %159 = mul nsw i32 %158, 6, !llfi_index !201, !taffo.constinfo !53
@@ -428,41 +398,28 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
   store i32 -1, i32* %13, align 4, !llfi_index !205, !taffo.constinfo !53
   %163 = sext i32 %.19 to i64, !taffo.info !172, !llfi_index !206
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp7 = getelementptr inbounds i32, i32* %s2_30fixp, i64 %163, !taffo.info !82, !llfi_index !207
-  call void @doProfiling(i32 34)
   %s2_30fixp14 = getelementptr inbounds i32, i32* %s2_30fixp7, i64 0, !taffo.info !208, !llfi_index !209
   %164 = sext i32 %.19 to i64, !taffo.info !172, !llfi_index !210
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp6 = getelementptr inbounds i32, i32* %s2_30fixp, i64 %164, !taffo.info !82, !llfi_index !211
-  call void @doProfiling(i32 34)
   %s2_30fixp13 = getelementptr inbounds i32, i32* %s2_30fixp6, i64 3, !taffo.info !208, !llfi_index !212
   %165 = sext i32 %.19 to i64, !taffo.info !172, !llfi_index !213
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp5 = getelementptr inbounds i32, i32* %s2_30fixp, i64 %165, !taffo.info !82, !llfi_index !214
-  call void @doProfiling(i32 34)
   %s2_30fixp12 = getelementptr inbounds i32, i32* %s2_30fixp5, i64 6, !taffo.info !208, !llfi_index !215
   %166 = sext i32 %.19 to i64, !taffo.info !172, !llfi_index !216
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp4 = getelementptr inbounds i32, i32* %s2_30fixp, i64 %166, !taffo.info !82, !llfi_index !217
-  call void @doProfiling(i32 34)
   %s2_30fixp11 = getelementptr inbounds i32, i32* %s2_30fixp4, i64 9, !taffo.info !208, !llfi_index !218
   %167 = sext i32 %.19 to i64, !taffo.info !172, !llfi_index !219
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp3 = getelementptr inbounds i32, i32* %s2_30fixp, i64 %167, !taffo.info !82, !llfi_index !220
-  call void @doProfiling(i32 34)
   %s2_30fixp10 = getelementptr inbounds i32, i32* %s2_30fixp3, i64 12, !taffo.info !208, !llfi_index !221
   %168 = sext i32 %.19 to i64, !taffo.info !172, !llfi_index !222
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp2 = getelementptr inbounds i32, i32* %s2_30fixp, i64 %168, !taffo.info !82, !llfi_index !223
-  call void @doProfiling(i32 34)
   %s2_30fixp9 = getelementptr inbounds i32, i32* %s2_30fixp2, i64 15, !taffo.info !208, !llfi_index !224
-  call void @doProfiling(i32 34)
   %s3_29fixp1 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp, i64 0, i64 0, !taffo.info !31, !llfi_index !225, !taffo.target !35
   %169 = invoke i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* %s2_30fixp14, i32* %s2_30fixp13, i32* %s2_30fixp12, i32* %s2_30fixp11, i32* %s2_30fixp10, i32* %s2_30fixp9, i32* %s3_29fixp1, i32* %13)
           to label %170 unwind label %75, !taffo.info !226, !llfi_index !227, !taffo.target !35, !taffo.constinfo !228
@@ -508,7 +465,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
   call void @doProfiling(i32 32)
   %188 = sext i32 %187 to i64, !taffo.info !36, !llfi_index !241
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %189 = getelementptr inbounds [6 x i32], [6 x i32]* %11, i64 0, i64 %188, !llfi_index !242
   %190 = load i32, i32* %189, align 4, !llfi_index !243
   call void @doProfiling(i32 32)
@@ -538,7 +494,6 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
 
 199:                                              ; preds = %205, %197
   %.0 = phi i32 [ 0, %197 ], [ %206, %205 ], !taffo.info !122, !llfi_index !256
-  call void @doProfiling(i32 55)
   %200 = icmp slt i32 %.0, 6, !taffo.info !168, !llfi_index !257
   call void @doProfiling(i32 53)
   call void @doProfiling(i32 2)
@@ -597,39 +552,35 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #0 personali
 
 221:                                              ; preds = %219, %56
   %.010 = phi i32 [ -1, %56 ], [ 0, %219 ], !taffo.info !280, !llfi_index !282
-  call void @doProfiling(i32 55)
   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ifstream"* noundef nonnull align 8 dereferenceable(256) %9) #9, !llfi_index !283, !taffo.constinfo !53
   call void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ofstream"* noundef nonnull align 8 dereferenceable(248) %8) #9, !llfi_index !284, !taffo.constinfo !53
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %6) #9, !llfi_index !285, !taffo.constinfo !53
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #9, !llfi_index !286, !taffo.constinfo !53
+  call void @doProfiling(i32 1)
   call void @endProfiling()
   ret i32 %.010, !llfi_index !287
 
 222:                                              ; preds = %75, %71
   %.04 = phi i8* [ %77, %75 ], [ %73, %71 ], !llfi_index !288
   %.03 = phi i32 [ %78, %75 ], [ %74, %71 ], !llfi_index !289
-  call void @doProfiling(i32 55)
   call void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(%"class.std::basic_ofstream"* noundef nonnull align 8 dereferenceable(248) %8) #9, !llfi_index !290, !taffo.constinfo !53
   br label %223, !llfi_index !291
 
 223:                                              ; preds = %222, %67
   %.15 = phi i8* [ %.04, %222 ], [ %69, %67 ], !llfi_index !292
   %.1 = phi i32 [ %.03, %222 ], [ %70, %67 ], !llfi_index !293
-  call void @doProfiling(i32 55)
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %6) #9, !llfi_index !294, !taffo.constinfo !53
   br label %224, !llfi_index !295
 
 224:                                              ; preds = %223, %62
   %.26 = phi i8* [ %.15, %223 ], [ %64, %62 ], !llfi_index !296
   %.2 = phi i32 [ %.1, %223 ], [ %65, %62 ], !llfi_index !297
-  call void @doProfiling(i32 55)
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(%"class.std::__cxx11::basic_string"* noundef nonnull align 8 dereferenceable(32) %4) #9, !llfi_index !298, !taffo.constinfo !53
   br label %225, !llfi_index !299
 
 225:                                              ; preds = %224, %57
   %.37 = phi i8* [ %.26, %224 ], [ %59, %57 ], !llfi_index !300
   %.3 = phi i32 [ %.2, %224 ], [ %60, %57 ], !llfi_index !301
-  call void @doProfiling(i32 55)
   %226 = insertvalue { i8*, i32 } undef, i8* %.37, 0, !llfi_index !302
   call void @doProfiling(i32 65)
   %227 = insertvalue { i8*, i32 } %226, i32 %.3, 1, !llfi_index !303
@@ -643,14 +594,13 @@ declare !taffo.initweight !0 !taffo.funinfo !0 i32 @__gxx_personality_v0(...)
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
 define linkonce_odr dso_local noundef i64 @_ZNSt8ios_base9precisionEl(%"class.std::ios_base"* noundef nonnull align 8 dereferenceable(216) %0, i64 noundef %1) #1 comdat align 2 !taffo.initweight !16 !taffo.funinfo !305 {
-  call void @doProfiling(i32 34)
   %3 = getelementptr inbounds %"class.std::ios_base", %"class.std::ios_base"* %0, i32 0, i32 1, !llfi_index !308
   %4 = load i64, i64* %3, align 8, !llfi_index !309
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %5 = getelementptr inbounds %"class.std::ios_base", %"class.std::ios_base"* %0, i32 0, i32 1, !llfi_index !310
   call void @doProfiling(i32 33)
   store i64 %1, i64* %5, align 8, !llfi_index !311
+  call void @doProfiling(i32 1)
   ret i64 %4, !llfi_index !312
 }
 
@@ -698,15 +648,11 @@ define linkonce_odr dso_local noundef i64 @_ZN12AxBenchTimer20nanosecondsSinceIn
   %2 = alloca %struct.timespec, align 8, !taffo.structinfo !0, !llfi_index !323
   %3 = call i32 @clock_gettime(i32 noundef 4, %struct.timespec* noundef %2) #9, !llfi_index !324, !taffo.constinfo !46
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %4 = getelementptr inbounds %class.AxBenchTimer, %class.AxBenchTimer* %0, i32 0, i32 0, !llfi_index !325
-  call void @doProfiling(i32 34)
   %5 = getelementptr inbounds %struct.timespec, %struct.timespec* %4, i32 0, i32 1, !llfi_index !326
   %6 = load i64, i64* %5, align 8, !llfi_index !327
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %7 = getelementptr inbounds %class.AxBenchTimer, %class.AxBenchTimer* %0, i32 0, i32 0, !llfi_index !328
-  call void @doProfiling(i32 34)
   %8 = getelementptr inbounds %struct.timespec, %struct.timespec* %7, i32 0, i32 0, !llfi_index !329
   %9 = load i64, i64* %8, align 8, !llfi_index !330
   call void @doProfiling(i32 32)
@@ -714,11 +660,9 @@ define linkonce_odr dso_local noundef i64 @_ZN12AxBenchTimer20nanosecondsSinceIn
   call void @doProfiling(i32 17)
   %11 = add nsw i64 %6, %10, !llfi_index !332
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %12 = getelementptr inbounds %struct.timespec, %struct.timespec* %2, i32 0, i32 1, !llfi_index !333
   %13 = load i64, i64* %12, align 8, !llfi_index !334
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %14 = getelementptr inbounds %struct.timespec, %struct.timespec* %2, i32 0, i32 0, !llfi_index !335
   %15 = load i64, i64* %14, align 8, !llfi_index !336
   call void @doProfiling(i32 32)
@@ -728,6 +672,7 @@ define linkonce_odr dso_local noundef i64 @_ZN12AxBenchTimer20nanosecondsSinceIn
   call void @doProfiling(i32 13)
   %18 = sub i64 %17, %11, !llfi_index !339
   call void @doProfiling(i32 15)
+  call void @doProfiling(i32 1)
   ret i64 %18, !llfi_index !340
 }
 
@@ -735,7 +680,6 @@ declare !taffo.initweight !16 !taffo.funinfo !17 noundef nonnull align 8 derefer
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
 define linkonce_odr dso_local void @_ZN12AxBenchTimer5resetEv(%class.AxBenchTimer* noundef nonnull align 8 dereferenceable(16) %0) #1 comdat align 2 !taffo.initweight !315 !taffo.funinfo !320 {
-  call void @doProfiling(i32 34)
   %2 = getelementptr inbounds %class.AxBenchTimer, %class.AxBenchTimer* %0, i32 0, i32 0, !llfi_index !341
   %3 = call i32 @clock_gettime(i32 noundef 4, %struct.timespec* noundef %2) #9, !llfi_index !342, !taffo.constinfo !46
   call void @doProfiling(i32 56)
@@ -764,7 +708,6 @@ declare !taffo.initweight !16 !taffo.funinfo !17 i32 @clock_gettime(i32 noundef,
 define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef %0, float* noundef %1, float* noundef %2, float* noundef %3, float* noundef %4, float* noundef %5, float* noundef %6) #1 !taffo.initweight !344 !taffo.funinfo !345 !taffo.equivalentChild !346 {
   call void @doProfiling(i32 31)
   %8 = alloca [3 x float], align 4, !taffo.info !347, !taffo.initweight !27, !llfi_index !348
-  call void @doProfiling(i32 34)
   %9 = getelementptr inbounds float, float* %0, i64 0, !llfi_index !349
   %10 = load float, float* %9, align 4, !llfi_index !350
   call void @doProfiling(i32 32)
@@ -774,11 +717,9 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 56)
   %13 = fptrunc double %12 to float, !taffo.info !347, !taffo.initweight !91, !llfi_index !353
   call void @doProfiling(i32 45)
-  call void @doProfiling(i32 34)
   %14 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !354
   call void @doProfiling(i32 33)
   store float %13, float* %14, align 4, !taffo.info !347, !llfi_index !355
-  call void @doProfiling(i32 34)
   %15 = getelementptr inbounds float, float* %0, i64 1, !llfi_index !356
   %16 = load float, float* %15, align 4, !llfi_index !357
   call void @doProfiling(i32 32)
@@ -788,11 +729,9 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 56)
   %19 = fptrunc double %18 to float, !taffo.info !347, !taffo.initweight !91, !llfi_index !360
   call void @doProfiling(i32 45)
-  call void @doProfiling(i32 34)
   %20 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !361
   call void @doProfiling(i32 33)
   store float %19, float* %20, align 4, !taffo.info !347, !llfi_index !362
-  call void @doProfiling(i32 34)
   %21 = getelementptr inbounds float, float* %0, i64 2, !llfi_index !363
   %22 = load float, float* %21, align 4, !llfi_index !364
   call void @doProfiling(i32 32)
@@ -802,15 +741,12 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 56)
   %25 = fptrunc double %24 to float, !taffo.info !347, !taffo.initweight !91, !llfi_index !367
   call void @doProfiling(i32 45)
-  call void @doProfiling(i32 34)
   %26 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !368
   call void @doProfiling(i32 33)
   store float %25, float* %26, align 4, !taffo.info !347, !llfi_index !369
-  call void @doProfiling(i32 34)
   %27 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !370
   %28 = load float, float* %27, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !371
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %29 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !372
   %30 = load float, float* %29, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !373
   call void @doProfiling(i32 32)
@@ -820,11 +756,9 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   br i1 %31, label %32, label %41, !taffo.info !347, !taffo.initweight !375, !llfi_index !376
 
 32:                                               ; preds = %7
-  call void @doProfiling(i32 34)
   %33 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !377
   %34 = load float, float* %33, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !378
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %35 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !379
   %36 = load float, float* %35, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !380
   call void @doProfiling(i32 32)
@@ -842,16 +776,12 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 40:                                               ; preds = %39, %38
   %.02 = phi i16 [ 2, %38 ], [ 1, %39 ], !llfi_index !385
   %.01 = phi i16 [ 1, %38 ], [ 0, %39 ], !llfi_index !386
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   br label %50, !llfi_index !387
 
 41:                                               ; preds = %7
-  call void @doProfiling(i32 34)
   %42 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !388
   %43 = load float, float* %42, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !389
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %44 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !390
   %45 = load float, float* %44, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !391
   call void @doProfiling(i32 32)
@@ -868,23 +798,18 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 
 49:                                               ; preds = %48, %47
   %.13 = phi i16 [ 1, %47 ], [ 2, %48 ], !llfi_index !396
-  call void @doProfiling(i32 55)
   br label %50, !llfi_index !397
 
 50:                                               ; preds = %49, %40
   %.24 = phi i16 [ %.02, %40 ], [ %.13, %49 ], !llfi_index !398
   %.2 = phi i16 [ %.01, %40 ], [ 0, %49 ], !llfi_index !399
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %51 = sext i16 %.2 to i64, !llfi_index !400
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %52 = getelementptr inbounds float, float* %2, i64 %51, !llfi_index !401
   %53 = load float, float* %52, align 4, !llfi_index !402
   call void @doProfiling(i32 32)
   %54 = sext i16 %.2 to i64, !llfi_index !403
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %55 = getelementptr inbounds float, float* %1, i64 %54, !llfi_index !404
   %56 = load float, float* %55, align 4, !llfi_index !405
   call void @doProfiling(i32 32)
@@ -892,13 +817,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %58 = sext i16 %.24 to i64, !llfi_index !407
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %59 = getelementptr inbounds float, float* %2, i64 %58, !llfi_index !408
   %60 = load float, float* %59, align 4, !llfi_index !409
   call void @doProfiling(i32 32)
   %61 = sext i16 %.24 to i64, !llfi_index !410
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %62 = getelementptr inbounds float, float* %1, i64 %61, !llfi_index !411
   %63 = load float, float* %62, align 4, !llfi_index !412
   call void @doProfiling(i32 32)
@@ -906,13 +829,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %65 = sext i16 %.2 to i64, !llfi_index !414
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %66 = getelementptr inbounds float, float* %4, i64 %65, !llfi_index !415
   %67 = load float, float* %66, align 4, !llfi_index !416
   call void @doProfiling(i32 32)
   %68 = sext i16 %.2 to i64, !llfi_index !417
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %69 = getelementptr inbounds float, float* %5, i64 %68, !llfi_index !418
   %70 = load float, float* %69, align 4, !llfi_index !419
   call void @doProfiling(i32 32)
@@ -920,13 +841,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %72 = sext i16 %.24 to i64, !llfi_index !421
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %73 = getelementptr inbounds float, float* %4, i64 %72, !llfi_index !422
   %74 = load float, float* %73, align 4, !llfi_index !423
   call void @doProfiling(i32 32)
   %75 = sext i16 %.24 to i64, !llfi_index !424
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %76 = getelementptr inbounds float, float* %5, i64 %75, !llfi_index !425
   %77 = load float, float* %76, align 4, !llfi_index !426
   call void @doProfiling(i32 32)
@@ -934,13 +853,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %79 = sext i16 %.2 to i64, !llfi_index !428
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %80 = getelementptr inbounds float, float* %1, i64 %79, !llfi_index !429
   %81 = load float, float* %80, align 4, !llfi_index !430
   call void @doProfiling(i32 32)
   %82 = sext i16 %.2 to i64, !llfi_index !431
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %83 = getelementptr inbounds float, float* %4, i64 %82, !llfi_index !432
   %84 = load float, float* %83, align 4, !llfi_index !433
   call void @doProfiling(i32 32)
@@ -948,13 +865,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %86 = sext i16 %.24 to i64, !llfi_index !435
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %87 = getelementptr inbounds float, float* %1, i64 %86, !llfi_index !436
   %88 = load float, float* %87, align 4, !llfi_index !437
   call void @doProfiling(i32 32)
   %89 = sext i16 %.24 to i64, !llfi_index !438
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %90 = getelementptr inbounds float, float* %4, i64 %89, !llfi_index !439
   %91 = load float, float* %90, align 4, !llfi_index !440
   call void @doProfiling(i32 32)
@@ -1073,13 +988,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 132:                                              ; preds = %131, %110, %108, %106
   %133 = sext i16 %.2 to i64, !llfi_index !483
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %134 = getelementptr inbounds float, float* %5, i64 %133, !llfi_index !484
   %135 = load float, float* %134, align 4, !llfi_index !485
   call void @doProfiling(i32 32)
   %136 = sext i16 %.2 to i64, !llfi_index !486
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %137 = getelementptr inbounds float, float* %6, i64 %136, !llfi_index !487
   %138 = load float, float* %137, align 4, !llfi_index !488
   call void @doProfiling(i32 32)
@@ -1087,13 +1000,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %140 = sext i16 %.24 to i64, !llfi_index !490
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %141 = getelementptr inbounds float, float* %5, i64 %140, !llfi_index !491
   %142 = load float, float* %141, align 4, !llfi_index !492
   call void @doProfiling(i32 32)
   %143 = sext i16 %.24 to i64, !llfi_index !493
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %144 = getelementptr inbounds float, float* %6, i64 %143, !llfi_index !494
   %145 = load float, float* %144, align 4, !llfi_index !495
   call void @doProfiling(i32 32)
@@ -1101,13 +1012,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %147 = sext i16 %.2 to i64, !llfi_index !497
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %148 = getelementptr inbounds float, float* %1, i64 %147, !llfi_index !498
   %149 = load float, float* %148, align 4, !llfi_index !499
   call void @doProfiling(i32 32)
   %150 = sext i16 %.2 to i64, !llfi_index !500
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %151 = getelementptr inbounds float, float* %5, i64 %150, !llfi_index !501
   %152 = load float, float* %151, align 4, !llfi_index !502
   call void @doProfiling(i32 32)
@@ -1115,13 +1024,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %154 = sext i16 %.24 to i64, !llfi_index !504
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %155 = getelementptr inbounds float, float* %1, i64 %154, !llfi_index !505
   %156 = load float, float* %155, align 4, !llfi_index !506
   call void @doProfiling(i32 32)
   %157 = sext i16 %.24 to i64, !llfi_index !507
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %158 = getelementptr inbounds float, float* %5, i64 %157, !llfi_index !508
   %159 = load float, float* %158, align 4, !llfi_index !509
   call void @doProfiling(i32 32)
@@ -1240,13 +1147,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 200:                                              ; preds = %199, %178, %176, %174
   %201 = sext i16 %.2 to i64, !llfi_index !551
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %202 = getelementptr inbounds float, float* %6, i64 %201, !llfi_index !552
   %203 = load float, float* %202, align 4, !llfi_index !553
   call void @doProfiling(i32 32)
   %204 = sext i16 %.2 to i64, !llfi_index !554
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %205 = getelementptr inbounds float, float* %4, i64 %204, !llfi_index !555
   %206 = load float, float* %205, align 4, !llfi_index !556
   call void @doProfiling(i32 32)
@@ -1254,13 +1159,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %208 = sext i16 %.24 to i64, !llfi_index !558
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %209 = getelementptr inbounds float, float* %6, i64 %208, !llfi_index !559
   %210 = load float, float* %209, align 4, !llfi_index !560
   call void @doProfiling(i32 32)
   %211 = sext i16 %.24 to i64, !llfi_index !561
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %212 = getelementptr inbounds float, float* %4, i64 %211, !llfi_index !562
   %213 = load float, float* %212, align 4, !llfi_index !563
   call void @doProfiling(i32 32)
@@ -1268,13 +1171,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %215 = sext i16 %.2 to i64, !llfi_index !565
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %216 = getelementptr inbounds float, float* %1, i64 %215, !llfi_index !566
   %217 = load float, float* %216, align 4, !llfi_index !567
   call void @doProfiling(i32 32)
   %218 = sext i16 %.2 to i64, !llfi_index !568
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %219 = getelementptr inbounds float, float* %6, i64 %218, !llfi_index !569
   %220 = load float, float* %219, align 4, !llfi_index !570
   call void @doProfiling(i32 32)
@@ -1282,13 +1183,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %222 = sext i16 %.24 to i64, !llfi_index !572
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %223 = getelementptr inbounds float, float* %1, i64 %222, !llfi_index !573
   %224 = load float, float* %223, align 4, !llfi_index !574
   call void @doProfiling(i32 32)
   %225 = sext i16 %.24 to i64, !llfi_index !575
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %226 = getelementptr inbounds float, float* %6, i64 %225, !llfi_index !576
   %227 = load float, float* %226, align 4, !llfi_index !577
   call void @doProfiling(i32 32)
@@ -1407,13 +1306,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 268:                                              ; preds = %267, %246, %244, %242
   %269 = sext i16 %.2 to i64, !llfi_index !619
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %270 = getelementptr inbounds float, float* %3, i64 %269, !llfi_index !620
   %271 = load float, float* %270, align 4, !llfi_index !621
   call void @doProfiling(i32 32)
   %272 = sext i16 %.2 to i64, !llfi_index !622
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %273 = getelementptr inbounds float, float* %2, i64 %272, !llfi_index !623
   %274 = load float, float* %273, align 4, !llfi_index !624
   call void @doProfiling(i32 32)
@@ -1421,13 +1318,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %276 = sext i16 %.24 to i64, !llfi_index !626
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %277 = getelementptr inbounds float, float* %3, i64 %276, !llfi_index !627
   %278 = load float, float* %277, align 4, !llfi_index !628
   call void @doProfiling(i32 32)
   %279 = sext i16 %.24 to i64, !llfi_index !629
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %280 = getelementptr inbounds float, float* %2, i64 %279, !llfi_index !630
   %281 = load float, float* %280, align 4, !llfi_index !631
   call void @doProfiling(i32 32)
@@ -1435,13 +1330,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %283 = sext i16 %.2 to i64, !llfi_index !633
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %284 = getelementptr inbounds float, float* %4, i64 %283, !llfi_index !634
   %285 = load float, float* %284, align 4, !llfi_index !635
   call void @doProfiling(i32 32)
   %286 = sext i16 %.2 to i64, !llfi_index !636
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %287 = getelementptr inbounds float, float* %5, i64 %286, !llfi_index !637
   %288 = load float, float* %287, align 4, !llfi_index !638
   call void @doProfiling(i32 32)
@@ -1449,13 +1342,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %290 = sext i16 %.24 to i64, !llfi_index !640
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %291 = getelementptr inbounds float, float* %4, i64 %290, !llfi_index !641
   %292 = load float, float* %291, align 4, !llfi_index !642
   call void @doProfiling(i32 32)
   %293 = sext i16 %.24 to i64, !llfi_index !643
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %294 = getelementptr inbounds float, float* %5, i64 %293, !llfi_index !644
   %295 = load float, float* %294, align 4, !llfi_index !645
   call void @doProfiling(i32 32)
@@ -1463,13 +1354,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %297 = sext i16 %.2 to i64, !llfi_index !647
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %298 = getelementptr inbounds float, float* %2, i64 %297, !llfi_index !648
   %299 = load float, float* %298, align 4, !llfi_index !649
   call void @doProfiling(i32 32)
   %300 = sext i16 %.2 to i64, !llfi_index !650
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %301 = getelementptr inbounds float, float* %4, i64 %300, !llfi_index !651
   %302 = load float, float* %301, align 4, !llfi_index !652
   call void @doProfiling(i32 32)
@@ -1477,13 +1366,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %304 = sext i16 %.24 to i64, !llfi_index !654
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %305 = getelementptr inbounds float, float* %2, i64 %304, !llfi_index !655
   %306 = load float, float* %305, align 4, !llfi_index !656
   call void @doProfiling(i32 32)
   %307 = sext i16 %.24 to i64, !llfi_index !657
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %308 = getelementptr inbounds float, float* %4, i64 %307, !llfi_index !658
   %309 = load float, float* %308, align 4, !llfi_index !659
   call void @doProfiling(i32 32)
@@ -1602,13 +1489,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 350:                                              ; preds = %349, %328, %326, %324
   %351 = sext i16 %.2 to i64, !llfi_index !701
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %352 = getelementptr inbounds float, float* %5, i64 %351, !llfi_index !702
   %353 = load float, float* %352, align 4, !llfi_index !703
   call void @doProfiling(i32 32)
   %354 = sext i16 %.2 to i64, !llfi_index !704
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %355 = getelementptr inbounds float, float* %6, i64 %354, !llfi_index !705
   %356 = load float, float* %355, align 4, !llfi_index !706
   call void @doProfiling(i32 32)
@@ -1616,13 +1501,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %358 = sext i16 %.24 to i64, !llfi_index !708
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %359 = getelementptr inbounds float, float* %5, i64 %358, !llfi_index !709
   %360 = load float, float* %359, align 4, !llfi_index !710
   call void @doProfiling(i32 32)
   %361 = sext i16 %.24 to i64, !llfi_index !711
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %362 = getelementptr inbounds float, float* %6, i64 %361, !llfi_index !712
   %363 = load float, float* %362, align 4, !llfi_index !713
   call void @doProfiling(i32 32)
@@ -1630,13 +1513,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %365 = sext i16 %.2 to i64, !llfi_index !715
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %366 = getelementptr inbounds float, float* %2, i64 %365, !llfi_index !716
   %367 = load float, float* %366, align 4, !llfi_index !717
   call void @doProfiling(i32 32)
   %368 = sext i16 %.2 to i64, !llfi_index !718
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %369 = getelementptr inbounds float, float* %5, i64 %368, !llfi_index !719
   %370 = load float, float* %369, align 4, !llfi_index !720
   call void @doProfiling(i32 32)
@@ -1644,13 +1525,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %372 = sext i16 %.24 to i64, !llfi_index !722
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %373 = getelementptr inbounds float, float* %2, i64 %372, !llfi_index !723
   %374 = load float, float* %373, align 4, !llfi_index !724
   call void @doProfiling(i32 32)
   %375 = sext i16 %.24 to i64, !llfi_index !725
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %376 = getelementptr inbounds float, float* %5, i64 %375, !llfi_index !726
   %377 = load float, float* %376, align 4, !llfi_index !727
   call void @doProfiling(i32 32)
@@ -1769,13 +1648,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 418:                                              ; preds = %417, %396, %394, %392
   %419 = sext i16 %.2 to i64, !llfi_index !769
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %420 = getelementptr inbounds float, float* %6, i64 %419, !llfi_index !770
   %421 = load float, float* %420, align 4, !llfi_index !771
   call void @doProfiling(i32 32)
   %422 = sext i16 %.2 to i64, !llfi_index !772
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %423 = getelementptr inbounds float, float* %4, i64 %422, !llfi_index !773
   %424 = load float, float* %423, align 4, !llfi_index !774
   call void @doProfiling(i32 32)
@@ -1783,13 +1660,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %426 = sext i16 %.24 to i64, !llfi_index !776
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %427 = getelementptr inbounds float, float* %6, i64 %426, !llfi_index !777
   %428 = load float, float* %427, align 4, !llfi_index !778
   call void @doProfiling(i32 32)
   %429 = sext i16 %.24 to i64, !llfi_index !779
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %430 = getelementptr inbounds float, float* %4, i64 %429, !llfi_index !780
   %431 = load float, float* %430, align 4, !llfi_index !781
   call void @doProfiling(i32 32)
@@ -1797,13 +1672,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %433 = sext i16 %.2 to i64, !llfi_index !783
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %434 = getelementptr inbounds float, float* %2, i64 %433, !llfi_index !784
   %435 = load float, float* %434, align 4, !llfi_index !785
   call void @doProfiling(i32 32)
   %436 = sext i16 %.2 to i64, !llfi_index !786
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %437 = getelementptr inbounds float, float* %6, i64 %436, !llfi_index !787
   %438 = load float, float* %437, align 4, !llfi_index !788
   call void @doProfiling(i32 32)
@@ -1811,13 +1684,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %440 = sext i16 %.24 to i64, !llfi_index !790
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %441 = getelementptr inbounds float, float* %2, i64 %440, !llfi_index !791
   %442 = load float, float* %441, align 4, !llfi_index !792
   call void @doProfiling(i32 32)
   %443 = sext i16 %.24 to i64, !llfi_index !793
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %444 = getelementptr inbounds float, float* %6, i64 %443, !llfi_index !794
   %445 = load float, float* %444, align 4, !llfi_index !795
   call void @doProfiling(i32 32)
@@ -1936,13 +1807,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 486:                                              ; preds = %485, %464, %462, %460
   %487 = sext i16 %.2 to i64, !llfi_index !837
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %488 = getelementptr inbounds float, float* %1, i64 %487, !llfi_index !838
   %489 = load float, float* %488, align 4, !llfi_index !839
   call void @doProfiling(i32 32)
   %490 = sext i16 %.2 to i64, !llfi_index !840
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %491 = getelementptr inbounds float, float* %3, i64 %490, !llfi_index !841
   %492 = load float, float* %491, align 4, !llfi_index !842
   call void @doProfiling(i32 32)
@@ -1950,13 +1819,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %494 = sext i16 %.24 to i64, !llfi_index !844
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %495 = getelementptr inbounds float, float* %1, i64 %494, !llfi_index !845
   %496 = load float, float* %495, align 4, !llfi_index !846
   call void @doProfiling(i32 32)
   %497 = sext i16 %.24 to i64, !llfi_index !847
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %498 = getelementptr inbounds float, float* %3, i64 %497, !llfi_index !848
   %499 = load float, float* %498, align 4, !llfi_index !849
   call void @doProfiling(i32 32)
@@ -1964,13 +1831,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %501 = sext i16 %.2 to i64, !llfi_index !851
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %502 = getelementptr inbounds float, float* %4, i64 %501, !llfi_index !852
   %503 = load float, float* %502, align 4, !llfi_index !853
   call void @doProfiling(i32 32)
   %504 = sext i16 %.2 to i64, !llfi_index !854
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %505 = getelementptr inbounds float, float* %5, i64 %504, !llfi_index !855
   %506 = load float, float* %505, align 4, !llfi_index !856
   call void @doProfiling(i32 32)
@@ -1978,13 +1843,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %508 = sext i16 %.24 to i64, !llfi_index !858
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %509 = getelementptr inbounds float, float* %4, i64 %508, !llfi_index !859
   %510 = load float, float* %509, align 4, !llfi_index !860
   call void @doProfiling(i32 32)
   %511 = sext i16 %.24 to i64, !llfi_index !861
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %512 = getelementptr inbounds float, float* %5, i64 %511, !llfi_index !862
   %513 = load float, float* %512, align 4, !llfi_index !863
   call void @doProfiling(i32 32)
@@ -1992,13 +1855,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %515 = sext i16 %.2 to i64, !llfi_index !865
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %516 = getelementptr inbounds float, float* %3, i64 %515, !llfi_index !866
   %517 = load float, float* %516, align 4, !llfi_index !867
   call void @doProfiling(i32 32)
   %518 = sext i16 %.2 to i64, !llfi_index !868
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %519 = getelementptr inbounds float, float* %4, i64 %518, !llfi_index !869
   %520 = load float, float* %519, align 4, !llfi_index !870
   call void @doProfiling(i32 32)
@@ -2006,13 +1867,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %522 = sext i16 %.24 to i64, !llfi_index !872
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %523 = getelementptr inbounds float, float* %3, i64 %522, !llfi_index !873
   %524 = load float, float* %523, align 4, !llfi_index !874
   call void @doProfiling(i32 32)
   %525 = sext i16 %.24 to i64, !llfi_index !875
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %526 = getelementptr inbounds float, float* %4, i64 %525, !llfi_index !876
   %527 = load float, float* %526, align 4, !llfi_index !877
   call void @doProfiling(i32 32)
@@ -2131,13 +1990,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 568:                                              ; preds = %567, %546, %544, %542
   %569 = sext i16 %.2 to i64, !llfi_index !919
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %570 = getelementptr inbounds float, float* %5, i64 %569, !llfi_index !920
   %571 = load float, float* %570, align 4, !llfi_index !921
   call void @doProfiling(i32 32)
   %572 = sext i16 %.2 to i64, !llfi_index !922
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %573 = getelementptr inbounds float, float* %6, i64 %572, !llfi_index !923
   %574 = load float, float* %573, align 4, !llfi_index !924
   call void @doProfiling(i32 32)
@@ -2145,13 +2002,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %576 = sext i16 %.24 to i64, !llfi_index !926
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %577 = getelementptr inbounds float, float* %5, i64 %576, !llfi_index !927
   %578 = load float, float* %577, align 4, !llfi_index !928
   call void @doProfiling(i32 32)
   %579 = sext i16 %.24 to i64, !llfi_index !929
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %580 = getelementptr inbounds float, float* %6, i64 %579, !llfi_index !930
   %581 = load float, float* %580, align 4, !llfi_index !931
   call void @doProfiling(i32 32)
@@ -2159,13 +2014,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %583 = sext i16 %.2 to i64, !llfi_index !933
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %584 = getelementptr inbounds float, float* %3, i64 %583, !llfi_index !934
   %585 = load float, float* %584, align 4, !llfi_index !935
   call void @doProfiling(i32 32)
   %586 = sext i16 %.2 to i64, !llfi_index !936
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %587 = getelementptr inbounds float, float* %5, i64 %586, !llfi_index !937
   %588 = load float, float* %587, align 4, !llfi_index !938
   call void @doProfiling(i32 32)
@@ -2173,13 +2026,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %590 = sext i16 %.24 to i64, !llfi_index !940
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %591 = getelementptr inbounds float, float* %3, i64 %590, !llfi_index !941
   %592 = load float, float* %591, align 4, !llfi_index !942
   call void @doProfiling(i32 32)
   %593 = sext i16 %.24 to i64, !llfi_index !943
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %594 = getelementptr inbounds float, float* %5, i64 %593, !llfi_index !944
   %595 = load float, float* %594, align 4, !llfi_index !945
   call void @doProfiling(i32 32)
@@ -2298,13 +2149,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 636:                                              ; preds = %635, %614, %612, %610
   %637 = sext i16 %.2 to i64, !llfi_index !987
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %638 = getelementptr inbounds float, float* %6, i64 %637, !llfi_index !988
   %639 = load float, float* %638, align 4, !llfi_index !989
   call void @doProfiling(i32 32)
   %640 = sext i16 %.2 to i64, !llfi_index !990
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %641 = getelementptr inbounds float, float* %4, i64 %640, !llfi_index !991
   %642 = load float, float* %641, align 4, !llfi_index !992
   call void @doProfiling(i32 32)
@@ -2312,13 +2161,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %644 = sext i16 %.24 to i64, !llfi_index !994
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %645 = getelementptr inbounds float, float* %6, i64 %644, !llfi_index !995
   %646 = load float, float* %645, align 4, !llfi_index !996
   call void @doProfiling(i32 32)
   %647 = sext i16 %.24 to i64, !llfi_index !997
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %648 = getelementptr inbounds float, float* %4, i64 %647, !llfi_index !998
   %649 = load float, float* %648, align 4, !llfi_index !999
   call void @doProfiling(i32 32)
@@ -2326,13 +2173,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %651 = sext i16 %.2 to i64, !llfi_index !1001
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %652 = getelementptr inbounds float, float* %3, i64 %651, !llfi_index !1002
   %653 = load float, float* %652, align 4, !llfi_index !1003
   call void @doProfiling(i32 32)
   %654 = sext i16 %.2 to i64, !llfi_index !1004
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %655 = getelementptr inbounds float, float* %6, i64 %654, !llfi_index !1005
   %656 = load float, float* %655, align 4, !llfi_index !1006
   call void @doProfiling(i32 32)
@@ -2340,13 +2185,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %658 = sext i16 %.24 to i64, !llfi_index !1008
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %659 = getelementptr inbounds float, float* %3, i64 %658, !llfi_index !1009
   %660 = load float, float* %659, align 4, !llfi_index !1010
   call void @doProfiling(i32 32)
   %661 = sext i16 %.24 to i64, !llfi_index !1011
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %662 = getelementptr inbounds float, float* %6, i64 %661, !llfi_index !1012
   %663 = load float, float* %662, align 4, !llfi_index !1013
   call void @doProfiling(i32 32)
@@ -2465,13 +2308,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 704:                                              ; preds = %703, %682, %680, %678
   %705 = sext i16 %.24 to i64, !llfi_index !1055
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %706 = getelementptr inbounds float, float* %5, i64 %705, !llfi_index !1056
   %707 = load float, float* %706, align 4, !llfi_index !1057
   call void @doProfiling(i32 32)
   %708 = sext i16 %.24 to i64, !llfi_index !1058
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %709 = getelementptr inbounds float, float* %4, i64 %708, !llfi_index !1059
   %710 = load float, float* %709, align 4, !llfi_index !1060
   call void @doProfiling(i32 32)
@@ -2479,13 +2320,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %712 = sext i16 %.2 to i64, !llfi_index !1062
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %713 = getelementptr inbounds float, float* %5, i64 %712, !llfi_index !1063
   %714 = load float, float* %713, align 4, !llfi_index !1064
   call void @doProfiling(i32 32)
   %715 = sext i16 %.2 to i64, !llfi_index !1065
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %716 = getelementptr inbounds float, float* %4, i64 %715, !llfi_index !1066
   %717 = load float, float* %716, align 4, !llfi_index !1067
   call void @doProfiling(i32 32)
@@ -2497,13 +2336,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 12)
   %721 = sext i16 %.2 to i64, !llfi_index !1071
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %722 = getelementptr inbounds float, float* %4, i64 %721, !llfi_index !1072
   %723 = load float, float* %722, align 4, !llfi_index !1073
   call void @doProfiling(i32 32)
   %724 = sext i16 %.24 to i64, !llfi_index !1074
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %725 = getelementptr inbounds float, float* %4, i64 %724, !llfi_index !1075
   %726 = load float, float* %725, align 4, !llfi_index !1076
   call void @doProfiling(i32 32)
@@ -2515,13 +2352,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 56)
   %730 = sext i16 %.2 to i64, !llfi_index !1080
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %731 = getelementptr inbounds float, float* %1, i64 %730, !llfi_index !1081
   %732 = load float, float* %731, align 4, !llfi_index !1082
   call void @doProfiling(i32 32)
   %733 = sext i16 %.24 to i64, !llfi_index !1083
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %734 = getelementptr inbounds float, float* %1, i64 %733, !llfi_index !1084
   %735 = load float, float* %734, align 4, !llfi_index !1085
   call void @doProfiling(i32 32)
@@ -2533,13 +2368,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 14)
   %739 = sext i16 %.24 to i64, !llfi_index !1089
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %740 = getelementptr inbounds float, float* %6, i64 %739, !llfi_index !1090
   %741 = load float, float* %740, align 4, !llfi_index !1091
   call void @doProfiling(i32 32)
   %742 = sext i16 %.24 to i64, !llfi_index !1092
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %743 = getelementptr inbounds float, float* %5, i64 %742, !llfi_index !1093
   %744 = load float, float* %743, align 4, !llfi_index !1094
   call void @doProfiling(i32 32)
@@ -2547,13 +2380,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %746 = sext i16 %.2 to i64, !llfi_index !1096
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %747 = getelementptr inbounds float, float* %6, i64 %746, !llfi_index !1097
   %748 = load float, float* %747, align 4, !llfi_index !1098
   call void @doProfiling(i32 32)
   %749 = sext i16 %.2 to i64, !llfi_index !1099
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %750 = getelementptr inbounds float, float* %5, i64 %749, !llfi_index !1100
   %751 = load float, float* %750, align 4, !llfi_index !1101
   call void @doProfiling(i32 32)
@@ -2565,13 +2396,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 12)
   %755 = sext i16 %.2 to i64, !llfi_index !1105
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %756 = getelementptr inbounds float, float* %5, i64 %755, !llfi_index !1106
   %757 = load float, float* %756, align 4, !llfi_index !1107
   call void @doProfiling(i32 32)
   %758 = sext i16 %.24 to i64, !llfi_index !1108
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %759 = getelementptr inbounds float, float* %5, i64 %758, !llfi_index !1109
   %760 = load float, float* %759, align 4, !llfi_index !1110
   call void @doProfiling(i32 32)
@@ -2583,13 +2412,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 56)
   %764 = sext i16 %.2 to i64, !llfi_index !1114
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %765 = getelementptr inbounds float, float* %1, i64 %764, !llfi_index !1115
   %766 = load float, float* %765, align 4, !llfi_index !1116
   call void @doProfiling(i32 32)
   %767 = sext i16 %.24 to i64, !llfi_index !1117
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %768 = getelementptr inbounds float, float* %1, i64 %767, !llfi_index !1118
   %769 = load float, float* %768, align 4, !llfi_index !1119
   call void @doProfiling(i32 32)
@@ -2601,13 +2428,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 14)
   %773 = sext i16 %.24 to i64, !llfi_index !1123
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %774 = getelementptr inbounds float, float* %4, i64 %773, !llfi_index !1124
   %775 = load float, float* %774, align 4, !llfi_index !1125
   call void @doProfiling(i32 32)
   %776 = sext i16 %.24 to i64, !llfi_index !1126
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %777 = getelementptr inbounds float, float* %6, i64 %776, !llfi_index !1127
   %778 = load float, float* %777, align 4, !llfi_index !1128
   call void @doProfiling(i32 32)
@@ -2615,13 +2440,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %780 = sext i16 %.2 to i64, !llfi_index !1130
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %781 = getelementptr inbounds float, float* %4, i64 %780, !llfi_index !1131
   %782 = load float, float* %781, align 4, !llfi_index !1132
   call void @doProfiling(i32 32)
   %783 = sext i16 %.2 to i64, !llfi_index !1133
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %784 = getelementptr inbounds float, float* %6, i64 %783, !llfi_index !1134
   %785 = load float, float* %784, align 4, !llfi_index !1135
   call void @doProfiling(i32 32)
@@ -2633,13 +2456,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 12)
   %789 = sext i16 %.2 to i64, !llfi_index !1139
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %790 = getelementptr inbounds float, float* %6, i64 %789, !llfi_index !1140
   %791 = load float, float* %790, align 4, !llfi_index !1141
   call void @doProfiling(i32 32)
   %792 = sext i16 %.24 to i64, !llfi_index !1142
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %793 = getelementptr inbounds float, float* %6, i64 %792, !llfi_index !1143
   %794 = load float, float* %793, align 4, !llfi_index !1144
   call void @doProfiling(i32 32)
@@ -2651,13 +2472,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 56)
   %798 = sext i16 %.2 to i64, !llfi_index !1148
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %799 = getelementptr inbounds float, float* %1, i64 %798, !llfi_index !1149
   %800 = load float, float* %799, align 4, !llfi_index !1150
   call void @doProfiling(i32 32)
   %801 = sext i16 %.24 to i64, !llfi_index !1151
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %802 = getelementptr inbounds float, float* %1, i64 %801, !llfi_index !1152
   %803 = load float, float* %802, align 4, !llfi_index !1153
   call void @doProfiling(i32 32)
@@ -2701,13 +2520,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 818:                                              ; preds = %817, %810
   %819 = sext i16 %.24 to i64, !llfi_index !1170
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %820 = getelementptr inbounds float, float* %2, i64 %819, !llfi_index !1171
   %821 = load float, float* %820, align 4, !llfi_index !1172
   call void @doProfiling(i32 32)
   %822 = sext i16 %.24 to i64, !llfi_index !1173
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %823 = getelementptr inbounds float, float* %1, i64 %822, !llfi_index !1174
   %824 = load float, float* %823, align 4, !llfi_index !1175
   call void @doProfiling(i32 32)
@@ -2715,13 +2532,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %826 = sext i16 %.2 to i64, !llfi_index !1177
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %827 = getelementptr inbounds float, float* %2, i64 %826, !llfi_index !1178
   %828 = load float, float* %827, align 4, !llfi_index !1179
   call void @doProfiling(i32 32)
   %829 = sext i16 %.2 to i64, !llfi_index !1180
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %830 = getelementptr inbounds float, float* %1, i64 %829, !llfi_index !1181
   %831 = load float, float* %830, align 4, !llfi_index !1182
   call void @doProfiling(i32 32)
@@ -2733,13 +2548,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 12)
   %835 = sext i16 %.2 to i64, !llfi_index !1186
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %836 = getelementptr inbounds float, float* %1, i64 %835, !llfi_index !1187
   %837 = load float, float* %836, align 4, !llfi_index !1188
   call void @doProfiling(i32 32)
   %838 = sext i16 %.24 to i64, !llfi_index !1189
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %839 = getelementptr inbounds float, float* %1, i64 %838, !llfi_index !1190
   %840 = load float, float* %839, align 4, !llfi_index !1191
   call void @doProfiling(i32 32)
@@ -2751,13 +2564,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 56)
   %844 = sext i16 %.2 to i64, !llfi_index !1195
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %845 = getelementptr inbounds float, float* %4, i64 %844, !llfi_index !1196
   %846 = load float, float* %845, align 4, !llfi_index !1197
   call void @doProfiling(i32 32)
   %847 = sext i16 %.24 to i64, !llfi_index !1198
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %848 = getelementptr inbounds float, float* %4, i64 %847, !llfi_index !1199
   %849 = load float, float* %848, align 4, !llfi_index !1200
   call void @doProfiling(i32 32)
@@ -2769,13 +2580,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 14)
   %853 = sext i16 %.24 to i64, !llfi_index !1204
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %854 = getelementptr inbounds float, float* %3, i64 %853, !llfi_index !1205
   %855 = load float, float* %854, align 4, !llfi_index !1206
   call void @doProfiling(i32 32)
   %856 = sext i16 %.24 to i64, !llfi_index !1207
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %857 = getelementptr inbounds float, float* %2, i64 %856, !llfi_index !1208
   %858 = load float, float* %857, align 4, !llfi_index !1209
   call void @doProfiling(i32 32)
@@ -2783,13 +2592,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %860 = sext i16 %.2 to i64, !llfi_index !1211
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %861 = getelementptr inbounds float, float* %3, i64 %860, !llfi_index !1212
   %862 = load float, float* %861, align 4, !llfi_index !1213
   call void @doProfiling(i32 32)
   %863 = sext i16 %.2 to i64, !llfi_index !1214
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %864 = getelementptr inbounds float, float* %2, i64 %863, !llfi_index !1215
   %865 = load float, float* %864, align 4, !llfi_index !1216
   call void @doProfiling(i32 32)
@@ -2801,13 +2608,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 12)
   %869 = sext i16 %.2 to i64, !llfi_index !1220
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %870 = getelementptr inbounds float, float* %2, i64 %869, !llfi_index !1221
   %871 = load float, float* %870, align 4, !llfi_index !1222
   call void @doProfiling(i32 32)
   %872 = sext i16 %.24 to i64, !llfi_index !1223
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %873 = getelementptr inbounds float, float* %2, i64 %872, !llfi_index !1224
   %874 = load float, float* %873, align 4, !llfi_index !1225
   call void @doProfiling(i32 32)
@@ -2819,13 +2624,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 56)
   %878 = sext i16 %.2 to i64, !llfi_index !1229
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %879 = getelementptr inbounds float, float* %4, i64 %878, !llfi_index !1230
   %880 = load float, float* %879, align 4, !llfi_index !1231
   call void @doProfiling(i32 32)
   %881 = sext i16 %.24 to i64, !llfi_index !1232
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %882 = getelementptr inbounds float, float* %4, i64 %881, !llfi_index !1233
   %883 = load float, float* %882, align 4, !llfi_index !1234
   call void @doProfiling(i32 32)
@@ -2837,13 +2640,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 14)
   %887 = sext i16 %.24 to i64, !llfi_index !1238
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %888 = getelementptr inbounds float, float* %1, i64 %887, !llfi_index !1239
   %889 = load float, float* %888, align 4, !llfi_index !1240
   call void @doProfiling(i32 32)
   %890 = sext i16 %.24 to i64, !llfi_index !1241
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %891 = getelementptr inbounds float, float* %3, i64 %890, !llfi_index !1242
   %892 = load float, float* %891, align 4, !llfi_index !1243
   call void @doProfiling(i32 32)
@@ -2851,13 +2652,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 16)
   %894 = sext i16 %.2 to i64, !llfi_index !1245
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %895 = getelementptr inbounds float, float* %1, i64 %894, !llfi_index !1246
   %896 = load float, float* %895, align 4, !llfi_index !1247
   call void @doProfiling(i32 32)
   %897 = sext i16 %.2 to i64, !llfi_index !1248
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %898 = getelementptr inbounds float, float* %3, i64 %897, !llfi_index !1249
   %899 = load float, float* %898, align 4, !llfi_index !1250
   call void @doProfiling(i32 32)
@@ -2869,13 +2668,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 12)
   %903 = sext i16 %.2 to i64, !llfi_index !1254
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %904 = getelementptr inbounds float, float* %3, i64 %903, !llfi_index !1255
   %905 = load float, float* %904, align 4, !llfi_index !1256
   call void @doProfiling(i32 32)
   %906 = sext i16 %.24 to i64, !llfi_index !1257
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %907 = getelementptr inbounds float, float* %3, i64 %906, !llfi_index !1258
   %908 = load float, float* %907, align 4, !llfi_index !1259
   call void @doProfiling(i32 32)
@@ -2887,13 +2684,11 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
   call void @doProfiling(i32 56)
   %912 = sext i16 %.2 to i64, !llfi_index !1263
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %913 = getelementptr inbounds float, float* %4, i64 %912, !llfi_index !1264
   %914 = load float, float* %913, align 4, !llfi_index !1265
   call void @doProfiling(i32 32)
   %915 = sext i16 %.24 to i64, !llfi_index !1266
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %916 = getelementptr inbounds float, float* %4, i64 %915, !llfi_index !1267
   %917 = load float, float* %916, align 4, !llfi_index !1268
   call void @doProfiling(i32 32)
@@ -2939,7 +2734,7 @@ define dso_local noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_(float* noundef 
 
 933:                                              ; preds = %932, %930, %816, %701, %695, %633, %627, %565, %559, %483, %477, %415, %409, %347, %341, %265, %259, %197, %191, %129, %123
   %.0 = phi i32 [ 1, %123 ], [ 1, %191 ], [ 1, %259 ], [ 1, %341 ], [ 1, %409 ], [ 1, %477 ], [ 1, %559 ], [ 1, %627 ], [ 1, %695 ], [ 1, %816 ], [ 1, %930 ], [ 0, %932 ], [ 1, %701 ], [ 1, %633 ], [ 1, %565 ], [ 1, %483 ], [ 1, %415 ], [ 1, %347 ], [ 1, %265 ], [ 1, %197 ], [ 1, %129 ], !llfi_index !1285
-  call void @doProfiling(i32 55)
+  call void @doProfiling(i32 1)
   ret i32 %.0, !llfi_index !1286
 }
 
@@ -2965,103 +2760,81 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   %14 = alloca [2 x float], align 4, !taffo.info !347, !taffo.initweight !27, !llfi_index !1295
   call void @doProfiling(i32 31)
   %15 = alloca [2 x float], align 4, !taffo.info !347, !taffo.initweight !27, !llfi_index !1296
-  call void @doProfiling(i32 34)
   %16 = getelementptr inbounds float, float* %1, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1297
   %17 = load float, float* %16, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1298
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %18 = getelementptr inbounds float, float* %0, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1299
   %19 = load float, float* %18, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1300
   call void @doProfiling(i32 32)
   %20 = fsub float %17, %19, !taffo.info !347, !taffo.initweight !375, !llfi_index !1301
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %21 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1302
   call void @doProfiling(i32 33)
   store float %20, float* %21, align 4, !taffo.info !347, !llfi_index !1303
-  call void @doProfiling(i32 34)
   %22 = getelementptr inbounds float, float* %1, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1304
   %23 = load float, float* %22, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1305
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %24 = getelementptr inbounds float, float* %0, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1306
   %25 = load float, float* %24, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1307
   call void @doProfiling(i32 32)
   %26 = fsub float %23, %25, !taffo.info !347, !taffo.initweight !375, !llfi_index !1308
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %27 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1309
   call void @doProfiling(i32 33)
   store float %26, float* %27, align 4, !taffo.info !347, !llfi_index !1310
-  call void @doProfiling(i32 34)
   %28 = getelementptr inbounds float, float* %1, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1311
   %29 = load float, float* %28, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1312
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %30 = getelementptr inbounds float, float* %0, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1313
   %31 = load float, float* %30, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1314
   call void @doProfiling(i32 32)
   %32 = fsub float %29, %31, !taffo.info !347, !taffo.initweight !375, !llfi_index !1315
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %33 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1316
   call void @doProfiling(i32 33)
   store float %32, float* %33, align 4, !taffo.info !347, !llfi_index !1317
-  call void @doProfiling(i32 34)
   %34 = getelementptr inbounds float, float* %2, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1318
   %35 = load float, float* %34, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1319
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %36 = getelementptr inbounds float, float* %0, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1320
   %37 = load float, float* %36, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1321
   call void @doProfiling(i32 32)
   %38 = fsub float %35, %37, !taffo.info !347, !taffo.initweight !375, !llfi_index !1322
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %39 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1323
   call void @doProfiling(i32 33)
   store float %38, float* %39, align 4, !taffo.info !347, !llfi_index !1324
-  call void @doProfiling(i32 34)
   %40 = getelementptr inbounds float, float* %2, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1325
   %41 = load float, float* %40, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1326
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %42 = getelementptr inbounds float, float* %0, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1327
   %43 = load float, float* %42, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1328
   call void @doProfiling(i32 32)
   %44 = fsub float %41, %43, !taffo.info !347, !taffo.initweight !375, !llfi_index !1329
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %45 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1330
   call void @doProfiling(i32 33)
   store float %44, float* %45, align 4, !taffo.info !347, !llfi_index !1331
-  call void @doProfiling(i32 34)
   %46 = getelementptr inbounds float, float* %2, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1332
   %47 = load float, float* %46, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1333
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %48 = getelementptr inbounds float, float* %0, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1334
   %49 = load float, float* %48, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1335
   call void @doProfiling(i32 32)
   %50 = fsub float %47, %49, !taffo.info !347, !taffo.initweight !375, !llfi_index !1336
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %51 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1337
   call void @doProfiling(i32 33)
   store float %50, float* %51, align 4, !taffo.info !347, !llfi_index !1338
-  call void @doProfiling(i32 34)
   %52 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1339
   %53 = load float, float* %52, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1340
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %54 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1341
   %55 = load float, float* %54, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1342
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %56 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1343
   %57 = load float, float* %56, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1344
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %58 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1345
   %59 = load float, float* %58, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1346
   call void @doProfiling(i32 32)
@@ -3071,23 +2844,18 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 12)
   %62 = call float @llvm.fmuladd.f32(float %53, float %55, float %61), !taffo.info !347, !taffo.initweight !91, !llfi_index !1349, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %63 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1350
   call void @doProfiling(i32 33)
   store float %62, float* %63, align 4, !taffo.info !347, !llfi_index !1351
-  call void @doProfiling(i32 34)
   %64 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1352
   %65 = load float, float* %64, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1353
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %66 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1354
   %67 = load float, float* %66, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1355
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %68 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1356
   %69 = load float, float* %68, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1357
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %70 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1358
   %71 = load float, float* %70, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1359
   call void @doProfiling(i32 32)
@@ -3097,23 +2865,18 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 12)
   %74 = call float @llvm.fmuladd.f32(float %65, float %67, float %73), !taffo.info !347, !taffo.initweight !91, !llfi_index !1362, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %75 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1363
   call void @doProfiling(i32 33)
   store float %74, float* %75, align 4, !taffo.info !347, !llfi_index !1364
-  call void @doProfiling(i32 34)
   %76 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1365
   %77 = load float, float* %76, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1366
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %78 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1367
   %79 = load float, float* %78, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1368
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %80 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1369
   %81 = load float, float* %80, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1370
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %82 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1371
   %83 = load float, float* %82, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1372
   call void @doProfiling(i32 32)
@@ -3123,23 +2886,18 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 12)
   %86 = call float @llvm.fmuladd.f32(float %77, float %79, float %85), !taffo.info !347, !taffo.initweight !91, !llfi_index !1375, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %87 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1376
   call void @doProfiling(i32 33)
   store float %86, float* %87, align 4, !taffo.info !347, !llfi_index !1377
-  call void @doProfiling(i32 34)
   %88 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1378
   %89 = load float, float* %88, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1379
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %90 = getelementptr inbounds float, float* %0, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1380
   %91 = load float, float* %90, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1381
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %92 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1382
   %93 = load float, float* %92, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1383
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %94 = getelementptr inbounds float, float* %0, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1384
   %95 = load float, float* %94, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1385
   call void @doProfiling(i32 32)
@@ -3147,11 +2905,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 18)
   %97 = call float @llvm.fmuladd.f32(float %89, float %91, float %96), !taffo.info !347, !taffo.initweight !91, !llfi_index !1387, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %98 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1388
   %99 = load float, float* %98, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1389
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %100 = getelementptr inbounds float, float* %0, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1390
   %101 = load float, float* %100, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1391
   call void @doProfiling(i32 32)
@@ -3159,19 +2915,15 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 56)
   %103 = fneg float %102, !taffo.info !347, !taffo.initweight !375, !llfi_index !1393
   call void @doProfiling(i32 12)
-  call void @doProfiling(i32 34)
   %104 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1394
   %105 = load float, float* %104, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1395
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %106 = getelementptr inbounds float, float* %3, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1396
   %107 = load float, float* %106, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1397
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %108 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1398
   %109 = load float, float* %108, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1399
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %110 = getelementptr inbounds float, float* %3, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1400
   %111 = load float, float* %110, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1401
   call void @doProfiling(i32 32)
@@ -3179,11 +2931,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 18)
   %113 = call float @llvm.fmuladd.f32(float %105, float %107, float %112), !taffo.info !347, !taffo.initweight !91, !llfi_index !1403, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %114 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1404
   %115 = load float, float* %114, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1405
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %116 = getelementptr inbounds float, float* %3, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1406
   %117 = load float, float* %116, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1407
   call void @doProfiling(i32 32)
@@ -3191,19 +2941,15 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 56)
   %119 = fadd float %118, %103, !taffo.info !347, !taffo.initweight !88, !llfi_index !1409
   call void @doProfiling(i32 14)
-  call void @doProfiling(i32 34)
   %120 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1410
   %121 = load float, float* %120, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1411
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %122 = getelementptr inbounds float, float* %4, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1412
   %123 = load float, float* %122, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1413
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %124 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1414
   %125 = load float, float* %124, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1415
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %126 = getelementptr inbounds float, float* %4, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1416
   %127 = load float, float* %126, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1417
   call void @doProfiling(i32 32)
@@ -3211,11 +2957,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 18)
   %129 = call float @llvm.fmuladd.f32(float %121, float %123, float %128), !taffo.info !347, !taffo.initweight !91, !llfi_index !1419, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %130 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1420
   %131 = load float, float* %130, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1421
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %132 = getelementptr inbounds float, float* %4, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1422
   %133 = load float, float* %132, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1423
   call void @doProfiling(i32 32)
@@ -3223,19 +2967,15 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 56)
   %135 = fadd float %134, %103, !taffo.info !347, !taffo.initweight !88, !llfi_index !1425
   call void @doProfiling(i32 14)
-  call void @doProfiling(i32 34)
   %136 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1426
   %137 = load float, float* %136, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1427
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %138 = getelementptr inbounds float, float* %5, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1428
   %139 = load float, float* %138, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1429
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %140 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1430
   %141 = load float, float* %140, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1431
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %142 = getelementptr inbounds float, float* %5, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1432
   %143 = load float, float* %142, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1433
   call void @doProfiling(i32 32)
@@ -3243,11 +2983,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 18)
   %145 = call float @llvm.fmuladd.f32(float %137, float %139, float %144), !taffo.info !347, !taffo.initweight !91, !llfi_index !1435, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %146 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1436
   %147 = load float, float* %146, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1437
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %148 = getelementptr inbounds float, float* %5, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1438
   %149 = load float, float* %148, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1439
   call void @doProfiling(i32 32)
@@ -3269,7 +3007,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
 
 156:                                              ; preds = %155, %8
   %.08 = phi float [ 0.000000e+00, %155 ], [ %119, %8 ], !taffo.info !347, !taffo.initweight !27, !llfi_index !1448
-  call void @doProfiling(i32 55)
   %157 = fpext float %135 to double, !taffo.info !347, !taffo.initweight !88, !llfi_index !1449
   call void @doProfiling(i32 46)
   %158 = call double @llvm.fabs.f64(double %157), !taffo.info !347, !taffo.initweight !91, !llfi_index !1450, !taffo.constinfo !53
@@ -3284,7 +3021,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
 
 161:                                              ; preds = %160, %156
   %.07 = phi float [ 0.000000e+00, %160 ], [ %135, %156 ], !taffo.info !347, !taffo.initweight !27, !llfi_index !1454
-  call void @doProfiling(i32 55)
   %162 = fpext float %151 to double, !taffo.info !347, !taffo.initweight !88, !llfi_index !1455
   call void @doProfiling(i32 46)
   %163 = call double @llvm.fabs.f64(double %162), !taffo.info !347, !taffo.initweight !91, !llfi_index !1456, !taffo.constinfo !53
@@ -3299,7 +3035,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
 
 166:                                              ; preds = %165, %161
   %.06 = phi float [ 0.000000e+00, %165 ], [ %151, %161 ], !taffo.info !347, !taffo.initweight !27, !llfi_index !1460
-  call void @doProfiling(i32 55)
   %167 = fmul float %.08, %.07, !taffo.info !347, !taffo.initweight !88, !llfi_index !1461
   call void @doProfiling(i32 18)
   %168 = fmul float %.08, %.06, !taffo.info !347, !taffo.initweight !88, !llfi_index !1462
@@ -3327,103 +3062,81 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   br label %1288, !llfi_index !1472
 
 175:                                              ; preds = %172, %170
-  call void @doProfiling(i32 34)
   %176 = getelementptr inbounds float, float* %4, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1473
   %177 = load float, float* %176, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1474
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %178 = getelementptr inbounds float, float* %3, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1475
   %179 = load float, float* %178, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1476
   call void @doProfiling(i32 32)
   %180 = fsub float %177, %179, !taffo.info !347, !taffo.initweight !375, !llfi_index !1477
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %181 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1478
   call void @doProfiling(i32 33)
   store float %180, float* %181, align 4, !taffo.info !347, !llfi_index !1479
-  call void @doProfiling(i32 34)
   %182 = getelementptr inbounds float, float* %4, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1480
   %183 = load float, float* %182, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1481
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %184 = getelementptr inbounds float, float* %3, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1482
   %185 = load float, float* %184, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1483
   call void @doProfiling(i32 32)
   %186 = fsub float %183, %185, !taffo.info !347, !taffo.initweight !375, !llfi_index !1484
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %187 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1485
   call void @doProfiling(i32 33)
   store float %186, float* %187, align 4, !taffo.info !347, !llfi_index !1486
-  call void @doProfiling(i32 34)
   %188 = getelementptr inbounds float, float* %4, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1487
   %189 = load float, float* %188, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1488
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %190 = getelementptr inbounds float, float* %3, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1489
   %191 = load float, float* %190, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1490
   call void @doProfiling(i32 32)
   %192 = fsub float %189, %191, !taffo.info !347, !taffo.initweight !375, !llfi_index !1491
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %193 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1492
   call void @doProfiling(i32 33)
   store float %192, float* %193, align 4, !taffo.info !347, !llfi_index !1493
-  call void @doProfiling(i32 34)
   %194 = getelementptr inbounds float, float* %5, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1494
   %195 = load float, float* %194, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1495
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %196 = getelementptr inbounds float, float* %3, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1496
   %197 = load float, float* %196, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1497
   call void @doProfiling(i32 32)
   %198 = fsub float %195, %197, !taffo.info !347, !taffo.initweight !375, !llfi_index !1498
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %199 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1499
   call void @doProfiling(i32 33)
   store float %198, float* %199, align 4, !taffo.info !347, !llfi_index !1500
-  call void @doProfiling(i32 34)
   %200 = getelementptr inbounds float, float* %5, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1501
   %201 = load float, float* %200, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1502
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %202 = getelementptr inbounds float, float* %3, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1503
   %203 = load float, float* %202, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1504
   call void @doProfiling(i32 32)
   %204 = fsub float %201, %203, !taffo.info !347, !taffo.initweight !375, !llfi_index !1505
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %205 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1506
   call void @doProfiling(i32 33)
   store float %204, float* %205, align 4, !taffo.info !347, !llfi_index !1507
-  call void @doProfiling(i32 34)
   %206 = getelementptr inbounds float, float* %5, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1508
   %207 = load float, float* %206, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1509
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %208 = getelementptr inbounds float, float* %3, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1510
   %209 = load float, float* %208, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1511
   call void @doProfiling(i32 32)
   %210 = fsub float %207, %209, !taffo.info !347, !taffo.initweight !375, !llfi_index !1512
   call void @doProfiling(i32 16)
-  call void @doProfiling(i32 34)
   %211 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1513
   call void @doProfiling(i32 33)
   store float %210, float* %211, align 4, !taffo.info !347, !llfi_index !1514
-  call void @doProfiling(i32 34)
   %212 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1515
   %213 = load float, float* %212, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1516
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %214 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1517
   %215 = load float, float* %214, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1518
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %216 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1519
   %217 = load float, float* %216, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1520
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %218 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1521
   %219 = load float, float* %218, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1522
   call void @doProfiling(i32 32)
@@ -3433,23 +3146,18 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 12)
   %222 = call float @llvm.fmuladd.f32(float %213, float %215, float %221), !taffo.info !347, !taffo.initweight !91, !llfi_index !1525, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %223 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1526
   call void @doProfiling(i32 33)
   store float %222, float* %223, align 4, !taffo.info !347, !llfi_index !1527
-  call void @doProfiling(i32 34)
   %224 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1528
   %225 = load float, float* %224, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1529
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %226 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1530
   %227 = load float, float* %226, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1531
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %228 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1532
   %229 = load float, float* %228, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1533
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %230 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1534
   %231 = load float, float* %230, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1535
   call void @doProfiling(i32 32)
@@ -3459,23 +3167,18 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 12)
   %234 = call float @llvm.fmuladd.f32(float %225, float %227, float %233), !taffo.info !347, !taffo.initweight !91, !llfi_index !1538, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %235 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1539
   call void @doProfiling(i32 33)
   store float %234, float* %235, align 4, !taffo.info !347, !llfi_index !1540
-  call void @doProfiling(i32 34)
   %236 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1541
   %237 = load float, float* %236, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1542
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %238 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1543
   %239 = load float, float* %238, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1544
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %240 = getelementptr inbounds [3 x float], [3 x float]* %9, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1545
   %241 = load float, float* %240, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1546
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %242 = getelementptr inbounds [3 x float], [3 x float]* %10, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1547
   %243 = load float, float* %242, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1548
   call void @doProfiling(i32 32)
@@ -3485,23 +3188,18 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 12)
   %246 = call float @llvm.fmuladd.f32(float %237, float %239, float %245), !taffo.info !347, !taffo.initweight !91, !llfi_index !1551, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %247 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1552
   call void @doProfiling(i32 33)
   store float %246, float* %247, align 4, !taffo.info !347, !llfi_index !1553
-  call void @doProfiling(i32 34)
   %248 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1554
   %249 = load float, float* %248, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1555
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %250 = getelementptr inbounds float, float* %3, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1556
   %251 = load float, float* %250, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1557
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %252 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1558
   %253 = load float, float* %252, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1559
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %254 = getelementptr inbounds float, float* %3, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1560
   %255 = load float, float* %254, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1561
   call void @doProfiling(i32 32)
@@ -3509,11 +3207,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 18)
   %257 = call float @llvm.fmuladd.f32(float %249, float %251, float %256), !taffo.info !347, !taffo.initweight !91, !llfi_index !1563, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %258 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1564
   %259 = load float, float* %258, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1565
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %260 = getelementptr inbounds float, float* %3, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1566
   %261 = load float, float* %260, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1567
   call void @doProfiling(i32 32)
@@ -3521,19 +3217,15 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 56)
   %263 = fneg float %262, !taffo.info !347, !taffo.initweight !375, !llfi_index !1569
   call void @doProfiling(i32 12)
-  call void @doProfiling(i32 34)
   %264 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1570
   %265 = load float, float* %264, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1571
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %266 = getelementptr inbounds float, float* %0, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1572
   %267 = load float, float* %266, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1573
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %268 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1574
   %269 = load float, float* %268, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1575
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %270 = getelementptr inbounds float, float* %0, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1576
   %271 = load float, float* %270, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1577
   call void @doProfiling(i32 32)
@@ -3541,11 +3233,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 18)
   %273 = call float @llvm.fmuladd.f32(float %265, float %267, float %272), !taffo.info !347, !taffo.initweight !91, !llfi_index !1579, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %274 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1580
   %275 = load float, float* %274, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1581
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %276 = getelementptr inbounds float, float* %0, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1582
   %277 = load float, float* %276, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1583
   call void @doProfiling(i32 32)
@@ -3553,19 +3243,15 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 56)
   %279 = fadd float %278, %263, !taffo.info !347, !taffo.initweight !88, !llfi_index !1585
   call void @doProfiling(i32 14)
-  call void @doProfiling(i32 34)
   %280 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1586
   %281 = load float, float* %280, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1587
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %282 = getelementptr inbounds float, float* %1, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1588
   %283 = load float, float* %282, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1589
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %284 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1590
   %285 = load float, float* %284, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1591
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %286 = getelementptr inbounds float, float* %1, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1592
   %287 = load float, float* %286, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1593
   call void @doProfiling(i32 32)
@@ -3573,11 +3259,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 18)
   %289 = call float @llvm.fmuladd.f32(float %281, float %283, float %288), !taffo.info !347, !taffo.initweight !91, !llfi_index !1595, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %290 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1596
   %291 = load float, float* %290, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1597
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %292 = getelementptr inbounds float, float* %1, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1598
   %293 = load float, float* %292, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1599
   call void @doProfiling(i32 32)
@@ -3585,19 +3269,15 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 56)
   %295 = fadd float %294, %263, !taffo.info !347, !taffo.initweight !88, !llfi_index !1601
   call void @doProfiling(i32 14)
-  call void @doProfiling(i32 34)
   %296 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1602
   %297 = load float, float* %296, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1603
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %298 = getelementptr inbounds float, float* %2, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !1604
   %299 = load float, float* %298, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1605
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %300 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1606
   %301 = load float, float* %300, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1607
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %302 = getelementptr inbounds float, float* %2, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !1608
   %303 = load float, float* %302, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1609
   call void @doProfiling(i32 32)
@@ -3605,11 +3285,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 18)
   %305 = call float @llvm.fmuladd.f32(float %297, float %299, float %304), !taffo.info !347, !taffo.initweight !91, !llfi_index !1611, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %306 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1612
   %307 = load float, float* %306, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1613
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %308 = getelementptr inbounds float, float* %2, i64 2, !taffo.info !347, !taffo.initweight !88, !llfi_index !1614
   %309 = load float, float* %308, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1615
   call void @doProfiling(i32 32)
@@ -3631,7 +3309,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
 
 316:                                              ; preds = %315, %175
   %.05 = phi float [ 0.000000e+00, %315 ], [ %279, %175 ], !taffo.info !347, !taffo.initweight !27, !llfi_index !1623
-  call void @doProfiling(i32 55)
   %317 = fpext float %295 to double, !taffo.info !347, !taffo.initweight !88, !llfi_index !1624
   call void @doProfiling(i32 46)
   %318 = call double @llvm.fabs.f64(double %317), !taffo.info !347, !taffo.initweight !91, !llfi_index !1625, !taffo.constinfo !53
@@ -3646,7 +3323,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
 
 321:                                              ; preds = %320, %316
   %.04 = phi float [ 0.000000e+00, %320 ], [ %295, %316 ], !taffo.info !347, !taffo.initweight !27, !llfi_index !1629
-  call void @doProfiling(i32 55)
   %322 = fpext float %311 to double, !taffo.info !347, !taffo.initweight !88, !llfi_index !1630
   call void @doProfiling(i32 46)
   %323 = call double @llvm.fabs.f64(double %322), !taffo.info !347, !taffo.initweight !91, !llfi_index !1631, !taffo.constinfo !53
@@ -3661,7 +3337,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
 
 326:                                              ; preds = %325, %321
   %.03 = phi float [ 0.000000e+00, %325 ], [ %311, %321 ], !taffo.info !347, !taffo.initweight !27, !llfi_index !1635
-  call void @doProfiling(i32 55)
   %327 = fmul float %.05, %.04, !taffo.info !347, !taffo.initweight !88, !llfi_index !1636
   call void @doProfiling(i32 18)
   %328 = fmul float %.05, %.03, !taffo.info !347, !taffo.initweight !88, !llfi_index !1637
@@ -3689,19 +3364,15 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   br label %1288, !llfi_index !1647
 
 335:                                              ; preds = %332, %330
-  call void @doProfiling(i32 34)
   %336 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1648
   %337 = load float, float* %336, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1649
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %338 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1650
   %339 = load float, float* %338, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1651
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %340 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1652
   %341 = load float, float* %340, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1653
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %342 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1654
   %343 = load float, float* %342, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1655
   call void @doProfiling(i32 32)
@@ -3711,23 +3382,18 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 12)
   %346 = call float @llvm.fmuladd.f32(float %337, float %339, float %345), !taffo.info !347, !taffo.initweight !91, !llfi_index !1658, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %347 = getelementptr inbounds [3 x float], [3 x float]* %13, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1659
   call void @doProfiling(i32 33)
   store float %346, float* %347, align 4, !taffo.info !347, !llfi_index !1660
-  call void @doProfiling(i32 34)
   %348 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1661
   %349 = load float, float* %348, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1662
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %350 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1663
   %351 = load float, float* %350, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1664
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %352 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1665
   %353 = load float, float* %352, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1666
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %354 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1667
   %355 = load float, float* %354, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1668
   call void @doProfiling(i32 32)
@@ -3737,23 +3403,18 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 12)
   %358 = call float @llvm.fmuladd.f32(float %349, float %351, float %357), !taffo.info !347, !taffo.initweight !91, !llfi_index !1671, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %359 = getelementptr inbounds [3 x float], [3 x float]* %13, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1672
   call void @doProfiling(i32 33)
   store float %358, float* %359, align 4, !taffo.info !347, !llfi_index !1673
-  call void @doProfiling(i32 34)
   %360 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1674
   %361 = load float, float* %360, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1675
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %362 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1676
   %363 = load float, float* %362, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1677
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %364 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1678
   %365 = load float, float* %364, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1679
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %366 = getelementptr inbounds [3 x float], [3 x float]* %12, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1680
   %367 = load float, float* %366, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1681
   call void @doProfiling(i32 32)
@@ -3763,11 +3424,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 12)
   %370 = call float @llvm.fmuladd.f32(float %361, float %363, float %369), !taffo.info !347, !taffo.initweight !91, !llfi_index !1684, !taffo.constinfo !60
   call void @doProfiling(i32 56)
-  call void @doProfiling(i32 34)
   %371 = getelementptr inbounds [3 x float], [3 x float]* %13, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1685
   call void @doProfiling(i32 33)
   store float %370, float* %371, align 4, !taffo.info !347, !llfi_index !1686
-  call void @doProfiling(i32 34)
   %372 = getelementptr inbounds [3 x float], [3 x float]* %13, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1687
   %373 = load float, float* %372, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1688
   call void @doProfiling(i32 32)
@@ -3777,7 +3436,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 56)
   %376 = fptrunc double %375 to float, !taffo.info !347, !taffo.initweight !1445, !llfi_index !1691
   call void @doProfiling(i32 45)
-  call void @doProfiling(i32 34)
   %377 = getelementptr inbounds [3 x float], [3 x float]* %13, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1692
   %378 = load float, float* %377, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1693
   call void @doProfiling(i32 32)
@@ -3787,7 +3445,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 56)
   %381 = fptrunc double %380 to float, !taffo.info !347, !taffo.initweight !1445, !llfi_index !1696
   call void @doProfiling(i32 45)
-  call void @doProfiling(i32 34)
   %382 = getelementptr inbounds [3 x float], [3 x float]* %13, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !1697
   %383 = load float, float* %382, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !1698
   call void @doProfiling(i32 32)
@@ -3808,8 +3465,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
 389:                                              ; preds = %388, %335
   %.02 = phi float [ %381, %388 ], [ %376, %335 ], !taffo.info !347, !taffo.initweight !27, !llfi_index !1705
   %.01 = phi i16 [ 1, %388 ], [ 0, %335 ], !llfi_index !1706
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %390 = fcmp ogt float %386, %.02, !taffo.info !347, !taffo.initweight !88, !llfi_index !1707
   call void @doProfiling(i32 54)
   call void @doProfiling(i32 2)
@@ -3820,40 +3475,33 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
 
 392:                                              ; preds = %391, %389
   %.1 = phi i16 [ 2, %391 ], [ %.01, %389 ], !llfi_index !1710
-  call void @doProfiling(i32 55)
   %393 = sext i16 %.1 to i64, !llfi_index !1711
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %394 = getelementptr inbounds float, float* %0, i64 %393, !taffo.info !347, !taffo.initweight !88, !llfi_index !1712
   %395 = load float, float* %394, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1713
   call void @doProfiling(i32 32)
   %396 = sext i16 %.1 to i64, !llfi_index !1714
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %397 = getelementptr inbounds float, float* %1, i64 %396, !taffo.info !347, !taffo.initweight !88, !llfi_index !1715
   %398 = load float, float* %397, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1716
   call void @doProfiling(i32 32)
   %399 = sext i16 %.1 to i64, !llfi_index !1717
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %400 = getelementptr inbounds float, float* %2, i64 %399, !taffo.info !347, !taffo.initweight !88, !llfi_index !1718
   %401 = load float, float* %400, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1719
   call void @doProfiling(i32 32)
   %402 = sext i16 %.1 to i64, !llfi_index !1720
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %403 = getelementptr inbounds float, float* %3, i64 %402, !taffo.info !347, !taffo.initweight !88, !llfi_index !1721
   %404 = load float, float* %403, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1722
   call void @doProfiling(i32 32)
   %405 = sext i16 %.1 to i64, !llfi_index !1723
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %406 = getelementptr inbounds float, float* %4, i64 %405, !taffo.info !347, !taffo.initweight !88, !llfi_index !1724
   %407 = load float, float* %406, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1725
   call void @doProfiling(i32 32)
   %408 = sext i16 %.1 to i64, !llfi_index !1726
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %409 = getelementptr inbounds float, float* %5, i64 %408, !taffo.info !347, !taffo.initweight !88, !llfi_index !1727
   %410 = load float, float* %409, align 4, !taffo.info !347, !taffo.initweight !91, !llfi_index !1728
   call void @doProfiling(i32 32)
@@ -3915,7 +3563,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %432 = fdiv float %431, 0x4210000000000000, !taffo.info !1758, !llfi_index !1764
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %433 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1765
   call void @doProfiling(i32 33)
   store float %432, float* %433, align 4, !taffo.info !347, !llfi_index !1766
@@ -3962,7 +3609,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %450 = fdiv float %449, 0x4200000000000000, !taffo.info !1787, !llfi_index !1793
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %451 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1794
   call void @doProfiling(i32 33)
   store float %450, float* %451, align 4, !taffo.info !347, !llfi_index !1795
@@ -4015,7 +3661,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %470 = fdiv float %469, 0x4210000000000000, !taffo.info !1758, !llfi_index !1818
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %471 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1819
   call void @doProfiling(i32 33)
   store float %470, float* %471, align 4, !taffo.info !347, !llfi_index !1820
@@ -4062,7 +3707,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %488 = fdiv float %487, 0x4200000000000000, !taffo.info !1787, !llfi_index !1841
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %489 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1842
   call void @doProfiling(i32 33)
   store float %488, float* %489, align 4, !taffo.info !347, !llfi_index !1843
@@ -4128,7 +3772,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %513 = fdiv float %512, 0x4210000000000000, !taffo.info !1758, !llfi_index !1871
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %514 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1872
   call void @doProfiling(i32 33)
   store float %513, float* %514, align 4, !taffo.info !347, !llfi_index !1873
@@ -4175,7 +3818,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %531 = fdiv float %530, 0x4200000000000000, !taffo.info !1787, !llfi_index !1894
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %532 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1895
   call void @doProfiling(i32 33)
   store float %531, float* %532, align 4, !taffo.info !347, !llfi_index !1896
@@ -4228,7 +3870,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %551 = fdiv float %550, 0x4210000000000000, !taffo.info !1758, !llfi_index !1919
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %552 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1920
   call void @doProfiling(i32 33)
   store float %551, float* %552, align 4, !taffo.info !347, !llfi_index !1921
@@ -4275,7 +3916,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %569 = fdiv float %568, 0x4200000000000000, !taffo.info !1787, !llfi_index !1942
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %570 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !1943
   call void @doProfiling(i32 33)
   store float %569, float* %570, align 4, !taffo.info !347, !llfi_index !1944
@@ -4349,7 +3989,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %597 = fdiv float %596, 0x4210000000000000, !taffo.info !1758, !llfi_index !1975
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %598 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1976
   call void @doProfiling(i32 33)
   store float %597, float* %598, align 4, !taffo.info !347, !llfi_index !1977
@@ -4396,7 +4035,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %615 = fdiv float %614, 0x4200000000000000, !taffo.info !1787, !llfi_index !1998
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %616 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !1999
   call void @doProfiling(i32 33)
   store float %615, float* %616, align 4, !taffo.info !347, !llfi_index !2000
@@ -4449,7 +4087,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %635 = fdiv float %634, 0x4210000000000000, !taffo.info !1758, !llfi_index !2023
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %636 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2024
   call void @doProfiling(i32 33)
   store float %635, float* %636, align 4, !taffo.info !347, !llfi_index !2025
@@ -4496,7 +4133,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %653 = fdiv float %652, 0x4200000000000000, !taffo.info !1787, !llfi_index !2046
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %654 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2047
   call void @doProfiling(i32 33)
   store float %653, float* %654, align 4, !taffo.info !347, !llfi_index !2048
@@ -4562,7 +4198,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %678 = fdiv float %677, 0x4210000000000000, !taffo.info !1758, !llfi_index !2076
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %679 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2077
   call void @doProfiling(i32 33)
   store float %678, float* %679, align 4, !taffo.info !347, !llfi_index !2078
@@ -4609,7 +4244,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %696 = fdiv float %695, 0x4200000000000000, !taffo.info !1787, !llfi_index !2099
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %697 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2100
   call void @doProfiling(i32 33)
   store float %696, float* %697, align 4, !taffo.info !347, !llfi_index !2101
@@ -4662,7 +4296,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %716 = fdiv float %715, 0x4210000000000000, !taffo.info !1758, !llfi_index !2124
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %717 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2125
   call void @doProfiling(i32 33)
   store float %716, float* %717, align 4, !taffo.info !347, !llfi_index !2126
@@ -4709,7 +4342,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %734 = fdiv float %733, 0x4200000000000000, !taffo.info !1787, !llfi_index !2147
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %735 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2148
   call void @doProfiling(i32 33)
   store float %734, float* %735, align 4, !taffo.info !347, !llfi_index !2149
@@ -4775,7 +4407,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %759 = fdiv float %758, 0x4210000000000000, !taffo.info !1758, !llfi_index !2177
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %760 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2178
   call void @doProfiling(i32 33)
   store float %759, float* %760, align 4, !taffo.info !347, !llfi_index !2179
@@ -4822,7 +4453,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %777 = fdiv float %776, 0x4200000000000000, !taffo.info !1787, !llfi_index !2200
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %778 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2201
   call void @doProfiling(i32 33)
   store float %777, float* %778, align 4, !taffo.info !347, !llfi_index !2202
@@ -4875,7 +4505,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %797 = fdiv float %796, 0x4210000000000000, !taffo.info !1758, !llfi_index !2225
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %798 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2226
   call void @doProfiling(i32 33)
   store float %797, float* %798, align 4, !taffo.info !347, !llfi_index !2227
@@ -4922,7 +4551,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %815 = fdiv float %814, 0x4200000000000000, !taffo.info !1787, !llfi_index !2248
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %816 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2249
   call void @doProfiling(i32 33)
   store float %815, float* %816, align 4, !taffo.info !347, !llfi_index !2250
@@ -4932,7 +4560,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   br label %821, !llfi_index !2252
 
 818:                                              ; preds = %737
-  call void @doProfiling(i32 34)
   %819 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2253
   %820 = call noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef %819, float* noundef %0, float* noundef %1, float* noundef %2, float* noundef %3, float* noundef %4, float* noundef %5), !taffo.info !347, !taffo.initweight !88, !llfi_index !2254, !taffo.constinfo !2255, !taffo.originalCall !2256
   call void @doProfiling(i32 56)
@@ -5009,7 +4636,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %847 = fdiv float %846, 0x4210000000000000, !taffo.info !1758, !llfi_index !2288
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %848 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2289
   call void @doProfiling(i32 33)
   store float %847, float* %848, align 4, !taffo.info !347, !llfi_index !2290
@@ -5056,7 +4682,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %865 = fdiv float %864, 0x4200000000000000, !taffo.info !1787, !llfi_index !2311
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %866 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2312
   call void @doProfiling(i32 33)
   store float %865, float* %866, align 4, !taffo.info !347, !llfi_index !2313
@@ -5109,7 +4734,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %885 = fdiv float %884, 0x4210000000000000, !taffo.info !1758, !llfi_index !2336
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %886 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2337
   call void @doProfiling(i32 33)
   store float %885, float* %886, align 4, !taffo.info !347, !llfi_index !2338
@@ -5156,7 +4780,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %903 = fdiv float %902, 0x4200000000000000, !taffo.info !1787, !llfi_index !2359
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %904 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2360
   call void @doProfiling(i32 33)
   store float %903, float* %904, align 4, !taffo.info !347, !llfi_index !2361
@@ -5222,7 +4845,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %928 = fdiv float %927, 0x4210000000000000, !taffo.info !1758, !llfi_index !2389
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %929 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2390
   call void @doProfiling(i32 33)
   store float %928, float* %929, align 4, !taffo.info !347, !llfi_index !2391
@@ -5269,7 +4891,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %946 = fdiv float %945, 0x4200000000000000, !taffo.info !1787, !llfi_index !2412
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %947 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2413
   call void @doProfiling(i32 33)
   store float %946, float* %947, align 4, !taffo.info !347, !llfi_index !2414
@@ -5322,7 +4943,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %966 = fdiv float %965, 0x4210000000000000, !taffo.info !1758, !llfi_index !2437
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %967 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2438
   call void @doProfiling(i32 33)
   store float %966, float* %967, align 4, !taffo.info !347, !llfi_index !2439
@@ -5369,7 +4989,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %984 = fdiv float %983, 0x4200000000000000, !taffo.info !1787, !llfi_index !2460
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %985 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2461
   call void @doProfiling(i32 33)
   store float %984, float* %985, align 4, !taffo.info !347, !llfi_index !2462
@@ -5443,7 +5062,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %1012 = fdiv float %1011, 0x4210000000000000, !taffo.info !1758, !llfi_index !2493
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1013 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2494
   call void @doProfiling(i32 33)
   store float %1012, float* %1013, align 4, !taffo.info !347, !llfi_index !2495
@@ -5490,7 +5108,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %1030 = fdiv float %1029, 0x4200000000000000, !taffo.info !1787, !llfi_index !2516
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1031 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2517
   call void @doProfiling(i32 33)
   store float %1030, float* %1031, align 4, !taffo.info !347, !llfi_index !2518
@@ -5543,7 +5160,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %1050 = fdiv float %1049, 0x4210000000000000, !taffo.info !1758, !llfi_index !2541
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1051 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2542
   call void @doProfiling(i32 33)
   store float %1050, float* %1051, align 4, !taffo.info !347, !llfi_index !2543
@@ -5590,7 +5206,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %1068 = fdiv float %1067, 0x4200000000000000, !taffo.info !1787, !llfi_index !2564
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1069 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2565
   call void @doProfiling(i32 33)
   store float %1068, float* %1069, align 4, !taffo.info !347, !llfi_index !2566
@@ -5656,7 +5271,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %1093 = fdiv float %1092, 0x4210000000000000, !taffo.info !1758, !llfi_index !2594
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1094 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2595
   call void @doProfiling(i32 33)
   store float %1093, float* %1094, align 4, !taffo.info !347, !llfi_index !2596
@@ -5703,7 +5317,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %1111 = fdiv float %1110, 0x4200000000000000, !taffo.info !1787, !llfi_index !2617
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1112 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2618
   call void @doProfiling(i32 33)
   store float %1111, float* %1112, align 4, !taffo.info !347, !llfi_index !2619
@@ -5756,7 +5369,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %1131 = fdiv float %1130, 0x4210000000000000, !taffo.info !1758, !llfi_index !2642
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1132 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2643
   call void @doProfiling(i32 33)
   store float %1131, float* %1132, align 4, !taffo.info !347, !llfi_index !2644
@@ -5803,7 +5415,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %1149 = fdiv float %1148, 0x4200000000000000, !taffo.info !1787, !llfi_index !2665
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1150 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2666
   call void @doProfiling(i32 33)
   store float %1149, float* %1150, align 4, !taffo.info !347, !llfi_index !2667
@@ -5869,7 +5480,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %1174 = fdiv float %1173, 0x4210000000000000, !taffo.info !1758, !llfi_index !2695
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1175 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2696
   call void @doProfiling(i32 33)
   store float %1174, float* %1175, align 4, !taffo.info !347, !llfi_index !2697
@@ -5916,7 +5526,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %1192 = fdiv float %1191, 0x4200000000000000, !taffo.info !1787, !llfi_index !2718
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1193 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2719
   call void @doProfiling(i32 33)
   store float %1192, float* %1193, align 4, !taffo.info !347, !llfi_index !2720
@@ -5969,7 +5578,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 43)
   %1212 = fdiv float %1211, 0x4210000000000000, !taffo.info !1758, !llfi_index !2743
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1213 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2744
   call void @doProfiling(i32 33)
   store float %1212, float* %1213, align 4, !taffo.info !347, !llfi_index !2745
@@ -6016,7 +5624,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   call void @doProfiling(i32 44)
   %1230 = fdiv float %1229, 0x4200000000000000, !taffo.info !1787, !llfi_index !2766
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %1231 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2767
   call void @doProfiling(i32 33)
   store float %1230, float* %1231, align 4, !taffo.info !347, !llfi_index !2768
@@ -6026,7 +5633,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   br label %1236, !llfi_index !2770
 
 1233:                                             ; preds = %1152
-  call void @doProfiling(i32 34)
   %1234 = getelementptr inbounds [3 x float], [3 x float]* %11, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2771
   %1235 = call noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef %1234, float* noundef %0, float* noundef %1, float* noundef %2, float* noundef %3, float* noundef %4, float* noundef %5), !taffo.info !347, !taffo.initweight !88, !llfi_index !2772, !taffo.constinfo !2255, !taffo.originalCall !2256
   call void @doProfiling(i32 56)
@@ -6045,11 +5651,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   br label %1240, !llfi_index !2777
 
 1240:                                             ; preds = %1239, %905
-  call void @doProfiling(i32 34)
   %1241 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2778
   %1242 = load float, float* %1241, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2779
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %1243 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2780
   %1244 = load float, float* %1243, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2781
   call void @doProfiling(i32 32)
@@ -6059,30 +5663,24 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   br i1 %1245, label %1246, label %1253, !taffo.info !347, !taffo.initweight !375, !llfi_index !2783
 
 1246:                                             ; preds = %1240
-  call void @doProfiling(i32 34)
   %1247 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2784
   %1248 = load float, float* %1247, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2785
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %1249 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2786
   %1250 = load float, float* %1249, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2787
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %1251 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2788
   call void @doProfiling(i32 33)
   store float %1250, float* %1251, align 4, !taffo.info !347, !llfi_index !2789
-  call void @doProfiling(i32 34)
   %1252 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2790
   call void @doProfiling(i32 33)
   store float %1248, float* %1252, align 4, !taffo.info !347, !llfi_index !2791
   br label %1253, !llfi_index !2792
 
 1253:                                             ; preds = %1246, %1240
-  call void @doProfiling(i32 34)
   %1254 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2793
   %1255 = load float, float* %1254, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2794
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %1256 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2795
   %1257 = load float, float* %1256, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2796
   call void @doProfiling(i32 32)
@@ -6092,38 +5690,30 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   br i1 %1258, label %1259, label %1266, !taffo.info !347, !taffo.initweight !375, !llfi_index !2798
 
 1259:                                             ; preds = %1253
-  call void @doProfiling(i32 34)
   %1260 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2799
   %1261 = load float, float* %1260, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2800
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %1262 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2801
   %1263 = load float, float* %1262, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2802
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %1264 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2803
   call void @doProfiling(i32 33)
   store float %1263, float* %1264, align 4, !taffo.info !347, !llfi_index !2804
-  call void @doProfiling(i32 34)
   %1265 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2805
   call void @doProfiling(i32 33)
   store float %1261, float* %1265, align 4, !taffo.info !347, !llfi_index !2806
   br label %1266, !llfi_index !2807
 
 1266:                                             ; preds = %1259, %1253
-  call void @doProfiling(i32 34)
   %1267 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2808
   %1268 = load float, float* %1267, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2809
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %1269 = getelementptr inbounds float, float* %6, i64 0, !taffo.info !347, !taffo.initweight !88, !llfi_index !2810
   call void @doProfiling(i32 33)
   store float %1268, float* %1269, align 4, !taffo.info !347, !llfi_index !2811
-  call void @doProfiling(i32 34)
   %1270 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2812
   %1271 = load float, float* %1270, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2813
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %1272 = getelementptr inbounds float, float* %6, i64 1, !taffo.info !347, !taffo.initweight !88, !llfi_index !2814
   call void @doProfiling(i32 33)
   store float %1271, float* %1272, align 4, !taffo.info !347, !llfi_index !2815
@@ -6133,11 +5723,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   br label %1274, !llfi_index !2817
 
 1274:                                             ; preds = %1273
-  call void @doProfiling(i32 34)
   %1275 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2818
   %1276 = load float, float* %1275, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2819
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %1277 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2820
   %1278 = load float, float* %1277, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2821
   call void @doProfiling(i32 32)
@@ -6147,11 +5735,9 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
   br i1 %1279, label %1286, label %1280, !taffo.info !347, !taffo.initweight !375, !llfi_index !2823
 
 1280:                                             ; preds = %1274
-  call void @doProfiling(i32 34)
   %1281 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2824
   %1282 = load float, float* %1281, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2825
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %1283 = getelementptr inbounds [2 x float], [2 x float]* %14, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2826
   %1284 = load float, float* %1283, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2827
   call void @doProfiling(i32 32)
@@ -6172,7 +5758,7 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
 
 1288:                                             ; preds = %1287, %1286, %1233, %818, %334, %174
   %.0 = phi i32 [ 0, %174 ], [ 0, %334 ], [ 0, %1286 ], [ 1, %1287 ], [ %1235, %1233 ], [ %820, %818 ], !llfi_index !2834
-  call void @doProfiling(i32 55)
+  call void @doProfiling(i32 1)
   ret i32 %.0, !llfi_index !2835
 }
 
@@ -6180,7 +5766,6 @@ define dso_local noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi(float* nound
 define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef %0, float* noundef %1, float* noundef %2, float* noundef %3, float* noundef %4, float* noundef %5, float* noundef %6) #1 !taffo.initweight !2836 !taffo.funinfo !2837 !taffo.equivalentChild !2838 !taffo.sourceFunction !2256 {
   call void @doProfiling(i32 31)
   %8 = alloca [3 x float], align 4, !taffo.info !347, !taffo.initweight !27, !llfi_index !2839
-  call void @doProfiling(i32 34)
   %9 = getelementptr inbounds float, float* %0, i64 0, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2840
   %10 = load float, float* %9, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2842
   call void @doProfiling(i32 32)
@@ -6190,11 +5775,9 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 56)
   %13 = fptrunc double %12 to float, !taffo.info !347, !taffo.initweight !91, !llfi_index !2847
   call void @doProfiling(i32 45)
-  call void @doProfiling(i32 34)
   %14 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2848
   call void @doProfiling(i32 33)
   store float %13, float* %14, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2849
-  call void @doProfiling(i32 34)
   %15 = getelementptr inbounds float, float* %0, i64 1, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2850
   %16 = load float, float* %15, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2851
   call void @doProfiling(i32 32)
@@ -6204,11 +5787,9 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 56)
   %19 = fptrunc double %18 to float, !taffo.info !347, !taffo.initweight !91, !llfi_index !2854
   call void @doProfiling(i32 45)
-  call void @doProfiling(i32 34)
   %20 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2855
   call void @doProfiling(i32 33)
   store float %19, float* %20, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2856
-  call void @doProfiling(i32 34)
   %21 = getelementptr inbounds float, float* %0, i64 2, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2857
   %22 = load float, float* %21, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2858
   call void @doProfiling(i32 32)
@@ -6218,15 +5799,12 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 56)
   %25 = fptrunc double %24 to float, !taffo.info !347, !taffo.initweight !91, !llfi_index !2861
   call void @doProfiling(i32 45)
-  call void @doProfiling(i32 34)
   %26 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !2862
   call void @doProfiling(i32 33)
   store float %25, float* %26, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2863
-  call void @doProfiling(i32 34)
   %27 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2864
   %28 = load float, float* %27, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2865
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %29 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2866
   %30 = load float, float* %29, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2867
   call void @doProfiling(i32 32)
@@ -6236,11 +5814,9 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   br i1 %31, label %32, label %41, !taffo.info !347, !taffo.initweight !375, !llfi_index !2869
 
 32:                                               ; preds = %7
-  call void @doProfiling(i32 34)
   %33 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 0, !taffo.info !347, !taffo.initweight !129, !llfi_index !2870
   %34 = load float, float* %33, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2871
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %35 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !2872
   %36 = load float, float* %35, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2873
   call void @doProfiling(i32 32)
@@ -6258,16 +5834,12 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 40:                                               ; preds = %39, %38
   %.02 = phi i16 [ 2, %38 ], [ 1, %39 ], !llfi_index !2878
   %.01 = phi i16 [ 1, %38 ], [ 0, %39 ], !llfi_index !2879
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   br label %50, !llfi_index !2880
 
 41:                                               ; preds = %7
-  call void @doProfiling(i32 34)
   %42 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 2, !taffo.info !347, !taffo.initweight !129, !llfi_index !2881
   %43 = load float, float* %42, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2882
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %44 = getelementptr inbounds [3 x float], [3 x float]* %8, i64 0, i64 1, !taffo.info !347, !taffo.initweight !129, !llfi_index !2883
   %45 = load float, float* %44, align 4, !taffo.info !347, !taffo.initweight !88, !llfi_index !2884
   call void @doProfiling(i32 32)
@@ -6284,23 +5856,18 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 
 49:                                               ; preds = %48, %47
   %.13 = phi i16 [ 1, %47 ], [ 2, %48 ], !llfi_index !2889
-  call void @doProfiling(i32 55)
   br label %50, !llfi_index !2890
 
 50:                                               ; preds = %49, %40
   %.24 = phi i16 [ %.02, %40 ], [ %.13, %49 ], !llfi_index !2891
   %.2 = phi i16 [ %.01, %40 ], [ 0, %49 ], !llfi_index !2892
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %51 = sext i16 %.2 to i64, !llfi_index !2893
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %52 = getelementptr inbounds float, float* %2, i64 %51, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2894
   %53 = load float, float* %52, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2895
   call void @doProfiling(i32 32)
   %54 = sext i16 %.2 to i64, !llfi_index !2896
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %55 = getelementptr inbounds float, float* %1, i64 %54, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2897
   %56 = load float, float* %55, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2898
   call void @doProfiling(i32 32)
@@ -6308,13 +5875,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %58 = sext i16 %.24 to i64, !llfi_index !2900
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %59 = getelementptr inbounds float, float* %2, i64 %58, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2901
   %60 = load float, float* %59, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2902
   call void @doProfiling(i32 32)
   %61 = sext i16 %.24 to i64, !llfi_index !2903
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %62 = getelementptr inbounds float, float* %1, i64 %61, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2904
   %63 = load float, float* %62, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2905
   call void @doProfiling(i32 32)
@@ -6322,13 +5887,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %65 = sext i16 %.2 to i64, !llfi_index !2907
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %66 = getelementptr inbounds float, float* %4, i64 %65, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2908
   %67 = load float, float* %66, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2909
   call void @doProfiling(i32 32)
   %68 = sext i16 %.2 to i64, !llfi_index !2910
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %69 = getelementptr inbounds float, float* %5, i64 %68, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2911
   %70 = load float, float* %69, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2912
   call void @doProfiling(i32 32)
@@ -6336,13 +5899,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %72 = sext i16 %.24 to i64, !llfi_index !2914
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %73 = getelementptr inbounds float, float* %4, i64 %72, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2915
   %74 = load float, float* %73, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2916
   call void @doProfiling(i32 32)
   %75 = sext i16 %.24 to i64, !llfi_index !2917
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %76 = getelementptr inbounds float, float* %5, i64 %75, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2918
   %77 = load float, float* %76, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2919
   call void @doProfiling(i32 32)
@@ -6350,13 +5911,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %79 = sext i16 %.2 to i64, !llfi_index !2921
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %80 = getelementptr inbounds float, float* %1, i64 %79, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2922
   %81 = load float, float* %80, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2923
   call void @doProfiling(i32 32)
   %82 = sext i16 %.2 to i64, !llfi_index !2924
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %83 = getelementptr inbounds float, float* %4, i64 %82, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2925
   %84 = load float, float* %83, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2926
   call void @doProfiling(i32 32)
@@ -6364,13 +5923,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %86 = sext i16 %.24 to i64, !llfi_index !2928
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %87 = getelementptr inbounds float, float* %1, i64 %86, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2929
   %88 = load float, float* %87, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2930
   call void @doProfiling(i32 32)
   %89 = sext i16 %.24 to i64, !llfi_index !2931
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %90 = getelementptr inbounds float, float* %4, i64 %89, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2932
   %91 = load float, float* %90, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2933
   call void @doProfiling(i32 32)
@@ -6489,13 +6046,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 132:                                              ; preds = %131, %110, %108, %106
   %133 = sext i16 %.2 to i64, !llfi_index !2975
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %134 = getelementptr inbounds float, float* %5, i64 %133, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2976
   %135 = load float, float* %134, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2977
   call void @doProfiling(i32 32)
   %136 = sext i16 %.2 to i64, !llfi_index !2978
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %137 = getelementptr inbounds float, float* %6, i64 %136, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2979
   %138 = load float, float* %137, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2980
   call void @doProfiling(i32 32)
@@ -6503,13 +6058,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %140 = sext i16 %.24 to i64, !llfi_index !2982
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %141 = getelementptr inbounds float, float* %5, i64 %140, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2983
   %142 = load float, float* %141, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2984
   call void @doProfiling(i32 32)
   %143 = sext i16 %.24 to i64, !llfi_index !2985
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %144 = getelementptr inbounds float, float* %6, i64 %143, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2986
   %145 = load float, float* %144, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2987
   call void @doProfiling(i32 32)
@@ -6517,13 +6070,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %147 = sext i16 %.2 to i64, !llfi_index !2989
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %148 = getelementptr inbounds float, float* %1, i64 %147, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2990
   %149 = load float, float* %148, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2991
   call void @doProfiling(i32 32)
   %150 = sext i16 %.2 to i64, !llfi_index !2992
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %151 = getelementptr inbounds float, float* %5, i64 %150, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2993
   %152 = load float, float* %151, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2994
   call void @doProfiling(i32 32)
@@ -6531,13 +6082,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %154 = sext i16 %.24 to i64, !llfi_index !2996
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %155 = getelementptr inbounds float, float* %1, i64 %154, !taffo.info !347, !taffo.initweight !1445, !llfi_index !2997
   %156 = load float, float* %155, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !2998
   call void @doProfiling(i32 32)
   %157 = sext i16 %.24 to i64, !llfi_index !2999
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %158 = getelementptr inbounds float, float* %5, i64 %157, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3000
   %159 = load float, float* %158, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3001
   call void @doProfiling(i32 32)
@@ -6656,13 +6205,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 200:                                              ; preds = %199, %178, %176, %174
   %201 = sext i16 %.2 to i64, !llfi_index !3043
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %202 = getelementptr inbounds float, float* %6, i64 %201, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3044
   %203 = load float, float* %202, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3045
   call void @doProfiling(i32 32)
   %204 = sext i16 %.2 to i64, !llfi_index !3046
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %205 = getelementptr inbounds float, float* %4, i64 %204, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3047
   %206 = load float, float* %205, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3048
   call void @doProfiling(i32 32)
@@ -6670,13 +6217,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %208 = sext i16 %.24 to i64, !llfi_index !3050
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %209 = getelementptr inbounds float, float* %6, i64 %208, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3051
   %210 = load float, float* %209, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3052
   call void @doProfiling(i32 32)
   %211 = sext i16 %.24 to i64, !llfi_index !3053
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %212 = getelementptr inbounds float, float* %4, i64 %211, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3054
   %213 = load float, float* %212, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3055
   call void @doProfiling(i32 32)
@@ -6684,13 +6229,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %215 = sext i16 %.2 to i64, !llfi_index !3057
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %216 = getelementptr inbounds float, float* %1, i64 %215, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3058
   %217 = load float, float* %216, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3059
   call void @doProfiling(i32 32)
   %218 = sext i16 %.2 to i64, !llfi_index !3060
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %219 = getelementptr inbounds float, float* %6, i64 %218, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3061
   %220 = load float, float* %219, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3062
   call void @doProfiling(i32 32)
@@ -6698,13 +6241,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %222 = sext i16 %.24 to i64, !llfi_index !3064
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %223 = getelementptr inbounds float, float* %1, i64 %222, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3065
   %224 = load float, float* %223, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3066
   call void @doProfiling(i32 32)
   %225 = sext i16 %.24 to i64, !llfi_index !3067
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %226 = getelementptr inbounds float, float* %6, i64 %225, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3068
   %227 = load float, float* %226, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3069
   call void @doProfiling(i32 32)
@@ -6823,13 +6364,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 268:                                              ; preds = %267, %246, %244, %242
   %269 = sext i16 %.2 to i64, !llfi_index !3111
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %270 = getelementptr inbounds float, float* %3, i64 %269, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3112
   %271 = load float, float* %270, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3113
   call void @doProfiling(i32 32)
   %272 = sext i16 %.2 to i64, !llfi_index !3114
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %273 = getelementptr inbounds float, float* %2, i64 %272, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3115
   %274 = load float, float* %273, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3116
   call void @doProfiling(i32 32)
@@ -6837,13 +6376,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %276 = sext i16 %.24 to i64, !llfi_index !3118
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %277 = getelementptr inbounds float, float* %3, i64 %276, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3119
   %278 = load float, float* %277, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3120
   call void @doProfiling(i32 32)
   %279 = sext i16 %.24 to i64, !llfi_index !3121
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %280 = getelementptr inbounds float, float* %2, i64 %279, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3122
   %281 = load float, float* %280, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3123
   call void @doProfiling(i32 32)
@@ -6851,13 +6388,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %283 = sext i16 %.2 to i64, !llfi_index !3125
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %284 = getelementptr inbounds float, float* %4, i64 %283, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3126
   %285 = load float, float* %284, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3127
   call void @doProfiling(i32 32)
   %286 = sext i16 %.2 to i64, !llfi_index !3128
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %287 = getelementptr inbounds float, float* %5, i64 %286, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3129
   %288 = load float, float* %287, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3130
   call void @doProfiling(i32 32)
@@ -6865,13 +6400,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %290 = sext i16 %.24 to i64, !llfi_index !3132
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %291 = getelementptr inbounds float, float* %4, i64 %290, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3133
   %292 = load float, float* %291, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3134
   call void @doProfiling(i32 32)
   %293 = sext i16 %.24 to i64, !llfi_index !3135
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %294 = getelementptr inbounds float, float* %5, i64 %293, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3136
   %295 = load float, float* %294, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3137
   call void @doProfiling(i32 32)
@@ -6879,13 +6412,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %297 = sext i16 %.2 to i64, !llfi_index !3139
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %298 = getelementptr inbounds float, float* %2, i64 %297, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3140
   %299 = load float, float* %298, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3141
   call void @doProfiling(i32 32)
   %300 = sext i16 %.2 to i64, !llfi_index !3142
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %301 = getelementptr inbounds float, float* %4, i64 %300, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3143
   %302 = load float, float* %301, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3144
   call void @doProfiling(i32 32)
@@ -6893,13 +6424,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %304 = sext i16 %.24 to i64, !llfi_index !3146
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %305 = getelementptr inbounds float, float* %2, i64 %304, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3147
   %306 = load float, float* %305, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3148
   call void @doProfiling(i32 32)
   %307 = sext i16 %.24 to i64, !llfi_index !3149
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %308 = getelementptr inbounds float, float* %4, i64 %307, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3150
   %309 = load float, float* %308, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3151
   call void @doProfiling(i32 32)
@@ -7018,13 +6547,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 350:                                              ; preds = %349, %328, %326, %324
   %351 = sext i16 %.2 to i64, !llfi_index !3193
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %352 = getelementptr inbounds float, float* %5, i64 %351, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3194
   %353 = load float, float* %352, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3195
   call void @doProfiling(i32 32)
   %354 = sext i16 %.2 to i64, !llfi_index !3196
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %355 = getelementptr inbounds float, float* %6, i64 %354, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3197
   %356 = load float, float* %355, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3198
   call void @doProfiling(i32 32)
@@ -7032,13 +6559,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %358 = sext i16 %.24 to i64, !llfi_index !3200
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %359 = getelementptr inbounds float, float* %5, i64 %358, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3201
   %360 = load float, float* %359, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3202
   call void @doProfiling(i32 32)
   %361 = sext i16 %.24 to i64, !llfi_index !3203
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %362 = getelementptr inbounds float, float* %6, i64 %361, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3204
   %363 = load float, float* %362, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3205
   call void @doProfiling(i32 32)
@@ -7046,13 +6571,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %365 = sext i16 %.2 to i64, !llfi_index !3207
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %366 = getelementptr inbounds float, float* %2, i64 %365, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3208
   %367 = load float, float* %366, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3209
   call void @doProfiling(i32 32)
   %368 = sext i16 %.2 to i64, !llfi_index !3210
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %369 = getelementptr inbounds float, float* %5, i64 %368, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3211
   %370 = load float, float* %369, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3212
   call void @doProfiling(i32 32)
@@ -7060,13 +6583,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %372 = sext i16 %.24 to i64, !llfi_index !3214
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %373 = getelementptr inbounds float, float* %2, i64 %372, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3215
   %374 = load float, float* %373, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3216
   call void @doProfiling(i32 32)
   %375 = sext i16 %.24 to i64, !llfi_index !3217
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %376 = getelementptr inbounds float, float* %5, i64 %375, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3218
   %377 = load float, float* %376, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3219
   call void @doProfiling(i32 32)
@@ -7185,13 +6706,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 418:                                              ; preds = %417, %396, %394, %392
   %419 = sext i16 %.2 to i64, !llfi_index !3261
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %420 = getelementptr inbounds float, float* %6, i64 %419, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3262
   %421 = load float, float* %420, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3263
   call void @doProfiling(i32 32)
   %422 = sext i16 %.2 to i64, !llfi_index !3264
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %423 = getelementptr inbounds float, float* %4, i64 %422, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3265
   %424 = load float, float* %423, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3266
   call void @doProfiling(i32 32)
@@ -7199,13 +6718,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %426 = sext i16 %.24 to i64, !llfi_index !3268
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %427 = getelementptr inbounds float, float* %6, i64 %426, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3269
   %428 = load float, float* %427, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3270
   call void @doProfiling(i32 32)
   %429 = sext i16 %.24 to i64, !llfi_index !3271
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %430 = getelementptr inbounds float, float* %4, i64 %429, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3272
   %431 = load float, float* %430, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3273
   call void @doProfiling(i32 32)
@@ -7213,13 +6730,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %433 = sext i16 %.2 to i64, !llfi_index !3275
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %434 = getelementptr inbounds float, float* %2, i64 %433, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3276
   %435 = load float, float* %434, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3277
   call void @doProfiling(i32 32)
   %436 = sext i16 %.2 to i64, !llfi_index !3278
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %437 = getelementptr inbounds float, float* %6, i64 %436, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3279
   %438 = load float, float* %437, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3280
   call void @doProfiling(i32 32)
@@ -7227,13 +6742,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %440 = sext i16 %.24 to i64, !llfi_index !3282
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %441 = getelementptr inbounds float, float* %2, i64 %440, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3283
   %442 = load float, float* %441, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3284
   call void @doProfiling(i32 32)
   %443 = sext i16 %.24 to i64, !llfi_index !3285
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %444 = getelementptr inbounds float, float* %6, i64 %443, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3286
   %445 = load float, float* %444, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3287
   call void @doProfiling(i32 32)
@@ -7352,13 +6865,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 486:                                              ; preds = %485, %464, %462, %460
   %487 = sext i16 %.2 to i64, !llfi_index !3329
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %488 = getelementptr inbounds float, float* %1, i64 %487, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3330
   %489 = load float, float* %488, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3331
   call void @doProfiling(i32 32)
   %490 = sext i16 %.2 to i64, !llfi_index !3332
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %491 = getelementptr inbounds float, float* %3, i64 %490, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3333
   %492 = load float, float* %491, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3334
   call void @doProfiling(i32 32)
@@ -7366,13 +6877,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %494 = sext i16 %.24 to i64, !llfi_index !3336
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %495 = getelementptr inbounds float, float* %1, i64 %494, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3337
   %496 = load float, float* %495, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3338
   call void @doProfiling(i32 32)
   %497 = sext i16 %.24 to i64, !llfi_index !3339
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %498 = getelementptr inbounds float, float* %3, i64 %497, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3340
   %499 = load float, float* %498, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3341
   call void @doProfiling(i32 32)
@@ -7380,13 +6889,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %501 = sext i16 %.2 to i64, !llfi_index !3343
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %502 = getelementptr inbounds float, float* %4, i64 %501, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3344
   %503 = load float, float* %502, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3345
   call void @doProfiling(i32 32)
   %504 = sext i16 %.2 to i64, !llfi_index !3346
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %505 = getelementptr inbounds float, float* %5, i64 %504, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3347
   %506 = load float, float* %505, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3348
   call void @doProfiling(i32 32)
@@ -7394,13 +6901,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %508 = sext i16 %.24 to i64, !llfi_index !3350
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %509 = getelementptr inbounds float, float* %4, i64 %508, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3351
   %510 = load float, float* %509, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3352
   call void @doProfiling(i32 32)
   %511 = sext i16 %.24 to i64, !llfi_index !3353
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %512 = getelementptr inbounds float, float* %5, i64 %511, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3354
   %513 = load float, float* %512, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3355
   call void @doProfiling(i32 32)
@@ -7408,13 +6913,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %515 = sext i16 %.2 to i64, !llfi_index !3357
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %516 = getelementptr inbounds float, float* %3, i64 %515, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3358
   %517 = load float, float* %516, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3359
   call void @doProfiling(i32 32)
   %518 = sext i16 %.2 to i64, !llfi_index !3360
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %519 = getelementptr inbounds float, float* %4, i64 %518, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3361
   %520 = load float, float* %519, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3362
   call void @doProfiling(i32 32)
@@ -7422,13 +6925,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %522 = sext i16 %.24 to i64, !llfi_index !3364
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %523 = getelementptr inbounds float, float* %3, i64 %522, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3365
   %524 = load float, float* %523, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3366
   call void @doProfiling(i32 32)
   %525 = sext i16 %.24 to i64, !llfi_index !3367
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %526 = getelementptr inbounds float, float* %4, i64 %525, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3368
   %527 = load float, float* %526, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3369
   call void @doProfiling(i32 32)
@@ -7547,13 +7048,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 568:                                              ; preds = %567, %546, %544, %542
   %569 = sext i16 %.2 to i64, !llfi_index !3411
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %570 = getelementptr inbounds float, float* %5, i64 %569, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3412
   %571 = load float, float* %570, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3413
   call void @doProfiling(i32 32)
   %572 = sext i16 %.2 to i64, !llfi_index !3414
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %573 = getelementptr inbounds float, float* %6, i64 %572, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3415
   %574 = load float, float* %573, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3416
   call void @doProfiling(i32 32)
@@ -7561,13 +7060,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %576 = sext i16 %.24 to i64, !llfi_index !3418
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %577 = getelementptr inbounds float, float* %5, i64 %576, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3419
   %578 = load float, float* %577, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3420
   call void @doProfiling(i32 32)
   %579 = sext i16 %.24 to i64, !llfi_index !3421
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %580 = getelementptr inbounds float, float* %6, i64 %579, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3422
   %581 = load float, float* %580, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3423
   call void @doProfiling(i32 32)
@@ -7575,13 +7072,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %583 = sext i16 %.2 to i64, !llfi_index !3425
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %584 = getelementptr inbounds float, float* %3, i64 %583, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3426
   %585 = load float, float* %584, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3427
   call void @doProfiling(i32 32)
   %586 = sext i16 %.2 to i64, !llfi_index !3428
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %587 = getelementptr inbounds float, float* %5, i64 %586, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3429
   %588 = load float, float* %587, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3430
   call void @doProfiling(i32 32)
@@ -7589,13 +7084,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %590 = sext i16 %.24 to i64, !llfi_index !3432
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %591 = getelementptr inbounds float, float* %3, i64 %590, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3433
   %592 = load float, float* %591, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3434
   call void @doProfiling(i32 32)
   %593 = sext i16 %.24 to i64, !llfi_index !3435
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %594 = getelementptr inbounds float, float* %5, i64 %593, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3436
   %595 = load float, float* %594, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3437
   call void @doProfiling(i32 32)
@@ -7714,13 +7207,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 636:                                              ; preds = %635, %614, %612, %610
   %637 = sext i16 %.2 to i64, !llfi_index !3479
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %638 = getelementptr inbounds float, float* %6, i64 %637, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3480
   %639 = load float, float* %638, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3481
   call void @doProfiling(i32 32)
   %640 = sext i16 %.2 to i64, !llfi_index !3482
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %641 = getelementptr inbounds float, float* %4, i64 %640, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3483
   %642 = load float, float* %641, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3484
   call void @doProfiling(i32 32)
@@ -7728,13 +7219,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %644 = sext i16 %.24 to i64, !llfi_index !3486
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %645 = getelementptr inbounds float, float* %6, i64 %644, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3487
   %646 = load float, float* %645, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3488
   call void @doProfiling(i32 32)
   %647 = sext i16 %.24 to i64, !llfi_index !3489
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %648 = getelementptr inbounds float, float* %4, i64 %647, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3490
   %649 = load float, float* %648, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3491
   call void @doProfiling(i32 32)
@@ -7742,13 +7231,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %651 = sext i16 %.2 to i64, !llfi_index !3493
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %652 = getelementptr inbounds float, float* %3, i64 %651, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3494
   %653 = load float, float* %652, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3495
   call void @doProfiling(i32 32)
   %654 = sext i16 %.2 to i64, !llfi_index !3496
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %655 = getelementptr inbounds float, float* %6, i64 %654, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3497
   %656 = load float, float* %655, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3498
   call void @doProfiling(i32 32)
@@ -7756,13 +7243,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %658 = sext i16 %.24 to i64, !llfi_index !3500
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %659 = getelementptr inbounds float, float* %3, i64 %658, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3501
   %660 = load float, float* %659, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3502
   call void @doProfiling(i32 32)
   %661 = sext i16 %.24 to i64, !llfi_index !3503
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %662 = getelementptr inbounds float, float* %6, i64 %661, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3504
   %663 = load float, float* %662, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3505
   call void @doProfiling(i32 32)
@@ -7881,13 +7366,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 704:                                              ; preds = %703, %682, %680, %678
   %705 = sext i16 %.24 to i64, !llfi_index !3547
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %706 = getelementptr inbounds float, float* %5, i64 %705, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3548
   %707 = load float, float* %706, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3549
   call void @doProfiling(i32 32)
   %708 = sext i16 %.24 to i64, !llfi_index !3550
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %709 = getelementptr inbounds float, float* %4, i64 %708, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3551
   %710 = load float, float* %709, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3552
   call void @doProfiling(i32 32)
@@ -7895,13 +7378,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %712 = sext i16 %.2 to i64, !llfi_index !3554
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %713 = getelementptr inbounds float, float* %5, i64 %712, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3555
   %714 = load float, float* %713, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3556
   call void @doProfiling(i32 32)
   %715 = sext i16 %.2 to i64, !llfi_index !3557
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %716 = getelementptr inbounds float, float* %4, i64 %715, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3558
   %717 = load float, float* %716, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3559
   call void @doProfiling(i32 32)
@@ -7913,13 +7394,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 12)
   %721 = sext i16 %.2 to i64, !llfi_index !3563
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %722 = getelementptr inbounds float, float* %4, i64 %721, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3564
   %723 = load float, float* %722, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3565
   call void @doProfiling(i32 32)
   %724 = sext i16 %.24 to i64, !llfi_index !3566
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %725 = getelementptr inbounds float, float* %4, i64 %724, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3567
   %726 = load float, float* %725, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3568
   call void @doProfiling(i32 32)
@@ -7931,13 +7410,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 56)
   %730 = sext i16 %.2 to i64, !llfi_index !3572
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %731 = getelementptr inbounds float, float* %1, i64 %730, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3573
   %732 = load float, float* %731, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3574
   call void @doProfiling(i32 32)
   %733 = sext i16 %.24 to i64, !llfi_index !3575
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %734 = getelementptr inbounds float, float* %1, i64 %733, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3576
   %735 = load float, float* %734, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3577
   call void @doProfiling(i32 32)
@@ -7949,13 +7426,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 14)
   %739 = sext i16 %.24 to i64, !llfi_index !3581
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %740 = getelementptr inbounds float, float* %6, i64 %739, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3582
   %741 = load float, float* %740, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3583
   call void @doProfiling(i32 32)
   %742 = sext i16 %.24 to i64, !llfi_index !3584
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %743 = getelementptr inbounds float, float* %5, i64 %742, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3585
   %744 = load float, float* %743, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3586
   call void @doProfiling(i32 32)
@@ -7963,13 +7438,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %746 = sext i16 %.2 to i64, !llfi_index !3588
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %747 = getelementptr inbounds float, float* %6, i64 %746, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3589
   %748 = load float, float* %747, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3590
   call void @doProfiling(i32 32)
   %749 = sext i16 %.2 to i64, !llfi_index !3591
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %750 = getelementptr inbounds float, float* %5, i64 %749, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3592
   %751 = load float, float* %750, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3593
   call void @doProfiling(i32 32)
@@ -7981,13 +7454,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 12)
   %755 = sext i16 %.2 to i64, !llfi_index !3597
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %756 = getelementptr inbounds float, float* %5, i64 %755, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3598
   %757 = load float, float* %756, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3599
   call void @doProfiling(i32 32)
   %758 = sext i16 %.24 to i64, !llfi_index !3600
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %759 = getelementptr inbounds float, float* %5, i64 %758, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3601
   %760 = load float, float* %759, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3602
   call void @doProfiling(i32 32)
@@ -7999,13 +7470,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 56)
   %764 = sext i16 %.2 to i64, !llfi_index !3606
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %765 = getelementptr inbounds float, float* %1, i64 %764, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3607
   %766 = load float, float* %765, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3608
   call void @doProfiling(i32 32)
   %767 = sext i16 %.24 to i64, !llfi_index !3609
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %768 = getelementptr inbounds float, float* %1, i64 %767, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3610
   %769 = load float, float* %768, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3611
   call void @doProfiling(i32 32)
@@ -8017,13 +7486,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 14)
   %773 = sext i16 %.24 to i64, !llfi_index !3615
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %774 = getelementptr inbounds float, float* %4, i64 %773, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3616
   %775 = load float, float* %774, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3617
   call void @doProfiling(i32 32)
   %776 = sext i16 %.24 to i64, !llfi_index !3618
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %777 = getelementptr inbounds float, float* %6, i64 %776, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3619
   %778 = load float, float* %777, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3620
   call void @doProfiling(i32 32)
@@ -8031,13 +7498,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %780 = sext i16 %.2 to i64, !llfi_index !3622
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %781 = getelementptr inbounds float, float* %4, i64 %780, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3623
   %782 = load float, float* %781, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3624
   call void @doProfiling(i32 32)
   %783 = sext i16 %.2 to i64, !llfi_index !3625
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %784 = getelementptr inbounds float, float* %6, i64 %783, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3626
   %785 = load float, float* %784, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3627
   call void @doProfiling(i32 32)
@@ -8049,13 +7514,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 12)
   %789 = sext i16 %.2 to i64, !llfi_index !3631
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %790 = getelementptr inbounds float, float* %6, i64 %789, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3632
   %791 = load float, float* %790, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3633
   call void @doProfiling(i32 32)
   %792 = sext i16 %.24 to i64, !llfi_index !3634
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %793 = getelementptr inbounds float, float* %6, i64 %792, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3635
   %794 = load float, float* %793, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3636
   call void @doProfiling(i32 32)
@@ -8067,13 +7530,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 56)
   %798 = sext i16 %.2 to i64, !llfi_index !3640
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %799 = getelementptr inbounds float, float* %1, i64 %798, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3641
   %800 = load float, float* %799, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3642
   call void @doProfiling(i32 32)
   %801 = sext i16 %.24 to i64, !llfi_index !3643
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %802 = getelementptr inbounds float, float* %1, i64 %801, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3644
   %803 = load float, float* %802, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3645
   call void @doProfiling(i32 32)
@@ -8117,13 +7578,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 818:                                              ; preds = %817, %810
   %819 = sext i16 %.24 to i64, !llfi_index !3661
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %820 = getelementptr inbounds float, float* %2, i64 %819, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3662
   %821 = load float, float* %820, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3663
   call void @doProfiling(i32 32)
   %822 = sext i16 %.24 to i64, !llfi_index !3664
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %823 = getelementptr inbounds float, float* %1, i64 %822, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3665
   %824 = load float, float* %823, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3666
   call void @doProfiling(i32 32)
@@ -8131,13 +7590,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %826 = sext i16 %.2 to i64, !llfi_index !3668
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %827 = getelementptr inbounds float, float* %2, i64 %826, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3669
   %828 = load float, float* %827, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3670
   call void @doProfiling(i32 32)
   %829 = sext i16 %.2 to i64, !llfi_index !3671
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %830 = getelementptr inbounds float, float* %1, i64 %829, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3672
   %831 = load float, float* %830, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3673
   call void @doProfiling(i32 32)
@@ -8149,13 +7606,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 12)
   %835 = sext i16 %.2 to i64, !llfi_index !3677
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %836 = getelementptr inbounds float, float* %1, i64 %835, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3678
   %837 = load float, float* %836, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3679
   call void @doProfiling(i32 32)
   %838 = sext i16 %.24 to i64, !llfi_index !3680
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %839 = getelementptr inbounds float, float* %1, i64 %838, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3681
   %840 = load float, float* %839, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3682
   call void @doProfiling(i32 32)
@@ -8167,13 +7622,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 56)
   %844 = sext i16 %.2 to i64, !llfi_index !3686
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %845 = getelementptr inbounds float, float* %4, i64 %844, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3687
   %846 = load float, float* %845, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3688
   call void @doProfiling(i32 32)
   %847 = sext i16 %.24 to i64, !llfi_index !3689
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %848 = getelementptr inbounds float, float* %4, i64 %847, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3690
   %849 = load float, float* %848, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3691
   call void @doProfiling(i32 32)
@@ -8185,13 +7638,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 14)
   %853 = sext i16 %.24 to i64, !llfi_index !3695
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %854 = getelementptr inbounds float, float* %3, i64 %853, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3696
   %855 = load float, float* %854, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3697
   call void @doProfiling(i32 32)
   %856 = sext i16 %.24 to i64, !llfi_index !3698
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %857 = getelementptr inbounds float, float* %2, i64 %856, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3699
   %858 = load float, float* %857, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3700
   call void @doProfiling(i32 32)
@@ -8199,13 +7650,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %860 = sext i16 %.2 to i64, !llfi_index !3702
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %861 = getelementptr inbounds float, float* %3, i64 %860, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3703
   %862 = load float, float* %861, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3704
   call void @doProfiling(i32 32)
   %863 = sext i16 %.2 to i64, !llfi_index !3705
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %864 = getelementptr inbounds float, float* %2, i64 %863, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3706
   %865 = load float, float* %864, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3707
   call void @doProfiling(i32 32)
@@ -8217,13 +7666,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 12)
   %869 = sext i16 %.2 to i64, !llfi_index !3711
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %870 = getelementptr inbounds float, float* %2, i64 %869, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3712
   %871 = load float, float* %870, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3713
   call void @doProfiling(i32 32)
   %872 = sext i16 %.24 to i64, !llfi_index !3714
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %873 = getelementptr inbounds float, float* %2, i64 %872, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3715
   %874 = load float, float* %873, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3716
   call void @doProfiling(i32 32)
@@ -8235,13 +7682,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 56)
   %878 = sext i16 %.2 to i64, !llfi_index !3720
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %879 = getelementptr inbounds float, float* %4, i64 %878, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3721
   %880 = load float, float* %879, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3722
   call void @doProfiling(i32 32)
   %881 = sext i16 %.24 to i64, !llfi_index !3723
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %882 = getelementptr inbounds float, float* %4, i64 %881, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3724
   %883 = load float, float* %882, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3725
   call void @doProfiling(i32 32)
@@ -8253,13 +7698,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 14)
   %887 = sext i16 %.24 to i64, !llfi_index !3729
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %888 = getelementptr inbounds float, float* %1, i64 %887, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3730
   %889 = load float, float* %888, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3731
   call void @doProfiling(i32 32)
   %890 = sext i16 %.24 to i64, !llfi_index !3732
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %891 = getelementptr inbounds float, float* %3, i64 %890, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3733
   %892 = load float, float* %891, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3734
   call void @doProfiling(i32 32)
@@ -8267,13 +7710,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 16)
   %894 = sext i16 %.2 to i64, !llfi_index !3736
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %895 = getelementptr inbounds float, float* %1, i64 %894, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3737
   %896 = load float, float* %895, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3738
   call void @doProfiling(i32 32)
   %897 = sext i16 %.2 to i64, !llfi_index !3739
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %898 = getelementptr inbounds float, float* %3, i64 %897, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3740
   %899 = load float, float* %898, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3741
   call void @doProfiling(i32 32)
@@ -8285,13 +7726,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 12)
   %903 = sext i16 %.2 to i64, !llfi_index !3745
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %904 = getelementptr inbounds float, float* %3, i64 %903, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3746
   %905 = load float, float* %904, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3747
   call void @doProfiling(i32 32)
   %906 = sext i16 %.24 to i64, !llfi_index !3748
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %907 = getelementptr inbounds float, float* %3, i64 %906, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3749
   %908 = load float, float* %907, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3750
   call void @doProfiling(i32 32)
@@ -8303,13 +7742,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
   call void @doProfiling(i32 56)
   %912 = sext i16 %.2 to i64, !llfi_index !3754
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %913 = getelementptr inbounds float, float* %4, i64 %912, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3755
   %914 = load float, float* %913, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3756
   call void @doProfiling(i32 32)
   %915 = sext i16 %.24 to i64, !llfi_index !3757
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %916 = getelementptr inbounds float, float* %4, i64 %915, !taffo.info !347, !taffo.initweight !1445, !llfi_index !3758
   %917 = load float, float* %916, align 4, !taffo.info !347, !taffo.initweight !2841, !llfi_index !3759
   call void @doProfiling(i32 32)
@@ -8355,7 +7792,7 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1(float* noundef
 
 933:                                              ; preds = %932, %930, %816, %701, %695, %633, %627, %565, %559, %483, %477, %415, %409, %347, %341, %265, %259, %197, %191, %129, %123
   %.0 = phi i32 [ 1, %123 ], [ 1, %191 ], [ 1, %259 ], [ 1, %341 ], [ 1, %409 ], [ 1, %477 ], [ 1, %559 ], [ 1, %627 ], [ 1, %695 ], [ 1, %816 ], [ 1, %930 ], [ 0, %932 ], [ 1, %701 ], [ 1, %633 ], [ 1, %565 ], [ 1, %483 ], [ 1, %415 ], [ 1, %347 ], [ 1, %265 ], [ 1, %197 ], [ 1, %129 ], !llfi_index !3776
-  call void @doProfiling(i32 55)
+  call void @doProfiling(i32 1)
   ret i32 %.0, !llfi_index !3777
 }
 
@@ -8375,11 +7812,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   %s3_29fixp34 = alloca [2 x i32], align 4, !taffo.info !31, !llfi_index !3794
   call void @doProfiling(i32 31)
   %s3_29fixp44 = alloca [2 x i32], align 4, !taffo.info !31, !llfi_index !3795
-  call void @doProfiling(i32 34)
   %s2_30fixp59 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 0, !taffo.info !208, !llfi_index !3796
   %s2_30fixp301 = load i32, i32* %s2_30fixp59, align 4, !taffo.info !3797, !llfi_index !3798
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp = getelementptr inbounds i32, i32* %.s2_30fixp, i64 0, !taffo.info !208, !llfi_index !3799
   %s2_30fixp288 = load i32, i32* %s2_30fixp, align 4, !taffo.info !3797, !llfi_index !3800
   call void @doProfiling(i32 32)
@@ -8389,15 +7824,12 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp467 = sub i32 %2, %3, !taffo.info !3781, !llfi_index !3803
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp251 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 0, !taffo.info !3781, !llfi_index !3804
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp467, i32* %s3_29fixp251, align 4, !taffo.info !347, !llfi_index !3805
-  call void @doProfiling(i32 34)
   %s2_30fixp60 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 1, !taffo.info !208, !llfi_index !3806
   %s2_30fixp302 = load i32, i32* %s2_30fixp60, align 4, !taffo.info !3797, !llfi_index !3807
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp47 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 1, !taffo.info !208, !llfi_index !3808
   %s2_30fixp289 = load i32, i32* %s2_30fixp47, align 4, !taffo.info !3797, !llfi_index !3809
   call void @doProfiling(i32 32)
@@ -8407,15 +7839,12 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp468 = sub i32 %4, %5, !taffo.info !3781, !llfi_index !3812
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp250 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 1, !taffo.info !3781, !llfi_index !3813
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp468, i32* %s3_29fixp250, align 4, !taffo.info !347, !llfi_index !3814
-  call void @doProfiling(i32 34)
   %s2_30fixp61 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 2, !taffo.info !208, !llfi_index !3815
   %s2_30fixp303 = load i32, i32* %s2_30fixp61, align 4, !taffo.info !3797, !llfi_index !3816
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp48 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 2, !taffo.info !208, !llfi_index !3817
   %s2_30fixp290 = load i32, i32* %s2_30fixp48, align 4, !taffo.info !3797, !llfi_index !3818
   call void @doProfiling(i32 32)
@@ -8425,15 +7854,12 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp469 = sub i32 %6, %7, !taffo.info !3781, !llfi_index !3821
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp249 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 2, !taffo.info !3781, !llfi_index !3822
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp469, i32* %s3_29fixp249, align 4, !taffo.info !347, !llfi_index !3823
-  call void @doProfiling(i32 34)
   %s2_30fixp66 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 0, !taffo.info !208, !llfi_index !3824
   %s2_30fixp308 = load i32, i32* %s2_30fixp66, align 4, !taffo.info !3797, !llfi_index !3825
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp49 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 0, !taffo.info !208, !llfi_index !3826
   %s2_30fixp291 = load i32, i32* %s2_30fixp49, align 4, !taffo.info !3797, !llfi_index !3827
   call void @doProfiling(i32 32)
@@ -8443,15 +7869,12 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp484 = sub i32 %8, %9, !taffo.info !3781, !llfi_index !3830
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp121 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 0, !taffo.info !3781, !llfi_index !3831
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp484, i32* %s3_29fixp121, align 4, !taffo.info !347, !llfi_index !3832
-  call void @doProfiling(i32 34)
   %s2_30fixp67 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 1, !taffo.info !208, !llfi_index !3833
   %s2_30fixp309 = load i32, i32* %s2_30fixp67, align 4, !taffo.info !3797, !llfi_index !3834
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp50 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 1, !taffo.info !208, !llfi_index !3835
   %s2_30fixp292 = load i32, i32* %s2_30fixp50, align 4, !taffo.info !3797, !llfi_index !3836
   call void @doProfiling(i32 32)
@@ -8461,15 +7884,12 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp485 = sub i32 %10, %11, !taffo.info !3781, !llfi_index !3839
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp120 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 1, !taffo.info !3781, !llfi_index !3840
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp485, i32* %s3_29fixp120, align 4, !taffo.info !347, !llfi_index !3841
-  call void @doProfiling(i32 34)
   %s2_30fixp68 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 2, !taffo.info !208, !llfi_index !3842
   %s2_30fixp310 = load i32, i32* %s2_30fixp68, align 4, !taffo.info !3797, !llfi_index !3843
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp51 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 2, !taffo.info !208, !llfi_index !3844
   %s2_30fixp293 = load i32, i32* %s2_30fixp51, align 4, !taffo.info !3797, !llfi_index !3845
   call void @doProfiling(i32 32)
@@ -8479,23 +7899,18 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp486 = sub i32 %12, %13, !taffo.info !3781, !llfi_index !3848
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp119 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 2, !taffo.info !3781, !llfi_index !3849
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp486, i32* %s3_29fixp119, align 4, !taffo.info !347, !llfi_index !3850
-  call void @doProfiling(i32 34)
   %s3_29fixp248 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 1, !taffo.info !3781, !llfi_index !3851
   %s3_29fixp448 = load i32, i32* %s3_29fixp248, align 4, !taffo.info !3852, !llfi_index !3853
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp118 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 2, !taffo.info !3781, !llfi_index !3854
   %s3_29fixp357 = load i32, i32* %s3_29fixp118, align 4, !taffo.info !3852, !llfi_index !3855
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp247 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 2, !taffo.info !3781, !llfi_index !3856
   %s3_29fixp447 = load i32, i32* %s3_29fixp247, align 4, !taffo.info !3857, !llfi_index !3859
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp117 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 1, !taffo.info !3781, !llfi_index !3860
   %s3_29fixp356 = load i32, i32* %s3_29fixp117, align 4, !taffo.info !3857, !llfi_index !3861
   call void @doProfiling(i32 32)
@@ -8525,23 +7940,18 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s5_27fixp648 = add i32 %23, %s5_27fixp630, !taffo.info !3785, !llfi_index !3880
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp229 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 0, !taffo.info !3785, !llfi_index !3881
   call void @doProfiling(i32 33)
   store i32 %s5_27fixp648, i32* %s5_27fixp229, align 4, !taffo.info !347, !llfi_index !3882
-  call void @doProfiling(i32 34)
   %s3_29fixp246 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 2, !taffo.info !3781, !llfi_index !3883
   %s3_29fixp446 = load i32, i32* %s3_29fixp246, align 4, !taffo.info !3852, !llfi_index !3884
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp116 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 0, !taffo.info !3781, !llfi_index !3885
   %s3_29fixp355 = load i32, i32* %s3_29fixp116, align 4, !taffo.info !3852, !llfi_index !3886
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp245 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 0, !taffo.info !3781, !llfi_index !3887
   %s3_29fixp445 = load i32, i32* %s3_29fixp245, align 4, !taffo.info !3857, !llfi_index !3888
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp115 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 2, !taffo.info !3781, !llfi_index !3889
   %s3_29fixp354 = load i32, i32* %s3_29fixp115, align 4, !taffo.info !3857, !llfi_index !3890
   call void @doProfiling(i32 32)
@@ -8571,23 +7981,18 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s5_27fixp647 = add i32 %33, %s5_27fixp629, !taffo.info !3785, !llfi_index !3903
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp228 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 1, !taffo.info !3785, !llfi_index !3904
   call void @doProfiling(i32 33)
   store i32 %s5_27fixp647, i32* %s5_27fixp228, align 4, !taffo.info !347, !llfi_index !3905
-  call void @doProfiling(i32 34)
   %s3_29fixp244 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 0, !taffo.info !3781, !llfi_index !3906
   %s3_29fixp444 = load i32, i32* %s3_29fixp244, align 4, !taffo.info !3852, !llfi_index !3907
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp114 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 1, !taffo.info !3781, !llfi_index !3908
   %s3_29fixp353 = load i32, i32* %s3_29fixp114, align 4, !taffo.info !3852, !llfi_index !3909
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp243 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 1, !taffo.info !3781, !llfi_index !3910
   %s3_29fixp443 = load i32, i32* %s3_29fixp243, align 4, !taffo.info !3857, !llfi_index !3911
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp113 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 0, !taffo.info !3781, !llfi_index !3912
   %s3_29fixp352 = load i32, i32* %s3_29fixp113, align 4, !taffo.info !3857, !llfi_index !3913
   call void @doProfiling(i32 32)
@@ -8617,23 +8022,18 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s5_27fixp646 = add i32 %43, %s5_27fixp628, !taffo.info !3785, !llfi_index !3926
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp227 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 2, !taffo.info !3785, !llfi_index !3927
   call void @doProfiling(i32 33)
   store i32 %s5_27fixp646, i32* %s5_27fixp227, align 4, !taffo.info !347, !llfi_index !3928
-  call void @doProfiling(i32 34)
   %s5_27fixp226 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 0, !taffo.info !3785, !llfi_index !3929
   %s5_27fixp432 = load i32, i32* %s5_27fixp226, align 4, !taffo.info !3930, !llfi_index !3932
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp52 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 0, !taffo.info !208, !llfi_index !3933
   %s2_30fixp294 = load i32, i32* %s2_30fixp52, align 4, !taffo.info !208, !llfi_index !3934
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp225 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 1, !taffo.info !3785, !llfi_index !3935
   %s5_27fixp431 = load i32, i32* %s5_27fixp225, align 4, !taffo.info !3785, !llfi_index !3936
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp53 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 1, !taffo.info !208, !llfi_index !3937
   %s2_30fixp295 = load i32, i32* %s2_30fixp53, align 4, !taffo.info !208, !llfi_index !3938
   call void @doProfiling(i32 32)
@@ -8659,11 +8059,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s6_26fixp624 = add i32 %52, %s6_26fixp564, !taffo.info !3953, !llfi_index !3954
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp224 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 2, !taffo.info !3785, !llfi_index !3955
   %s5_27fixp430 = load i32, i32* %s5_27fixp224, align 4, !taffo.info !3930, !llfi_index !3956
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp54 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 2, !taffo.info !208, !llfi_index !3957
   %s2_30fixp296 = load i32, i32* %s2_30fixp54, align 4, !taffo.info !208, !llfi_index !3958
   call void @doProfiling(i32 32)
@@ -8683,19 +8081,15 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s7_25fixp690 = sub i32 0, %58, !taffo.info !3969, !llfi_index !3971
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s5_27fixp223 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 0, !taffo.info !3785, !llfi_index !3972
   %s5_27fixp429 = load i32, i32* %s5_27fixp223, align 4, !taffo.info !3930, !llfi_index !3973
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp73 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 0, !taffo.info !208, !llfi_index !3974
   %s2_30fixp315 = load i32, i32* %s2_30fixp73, align 4, !taffo.info !208, !llfi_index !3975
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp222 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 1, !taffo.info !3785, !llfi_index !3976
   %s5_27fixp428 = load i32, i32* %s5_27fixp222, align 4, !taffo.info !3785, !llfi_index !3977
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp74 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 1, !taffo.info !208, !llfi_index !3978
   %s2_30fixp316 = load i32, i32* %s2_30fixp74, align 4, !taffo.info !208, !llfi_index !3979
   call void @doProfiling(i32 32)
@@ -8721,11 +8115,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s6_26fixp623 = add i32 %67, %s6_26fixp563, !taffo.info !3953, !llfi_index !3990
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp221 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 2, !taffo.info !3785, !llfi_index !3991
   %s5_27fixp427 = load i32, i32* %s5_27fixp221, align 4, !taffo.info !3930, !llfi_index !3992
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp75 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 2, !taffo.info !208, !llfi_index !3993
   %s2_30fixp317 = load i32, i32* %s2_30fixp75, align 4, !taffo.info !208, !llfi_index !3994
   call void @doProfiling(i32 32)
@@ -8749,19 +8141,15 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 44)
   %75 = fdiv double %74, 0x4180000000000000, !taffo.info !4002, !llfi_index !4006
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %s5_27fixp220 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 0, !taffo.info !3785, !llfi_index !4007
   %s5_27fixp426 = load i32, i32* %s5_27fixp220, align 4, !taffo.info !3930, !llfi_index !4008
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp86 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 0, !taffo.info !208, !llfi_index !4009
   %s2_30fixp328 = load i32, i32* %s2_30fixp86, align 4, !taffo.info !208, !llfi_index !4010
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp219 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 1, !taffo.info !3785, !llfi_index !4011
   %s5_27fixp425 = load i32, i32* %s5_27fixp219, align 4, !taffo.info !3785, !llfi_index !4012
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp87 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 1, !taffo.info !208, !llfi_index !4013
   %s2_30fixp329 = load i32, i32* %s2_30fixp87, align 4, !taffo.info !208, !llfi_index !4014
   call void @doProfiling(i32 32)
@@ -8787,11 +8175,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s6_26fixp622 = add i32 %84, %s6_26fixp562, !taffo.info !3953, !llfi_index !4025
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp218 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 2, !taffo.info !3785, !llfi_index !4026
   %s5_27fixp424 = load i32, i32* %s5_27fixp218, align 4, !taffo.info !3930, !llfi_index !4027
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp88 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 2, !taffo.info !208, !llfi_index !4028
   %s2_30fixp330 = load i32, i32* %s2_30fixp88, align 4, !taffo.info !208, !llfi_index !4029
   call void @doProfiling(i32 32)
@@ -8815,19 +8201,15 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 44)
   %92 = fdiv double %91, 0x4180000000000000, !taffo.info !4002, !llfi_index !4039
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %s5_27fixp217 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 0, !taffo.info !3785, !llfi_index !4040
   %s5_27fixp423 = load i32, i32* %s5_27fixp217, align 4, !taffo.info !3930, !llfi_index !4041
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp93 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 0, !taffo.info !208, !llfi_index !4042
   %s2_30fixp335 = load i32, i32* %s2_30fixp93, align 4, !taffo.info !208, !llfi_index !4043
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp216 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 1, !taffo.info !3785, !llfi_index !4044
   %s5_27fixp422 = load i32, i32* %s5_27fixp216, align 4, !taffo.info !3785, !llfi_index !4045
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp94 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 1, !taffo.info !208, !llfi_index !4046
   %s2_30fixp336 = load i32, i32* %s2_30fixp94, align 4, !taffo.info !208, !llfi_index !4047
   call void @doProfiling(i32 32)
@@ -8853,11 +8235,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s6_26fixp621 = add i32 %101, %s6_26fixp561, !taffo.info !3953, !llfi_index !4058
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp215 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 2, !taffo.info !3785, !llfi_index !4059
   %s5_27fixp421 = load i32, i32* %s5_27fixp215, align 4, !taffo.info !3930, !llfi_index !4060
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp95 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 2, !taffo.info !208, !llfi_index !4061
   %s2_30fixp337 = load i32, i32* %s2_30fixp95, align 4, !taffo.info !208, !llfi_index !4062
   call void @doProfiling(i32 32)
@@ -8903,7 +8283,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
 
 116:                                              ; preds = %114, %1
   %.08.s8_24fixp = phi i32 [ %115, %114 ], [ %113, %1 ], !taffo.info !4086, !llfi_index !4088
-  call void @doProfiling(i32 55)
   %.flt741 = call double @llvm.fabs.f64(double %92), !taffo.info !4073, !taffo.initweight !91, !llfi_index !4089, !taffo.constinfo !53
   call void @doProfiling(i32 56)
   %117 = fmul double 0x4180000000000000, %.flt741, !taffo.info !4073, !llfi_index !4090, !taffo.constinfo !53
@@ -8926,7 +8305,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
 
 123:                                              ; preds = %121, %116
   %.07.s8_24fixp = phi i32 [ %122, %121 ], [ %120, %116 ], !taffo.info !4086, !llfi_index !4098
-  call void @doProfiling(i32 55)
   %.flt740 = call double @llvm.fabs.f64(double %109), !taffo.info !4073, !taffo.initweight !91, !llfi_index !4099, !taffo.constinfo !53
   call void @doProfiling(i32 56)
   %124 = fmul double 0x4180000000000000, %.flt740, !taffo.info !4073, !llfi_index !4100, !taffo.constinfo !53
@@ -8949,7 +8327,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
 
 130:                                              ; preds = %128, %123
   %.06.s8_24fixp = phi i32 [ %129, %128 ], [ %127, %123 ], !taffo.info !4086, !llfi_index !4108
-  call void @doProfiling(i32 55)
   %131 = sext i32 %.08.s8_24fixp to i64, !taffo.info !4086, !llfi_index !4109
   call void @doProfiling(i32 40)
   %132 = sext i32 %.07.s8_24fixp to i64, !taffo.info !4086, !llfi_index !4110
@@ -8997,11 +8374,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   br label %1024, !llfi_index !4134
 
 147:                                              ; preds = %143, %140
-  call void @doProfiling(i32 34)
   %s2_30fixp89 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 0, !taffo.info !208, !llfi_index !4135
   %s2_30fixp331 = load i32, i32* %s2_30fixp89, align 4, !taffo.info !3797, !llfi_index !4136
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp76 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 0, !taffo.info !208, !llfi_index !4137
   %s2_30fixp318 = load i32, i32* %s2_30fixp76, align 4, !taffo.info !3797, !llfi_index !4138
   call void @doProfiling(i32 32)
@@ -9011,15 +8386,12 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp513 = sub i32 %148, %149, !taffo.info !3781, !llfi_index !4141
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp242 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 0, !taffo.info !3781, !llfi_index !4142
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp513, i32* %s3_29fixp242, align 4, !taffo.info !347, !llfi_index !4143
-  call void @doProfiling(i32 34)
   %s2_30fixp90 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 1, !taffo.info !208, !llfi_index !4144
   %s2_30fixp332 = load i32, i32* %s2_30fixp90, align 4, !taffo.info !3797, !llfi_index !4145
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp77 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 1, !taffo.info !208, !llfi_index !4146
   %s2_30fixp319 = load i32, i32* %s2_30fixp77, align 4, !taffo.info !3797, !llfi_index !4147
   call void @doProfiling(i32 32)
@@ -9029,15 +8401,12 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp514 = sub i32 %150, %151, !taffo.info !3781, !llfi_index !4150
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp241 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 1, !taffo.info !3781, !llfi_index !4151
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp514, i32* %s3_29fixp241, align 4, !taffo.info !347, !llfi_index !4152
-  call void @doProfiling(i32 34)
   %s2_30fixp91 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 2, !taffo.info !208, !llfi_index !4153
   %s2_30fixp333 = load i32, i32* %s2_30fixp91, align 4, !taffo.info !3797, !llfi_index !4154
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp78 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 2, !taffo.info !208, !llfi_index !4155
   %s2_30fixp320 = load i32, i32* %s2_30fixp78, align 4, !taffo.info !3797, !llfi_index !4156
   call void @doProfiling(i32 32)
@@ -9047,15 +8416,12 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp515 = sub i32 %152, %153, !taffo.info !3781, !llfi_index !4159
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp240 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 2, !taffo.info !3781, !llfi_index !4160
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp515, i32* %s3_29fixp240, align 4, !taffo.info !347, !llfi_index !4161
-  call void @doProfiling(i32 34)
   %s2_30fixp96 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 0, !taffo.info !208, !llfi_index !4162
   %s2_30fixp338 = load i32, i32* %s2_30fixp96, align 4, !taffo.info !3797, !llfi_index !4163
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp79 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 0, !taffo.info !208, !llfi_index !4164
   %s2_30fixp321 = load i32, i32* %s2_30fixp79, align 4, !taffo.info !3797, !llfi_index !4165
   call void @doProfiling(i32 32)
@@ -9065,15 +8431,12 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp530 = sub i32 %154, %155, !taffo.info !3781, !llfi_index !4168
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp112 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 0, !taffo.info !3781, !llfi_index !4169
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp530, i32* %s3_29fixp112, align 4, !taffo.info !347, !llfi_index !4170
-  call void @doProfiling(i32 34)
   %s2_30fixp97 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 1, !taffo.info !208, !llfi_index !4171
   %s2_30fixp339 = load i32, i32* %s2_30fixp97, align 4, !taffo.info !3797, !llfi_index !4172
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp80 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 1, !taffo.info !208, !llfi_index !4173
   %s2_30fixp322 = load i32, i32* %s2_30fixp80, align 4, !taffo.info !3797, !llfi_index !4174
   call void @doProfiling(i32 32)
@@ -9083,15 +8446,12 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp531 = sub i32 %156, %157, !taffo.info !3781, !llfi_index !4177
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp111 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 1, !taffo.info !3781, !llfi_index !4178
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp531, i32* %s3_29fixp111, align 4, !taffo.info !347, !llfi_index !4179
-  call void @doProfiling(i32 34)
   %s2_30fixp98 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 2, !taffo.info !208, !llfi_index !4180
   %s2_30fixp340 = load i32, i32* %s2_30fixp98, align 4, !taffo.info !3797, !llfi_index !4181
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp81 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 2, !taffo.info !208, !llfi_index !4182
   %s2_30fixp323 = load i32, i32* %s2_30fixp81, align 4, !taffo.info !3797, !llfi_index !4183
   call void @doProfiling(i32 32)
@@ -9101,23 +8461,18 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s3_29fixp532 = sub i32 %158, %159, !taffo.info !3781, !llfi_index !4186
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s3_29fixp110 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 2, !taffo.info !3781, !llfi_index !4187
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp532, i32* %s3_29fixp110, align 4, !taffo.info !347, !llfi_index !4188
-  call void @doProfiling(i32 34)
   %s3_29fixp239 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 1, !taffo.info !3781, !llfi_index !4189
   %s3_29fixp442 = load i32, i32* %s3_29fixp239, align 4, !taffo.info !3852, !llfi_index !4190
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp109 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 2, !taffo.info !3781, !llfi_index !4191
   %s3_29fixp351 = load i32, i32* %s3_29fixp109, align 4, !taffo.info !3852, !llfi_index !4192
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp238 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 2, !taffo.info !3781, !llfi_index !4193
   %s3_29fixp441 = load i32, i32* %s3_29fixp238, align 4, !taffo.info !3857, !llfi_index !4194
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp108 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 1, !taffo.info !3781, !llfi_index !4195
   %s3_29fixp350 = load i32, i32* %s3_29fixp108, align 4, !taffo.info !3857, !llfi_index !4196
   call void @doProfiling(i32 32)
@@ -9147,23 +8502,18 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s5_27fixp645 = add i32 %169, %s5_27fixp627, !taffo.info !3785, !llfi_index !4209
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp160 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 0, !taffo.info !3785, !llfi_index !4210
   call void @doProfiling(i32 33)
   store i32 %s5_27fixp645, i32* %s5_27fixp160, align 4, !taffo.info !347, !llfi_index !4211
-  call void @doProfiling(i32 34)
   %s3_29fixp237 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 2, !taffo.info !3781, !llfi_index !4212
   %s3_29fixp440 = load i32, i32* %s3_29fixp237, align 4, !taffo.info !3852, !llfi_index !4213
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp107 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 0, !taffo.info !3781, !llfi_index !4214
   %s3_29fixp349 = load i32, i32* %s3_29fixp107, align 4, !taffo.info !3852, !llfi_index !4215
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp236 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 0, !taffo.info !3781, !llfi_index !4216
   %s3_29fixp439 = load i32, i32* %s3_29fixp236, align 4, !taffo.info !3857, !llfi_index !4217
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp106 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 2, !taffo.info !3781, !llfi_index !4218
   %s3_29fixp348 = load i32, i32* %s3_29fixp106, align 4, !taffo.info !3857, !llfi_index !4219
   call void @doProfiling(i32 32)
@@ -9193,23 +8543,18 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s5_27fixp644 = add i32 %179, %s5_27fixp626, !taffo.info !3785, !llfi_index !4232
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp159 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 1, !taffo.info !3785, !llfi_index !4233
   call void @doProfiling(i32 33)
   store i32 %s5_27fixp644, i32* %s5_27fixp159, align 4, !taffo.info !347, !llfi_index !4234
-  call void @doProfiling(i32 34)
   %s3_29fixp235 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 0, !taffo.info !3781, !llfi_index !4235
   %s3_29fixp438 = load i32, i32* %s3_29fixp235, align 4, !taffo.info !3852, !llfi_index !4236
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp105 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 1, !taffo.info !3781, !llfi_index !4237
   %s3_29fixp347 = load i32, i32* %s3_29fixp105, align 4, !taffo.info !3852, !llfi_index !4238
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp234 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp41, i64 0, i64 1, !taffo.info !3781, !llfi_index !4239
   %s3_29fixp437 = load i32, i32* %s3_29fixp234, align 4, !taffo.info !3857, !llfi_index !4240
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp104 = getelementptr inbounds [3 x i32], [3 x i32]* %s3_29fixp, i64 0, i64 0, !taffo.info !3781, !llfi_index !4241
   %s3_29fixp346 = load i32, i32* %s3_29fixp104, align 4, !taffo.info !3857, !llfi_index !4242
   call void @doProfiling(i32 32)
@@ -9239,23 +8584,18 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s5_27fixp643 = add i32 %189, %s5_27fixp625, !taffo.info !3785, !llfi_index !4255
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp158 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 2, !taffo.info !3785, !llfi_index !4256
   call void @doProfiling(i32 33)
   store i32 %s5_27fixp643, i32* %s5_27fixp158, align 4, !taffo.info !347, !llfi_index !4257
-  call void @doProfiling(i32 34)
   %s5_27fixp157 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 0, !taffo.info !3785, !llfi_index !4258
   %s5_27fixp390 = load i32, i32* %s5_27fixp157, align 4, !taffo.info !3930, !llfi_index !4259
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp82 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 0, !taffo.info !208, !llfi_index !4260
   %s2_30fixp324 = load i32, i32* %s2_30fixp82, align 4, !taffo.info !208, !llfi_index !4261
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp156 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 1, !taffo.info !3785, !llfi_index !4262
   %s5_27fixp389 = load i32, i32* %s5_27fixp156, align 4, !taffo.info !3785, !llfi_index !4263
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp83 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 1, !taffo.info !208, !llfi_index !4264
   %s2_30fixp325 = load i32, i32* %s2_30fixp83, align 4, !taffo.info !208, !llfi_index !4265
   call void @doProfiling(i32 32)
@@ -9281,11 +8621,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s6_26fixp617 = add i32 %198, %s6_26fixp557, !taffo.info !3953, !llfi_index !4276
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp155 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 2, !taffo.info !3785, !llfi_index !4277
   %s5_27fixp388 = load i32, i32* %s5_27fixp155, align 4, !taffo.info !3930, !llfi_index !4278
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp84 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 2, !taffo.info !208, !llfi_index !4279
   %s2_30fixp326 = load i32, i32* %s2_30fixp84, align 4, !taffo.info !208, !llfi_index !4280
   call void @doProfiling(i32 32)
@@ -9305,19 +8643,15 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 27)
   %s7_25fixp689 = sub i32 0, %204, !taffo.info !3969, !llfi_index !4288
   call void @doProfiling(i32 15)
-  call void @doProfiling(i32 34)
   %s5_27fixp154 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 0, !taffo.info !3785, !llfi_index !4289
   %s5_27fixp387 = load i32, i32* %s5_27fixp154, align 4, !taffo.info !3930, !llfi_index !4290
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp55 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 0, !taffo.info !208, !llfi_index !4291
   %s2_30fixp297 = load i32, i32* %s2_30fixp55, align 4, !taffo.info !208, !llfi_index !4292
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp153 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 1, !taffo.info !3785, !llfi_index !4293
   %s5_27fixp386 = load i32, i32* %s5_27fixp153, align 4, !taffo.info !3785, !llfi_index !4294
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp56 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 1, !taffo.info !208, !llfi_index !4295
   %s2_30fixp298 = load i32, i32* %s2_30fixp56, align 4, !taffo.info !208, !llfi_index !4296
   call void @doProfiling(i32 32)
@@ -9343,11 +8677,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s6_26fixp616 = add i32 %213, %s6_26fixp556, !taffo.info !3953, !llfi_index !4307
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp152 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 2, !taffo.info !3785, !llfi_index !4308
   %s5_27fixp385 = load i32, i32* %s5_27fixp152, align 4, !taffo.info !3930, !llfi_index !4309
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp57 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 2, !taffo.info !208, !llfi_index !4310
   %s2_30fixp299 = load i32, i32* %s2_30fixp57, align 4, !taffo.info !208, !llfi_index !4311
   call void @doProfiling(i32 32)
@@ -9371,19 +8703,15 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 44)
   %221 = fdiv double %220, 0x4180000000000000, !taffo.info !4002, !llfi_index !4321
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %s5_27fixp151 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 0, !taffo.info !3785, !llfi_index !4322
   %s5_27fixp384 = load i32, i32* %s5_27fixp151, align 4, !taffo.info !3930, !llfi_index !4323
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp62 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 0, !taffo.info !208, !llfi_index !4324
   %s2_30fixp304 = load i32, i32* %s2_30fixp62, align 4, !taffo.info !208, !llfi_index !4325
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp150 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 1, !taffo.info !3785, !llfi_index !4326
   %s5_27fixp383 = load i32, i32* %s5_27fixp150, align 4, !taffo.info !3785, !llfi_index !4327
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp63 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 1, !taffo.info !208, !llfi_index !4328
   %s2_30fixp305 = load i32, i32* %s2_30fixp63, align 4, !taffo.info !208, !llfi_index !4329
   call void @doProfiling(i32 32)
@@ -9409,11 +8737,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s6_26fixp615 = add i32 %230, %s6_26fixp555, !taffo.info !3953, !llfi_index !4340
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp149 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 2, !taffo.info !3785, !llfi_index !4341
   %s5_27fixp382 = load i32, i32* %s5_27fixp149, align 4, !taffo.info !3930, !llfi_index !4342
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp64 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 2, !taffo.info !208, !llfi_index !4343
   %s2_30fixp306 = load i32, i32* %s2_30fixp64, align 4, !taffo.info !208, !llfi_index !4344
   call void @doProfiling(i32 32)
@@ -9437,19 +8763,15 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 44)
   %238 = fdiv double %237, 0x4180000000000000, !taffo.info !4002, !llfi_index !4354
   call void @doProfiling(i32 21)
-  call void @doProfiling(i32 34)
   %s5_27fixp148 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 0, !taffo.info !3785, !llfi_index !4355
   %s5_27fixp381 = load i32, i32* %s5_27fixp148, align 4, !taffo.info !3930, !llfi_index !4356
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp69 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 0, !taffo.info !208, !llfi_index !4357
   %s2_30fixp311 = load i32, i32* %s2_30fixp69, align 4, !taffo.info !208, !llfi_index !4358
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp147 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 1, !taffo.info !3785, !llfi_index !4359
   %s5_27fixp380 = load i32, i32* %s5_27fixp147, align 4, !taffo.info !3785, !llfi_index !4360
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp70 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 1, !taffo.info !208, !llfi_index !4361
   %s2_30fixp312 = load i32, i32* %s2_30fixp70, align 4, !taffo.info !208, !llfi_index !4362
   call void @doProfiling(i32 32)
@@ -9475,11 +8797,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s6_26fixp614 = add i32 %247, %s6_26fixp, !taffo.info !3953, !llfi_index !4373
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s5_27fixp146 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 2, !taffo.info !3785, !llfi_index !4374
   %s5_27fixp379 = load i32, i32* %s5_27fixp146, align 4, !taffo.info !3930, !llfi_index !4375
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s2_30fixp71 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 2, !taffo.info !208, !llfi_index !4376
   %s2_30fixp313 = load i32, i32* %s2_30fixp71, align 4, !taffo.info !208, !llfi_index !4377
   call void @doProfiling(i32 32)
@@ -9525,7 +8845,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
 
 262:                                              ; preds = %260, %147
   %.05.s8_24fixp = phi i32 [ %261, %260 ], [ %259, %147 ], !taffo.info !4086, !llfi_index !4397
-  call void @doProfiling(i32 55)
   %.flt738 = call double @llvm.fabs.f64(double %238), !taffo.info !4073, !taffo.initweight !91, !llfi_index !4398, !taffo.constinfo !53
   call void @doProfiling(i32 56)
   %263 = fmul double 0x4180000000000000, %.flt738, !taffo.info !4073, !llfi_index !4399, !taffo.constinfo !53
@@ -9548,7 +8867,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
 
 269:                                              ; preds = %267, %262
   %.04.s8_24fixp = phi i32 [ %268, %267 ], [ %266, %262 ], !taffo.info !4086, !llfi_index !4407
-  call void @doProfiling(i32 55)
   %.flt737 = call double @llvm.fabs.f64(double %255), !taffo.info !4073, !taffo.initweight !91, !llfi_index !4408, !taffo.constinfo !53
   call void @doProfiling(i32 56)
   %270 = fmul double 0x4180000000000000, %.flt737, !taffo.info !4073, !llfi_index !4409, !taffo.constinfo !53
@@ -9571,7 +8889,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
 
 276:                                              ; preds = %274, %269
   %.03.s8_24fixp = phi i32 [ %275, %274 ], [ %273, %269 ], !taffo.info !4086, !llfi_index !4417
-  call void @doProfiling(i32 55)
   %277 = sext i32 %.05.s8_24fixp to i64, !taffo.info !4086, !llfi_index !4418
   call void @doProfiling(i32 40)
   %278 = sext i32 %.04.s8_24fixp to i64, !taffo.info !4086, !llfi_index !4419
@@ -9619,19 +8936,15 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   br label %1024, !llfi_index !4437
 
 293:                                              ; preds = %289, %286
-  call void @doProfiling(i32 34)
   %s5_27fixp214 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 1, !taffo.info !3785, !llfi_index !4438
   %s5_27fixp420 = load i32, i32* %s5_27fixp214, align 4, !taffo.info !3785, !llfi_index !4439
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp145 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 2, !taffo.info !3785, !llfi_index !4440
   %s5_27fixp378 = load i32, i32* %s5_27fixp145, align 4, !taffo.info !3785, !llfi_index !4441
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp213 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 2, !taffo.info !3785, !llfi_index !4442
   %s5_27fixp419 = load i32, i32* %s5_27fixp213, align 4, !taffo.info !3785, !llfi_index !4443
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp144 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 1, !taffo.info !3785, !llfi_index !4444
   %s5_27fixp377 = load i32, i32* %s5_27fixp144, align 4, !taffo.info !3785, !llfi_index !4445
   call void @doProfiling(i32 32)
@@ -9661,23 +8974,18 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s9_23fixp638 = add i32 %303, %s9_23fixp620, !taffo.info !3790, !llfi_index !4464
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s9_23fixp127 = getelementptr inbounds [3 x i32], [3 x i32]* %s9_23fixp, i64 0, i64 0, !taffo.info !3790, !llfi_index !4465
   call void @doProfiling(i32 33)
   store i32 %s9_23fixp638, i32* %s9_23fixp127, align 4, !taffo.info !347, !llfi_index !4466
-  call void @doProfiling(i32 34)
   %s5_27fixp212 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 2, !taffo.info !3785, !llfi_index !4467
   %s5_27fixp418 = load i32, i32* %s5_27fixp212, align 4, !taffo.info !3785, !llfi_index !4468
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp143 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 0, !taffo.info !3785, !llfi_index !4469
   %s5_27fixp376 = load i32, i32* %s5_27fixp143, align 4, !taffo.info !3785, !llfi_index !4470
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp211 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 0, !taffo.info !3785, !llfi_index !4471
   %s5_27fixp417 = load i32, i32* %s5_27fixp211, align 4, !taffo.info !3785, !llfi_index !4472
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp142 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 2, !taffo.info !3785, !llfi_index !4473
   %s5_27fixp375 = load i32, i32* %s5_27fixp142, align 4, !taffo.info !3785, !llfi_index !4474
   call void @doProfiling(i32 32)
@@ -9707,23 +9015,18 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s9_23fixp637 = add i32 %313, %s9_23fixp619, !taffo.info !3790, !llfi_index !4487
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s9_23fixp126 = getelementptr inbounds [3 x i32], [3 x i32]* %s9_23fixp, i64 0, i64 1, !taffo.info !3790, !llfi_index !4488
   call void @doProfiling(i32 33)
   store i32 %s9_23fixp637, i32* %s9_23fixp126, align 4, !taffo.info !347, !llfi_index !4489
-  call void @doProfiling(i32 34)
   %s5_27fixp210 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 0, !taffo.info !3785, !llfi_index !4490
   %s5_27fixp416 = load i32, i32* %s5_27fixp210, align 4, !taffo.info !3785, !llfi_index !4491
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp141 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 1, !taffo.info !3785, !llfi_index !4492
   %s5_27fixp374 = load i32, i32* %s5_27fixp141, align 4, !taffo.info !3785, !llfi_index !4493
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp209 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 1, !taffo.info !3785, !llfi_index !4494
   %s5_27fixp415 = load i32, i32* %s5_27fixp209, align 4, !taffo.info !3785, !llfi_index !4495
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s5_27fixp140 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp, i64 0, i64 0, !taffo.info !3785, !llfi_index !4496
   %s5_27fixp373 = load i32, i32* %s5_27fixp140, align 4, !taffo.info !3785, !llfi_index !4497
   call void @doProfiling(i32 32)
@@ -9753,11 +9056,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s9_23fixp636 = add i32 %323, %s9_23fixp618, !taffo.info !3790, !llfi_index !4510
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s9_23fixp125 = getelementptr inbounds [3 x i32], [3 x i32]* %s9_23fixp, i64 0, i64 2, !taffo.info !3790, !llfi_index !4511
   call void @doProfiling(i32 33)
   store i32 %s9_23fixp636, i32* %s9_23fixp125, align 4, !taffo.info !347, !llfi_index !4512
-  call void @doProfiling(i32 34)
   %s9_23fixp124 = getelementptr inbounds [3 x i32], [3 x i32]* %s9_23fixp, i64 0, i64 0, !taffo.info !3790, !llfi_index !4513
   %s9_23fixp360 = load i32, i32* %s9_23fixp124, align 4, !taffo.info !3790, !llfi_index !4514
   call void @doProfiling(i32 32)
@@ -9773,7 +9074,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 42)
   %u8_24fixp632 = shl i32 %.flt613.fallback.s9_23fixp, 1, !taffo.info !4522, !llfi_index !4524
   call void @doProfiling(i32 25)
-  call void @doProfiling(i32 34)
   %s9_23fixp123 = getelementptr inbounds [3 x i32], [3 x i32]* %s9_23fixp, i64 0, i64 1, !taffo.info !3790, !llfi_index !4525
   %s9_23fixp359 = load i32, i32* %s9_23fixp123, align 4, !taffo.info !3790, !llfi_index !4526
   call void @doProfiling(i32 32)
@@ -9789,7 +9089,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 42)
   %u8_24fixp631 = shl i32 %.flt612.fallback.s9_23fixp, 1, !taffo.info !4522, !llfi_index !4532
   call void @doProfiling(i32 25)
-  call void @doProfiling(i32 34)
   %s9_23fixp122 = getelementptr inbounds [3 x i32], [3 x i32]* %s9_23fixp, i64 0, i64 2, !taffo.info !3790, !llfi_index !4533
   %s9_23fixp358 = load i32, i32* %s9_23fixp122, align 4, !taffo.info !3790, !llfi_index !4534
   call void @doProfiling(i32 32)
@@ -9816,8 +9115,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
 335:                                              ; preds = %334, %293
   %.02.u8_24fixp = phi i32 [ %u8_24fixp631, %334 ], [ %u8_24fixp632, %293 ], !taffo.info !4522, !llfi_index !4545
   %.01 = phi i16 [ 1, %334 ], [ 0, %293 ], !taffo.info !122, !llfi_index !4546
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %336 = icmp ugt i32 %u8_24fixp, %.02.u8_24fixp, !taffo.info !4541, !llfi_index !4547
   call void @doProfiling(i32 53)
   call void @doProfiling(i32 2)
@@ -9828,40 +9125,33 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
 
 338:                                              ; preds = %337, %335
   %.1 = phi i16 [ 2, %337 ], [ %.01, %335 ], !taffo.info !4550, !llfi_index !4552
-  call void @doProfiling(i32 55)
   %339 = sext i16 %.1 to i64, !taffo.info !4550, !llfi_index !4553
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp58 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %339, !taffo.info !208, !llfi_index !4554
   %s2_30fixp300 = load i32, i32* %s2_30fixp58, align 4, !taffo.info !3797, !llfi_index !4555
   call void @doProfiling(i32 32)
   %340 = sext i16 %.1 to i64, !taffo.info !4550, !llfi_index !4556
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp65 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %340, !taffo.info !208, !llfi_index !4557
   %s2_30fixp307 = load i32, i32* %s2_30fixp65, align 4, !taffo.info !3797, !llfi_index !4558
   call void @doProfiling(i32 32)
   %341 = sext i16 %.1 to i64, !taffo.info !4550, !llfi_index !4559
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp72 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %341, !taffo.info !208, !llfi_index !4560
   %s2_30fixp314 = load i32, i32* %s2_30fixp72, align 4, !taffo.info !3797, !llfi_index !4561
   call void @doProfiling(i32 32)
   %342 = sext i16 %.1 to i64, !taffo.info !4550, !llfi_index !4562
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp85 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %342, !taffo.info !208, !llfi_index !4563
   %s2_30fixp327 = load i32, i32* %s2_30fixp85, align 4, !taffo.info !3797, !llfi_index !4564
   call void @doProfiling(i32 32)
   %343 = sext i16 %.1 to i64, !taffo.info !4550, !llfi_index !4565
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp92 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %343, !taffo.info !208, !llfi_index !4566
   %s2_30fixp334 = load i32, i32* %s2_30fixp92, align 4, !taffo.info !3797, !llfi_index !4567
   call void @doProfiling(i32 32)
   %344 = sext i16 %.1 to i64, !taffo.info !4550, !llfi_index !4568
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp99 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %344, !taffo.info !208, !llfi_index !4569
   %s2_30fixp341 = load i32, i32* %s2_30fixp99, align 4, !taffo.info !3797, !llfi_index !4570
   call void @doProfiling(i32 32)
@@ -9927,7 +9217,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp710 = add i32 %s3_29fixp508, %s3_29fixp668, !taffo.info !4610, !llfi_index !4612
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp202 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !4613
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp710, i32* %s3_29fixp202, align 4, !taffo.info !347, !llfi_index !4614
@@ -9972,7 +9261,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp709 = add i32 %s3_29fixp506, %s3_29fixp667, !taffo.info !31, !llfi_index !4639
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp201 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !4640
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp709, i32* %s3_29fixp201, align 4, !taffo.info !347, !llfi_index !4641
@@ -10027,7 +9315,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp708 = add i32 %s3_29fixp504, %s3_29fixp666, !taffo.info !4610, !llfi_index !4665
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp200 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !4666
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp708, i32* %s3_29fixp200, align 4, !taffo.info !347, !llfi_index !4667
@@ -10072,7 +9359,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp707 = add i32 %s3_29fixp502, %s3_29fixp665, !taffo.info !31, !llfi_index !4687
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp199 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !4688
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp707, i32* %s3_29fixp199, align 4, !taffo.info !347, !llfi_index !4689
@@ -10142,7 +9428,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp696 = add i32 %s3_29fixp483, %s3_29fixp654, !taffo.info !4610, !llfi_index !4719
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp198 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !4720
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp696, i32* %s3_29fixp198, align 4, !taffo.info !347, !llfi_index !4721
@@ -10187,7 +9472,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp695 = add i32 %s3_29fixp481, %s3_29fixp653, !taffo.info !31, !llfi_index !4741
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp197 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !4742
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp695, i32* %s3_29fixp197, align 4, !taffo.info !347, !llfi_index !4743
@@ -10242,7 +9526,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp706 = add i32 %s3_29fixp479, %s3_29fixp664, !taffo.info !4610, !llfi_index !4767
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp196 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !4768
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp706, i32* %s3_29fixp196, align 4, !taffo.info !347, !llfi_index !4769
@@ -10287,7 +9570,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp705 = add i32 %s3_29fixp478, %s3_29fixp663, !taffo.info !31, !llfi_index !4789
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp195 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !4790
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp705, i32* %s3_29fixp195, align 4, !taffo.info !347, !llfi_index !4791
@@ -10375,7 +9657,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp694 = add i32 %s3_29fixp466, %s3_29fixp652, !taffo.info !4610, !llfi_index !4830
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp194 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !4831
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp694, i32* %s3_29fixp194, align 4, !taffo.info !347, !llfi_index !4832
@@ -10420,7 +9701,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp693 = add i32 %s3_29fixp465, %s3_29fixp651, !taffo.info !31, !llfi_index !4852
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp193 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !4853
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp693, i32* %s3_29fixp193, align 4, !taffo.info !347, !llfi_index !4854
@@ -10475,7 +9755,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp704 = add i32 %s3_29fixp464, %s3_29fixp662, !taffo.info !4610, !llfi_index !4878
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp192 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !4879
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp704, i32* %s3_29fixp192, align 4, !taffo.info !347, !llfi_index !4880
@@ -10520,7 +9799,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp703 = add i32 %s3_29fixp463, %s3_29fixp661, !taffo.info !31, !llfi_index !4900
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp191 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !4901
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp703, i32* %s3_29fixp191, align 4, !taffo.info !347, !llfi_index !4902
@@ -10590,7 +9868,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp692 = add i32 %s3_29fixp475, %s3_29fixp650, !taffo.info !4610, !llfi_index !4932
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp190 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !4933
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp692, i32* %s3_29fixp190, align 4, !taffo.info !347, !llfi_index !4934
@@ -10635,7 +9912,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp691 = add i32 %s3_29fixp473, %s3_29fixp649, !taffo.info !31, !llfi_index !4954
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp189 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !4955
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp691, i32* %s3_29fixp189, align 4, !taffo.info !347, !llfi_index !4956
@@ -10690,7 +9966,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp702 = add i32 %s3_29fixp471, %s3_29fixp660, !taffo.info !4610, !llfi_index !4980
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp188 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !4981
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp702, i32* %s3_29fixp188, align 4, !taffo.info !347, !llfi_index !4982
@@ -10735,7 +10010,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp701 = add i32 %s3_29fixp470, %s3_29fixp659, !taffo.info !31, !llfi_index !5002
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp187 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !5003
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp701, i32* %s3_29fixp187, align 4, !taffo.info !347, !llfi_index !5004
@@ -10805,7 +10079,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp700 = add i32 %s3_29fixp494, %s3_29fixp658, !taffo.info !4610, !llfi_index !5034
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp186 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !5035
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp700, i32* %s3_29fixp186, align 4, !taffo.info !347, !llfi_index !5036
@@ -10850,7 +10123,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp699 = add i32 %s3_29fixp492, %s3_29fixp657, !taffo.info !31, !llfi_index !5056
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp185 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !5057
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp699, i32* %s3_29fixp185, align 4, !taffo.info !347, !llfi_index !5058
@@ -10905,7 +10177,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp698 = add i32 %s3_29fixp490, %s3_29fixp656, !taffo.info !4610, !llfi_index !5082
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp184 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !5083
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp698, i32* %s3_29fixp184, align 4, !taffo.info !347, !llfi_index !5084
@@ -10950,7 +10221,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp697 = add i32 %s3_29fixp488, %s3_29fixp655, !taffo.info !31, !llfi_index !5104
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp183 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !5105
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp697, i32* %s3_29fixp183, align 4, !taffo.info !347, !llfi_index !5106
@@ -10960,7 +10230,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   br label %673, !llfi_index !5108
 
 671:                                              ; preds = %607
-  call void @doProfiling(i32 34)
   %s5_27fixp208 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 0, !taffo.info !3785, !llfi_index !5109
   %672 = call i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* %s5_27fixp208, i32* %.s2_30fixp, i32* %.s2_30fixp1, i32* %.s2_30fixp2, i32* %.s2_30fixp3, i32* %.s2_30fixp4, i32* %.s2_30fixp5), !taffo.info !87, !llfi_index !5110, !taffo.constinfo !2255
   call void @doProfiling(i32 56)
@@ -11041,7 +10310,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp730 = add i32 %s3_29fixp554, %s3_29fixp688, !taffo.info !4610, !llfi_index !5144
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp285 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5145
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp730, i32* %s3_29fixp285, align 4, !taffo.info !347, !llfi_index !5146
@@ -11086,7 +10354,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp729 = add i32 %s3_29fixp552, %s3_29fixp687, !taffo.info !31, !llfi_index !5166
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp284 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5167
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp729, i32* %s3_29fixp284, align 4, !taffo.info !347, !llfi_index !5168
@@ -11141,7 +10408,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp728 = add i32 %s3_29fixp550, %s3_29fixp686, !taffo.info !4610, !llfi_index !5192
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp283 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5193
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp728, i32* %s3_29fixp283, align 4, !taffo.info !347, !llfi_index !5194
@@ -11186,7 +10452,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp727 = add i32 %s3_29fixp548, %s3_29fixp685, !taffo.info !31, !llfi_index !5214
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp282 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5215
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp727, i32* %s3_29fixp282, align 4, !taffo.info !347, !llfi_index !5216
@@ -11256,7 +10521,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp716 = add i32 %s3_29fixp529, %s3_29fixp674, !taffo.info !4610, !llfi_index !5246
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp281 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5247
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp716, i32* %s3_29fixp281, align 4, !taffo.info !347, !llfi_index !5248
@@ -11301,7 +10565,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp715 = add i32 %s3_29fixp527, %s3_29fixp673, !taffo.info !31, !llfi_index !5268
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp280 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5269
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp715, i32* %s3_29fixp280, align 4, !taffo.info !347, !llfi_index !5270
@@ -11356,7 +10619,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp726 = add i32 %s3_29fixp525, %s3_29fixp684, !taffo.info !4610, !llfi_index !5294
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp279 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5295
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp726, i32* %s3_29fixp279, align 4, !taffo.info !347, !llfi_index !5296
@@ -11401,7 +10663,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp725 = add i32 %s3_29fixp524, %s3_29fixp683, !taffo.info !31, !llfi_index !5316
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp278 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5317
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp725, i32* %s3_29fixp278, align 4, !taffo.info !347, !llfi_index !5318
@@ -11489,7 +10750,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp714 = add i32 %s3_29fixp512, %s3_29fixp672, !taffo.info !4610, !llfi_index !5356
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp277 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5357
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp714, i32* %s3_29fixp277, align 4, !taffo.info !347, !llfi_index !5358
@@ -11534,7 +10794,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp713 = add i32 %s3_29fixp511, %s3_29fixp671, !taffo.info !31, !llfi_index !5378
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp276 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5379
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp713, i32* %s3_29fixp276, align 4, !taffo.info !347, !llfi_index !5380
@@ -11589,7 +10848,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp724 = add i32 %s3_29fixp510, %s3_29fixp682, !taffo.info !4610, !llfi_index !5404
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp275 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5405
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp724, i32* %s3_29fixp275, align 4, !taffo.info !347, !llfi_index !5406
@@ -11634,7 +10892,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp723 = add i32 %s3_29fixp509, %s3_29fixp681, !taffo.info !31, !llfi_index !5426
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp274 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5427
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp723, i32* %s3_29fixp274, align 4, !taffo.info !347, !llfi_index !5428
@@ -11704,7 +10961,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp712 = add i32 %s3_29fixp521, %s3_29fixp670, !taffo.info !4610, !llfi_index !5458
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp273 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5459
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp712, i32* %s3_29fixp273, align 4, !taffo.info !347, !llfi_index !5460
@@ -11749,7 +11005,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp711 = add i32 %s3_29fixp519, %s3_29fixp669, !taffo.info !31, !llfi_index !5480
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp272 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5481
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp711, i32* %s3_29fixp272, align 4, !taffo.info !347, !llfi_index !5482
@@ -11804,7 +11059,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp722 = add i32 %s3_29fixp517, %s3_29fixp680, !taffo.info !4610, !llfi_index !5506
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp271 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5507
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp722, i32* %s3_29fixp271, align 4, !taffo.info !347, !llfi_index !5508
@@ -11849,7 +11103,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp721 = add i32 %s3_29fixp516, %s3_29fixp679, !taffo.info !31, !llfi_index !5528
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp270 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5529
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp721, i32* %s3_29fixp270, align 4, !taffo.info !347, !llfi_index !5530
@@ -11919,7 +11172,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp720 = add i32 %s3_29fixp540, %s3_29fixp678, !taffo.info !4610, !llfi_index !5560
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp269 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5561
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp720, i32* %s3_29fixp269, align 4, !taffo.info !347, !llfi_index !5562
@@ -11964,7 +11216,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp719 = add i32 %s3_29fixp538, %s3_29fixp677, !taffo.info !31, !llfi_index !5582
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp268 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5583
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp719, i32* %s3_29fixp268, align 4, !taffo.info !347, !llfi_index !5584
@@ -12019,7 +11270,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp718 = add i32 %s3_29fixp536, %s3_29fixp676, !taffo.info !4610, !llfi_index !5608
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp267 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5609
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp718, i32* %s3_29fixp267, align 4, !taffo.info !347, !llfi_index !5610
@@ -12064,7 +11314,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   call void @doProfiling(i32 38)
   %s3_29fixp717 = add i32 %s3_29fixp534, %s3_29fixp675, !taffo.info !31, !llfi_index !5630
   call void @doProfiling(i32 13)
-  call void @doProfiling(i32 34)
   %s3_29fixp266 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5631
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp717, i32* %s3_29fixp266, align 4, !taffo.info !347, !llfi_index !5632
@@ -12074,7 +11323,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   br label %1006, !llfi_index !5634
 
 1004:                                             ; preds = %940
-  call void @doProfiling(i32 34)
   %s5_27fixp207 = getelementptr inbounds [3 x i32], [3 x i32]* %s5_27fixp37, i64 0, i64 0, !taffo.info !3785, !llfi_index !5635
   %1005 = call i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* %s5_27fixp207, i32* %.s2_30fixp, i32* %.s2_30fixp1, i32* %.s2_30fixp2, i32* %.s2_30fixp3, i32* %.s2_30fixp4, i32* %.s2_30fixp5), !taffo.info !87, !llfi_index !5636, !taffo.constinfo !2255
   call void @doProfiling(i32 56)
@@ -12093,11 +11341,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   br label %1010, !llfi_index !5641
 
 1010:                                             ; preds = %1009, %740
-  call void @doProfiling(i32 34)
   %s3_29fixp182 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !5642
   %s3_29fixp410 = load i32, i32* %s3_29fixp182, align 4, !taffo.info !31, !llfi_index !5643
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp181 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !5644
   %s3_29fixp409 = load i32, i32* %s3_29fixp181, align 4, !taffo.info !31, !llfi_index !5645
   call void @doProfiling(i32 32)
@@ -12107,30 +11353,24 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   br i1 %1011, label %1012, label %1013, !taffo.info !347, !taffo.initweight !375, !llfi_index !5647
 
 1012:                                             ; preds = %1010
-  call void @doProfiling(i32 34)
   %s3_29fixp180 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !5648
   %s3_29fixp408 = load i32, i32* %s3_29fixp180, align 4, !taffo.info !31, !llfi_index !5649
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp179 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !5650
   %s3_29fixp407 = load i32, i32* %s3_29fixp179, align 4, !taffo.info !31, !llfi_index !5651
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp178 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !5652
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp407, i32* %s3_29fixp178, align 4, !taffo.info !347, !llfi_index !5653
-  call void @doProfiling(i32 34)
   %s3_29fixp177 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !5654
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp408, i32* %s3_29fixp177, align 4, !taffo.info !347, !llfi_index !5655
   br label %1013, !llfi_index !5656
 
 1013:                                             ; preds = %1012, %1010
-  call void @doProfiling(i32 34)
   %s3_29fixp265 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5657
   %s3_29fixp460 = load i32, i32* %s3_29fixp265, align 4, !taffo.info !31, !llfi_index !5658
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp264 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5659
   %s3_29fixp459 = load i32, i32* %s3_29fixp264, align 4, !taffo.info !31, !llfi_index !5660
   call void @doProfiling(i32 32)
@@ -12140,38 +11380,30 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   br i1 %1014, label %1015, label %1016, !taffo.info !347, !taffo.initweight !375, !llfi_index !5662
 
 1015:                                             ; preds = %1013
-  call void @doProfiling(i32 34)
   %s3_29fixp263 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5663
   %s3_29fixp458 = load i32, i32* %s3_29fixp263, align 4, !taffo.info !31, !llfi_index !5664
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp262 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5665
   %s3_29fixp457 = load i32, i32* %s3_29fixp262, align 4, !taffo.info !31, !llfi_index !5666
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp261 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5667
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp457, i32* %s3_29fixp261, align 4, !taffo.info !347, !llfi_index !5668
-  call void @doProfiling(i32 34)
   %s3_29fixp260 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5669
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp458, i32* %s3_29fixp260, align 4, !taffo.info !347, !llfi_index !5670
   br label %1016, !llfi_index !5671
 
 1016:                                             ; preds = %1015, %1013
-  call void @doProfiling(i32 34)
   %s3_29fixp176 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !5672
   %s3_29fixp406 = load i32, i32* %s3_29fixp176, align 4, !taffo.info !31, !llfi_index !5673
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp100 = getelementptr inbounds i32, i32* %.s3_29fixp, i64 0, !taffo.info !31, !llfi_index !5674
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp406, i32* %s3_29fixp100, align 4, !taffo.info !347, !llfi_index !5675
-  call void @doProfiling(i32 34)
   %s3_29fixp175 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !5676
   %s3_29fixp405 = load i32, i32* %s3_29fixp175, align 4, !taffo.info !31, !llfi_index !5677
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp101 = getelementptr inbounds i32, i32* %.s3_29fixp, i64 1, !taffo.info !31, !llfi_index !5678
   call void @doProfiling(i32 33)
   store i32 %s3_29fixp405, i32* %s3_29fixp101, align 4, !taffo.info !347, !llfi_index !5679
@@ -12181,11 +11413,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   br label %1018, !llfi_index !5681
 
 1018:                                             ; preds = %1017
-  call void @doProfiling(i32 34)
   %s3_29fixp172 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 1, !taffo.info !31, !llfi_index !5682
   %s3_29fixp402 = load i32, i32* %s3_29fixp172, align 4, !taffo.info !31, !llfi_index !5683
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp257 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 0, !taffo.info !31, !llfi_index !5684
   %s3_29fixp454 = load i32, i32* %s3_29fixp257, align 4, !taffo.info !31, !llfi_index !5685
   call void @doProfiling(i32 32)
@@ -12195,11 +11425,9 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
   br i1 %1019, label %1022, label %1020, !taffo.info !347, !taffo.initweight !375, !llfi_index !5687
 
 1020:                                             ; preds = %1018
-  call void @doProfiling(i32 34)
   %s3_29fixp256 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp44, i64 0, i64 1, !taffo.info !31, !llfi_index !5688
   %s3_29fixp453 = load i32, i32* %s3_29fixp256, align 4, !taffo.info !31, !llfi_index !5689
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %s3_29fixp171 = getelementptr inbounds [2 x i32], [2 x i32]* %s3_29fixp34, i64 0, i64 0, !taffo.info !31, !llfi_index !5690
   %s3_29fixp401 = load i32, i32* %s3_29fixp171, align 4, !taffo.info !31, !llfi_index !5691
   call void @doProfiling(i32 32)
@@ -12220,7 +11448,7 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
 
 1024:                                             ; preds = %1023, %1022, %1004, %671, %292, %146
   %.0 = phi i32 [ 0, %146 ], [ 0, %292 ], [ 0, %1022 ], [ 1, %1023 ], [ %1005, %1004 ], [ %672, %671 ], !taffo.info !122, !llfi_index !5698
-  call void @doProfiling(i32 55)
+  call void @doProfiling(i32 1)
   ret i32 %.0, !llfi_index !5699
 }
 
@@ -12228,7 +11456,6 @@ define internal noundef i32 @_Z17tri_tri_intersectPfS_S_S_S_S_S_Pi.3_fixp(i32* n
 define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* noundef %.s5_27fixp, i32* noundef %.s2_30fixp, i32* noundef %.s2_30fixp1, i32* noundef %.s2_30fixp2, i32* noundef %.s2_30fixp3, i32* noundef %.s2_30fixp4, i32* noundef %.s2_30fixp5) #1 !taffo.initweight !2836 !taffo.funinfo !5700 !taffo.sourceFunction !5701 {
   call void @doProfiling(i32 31)
   %u4_28fixp = alloca [3 x i32], align 4, !taffo.info !5702, !llfi_index !5704
-  call void @doProfiling(i32 34)
   %s5_27fixp = getelementptr inbounds i32, i32* %.s5_27fixp, i64 0, !taffo.info !3785, !llfi_index !5705
   %s5_27fixp148 = load i32, i32* %s5_27fixp, align 4, !taffo.info !3785, !llfi_index !5706
   call void @doProfiling(i32 32)
@@ -12244,11 +11471,9 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 42)
   %u4_28fixp382 = shl i32 %.flt.fallback.s5_27fixp, 1, !taffo.info !5702, !llfi_index !5713
   call void @doProfiling(i32 25)
-  call void @doProfiling(i32 34)
   %u4_28fixp147 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 0, !taffo.info !5702, !llfi_index !5714
   call void @doProfiling(i32 33)
   store i32 %u4_28fixp382, i32* %u4_28fixp147, align 4, !taffo.info !347, !llfi_index !5715
-  call void @doProfiling(i32 34)
   %s5_27fixp6 = getelementptr inbounds i32, i32* %.s5_27fixp, i64 1, !taffo.info !3785, !llfi_index !5716
   %s5_27fixp149 = load i32, i32* %s5_27fixp6, align 4, !taffo.info !3785, !llfi_index !5717
   call void @doProfiling(i32 32)
@@ -12264,11 +11489,9 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 42)
   %u4_28fixp383 = shl i32 %.flt341.fallback.s5_27fixp, 1, !taffo.info !5702, !llfi_index !5723
   call void @doProfiling(i32 25)
-  call void @doProfiling(i32 34)
   %u4_28fixp146 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 1, !taffo.info !5702, !llfi_index !5724
   call void @doProfiling(i32 33)
   store i32 %u4_28fixp383, i32* %u4_28fixp146, align 4, !taffo.info !347, !llfi_index !5725
-  call void @doProfiling(i32 34)
   %s5_27fixp7 = getelementptr inbounds i32, i32* %.s5_27fixp, i64 2, !taffo.info !3785, !llfi_index !5726
   %s5_27fixp150 = load i32, i32* %s5_27fixp7, align 4, !taffo.info !3785, !llfi_index !5727
   call void @doProfiling(i32 32)
@@ -12284,15 +11507,12 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 42)
   %u4_28fixp384 = shl i32 %.flt342.fallback.s5_27fixp, 1, !taffo.info !5702, !llfi_index !5733
   call void @doProfiling(i32 25)
-  call void @doProfiling(i32 34)
   %u4_28fixp145 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 2, !taffo.info !5702, !llfi_index !5734
   call void @doProfiling(i32 33)
   store i32 %u4_28fixp384, i32* %u4_28fixp145, align 4, !taffo.info !347, !llfi_index !5735
-  call void @doProfiling(i32 34)
   %u4_28fixp144 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 0, !taffo.info !5702, !llfi_index !5736
   %u4_28fixp288 = load i32, i32* %u4_28fixp144, align 4, !taffo.info !5702, !llfi_index !5737
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u4_28fixp143 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 1, !taffo.info !5702, !llfi_index !5738
   %u4_28fixp287 = load i32, i32* %u4_28fixp143, align 4, !taffo.info !5702, !llfi_index !5739
   call void @doProfiling(i32 32)
@@ -12302,11 +11522,9 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   br i1 %10, label %11, label %16, !taffo.info !347, !taffo.initweight !375, !llfi_index !5742
 
 11:                                               ; preds = %0
-  call void @doProfiling(i32 34)
   %u4_28fixp142 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 0, !taffo.info !5702, !llfi_index !5743
   %u4_28fixp286 = load i32, i32* %u4_28fixp142, align 4, !taffo.info !5702, !llfi_index !5744
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u4_28fixp141 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 2, !taffo.info !5702, !llfi_index !5745
   %u4_28fixp285 = load i32, i32* %u4_28fixp141, align 4, !taffo.info !5702, !llfi_index !5746
   call void @doProfiling(i32 32)
@@ -12324,16 +11542,12 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 15:                                               ; preds = %14, %13
   %.02 = phi i16 [ 2, %13 ], [ 1, %14 ], !taffo.info !5751, !llfi_index !5753
   %.01 = phi i16 [ 1, %13 ], [ 0, %14 ], !taffo.info !122, !llfi_index !5754
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   br label %21, !llfi_index !5755
 
 16:                                               ; preds = %0
-  call void @doProfiling(i32 34)
   %u4_28fixp140 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 2, !taffo.info !5702, !llfi_index !5756
   %u4_28fixp284 = load i32, i32* %u4_28fixp140, align 4, !taffo.info !5702, !llfi_index !5757
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u4_28fixp139 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 1, !taffo.info !5702, !llfi_index !5758
   %u4_28fixp283 = load i32, i32* %u4_28fixp139, align 4, !taffo.info !5702, !llfi_index !5759
   call void @doProfiling(i32 32)
@@ -12350,23 +11564,18 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 
 20:                                               ; preds = %19, %18
   %.13 = phi i16 [ 1, %18 ], [ 2, %19 ], !taffo.info !5751, !llfi_index !5764
-  call void @doProfiling(i32 55)
   br label %21, !llfi_index !5765
 
 21:                                               ; preds = %20, %15
   %.24 = phi i16 [ %.02, %15 ], [ %.13, %20 ], !taffo.info !5751, !llfi_index !5766
   %.2 = phi i16 [ %.01, %15 ], [ 0, %20 ], !taffo.info !122, !llfi_index !5767
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %22 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !5768
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp29 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %22, !taffo.info !208, !llfi_index !5769
   %s2_30fixp173 = load i32, i32* %s2_30fixp29, align 4, !taffo.info !3797, !llfi_index !5770
   call void @doProfiling(i32 32)
   %23 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !5771
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %23, !taffo.info !208, !llfi_index !5772
   %s2_30fixp151 = load i32, i32* %s2_30fixp, align 4, !taffo.info !3797, !llfi_index !5773
   call void @doProfiling(i32 32)
@@ -12378,13 +11587,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %26 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !5777
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp30 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %26, !taffo.info !208, !llfi_index !5778
   %s2_30fixp174 = load i32, i32* %s2_30fixp30, align 4, !taffo.info !3797, !llfi_index !5779
   call void @doProfiling(i32 32)
   %27 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !5780
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp8 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %27, !taffo.info !208, !llfi_index !5781
   %s2_30fixp152 = load i32, i32* %s2_30fixp8, align 4, !taffo.info !3797, !llfi_index !5782
   call void @doProfiling(i32 32)
@@ -12396,13 +11603,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %30 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !5786
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp61 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %30, !taffo.info !208, !llfi_index !5787
   %s2_30fixp205 = load i32, i32* %s2_30fixp61, align 4, !taffo.info !3797, !llfi_index !5788
   call void @doProfiling(i32 32)
   %31 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !5789
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp91 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %31, !taffo.info !208, !llfi_index !5790
   %s2_30fixp235 = load i32, i32* %s2_30fixp91, align 4, !taffo.info !3797, !llfi_index !5791
   call void @doProfiling(i32 32)
@@ -12414,13 +11619,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %34 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !5795
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp62 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %34, !taffo.info !208, !llfi_index !5796
   %s2_30fixp206 = load i32, i32* %s2_30fixp62, align 4, !taffo.info !3797, !llfi_index !5797
   call void @doProfiling(i32 32)
   %35 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !5798
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp92 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %35, !taffo.info !208, !llfi_index !5799
   %s2_30fixp236 = load i32, i32* %s2_30fixp92, align 4, !taffo.info !3797, !llfi_index !5800
   call void @doProfiling(i32 32)
@@ -12432,13 +11635,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %38 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !5804
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp9 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %38, !taffo.info !208, !llfi_index !5805
   %s2_30fixp153 = load i32, i32* %s2_30fixp9, align 4, !taffo.info !3797, !llfi_index !5806
   call void @doProfiling(i32 32)
   %39 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !5807
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp63 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %39, !taffo.info !208, !llfi_index !5808
   %s2_30fixp207 = load i32, i32* %s2_30fixp63, align 4, !taffo.info !3797, !llfi_index !5809
   call void @doProfiling(i32 32)
@@ -12450,13 +11651,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %42 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !5813
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp10 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %42, !taffo.info !208, !llfi_index !5814
   %s2_30fixp154 = load i32, i32* %s2_30fixp10, align 4, !taffo.info !3797, !llfi_index !5815
   call void @doProfiling(i32 32)
   %43 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !5816
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp64 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %43, !taffo.info !208, !llfi_index !5817
   %s2_30fixp208 = load i32, i32* %s2_30fixp64, align 4, !taffo.info !3797, !llfi_index !5818
   call void @doProfiling(i32 32)
@@ -12653,13 +11852,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 113:                                              ; preds = %112, %81, %78, %75
   %114 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !5908
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp93 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %114, !taffo.info !208, !llfi_index !5909
   %s2_30fixp237 = load i32, i32* %s2_30fixp93, align 4, !taffo.info !3797, !llfi_index !5910
   call void @doProfiling(i32 32)
   %115 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !5911
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp115 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %115, !taffo.info !208, !llfi_index !5912
   %s2_30fixp259 = load i32, i32* %s2_30fixp115, align 4, !taffo.info !3797, !llfi_index !5913
   call void @doProfiling(i32 32)
@@ -12671,13 +11868,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %118 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !5917
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp94 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %118, !taffo.info !208, !llfi_index !5918
   %s2_30fixp238 = load i32, i32* %s2_30fixp94, align 4, !taffo.info !3797, !llfi_index !5919
   call void @doProfiling(i32 32)
   %119 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !5920
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp116 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %119, !taffo.info !208, !llfi_index !5921
   %s2_30fixp260 = load i32, i32* %s2_30fixp116, align 4, !taffo.info !3797, !llfi_index !5922
   call void @doProfiling(i32 32)
@@ -12689,13 +11884,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %122 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !5926
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp11 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %122, !taffo.info !208, !llfi_index !5927
   %s2_30fixp155 = load i32, i32* %s2_30fixp11, align 4, !taffo.info !3797, !llfi_index !5928
   call void @doProfiling(i32 32)
   %123 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !5929
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp95 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %123, !taffo.info !208, !llfi_index !5930
   %s2_30fixp239 = load i32, i32* %s2_30fixp95, align 4, !taffo.info !3797, !llfi_index !5931
   call void @doProfiling(i32 32)
@@ -12707,13 +11900,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %126 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !5935
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp12 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %126, !taffo.info !208, !llfi_index !5936
   %s2_30fixp156 = load i32, i32* %s2_30fixp12, align 4, !taffo.info !3797, !llfi_index !5937
   call void @doProfiling(i32 32)
   %127 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !5938
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp96 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %127, !taffo.info !208, !llfi_index !5939
   %s2_30fixp240 = load i32, i32* %s2_30fixp96, align 4, !taffo.info !3797, !llfi_index !5940
   call void @doProfiling(i32 32)
@@ -12910,13 +12101,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 197:                                              ; preds = %196, %165, %162, %159
   %198 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6021
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp117 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %198, !taffo.info !208, !llfi_index !6022
   %s2_30fixp261 = load i32, i32* %s2_30fixp117, align 4, !taffo.info !3797, !llfi_index !6023
   call void @doProfiling(i32 32)
   %199 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6024
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp65 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %199, !taffo.info !208, !llfi_index !6025
   %s2_30fixp209 = load i32, i32* %s2_30fixp65, align 4, !taffo.info !3797, !llfi_index !6026
   call void @doProfiling(i32 32)
@@ -12928,13 +12117,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %202 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6030
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp118 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %202, !taffo.info !208, !llfi_index !6031
   %s2_30fixp262 = load i32, i32* %s2_30fixp118, align 4, !taffo.info !3797, !llfi_index !6032
   call void @doProfiling(i32 32)
   %203 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6033
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp66 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %203, !taffo.info !208, !llfi_index !6034
   %s2_30fixp210 = load i32, i32* %s2_30fixp66, align 4, !taffo.info !3797, !llfi_index !6035
   call void @doProfiling(i32 32)
@@ -12946,13 +12133,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %206 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6039
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp13 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %206, !taffo.info !208, !llfi_index !6040
   %s2_30fixp157 = load i32, i32* %s2_30fixp13, align 4, !taffo.info !3797, !llfi_index !6041
   call void @doProfiling(i32 32)
   %207 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6042
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp119 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %207, !taffo.info !208, !llfi_index !6043
   %s2_30fixp263 = load i32, i32* %s2_30fixp119, align 4, !taffo.info !3797, !llfi_index !6044
   call void @doProfiling(i32 32)
@@ -12964,13 +12149,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %210 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6048
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp14 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %210, !taffo.info !208, !llfi_index !6049
   %s2_30fixp158 = load i32, i32* %s2_30fixp14, align 4, !taffo.info !3797, !llfi_index !6050
   call void @doProfiling(i32 32)
   %211 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6051
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp120 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %211, !taffo.info !208, !llfi_index !6052
   %s2_30fixp264 = load i32, i32* %s2_30fixp120, align 4, !taffo.info !3797, !llfi_index !6053
   call void @doProfiling(i32 32)
@@ -13167,13 +12350,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 281:                                              ; preds = %280, %249, %246, %243
   %282 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6134
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp45 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %282, !taffo.info !208, !llfi_index !6135
   %s2_30fixp189 = load i32, i32* %s2_30fixp45, align 4, !taffo.info !3797, !llfi_index !6136
   call void @doProfiling(i32 32)
   %283 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6137
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp31 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %283, !taffo.info !208, !llfi_index !6138
   %s2_30fixp175 = load i32, i32* %s2_30fixp31, align 4, !taffo.info !3797, !llfi_index !6139
   call void @doProfiling(i32 32)
@@ -13185,13 +12366,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %286 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6143
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp46 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %286, !taffo.info !208, !llfi_index !6144
   %s2_30fixp190 = load i32, i32* %s2_30fixp46, align 4, !taffo.info !3797, !llfi_index !6145
   call void @doProfiling(i32 32)
   %287 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6146
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp32 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %287, !taffo.info !208, !llfi_index !6147
   %s2_30fixp176 = load i32, i32* %s2_30fixp32, align 4, !taffo.info !3797, !llfi_index !6148
   call void @doProfiling(i32 32)
@@ -13203,13 +12382,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %290 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6152
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp67 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %290, !taffo.info !208, !llfi_index !6153
   %s2_30fixp211 = load i32, i32* %s2_30fixp67, align 4, !taffo.info !3797, !llfi_index !6154
   call void @doProfiling(i32 32)
   %291 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6155
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp97 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %291, !taffo.info !208, !llfi_index !6156
   %s2_30fixp241 = load i32, i32* %s2_30fixp97, align 4, !taffo.info !3797, !llfi_index !6157
   call void @doProfiling(i32 32)
@@ -13221,13 +12398,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %294 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6161
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp68 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %294, !taffo.info !208, !llfi_index !6162
   %s2_30fixp212 = load i32, i32* %s2_30fixp68, align 4, !taffo.info !3797, !llfi_index !6163
   call void @doProfiling(i32 32)
   %295 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6164
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp98 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %295, !taffo.info !208, !llfi_index !6165
   %s2_30fixp242 = load i32, i32* %s2_30fixp98, align 4, !taffo.info !3797, !llfi_index !6166
   call void @doProfiling(i32 32)
@@ -13239,13 +12414,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %298 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6170
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp33 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %298, !taffo.info !208, !llfi_index !6171
   %s2_30fixp177 = load i32, i32* %s2_30fixp33, align 4, !taffo.info !3797, !llfi_index !6172
   call void @doProfiling(i32 32)
   %299 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6173
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp69 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %299, !taffo.info !208, !llfi_index !6174
   %s2_30fixp213 = load i32, i32* %s2_30fixp69, align 4, !taffo.info !3797, !llfi_index !6175
   call void @doProfiling(i32 32)
@@ -13257,13 +12430,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %302 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6179
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp34 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %302, !taffo.info !208, !llfi_index !6180
   %s2_30fixp178 = load i32, i32* %s2_30fixp34, align 4, !taffo.info !3797, !llfi_index !6181
   call void @doProfiling(i32 32)
   %303 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6182
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp70 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %303, !taffo.info !208, !llfi_index !6183
   %s2_30fixp214 = load i32, i32* %s2_30fixp70, align 4, !taffo.info !3797, !llfi_index !6184
   call void @doProfiling(i32 32)
@@ -13460,13 +12631,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 373:                                              ; preds = %372, %341, %338, %335
   %374 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6265
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp99 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %374, !taffo.info !208, !llfi_index !6266
   %s2_30fixp243 = load i32, i32* %s2_30fixp99, align 4, !taffo.info !3797, !llfi_index !6267
   call void @doProfiling(i32 32)
   %375 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6268
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp121 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %375, !taffo.info !208, !llfi_index !6269
   %s2_30fixp265 = load i32, i32* %s2_30fixp121, align 4, !taffo.info !3797, !llfi_index !6270
   call void @doProfiling(i32 32)
@@ -13478,13 +12647,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %378 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6274
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp100 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %378, !taffo.info !208, !llfi_index !6275
   %s2_30fixp244 = load i32, i32* %s2_30fixp100, align 4, !taffo.info !3797, !llfi_index !6276
   call void @doProfiling(i32 32)
   %379 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6277
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp122 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %379, !taffo.info !208, !llfi_index !6278
   %s2_30fixp266 = load i32, i32* %s2_30fixp122, align 4, !taffo.info !3797, !llfi_index !6279
   call void @doProfiling(i32 32)
@@ -13496,13 +12663,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %382 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6283
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp35 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %382, !taffo.info !208, !llfi_index !6284
   %s2_30fixp179 = load i32, i32* %s2_30fixp35, align 4, !taffo.info !3797, !llfi_index !6285
   call void @doProfiling(i32 32)
   %383 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6286
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp101 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %383, !taffo.info !208, !llfi_index !6287
   %s2_30fixp245 = load i32, i32* %s2_30fixp101, align 4, !taffo.info !3797, !llfi_index !6288
   call void @doProfiling(i32 32)
@@ -13514,13 +12679,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %386 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6292
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp36 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %386, !taffo.info !208, !llfi_index !6293
   %s2_30fixp180 = load i32, i32* %s2_30fixp36, align 4, !taffo.info !3797, !llfi_index !6294
   call void @doProfiling(i32 32)
   %387 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6295
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp102 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %387, !taffo.info !208, !llfi_index !6296
   %s2_30fixp246 = load i32, i32* %s2_30fixp102, align 4, !taffo.info !3797, !llfi_index !6297
   call void @doProfiling(i32 32)
@@ -13717,13 +12880,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 457:                                              ; preds = %456, %425, %422, %419
   %458 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6378
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp123 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %458, !taffo.info !208, !llfi_index !6379
   %s2_30fixp267 = load i32, i32* %s2_30fixp123, align 4, !taffo.info !3797, !llfi_index !6380
   call void @doProfiling(i32 32)
   %459 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6381
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp71 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %459, !taffo.info !208, !llfi_index !6382
   %s2_30fixp215 = load i32, i32* %s2_30fixp71, align 4, !taffo.info !3797, !llfi_index !6383
   call void @doProfiling(i32 32)
@@ -13735,13 +12896,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %462 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6387
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp124 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %462, !taffo.info !208, !llfi_index !6388
   %s2_30fixp268 = load i32, i32* %s2_30fixp124, align 4, !taffo.info !3797, !llfi_index !6389
   call void @doProfiling(i32 32)
   %463 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6390
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp72 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %463, !taffo.info !208, !llfi_index !6391
   %s2_30fixp216 = load i32, i32* %s2_30fixp72, align 4, !taffo.info !3797, !llfi_index !6392
   call void @doProfiling(i32 32)
@@ -13753,13 +12912,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %466 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6396
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp37 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %466, !taffo.info !208, !llfi_index !6397
   %s2_30fixp181 = load i32, i32* %s2_30fixp37, align 4, !taffo.info !3797, !llfi_index !6398
   call void @doProfiling(i32 32)
   %467 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6399
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp125 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %467, !taffo.info !208, !llfi_index !6400
   %s2_30fixp269 = load i32, i32* %s2_30fixp125, align 4, !taffo.info !3797, !llfi_index !6401
   call void @doProfiling(i32 32)
@@ -13771,13 +12928,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %470 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6405
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp38 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %470, !taffo.info !208, !llfi_index !6406
   %s2_30fixp182 = load i32, i32* %s2_30fixp38, align 4, !taffo.info !3797, !llfi_index !6407
   call void @doProfiling(i32 32)
   %471 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6408
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp126 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %471, !taffo.info !208, !llfi_index !6409
   %s2_30fixp270 = load i32, i32* %s2_30fixp126, align 4, !taffo.info !3797, !llfi_index !6410
   call void @doProfiling(i32 32)
@@ -13974,13 +13129,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 541:                                              ; preds = %540, %509, %506, %503
   %542 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6491
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp15 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %542, !taffo.info !208, !llfi_index !6492
   %s2_30fixp159 = load i32, i32* %s2_30fixp15, align 4, !taffo.info !3797, !llfi_index !6493
   call void @doProfiling(i32 32)
   %543 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6494
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp47 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %543, !taffo.info !208, !llfi_index !6495
   %s2_30fixp191 = load i32, i32* %s2_30fixp47, align 4, !taffo.info !3797, !llfi_index !6496
   call void @doProfiling(i32 32)
@@ -13992,13 +13145,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %546 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6500
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp16 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %546, !taffo.info !208, !llfi_index !6501
   %s2_30fixp160 = load i32, i32* %s2_30fixp16, align 4, !taffo.info !3797, !llfi_index !6502
   call void @doProfiling(i32 32)
   %547 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6503
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp48 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %547, !taffo.info !208, !llfi_index !6504
   %s2_30fixp192 = load i32, i32* %s2_30fixp48, align 4, !taffo.info !3797, !llfi_index !6505
   call void @doProfiling(i32 32)
@@ -14010,13 +13161,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %550 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6509
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp73 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %550, !taffo.info !208, !llfi_index !6510
   %s2_30fixp217 = load i32, i32* %s2_30fixp73, align 4, !taffo.info !3797, !llfi_index !6511
   call void @doProfiling(i32 32)
   %551 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6512
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp103 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %551, !taffo.info !208, !llfi_index !6513
   %s2_30fixp247 = load i32, i32* %s2_30fixp103, align 4, !taffo.info !3797, !llfi_index !6514
   call void @doProfiling(i32 32)
@@ -14028,13 +13177,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %554 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6518
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp74 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %554, !taffo.info !208, !llfi_index !6519
   %s2_30fixp218 = load i32, i32* %s2_30fixp74, align 4, !taffo.info !3797, !llfi_index !6520
   call void @doProfiling(i32 32)
   %555 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6521
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp104 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %555, !taffo.info !208, !llfi_index !6522
   %s2_30fixp248 = load i32, i32* %s2_30fixp104, align 4, !taffo.info !3797, !llfi_index !6523
   call void @doProfiling(i32 32)
@@ -14046,13 +13193,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %558 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6527
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp49 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %558, !taffo.info !208, !llfi_index !6528
   %s2_30fixp193 = load i32, i32* %s2_30fixp49, align 4, !taffo.info !3797, !llfi_index !6529
   call void @doProfiling(i32 32)
   %559 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6530
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp75 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %559, !taffo.info !208, !llfi_index !6531
   %s2_30fixp219 = load i32, i32* %s2_30fixp75, align 4, !taffo.info !3797, !llfi_index !6532
   call void @doProfiling(i32 32)
@@ -14064,13 +13209,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %562 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6536
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp50 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %562, !taffo.info !208, !llfi_index !6537
   %s2_30fixp194 = load i32, i32* %s2_30fixp50, align 4, !taffo.info !3797, !llfi_index !6538
   call void @doProfiling(i32 32)
   %563 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6539
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp76 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %563, !taffo.info !208, !llfi_index !6540
   %s2_30fixp220 = load i32, i32* %s2_30fixp76, align 4, !taffo.info !3797, !llfi_index !6541
   call void @doProfiling(i32 32)
@@ -14267,13 +13410,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 633:                                              ; preds = %632, %601, %598, %595
   %634 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6622
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp105 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %634, !taffo.info !208, !llfi_index !6623
   %s2_30fixp249 = load i32, i32* %s2_30fixp105, align 4, !taffo.info !3797, !llfi_index !6624
   call void @doProfiling(i32 32)
   %635 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6625
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp127 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %635, !taffo.info !208, !llfi_index !6626
   %s2_30fixp271 = load i32, i32* %s2_30fixp127, align 4, !taffo.info !3797, !llfi_index !6627
   call void @doProfiling(i32 32)
@@ -14285,13 +13426,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %638 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6631
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp106 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %638, !taffo.info !208, !llfi_index !6632
   %s2_30fixp250 = load i32, i32* %s2_30fixp106, align 4, !taffo.info !3797, !llfi_index !6633
   call void @doProfiling(i32 32)
   %639 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6634
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp128 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %639, !taffo.info !208, !llfi_index !6635
   %s2_30fixp272 = load i32, i32* %s2_30fixp128, align 4, !taffo.info !3797, !llfi_index !6636
   call void @doProfiling(i32 32)
@@ -14303,13 +13442,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %642 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6640
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp51 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %642, !taffo.info !208, !llfi_index !6641
   %s2_30fixp195 = load i32, i32* %s2_30fixp51, align 4, !taffo.info !3797, !llfi_index !6642
   call void @doProfiling(i32 32)
   %643 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6643
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp107 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %643, !taffo.info !208, !llfi_index !6644
   %s2_30fixp251 = load i32, i32* %s2_30fixp107, align 4, !taffo.info !3797, !llfi_index !6645
   call void @doProfiling(i32 32)
@@ -14321,13 +13458,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %646 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6649
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp52 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %646, !taffo.info !208, !llfi_index !6650
   %s2_30fixp196 = load i32, i32* %s2_30fixp52, align 4, !taffo.info !3797, !llfi_index !6651
   call void @doProfiling(i32 32)
   %647 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6652
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp108 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %647, !taffo.info !208, !llfi_index !6653
   %s2_30fixp252 = load i32, i32* %s2_30fixp108, align 4, !taffo.info !3797, !llfi_index !6654
   call void @doProfiling(i32 32)
@@ -14524,13 +13659,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 717:                                              ; preds = %716, %685, %682, %679
   %718 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6735
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp129 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %718, !taffo.info !208, !llfi_index !6736
   %s2_30fixp273 = load i32, i32* %s2_30fixp129, align 4, !taffo.info !3797, !llfi_index !6737
   call void @doProfiling(i32 32)
   %719 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6738
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp77 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %719, !taffo.info !208, !llfi_index !6739
   %s2_30fixp221 = load i32, i32* %s2_30fixp77, align 4, !taffo.info !3797, !llfi_index !6740
   call void @doProfiling(i32 32)
@@ -14542,13 +13675,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %722 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6744
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp130 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %722, !taffo.info !208, !llfi_index !6745
   %s2_30fixp274 = load i32, i32* %s2_30fixp130, align 4, !taffo.info !3797, !llfi_index !6746
   call void @doProfiling(i32 32)
   %723 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6747
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp78 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %723, !taffo.info !208, !llfi_index !6748
   %s2_30fixp222 = load i32, i32* %s2_30fixp78, align 4, !taffo.info !3797, !llfi_index !6749
   call void @doProfiling(i32 32)
@@ -14560,13 +13691,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %726 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6753
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp53 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %726, !taffo.info !208, !llfi_index !6754
   %s2_30fixp197 = load i32, i32* %s2_30fixp53, align 4, !taffo.info !3797, !llfi_index !6755
   call void @doProfiling(i32 32)
   %727 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6756
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp131 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %727, !taffo.info !208, !llfi_index !6757
   %s2_30fixp275 = load i32, i32* %s2_30fixp131, align 4, !taffo.info !3797, !llfi_index !6758
   call void @doProfiling(i32 32)
@@ -14578,13 +13707,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %730 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6762
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp54 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %730, !taffo.info !208, !llfi_index !6763
   %s2_30fixp198 = load i32, i32* %s2_30fixp54, align 4, !taffo.info !3797, !llfi_index !6764
   call void @doProfiling(i32 32)
   %731 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6765
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp132 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %731, !taffo.info !208, !llfi_index !6766
   %s2_30fixp276 = load i32, i32* %s2_30fixp132, align 4, !taffo.info !3797, !llfi_index !6767
   call void @doProfiling(i32 32)
@@ -14781,13 +13908,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 801:                                              ; preds = %800, %769, %766, %763
   %802 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6848
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp109 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %802, !taffo.info !208, !llfi_index !6849
   %s2_30fixp253 = load i32, i32* %s2_30fixp109, align 4, !taffo.info !3797, !llfi_index !6850
   call void @doProfiling(i32 32)
   %803 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6851
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp79 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %803, !taffo.info !208, !llfi_index !6852
   %s2_30fixp223 = load i32, i32* %s2_30fixp79, align 4, !taffo.info !3797, !llfi_index !6853
   call void @doProfiling(i32 32)
@@ -14799,13 +13924,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %806 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6857
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp110 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %806, !taffo.info !208, !llfi_index !6858
   %s2_30fixp254 = load i32, i32* %s2_30fixp110, align 4, !taffo.info !3797, !llfi_index !6859
   call void @doProfiling(i32 32)
   %807 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6860
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp80 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %807, !taffo.info !208, !llfi_index !6861
   %s2_30fixp224 = load i32, i32* %s2_30fixp80, align 4, !taffo.info !3797, !llfi_index !6862
   call void @doProfiling(i32 32)
@@ -14821,13 +13944,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %810 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6868
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp81 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %810, !taffo.info !208, !llfi_index !6869
   %s2_30fixp225 = load i32, i32* %s2_30fixp81, align 4, !taffo.info !6870, !llfi_index !6871
   call void @doProfiling(i32 32)
   %811 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6872
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp82 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %811, !taffo.info !208, !llfi_index !6873
   %s2_30fixp226 = load i32, i32* %s2_30fixp82, align 4, !taffo.info !3797, !llfi_index !6874
   call void @doProfiling(i32 32)
@@ -14861,13 +13982,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 13)
   %823 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6891
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp17 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %823, !taffo.info !208, !llfi_index !6892
   %s2_30fixp161 = load i32, i32* %s2_30fixp17, align 4, !taffo.info !6870, !llfi_index !6893
   call void @doProfiling(i32 32)
   %824 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6894
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp18 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %824, !taffo.info !208, !llfi_index !6895
   %s2_30fixp162 = load i32, i32* %s2_30fixp18, align 4, !taffo.info !3797, !llfi_index !6896
   call void @doProfiling(i32 32)
@@ -14899,13 +14018,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 13)
   %835 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6910
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp133 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %835, !taffo.info !208, !llfi_index !6911
   %s2_30fixp277 = load i32, i32* %s2_30fixp133, align 4, !taffo.info !3797, !llfi_index !6912
   call void @doProfiling(i32 32)
   %836 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6913
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp111 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %836, !taffo.info !208, !llfi_index !6914
   %s2_30fixp255 = load i32, i32* %s2_30fixp111, align 4, !taffo.info !3797, !llfi_index !6915
   call void @doProfiling(i32 32)
@@ -14917,13 +14034,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %839 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6919
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp134 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %839, !taffo.info !208, !llfi_index !6920
   %s2_30fixp278 = load i32, i32* %s2_30fixp134, align 4, !taffo.info !3797, !llfi_index !6921
   call void @doProfiling(i32 32)
   %840 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6922
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp112 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %840, !taffo.info !208, !llfi_index !6923
   %s2_30fixp256 = load i32, i32* %s2_30fixp112, align 4, !taffo.info !3797, !llfi_index !6924
   call void @doProfiling(i32 32)
@@ -14939,13 +14054,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %843 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6930
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp113 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %843, !taffo.info !208, !llfi_index !6931
   %s2_30fixp257 = load i32, i32* %s2_30fixp113, align 4, !taffo.info !6870, !llfi_index !6932
   call void @doProfiling(i32 32)
   %844 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6933
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp114 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %844, !taffo.info !208, !llfi_index !6934
   %s2_30fixp258 = load i32, i32* %s2_30fixp114, align 4, !taffo.info !3797, !llfi_index !6935
   call void @doProfiling(i32 32)
@@ -14979,13 +14092,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 13)
   %856 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6950
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp19 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %856, !taffo.info !208, !llfi_index !6951
   %s2_30fixp163 = load i32, i32* %s2_30fixp19, align 4, !taffo.info !6870, !llfi_index !6952
   call void @doProfiling(i32 32)
   %857 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6953
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp20 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %857, !taffo.info !208, !llfi_index !6954
   %s2_30fixp164 = load i32, i32* %s2_30fixp20, align 4, !taffo.info !3797, !llfi_index !6955
   call void @doProfiling(i32 32)
@@ -15017,13 +14128,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 13)
   %868 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6969
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp83 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %868, !taffo.info !208, !llfi_index !6970
   %s2_30fixp227 = load i32, i32* %s2_30fixp83, align 4, !taffo.info !3797, !llfi_index !6971
   call void @doProfiling(i32 32)
   %869 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6972
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp135 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %869, !taffo.info !208, !llfi_index !6973
   %s2_30fixp279 = load i32, i32* %s2_30fixp135, align 4, !taffo.info !3797, !llfi_index !6974
   call void @doProfiling(i32 32)
@@ -15035,13 +14144,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %872 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6978
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp84 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %872, !taffo.info !208, !llfi_index !6979
   %s2_30fixp228 = load i32, i32* %s2_30fixp84, align 4, !taffo.info !3797, !llfi_index !6980
   call void @doProfiling(i32 32)
   %873 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6981
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp136 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %873, !taffo.info !208, !llfi_index !6982
   %s2_30fixp280 = load i32, i32* %s2_30fixp136, align 4, !taffo.info !3797, !llfi_index !6983
   call void @doProfiling(i32 32)
@@ -15057,13 +14164,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %876 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !6989
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp137 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %876, !taffo.info !208, !llfi_index !6990
   %s2_30fixp281 = load i32, i32* %s2_30fixp137, align 4, !taffo.info !6870, !llfi_index !6991
   call void @doProfiling(i32 32)
   %877 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !6992
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp138 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %877, !taffo.info !208, !llfi_index !6993
   %s2_30fixp282 = load i32, i32* %s2_30fixp138, align 4, !taffo.info !3797, !llfi_index !6994
   call void @doProfiling(i32 32)
@@ -15097,13 +14202,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 13)
   %889 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7009
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp21 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %889, !taffo.info !208, !llfi_index !7010
   %s2_30fixp165 = load i32, i32* %s2_30fixp21, align 4, !taffo.info !6870, !llfi_index !7011
   call void @doProfiling(i32 32)
   %890 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7012
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp22 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %890, !taffo.info !208, !llfi_index !7013
   %s2_30fixp166 = load i32, i32* %s2_30fixp22, align 4, !taffo.info !3797, !llfi_index !7014
   call void @doProfiling(i32 32)
@@ -15183,13 +14286,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 918:                                              ; preds = %917, %910
   %919 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7048
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp39 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %919, !taffo.info !208, !llfi_index !7049
   %s2_30fixp183 = load i32, i32* %s2_30fixp39, align 4, !taffo.info !3797, !llfi_index !7050
   call void @doProfiling(i32 32)
   %920 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7051
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp23 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %920, !taffo.info !208, !llfi_index !7052
   %s2_30fixp167 = load i32, i32* %s2_30fixp23, align 4, !taffo.info !3797, !llfi_index !7053
   call void @doProfiling(i32 32)
@@ -15201,13 +14302,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %923 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7057
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp40 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %923, !taffo.info !208, !llfi_index !7058
   %s2_30fixp184 = load i32, i32* %s2_30fixp40, align 4, !taffo.info !3797, !llfi_index !7059
   call void @doProfiling(i32 32)
   %924 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7060
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp24 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %924, !taffo.info !208, !llfi_index !7061
   %s2_30fixp168 = load i32, i32* %s2_30fixp24, align 4, !taffo.info !3797, !llfi_index !7062
   call void @doProfiling(i32 32)
@@ -15223,13 +14322,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %927 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7068
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp25 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %927, !taffo.info !208, !llfi_index !7069
   %s2_30fixp169 = load i32, i32* %s2_30fixp25, align 4, !taffo.info !6870, !llfi_index !7070
   call void @doProfiling(i32 32)
   %928 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7071
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp26 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %928, !taffo.info !208, !llfi_index !7072
   %s2_30fixp170 = load i32, i32* %s2_30fixp26, align 4, !taffo.info !3797, !llfi_index !7073
   call void @doProfiling(i32 32)
@@ -15263,13 +14360,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 13)
   %940 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7088
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp85 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %940, !taffo.info !208, !llfi_index !7089
   %s2_30fixp229 = load i32, i32* %s2_30fixp85, align 4, !taffo.info !6870, !llfi_index !7090
   call void @doProfiling(i32 32)
   %941 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7091
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp86 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %941, !taffo.info !208, !llfi_index !7092
   %s2_30fixp230 = load i32, i32* %s2_30fixp86, align 4, !taffo.info !3797, !llfi_index !7093
   call void @doProfiling(i32 32)
@@ -15301,13 +14396,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 13)
   %952 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7107
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp55 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %952, !taffo.info !208, !llfi_index !7108
   %s2_30fixp199 = load i32, i32* %s2_30fixp55, align 4, !taffo.info !3797, !llfi_index !7109
   call void @doProfiling(i32 32)
   %953 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7110
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp41 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %953, !taffo.info !208, !llfi_index !7111
   %s2_30fixp185 = load i32, i32* %s2_30fixp41, align 4, !taffo.info !3797, !llfi_index !7112
   call void @doProfiling(i32 32)
@@ -15319,13 +14412,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %956 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7116
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp56 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %956, !taffo.info !208, !llfi_index !7117
   %s2_30fixp200 = load i32, i32* %s2_30fixp56, align 4, !taffo.info !3797, !llfi_index !7118
   call void @doProfiling(i32 32)
   %957 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7119
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp42 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %957, !taffo.info !208, !llfi_index !7120
   %s2_30fixp186 = load i32, i32* %s2_30fixp42, align 4, !taffo.info !3797, !llfi_index !7121
   call void @doProfiling(i32 32)
@@ -15341,13 +14432,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %960 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7127
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp43 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %960, !taffo.info !208, !llfi_index !7128
   %s2_30fixp187 = load i32, i32* %s2_30fixp43, align 4, !taffo.info !6870, !llfi_index !7129
   call void @doProfiling(i32 32)
   %961 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7130
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp44 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %961, !taffo.info !208, !llfi_index !7131
   %s2_30fixp188 = load i32, i32* %s2_30fixp44, align 4, !taffo.info !3797, !llfi_index !7132
   call void @doProfiling(i32 32)
@@ -15381,13 +14470,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 13)
   %973 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7147
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp87 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %973, !taffo.info !208, !llfi_index !7148
   %s2_30fixp231 = load i32, i32* %s2_30fixp87, align 4, !taffo.info !6870, !llfi_index !7149
   call void @doProfiling(i32 32)
   %974 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7150
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp88 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %974, !taffo.info !208, !llfi_index !7151
   %s2_30fixp232 = load i32, i32* %s2_30fixp88, align 4, !taffo.info !3797, !llfi_index !7152
   call void @doProfiling(i32 32)
@@ -15419,13 +14506,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 13)
   %985 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7166
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp27 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %985, !taffo.info !208, !llfi_index !7167
   %s2_30fixp171 = load i32, i32* %s2_30fixp27, align 4, !taffo.info !3797, !llfi_index !7168
   call void @doProfiling(i32 32)
   %986 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7169
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp57 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %986, !taffo.info !208, !llfi_index !7170
   %s2_30fixp201 = load i32, i32* %s2_30fixp57, align 4, !taffo.info !3797, !llfi_index !7171
   call void @doProfiling(i32 32)
@@ -15437,13 +14522,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %989 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7175
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp28 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %989, !taffo.info !208, !llfi_index !7176
   %s2_30fixp172 = load i32, i32* %s2_30fixp28, align 4, !taffo.info !3797, !llfi_index !7177
   call void @doProfiling(i32 32)
   %990 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7178
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp58 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %990, !taffo.info !208, !llfi_index !7179
   %s2_30fixp202 = load i32, i32* %s2_30fixp58, align 4, !taffo.info !3797, !llfi_index !7180
   call void @doProfiling(i32 32)
@@ -15459,13 +14542,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 15)
   %993 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7186
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp59 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %993, !taffo.info !208, !llfi_index !7187
   %s2_30fixp203 = load i32, i32* %s2_30fixp59, align 4, !taffo.info !6870, !llfi_index !7188
   call void @doProfiling(i32 32)
   %994 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7189
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp60 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %994, !taffo.info !208, !llfi_index !7190
   %s2_30fixp204 = load i32, i32* %s2_30fixp60, align 4, !taffo.info !3797, !llfi_index !7191
   call void @doProfiling(i32 32)
@@ -15499,13 +14580,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
   call void @doProfiling(i32 13)
   %1006 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7206
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp89 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %1006, !taffo.info !208, !llfi_index !7207
   %s2_30fixp233 = load i32, i32* %s2_30fixp89, align 4, !taffo.info !6870, !llfi_index !7208
   call void @doProfiling(i32 32)
   %1007 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7209
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp90 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %1007, !taffo.info !208, !llfi_index !7210
   %s2_30fixp234 = load i32, i32* %s2_30fixp90, align 4, !taffo.info !3797, !llfi_index !7211
   call void @doProfiling(i32 32)
@@ -15587,7 +14666,7 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 
 1036:                                             ; preds = %1035, %1033, %916, %798, %791, %714, %707, %630, %623, %538, %531, %454, %447, %370, %363, %278, %271, %194, %187, %110, %103
   %.0 = phi i32 [ 1, %103 ], [ 1, %187 ], [ 1, %271 ], [ 1, %363 ], [ 1, %447 ], [ 1, %531 ], [ 1, %623 ], [ 1, %707 ], [ 1, %791 ], [ 1, %916 ], [ 1, %1033 ], [ 0, %1035 ], [ 1, %798 ], [ 1, %714 ], [ 1, %630 ], [ 1, %538 ], [ 1, %454 ], [ 1, %370 ], [ 1, %278 ], [ 1, %194 ], [ 1, %110 ], !taffo.info !122, !llfi_index !7246
-  call void @doProfiling(i32 55)
+  call void @doProfiling(i32 1)
   ret i32 %.0, !llfi_index !7247
 }
 
@@ -15595,7 +14674,6 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.1.4_fixp(i32* no
 define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* noundef %.s5_27fixp, i32* noundef %.s2_30fixp, i32* noundef %.s2_30fixp1, i32* noundef %.s2_30fixp2, i32* noundef %.s2_30fixp3, i32* noundef %.s2_30fixp4, i32* noundef %.s2_30fixp5) #1 !taffo.initweight !2836 !taffo.funinfo !5700 !taffo.sourceFunction !7248 {
   call void @doProfiling(i32 31)
   %u4_28fixp = alloca [3 x i32], align 4, !taffo.info !5702, !llfi_index !7249
-  call void @doProfiling(i32 34)
   %s5_27fixp = getelementptr inbounds i32, i32* %.s5_27fixp, i64 0, !taffo.info !3785, !llfi_index !7250
   %s5_27fixp148 = load i32, i32* %s5_27fixp, align 4, !taffo.info !3785, !llfi_index !7251
   call void @doProfiling(i32 32)
@@ -15611,11 +14689,9 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 42)
   %u4_28fixp382 = shl i32 %.flt.fallback.s5_27fixp, 1, !taffo.info !5702, !llfi_index !7257
   call void @doProfiling(i32 25)
-  call void @doProfiling(i32 34)
   %u4_28fixp147 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 0, !taffo.info !5702, !llfi_index !7258
   call void @doProfiling(i32 33)
   store i32 %u4_28fixp382, i32* %u4_28fixp147, align 4, !taffo.info !347, !llfi_index !7259
-  call void @doProfiling(i32 34)
   %s5_27fixp6 = getelementptr inbounds i32, i32* %.s5_27fixp, i64 1, !taffo.info !3785, !llfi_index !7260
   %s5_27fixp149 = load i32, i32* %s5_27fixp6, align 4, !taffo.info !3785, !llfi_index !7261
   call void @doProfiling(i32 32)
@@ -15631,11 +14707,9 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 42)
   %u4_28fixp383 = shl i32 %.flt341.fallback.s5_27fixp, 1, !taffo.info !5702, !llfi_index !7267
   call void @doProfiling(i32 25)
-  call void @doProfiling(i32 34)
   %u4_28fixp146 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 1, !taffo.info !5702, !llfi_index !7268
   call void @doProfiling(i32 33)
   store i32 %u4_28fixp383, i32* %u4_28fixp146, align 4, !taffo.info !347, !llfi_index !7269
-  call void @doProfiling(i32 34)
   %s5_27fixp7 = getelementptr inbounds i32, i32* %.s5_27fixp, i64 2, !taffo.info !3785, !llfi_index !7270
   %s5_27fixp150 = load i32, i32* %s5_27fixp7, align 4, !taffo.info !3785, !llfi_index !7271
   call void @doProfiling(i32 32)
@@ -15651,15 +14725,12 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 42)
   %u4_28fixp384 = shl i32 %.flt342.fallback.s5_27fixp, 1, !taffo.info !5702, !llfi_index !7277
   call void @doProfiling(i32 25)
-  call void @doProfiling(i32 34)
   %u4_28fixp145 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 2, !taffo.info !5702, !llfi_index !7278
   call void @doProfiling(i32 33)
   store i32 %u4_28fixp384, i32* %u4_28fixp145, align 4, !taffo.info !347, !llfi_index !7279
-  call void @doProfiling(i32 34)
   %u4_28fixp144 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 0, !taffo.info !5702, !llfi_index !7280
   %u4_28fixp288 = load i32, i32* %u4_28fixp144, align 4, !taffo.info !5702, !llfi_index !7281
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u4_28fixp143 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 1, !taffo.info !5702, !llfi_index !7282
   %u4_28fixp287 = load i32, i32* %u4_28fixp143, align 4, !taffo.info !5702, !llfi_index !7283
   call void @doProfiling(i32 32)
@@ -15669,11 +14740,9 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   br i1 %10, label %11, label %16, !taffo.info !347, !taffo.initweight !375, !llfi_index !7285
 
 11:                                               ; preds = %0
-  call void @doProfiling(i32 34)
   %u4_28fixp142 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 0, !taffo.info !5702, !llfi_index !7286
   %u4_28fixp286 = load i32, i32* %u4_28fixp142, align 4, !taffo.info !5702, !llfi_index !7287
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u4_28fixp141 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 2, !taffo.info !5702, !llfi_index !7288
   %u4_28fixp285 = load i32, i32* %u4_28fixp141, align 4, !taffo.info !5702, !llfi_index !7289
   call void @doProfiling(i32 32)
@@ -15691,16 +14760,12 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 15:                                               ; preds = %14, %13
   %.02 = phi i16 [ 2, %13 ], [ 1, %14 ], !taffo.info !5751, !llfi_index !7294
   %.01 = phi i16 [ 1, %13 ], [ 0, %14 ], !taffo.info !122, !llfi_index !7295
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   br label %21, !llfi_index !7296
 
 16:                                               ; preds = %0
-  call void @doProfiling(i32 34)
   %u4_28fixp140 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 2, !taffo.info !5702, !llfi_index !7297
   %u4_28fixp284 = load i32, i32* %u4_28fixp140, align 4, !taffo.info !5702, !llfi_index !7298
   call void @doProfiling(i32 32)
-  call void @doProfiling(i32 34)
   %u4_28fixp139 = getelementptr inbounds [3 x i32], [3 x i32]* %u4_28fixp, i64 0, i64 1, !taffo.info !5702, !llfi_index !7299
   %u4_28fixp283 = load i32, i32* %u4_28fixp139, align 4, !taffo.info !5702, !llfi_index !7300
   call void @doProfiling(i32 32)
@@ -15717,23 +14782,18 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 
 20:                                               ; preds = %19, %18
   %.13 = phi i16 [ 1, %18 ], [ 2, %19 ], !taffo.info !5751, !llfi_index !7305
-  call void @doProfiling(i32 55)
   br label %21, !llfi_index !7306
 
 21:                                               ; preds = %20, %15
   %.24 = phi i16 [ %.02, %15 ], [ %.13, %20 ], !taffo.info !5751, !llfi_index !7307
   %.2 = phi i16 [ %.01, %15 ], [ 0, %20 ], !taffo.info !122, !llfi_index !7308
-  call void @doProfiling(i32 55)
-  call void @doProfiling(i32 55)
   %22 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7309
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp29 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %22, !taffo.info !208, !llfi_index !7310
   %s2_30fixp173 = load i32, i32* %s2_30fixp29, align 4, !taffo.info !3797, !llfi_index !7311
   call void @doProfiling(i32 32)
   %23 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7312
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %23, !taffo.info !208, !llfi_index !7313
   %s2_30fixp151 = load i32, i32* %s2_30fixp, align 4, !taffo.info !3797, !llfi_index !7314
   call void @doProfiling(i32 32)
@@ -15745,13 +14805,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %26 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7318
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp30 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %26, !taffo.info !208, !llfi_index !7319
   %s2_30fixp174 = load i32, i32* %s2_30fixp30, align 4, !taffo.info !3797, !llfi_index !7320
   call void @doProfiling(i32 32)
   %27 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7321
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp8 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %27, !taffo.info !208, !llfi_index !7322
   %s2_30fixp152 = load i32, i32* %s2_30fixp8, align 4, !taffo.info !3797, !llfi_index !7323
   call void @doProfiling(i32 32)
@@ -15763,13 +14821,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %30 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7327
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp61 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %30, !taffo.info !208, !llfi_index !7328
   %s2_30fixp205 = load i32, i32* %s2_30fixp61, align 4, !taffo.info !3797, !llfi_index !7329
   call void @doProfiling(i32 32)
   %31 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7330
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp91 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %31, !taffo.info !208, !llfi_index !7331
   %s2_30fixp235 = load i32, i32* %s2_30fixp91, align 4, !taffo.info !3797, !llfi_index !7332
   call void @doProfiling(i32 32)
@@ -15781,13 +14837,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %34 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7336
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp62 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %34, !taffo.info !208, !llfi_index !7337
   %s2_30fixp206 = load i32, i32* %s2_30fixp62, align 4, !taffo.info !3797, !llfi_index !7338
   call void @doProfiling(i32 32)
   %35 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7339
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp92 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %35, !taffo.info !208, !llfi_index !7340
   %s2_30fixp236 = load i32, i32* %s2_30fixp92, align 4, !taffo.info !3797, !llfi_index !7341
   call void @doProfiling(i32 32)
@@ -15799,13 +14853,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %38 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7345
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp9 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %38, !taffo.info !208, !llfi_index !7346
   %s2_30fixp153 = load i32, i32* %s2_30fixp9, align 4, !taffo.info !3797, !llfi_index !7347
   call void @doProfiling(i32 32)
   %39 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7348
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp63 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %39, !taffo.info !208, !llfi_index !7349
   %s2_30fixp207 = load i32, i32* %s2_30fixp63, align 4, !taffo.info !3797, !llfi_index !7350
   call void @doProfiling(i32 32)
@@ -15817,13 +14869,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %42 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7354
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp10 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %42, !taffo.info !208, !llfi_index !7355
   %s2_30fixp154 = load i32, i32* %s2_30fixp10, align 4, !taffo.info !3797, !llfi_index !7356
   call void @doProfiling(i32 32)
   %43 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7357
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp64 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %43, !taffo.info !208, !llfi_index !7358
   %s2_30fixp208 = load i32, i32* %s2_30fixp64, align 4, !taffo.info !3797, !llfi_index !7359
   call void @doProfiling(i32 32)
@@ -16020,13 +15070,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 113:                                              ; preds = %112, %81, %78, %75
   %114 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7440
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp93 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %114, !taffo.info !208, !llfi_index !7441
   %s2_30fixp237 = load i32, i32* %s2_30fixp93, align 4, !taffo.info !3797, !llfi_index !7442
   call void @doProfiling(i32 32)
   %115 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7443
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp115 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %115, !taffo.info !208, !llfi_index !7444
   %s2_30fixp259 = load i32, i32* %s2_30fixp115, align 4, !taffo.info !3797, !llfi_index !7445
   call void @doProfiling(i32 32)
@@ -16038,13 +15086,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %118 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7449
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp94 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %118, !taffo.info !208, !llfi_index !7450
   %s2_30fixp238 = load i32, i32* %s2_30fixp94, align 4, !taffo.info !3797, !llfi_index !7451
   call void @doProfiling(i32 32)
   %119 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7452
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp116 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %119, !taffo.info !208, !llfi_index !7453
   %s2_30fixp260 = load i32, i32* %s2_30fixp116, align 4, !taffo.info !3797, !llfi_index !7454
   call void @doProfiling(i32 32)
@@ -16056,13 +15102,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %122 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7458
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp11 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %122, !taffo.info !208, !llfi_index !7459
   %s2_30fixp155 = load i32, i32* %s2_30fixp11, align 4, !taffo.info !3797, !llfi_index !7460
   call void @doProfiling(i32 32)
   %123 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7461
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp95 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %123, !taffo.info !208, !llfi_index !7462
   %s2_30fixp239 = load i32, i32* %s2_30fixp95, align 4, !taffo.info !3797, !llfi_index !7463
   call void @doProfiling(i32 32)
@@ -16074,13 +15118,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %126 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7467
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp12 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %126, !taffo.info !208, !llfi_index !7468
   %s2_30fixp156 = load i32, i32* %s2_30fixp12, align 4, !taffo.info !3797, !llfi_index !7469
   call void @doProfiling(i32 32)
   %127 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7470
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp96 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %127, !taffo.info !208, !llfi_index !7471
   %s2_30fixp240 = load i32, i32* %s2_30fixp96, align 4, !taffo.info !3797, !llfi_index !7472
   call void @doProfiling(i32 32)
@@ -16277,13 +15319,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 197:                                              ; preds = %196, %165, %162, %159
   %198 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7553
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp117 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %198, !taffo.info !208, !llfi_index !7554
   %s2_30fixp261 = load i32, i32* %s2_30fixp117, align 4, !taffo.info !3797, !llfi_index !7555
   call void @doProfiling(i32 32)
   %199 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7556
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp65 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %199, !taffo.info !208, !llfi_index !7557
   %s2_30fixp209 = load i32, i32* %s2_30fixp65, align 4, !taffo.info !3797, !llfi_index !7558
   call void @doProfiling(i32 32)
@@ -16295,13 +15335,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %202 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7562
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp118 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %202, !taffo.info !208, !llfi_index !7563
   %s2_30fixp262 = load i32, i32* %s2_30fixp118, align 4, !taffo.info !3797, !llfi_index !7564
   call void @doProfiling(i32 32)
   %203 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7565
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp66 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %203, !taffo.info !208, !llfi_index !7566
   %s2_30fixp210 = load i32, i32* %s2_30fixp66, align 4, !taffo.info !3797, !llfi_index !7567
   call void @doProfiling(i32 32)
@@ -16313,13 +15351,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %206 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7571
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp13 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %206, !taffo.info !208, !llfi_index !7572
   %s2_30fixp157 = load i32, i32* %s2_30fixp13, align 4, !taffo.info !3797, !llfi_index !7573
   call void @doProfiling(i32 32)
   %207 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7574
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp119 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %207, !taffo.info !208, !llfi_index !7575
   %s2_30fixp263 = load i32, i32* %s2_30fixp119, align 4, !taffo.info !3797, !llfi_index !7576
   call void @doProfiling(i32 32)
@@ -16331,13 +15367,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %210 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7580
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp14 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %210, !taffo.info !208, !llfi_index !7581
   %s2_30fixp158 = load i32, i32* %s2_30fixp14, align 4, !taffo.info !3797, !llfi_index !7582
   call void @doProfiling(i32 32)
   %211 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7583
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp120 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %211, !taffo.info !208, !llfi_index !7584
   %s2_30fixp264 = load i32, i32* %s2_30fixp120, align 4, !taffo.info !3797, !llfi_index !7585
   call void @doProfiling(i32 32)
@@ -16534,13 +15568,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 281:                                              ; preds = %280, %249, %246, %243
   %282 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7666
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp45 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %282, !taffo.info !208, !llfi_index !7667
   %s2_30fixp189 = load i32, i32* %s2_30fixp45, align 4, !taffo.info !3797, !llfi_index !7668
   call void @doProfiling(i32 32)
   %283 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7669
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp31 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %283, !taffo.info !208, !llfi_index !7670
   %s2_30fixp175 = load i32, i32* %s2_30fixp31, align 4, !taffo.info !3797, !llfi_index !7671
   call void @doProfiling(i32 32)
@@ -16552,13 +15584,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %286 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7675
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp46 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %286, !taffo.info !208, !llfi_index !7676
   %s2_30fixp190 = load i32, i32* %s2_30fixp46, align 4, !taffo.info !3797, !llfi_index !7677
   call void @doProfiling(i32 32)
   %287 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7678
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp32 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %287, !taffo.info !208, !llfi_index !7679
   %s2_30fixp176 = load i32, i32* %s2_30fixp32, align 4, !taffo.info !3797, !llfi_index !7680
   call void @doProfiling(i32 32)
@@ -16570,13 +15600,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %290 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7684
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp67 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %290, !taffo.info !208, !llfi_index !7685
   %s2_30fixp211 = load i32, i32* %s2_30fixp67, align 4, !taffo.info !3797, !llfi_index !7686
   call void @doProfiling(i32 32)
   %291 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7687
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp97 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %291, !taffo.info !208, !llfi_index !7688
   %s2_30fixp241 = load i32, i32* %s2_30fixp97, align 4, !taffo.info !3797, !llfi_index !7689
   call void @doProfiling(i32 32)
@@ -16588,13 +15616,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %294 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7693
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp68 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %294, !taffo.info !208, !llfi_index !7694
   %s2_30fixp212 = load i32, i32* %s2_30fixp68, align 4, !taffo.info !3797, !llfi_index !7695
   call void @doProfiling(i32 32)
   %295 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7696
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp98 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %295, !taffo.info !208, !llfi_index !7697
   %s2_30fixp242 = load i32, i32* %s2_30fixp98, align 4, !taffo.info !3797, !llfi_index !7698
   call void @doProfiling(i32 32)
@@ -16606,13 +15632,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %298 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7702
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp33 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %298, !taffo.info !208, !llfi_index !7703
   %s2_30fixp177 = load i32, i32* %s2_30fixp33, align 4, !taffo.info !3797, !llfi_index !7704
   call void @doProfiling(i32 32)
   %299 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7705
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp69 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %299, !taffo.info !208, !llfi_index !7706
   %s2_30fixp213 = load i32, i32* %s2_30fixp69, align 4, !taffo.info !3797, !llfi_index !7707
   call void @doProfiling(i32 32)
@@ -16624,13 +15648,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %302 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7711
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp34 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %302, !taffo.info !208, !llfi_index !7712
   %s2_30fixp178 = load i32, i32* %s2_30fixp34, align 4, !taffo.info !3797, !llfi_index !7713
   call void @doProfiling(i32 32)
   %303 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7714
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp70 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %303, !taffo.info !208, !llfi_index !7715
   %s2_30fixp214 = load i32, i32* %s2_30fixp70, align 4, !taffo.info !3797, !llfi_index !7716
   call void @doProfiling(i32 32)
@@ -16827,13 +15849,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 373:                                              ; preds = %372, %341, %338, %335
   %374 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7797
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp99 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %374, !taffo.info !208, !llfi_index !7798
   %s2_30fixp243 = load i32, i32* %s2_30fixp99, align 4, !taffo.info !3797, !llfi_index !7799
   call void @doProfiling(i32 32)
   %375 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7800
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp121 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %375, !taffo.info !208, !llfi_index !7801
   %s2_30fixp265 = load i32, i32* %s2_30fixp121, align 4, !taffo.info !3797, !llfi_index !7802
   call void @doProfiling(i32 32)
@@ -16845,13 +15865,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %378 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7806
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp100 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %378, !taffo.info !208, !llfi_index !7807
   %s2_30fixp244 = load i32, i32* %s2_30fixp100, align 4, !taffo.info !3797, !llfi_index !7808
   call void @doProfiling(i32 32)
   %379 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7809
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp122 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %379, !taffo.info !208, !llfi_index !7810
   %s2_30fixp266 = load i32, i32* %s2_30fixp122, align 4, !taffo.info !3797, !llfi_index !7811
   call void @doProfiling(i32 32)
@@ -16863,13 +15881,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %382 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7815
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp35 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %382, !taffo.info !208, !llfi_index !7816
   %s2_30fixp179 = load i32, i32* %s2_30fixp35, align 4, !taffo.info !3797, !llfi_index !7817
   call void @doProfiling(i32 32)
   %383 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7818
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp101 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %383, !taffo.info !208, !llfi_index !7819
   %s2_30fixp245 = load i32, i32* %s2_30fixp101, align 4, !taffo.info !3797, !llfi_index !7820
   call void @doProfiling(i32 32)
@@ -16881,13 +15897,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %386 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7824
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp36 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %386, !taffo.info !208, !llfi_index !7825
   %s2_30fixp180 = load i32, i32* %s2_30fixp36, align 4, !taffo.info !3797, !llfi_index !7826
   call void @doProfiling(i32 32)
   %387 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7827
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp102 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %387, !taffo.info !208, !llfi_index !7828
   %s2_30fixp246 = load i32, i32* %s2_30fixp102, align 4, !taffo.info !3797, !llfi_index !7829
   call void @doProfiling(i32 32)
@@ -17084,13 +16098,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 457:                                              ; preds = %456, %425, %422, %419
   %458 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7910
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp123 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %458, !taffo.info !208, !llfi_index !7911
   %s2_30fixp267 = load i32, i32* %s2_30fixp123, align 4, !taffo.info !3797, !llfi_index !7912
   call void @doProfiling(i32 32)
   %459 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7913
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp71 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %459, !taffo.info !208, !llfi_index !7914
   %s2_30fixp215 = load i32, i32* %s2_30fixp71, align 4, !taffo.info !3797, !llfi_index !7915
   call void @doProfiling(i32 32)
@@ -17102,13 +16114,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %462 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7919
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp124 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %462, !taffo.info !208, !llfi_index !7920
   %s2_30fixp268 = load i32, i32* %s2_30fixp124, align 4, !taffo.info !3797, !llfi_index !7921
   call void @doProfiling(i32 32)
   %463 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7922
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp72 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %463, !taffo.info !208, !llfi_index !7923
   %s2_30fixp216 = load i32, i32* %s2_30fixp72, align 4, !taffo.info !3797, !llfi_index !7924
   call void @doProfiling(i32 32)
@@ -17120,13 +16130,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %466 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7928
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp37 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %466, !taffo.info !208, !llfi_index !7929
   %s2_30fixp181 = load i32, i32* %s2_30fixp37, align 4, !taffo.info !3797, !llfi_index !7930
   call void @doProfiling(i32 32)
   %467 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !7931
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp125 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %467, !taffo.info !208, !llfi_index !7932
   %s2_30fixp269 = load i32, i32* %s2_30fixp125, align 4, !taffo.info !3797, !llfi_index !7933
   call void @doProfiling(i32 32)
@@ -17138,13 +16146,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %470 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7937
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp38 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %470, !taffo.info !208, !llfi_index !7938
   %s2_30fixp182 = load i32, i32* %s2_30fixp38, align 4, !taffo.info !3797, !llfi_index !7939
   call void @doProfiling(i32 32)
   %471 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !7940
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp126 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %471, !taffo.info !208, !llfi_index !7941
   %s2_30fixp270 = load i32, i32* %s2_30fixp126, align 4, !taffo.info !3797, !llfi_index !7942
   call void @doProfiling(i32 32)
@@ -17341,13 +16347,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 541:                                              ; preds = %540, %509, %506, %503
   %542 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8023
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp15 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %542, !taffo.info !208, !llfi_index !8024
   %s2_30fixp159 = load i32, i32* %s2_30fixp15, align 4, !taffo.info !3797, !llfi_index !8025
   call void @doProfiling(i32 32)
   %543 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8026
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp47 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %543, !taffo.info !208, !llfi_index !8027
   %s2_30fixp191 = load i32, i32* %s2_30fixp47, align 4, !taffo.info !3797, !llfi_index !8028
   call void @doProfiling(i32 32)
@@ -17359,13 +16363,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %546 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8032
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp16 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %546, !taffo.info !208, !llfi_index !8033
   %s2_30fixp160 = load i32, i32* %s2_30fixp16, align 4, !taffo.info !3797, !llfi_index !8034
   call void @doProfiling(i32 32)
   %547 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8035
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp48 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %547, !taffo.info !208, !llfi_index !8036
   %s2_30fixp192 = load i32, i32* %s2_30fixp48, align 4, !taffo.info !3797, !llfi_index !8037
   call void @doProfiling(i32 32)
@@ -17377,13 +16379,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %550 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8041
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp73 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %550, !taffo.info !208, !llfi_index !8042
   %s2_30fixp217 = load i32, i32* %s2_30fixp73, align 4, !taffo.info !3797, !llfi_index !8043
   call void @doProfiling(i32 32)
   %551 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8044
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp103 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %551, !taffo.info !208, !llfi_index !8045
   %s2_30fixp247 = load i32, i32* %s2_30fixp103, align 4, !taffo.info !3797, !llfi_index !8046
   call void @doProfiling(i32 32)
@@ -17395,13 +16395,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %554 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8050
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp74 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %554, !taffo.info !208, !llfi_index !8051
   %s2_30fixp218 = load i32, i32* %s2_30fixp74, align 4, !taffo.info !3797, !llfi_index !8052
   call void @doProfiling(i32 32)
   %555 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8053
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp104 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %555, !taffo.info !208, !llfi_index !8054
   %s2_30fixp248 = load i32, i32* %s2_30fixp104, align 4, !taffo.info !3797, !llfi_index !8055
   call void @doProfiling(i32 32)
@@ -17413,13 +16411,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %558 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8059
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp49 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %558, !taffo.info !208, !llfi_index !8060
   %s2_30fixp193 = load i32, i32* %s2_30fixp49, align 4, !taffo.info !3797, !llfi_index !8061
   call void @doProfiling(i32 32)
   %559 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8062
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp75 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %559, !taffo.info !208, !llfi_index !8063
   %s2_30fixp219 = load i32, i32* %s2_30fixp75, align 4, !taffo.info !3797, !llfi_index !8064
   call void @doProfiling(i32 32)
@@ -17431,13 +16427,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %562 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8068
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp50 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %562, !taffo.info !208, !llfi_index !8069
   %s2_30fixp194 = load i32, i32* %s2_30fixp50, align 4, !taffo.info !3797, !llfi_index !8070
   call void @doProfiling(i32 32)
   %563 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8071
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp76 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %563, !taffo.info !208, !llfi_index !8072
   %s2_30fixp220 = load i32, i32* %s2_30fixp76, align 4, !taffo.info !3797, !llfi_index !8073
   call void @doProfiling(i32 32)
@@ -17634,13 +16628,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 633:                                              ; preds = %632, %601, %598, %595
   %634 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8154
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp105 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %634, !taffo.info !208, !llfi_index !8155
   %s2_30fixp249 = load i32, i32* %s2_30fixp105, align 4, !taffo.info !3797, !llfi_index !8156
   call void @doProfiling(i32 32)
   %635 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8157
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp127 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %635, !taffo.info !208, !llfi_index !8158
   %s2_30fixp271 = load i32, i32* %s2_30fixp127, align 4, !taffo.info !3797, !llfi_index !8159
   call void @doProfiling(i32 32)
@@ -17652,13 +16644,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %638 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8163
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp106 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %638, !taffo.info !208, !llfi_index !8164
   %s2_30fixp250 = load i32, i32* %s2_30fixp106, align 4, !taffo.info !3797, !llfi_index !8165
   call void @doProfiling(i32 32)
   %639 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8166
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp128 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %639, !taffo.info !208, !llfi_index !8167
   %s2_30fixp272 = load i32, i32* %s2_30fixp128, align 4, !taffo.info !3797, !llfi_index !8168
   call void @doProfiling(i32 32)
@@ -17670,13 +16660,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %642 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8172
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp51 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %642, !taffo.info !208, !llfi_index !8173
   %s2_30fixp195 = load i32, i32* %s2_30fixp51, align 4, !taffo.info !3797, !llfi_index !8174
   call void @doProfiling(i32 32)
   %643 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8175
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp107 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %643, !taffo.info !208, !llfi_index !8176
   %s2_30fixp251 = load i32, i32* %s2_30fixp107, align 4, !taffo.info !3797, !llfi_index !8177
   call void @doProfiling(i32 32)
@@ -17688,13 +16676,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %646 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8181
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp52 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %646, !taffo.info !208, !llfi_index !8182
   %s2_30fixp196 = load i32, i32* %s2_30fixp52, align 4, !taffo.info !3797, !llfi_index !8183
   call void @doProfiling(i32 32)
   %647 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8184
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp108 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %647, !taffo.info !208, !llfi_index !8185
   %s2_30fixp252 = load i32, i32* %s2_30fixp108, align 4, !taffo.info !3797, !llfi_index !8186
   call void @doProfiling(i32 32)
@@ -17891,13 +16877,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 717:                                              ; preds = %716, %685, %682, %679
   %718 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8267
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp129 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %718, !taffo.info !208, !llfi_index !8268
   %s2_30fixp273 = load i32, i32* %s2_30fixp129, align 4, !taffo.info !3797, !llfi_index !8269
   call void @doProfiling(i32 32)
   %719 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8270
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp77 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %719, !taffo.info !208, !llfi_index !8271
   %s2_30fixp221 = load i32, i32* %s2_30fixp77, align 4, !taffo.info !3797, !llfi_index !8272
   call void @doProfiling(i32 32)
@@ -17909,13 +16893,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %722 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8276
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp130 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %722, !taffo.info !208, !llfi_index !8277
   %s2_30fixp274 = load i32, i32* %s2_30fixp130, align 4, !taffo.info !3797, !llfi_index !8278
   call void @doProfiling(i32 32)
   %723 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8279
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp78 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %723, !taffo.info !208, !llfi_index !8280
   %s2_30fixp222 = load i32, i32* %s2_30fixp78, align 4, !taffo.info !3797, !llfi_index !8281
   call void @doProfiling(i32 32)
@@ -17927,13 +16909,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %726 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8285
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp53 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %726, !taffo.info !208, !llfi_index !8286
   %s2_30fixp197 = load i32, i32* %s2_30fixp53, align 4, !taffo.info !3797, !llfi_index !8287
   call void @doProfiling(i32 32)
   %727 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8288
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp131 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %727, !taffo.info !208, !llfi_index !8289
   %s2_30fixp275 = load i32, i32* %s2_30fixp131, align 4, !taffo.info !3797, !llfi_index !8290
   call void @doProfiling(i32 32)
@@ -17945,13 +16925,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %730 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8294
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp54 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %730, !taffo.info !208, !llfi_index !8295
   %s2_30fixp198 = load i32, i32* %s2_30fixp54, align 4, !taffo.info !3797, !llfi_index !8296
   call void @doProfiling(i32 32)
   %731 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8297
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp132 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %731, !taffo.info !208, !llfi_index !8298
   %s2_30fixp276 = load i32, i32* %s2_30fixp132, align 4, !taffo.info !3797, !llfi_index !8299
   call void @doProfiling(i32 32)
@@ -18148,13 +17126,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 801:                                              ; preds = %800, %769, %766, %763
   %802 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8380
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp109 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %802, !taffo.info !208, !llfi_index !8381
   %s2_30fixp253 = load i32, i32* %s2_30fixp109, align 4, !taffo.info !3797, !llfi_index !8382
   call void @doProfiling(i32 32)
   %803 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8383
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp79 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %803, !taffo.info !208, !llfi_index !8384
   %s2_30fixp223 = load i32, i32* %s2_30fixp79, align 4, !taffo.info !3797, !llfi_index !8385
   call void @doProfiling(i32 32)
@@ -18166,13 +17142,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %806 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8389
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp110 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %806, !taffo.info !208, !llfi_index !8390
   %s2_30fixp254 = load i32, i32* %s2_30fixp110, align 4, !taffo.info !3797, !llfi_index !8391
   call void @doProfiling(i32 32)
   %807 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8392
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp80 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %807, !taffo.info !208, !llfi_index !8393
   %s2_30fixp224 = load i32, i32* %s2_30fixp80, align 4, !taffo.info !3797, !llfi_index !8394
   call void @doProfiling(i32 32)
@@ -18188,13 +17162,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %810 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8400
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp81 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %810, !taffo.info !208, !llfi_index !8401
   %s2_30fixp225 = load i32, i32* %s2_30fixp81, align 4, !taffo.info !6870, !llfi_index !8402
   call void @doProfiling(i32 32)
   %811 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8403
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp82 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %811, !taffo.info !208, !llfi_index !8404
   %s2_30fixp226 = load i32, i32* %s2_30fixp82, align 4, !taffo.info !3797, !llfi_index !8405
   call void @doProfiling(i32 32)
@@ -18228,13 +17200,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 13)
   %823 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8420
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp17 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %823, !taffo.info !208, !llfi_index !8421
   %s2_30fixp161 = load i32, i32* %s2_30fixp17, align 4, !taffo.info !6870, !llfi_index !8422
   call void @doProfiling(i32 32)
   %824 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8423
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp18 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %824, !taffo.info !208, !llfi_index !8424
   %s2_30fixp162 = load i32, i32* %s2_30fixp18, align 4, !taffo.info !3797, !llfi_index !8425
   call void @doProfiling(i32 32)
@@ -18266,13 +17236,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 13)
   %835 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8439
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp133 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %835, !taffo.info !208, !llfi_index !8440
   %s2_30fixp277 = load i32, i32* %s2_30fixp133, align 4, !taffo.info !3797, !llfi_index !8441
   call void @doProfiling(i32 32)
   %836 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8442
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp111 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %836, !taffo.info !208, !llfi_index !8443
   %s2_30fixp255 = load i32, i32* %s2_30fixp111, align 4, !taffo.info !3797, !llfi_index !8444
   call void @doProfiling(i32 32)
@@ -18284,13 +17252,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %839 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8448
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp134 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %839, !taffo.info !208, !llfi_index !8449
   %s2_30fixp278 = load i32, i32* %s2_30fixp134, align 4, !taffo.info !3797, !llfi_index !8450
   call void @doProfiling(i32 32)
   %840 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8451
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp112 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %840, !taffo.info !208, !llfi_index !8452
   %s2_30fixp256 = load i32, i32* %s2_30fixp112, align 4, !taffo.info !3797, !llfi_index !8453
   call void @doProfiling(i32 32)
@@ -18306,13 +17272,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %843 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8459
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp113 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %843, !taffo.info !208, !llfi_index !8460
   %s2_30fixp257 = load i32, i32* %s2_30fixp113, align 4, !taffo.info !6870, !llfi_index !8461
   call void @doProfiling(i32 32)
   %844 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8462
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp114 = getelementptr inbounds i32, i32* %.s2_30fixp4, i64 %844, !taffo.info !208, !llfi_index !8463
   %s2_30fixp258 = load i32, i32* %s2_30fixp114, align 4, !taffo.info !3797, !llfi_index !8464
   call void @doProfiling(i32 32)
@@ -18346,13 +17310,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 13)
   %856 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8479
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp19 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %856, !taffo.info !208, !llfi_index !8480
   %s2_30fixp163 = load i32, i32* %s2_30fixp19, align 4, !taffo.info !6870, !llfi_index !8481
   call void @doProfiling(i32 32)
   %857 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8482
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp20 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %857, !taffo.info !208, !llfi_index !8483
   %s2_30fixp164 = load i32, i32* %s2_30fixp20, align 4, !taffo.info !3797, !llfi_index !8484
   call void @doProfiling(i32 32)
@@ -18384,13 +17346,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 13)
   %868 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8498
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp83 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %868, !taffo.info !208, !llfi_index !8499
   %s2_30fixp227 = load i32, i32* %s2_30fixp83, align 4, !taffo.info !3797, !llfi_index !8500
   call void @doProfiling(i32 32)
   %869 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8501
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp135 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %869, !taffo.info !208, !llfi_index !8502
   %s2_30fixp279 = load i32, i32* %s2_30fixp135, align 4, !taffo.info !3797, !llfi_index !8503
   call void @doProfiling(i32 32)
@@ -18402,13 +17362,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %872 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8507
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp84 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %872, !taffo.info !208, !llfi_index !8508
   %s2_30fixp228 = load i32, i32* %s2_30fixp84, align 4, !taffo.info !3797, !llfi_index !8509
   call void @doProfiling(i32 32)
   %873 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8510
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp136 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %873, !taffo.info !208, !llfi_index !8511
   %s2_30fixp280 = load i32, i32* %s2_30fixp136, align 4, !taffo.info !3797, !llfi_index !8512
   call void @doProfiling(i32 32)
@@ -18424,13 +17382,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %876 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8518
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp137 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %876, !taffo.info !208, !llfi_index !8519
   %s2_30fixp281 = load i32, i32* %s2_30fixp137, align 4, !taffo.info !6870, !llfi_index !8520
   call void @doProfiling(i32 32)
   %877 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8521
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp138 = getelementptr inbounds i32, i32* %.s2_30fixp5, i64 %877, !taffo.info !208, !llfi_index !8522
   %s2_30fixp282 = load i32, i32* %s2_30fixp138, align 4, !taffo.info !3797, !llfi_index !8523
   call void @doProfiling(i32 32)
@@ -18464,13 +17420,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 13)
   %889 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8538
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp21 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %889, !taffo.info !208, !llfi_index !8539
   %s2_30fixp165 = load i32, i32* %s2_30fixp21, align 4, !taffo.info !6870, !llfi_index !8540
   call void @doProfiling(i32 32)
   %890 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8541
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp22 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %890, !taffo.info !208, !llfi_index !8542
   %s2_30fixp166 = load i32, i32* %s2_30fixp22, align 4, !taffo.info !3797, !llfi_index !8543
   call void @doProfiling(i32 32)
@@ -18550,13 +17504,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 918:                                              ; preds = %917, %910
   %919 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8577
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp39 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %919, !taffo.info !208, !llfi_index !8578
   %s2_30fixp183 = load i32, i32* %s2_30fixp39, align 4, !taffo.info !3797, !llfi_index !8579
   call void @doProfiling(i32 32)
   %920 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8580
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp23 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %920, !taffo.info !208, !llfi_index !8581
   %s2_30fixp167 = load i32, i32* %s2_30fixp23, align 4, !taffo.info !3797, !llfi_index !8582
   call void @doProfiling(i32 32)
@@ -18568,13 +17520,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %923 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8586
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp40 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %923, !taffo.info !208, !llfi_index !8587
   %s2_30fixp184 = load i32, i32* %s2_30fixp40, align 4, !taffo.info !3797, !llfi_index !8588
   call void @doProfiling(i32 32)
   %924 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8589
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp24 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %924, !taffo.info !208, !llfi_index !8590
   %s2_30fixp168 = load i32, i32* %s2_30fixp24, align 4, !taffo.info !3797, !llfi_index !8591
   call void @doProfiling(i32 32)
@@ -18590,13 +17540,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %927 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8597
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp25 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %927, !taffo.info !208, !llfi_index !8598
   %s2_30fixp169 = load i32, i32* %s2_30fixp25, align 4, !taffo.info !6870, !llfi_index !8599
   call void @doProfiling(i32 32)
   %928 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8600
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp26 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %928, !taffo.info !208, !llfi_index !8601
   %s2_30fixp170 = load i32, i32* %s2_30fixp26, align 4, !taffo.info !3797, !llfi_index !8602
   call void @doProfiling(i32 32)
@@ -18630,13 +17578,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 13)
   %940 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8617
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp85 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %940, !taffo.info !208, !llfi_index !8618
   %s2_30fixp229 = load i32, i32* %s2_30fixp85, align 4, !taffo.info !6870, !llfi_index !8619
   call void @doProfiling(i32 32)
   %941 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8620
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp86 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %941, !taffo.info !208, !llfi_index !8621
   %s2_30fixp230 = load i32, i32* %s2_30fixp86, align 4, !taffo.info !3797, !llfi_index !8622
   call void @doProfiling(i32 32)
@@ -18668,13 +17614,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 13)
   %952 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8636
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp55 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %952, !taffo.info !208, !llfi_index !8637
   %s2_30fixp199 = load i32, i32* %s2_30fixp55, align 4, !taffo.info !3797, !llfi_index !8638
   call void @doProfiling(i32 32)
   %953 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8639
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp41 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %953, !taffo.info !208, !llfi_index !8640
   %s2_30fixp185 = load i32, i32* %s2_30fixp41, align 4, !taffo.info !3797, !llfi_index !8641
   call void @doProfiling(i32 32)
@@ -18686,13 +17630,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %956 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8645
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp56 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %956, !taffo.info !208, !llfi_index !8646
   %s2_30fixp200 = load i32, i32* %s2_30fixp56, align 4, !taffo.info !3797, !llfi_index !8647
   call void @doProfiling(i32 32)
   %957 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8648
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp42 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %957, !taffo.info !208, !llfi_index !8649
   %s2_30fixp186 = load i32, i32* %s2_30fixp42, align 4, !taffo.info !3797, !llfi_index !8650
   call void @doProfiling(i32 32)
@@ -18708,13 +17650,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %960 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8656
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp43 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %960, !taffo.info !208, !llfi_index !8657
   %s2_30fixp187 = load i32, i32* %s2_30fixp43, align 4, !taffo.info !6870, !llfi_index !8658
   call void @doProfiling(i32 32)
   %961 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8659
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp44 = getelementptr inbounds i32, i32* %.s2_30fixp1, i64 %961, !taffo.info !208, !llfi_index !8660
   %s2_30fixp188 = load i32, i32* %s2_30fixp44, align 4, !taffo.info !3797, !llfi_index !8661
   call void @doProfiling(i32 32)
@@ -18748,13 +17688,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 13)
   %973 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8676
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp87 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %973, !taffo.info !208, !llfi_index !8677
   %s2_30fixp231 = load i32, i32* %s2_30fixp87, align 4, !taffo.info !6870, !llfi_index !8678
   call void @doProfiling(i32 32)
   %974 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8679
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp88 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %974, !taffo.info !208, !llfi_index !8680
   %s2_30fixp232 = load i32, i32* %s2_30fixp88, align 4, !taffo.info !3797, !llfi_index !8681
   call void @doProfiling(i32 32)
@@ -18786,13 +17724,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 13)
   %985 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8695
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp27 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %985, !taffo.info !208, !llfi_index !8696
   %s2_30fixp171 = load i32, i32* %s2_30fixp27, align 4, !taffo.info !3797, !llfi_index !8697
   call void @doProfiling(i32 32)
   %986 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8698
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp57 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %986, !taffo.info !208, !llfi_index !8699
   %s2_30fixp201 = load i32, i32* %s2_30fixp57, align 4, !taffo.info !3797, !llfi_index !8700
   call void @doProfiling(i32 32)
@@ -18804,13 +17740,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %989 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8704
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp28 = getelementptr inbounds i32, i32* %.s2_30fixp, i64 %989, !taffo.info !208, !llfi_index !8705
   %s2_30fixp172 = load i32, i32* %s2_30fixp28, align 4, !taffo.info !3797, !llfi_index !8706
   call void @doProfiling(i32 32)
   %990 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8707
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp58 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %990, !taffo.info !208, !llfi_index !8708
   %s2_30fixp202 = load i32, i32* %s2_30fixp58, align 4, !taffo.info !3797, !llfi_index !8709
   call void @doProfiling(i32 32)
@@ -18826,13 +17760,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 15)
   %993 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8715
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp59 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %993, !taffo.info !208, !llfi_index !8716
   %s2_30fixp203 = load i32, i32* %s2_30fixp59, align 4, !taffo.info !6870, !llfi_index !8717
   call void @doProfiling(i32 32)
   %994 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8718
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp60 = getelementptr inbounds i32, i32* %.s2_30fixp2, i64 %994, !taffo.info !208, !llfi_index !8719
   %s2_30fixp204 = load i32, i32* %s2_30fixp60, align 4, !taffo.info !3797, !llfi_index !8720
   call void @doProfiling(i32 32)
@@ -18866,13 +17798,11 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
   call void @doProfiling(i32 13)
   %1006 = sext i16 %.2 to i64, !taffo.info !122, !llfi_index !8735
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp89 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %1006, !taffo.info !208, !llfi_index !8736
   %s2_30fixp233 = load i32, i32* %s2_30fixp89, align 4, !taffo.info !6870, !llfi_index !8737
   call void @doProfiling(i32 32)
   %1007 = sext i16 %.24 to i64, !taffo.info !5751, !llfi_index !8738
   call void @doProfiling(i32 40)
-  call void @doProfiling(i32 34)
   %s2_30fixp90 = getelementptr inbounds i32, i32* %.s2_30fixp3, i64 %1007, !taffo.info !208, !llfi_index !8739
   %s2_30fixp234 = load i32, i32* %s2_30fixp90, align 4, !taffo.info !3797, !llfi_index !8740
   call void @doProfiling(i32 32)
@@ -18954,7 +17884,7 @@ define internal noundef i32 @_Z16coplanar_tri_triPfS_S_S_S_S_S_.2.5_fixp(i32* no
 
 1036:                                             ; preds = %1035, %1033, %916, %798, %791, %714, %707, %630, %623, %538, %531, %454, %447, %370, %363, %278, %271, %194, %187, %110, %103
   %.0 = phi i32 [ 1, %103 ], [ 1, %187 ], [ 1, %271 ], [ 1, %363 ], [ 1, %447 ], [ 1, %531 ], [ 1, %623 ], [ 1, %707 ], [ 1, %791 ], [ 1, %916 ], [ 1, %1033 ], [ 0, %1035 ], [ 1, %798 ], [ 1, %714 ], [ 1, %630 ], [ 1, %538 ], [ 1, %454 ], [ 1, %370 ], [ 1, %278 ], [ 1, %194 ], [ 1, %110 ], !taffo.info !122, !llfi_index !8775
-  call void @doProfiling(i32 55)
+  call void @doProfiling(i32 1)
   ret i32 %.0, !llfi_index !8776
 }
 

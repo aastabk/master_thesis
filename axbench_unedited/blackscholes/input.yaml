@@ -1,0 +1,47 @@
+compileOption:
+  instSelMethod:
+  - insttype:
+      include:
+      - all
+      # SDC > 50%
+      # - fmul
+      # - call
+      # - fadd
+      # - fneg
+      # - fsub
+      # - load
+      # - ret
+      # - store
+      exclude:
+      - getelementptr
+      - phi
+
+  regSelMethod: regloc
+  regloc: allreg
+
+  tracingPropagation: False # trace dynamic instruction values.
+
+  tracingPropagationOption:
+    maxTrace: 250 # max number of instructions to trace during fault injection run
+    debugTrace: False
+    generateCDFG: True
+
+runOption:
+- run:
+    numOfRuns: 5
+    fi_type: bitflip
+    verbose: true
+    fi_cycle: 6433229
+    fi_max_multiple: 1
+    # fi_bit: all
+    # fi_random_seed: 936434547
+    # NEEDED TO RECREATE A RUN
+    # fi_index: 633
+    # fi_cycle: 6433229
+    # fi_reg_index: 1
+    # fi_reg_pos: 1
+    # fi_reg_width: 32
+    # fi_bit: 17
+    # fi_random_seed: 936434547
+
+defaultTimeout: 10.669500

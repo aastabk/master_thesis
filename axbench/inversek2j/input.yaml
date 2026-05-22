@@ -3,8 +3,21 @@ compileOption:
       - insttype:
             include:
               - all
+              # SDC > 50%
+              #   - add
+              #   - fptosi
+              #   - fmul
+              #   - sext
+              #   - sdiv
+              #   - load
+              #   - sub
+              #   - sitofp
+              #   - uitofp
+              #   - invoke
+              #   - store
             exclude:
-              - ret
+              - getelementptr
+              - phi
 
     regSelMethod: regloc
     regloc: allreg
@@ -21,8 +34,12 @@ runOption:
         numOfRuns: 5
         fi_type: bitflip
         verbose: true
-        fi_index: 1
-        # fi_cycle: 6
+        fi_cycle: 140000
+        fi_max_multiple: 1
+        # fi_bit: all
         # window_len_multiple: 2
-        # fi_max_multiple: 3
+        # fi_index: 1
         # fi_num_bits: 1
+        # fi_random_seed: 3383708800
+
+defaultTimeout: 6.1101900

@@ -1,0 +1,34 @@
+compileOption:
+    instSelMethod:
+      - insttype:
+            include:
+              - all
+              # SDC > 50%
+              # - ret
+            exclude:
+              - getelementptr
+              - phi
+
+    regSelMethod: regloc
+    regloc: allreg
+
+    tracingPropagation: False # trace dynamic instruction values.
+
+    tracingPropagationOption:
+        maxTrace: 250 # max number of instructions to trace during fault injection run
+        debugTrace: False
+        generateCDFG: True
+
+runOption:
+  - run:
+        numOfRuns: 5
+        fi_type: bitflip
+        verbose: true
+        fi_cycle: 350313
+        fi_max_multiple: 1
+        # fi_bit: all
+        # window_len_multiple: 2
+        # fi_index: 10
+        # fi_num_bits: 3
+
+defaultTimeout: 0.103783800

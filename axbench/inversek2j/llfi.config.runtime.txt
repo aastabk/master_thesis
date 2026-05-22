@@ -1,2 +1,0 @@
-fi_index=1
-fi_type=bitflip

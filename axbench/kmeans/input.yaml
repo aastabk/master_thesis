@@ -4,7 +4,8 @@ compileOption:
       include:
       - all
       exclude:
-      - ret
+      - getelementptr
+      - phi
 
   regSelMethod: regloc
   regloc: allreg
@@ -21,8 +22,10 @@ runOption:
     numOfRuns: 5
     fi_type: bitflip
     verbose: true
+    fi_cycle: 204823852
+    fi_max_multiple: 1
+    # window_len_multiple: 2
     # fi_index: 10
-    # fi_cycle: 6
-    window_len_multiple: 2
-    # fi_max_multiple: 3
     # fi_num_bits: 3
+
+defaultTimeout: 27.280700

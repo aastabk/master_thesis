@@ -1,5 +1,25 @@
 # Large benchmark / data files
-*.data
-*.dat
+*.data*
+*.dat*
 axbench/applications/**/data/
 llfi-build/
+TAFFO/
+llvm-project/
+factorial/
+axbench/*/runs/
+axbench_unedited/*/runs/
+axbench/*/llfi/
+axbench_unedited/*/llfi/
+axbench/*/results/
+axbench_unedited/*/results/
+axbench/*/graphs/
+axbench_unedited/*/graphs/
+axbench/llfi_assembly_files/
+axbench/taffo_assembly_files/
+*.txt
+*.csv
+*.png
+axbench/*/comparison_files/
+axbench_unedited/*/comparison_files/
+axbench/venv/
+axbench_unedited/venv/

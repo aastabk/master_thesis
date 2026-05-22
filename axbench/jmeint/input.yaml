@@ -3,8 +3,10 @@ compileOption:
   - insttype:
       include:
       - all
+      # SDC > 50%
       exclude:
-      - ret
+      - getelementptr
+      - phi
 
   regSelMethod: regloc
   regloc: allreg
@@ -21,8 +23,11 @@ runOption:
     numOfRuns: 5
     fi_type: bitflip
     verbose: true
+    fi_cycle: 2598517
+    fi_max_multiple: 1
+    # fi_random_seed: 2544552077
+    # window_len_multiple: 2
     # fi_index: 10
-    # fi_cycle: 6
-    window_len_multiple: 2
-    # fi_max_multiple: 3
     # fi_num_bits: 3
+
+defaultTimeout: 1.759477100

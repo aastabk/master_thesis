@@ -21,25 +21,55 @@ $ ./compileAndRun.sh <inputFile>
 
 The return codes are POSIX signals, corresponding to the positive N value. The error messages are as follows:
 
-- `EPERM`   1	Operation not permitted
-- `ENOENT`  2	No such file or directory
-- `ESRCH`	3	No such process
-- `EINTR`	4	Interrupted system call
-- `EIO`	    5	Input/output error
-- `ENXIO`	6	No such device or address
-- `E2BIG`	7	Argument list too long
-- `ENOEXEC`	8	Exec format error
-- `EBADF`	9	Bad file descriptor
-- `ECHILD`	10	No child processes
-- `EAGAIN`	11	Resource temporarily unavailable
-- `ENOMEM`	12	Cannot allocate memory
-- `EACCES`	13	Permission denied
-- `EFAULT`	14	Bad address
-- `ENOTBLK`	15	Block device required
-- `EBUSY`	16	Device or resource busy
-- `EEXIST`	17	File exists
-- `EXDEV`	18	Invalid cross-device link
-- `ENODEV`	19	No such device
-- `ENOTDIR`	20	Not a directory
+Signal        x86/ARM     Alpha/   MIPS   PARISC   Notes
+            most others   SPARC
+─────────────────────────────────────────────────────────────────
+SIGHUP           1           1       1       1
+SIGINT           2           2       2       2
+SIGQUIT          3           3       3       3
+SIGILL           4           4       4       4
+SIGTRAP          5           5       5       5
+SIGABRT          6           6       6       6
+SIGIOT           6           6       6       6
+SIGBUS           7          10      10      10
+SIGEMT           -           7       7      -
+SIGFPE           8           8       8       8
+SIGKILL          9           9       9       9
+SIGUSR1         10          30      16      16
+SIGSEGV         11          11      11      11
+SIGUSR2         12          31      17      17
+SIGPIPE         13          13      13      13
+SIGALRM         14          14      14      14
+SIGTERM         15          15      15      15
+SIGSTKFLT       16          -       -        7
+SIGCHLD         17          20      18      18
+SIGCLD           -          -       18      -
+SIGCONT         18          19      25      26
+SIGSTOP         19          17      23      24
+SIGTSTP         20          18      24      25
+SIGTTIN         21          21      26      27
+SIGTTOU         22          22      27      28
+SIGURG          23          16      21      29
+SIGXCPU         24          24      30      12
+SIGXFSZ         25          25      31      30
+SIGVTALRM       26          26      28      20
+SIGPROF         27          27      29      21
+SIGWINCH        28          28      20      23
+SIGIO           29          23      22      22
+SIGPOLL                                            Same as SIGIO
+SIGPWR          30         29/-     19      19
+SIGINFO          -         29/-     -       -
+SIGLOST          -         -/29     -       -
+SIGSYS          31          12      12      31
+SIGUNUSED       31          -       -       31
 
+To get the graphs:
 
+```bash
+$ python3 -m venv venv
+$ source venv/bin/activate
+
+# To download the necessary libraries
+$ pip install --upgrade pip
+$ pip install "numpy<2" matplotlib pandas
+```
