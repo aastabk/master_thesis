@@ -4,14 +4,17 @@ compileOption:
       include:
       - all
       # SDC > 50%
+      # - zext
+      # - ret
       # - fmul
       # - call
-      # - fadd
-      # - fneg
-      # - fsub
-      # - load
-      # - ret
-      # - store
+      # - sitofp
+      # - udiv
+      # - sdiv
+      # - fdiv
+      # - sub
+      # - fptoui
+      # - fpext
       exclude:
       - getelementptr
       - phi
@@ -44,4 +47,4 @@ runOption:
     # fi_bit: 17
     # fi_random_seed: 936434547
 
-defaultTimeout: 10.669500
+defaultTimeout: 10.879100

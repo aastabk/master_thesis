@@ -31,4 +31,4 @@ sobel_systematic(){
 
     ./gather_csv.sh sobel ${CSV_FILE}
 }
-sobel_systematic
+# sobel_systematic

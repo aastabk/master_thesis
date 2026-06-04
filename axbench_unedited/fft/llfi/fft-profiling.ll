@@ -48,25 +48,41 @@ $_ZN12AxBenchTimer5resetEv = comdat any
 
 ; Function Attrs: mustprogress noinline nounwind optnone uwtable
 define dso_local void @_Z9fftSinCosfPfS_(float noundef %0, ptr noundef %1, ptr noundef %2) #0 {
+  call void @doProfiling(i32 31)
   %4 = alloca float, align 4, !llfi_index !6
+  call void @doProfiling(i32 31)
   %5 = alloca ptr, align 8, !llfi_index !7
+  call void @doProfiling(i32 31)
   %6 = alloca ptr, align 8, !llfi_index !8
+  call void @doProfiling(i32 33)
   store float %0, ptr %4, align 4, !llfi_index !9
   store ptr %1, ptr %5, align 8, !llfi_index !10
   store ptr %2, ptr %6, align 8, !llfi_index !11
   %7 = load float, ptr %4, align 4, !llfi_index !12
+  call void @doProfiling(i32 32)
   %8 = fpext float %7 to double, !llfi_index !13
+  call void @doProfiling(i32 46)
   %9 = fmul double 0xC01921FB54442D18, %8, !llfi_index !14
+  call void @doProfiling(i32 18)
   %10 = call double @sin(double noundef %9) #11, !llfi_index !15
+  call void @doProfiling(i32 56)
   %11 = fptrunc double %10 to float, !llfi_index !16
+  call void @doProfiling(i32 45)
   %12 = load ptr, ptr %5, align 8, !llfi_index !17
+  call void @doProfiling(i32 33)
   store float %11, ptr %12, align 4, !llfi_index !18
   %13 = load float, ptr %4, align 4, !llfi_index !19
+  call void @doProfiling(i32 32)
   %14 = fpext float %13 to double, !llfi_index !20
+  call void @doProfiling(i32 46)
   %15 = fmul double 0xC01921FB54442D18, %14, !llfi_index !21
+  call void @doProfiling(i32 18)
   %16 = call double @cos(double noundef %15) #11, !llfi_index !22
+  call void @doProfiling(i32 56)
   %17 = fptrunc double %16 to float, !llfi_index !23
+  call void @doProfiling(i32 45)
   %18 = load ptr, ptr %6, align 8, !llfi_index !24
+  call void @doProfiling(i32 33)
   store float %17, ptr %18, align 4, !llfi_index !25
   ret void, !llfi_index !26
 }
@@ -79,31 +95,53 @@ declare double @cos(double noundef) #1
 
 ; Function Attrs: noinline norecurse optnone uwtable
 define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personality ptr @__gxx_personality_v0 {
+  call void @doProfiling(i32 31)
   %3 = alloca ptr, align 8, !llfi_index !27
+  call void @doProfiling(i32 31)
   %4 = alloca ptr, align 8, !llfi_index !28
+  call void @doProfiling(i32 31)
   %5 = alloca ptr, align 8, !llfi_index !29
+  call void @doProfiling(i32 31)
   %6 = alloca ptr, align 8, !llfi_index !30
+  call void @doProfiling(i32 31)
   %7 = alloca i32, align 4, !llfi_index !31
+  call void @doProfiling(i32 31)
   %8 = alloca i32, align 4, !llfi_index !32
+  call void @doProfiling(i32 31)
   %9 = alloca ptr, align 8, !llfi_index !33
+  call void @doProfiling(i32 31)
   %10 = alloca i32, align 4, !llfi_index !34
+  call void @doProfiling(i32 31)
   %11 = alloca i32, align 4, !llfi_index !35
+  call void @doProfiling(i32 31)
   %12 = alloca %"class.std::__cxx11::basic_string", align 8, !llfi_index !36
+  call void @doProfiling(i32 31)
   %13 = alloca %"class.std::allocator", align 1, !llfi_index !37
+  call void @doProfiling(i32 31)
   %14 = alloca ptr, align 8, !llfi_index !38
+  call void @doProfiling(i32 31)
   %15 = alloca i32, align 4, !llfi_index !39
+  call void @doProfiling(i32 31)
   %16 = alloca %"class.std::basic_ofstream", align 8, !llfi_index !40
+  call void @doProfiling(i32 31)
   %17 = alloca i32, align 4, !llfi_index !41
+  call void @doProfiling(i32 31)
   %18 = alloca i32, align 4, !llfi_index !42
+  call void @doProfiling(i32 31)
   %19 = alloca %class.AxBenchTimer, align 8, !llfi_index !43
+  call void @doProfiling(i32 31)
   %20 = alloca i64, align 8, !llfi_index !44
+  call void @doProfiling(i32 33)
   store i32 0, ptr %7, align 4, !llfi_index !45
+  call void @doProfiling(i32 33)
   store i32 %0, ptr %8, align 4, !llfi_index !46
   store ptr %1, ptr %9, align 8, !llfi_index !47
   %21 = load ptr, ptr %9, align 8, !llfi_index !48
   %22 = getelementptr inbounds ptr, ptr %21, i64 1, !llfi_index !49
   %23 = load ptr, ptr %22, align 8, !llfi_index !50
   %24 = call i32 @atoi(ptr noundef %23) #12, !llfi_index !51
+  call void @doProfiling(i32 56)
+  call void @doProfiling(i32 33)
   store i32 %24, ptr %11, align 4, !llfi_index !52
   %25 = load ptr, ptr %9, align 8, !llfi_index !53
   %26 = getelementptr inbounds ptr, ptr %25, i64 2, !llfi_index !54
@@ -123,6 +161,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
           to label %32 unwind label %70, !llfi_index !64
 
 32:                                               ; preds = %30
+  call void @doProfiling(i32 5)
   invoke void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEE4openERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode(ptr noundef nonnull align 8 dereferenceable(248) %16, ptr noundef nonnull align 8 dereferenceable(32) %12, i32 noundef 16)
           to label %33 unwind label %74, !llfi_index !65
 
@@ -130,38 +169,58 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
   %34 = load ptr, ptr %16, align 8, !llfi_index !66
   %35 = getelementptr i8, ptr %34, i64 -24, !llfi_index !67
   %36 = load i64, ptr %35, align 8, !llfi_index !68
+  call void @doProfiling(i32 32)
   %37 = getelementptr inbounds i8, ptr %16, i64 %36, !llfi_index !69
+  call void @doProfiling(i32 5)
   %38 = invoke noundef i64 @_ZNSt8ios_base9precisionEl(ptr noundef nonnull align 8 dereferenceable(216) %37, i64 noundef 5)
           to label %39 unwind label %74, !llfi_index !70
 
 39:                                               ; preds = %33
   %40 = load i32, ptr %11, align 4, !llfi_index !71
+  call void @doProfiling(i32 32)
   %41 = sext i32 %40 to i64, !llfi_index !72
+  call void @doProfiling(i32 40)
   %42 = mul i64 %41, 8, !llfi_index !73
+  call void @doProfiling(i32 17)
+  call void @doProfiling(i32 56)
   %43 = call noalias ptr @malloc(i64 noundef %42) #13, !llfi_index !74
   store ptr %43, ptr @_ZL1x, align 8, !llfi_index !75
   %44 = load i32, ptr %11, align 4, !llfi_index !76
+  call void @doProfiling(i32 32)
   %45 = sext i32 %44 to i64, !llfi_index !77
+  call void @doProfiling(i32 40)
   %46 = mul i64 %45, 8, !llfi_index !78
+  call void @doProfiling(i32 17)
+  call void @doProfiling(i32 56)
   %47 = call noalias ptr @malloc(i64 noundef %46) #13, !llfi_index !79
   store ptr %47, ptr @_ZL1f, align 8, !llfi_index !80
   %48 = load i32, ptr %11, align 4, !llfi_index !81
+  call void @doProfiling(i32 32)
   %49 = sext i32 %48 to i64, !llfi_index !82
+  call void @doProfiling(i32 40)
   %50 = mul i64 %49, 4, !llfi_index !83
+  call void @doProfiling(i32 17)
+  call void @doProfiling(i32 56)
   %51 = call noalias ptr @malloc(i64 noundef %50) #13, !llfi_index !84
   store ptr %51, ptr @_ZL7indices, align 8, !llfi_index !85
   %52 = load ptr, ptr @_ZL1x, align 8, !llfi_index !86
   %53 = icmp eq ptr %52, null, !llfi_index !87
+  call void @doProfiling(i32 53)
+  call void @doProfiling(i32 2)
   br i1 %53, label %60, label %54, !llfi_index !88
 
 54:                                               ; preds = %39
   %55 = load ptr, ptr @_ZL1f, align 8, !llfi_index !89
   %56 = icmp eq ptr %55, null, !llfi_index !90
+  call void @doProfiling(i32 53)
+  call void @doProfiling(i32 2)
   br i1 %56, label %60, label %57, !llfi_index !91
 
 57:                                               ; preds = %54
   %58 = load ptr, ptr @_ZL7indices, align 8, !llfi_index !92
   %59 = icmp eq ptr %58, null, !llfi_index !93
+  call void @doProfiling(i32 53)
+  call void @doProfiling(i32 2)
   br i1 %59, label %60, label %78, !llfi_index !94
 
 60:                                               ; preds = %57, %54, %39
@@ -173,16 +232,21 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
           to label %64 unwind label %74, !llfi_index !96
 
 64:                                               ; preds = %62
+  call void @doProfiling(i32 33)
   store i32 -1, ptr %7, align 4, !llfi_index !97
+  call void @doProfiling(i32 33)
   store i32 1, ptr %17, align 4, !llfi_index !98
   br label %162, !llfi_index !99
 
 65:                                               ; preds = %2
   %66 = landingpad { ptr, i32 }
           cleanup, !llfi_index !100
+  call void @doProfiling(i32 64)
   %67 = extractvalue { ptr, i32 } %66, 0, !llfi_index !101
   store ptr %67, ptr %14, align 8, !llfi_index !102
   %68 = extractvalue { ptr, i32 } %66, 1, !llfi_index !103
+  call void @doProfiling(i32 64)
+  call void @doProfiling(i32 33)
   store i32 %68, ptr %15, align 4, !llfi_index !104
   store ptr %13, ptr %4, align 8, !llfi_index !105
   %69 = load ptr, ptr %4, align 8, !llfi_index !106
@@ -192,59 +256,88 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
 70:                                               ; preds = %30
   %71 = landingpad { ptr, i32 }
           cleanup, !llfi_index !109
+  call void @doProfiling(i32 64)
   %72 = extractvalue { ptr, i32 } %71, 0, !llfi_index !110
   store ptr %72, ptr %14, align 8, !llfi_index !111
   %73 = extractvalue { ptr, i32 } %71, 1, !llfi_index !112
+  call void @doProfiling(i32 64)
+  call void @doProfiling(i32 33)
   store i32 %73, ptr %15, align 4, !llfi_index !113
   br label %164, !llfi_index !114
 
 74:                                               ; preds = %160, %154, %147, %145, %137, %135, %127, %120, %115, %113, %111, %106, %105, %62, %60, %33, %32
   %75 = landingpad { ptr, i32 }
           cleanup, !llfi_index !115
+  call void @doProfiling(i32 64)
   %76 = extractvalue { ptr, i32 } %75, 0, !llfi_index !116
   store ptr %76, ptr %14, align 8, !llfi_index !117
   %77 = extractvalue { ptr, i32 } %75, 1, !llfi_index !118
+  call void @doProfiling(i32 64)
+  call void @doProfiling(i32 33)
   store i32 %77, ptr %15, align 4, !llfi_index !119
   call void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(ptr noundef nonnull align 8 dereferenceable(248) %16) #11, !llfi_index !120
   br label %164, !llfi_index !121
 
 78:                                               ; preds = %57
   %79 = load i32, ptr %11, align 4, !llfi_index !122
+  call void @doProfiling(i32 32)
+  call void @doProfiling(i32 33)
   store i32 %79, ptr %18, align 4, !llfi_index !123
+  call void @doProfiling(i32 33)
   store i32 0, ptr %10, align 4, !llfi_index !124
   br label %80, !llfi_index !125
 
 80:                                               ; preds = %102, %78
   %81 = load i32, ptr %10, align 4, !llfi_index !126
+  call void @doProfiling(i32 32)
   %82 = load i32, ptr %18, align 4, !llfi_index !127
+  call void @doProfiling(i32 32)
   %83 = icmp slt i32 %81, %82, !llfi_index !128
+  call void @doProfiling(i32 53)
+  call void @doProfiling(i32 2)
   br i1 %83, label %84, label %105, !llfi_index !129
 
 84:                                               ; preds = %80
   %85 = load i32, ptr %10, align 4, !llfi_index !130
+  call void @doProfiling(i32 32)
   %86 = load i32, ptr %18, align 4, !llfi_index !131
+  call void @doProfiling(i32 32)
   %87 = sdiv i32 %86, 100, !llfi_index !132
+  call void @doProfiling(i32 20)
   %88 = icmp slt i32 %85, %87, !llfi_index !133
+  call void @doProfiling(i32 53)
   %89 = zext i1 %88 to i64, !llfi_index !134
+  call void @doProfiling(i32 39)
   %90 = select i1 %88, double 1.000000e+00, double 0.000000e+00, !llfi_index !135
+  call void @doProfiling(i32 57)
   %91 = fptrunc double %90 to float, !llfi_index !136
+  call void @doProfiling(i32 45)
   %92 = load ptr, ptr @_ZL1x, align 8, !llfi_index !137
   %93 = load i32, ptr %10, align 4, !llfi_index !138
+  call void @doProfiling(i32 32)
   %94 = sext i32 %93 to i64, !llfi_index !139
+  call void @doProfiling(i32 40)
   %95 = getelementptr inbounds %struct.Complex, ptr %92, i64 %94, !llfi_index !140
   %96 = getelementptr inbounds %struct.Complex, ptr %95, i32 0, i32 0, !llfi_index !141
+  call void @doProfiling(i32 33)
   store float %91, ptr %96, align 4, !llfi_index !142
   %97 = load ptr, ptr @_ZL1x, align 8, !llfi_index !143
   %98 = load i32, ptr %10, align 4, !llfi_index !144
+  call void @doProfiling(i32 32)
   %99 = sext i32 %98 to i64, !llfi_index !145
+  call void @doProfiling(i32 40)
   %100 = getelementptr inbounds %struct.Complex, ptr %97, i64 %99, !llfi_index !146
   %101 = getelementptr inbounds %struct.Complex, ptr %100, i32 0, i32 1, !llfi_index !147
+  call void @doProfiling(i32 33)
   store float 0.000000e+00, ptr %101, align 4, !llfi_index !148
   br label %102, !llfi_index !149
 
 102:                                              ; preds = %84
   %103 = load i32, ptr %10, align 4, !llfi_index !150
+  call void @doProfiling(i32 32)
   %104 = add nsw i32 %103, 1, !llfi_index !151
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i32 %104, ptr %10, align 4, !llfi_index !152
   br label %80, !llvm.loop !153, !llfi_index !155
 
@@ -254,9 +347,11 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
 
 106:                                              ; preds = %105
   %107 = load i32, ptr %18, align 4, !llfi_index !157
+  call void @doProfiling(i32 32)
   %108 = load ptr, ptr @_ZL7indices, align 8, !llfi_index !158
   %109 = load ptr, ptr @_ZL1x, align 8, !llfi_index !159
   %110 = load ptr, ptr @_ZL1f, align 8, !llfi_index !160
+  call void @doProfiling(i32 5)
   invoke void @_Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_(i32 noundef %107, ptr noundef %108, ptr noundef %109, ptr noundef %110)
           to label %111 unwind label %74, !llfi_index !161
 
@@ -265,15 +360,19 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
           to label %113 unwind label %74, !llfi_index !162
 
 113:                                              ; preds = %111
+  call void @doProfiling(i32 33)
   store i64 %112, ptr %20, align 8, !llfi_index !163
   %114 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(ptr noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, ptr noundef @.str.1)
           to label %115 unwind label %74, !llfi_index !164
 
 115:                                              ; preds = %113
   %116 = load i64, ptr %20, align 8, !llfi_index !165
+  call void @doProfiling(i32 32)
   %117 = uitofp i64 %116 to double, !llfi_index !166
+  call void @doProfiling(i32 43)
   %118 = fdiv double %117, 1.000000e+09, !llfi_index !167
   call void @doProfiling(i32 21)
+  call void @doProfiling(i32 5)
   %119 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEd(ptr noundef nonnull align 8 dereferenceable(8) %114, double noundef %118)
           to label %120 unwind label %74, !llfi_index !168
 
@@ -282,22 +381,31 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
           to label %122 unwind label %74, !llfi_index !169
 
 122:                                              ; preds = %120
+  call void @doProfiling(i32 33)
   store i32 0, ptr %10, align 4, !llfi_index !170
   br label %123, !llfi_index !171
 
 123:                                              ; preds = %157, %122
   %124 = load i32, ptr %10, align 4, !llfi_index !172
+  call void @doProfiling(i32 32)
   %125 = load i32, ptr %18, align 4, !llfi_index !173
+  call void @doProfiling(i32 32)
   %126 = icmp slt i32 %124, %125, !llfi_index !174
+  call void @doProfiling(i32 53)
+  call void @doProfiling(i32 2)
   br i1 %126, label %127, label %160, !llfi_index !175
 
 127:                                              ; preds = %123
   %128 = load ptr, ptr @_ZL1f, align 8, !llfi_index !176
   %129 = load i32, ptr %10, align 4, !llfi_index !177
+  call void @doProfiling(i32 32)
   %130 = sext i32 %129 to i64, !llfi_index !178
+  call void @doProfiling(i32 40)
   %131 = getelementptr inbounds %struct.Complex, ptr %128, i64 %130, !llfi_index !179
   %132 = getelementptr inbounds %struct.Complex, ptr %131, i32 0, i32 0, !llfi_index !180
   %133 = load float, ptr %132, align 4, !llfi_index !181
+  call void @doProfiling(i32 32)
+  call void @doProfiling(i32 5)
   %134 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEf(ptr noundef nonnull align 8 dereferenceable(8) %16, float noundef %133)
           to label %135 unwind label %74, !llfi_index !182
 
@@ -308,10 +416,14 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
 137:                                              ; preds = %135
   %138 = load ptr, ptr @_ZL1f, align 8, !llfi_index !184
   %139 = load i32, ptr %10, align 4, !llfi_index !185
+  call void @doProfiling(i32 32)
   %140 = sext i32 %139 to i64, !llfi_index !186
+  call void @doProfiling(i32 40)
   %141 = getelementptr inbounds %struct.Complex, ptr %138, i64 %140, !llfi_index !187
   %142 = getelementptr inbounds %struct.Complex, ptr %141, i32 0, i32 1, !llfi_index !188
   %143 = load float, ptr %142, align 4, !llfi_index !189
+  call void @doProfiling(i32 32)
+  call void @doProfiling(i32 5)
   %144 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEf(ptr noundef nonnull align 8 dereferenceable(8) %136, float noundef %143)
           to label %145 unwind label %74, !llfi_index !190
 
@@ -322,9 +434,13 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
 147:                                              ; preds = %145
   %148 = load ptr, ptr @_ZL7indices, align 8, !llfi_index !192
   %149 = load i32, ptr %10, align 4, !llfi_index !193
+  call void @doProfiling(i32 32)
   %150 = sext i32 %149 to i64, !llfi_index !194
+  call void @doProfiling(i32 40)
   %151 = getelementptr inbounds i32, ptr %148, i64 %150, !llfi_index !195
   %152 = load i32, ptr %151, align 4, !llfi_index !196
+  call void @doProfiling(i32 32)
+  call void @doProfiling(i32 5)
   %153 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEi(ptr noundef nonnull align 8 dereferenceable(8) %146, i32 noundef %152)
           to label %154 unwind label %74, !llfi_index !197
 
@@ -337,7 +453,10 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
 
 157:                                              ; preds = %156
   %158 = load i32, ptr %10, align 4, !llfi_index !200
+  call void @doProfiling(i32 32)
   %159 = add nsw i32 %158, 1, !llfi_index !201
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i32 %159, ptr %10, align 4, !llfi_index !202
   br label %123, !llvm.loop !203, !llfi_index !204
 
@@ -346,7 +465,9 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
           to label %161 unwind label %74, !llfi_index !205
 
 161:                                              ; preds = %160
+  call void @doProfiling(i32 33)
   store i32 0, ptr %7, align 4, !llfi_index !206
+  call void @doProfiling(i32 33)
   store i32 1, ptr %17, align 4, !llfi_index !207
   br label %162, !llfi_index !208
 
@@ -354,6 +475,8 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
   call void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(ptr noundef nonnull align 8 dereferenceable(248) %16) #11, !llfi_index !209
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(ptr noundef nonnull align 8 dereferenceable(32) %12) #11, !llfi_index !210
   %163 = load i32, ptr %7, align 4, !llfi_index !211
+  call void @doProfiling(i32 32)
+  call void @doProfiling(i32 1)
   call void @endProfiling()
   ret i32 %163, !llfi_index !212
 
@@ -364,8 +487,12 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #2 personalit
 165:                                              ; preds = %164, %65
   %166 = load ptr, ptr %14, align 8, !llfi_index !215
   %167 = load i32, ptr %15, align 4, !llfi_index !216
+  call void @doProfiling(i32 32)
   %168 = insertvalue { ptr, i32 } undef, ptr %166, 0, !llfi_index !217
+  call void @doProfiling(i32 65)
   %169 = insertvalue { ptr, i32 } %168, i32 %167, 1, !llfi_index !218
+  call void @doProfiling(i32 65)
+  call void @doProfiling(i32 6)
   call void @endProfiling()
   resume { ptr, i32 } %169, !llfi_index !219
 }
@@ -379,6 +506,7 @@ declare void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_(p
 
 ; Function Attrs: noinline nounwind optnone uwtable
 define linkonce_odr dso_local void @_ZNSt15__new_allocatorIcED2Ev(ptr noundef nonnull align 1 dereferenceable(1) %0) unnamed_addr #5 comdat align 2 {
+  call void @doProfiling(i32 31)
   %2 = alloca ptr, align 8, !llfi_index !220
   store ptr %0, ptr %2, align 8, !llfi_index !221
   %3 = load ptr, ptr %2, align 8, !llfi_index !222
@@ -391,19 +519,29 @@ declare void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEE4openERKNSt7__cxx1112bas
 
 ; Function Attrs: mustprogress noinline nounwind optnone uwtable
 define linkonce_odr dso_local noundef i64 @_ZNSt8ios_base9precisionEl(ptr noundef nonnull align 8 dereferenceable(216) %0, i64 noundef %1) #0 comdat align 2 {
+  call void @doProfiling(i32 31)
   %3 = alloca ptr, align 8, !llfi_index !224
+  call void @doProfiling(i32 31)
   %4 = alloca i64, align 8, !llfi_index !225
+  call void @doProfiling(i32 31)
   %5 = alloca i64, align 8, !llfi_index !226
   store ptr %0, ptr %3, align 8, !llfi_index !227
+  call void @doProfiling(i32 33)
   store i64 %1, ptr %4, align 8, !llfi_index !228
   %6 = load ptr, ptr %3, align 8, !llfi_index !229
   %7 = getelementptr inbounds %"class.std::ios_base", ptr %6, i32 0, i32 1, !llfi_index !230
   %8 = load i64, ptr %7, align 8, !llfi_index !231
+  call void @doProfiling(i32 32)
+  call void @doProfiling(i32 33)
   store i64 %8, ptr %5, align 8, !llfi_index !232
   %9 = load i64, ptr %4, align 8, !llfi_index !233
+  call void @doProfiling(i32 32)
   %10 = getelementptr inbounds %"class.std::ios_base", ptr %6, i32 0, i32 1, !llfi_index !234
+  call void @doProfiling(i32 33)
   store i64 %9, ptr %10, align 8, !llfi_index !235
   %11 = load i64, ptr %5, align 8, !llfi_index !236
+  call void @doProfiling(i32 32)
+  call void @doProfiling(i32 1)
   ret i64 %11, !llfi_index !237
 }
 
@@ -421,6 +559,7 @@ declare void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(ptr noundef nonnull
 
 ; Function Attrs: noinline optnone uwtable
 define linkonce_odr dso_local void @_ZN12AxBenchTimerC2Ev(ptr noundef nonnull align 8 dereferenceable(16) %0) unnamed_addr #7 comdat align 2 {
+  call void @doProfiling(i32 31)
   %2 = alloca ptr, align 8, !llfi_index !238
   store ptr %0, ptr %2, align 8, !llfi_index !239
   %3 = load ptr, ptr %2, align 8, !llfi_index !240
@@ -431,35 +570,57 @@ define linkonce_odr dso_local void @_ZN12AxBenchTimerC2Ev(ptr noundef nonnull al
 
 ; Function Attrs: mustprogress noinline nounwind optnone uwtable
 define linkonce_odr dso_local noundef i64 @_ZN12AxBenchTimer20nanosecondsSinceInitEv(ptr noundef nonnull align 8 dereferenceable(16) %0) #0 comdat align 2 {
+  call void @doProfiling(i32 31)
   %2 = alloca ptr, align 8, !llfi_index !244
+  call void @doProfiling(i32 31)
   %3 = alloca i64, align 8, !llfi_index !245
+  call void @doProfiling(i32 31)
   %4 = alloca %struct.timespec, align 8, !llfi_index !246
+  call void @doProfiling(i32 31)
   %5 = alloca i64, align 8, !llfi_index !247
+  call void @doProfiling(i32 31)
   %6 = alloca i64, align 8, !llfi_index !248
   store ptr %0, ptr %2, align 8, !llfi_index !249
   %7 = load ptr, ptr %2, align 8, !llfi_index !250
   %8 = call i32 @clock_gettime(i32 noundef 4, ptr noundef %4) #11, !llfi_index !251
+  call void @doProfiling(i32 56)
   %9 = getelementptr inbounds %class.AxBenchTimer, ptr %7, i32 0, i32 0, !llfi_index !252
   %10 = getelementptr inbounds %struct.timespec, ptr %9, i32 0, i32 1, !llfi_index !253
   %11 = load i64, ptr %10, align 8, !llfi_index !254
+  call void @doProfiling(i32 32)
   %12 = getelementptr inbounds %class.AxBenchTimer, ptr %7, i32 0, i32 0, !llfi_index !255
   %13 = getelementptr inbounds %struct.timespec, ptr %12, i32 0, i32 0, !llfi_index !256
   %14 = load i64, ptr %13, align 8, !llfi_index !257
+  call void @doProfiling(i32 32)
   %15 = mul nsw i64 %14, 1000000000, !llfi_index !258
+  call void @doProfiling(i32 17)
   %16 = add nsw i64 %11, %15, !llfi_index !259
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i64 %16, ptr %5, align 8, !llfi_index !260
   %17 = getelementptr inbounds %struct.timespec, ptr %4, i32 0, i32 1, !llfi_index !261
   %18 = load i64, ptr %17, align 8, !llfi_index !262
+  call void @doProfiling(i32 32)
   %19 = getelementptr inbounds %struct.timespec, ptr %4, i32 0, i32 0, !llfi_index !263
   %20 = load i64, ptr %19, align 8, !llfi_index !264
+  call void @doProfiling(i32 32)
   %21 = mul nsw i64 %20, 1000000000, !llfi_index !265
+  call void @doProfiling(i32 17)
   %22 = add nsw i64 %18, %21, !llfi_index !266
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i64 %22, ptr %6, align 8, !llfi_index !267
   %23 = load i64, ptr %6, align 8, !llfi_index !268
+  call void @doProfiling(i32 32)
   %24 = load i64, ptr %5, align 8, !llfi_index !269
+  call void @doProfiling(i32 32)
   %25 = sub i64 %23, %24, !llfi_index !270
+  call void @doProfiling(i32 15)
+  call void @doProfiling(i32 33)
   store i64 %25, ptr %3, align 8, !llfi_index !271
   %26 = load i64, ptr %3, align 8, !llfi_index !272
+  call void @doProfiling(i32 32)
+  call void @doProfiling(i32 1)
   ret i64 %26, !llfi_index !273
 }
 
@@ -479,85 +640,135 @@ declare i32 @clock_gettime(i32 noundef, ptr noundef) #1
 
 ; Function Attrs: mustprogress noinline nounwind optnone uwtable
 define linkonce_odr dso_local void @_ZN12AxBenchTimer5resetEv(ptr noundef nonnull align 8 dereferenceable(16) %0) #0 comdat align 2 {
+  call void @doProfiling(i32 31)
   %2 = alloca ptr, align 8, !llfi_index !274
   store ptr %0, ptr %2, align 8, !llfi_index !275
   %3 = load ptr, ptr %2, align 8, !llfi_index !276
   %4 = getelementptr inbounds %class.AxBenchTimer, ptr %3, i32 0, i32 0, !llfi_index !277
   %5 = call i32 @clock_gettime(i32 noundef 4, ptr noundef %4) #11, !llfi_index !278
+  call void @doProfiling(i32 56)
   ret void, !llfi_index !279
 }
 
 ; Function Attrs: mustprogress noinline nounwind optnone uwtable
 define dso_local void @_Z14calcFftIndicesiPi(i32 noundef %0, ptr noundef %1) #0 {
+  call void @doProfiling(i32 31)
   %3 = alloca i32, align 4, !llfi_index !280
+  call void @doProfiling(i32 31)
   %4 = alloca ptr, align 8, !llfi_index !281
+  call void @doProfiling(i32 31)
   %5 = alloca i32, align 4, !llfi_index !282
+  call void @doProfiling(i32 31)
   %6 = alloca i32, align 4, !llfi_index !283
+  call void @doProfiling(i32 31)
   %7 = alloca i32, align 4, !llfi_index !284
+  call void @doProfiling(i32 33)
   store i32 %0, ptr %3, align 4, !llfi_index !285
   store ptr %1, ptr %4, align 8, !llfi_index !286
   %8 = load i32, ptr %3, align 4, !llfi_index !287
+  call void @doProfiling(i32 32)
   %9 = sitofp i32 %8 to float, !llfi_index !288
+  call void @doProfiling(i32 44)
   %10 = call float @log2f(float noundef %9) #11, !llfi_index !289
+  call void @doProfiling(i32 56)
   %11 = fptosi float %10 to i32, !llfi_index !290
+  call void @doProfiling(i32 42)
+  call void @doProfiling(i32 33)
   store i32 %11, ptr %7, align 4, !llfi_index !291
   %12 = load ptr, ptr %4, align 8, !llfi_index !292
   %13 = getelementptr inbounds i32, ptr %12, i64 0, !llfi_index !293
+  call void @doProfiling(i32 33)
   store i32 0, ptr %13, align 4, !llfi_index !294
   %14 = load i32, ptr %7, align 4, !llfi_index !295
+  call void @doProfiling(i32 32)
   %15 = sub nsw i32 %14, 1, !llfi_index !296
+  call void @doProfiling(i32 15)
   %16 = shl i32 1, %15, !llfi_index !297
+  call void @doProfiling(i32 25)
   %17 = load ptr, ptr %4, align 8, !llfi_index !298
   %18 = getelementptr inbounds i32, ptr %17, i64 1, !llfi_index !299
+  call void @doProfiling(i32 33)
   store i32 %16, ptr %18, align 4, !llfi_index !300
+  call void @doProfiling(i32 33)
   store i32 1, ptr %5, align 4, !llfi_index !301
   br label %19, !llfi_index !302
 
 19:                                               ; preds = %55, %2
   %20 = load i32, ptr %5, align 4, !llfi_index !303
+  call void @doProfiling(i32 32)
   %21 = load i32, ptr %7, align 4, !llfi_index !304
+  call void @doProfiling(i32 32)
   %22 = icmp slt i32 %20, %21, !llfi_index !305
+  call void @doProfiling(i32 53)
+  call void @doProfiling(i32 2)
   br i1 %22, label %23, label %58, !llfi_index !306
 
 23:                                               ; preds = %19
   %24 = load i32, ptr %5, align 4, !llfi_index !307
+  call void @doProfiling(i32 32)
   %25 = shl i32 1, %24, !llfi_index !308
+  call void @doProfiling(i32 25)
+  call void @doProfiling(i32 33)
   store i32 %25, ptr %6, align 4, !llfi_index !309
   br label %26, !llfi_index !310
 
 26:                                               ; preds = %51, %23
   %27 = load i32, ptr %6, align 4, !llfi_index !311
+  call void @doProfiling(i32 32)
   %28 = load i32, ptr %5, align 4, !llfi_index !312
+  call void @doProfiling(i32 32)
   %29 = add nsw i32 %28, 1, !llfi_index !313
+  call void @doProfiling(i32 13)
   %30 = shl i32 1, %29, !llfi_index !314
+  call void @doProfiling(i32 25)
   %31 = icmp slt i32 %27, %30, !llfi_index !315
+  call void @doProfiling(i32 53)
+  call void @doProfiling(i32 2)
   br i1 %31, label %32, label %54, !llfi_index !316
 
 32:                                               ; preds = %26
   %33 = load ptr, ptr %4, align 8, !llfi_index !317
   %34 = load i32, ptr %6, align 4, !llfi_index !318
+  call void @doProfiling(i32 32)
   %35 = load i32, ptr %5, align 4, !llfi_index !319
+  call void @doProfiling(i32 32)
   %36 = shl i32 1, %35, !llfi_index !320
+  call void @doProfiling(i32 25)
   %37 = sub nsw i32 %34, %36, !llfi_index !321
+  call void @doProfiling(i32 15)
   %38 = sext i32 %37 to i64, !llfi_index !322
+  call void @doProfiling(i32 40)
   %39 = getelementptr inbounds i32, ptr %33, i64 %38, !llfi_index !323
   %40 = load i32, ptr %39, align 4, !llfi_index !324
+  call void @doProfiling(i32 32)
   %41 = load i32, ptr %7, align 4, !llfi_index !325
+  call void @doProfiling(i32 32)
   %42 = load i32, ptr %5, align 4, !llfi_index !326
+  call void @doProfiling(i32 32)
   %43 = add nsw i32 %42, 1, !llfi_index !327
+  call void @doProfiling(i32 13)
   %44 = sub nsw i32 %41, %43, !llfi_index !328
+  call void @doProfiling(i32 15)
   %45 = shl i32 1, %44, !llfi_index !329
+  call void @doProfiling(i32 25)
   %46 = add nsw i32 %40, %45, !llfi_index !330
+  call void @doProfiling(i32 13)
   %47 = load ptr, ptr %4, align 8, !llfi_index !331
   %48 = load i32, ptr %6, align 4, !llfi_index !332
+  call void @doProfiling(i32 32)
   %49 = sext i32 %48 to i64, !llfi_index !333
+  call void @doProfiling(i32 40)
   %50 = getelementptr inbounds i32, ptr %47, i64 %49, !llfi_index !334
+  call void @doProfiling(i32 33)
   store i32 %46, ptr %50, align 4, !llfi_index !335
   br label %51, !llfi_index !336
 
 51:                                               ; preds = %32
   %52 = load i32, ptr %6, align 4, !llfi_index !337
+  call void @doProfiling(i32 32)
   %53 = add nsw i32 %52, 1, !llfi_index !338
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i32 %53, ptr %6, align 4, !llfi_index !339
   br label %26, !llvm.loop !340, !llfi_index !341
 
@@ -566,7 +777,10 @@ define dso_local void @_Z14calcFftIndicesiPi(i32 noundef %0, ptr noundef %1) #0 
 
 55:                                               ; preds = %54
   %56 = load i32, ptr %5, align 4, !llfi_index !343
+  call void @doProfiling(i32 32)
   %57 = add nsw i32 %56, 1, !llfi_index !344
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i32 %57, ptr %5, align 4, !llfi_index !345
   br label %19, !llvm.loop !346, !llfi_index !347
 
@@ -579,249 +793,401 @@ declare float @log2f(float noundef) #1
 
 ; Function Attrs: mustprogress noinline optnone uwtable
 define dso_local void @_Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_(i32 noundef %0, ptr noundef %1, ptr noundef %2, ptr noundef %3) #8 {
+  call void @doProfiling(i32 31)
   %5 = alloca i32, align 4, !llfi_index !349
+  call void @doProfiling(i32 31)
   %6 = alloca ptr, align 8, !llfi_index !350
+  call void @doProfiling(i32 31)
   %7 = alloca ptr, align 8, !llfi_index !351
+  call void @doProfiling(i32 31)
   %8 = alloca ptr, align 8, !llfi_index !352
+  call void @doProfiling(i32 31)
   %9 = alloca i32, align 4, !llfi_index !353
+  call void @doProfiling(i32 31)
   %10 = alloca float, align 4, !llfi_index !354
+  call void @doProfiling(i32 31)
   %11 = alloca i32, align 4, !llfi_index !355
+  call void @doProfiling(i32 31)
   %12 = alloca i32, align 4, !llfi_index !356
+  call void @doProfiling(i32 31)
   %13 = alloca float, align 4, !llfi_index !357
+  call void @doProfiling(i32 31)
   %14 = alloca float, align 4, !llfi_index !358
+  call void @doProfiling(i32 31)
   %15 = alloca %struct.Complex, align 4, !llfi_index !359
+  call void @doProfiling(i32 31)
   %16 = alloca i32, align 4, !llfi_index !360
+  call void @doProfiling(i32 31)
   %17 = alloca i32, align 4, !llfi_index !361
+  call void @doProfiling(i32 31)
   %18 = alloca i32, align 4, !llfi_index !362
+  call void @doProfiling(i32 31)
   %19 = alloca i32, align 4, !llfi_index !363
+  call void @doProfiling(i32 31)
   %20 = alloca i32, align 4, !llfi_index !364
+  call void @doProfiling(i32 33)
   store i32 %0, ptr %5, align 4, !llfi_index !365
   store ptr %1, ptr %6, align 8, !llfi_index !366
   store ptr %2, ptr %7, align 8, !llfi_index !367
   store ptr %3, ptr %8, align 8, !llfi_index !368
   %21 = load i32, ptr %5, align 4, !llfi_index !369
+  call void @doProfiling(i32 32)
   %22 = load ptr, ptr %6, align 8, !llfi_index !370
+  call void @doProfiling(i32 56)
   call void @_Z14calcFftIndicesiPi(i32 noundef %21, ptr noundef %22), !llfi_index !371
+  call void @doProfiling(i32 33)
   store i32 0, ptr %16, align 4, !llfi_index !372
   %23 = load i32, ptr %16, align 4, !llfi_index !373
+  call void @doProfiling(i32 32)
   %24 = add nsw i32 %23, 1, !llfi_index !374
+  call void @doProfiling(i32 13)
   %25 = shl i32 1, %24, !llfi_index !375
+  call void @doProfiling(i32 25)
+  call void @doProfiling(i32 33)
   store i32 %25, ptr %17, align 4, !llfi_index !376
   br label %26, !llfi_index !377
 
 26:                                               ; preds = %220, %4
   %27 = load i32, ptr %17, align 4, !llfi_index !378
+  call void @doProfiling(i32 32)
   %28 = load i32, ptr %5, align 4, !llfi_index !379
+  call void @doProfiling(i32 32)
   %29 = icmp sle i32 %27, %28, !llfi_index !380
+  call void @doProfiling(i32 53)
+  call void @doProfiling(i32 2)
   br i1 %29, label %30, label %226, !llfi_index !381
 
 30:                                               ; preds = %26
+  call void @doProfiling(i32 33)
   store i32 0, ptr %18, align 4, !llfi_index !382
   br label %31, !llfi_index !383
 
 31:                                               ; preds = %215, %30
   %32 = load i32, ptr %18, align 4, !llfi_index !384
+  call void @doProfiling(i32 32)
   %33 = load i32, ptr %5, align 4, !llfi_index !385
+  call void @doProfiling(i32 32)
   %34 = icmp slt i32 %32, %33, !llfi_index !386
+  call void @doProfiling(i32 53)
+  call void @doProfiling(i32 2)
   br i1 %34, label %35, label %219, !llfi_index !387
 
 35:                                               ; preds = %31
   %36 = load i32, ptr %17, align 4, !llfi_index !388
+  call void @doProfiling(i32 32)
   %37 = ashr i32 %36, 1, !llfi_index !389
+  call void @doProfiling(i32 27)
+  call void @doProfiling(i32 33)
   store i32 %37, ptr %9, align 4, !llfi_index !390
+  call void @doProfiling(i32 33)
   store i32 0, ptr %19, align 4, !llfi_index !391
   br label %38, !llfi_index !392
 
 38:                                               ; preds = %211, %35
   %39 = load i32, ptr %19, align 4, !llfi_index !393
+  call void @doProfiling(i32 32)
   %40 = load i32, ptr %9, align 4, !llfi_index !394
+  call void @doProfiling(i32 32)
   %41 = icmp slt i32 %39, %40, !llfi_index !395
+  call void @doProfiling(i32 53)
+  call void @doProfiling(i32 2)
   br i1 %41, label %42, label %214, !llfi_index !396
 
 42:                                               ; preds = %38
   %43 = load i32, ptr %19, align 4, !llfi_index !397
+  call void @doProfiling(i32 32)
   %44 = sitofp i32 %43 to float, !llfi_index !398
+  call void @doProfiling(i32 44)
   %45 = load i32, ptr %17, align 4, !llfi_index !399
+  call void @doProfiling(i32 32)
   %46 = sitofp i32 %45 to float, !llfi_index !400
+  call void @doProfiling(i32 44)
   %47 = fdiv float %44, %46, !llfi_index !401
   call void @doProfiling(i32 21)
+  call void @doProfiling(i32 33)
   store float %47, ptr %10, align 4, !llfi_index !402
   %48 = load i32, ptr %18, align 4, !llfi_index !403
+  call void @doProfiling(i32 32)
   %49 = load i32, ptr %19, align 4, !llfi_index !404
+  call void @doProfiling(i32 32)
   %50 = add nsw i32 %48, %49, !llfi_index !405
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i32 %50, ptr %11, align 4, !llfi_index !406
   %51 = load i32, ptr %18, align 4, !llfi_index !407
+  call void @doProfiling(i32 32)
   %52 = load i32, ptr %9, align 4, !llfi_index !408
+  call void @doProfiling(i32 32)
   %53 = add nsw i32 %51, %52, !llfi_index !409
+  call void @doProfiling(i32 13)
   %54 = load i32, ptr %19, align 4, !llfi_index !410
+  call void @doProfiling(i32 32)
   %55 = add nsw i32 %53, %54, !llfi_index !411
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i32 %55, ptr %12, align 4, !llfi_index !412
   %56 = load float, ptr %10, align 4, !llfi_index !413
+  call void @doProfiling(i32 32)
+  call void @doProfiling(i32 56)
   call void @_Z9fftSinCosfPfS_(float noundef %56, ptr noundef %13, ptr noundef %14), !llfi_index !414
   %57 = load ptr, ptr %7, align 8, !llfi_index !415
   %58 = load ptr, ptr %6, align 8, !llfi_index !416
   %59 = load i32, ptr %11, align 4, !llfi_index !417
+  call void @doProfiling(i32 32)
   %60 = sext i32 %59 to i64, !llfi_index !418
+  call void @doProfiling(i32 40)
   %61 = getelementptr inbounds i32, ptr %58, i64 %60, !llfi_index !419
   %62 = load i32, ptr %61, align 4, !llfi_index !420
+  call void @doProfiling(i32 32)
   %63 = sext i32 %62 to i64, !llfi_index !421
+  call void @doProfiling(i32 40)
   %64 = getelementptr inbounds %struct.Complex, ptr %57, i64 %63, !llfi_index !422
+  call void @doProfiling(i32 56)
   call void @llvm.memcpy.p0.p0.i64(ptr align 4 %15, ptr align 4 %64, i64 8, i1 false), !llfi_index !423
   %65 = getelementptr inbounds %struct.Complex, ptr %15, i32 0, i32 0, !llfi_index !424
   %66 = load float, ptr %65, align 4, !llfi_index !425
+  call void @doProfiling(i32 32)
   %67 = load ptr, ptr %7, align 8, !llfi_index !426
   %68 = load ptr, ptr %6, align 8, !llfi_index !427
   %69 = load i32, ptr %12, align 4, !llfi_index !428
+  call void @doProfiling(i32 32)
   %70 = sext i32 %69 to i64, !llfi_index !429
+  call void @doProfiling(i32 40)
   %71 = getelementptr inbounds i32, ptr %68, i64 %70, !llfi_index !430
   %72 = load i32, ptr %71, align 4, !llfi_index !431
+  call void @doProfiling(i32 32)
   %73 = sext i32 %72 to i64, !llfi_index !432
+  call void @doProfiling(i32 40)
   %74 = getelementptr inbounds %struct.Complex, ptr %67, i64 %73, !llfi_index !433
   %75 = getelementptr inbounds %struct.Complex, ptr %74, i32 0, i32 0, !llfi_index !434
   %76 = load float, ptr %75, align 4, !llfi_index !435
+  call void @doProfiling(i32 32)
   %77 = load float, ptr %14, align 4, !llfi_index !436
+  call void @doProfiling(i32 32)
   %78 = load ptr, ptr %7, align 8, !llfi_index !437
   %79 = load ptr, ptr %6, align 8, !llfi_index !438
   %80 = load i32, ptr %11, align 4, !llfi_index !439
+  call void @doProfiling(i32 32)
   %81 = sext i32 %80 to i64, !llfi_index !440
+  call void @doProfiling(i32 40)
   %82 = getelementptr inbounds i32, ptr %79, i64 %81, !llfi_index !441
   %83 = load i32, ptr %82, align 4, !llfi_index !442
+  call void @doProfiling(i32 32)
   %84 = sext i32 %83 to i64, !llfi_index !443
+  call void @doProfiling(i32 40)
   %85 = getelementptr inbounds %struct.Complex, ptr %78, i64 %84, !llfi_index !444
   %86 = getelementptr inbounds %struct.Complex, ptr %85, i32 0, i32 1, !llfi_index !445
   %87 = load float, ptr %86, align 4, !llfi_index !446
+  call void @doProfiling(i32 32)
   %88 = load float, ptr %13, align 4, !llfi_index !447
+  call void @doProfiling(i32 32)
   %89 = fmul float %87, %88, !llfi_index !448
+  call void @doProfiling(i32 18)
   %90 = fneg float %89, !llfi_index !449
+  call void @doProfiling(i32 12)
   %91 = call float @llvm.fmuladd.f32(float %76, float %77, float %90), !llfi_index !450
+  call void @doProfiling(i32 56)
   %92 = fadd float %66, %91, !llfi_index !451
+  call void @doProfiling(i32 14)
   %93 = load ptr, ptr %7, align 8, !llfi_index !452
   %94 = load ptr, ptr %6, align 8, !llfi_index !453
   %95 = load i32, ptr %11, align 4, !llfi_index !454
+  call void @doProfiling(i32 32)
   %96 = sext i32 %95 to i64, !llfi_index !455
+  call void @doProfiling(i32 40)
   %97 = getelementptr inbounds i32, ptr %94, i64 %96, !llfi_index !456
   %98 = load i32, ptr %97, align 4, !llfi_index !457
+  call void @doProfiling(i32 32)
   %99 = sext i32 %98 to i64, !llfi_index !458
+  call void @doProfiling(i32 40)
   %100 = getelementptr inbounds %struct.Complex, ptr %93, i64 %99, !llfi_index !459
   %101 = getelementptr inbounds %struct.Complex, ptr %100, i32 0, i32 0, !llfi_index !460
+  call void @doProfiling(i32 33)
   store float %92, ptr %101, align 4, !llfi_index !461
   %102 = getelementptr inbounds %struct.Complex, ptr %15, i32 0, i32 1, !llfi_index !462
   %103 = load float, ptr %102, align 4, !llfi_index !463
+  call void @doProfiling(i32 32)
   %104 = load ptr, ptr %7, align 8, !llfi_index !464
   %105 = load ptr, ptr %6, align 8, !llfi_index !465
   %106 = load i32, ptr %11, align 4, !llfi_index !466
+  call void @doProfiling(i32 32)
   %107 = sext i32 %106 to i64, !llfi_index !467
+  call void @doProfiling(i32 40)
   %108 = getelementptr inbounds i32, ptr %105, i64 %107, !llfi_index !468
   %109 = load i32, ptr %108, align 4, !llfi_index !469
+  call void @doProfiling(i32 32)
   %110 = sext i32 %109 to i64, !llfi_index !470
+  call void @doProfiling(i32 40)
   %111 = getelementptr inbounds %struct.Complex, ptr %104, i64 %110, !llfi_index !471
   %112 = getelementptr inbounds %struct.Complex, ptr %111, i32 0, i32 1, !llfi_index !472
   %113 = load float, ptr %112, align 4, !llfi_index !473
+  call void @doProfiling(i32 32)
   %114 = load float, ptr %14, align 4, !llfi_index !474
+  call void @doProfiling(i32 32)
   %115 = load ptr, ptr %7, align 8, !llfi_index !475
   %116 = load ptr, ptr %6, align 8, !llfi_index !476
   %117 = load i32, ptr %12, align 4, !llfi_index !477
+  call void @doProfiling(i32 32)
   %118 = sext i32 %117 to i64, !llfi_index !478
+  call void @doProfiling(i32 40)
   %119 = getelementptr inbounds i32, ptr %116, i64 %118, !llfi_index !479
   %120 = load i32, ptr %119, align 4, !llfi_index !480
+  call void @doProfiling(i32 32)
   %121 = sext i32 %120 to i64, !llfi_index !481
+  call void @doProfiling(i32 40)
   %122 = getelementptr inbounds %struct.Complex, ptr %115, i64 %121, !llfi_index !482
   %123 = getelementptr inbounds %struct.Complex, ptr %122, i32 0, i32 0, !llfi_index !483
   %124 = load float, ptr %123, align 4, !llfi_index !484
+  call void @doProfiling(i32 32)
   %125 = load float, ptr %13, align 4, !llfi_index !485
+  call void @doProfiling(i32 32)
   %126 = fmul float %124, %125, !llfi_index !486
+  call void @doProfiling(i32 18)
   %127 = call float @llvm.fmuladd.f32(float %113, float %114, float %126), !llfi_index !487
+  call void @doProfiling(i32 56)
   %128 = fadd float %103, %127, !llfi_index !488
+  call void @doProfiling(i32 14)
   %129 = load ptr, ptr %7, align 8, !llfi_index !489
   %130 = load ptr, ptr %6, align 8, !llfi_index !490
   %131 = load i32, ptr %11, align 4, !llfi_index !491
+  call void @doProfiling(i32 32)
   %132 = sext i32 %131 to i64, !llfi_index !492
+  call void @doProfiling(i32 40)
   %133 = getelementptr inbounds i32, ptr %130, i64 %132, !llfi_index !493
   %134 = load i32, ptr %133, align 4, !llfi_index !494
+  call void @doProfiling(i32 32)
   %135 = sext i32 %134 to i64, !llfi_index !495
+  call void @doProfiling(i32 40)
   %136 = getelementptr inbounds %struct.Complex, ptr %129, i64 %135, !llfi_index !496
   %137 = getelementptr inbounds %struct.Complex, ptr %136, i32 0, i32 1, !llfi_index !497
+  call void @doProfiling(i32 33)
   store float %128, ptr %137, align 4, !llfi_index !498
   %138 = getelementptr inbounds %struct.Complex, ptr %15, i32 0, i32 0, !llfi_index !499
   %139 = load float, ptr %138, align 4, !llfi_index !500
+  call void @doProfiling(i32 32)
   %140 = load ptr, ptr %7, align 8, !llfi_index !501
   %141 = load ptr, ptr %6, align 8, !llfi_index !502
   %142 = load i32, ptr %12, align 4, !llfi_index !503
+  call void @doProfiling(i32 32)
   %143 = sext i32 %142 to i64, !llfi_index !504
+  call void @doProfiling(i32 40)
   %144 = getelementptr inbounds i32, ptr %141, i64 %143, !llfi_index !505
   %145 = load i32, ptr %144, align 4, !llfi_index !506
+  call void @doProfiling(i32 32)
   %146 = sext i32 %145 to i64, !llfi_index !507
+  call void @doProfiling(i32 40)
   %147 = getelementptr inbounds %struct.Complex, ptr %140, i64 %146, !llfi_index !508
   %148 = getelementptr inbounds %struct.Complex, ptr %147, i32 0, i32 0, !llfi_index !509
   %149 = load float, ptr %148, align 4, !llfi_index !510
+  call void @doProfiling(i32 32)
   %150 = load float, ptr %14, align 4, !llfi_index !511
+  call void @doProfiling(i32 32)
   %151 = load ptr, ptr %7, align 8, !llfi_index !512
   %152 = load ptr, ptr %6, align 8, !llfi_index !513
   %153 = load i32, ptr %11, align 4, !llfi_index !514
+  call void @doProfiling(i32 32)
   %154 = sext i32 %153 to i64, !llfi_index !515
+  call void @doProfiling(i32 40)
   %155 = getelementptr inbounds i32, ptr %152, i64 %154, !llfi_index !516
   %156 = load i32, ptr %155, align 4, !llfi_index !517
+  call void @doProfiling(i32 32)
   %157 = sext i32 %156 to i64, !llfi_index !518
+  call void @doProfiling(i32 40)
   %158 = getelementptr inbounds %struct.Complex, ptr %151, i64 %157, !llfi_index !519
   %159 = getelementptr inbounds %struct.Complex, ptr %158, i32 0, i32 1, !llfi_index !520
   %160 = load float, ptr %159, align 4, !llfi_index !521
+  call void @doProfiling(i32 32)
   %161 = load float, ptr %13, align 4, !llfi_index !522
+  call void @doProfiling(i32 32)
   %162 = fmul float %160, %161, !llfi_index !523
+  call void @doProfiling(i32 18)
   %163 = fneg float %162, !llfi_index !524
+  call void @doProfiling(i32 12)
   %164 = call float @llvm.fmuladd.f32(float %149, float %150, float %163), !llfi_index !525
+  call void @doProfiling(i32 56)
   %165 = fsub float %139, %164, !llfi_index !526
+  call void @doProfiling(i32 16)
   %166 = load ptr, ptr %7, align 8, !llfi_index !527
   %167 = load ptr, ptr %6, align 8, !llfi_index !528
   %168 = load i32, ptr %12, align 4, !llfi_index !529
+  call void @doProfiling(i32 32)
   %169 = sext i32 %168 to i64, !llfi_index !530
+  call void @doProfiling(i32 40)
   %170 = getelementptr inbounds i32, ptr %167, i64 %169, !llfi_index !531
   %171 = load i32, ptr %170, align 4, !llfi_index !532
+  call void @doProfiling(i32 32)
   %172 = sext i32 %171 to i64, !llfi_index !533
+  call void @doProfiling(i32 40)
   %173 = getelementptr inbounds %struct.Complex, ptr %166, i64 %172, !llfi_index !534
   %174 = getelementptr inbounds %struct.Complex, ptr %173, i32 0, i32 0, !llfi_index !535
+  call void @doProfiling(i32 33)
   store float %165, ptr %174, align 4, !llfi_index !536
   %175 = getelementptr inbounds %struct.Complex, ptr %15, i32 0, i32 1, !llfi_index !537
   %176 = load float, ptr %175, align 4, !llfi_index !538
+  call void @doProfiling(i32 32)
   %177 = load ptr, ptr %7, align 8, !llfi_index !539
   %178 = load ptr, ptr %6, align 8, !llfi_index !540
   %179 = load i32, ptr %11, align 4, !llfi_index !541
+  call void @doProfiling(i32 32)
   %180 = sext i32 %179 to i64, !llfi_index !542
+  call void @doProfiling(i32 40)
   %181 = getelementptr inbounds i32, ptr %178, i64 %180, !llfi_index !543
   %182 = load i32, ptr %181, align 4, !llfi_index !544
+  call void @doProfiling(i32 32)
   %183 = sext i32 %182 to i64, !llfi_index !545
+  call void @doProfiling(i32 40)
   %184 = getelementptr inbounds %struct.Complex, ptr %177, i64 %183, !llfi_index !546
   %185 = getelementptr inbounds %struct.Complex, ptr %184, i32 0, i32 1, !llfi_index !547
   %186 = load float, ptr %185, align 4, !llfi_index !548
+  call void @doProfiling(i32 32)
   %187 = load float, ptr %14, align 4, !llfi_index !549
+  call void @doProfiling(i32 32)
   %188 = load ptr, ptr %7, align 8, !llfi_index !550
   %189 = load ptr, ptr %6, align 8, !llfi_index !551
   %190 = load i32, ptr %12, align 4, !llfi_index !552
+  call void @doProfiling(i32 32)
   %191 = sext i32 %190 to i64, !llfi_index !553
+  call void @doProfiling(i32 40)
   %192 = getelementptr inbounds i32, ptr %189, i64 %191, !llfi_index !554
   %193 = load i32, ptr %192, align 4, !llfi_index !555
+  call void @doProfiling(i32 32)
   %194 = sext i32 %193 to i64, !llfi_index !556
+  call void @doProfiling(i32 40)
   %195 = getelementptr inbounds %struct.Complex, ptr %188, i64 %194, !llfi_index !557
   %196 = getelementptr inbounds %struct.Complex, ptr %195, i32 0, i32 0, !llfi_index !558
   %197 = load float, ptr %196, align 4, !llfi_index !559
+  call void @doProfiling(i32 32)
   %198 = load float, ptr %13, align 4, !llfi_index !560
+  call void @doProfiling(i32 32)
   %199 = fmul float %197, %198, !llfi_index !561
+  call void @doProfiling(i32 18)
   %200 = call float @llvm.fmuladd.f32(float %186, float %187, float %199), !llfi_index !562
+  call void @doProfiling(i32 56)
   %201 = fsub float %176, %200, !llfi_index !563
+  call void @doProfiling(i32 16)
   %202 = load ptr, ptr %7, align 8, !llfi_index !564
   %203 = load ptr, ptr %6, align 8, !llfi_index !565
   %204 = load i32, ptr %12, align 4, !llfi_index !566
+  call void @doProfiling(i32 32)
   %205 = sext i32 %204 to i64, !llfi_index !567
+  call void @doProfiling(i32 40)
   %206 = getelementptr inbounds i32, ptr %203, i64 %205, !llfi_index !568
   %207 = load i32, ptr %206, align 4, !llfi_index !569
+  call void @doProfiling(i32 32)
   %208 = sext i32 %207 to i64, !llfi_index !570
+  call void @doProfiling(i32 40)
   %209 = getelementptr inbounds %struct.Complex, ptr %202, i64 %208, !llfi_index !571
   %210 = getelementptr inbounds %struct.Complex, ptr %209, i32 0, i32 1, !llfi_index !572
+  call void @doProfiling(i32 33)
   store float %201, ptr %210, align 4, !llfi_index !573
   br label %211, !llfi_index !574
 
 211:                                              ; preds = %42
   %212 = load i32, ptr %19, align 4, !llfi_index !575
+  call void @doProfiling(i32 32)
   %213 = add nsw i32 %212, 1, !llfi_index !576
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i32 %213, ptr %19, align 4, !llfi_index !577
   br label %38, !llvm.loop !578, !llfi_index !579
 
@@ -830,8 +1196,12 @@ define dso_local void @_Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_(i32 noundef %0
 
 215:                                              ; preds = %214
   %216 = load i32, ptr %17, align 4, !llfi_index !581
+  call void @doProfiling(i32 32)
   %217 = load i32, ptr %18, align 4, !llfi_index !582
+  call void @doProfiling(i32 32)
   %218 = add nsw i32 %217, %216, !llfi_index !583
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i32 %218, ptr %18, align 4, !llfi_index !584
   br label %31, !llvm.loop !585, !llfi_index !586
 
@@ -840,43 +1210,65 @@ define dso_local void @_Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_(i32 noundef %0
 
 220:                                              ; preds = %219
   %221 = load i32, ptr %16, align 4, !llfi_index !588
+  call void @doProfiling(i32 32)
   %222 = add nsw i32 %221, 1, !llfi_index !589
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i32 %222, ptr %16, align 4, !llfi_index !590
   %223 = load i32, ptr %16, align 4, !llfi_index !591
+  call void @doProfiling(i32 32)
   %224 = add nsw i32 %223, 1, !llfi_index !592
+  call void @doProfiling(i32 13)
   %225 = shl i32 1, %224, !llfi_index !593
+  call void @doProfiling(i32 25)
+  call void @doProfiling(i32 33)
   store i32 %225, ptr %17, align 4, !llfi_index !594
   br label %26, !llvm.loop !595, !llfi_index !596
 
 226:                                              ; preds = %26
+  call void @doProfiling(i32 33)
   store i32 0, ptr %20, align 4, !llfi_index !597
   br label %227, !llfi_index !598
 
 227:                                              ; preds = %244, %226
   %228 = load i32, ptr %20, align 4, !llfi_index !599
+  call void @doProfiling(i32 32)
   %229 = load i32, ptr %5, align 4, !llfi_index !600
+  call void @doProfiling(i32 32)
   %230 = icmp slt i32 %228, %229, !llfi_index !601
+  call void @doProfiling(i32 53)
+  call void @doProfiling(i32 2)
   br i1 %230, label %231, label %247, !llfi_index !602
 
 231:                                              ; preds = %227
   %232 = load ptr, ptr %7, align 8, !llfi_index !603
   %233 = load ptr, ptr %6, align 8, !llfi_index !604
   %234 = load i32, ptr %20, align 4, !llfi_index !605
+  call void @doProfiling(i32 32)
   %235 = sext i32 %234 to i64, !llfi_index !606
+  call void @doProfiling(i32 40)
   %236 = getelementptr inbounds i32, ptr %233, i64 %235, !llfi_index !607
   %237 = load i32, ptr %236, align 4, !llfi_index !608
+  call void @doProfiling(i32 32)
   %238 = sext i32 %237 to i64, !llfi_index !609
+  call void @doProfiling(i32 40)
   %239 = getelementptr inbounds %struct.Complex, ptr %232, i64 %238, !llfi_index !610
   %240 = load ptr, ptr %8, align 8, !llfi_index !611
   %241 = load i32, ptr %20, align 4, !llfi_index !612
+  call void @doProfiling(i32 32)
   %242 = sext i32 %241 to i64, !llfi_index !613
+  call void @doProfiling(i32 40)
   %243 = getelementptr inbounds %struct.Complex, ptr %240, i64 %242, !llfi_index !614
+  call void @doProfiling(i32 56)
   call void @llvm.memcpy.p0.p0.i64(ptr align 4 %243, ptr align 4 %239, i64 8, i1 false), !llfi_index !615
   br label %244, !llfi_index !616
 
 244:                                              ; preds = %231
   %245 = load i32, ptr %20, align 4, !llfi_index !617
+  call void @doProfiling(i32 32)
   %246 = add nsw i32 %245, 1, !llfi_index !618
+  call void @doProfiling(i32 13)
+  call void @doProfiling(i32 33)
   store i32 %246, ptr %20, align 4, !llfi_index !619
   br label %227, !llvm.loop !620, !llfi_index !621
 

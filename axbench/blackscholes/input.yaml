@@ -1,42 +1,42 @@
 compileOption:
-  instSelMethod:
-  - insttype:
-      include:
-      - all
-      # SDC > 50%
-      # - zext
-      # - ret
-      # - fmul
-      # - call
-      # - sitofp
-      # - udiv
-      # - sdiv
-      # - fdiv
-      # - sub
-      # - fptoui
-      # - fpext
-      exclude:
-      - getelementptr
-      - phi
+    instSelMethod:
+      - insttype:
+            include:
+              - all
+              # SDC > 50%
+              # - zext
+              # - ret
+              # - fmul
+              # - call
+              # - sitofp
+              # - udiv
+              # - sdiv
+              # - fdiv
+              # - sub
+              # - fptoui
+              # - fpext
+            exclude:
+              - getelementptr
+              - phi
 
-  regSelMethod: regloc
-  regloc: allreg
+    regSelMethod: regloc
+    regloc: allreg
 
-  tracingPropagation: False # trace dynamic instruction values.
+    tracingPropagation: False # trace dynamic instruction values.
 
-  tracingPropagationOption:
-    maxTrace: 250 # max number of instructions to trace during fault injection run
-    debugTrace: False
-    generateCDFG: True
+    tracingPropagationOption:
+        maxTrace: 250 # max number of instructions to trace during fault injection run
+        debugTrace: False
+        generateCDFG: True
 
 runOption:
-- run:
-    numOfRuns: 5
-    fi_type: bitflip
-    verbose: true
-    fi_cycle: 90474320
-    fi_max_multiple: 1
-    # fi_bit: all
-    # fi_random_seed: 936434547
+  - run:
+        numOfRuns: 5
+        fi_type: bitflip
+        verbose: true
+        fi_cycle: 3
+        fi_max_multiple: 1
+        # fi_bit: all
+        # fi_random_seed: 936434547
 
-defaultTimeout: 8.7322800
+defaultTimeout: 8.1711300

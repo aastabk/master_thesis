@@ -11037,30 +11037,20 @@ br_namestr:
 	.asciz	"br"
 	.size	br_namestr, 3
 
-	.type	lshr_namestr,@object            # @lshr_namestr
-lshr_namestr:
-	.asciz	"lshr"
-	.size	lshr_namestr, 5
-
-	.type	trunc_namestr,@object           # @trunc_namestr
-trunc_namestr:
-	.asciz	"trunc"
-	.size	trunc_namestr, 6
-
 	.type	zext_namestr,@object            # @zext_namestr
 zext_namestr:
 	.asciz	"zext"
 	.size	zext_namestr, 5
 
+	.type	mul_namestr,@object             # @mul_namestr
+mul_namestr:
+	.asciz	"mul"
+	.size	mul_namestr, 4
+
 	.type	alloca_namestr,@object          # @alloca_namestr
 alloca_namestr:
 	.asciz	"alloca"
 	.size	alloca_namestr, 7
-
-	.type	ret_namestr,@object             # @ret_namestr
-ret_namestr:
-	.asciz	"ret"
-	.size	ret_namestr, 4
 
 	.type	invoke_namestr,@object          # @invoke_namestr
 invoke_namestr:
@@ -11071,11 +11061,6 @@ invoke_namestr:
 load_namestr:
 	.asciz	"load"
 	.size	load_namestr, 5
-
-	.type	mul_namestr,@object             # @mul_namestr
-mul_namestr:
-	.asciz	"mul"
-	.size	mul_namestr, 4
 
 	.type	sext_namestr,@object            # @sext_namestr
 sext_namestr:
@@ -11112,15 +11097,20 @@ extractvalue_namestr:
 	.asciz	"extractvalue"
 	.size	extractvalue_namestr, 13
 
+	.type	trunc_namestr,@object           # @trunc_namestr
+trunc_namestr:
+	.asciz	"trunc"
+	.size	trunc_namestr, 6
+
 	.type	store_namestr,@object           # @store_namestr
 store_namestr:
 	.asciz	"store"
 	.size	store_namestr, 6
 
-	.type	fptoui_namestr,@object          # @fptoui_namestr
-fptoui_namestr:
-	.asciz	"fptoui"
-	.size	fptoui_namestr, 7
+	.type	fpext_namestr,@object           # @fpext_namestr
+fpext_namestr:
+	.asciz	"fpext"
+	.size	fpext_namestr, 6
 
 	.type	ashr_namestr,@object            # @ashr_namestr
 ashr_namestr:
@@ -11142,10 +11132,15 @@ sitofp_namestr:
 	.asciz	"sitofp"
 	.size	sitofp_namestr, 7
 
-	.type	fpext_namestr,@object           # @fpext_namestr
-fpext_namestr:
-	.asciz	"fpext"
-	.size	fpext_namestr, 6
+	.type	lshr_namestr,@object            # @lshr_namestr
+lshr_namestr:
+	.asciz	"lshr"
+	.size	lshr_namestr, 5
+
+	.type	fptoui_namestr,@object          # @fptoui_namestr
+fptoui_namestr:
+	.asciz	"fptoui"
+	.size	fptoui_namestr, 7
 
 	.type	sub_namestr,@object             # @sub_namestr
 sub_namestr:
@@ -11156,6 +11151,11 @@ sub_namestr:
 shl_namestr:
 	.asciz	"shl"
 	.size	shl_namestr, 4
+
+	.type	ret_namestr,@object             # @ret_namestr
+ret_namestr:
+	.asciz	"ret"
+	.size	ret_namestr, 4
 
 	.type	insertvalue_namestr,@object     # @insertvalue_namestr
 insertvalue_namestr:
@@ -11202,14 +11202,11 @@ DW.ref.__gxx_personality_v0:
 	.addrsig_sym l1
 	.addrsig_sym l2
 	.addrsig_sym br_namestr
-	.addrsig_sym lshr_namestr
-	.addrsig_sym trunc_namestr
 	.addrsig_sym zext_namestr
+	.addrsig_sym mul_namestr
 	.addrsig_sym alloca_namestr
-	.addrsig_sym ret_namestr
 	.addrsig_sym invoke_namestr
 	.addrsig_sym load_namestr
-	.addrsig_sym mul_namestr
 	.addrsig_sym sext_namestr
 	.addrsig_sym call_namestr
 	.addrsig_sym icmp_namestr
@@ -11217,15 +11214,18 @@ DW.ref.__gxx_personality_v0:
 	.addrsig_sym fptosi_namestr
 	.addrsig_sym add_namestr
 	.addrsig_sym extractvalue_namestr
+	.addrsig_sym trunc_namestr
 	.addrsig_sym store_namestr
-	.addrsig_sym fptoui_namestr
+	.addrsig_sym fpext_namestr
 	.addrsig_sym ashr_namestr
 	.addrsig_sym uitofp_namestr
 	.addrsig_sym fdiv_namestr
 	.addrsig_sym sitofp_namestr
-	.addrsig_sym fpext_namestr
+	.addrsig_sym lshr_namestr
+	.addrsig_sym fptoui_namestr
 	.addrsig_sym sub_namestr
 	.addrsig_sym shl_namestr
+	.addrsig_sym ret_namestr
 	.addrsig_sym insertvalue_namestr
 	.addrsig_sym resume_namestr
 	.addrsig_sym fadd_namestr

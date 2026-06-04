@@ -31,4 +31,4 @@ kmeans_systematic(){
 
     ./gather_csv.sh kmeans ${CSV_FILE}
 }
-kmeans_systematic
+# kmeans_systematic

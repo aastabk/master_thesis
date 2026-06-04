@@ -25,4 +25,4 @@ blackscholes_systematic(){
 
     ./gather_csv.sh blackscholes ${CSV_FILE}
 }
-blackscholes_systematic
+# blackscholes_systematic

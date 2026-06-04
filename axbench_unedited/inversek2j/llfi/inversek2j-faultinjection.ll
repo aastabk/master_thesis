@@ -45,18 +45,26 @@ $_ZN12AxBenchTimer5resetEv = comdat any
 @l2 = dso_local global float 5.000000e-01, align 4
 @alloca_namestr = internal constant [7 x i8] c"alloca\00"
 @store_namestr = internal constant [6 x i8] c"store\00"
+@extractvalue_namestr = internal constant [13 x i8] c"extractvalue\00"
 @invoke_namestr = internal constant [7 x i8] c"invoke\00"
 @load_namestr = internal constant [5 x i8] c"load\00"
 @mul_namestr = internal constant [4 x i8] c"mul\00"
+@sext_namestr = internal constant [5 x i8] c"sext\00"
 @call_namestr = internal constant [5 x i8] c"call\00"
 @icmp_namestr = internal constant [5 x i8] c"icmp\00"
 @br_namestr = internal constant [3 x i8] c"br\00"
 @add_namestr = internal constant [4 x i8] c"add\00"
+@trunc_namestr = internal constant [6 x i8] c"trunc\00"
 @fmul_namestr = internal constant [5 x i8] c"fmul\00"
 @fneg_namestr = internal constant [5 x i8] c"fneg\00"
 @fdiv_namestr = internal constant [5 x i8] c"fdiv\00"
 @fpext_namestr = internal constant [6 x i8] c"fpext\00"
 @fptrunc_namestr = internal constant [8 x i8] c"fptrunc\00"
+@uitofp_namestr = internal constant [7 x i8] c"uitofp\00"
+@ret_namestr = internal constant [4 x i8] c"ret\00"
+@insertvalue_namestr = internal constant [12 x i8] c"insertvalue\00"
+@resume_namestr = internal constant [7 x i8] c"resume\00"
+@sub_namestr = internal constant [4 x i8] c"sub\00"
 @fadd_namestr = internal constant [5 x i8] c"fadd\00"
 
 ; Function Attrs: noinline norecurse optnone uwtable
@@ -161,13 +169,13 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
           to label %48 unwind label %76, !llfi_index !63
 
 48:                                               ; preds = %46
-  %fi35 = call i32 @injectFault0(i64 58, i32 16, i32 5, i32 0, i32 1, i32 3, ptr @invoke_namestr), !llfi_injectfault !6
-  invoke void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEE4openERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode(ptr noundef nonnull align 8 dereferenceable(248) %21, ptr noundef nonnull align 8 dereferenceable(32) %19, i32 noundef %fi35)
+  %fi41 = call i32 @injectFault0(i64 58, i32 16, i32 5, i32 0, i32 1, i32 3, ptr @invoke_namestr), !llfi_injectfault !6
+  invoke void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEE4openERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode(ptr noundef nonnull align 8 dereferenceable(248) %21, ptr noundef nonnull align 8 dereferenceable(32) %19, i32 noundef %fi41)
           to label %49 unwind label %80, !llfi_index !64
 
 49:                                               ; preds = %48
-  %fi37 = call i32 @injectFault0(i64 59, i32 8, i32 5, i32 0, i32 1, i32 3, ptr @invoke_namestr), !llfi_injectfault !6
-  invoke void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEEC1ERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode(ptr noundef nonnull align 8 dereferenceable(256) %22, ptr noundef nonnull align 8 dereferenceable(32) %15, i32 noundef %fi37)
+  %fi43 = call i32 @injectFault0(i64 59, i32 8, i32 5, i32 0, i32 1, i32 3, ptr @invoke_namestr), !llfi_injectfault !6
+  invoke void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEEC1ERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode(ptr noundef nonnull align 8 dereferenceable(256) %22, ptr noundef nonnull align 8 dereferenceable(32) %15, i32 noundef %fi43)
           to label %50 unwind label %80, !llfi_index !65
 
 50:                                               ; preds = %49
@@ -176,28 +184,30 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 
 52:                                               ; preds = %50
   %53 = load i32, ptr %14, align 4, !llfi_index !67
-  %fi36 = call i32 @injectFault0(i64 61, i32 %53, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi39 = call i32 @injectFault0(i64 62, i32 %fi36, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi40 = call i32 @injectFault0(i64 62, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
-  %54 = mul nsw i32 %fi39, %fi40, !llfi_index !69
-  %fi38 = call i32 @injectFault0(i64 62, i32 %54, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi42 = call i32 @injectFault0(i64 63, i32 %fi38, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi43 = call i32 @injectFault0(i64 63, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
-  %55 = mul nsw i32 %fi42, %fi43, !llfi_index !70
-  %fi41 = call i32 @injectFault0(i64 63, i32 %55, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %56 = sext i32 %fi41 to i64, !llfi_index !71
-  %fi45 = call i64 @injectFault1(i64 65, i64 %56, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi46 = call i64 @injectFault1(i64 65, i64 4, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
-  %57 = mul i64 %fi45, %fi46, !llfi_index !72
-  %fi44 = call i64 @injectFault1(i64 65, i64 %57, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi47 = call i64 @injectFault1(i64 66, i64 %fi44, i32 56, i32 0, i32 1, i32 1, ptr @call_namestr), !llfi_injectfault !6
-  %58 = call noalias ptr @malloc(i64 noundef %fi47) #9, !llfi_index !73
+  %fi42 = call i32 @injectFault0(i64 61, i32 %53, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi45 = call i32 @injectFault0(i64 62, i32 %fi42, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi46 = call i32 @injectFault0(i64 62, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %54 = mul nsw i32 %fi45, %fi46, !llfi_index !69
+  %fi44 = call i32 @injectFault0(i64 62, i32 %54, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi48 = call i32 @injectFault0(i64 63, i32 %fi44, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi49 = call i32 @injectFault0(i64 63, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %55 = mul nsw i32 %fi48, %fi49, !llfi_index !70
+  %fi47 = call i32 @injectFault0(i64 63, i32 %55, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi51 = call i32 @injectFault0(i64 64, i32 %fi47, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %56 = sext i32 %fi51 to i64, !llfi_index !71
+  %fi50 = call i64 @injectFault2(i64 64, i64 %56, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %fi53 = call i64 @injectFault2(i64 65, i64 %fi50, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi54 = call i64 @injectFault2(i64 65, i64 4, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %57 = mul i64 %fi53, %fi54, !llfi_index !72
+  %fi52 = call i64 @injectFault2(i64 65, i64 %57, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi55 = call i64 @injectFault2(i64 66, i64 %fi52, i32 56, i32 0, i32 1, i32 1, ptr @call_namestr), !llfi_injectfault !6
+  %58 = call noalias ptr @malloc(i64 noundef %fi55) #9, !llfi_index !73
   store ptr %58, ptr %23, align 8, !llfi_index !74
   %59 = load ptr, ptr %23, align 8, !llfi_index !75
   %60 = icmp eq ptr %59, null, !llfi_index !76
-  %fi48 = call i1 @injectFault2(i64 69, i1 %60, i32 53, i32 0, i32 1, i32 0, ptr @icmp_namestr), !llfi_injectfault !68
-  %fi49 = call i1 @injectFault2(i64 70, i1 %fi48, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !6
-  br i1 %fi49, label %61, label %88, !llfi_index !77
+  %fi56 = call i1 @injectFault3(i64 69, i1 %60, i32 53, i32 0, i32 1, i32 0, ptr @icmp_namestr), !llfi_injectfault !68
+  %fi57 = call i1 @injectFault3(i64 70, i1 %fi56, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !6
+  br i1 %fi57, label %61, label %88, !llfi_index !77
 
 61:                                               ; preds = %52
   %62 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(ptr noundef nonnull align 8 dereferenceable(8) @_ZSt4cerr, ptr noundef @.str)
@@ -208,20 +218,23 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
           to label %65 unwind label %84, !llfi_index !79
 
 65:                                               ; preds = %63
-  %fi50 = call i32 @injectFault0(i64 73, i32 -1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi50, ptr %11, align 4, !llfi_index !80
-  %fi51 = call i32 @injectFault0(i64 74, i32 1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi51, ptr %24, align 4, !llfi_index !81
+  %fi58 = call i32 @injectFault0(i64 73, i32 -1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi58, ptr %11, align 4, !llfi_index !80
+  %fi59 = call i32 @injectFault0(i64 74, i32 1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi59, ptr %24, align 4, !llfi_index !81
   br label %231, !llfi_index !82
 
 66:                                               ; preds = %2
   %67 = landingpad { ptr, i32 }
           cleanup, !llfi_index !83
-  %68 = extractvalue { ptr, i32 } %67, 0, !llfi_index !84
+  %fi60 = call { ptr, i32 } @injectFault1(i64 77, { ptr, i32 } %67, i32 64, i32 0, i32 1, i32 1, ptr @extractvalue_namestr), !llfi_injectfault !6
+  %68 = extractvalue { ptr, i32 } %fi60, 0, !llfi_index !84
   store ptr %68, ptr %17, align 8, !llfi_index !85
-  %69 = extractvalue { ptr, i32 } %67, 1, !llfi_index !86
-  %fi52 = call i32 @injectFault0(i64 80, i32 %69, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi52, ptr %18, align 4, !llfi_index !87
+  %fi62 = call { ptr, i32 } @injectFault1(i64 79, { ptr, i32 } %67, i32 64, i32 1, i32 2, i32 1, ptr @extractvalue_namestr), !llfi_injectfault !6
+  %69 = extractvalue { ptr, i32 } %fi62, 1, !llfi_index !86
+  %fi61 = call i32 @injectFault0(i64 79, i32 %69, i32 64, i32 0, i32 2, i32 0, ptr @extractvalue_namestr), !llfi_injectfault !68
+  %fi63 = call i32 @injectFault0(i64 80, i32 %fi61, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi63, ptr %18, align 4, !llfi_index !87
   store ptr %16, ptr %7, align 8, !llfi_index !88
   %70 = load ptr, ptr %7, align 8, !llfi_index !89
   call void @_ZNSt15__new_allocatorIcED2Ev(ptr noundef nonnull align 1 dereferenceable(1) %70) #8, !llfi_index !90
@@ -230,11 +243,14 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 71:                                               ; preds = %39
   %72 = landingpad { ptr, i32 }
           cleanup, !llfi_index !92
-  %73 = extractvalue { ptr, i32 } %72, 0, !llfi_index !93
+  %fi64 = call { ptr, i32 } @injectFault1(i64 86, { ptr, i32 } %72, i32 64, i32 0, i32 1, i32 1, ptr @extractvalue_namestr), !llfi_injectfault !6
+  %73 = extractvalue { ptr, i32 } %fi64, 0, !llfi_index !93
   store ptr %73, ptr %17, align 8, !llfi_index !94
-  %74 = extractvalue { ptr, i32 } %72, 1, !llfi_index !95
-  %fi53 = call i32 @injectFault0(i64 89, i32 %74, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi53, ptr %18, align 4, !llfi_index !96
+  %fi66 = call { ptr, i32 } @injectFault1(i64 88, { ptr, i32 } %72, i32 64, i32 1, i32 2, i32 1, ptr @extractvalue_namestr), !llfi_injectfault !6
+  %74 = extractvalue { ptr, i32 } %fi66, 1, !llfi_index !95
+  %fi65 = call i32 @injectFault0(i64 88, i32 %74, i32 64, i32 0, i32 2, i32 0, ptr @extractvalue_namestr), !llfi_injectfault !68
+  %fi67 = call i32 @injectFault0(i64 89, i32 %fi65, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi67, ptr %18, align 4, !llfi_index !96
   store ptr %20, ptr %5, align 8, !llfi_index !97
   %75 = load ptr, ptr %5, align 8, !llfi_index !98
   call void @_ZNSt15__new_allocatorIcED2Ev(ptr noundef nonnull align 1 dereferenceable(1) %75) #8, !llfi_index !99
@@ -243,63 +259,74 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 76:                                               ; preds = %46
   %77 = landingpad { ptr, i32 }
           cleanup, !llfi_index !101
-  %78 = extractvalue { ptr, i32 } %77, 0, !llfi_index !102
+  %fi68 = call { ptr, i32 } @injectFault1(i64 95, { ptr, i32 } %77, i32 64, i32 0, i32 1, i32 1, ptr @extractvalue_namestr), !llfi_injectfault !6
+  %78 = extractvalue { ptr, i32 } %fi68, 0, !llfi_index !102
   store ptr %78, ptr %17, align 8, !llfi_index !103
-  %79 = extractvalue { ptr, i32 } %77, 1, !llfi_index !104
-  %fi33 = call i32 @injectFault0(i64 98, i32 %79, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi33, ptr %18, align 4, !llfi_index !105
+  %fi34 = call { ptr, i32 } @injectFault1(i64 97, { ptr, i32 } %77, i32 64, i32 1, i32 2, i32 1, ptr @extractvalue_namestr), !llfi_injectfault !6
+  %79 = extractvalue { ptr, i32 } %fi34, 1, !llfi_index !104
+  %fi33 = call i32 @injectFault0(i64 97, i32 %79, i32 64, i32 0, i32 2, i32 0, ptr @extractvalue_namestr), !llfi_injectfault !68
+  %fi35 = call i32 @injectFault0(i64 98, i32 %fi33, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi35, ptr %18, align 4, !llfi_index !105
   br label %234, !llfi_index !106
 
 80:                                               ; preds = %49, %48
   %81 = landingpad { ptr, i32 }
           cleanup, !llfi_index !107
-  %82 = extractvalue { ptr, i32 } %81, 0, !llfi_index !108
+  %fi36 = call { ptr, i32 } @injectFault1(i64 101, { ptr, i32 } %81, i32 64, i32 0, i32 1, i32 1, ptr @extractvalue_namestr), !llfi_injectfault !6
+  %82 = extractvalue { ptr, i32 } %fi36, 0, !llfi_index !108
   store ptr %82, ptr %17, align 8, !llfi_index !109
-  %83 = extractvalue { ptr, i32 } %81, 1, !llfi_index !110
-  %fi34 = call i32 @injectFault0(i64 104, i32 %83, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi34, ptr %18, align 4, !llfi_index !111
+  %fi38 = call { ptr, i32 } @injectFault1(i64 103, { ptr, i32 } %81, i32 64, i32 1, i32 2, i32 1, ptr @extractvalue_namestr), !llfi_injectfault !6
+  %83 = extractvalue { ptr, i32 } %fi38, 1, !llfi_index !110
+  %fi37 = call i32 @injectFault0(i64 103, i32 %83, i32 64, i32 0, i32 2, i32 0, ptr @extractvalue_namestr), !llfi_injectfault !68
+  %fi39 = call i32 @injectFault0(i64 104, i32 %fi37, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi39, ptr %18, align 4, !llfi_index !111
   br label %233, !llfi_index !112
 
 84:                                               ; preds = %228, %227, %221, %213, %211, %203, %194, %189, %187, %185, %158, %124, %116, %99, %97, %63, %61, %50
   %85 = landingpad { ptr, i32 }
           cleanup, !llfi_index !113
-  %86 = extractvalue { ptr, i32 } %85, 0, !llfi_index !114
+  %fi40 = call { ptr, i32 } @injectFault1(i64 107, { ptr, i32 } %85, i32 64, i32 0, i32 1, i32 1, ptr @extractvalue_namestr), !llfi_injectfault !6
+  %86 = extractvalue { ptr, i32 } %fi40, 0, !llfi_index !114
   store ptr %86, ptr %17, align 8, !llfi_index !115
-  %87 = extractvalue { ptr, i32 } %85, 1, !llfi_index !116
-  %fi71 = call i32 @injectFault0(i64 110, i32 %87, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi71, ptr %18, align 4, !llfi_index !117
+  %fi95 = call { ptr, i32 } @injectFault1(i64 109, { ptr, i32 } %85, i32 64, i32 1, i32 2, i32 1, ptr @extractvalue_namestr), !llfi_injectfault !6
+  %87 = extractvalue { ptr, i32 } %fi95, 1, !llfi_index !116
+  %fi94 = call i32 @injectFault0(i64 109, i32 %87, i32 64, i32 0, i32 2, i32 0, ptr @extractvalue_namestr), !llfi_injectfault !68
+  %fi96 = call i32 @injectFault0(i64 110, i32 %fi94, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi96, ptr %18, align 4, !llfi_index !117
   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev(ptr noundef nonnull align 8 dereferenceable(256) %22) #8, !llfi_index !118
   br label %233, !llfi_index !119
 
 88:                                               ; preds = %52
   %89 = call i64 @time(ptr noundef null) #8, !llfi_index !120
-  %fi72 = call i64 @injectFault1(i64 113, i64 %89, i32 56, i32 0, i32 1, i32 0, ptr @call_namestr), !llfi_injectfault !68
-  %90 = trunc i64 %fi72 to i32, !llfi_index !121
-  %fi73 = call i32 @injectFault0(i64 115, i32 %90, i32 56, i32 0, i32 1, i32 1, ptr @call_namestr), !llfi_injectfault !6
-  call void @srand(i32 noundef %fi73) #8, !llfi_index !122
-  %fi74 = call i32 @injectFault0(i64 116, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi74, ptr %25, align 4, !llfi_index !123
+  %fi97 = call i64 @injectFault2(i64 113, i64 %89, i32 56, i32 0, i32 1, i32 0, ptr @call_namestr), !llfi_injectfault !68
+  %fi99 = call i64 @injectFault2(i64 114, i64 %fi97, i32 38, i32 1, i32 2, i32 1, ptr @trunc_namestr), !llfi_injectfault !6
+  %90 = trunc i64 %fi99 to i32, !llfi_index !121
+  %fi98 = call i32 @injectFault0(i64 114, i32 %90, i32 38, i32 0, i32 2, i32 0, ptr @trunc_namestr), !llfi_injectfault !68
+  %fi100 = call i32 @injectFault0(i64 115, i32 %fi98, i32 56, i32 0, i32 1, i32 1, ptr @call_namestr), !llfi_injectfault !6
+  call void @srand(i32 noundef %fi100) #8, !llfi_index !122
+  %fi101 = call i32 @injectFault0(i64 116, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi101, ptr %25, align 4, !llfi_index !123
   br label %91, !llfi_index !124
 
 91:                                               ; preds = %113, %88
   %92 = load i32, ptr %25, align 4, !llfi_index !125
-  %fi75 = call i32 @injectFault0(i64 118, i32 %92, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi102 = call i32 @injectFault0(i64 118, i32 %92, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %93 = load i32, ptr %14, align 4, !llfi_index !126
-  %fi76 = call i32 @injectFault0(i64 119, i32 %93, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi78 = call i32 @injectFault0(i64 120, i32 %fi76, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi79 = call i32 @injectFault0(i64 120, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
-  %94 = mul nsw i32 %fi78, %fi79, !llfi_index !127
-  %fi77 = call i32 @injectFault0(i64 120, i32 %94, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi81 = call i32 @injectFault0(i64 121, i32 %fi77, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi82 = call i32 @injectFault0(i64 121, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
-  %95 = mul nsw i32 %fi81, %fi82, !llfi_index !128
-  %fi80 = call i32 @injectFault0(i64 121, i32 %95, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi84 = call i32 @injectFault0(i64 122, i32 %fi75, i32 53, i32 1, i32 3, i32 1, ptr @icmp_namestr), !llfi_injectfault !6
-  %fi85 = call i32 @injectFault0(i64 122, i32 %fi80, i32 53, i32 2, i32 3, i32 2, ptr @icmp_namestr), !llfi_injectfault !6
-  %96 = icmp slt i32 %fi84, %fi85, !llfi_index !129
-  %fi83 = call i1 @injectFault2(i64 122, i1 %96, i32 53, i32 0, i32 3, i32 0, ptr @icmp_namestr), !llfi_injectfault !68
-  %fi86 = call i1 @injectFault2(i64 123, i1 %fi83, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !6
-  br i1 %fi86, label %97, label %116, !llfi_index !130
+  %fi103 = call i32 @injectFault0(i64 119, i32 %93, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi105 = call i32 @injectFault0(i64 120, i32 %fi103, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi106 = call i32 @injectFault0(i64 120, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %94 = mul nsw i32 %fi105, %fi106, !llfi_index !127
+  %fi104 = call i32 @injectFault0(i64 120, i32 %94, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi108 = call i32 @injectFault0(i64 121, i32 %fi104, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi109 = call i32 @injectFault0(i64 121, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %95 = mul nsw i32 %fi108, %fi109, !llfi_index !128
+  %fi107 = call i32 @injectFault0(i64 121, i32 %95, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi111 = call i32 @injectFault0(i64 122, i32 %fi102, i32 53, i32 1, i32 3, i32 1, ptr @icmp_namestr), !llfi_injectfault !6
+  %fi112 = call i32 @injectFault0(i64 122, i32 %fi107, i32 53, i32 2, i32 3, i32 2, ptr @icmp_namestr), !llfi_injectfault !6
+  %96 = icmp slt i32 %fi111, %fi112, !llfi_index !129
+  %fi110 = call i1 @injectFault3(i64 122, i1 %96, i32 53, i32 0, i32 3, i32 0, ptr @icmp_namestr), !llfi_injectfault !68
+  %fi113 = call i1 @injectFault3(i64 123, i1 %fi110, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !6
+  br i1 %fi113, label %97, label %116, !llfi_index !130
 
 97:                                               ; preds = %91
   %98 = invoke noundef nonnull align 8 dereferenceable(16) ptr @_ZNSirsERf(ptr noundef nonnull align 8 dereferenceable(16) %22, ptr noundef nonnull align 4 dereferenceable(4) %26)
@@ -311,38 +338,42 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 
 101:                                              ; preds = %99
   %102 = load float, ptr %26, align 4, !llfi_index !133
-  %fi87 = call float @injectFault3(i64 126, float %102, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi114 = call float @injectFault4(i64 126, float %102, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %103 = load ptr, ptr %23, align 8, !llfi_index !134
   %104 = load i32, ptr %25, align 4, !llfi_index !135
-  %fi88 = call i32 @injectFault0(i64 128, i32 %104, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %105 = sext i32 %fi88 to i64, !llfi_index !136
-  %106 = getelementptr inbounds float, ptr %103, i64 %105, !llfi_index !137
-  %fi89 = call float @injectFault3(i64 131, float %fi87, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store float %fi89, ptr %106, align 4, !llfi_index !138
+  %fi115 = call i32 @injectFault0(i64 128, i32 %104, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi117 = call i32 @injectFault0(i64 129, i32 %fi115, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %105 = sext i32 %fi117 to i64, !llfi_index !136
+  %fi116 = call i64 @injectFault2(i64 129, i64 %105, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %106 = getelementptr inbounds float, ptr %103, i64 %fi116, !llfi_index !137
+  %fi118 = call float @injectFault4(i64 131, float %fi114, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store float %fi118, ptr %106, align 4, !llfi_index !138
   %107 = load float, ptr %27, align 4, !llfi_index !139
-  %fi90 = call float @injectFault3(i64 132, float %107, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi119 = call float @injectFault4(i64 132, float %107, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %108 = load ptr, ptr %23, align 8, !llfi_index !140
   %109 = load i32, ptr %25, align 4, !llfi_index !141
-  %fi91 = call i32 @injectFault0(i64 134, i32 %109, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi93 = call i32 @injectFault0(i64 135, i32 %fi91, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi94 = call i32 @injectFault0(i64 135, i32 1, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %110 = add nsw i32 %fi93, %fi94, !llfi_index !142
-  %fi92 = call i32 @injectFault0(i64 135, i32 %110, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %111 = sext i32 %fi92 to i64, !llfi_index !143
-  %112 = getelementptr inbounds float, ptr %108, i64 %111, !llfi_index !144
-  %fi95 = call float @injectFault3(i64 138, float %fi90, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store float %fi95, ptr %112, align 4, !llfi_index !145
+  %fi120 = call i32 @injectFault0(i64 134, i32 %109, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi122 = call i32 @injectFault0(i64 135, i32 %fi120, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi123 = call i32 @injectFault0(i64 135, i32 1, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %110 = add nsw i32 %fi122, %fi123, !llfi_index !142
+  %fi121 = call i32 @injectFault0(i64 135, i32 %110, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi125 = call i32 @injectFault0(i64 136, i32 %fi121, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %111 = sext i32 %fi125 to i64, !llfi_index !143
+  %fi124 = call i64 @injectFault2(i64 136, i64 %111, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %112 = getelementptr inbounds float, ptr %108, i64 %fi124, !llfi_index !144
+  %fi126 = call float @injectFault4(i64 138, float %fi119, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store float %fi126, ptr %112, align 4, !llfi_index !145
   br label %113, !llfi_index !146
 
 113:                                              ; preds = %101
   %114 = load i32, ptr %25, align 4, !llfi_index !147
-  %fi96 = call i32 @injectFault0(i64 140, i32 %114, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi98 = call i32 @injectFault0(i64 141, i32 %fi96, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi99 = call i32 @injectFault0(i64 141, i32 4, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %115 = add nsw i32 %fi98, %fi99, !llfi_index !148
-  %fi97 = call i32 @injectFault0(i64 141, i32 %115, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %fi100 = call i32 @injectFault0(i64 142, i32 %fi97, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi100, ptr %25, align 4, !llfi_index !149
+  %fi127 = call i32 @injectFault0(i64 140, i32 %114, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi129 = call i32 @injectFault0(i64 141, i32 %fi127, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi130 = call i32 @injectFault0(i64 141, i32 4, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %115 = add nsw i32 %fi129, %fi130, !llfi_index !148
+  %fi128 = call i32 @injectFault0(i64 141, i32 %115, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi131 = call i32 @injectFault0(i64 142, i32 %fi128, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi131, ptr %25, align 4, !llfi_index !149
   br label %91, !llvm.loop !150, !llfi_index !152
 
 116:                                              ; preds = %91
@@ -350,76 +381,84 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
           to label %117 unwind label %84, !llfi_index !153
 
 117:                                              ; preds = %116
-  %fi101 = call i32 @injectFault0(i64 145, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi101, ptr %29, align 4, !llfi_index !154
-  %fi102 = call i32 @injectFault0(i64 146, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi102, ptr %30, align 4, !llfi_index !155
+  %fi132 = call i32 @injectFault0(i64 145, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi132, ptr %29, align 4, !llfi_index !154
+  %fi133 = call i32 @injectFault0(i64 146, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi133, ptr %30, align 4, !llfi_index !155
   br label %118, !llfi_index !156
 
 118:                                              ; preds = %148, %117
   %119 = load i32, ptr %30, align 4, !llfi_index !157
-  %fi103 = call i32 @injectFault0(i64 148, i32 %119, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi134 = call i32 @injectFault0(i64 148, i32 %119, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %120 = load i32, ptr %14, align 4, !llfi_index !158
-  %fi104 = call i32 @injectFault0(i64 149, i32 %120, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi106 = call i32 @injectFault0(i64 150, i32 %fi104, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi107 = call i32 @injectFault0(i64 150, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
-  %121 = mul nsw i32 %fi106, %fi107, !llfi_index !159
-  %fi105 = call i32 @injectFault0(i64 150, i32 %121, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi109 = call i32 @injectFault0(i64 151, i32 %fi105, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi110 = call i32 @injectFault0(i64 151, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
-  %122 = mul nsw i32 %fi109, %fi110, !llfi_index !160
-  %fi108 = call i32 @injectFault0(i64 151, i32 %122, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi112 = call i32 @injectFault0(i64 152, i32 %fi103, i32 53, i32 1, i32 3, i32 1, ptr @icmp_namestr), !llfi_injectfault !6
-  %fi113 = call i32 @injectFault0(i64 152, i32 %fi108, i32 53, i32 2, i32 3, i32 2, ptr @icmp_namestr), !llfi_injectfault !6
-  %123 = icmp slt i32 %fi112, %fi113, !llfi_index !161
-  %fi111 = call i1 @injectFault2(i64 152, i1 %123, i32 53, i32 0, i32 3, i32 0, ptr @icmp_namestr), !llfi_injectfault !68
-  %fi114 = call i1 @injectFault2(i64 153, i1 %fi111, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !6
-  br i1 %fi114, label %124, label %151, !llfi_index !162
+  %fi135 = call i32 @injectFault0(i64 149, i32 %120, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi137 = call i32 @injectFault0(i64 150, i32 %fi135, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi138 = call i32 @injectFault0(i64 150, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %121 = mul nsw i32 %fi137, %fi138, !llfi_index !159
+  %fi136 = call i32 @injectFault0(i64 150, i32 %121, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi140 = call i32 @injectFault0(i64 151, i32 %fi136, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi141 = call i32 @injectFault0(i64 151, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %122 = mul nsw i32 %fi140, %fi141, !llfi_index !160
+  %fi139 = call i32 @injectFault0(i64 151, i32 %122, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi143 = call i32 @injectFault0(i64 152, i32 %fi134, i32 53, i32 1, i32 3, i32 1, ptr @icmp_namestr), !llfi_injectfault !6
+  %fi144 = call i32 @injectFault0(i64 152, i32 %fi139, i32 53, i32 2, i32 3, i32 2, ptr @icmp_namestr), !llfi_injectfault !6
+  %123 = icmp slt i32 %fi143, %fi144, !llfi_index !161
+  %fi142 = call i1 @injectFault3(i64 152, i1 %123, i32 53, i32 0, i32 3, i32 0, ptr @icmp_namestr), !llfi_injectfault !68
+  %fi145 = call i1 @injectFault3(i64 153, i1 %fi142, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !6
+  br i1 %fi145, label %124, label %151, !llfi_index !162
 
 124:                                              ; preds = %118
   %125 = load ptr, ptr %23, align 8, !llfi_index !163
   %126 = load i32, ptr %30, align 4, !llfi_index !164
-  %fi115 = call i32 @injectFault0(i64 155, i32 %126, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi117 = call i32 @injectFault0(i64 156, i32 %fi115, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi118 = call i32 @injectFault0(i64 156, i32 0, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %127 = add nsw i32 %fi117, %fi118, !llfi_index !165
-  %fi116 = call i32 @injectFault0(i64 156, i32 %127, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %128 = sext i32 %fi116 to i64, !llfi_index !166
-  %129 = getelementptr inbounds float, ptr %125, i64 %128, !llfi_index !167
+  %fi146 = call i32 @injectFault0(i64 155, i32 %126, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi148 = call i32 @injectFault0(i64 156, i32 %fi146, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi149 = call i32 @injectFault0(i64 156, i32 0, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %127 = add nsw i32 %fi148, %fi149, !llfi_index !165
+  %fi147 = call i32 @injectFault0(i64 156, i32 %127, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi151 = call i32 @injectFault0(i64 157, i32 %fi147, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %128 = sext i32 %fi151 to i64, !llfi_index !166
+  %fi150 = call i64 @injectFault2(i64 157, i64 %128, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %129 = getelementptr inbounds float, ptr %125, i64 %fi150, !llfi_index !167
   %130 = load float, ptr %129, align 4, !llfi_index !168
-  %fi119 = call float @injectFault3(i64 159, float %130, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi152 = call float @injectFault4(i64 159, float %130, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %131 = load ptr, ptr %23, align 8, !llfi_index !169
   %132 = load i32, ptr %30, align 4, !llfi_index !170
-  %fi120 = call i32 @injectFault0(i64 161, i32 %132, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi122 = call i32 @injectFault0(i64 162, i32 %fi120, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi123 = call i32 @injectFault0(i64 162, i32 1, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %133 = add nsw i32 %fi122, %fi123, !llfi_index !171
-  %fi121 = call i32 @injectFault0(i64 162, i32 %133, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %134 = sext i32 %fi121 to i64, !llfi_index !172
-  %135 = getelementptr inbounds float, ptr %131, i64 %134, !llfi_index !173
+  %fi153 = call i32 @injectFault0(i64 161, i32 %132, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi155 = call i32 @injectFault0(i64 162, i32 %fi153, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi156 = call i32 @injectFault0(i64 162, i32 1, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %133 = add nsw i32 %fi155, %fi156, !llfi_index !171
+  %fi154 = call i32 @injectFault0(i64 162, i32 %133, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi158 = call i32 @injectFault0(i64 163, i32 %fi154, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %134 = sext i32 %fi158 to i64, !llfi_index !172
+  %fi157 = call i64 @injectFault2(i64 163, i64 %134, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %135 = getelementptr inbounds float, ptr %131, i64 %fi157, !llfi_index !173
   %136 = load float, ptr %135, align 4, !llfi_index !174
-  %fi124 = call float @injectFault3(i64 165, float %136, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi159 = call float @injectFault4(i64 165, float %136, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %137 = load ptr, ptr %23, align 8, !llfi_index !175
   %138 = load i32, ptr %30, align 4, !llfi_index !176
-  %fi125 = call i32 @injectFault0(i64 167, i32 %138, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi127 = call i32 @injectFault0(i64 168, i32 %fi125, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi128 = call i32 @injectFault0(i64 168, i32 2, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %139 = add nsw i32 %fi127, %fi128, !llfi_index !177
-  %fi126 = call i32 @injectFault0(i64 168, i32 %139, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %140 = sext i32 %fi126 to i64, !llfi_index !178
-  %141 = getelementptr inbounds float, ptr %137, i64 %140, !llfi_index !179
+  %fi160 = call i32 @injectFault0(i64 167, i32 %138, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi162 = call i32 @injectFault0(i64 168, i32 %fi160, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi163 = call i32 @injectFault0(i64 168, i32 2, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %139 = add nsw i32 %fi162, %fi163, !llfi_index !177
+  %fi161 = call i32 @injectFault0(i64 168, i32 %139, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi165 = call i32 @injectFault0(i64 169, i32 %fi161, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %140 = sext i32 %fi165 to i64, !llfi_index !178
+  %fi164 = call i64 @injectFault2(i64 169, i64 %140, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %141 = getelementptr inbounds float, ptr %137, i64 %fi164, !llfi_index !179
   %142 = load ptr, ptr %23, align 8, !llfi_index !180
   %143 = load i32, ptr %30, align 4, !llfi_index !181
-  %fi129 = call i32 @injectFault0(i64 172, i32 %143, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi131 = call i32 @injectFault0(i64 173, i32 %fi129, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi132 = call i32 @injectFault0(i64 173, i32 3, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %144 = add nsw i32 %fi131, %fi132, !llfi_index !182
-  %fi130 = call i32 @injectFault0(i64 173, i32 %144, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %145 = sext i32 %fi130 to i64, !llfi_index !183
-  %146 = getelementptr inbounds float, ptr %142, i64 %145, !llfi_index !184
-  %fi133 = call float @injectFault3(i64 176, float %fi119, i32 5, i32 0, i32 2, i32 1, ptr @invoke_namestr), !llfi_injectfault !6
-  %fi134 = call float @injectFault3(i64 176, float %fi124, i32 5, i32 1, i32 2, i32 2, ptr @invoke_namestr), !llfi_injectfault !6
-  invoke void @_Z10forwardk2jffPfS_(float noundef %fi133, float noundef %fi134, ptr noundef %141, ptr noundef %146)
+  %fi166 = call i32 @injectFault0(i64 172, i32 %143, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi168 = call i32 @injectFault0(i64 173, i32 %fi166, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi169 = call i32 @injectFault0(i64 173, i32 3, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %144 = add nsw i32 %fi168, %fi169, !llfi_index !182
+  %fi167 = call i32 @injectFault0(i64 173, i32 %144, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi171 = call i32 @injectFault0(i64 174, i32 %fi167, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %145 = sext i32 %fi171 to i64, !llfi_index !183
+  %fi170 = call i64 @injectFault2(i64 174, i64 %145, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %146 = getelementptr inbounds float, ptr %142, i64 %fi170, !llfi_index !184
+  %fi172 = call float @injectFault4(i64 176, float %fi152, i32 5, i32 0, i32 2, i32 1, ptr @invoke_namestr), !llfi_injectfault !6
+  %fi173 = call float @injectFault4(i64 176, float %fi159, i32 5, i32 1, i32 2, i32 2, ptr @invoke_namestr), !llfi_injectfault !6
+  invoke void @_Z10forwardk2jffPfS_(float noundef %fi172, float noundef %fi173, ptr noundef %141, ptr noundef %146)
           to label %147 unwind label %84, !llfi_index !185
 
 147:                                              ; preds = %124
@@ -427,84 +466,92 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 
 148:                                              ; preds = %147
   %149 = load i32, ptr %30, align 4, !llfi_index !187
-  %fi135 = call i32 @injectFault0(i64 178, i32 %149, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi137 = call i32 @injectFault0(i64 179, i32 %fi135, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi138 = call i32 @injectFault0(i64 179, i32 4, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %150 = add nsw i32 %fi137, %fi138, !llfi_index !188
-  %fi136 = call i32 @injectFault0(i64 179, i32 %150, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %fi139 = call i32 @injectFault0(i64 180, i32 %fi136, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi139, ptr %30, align 4, !llfi_index !189
+  %fi174 = call i32 @injectFault0(i64 178, i32 %149, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi176 = call i32 @injectFault0(i64 179, i32 %fi174, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi177 = call i32 @injectFault0(i64 179, i32 4, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %150 = add nsw i32 %fi176, %fi177, !llfi_index !188
+  %fi175 = call i32 @injectFault0(i64 179, i32 %150, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi178 = call i32 @injectFault0(i64 180, i32 %fi175, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi178, ptr %30, align 4, !llfi_index !189
   br label %118, !llvm.loop !190, !llfi_index !191
 
 151:                                              ; preds = %118
-  %fi140 = call i32 @injectFault0(i64 182, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi140, ptr %31, align 4, !llfi_index !192
+  %fi179 = call i32 @injectFault0(i64 182, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi179, ptr %31, align 4, !llfi_index !192
   br label %152, !llfi_index !193
 
 152:                                              ; preds = %182, %151
   %153 = load i32, ptr %31, align 4, !llfi_index !194
-  %fi141 = call i32 @injectFault0(i64 184, i32 %153, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi180 = call i32 @injectFault0(i64 184, i32 %153, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %154 = load i32, ptr %14, align 4, !llfi_index !195
-  %fi142 = call i32 @injectFault0(i64 185, i32 %154, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi144 = call i32 @injectFault0(i64 186, i32 %fi142, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi145 = call i32 @injectFault0(i64 186, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
-  %155 = mul nsw i32 %fi144, %fi145, !llfi_index !196
-  %fi143 = call i32 @injectFault0(i64 186, i32 %155, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi147 = call i32 @injectFault0(i64 187, i32 %fi143, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi148 = call i32 @injectFault0(i64 187, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
-  %156 = mul nsw i32 %fi147, %fi148, !llfi_index !197
-  %fi146 = call i32 @injectFault0(i64 187, i32 %156, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi150 = call i32 @injectFault0(i64 188, i32 %fi141, i32 53, i32 1, i32 3, i32 1, ptr @icmp_namestr), !llfi_injectfault !6
-  %fi151 = call i32 @injectFault0(i64 188, i32 %fi146, i32 53, i32 2, i32 3, i32 2, ptr @icmp_namestr), !llfi_injectfault !6
-  %157 = icmp slt i32 %fi150, %fi151, !llfi_index !198
-  %fi149 = call i1 @injectFault2(i64 188, i1 %157, i32 53, i32 0, i32 3, i32 0, ptr @icmp_namestr), !llfi_injectfault !68
-  %fi152 = call i1 @injectFault2(i64 189, i1 %fi149, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !6
-  br i1 %fi152, label %158, label %185, !llfi_index !199
+  %fi181 = call i32 @injectFault0(i64 185, i32 %154, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi183 = call i32 @injectFault0(i64 186, i32 %fi181, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi184 = call i32 @injectFault0(i64 186, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %155 = mul nsw i32 %fi183, %fi184, !llfi_index !196
+  %fi182 = call i32 @injectFault0(i64 186, i32 %155, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi186 = call i32 @injectFault0(i64 187, i32 %fi182, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi187 = call i32 @injectFault0(i64 187, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %156 = mul nsw i32 %fi186, %fi187, !llfi_index !197
+  %fi185 = call i32 @injectFault0(i64 187, i32 %156, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi189 = call i32 @injectFault0(i64 188, i32 %fi180, i32 53, i32 1, i32 3, i32 1, ptr @icmp_namestr), !llfi_injectfault !6
+  %fi190 = call i32 @injectFault0(i64 188, i32 %fi185, i32 53, i32 2, i32 3, i32 2, ptr @icmp_namestr), !llfi_injectfault !6
+  %157 = icmp slt i32 %fi189, %fi190, !llfi_index !198
+  %fi188 = call i1 @injectFault3(i64 188, i1 %157, i32 53, i32 0, i32 3, i32 0, ptr @icmp_namestr), !llfi_injectfault !68
+  %fi191 = call i1 @injectFault3(i64 189, i1 %fi188, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !6
+  br i1 %fi191, label %158, label %185, !llfi_index !199
 
 158:                                              ; preds = %152
   %159 = load ptr, ptr %23, align 8, !llfi_index !200
   %160 = load i32, ptr %31, align 4, !llfi_index !201
-  %fi153 = call i32 @injectFault0(i64 191, i32 %160, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi155 = call i32 @injectFault0(i64 192, i32 %fi153, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi156 = call i32 @injectFault0(i64 192, i32 2, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %161 = add nsw i32 %fi155, %fi156, !llfi_index !202
-  %fi154 = call i32 @injectFault0(i64 192, i32 %161, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %162 = sext i32 %fi154 to i64, !llfi_index !203
-  %163 = getelementptr inbounds float, ptr %159, i64 %162, !llfi_index !204
+  %fi192 = call i32 @injectFault0(i64 191, i32 %160, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi194 = call i32 @injectFault0(i64 192, i32 %fi192, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi195 = call i32 @injectFault0(i64 192, i32 2, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %161 = add nsw i32 %fi194, %fi195, !llfi_index !202
+  %fi193 = call i32 @injectFault0(i64 192, i32 %161, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi70 = call i32 @injectFault0(i64 193, i32 %fi193, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %162 = sext i32 %fi70 to i64, !llfi_index !203
+  %fi69 = call i64 @injectFault2(i64 193, i64 %162, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %163 = getelementptr inbounds float, ptr %159, i64 %fi69, !llfi_index !204
   %164 = load float, ptr %163, align 4, !llfi_index !205
-  %fi54 = call float @injectFault3(i64 195, float %164, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi71 = call float @injectFault4(i64 195, float %164, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %165 = load ptr, ptr %23, align 8, !llfi_index !206
   %166 = load i32, ptr %31, align 4, !llfi_index !207
-  %fi55 = call i32 @injectFault0(i64 197, i32 %166, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi57 = call i32 @injectFault0(i64 198, i32 %fi55, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi58 = call i32 @injectFault0(i64 198, i32 3, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %167 = add nsw i32 %fi57, %fi58, !llfi_index !208
-  %fi56 = call i32 @injectFault0(i64 198, i32 %167, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %168 = sext i32 %fi56 to i64, !llfi_index !209
-  %169 = getelementptr inbounds float, ptr %165, i64 %168, !llfi_index !210
+  %fi72 = call i32 @injectFault0(i64 197, i32 %166, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi74 = call i32 @injectFault0(i64 198, i32 %fi72, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi75 = call i32 @injectFault0(i64 198, i32 3, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %167 = add nsw i32 %fi74, %fi75, !llfi_index !208
+  %fi73 = call i32 @injectFault0(i64 198, i32 %167, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi77 = call i32 @injectFault0(i64 199, i32 %fi73, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %168 = sext i32 %fi77 to i64, !llfi_index !209
+  %fi76 = call i64 @injectFault2(i64 199, i64 %168, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %169 = getelementptr inbounds float, ptr %165, i64 %fi76, !llfi_index !210
   %170 = load float, ptr %169, align 4, !llfi_index !211
-  %fi59 = call float @injectFault3(i64 201, float %170, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi78 = call float @injectFault4(i64 201, float %170, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %171 = load ptr, ptr %23, align 8, !llfi_index !212
   %172 = load i32, ptr %31, align 4, !llfi_index !213
-  %fi60 = call i32 @injectFault0(i64 203, i32 %172, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi62 = call i32 @injectFault0(i64 204, i32 %fi60, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi63 = call i32 @injectFault0(i64 204, i32 0, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %173 = add nsw i32 %fi62, %fi63, !llfi_index !214
-  %fi61 = call i32 @injectFault0(i64 204, i32 %173, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %174 = sext i32 %fi61 to i64, !llfi_index !215
-  %175 = getelementptr inbounds float, ptr %171, i64 %174, !llfi_index !216
+  %fi79 = call i32 @injectFault0(i64 203, i32 %172, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi81 = call i32 @injectFault0(i64 204, i32 %fi79, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi82 = call i32 @injectFault0(i64 204, i32 0, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %173 = add nsw i32 %fi81, %fi82, !llfi_index !214
+  %fi80 = call i32 @injectFault0(i64 204, i32 %173, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi84 = call i32 @injectFault0(i64 205, i32 %fi80, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %174 = sext i32 %fi84 to i64, !llfi_index !215
+  %fi83 = call i64 @injectFault2(i64 205, i64 %174, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %175 = getelementptr inbounds float, ptr %171, i64 %fi83, !llfi_index !216
   %176 = load ptr, ptr %23, align 8, !llfi_index !217
   %177 = load i32, ptr %31, align 4, !llfi_index !218
-  %fi64 = call i32 @injectFault0(i64 208, i32 %177, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi66 = call i32 @injectFault0(i64 209, i32 %fi64, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi67 = call i32 @injectFault0(i64 209, i32 1, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %178 = add nsw i32 %fi66, %fi67, !llfi_index !219
-  %fi65 = call i32 @injectFault0(i64 209, i32 %178, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %179 = sext i32 %fi65 to i64, !llfi_index !220
-  %180 = getelementptr inbounds float, ptr %176, i64 %179, !llfi_index !221
-  %fi68 = call float @injectFault3(i64 212, float %fi54, i32 5, i32 0, i32 2, i32 1, ptr @invoke_namestr), !llfi_injectfault !6
-  %fi69 = call float @injectFault3(i64 212, float %fi59, i32 5, i32 1, i32 2, i32 2, ptr @invoke_namestr), !llfi_injectfault !6
-  invoke void @_Z10inversek2jffPfS_(float noundef %fi68, float noundef %fi69, ptr noundef %175, ptr noundef %180)
+  %fi85 = call i32 @injectFault0(i64 208, i32 %177, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi87 = call i32 @injectFault0(i64 209, i32 %fi85, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi88 = call i32 @injectFault0(i64 209, i32 1, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %178 = add nsw i32 %fi87, %fi88, !llfi_index !219
+  %fi86 = call i32 @injectFault0(i64 209, i32 %178, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi90 = call i32 @injectFault0(i64 210, i32 %fi86, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %179 = sext i32 %fi90 to i64, !llfi_index !220
+  %fi89 = call i64 @injectFault2(i64 210, i64 %179, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %180 = getelementptr inbounds float, ptr %176, i64 %fi89, !llfi_index !221
+  %fi91 = call float @injectFault4(i64 212, float %fi71, i32 5, i32 0, i32 2, i32 1, ptr @invoke_namestr), !llfi_injectfault !6
+  %fi92 = call float @injectFault4(i64 212, float %fi78, i32 5, i32 1, i32 2, i32 2, ptr @invoke_namestr), !llfi_injectfault !6
+  invoke void @_Z10inversek2jffPfS_(float noundef %fi91, float noundef %fi92, ptr noundef %175, ptr noundef %180)
           to label %181 unwind label %84, !llfi_index !222
 
 181:                                              ; preds = %158
@@ -512,13 +559,13 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 
 182:                                              ; preds = %181
   %183 = load i32, ptr %31, align 4, !llfi_index !224
-  %fi70 = call i32 @injectFault0(i64 214, i32 %183, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi158 = call i32 @injectFault0(i64 215, i32 %fi70, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi159 = call i32 @injectFault0(i64 215, i32 4, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %184 = add nsw i32 %fi158, %fi159, !llfi_index !225
-  %fi157 = call i32 @injectFault0(i64 215, i32 %184, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %fi160 = call i32 @injectFault0(i64 216, i32 %fi157, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi160, ptr %31, align 4, !llfi_index !226
+  %fi93 = call i32 @injectFault0(i64 214, i32 %183, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi197 = call i32 @injectFault0(i64 215, i32 %fi93, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi198 = call i32 @injectFault0(i64 215, i32 4, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %184 = add nsw i32 %fi197, %fi198, !llfi_index !225
+  %fi196 = call i32 @injectFault0(i64 215, i32 %184, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi199 = call i32 @injectFault0(i64 216, i32 %fi196, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi199, ptr %31, align 4, !llfi_index !226
   br label %152, !llvm.loop !227, !llfi_index !228
 
 185:                                              ; preds = %152
@@ -526,21 +573,23 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
           to label %187 unwind label %84, !llfi_index !229
 
 187:                                              ; preds = %185
-  %fi161 = call i64 @injectFault1(i64 219, i64 %186, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i64 %fi161, ptr %32, align 8, !llfi_index !230
+  %fi200 = call i64 @injectFault2(i64 219, i64 %186, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i64 %fi200, ptr %32, align 8, !llfi_index !230
   %188 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(ptr noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, ptr noundef @.str.1)
           to label %189 unwind label %84, !llfi_index !231
 
 189:                                              ; preds = %187
   %190 = load i64, ptr %32, align 8, !llfi_index !232
-  %fi162 = call i64 @injectFault1(i64 221, i64 %190, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %191 = uitofp i64 %fi162 to double, !llfi_index !233
-  %fi164 = call double @injectFault4(i64 223, double %191, i32 21, i32 1, i32 3, i32 1, ptr @fdiv_namestr), !llfi_injectfault !6
-  %fi165 = call double @injectFault4(i64 223, double 1.000000e+09, i32 21, i32 2, i32 3, i32 2, ptr @fdiv_namestr), !llfi_injectfault !6
-  %192 = fdiv double %fi164, %fi165, !llfi_index !234
-  %fi163 = call double @injectFault4(i64 223, double %192, i32 21, i32 0, i32 3, i32 0, ptr @fdiv_namestr), !llfi_injectfault !68
-  %fi166 = call double @injectFault4(i64 224, double %fi163, i32 5, i32 0, i32 1, i32 2, ptr @invoke_namestr), !llfi_injectfault !6
-  %193 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEd(ptr noundef nonnull align 8 dereferenceable(8) %188, double noundef %fi166)
+  %fi201 = call i64 @injectFault2(i64 221, i64 %190, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi203 = call i64 @injectFault2(i64 222, i64 %fi201, i32 43, i32 1, i32 2, i32 1, ptr @uitofp_namestr), !llfi_injectfault !6
+  %191 = uitofp i64 %fi203 to double, !llfi_index !233
+  %fi202 = call double @injectFault5(i64 222, double %191, i32 43, i32 0, i32 2, i32 0, ptr @uitofp_namestr), !llfi_injectfault !68
+  %fi205 = call double @injectFault5(i64 223, double %fi202, i32 21, i32 1, i32 3, i32 1, ptr @fdiv_namestr), !llfi_injectfault !6
+  %fi206 = call double @injectFault5(i64 223, double 1.000000e+09, i32 21, i32 2, i32 3, i32 2, ptr @fdiv_namestr), !llfi_injectfault !6
+  %192 = fdiv double %fi205, %fi206, !llfi_index !234
+  %fi204 = call double @injectFault5(i64 223, double %192, i32 21, i32 0, i32 3, i32 0, ptr @fdiv_namestr), !llfi_injectfault !68
+  %fi207 = call double @injectFault5(i64 224, double %fi204, i32 5, i32 0, i32 1, i32 2, ptr @invoke_namestr), !llfi_injectfault !6
+  %193 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEd(ptr noundef nonnull align 8 dereferenceable(8) %188, double noundef %fi207)
           to label %194 unwind label %84, !llfi_index !235
 
 194:                                              ; preds = %189
@@ -548,44 +597,46 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
           to label %196 unwind label %84, !llfi_index !236
 
 196:                                              ; preds = %194
-  %fi167 = call i32 @injectFault0(i64 226, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi167, ptr %33, align 4, !llfi_index !237
+  %fi208 = call i32 @injectFault0(i64 226, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi208, ptr %33, align 4, !llfi_index !237
   br label %197, !llfi_index !238
 
 197:                                              ; preds = %224, %196
   %198 = load i32, ptr %33, align 4, !llfi_index !239
-  %fi168 = call i32 @injectFault0(i64 228, i32 %198, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi209 = call i32 @injectFault0(i64 228, i32 %198, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %199 = load i32, ptr %14, align 4, !llfi_index !240
-  %fi169 = call i32 @injectFault0(i64 229, i32 %199, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi171 = call i32 @injectFault0(i64 230, i32 %fi169, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi172 = call i32 @injectFault0(i64 230, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
-  %200 = mul nsw i32 %fi171, %fi172, !llfi_index !241
-  %fi170 = call i32 @injectFault0(i64 230, i32 %200, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi174 = call i32 @injectFault0(i64 231, i32 %fi170, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi175 = call i32 @injectFault0(i64 231, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
-  %201 = mul nsw i32 %fi174, %fi175, !llfi_index !242
-  %fi173 = call i32 @injectFault0(i64 231, i32 %201, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi177 = call i32 @injectFault0(i64 232, i32 %fi168, i32 53, i32 1, i32 3, i32 1, ptr @icmp_namestr), !llfi_injectfault !6
-  %fi178 = call i32 @injectFault0(i64 232, i32 %fi173, i32 53, i32 2, i32 3, i32 2, ptr @icmp_namestr), !llfi_injectfault !6
-  %202 = icmp slt i32 %fi177, %fi178, !llfi_index !243
-  %fi176 = call i1 @injectFault2(i64 232, i1 %202, i32 53, i32 0, i32 3, i32 0, ptr @icmp_namestr), !llfi_injectfault !68
-  %fi179 = call i1 @injectFault2(i64 233, i1 %fi176, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !6
-  br i1 %fi179, label %203, label %227, !llfi_index !244
+  %fi210 = call i32 @injectFault0(i64 229, i32 %199, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi212 = call i32 @injectFault0(i64 230, i32 %fi210, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi213 = call i32 @injectFault0(i64 230, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %200 = mul nsw i32 %fi212, %fi213, !llfi_index !241
+  %fi211 = call i32 @injectFault0(i64 230, i32 %200, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi215 = call i32 @injectFault0(i64 231, i32 %fi211, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi216 = call i32 @injectFault0(i64 231, i32 2, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %201 = mul nsw i32 %fi215, %fi216, !llfi_index !242
+  %fi214 = call i32 @injectFault0(i64 231, i32 %201, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi218 = call i32 @injectFault0(i64 232, i32 %fi209, i32 53, i32 1, i32 3, i32 1, ptr @icmp_namestr), !llfi_injectfault !6
+  %fi219 = call i32 @injectFault0(i64 232, i32 %fi214, i32 53, i32 2, i32 3, i32 2, ptr @icmp_namestr), !llfi_injectfault !6
+  %202 = icmp slt i32 %fi218, %fi219, !llfi_index !243
+  %fi217 = call i1 @injectFault3(i64 232, i1 %202, i32 53, i32 0, i32 3, i32 0, ptr @icmp_namestr), !llfi_injectfault !68
+  %fi220 = call i1 @injectFault3(i64 233, i1 %fi217, i32 2, i32 0, i32 1, i32 1, ptr @br_namestr), !llfi_injectfault !6
+  br i1 %fi220, label %203, label %227, !llfi_index !244
 
 203:                                              ; preds = %197
   %204 = load ptr, ptr %23, align 8, !llfi_index !245
   %205 = load i32, ptr %33, align 4, !llfi_index !246
-  %fi180 = call i32 @injectFault0(i64 235, i32 %205, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi182 = call i32 @injectFault0(i64 236, i32 %fi180, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi183 = call i32 @injectFault0(i64 236, i32 0, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %206 = add nsw i32 %fi182, %fi183, !llfi_index !247
-  %fi181 = call i32 @injectFault0(i64 236, i32 %206, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %207 = sext i32 %fi181 to i64, !llfi_index !248
-  %208 = getelementptr inbounds float, ptr %204, i64 %207, !llfi_index !249
+  %fi221 = call i32 @injectFault0(i64 235, i32 %205, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi223 = call i32 @injectFault0(i64 236, i32 %fi221, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi224 = call i32 @injectFault0(i64 236, i32 0, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %206 = add nsw i32 %fi223, %fi224, !llfi_index !247
+  %fi222 = call i32 @injectFault0(i64 236, i32 %206, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi226 = call i32 @injectFault0(i64 237, i32 %fi222, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %207 = sext i32 %fi226 to i64, !llfi_index !248
+  %fi225 = call i64 @injectFault2(i64 237, i64 %207, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %208 = getelementptr inbounds float, ptr %204, i64 %fi225, !llfi_index !249
   %209 = load float, ptr %208, align 4, !llfi_index !250
-  %fi184 = call float @injectFault3(i64 239, float %209, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi185 = call float @injectFault3(i64 240, float %fi184, i32 5, i32 0, i32 1, i32 2, ptr @invoke_namestr), !llfi_injectfault !6
-  %210 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEf(ptr noundef nonnull align 8 dereferenceable(8) %21, float noundef %fi185)
+  %fi227 = call float @injectFault4(i64 239, float %209, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi228 = call float @injectFault4(i64 240, float %fi227, i32 5, i32 0, i32 1, i32 2, ptr @invoke_namestr), !llfi_injectfault !6
+  %210 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEf(ptr noundef nonnull align 8 dereferenceable(8) %21, float noundef %fi228)
           to label %211 unwind label %84, !llfi_index !251
 
 211:                                              ; preds = %203
@@ -595,17 +646,19 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 213:                                              ; preds = %211
   %214 = load ptr, ptr %23, align 8, !llfi_index !253
   %215 = load i32, ptr %33, align 4, !llfi_index !254
-  %fi186 = call i32 @injectFault0(i64 243, i32 %215, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi188 = call i32 @injectFault0(i64 244, i32 %fi186, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi189 = call i32 @injectFault0(i64 244, i32 1, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %216 = add nsw i32 %fi188, %fi189, !llfi_index !255
-  %fi187 = call i32 @injectFault0(i64 244, i32 %216, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %217 = sext i32 %fi187 to i64, !llfi_index !256
-  %218 = getelementptr inbounds float, ptr %214, i64 %217, !llfi_index !257
+  %fi229 = call i32 @injectFault0(i64 243, i32 %215, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi231 = call i32 @injectFault0(i64 244, i32 %fi229, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi232 = call i32 @injectFault0(i64 244, i32 1, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %216 = add nsw i32 %fi231, %fi232, !llfi_index !255
+  %fi230 = call i32 @injectFault0(i64 244, i32 %216, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi234 = call i32 @injectFault0(i64 245, i32 %fi230, i32 40, i32 1, i32 2, i32 1, ptr @sext_namestr), !llfi_injectfault !6
+  %217 = sext i32 %fi234 to i64, !llfi_index !256
+  %fi233 = call i64 @injectFault2(i64 245, i64 %217, i32 40, i32 0, i32 2, i32 0, ptr @sext_namestr), !llfi_injectfault !68
+  %218 = getelementptr inbounds float, ptr %214, i64 %fi233, !llfi_index !257
   %219 = load float, ptr %218, align 4, !llfi_index !258
-  %fi190 = call float @injectFault3(i64 247, float %219, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi191 = call float @injectFault3(i64 248, float %fi190, i32 5, i32 0, i32 1, i32 2, ptr @invoke_namestr), !llfi_injectfault !6
-  %220 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEf(ptr noundef nonnull align 8 dereferenceable(8) %212, float noundef %fi191)
+  %fi235 = call float @injectFault4(i64 247, float %219, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi236 = call float @injectFault4(i64 248, float %fi235, i32 5, i32 0, i32 1, i32 2, ptr @invoke_namestr), !llfi_injectfault !6
+  %220 = invoke noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEf(ptr noundef nonnull align 8 dereferenceable(8) %212, float noundef %fi236)
           to label %221 unwind label %84, !llfi_index !259
 
 221:                                              ; preds = %213
@@ -617,13 +670,13 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 
 224:                                              ; preds = %223
   %225 = load i32, ptr %33, align 4, !llfi_index !262
-  %fi192 = call i32 @injectFault0(i64 251, i32 %225, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi194 = call i32 @injectFault0(i64 252, i32 %fi192, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi195 = call i32 @injectFault0(i64 252, i32 4, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
-  %226 = add nsw i32 %fi194, %fi195, !llfi_index !263
-  %fi193 = call i32 @injectFault0(i64 252, i32 %226, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %fi196 = call i32 @injectFault0(i64 253, i32 %fi193, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi196, ptr %33, align 4, !llfi_index !264
+  %fi237 = call i32 @injectFault0(i64 251, i32 %225, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi239 = call i32 @injectFault0(i64 252, i32 %fi237, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi240 = call i32 @injectFault0(i64 252, i32 4, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %226 = add nsw i32 %fi239, %fi240, !llfi_index !263
+  %fi238 = call i32 @injectFault0(i64 252, i32 %226, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi241 = call i32 @injectFault0(i64 253, i32 %fi238, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi241, ptr %33, align 4, !llfi_index !264
   br label %197, !llvm.loop !265, !llfi_index !266
 
 227:                                              ; preds = %197
@@ -638,10 +691,10 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %230 = load ptr, ptr %23, align 8, !llfi_index !269
   call void @free(ptr noundef %230) #8, !llfi_index !270
   store ptr null, ptr %23, align 8, !llfi_index !271
-  %fi197 = call i32 @injectFault0(i64 260, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi197, ptr %11, align 4, !llfi_index !272
-  %fi198 = call i32 @injectFault0(i64 261, i32 1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i32 %fi198, ptr %24, align 4, !llfi_index !273
+  %fi242 = call i32 @injectFault0(i64 260, i32 0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi242, ptr %11, align 4, !llfi_index !272
+  %fi243 = call i32 @injectFault0(i64 261, i32 1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i32 %fi243, ptr %24, align 4, !llfi_index !273
   br label %231, !llfi_index !274
 
 231:                                              ; preds = %229, %65
@@ -650,9 +703,10 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(ptr noundef nonnull align 8 dereferenceable(32) %19) #8, !llfi_index !277
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(ptr noundef nonnull align 8 dereferenceable(32) %15) #8, !llfi_index !278
   %232 = load i32, ptr %11, align 4, !llfi_index !279
-  %fi199 = call i32 @injectFault0(i64 267, i32 %232, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi244 = call i32 @injectFault0(i64 267, i32 %232, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi245 = call i32 @injectFault0(i64 268, i32 %fi244, i32 1, i32 0, i32 1, i32 1, ptr @ret_namestr), !llfi_injectfault !6
   call void @postInjections()
-  ret i32 %fi199, !llfi_index !280
+  ret i32 %fi245, !llfi_index !280
 
 233:                                              ; preds = %84, %80
   call void @_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev(ptr noundef nonnull align 8 dereferenceable(248) %21) #8, !llfi_index !281
@@ -669,11 +723,17 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 236:                                              ; preds = %235, %66
   %237 = load ptr, ptr %17, align 8, !llfi_index !287
   %238 = load i32, ptr %18, align 4, !llfi_index !288
-  %fi200 = call i32 @injectFault0(i64 276, i32 %238, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %239 = insertvalue { ptr, i32 } undef, ptr %237, 0, !llfi_index !289
-  %240 = insertvalue { ptr, i32 } %239, i32 %fi200, 1, !llfi_index !290
+  %fi246 = call i32 @injectFault0(i64 276, i32 %238, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi248 = call { ptr, i32 } @injectFault1(i64 277, { ptr, i32 } undef, i32 65, i32 1, i32 2, i32 1, ptr @insertvalue_namestr), !llfi_injectfault !6
+  %239 = insertvalue { ptr, i32 } %fi248, ptr %237, 0, !llfi_index !289
+  %fi247 = call { ptr, i32 } @injectFault1(i64 277, { ptr, i32 } %239, i32 65, i32 0, i32 2, i32 0, ptr @insertvalue_namestr), !llfi_injectfault !68
+  %fi250 = call { ptr, i32 } @injectFault1(i64 278, { ptr, i32 } %fi247, i32 65, i32 1, i32 3, i32 1, ptr @insertvalue_namestr), !llfi_injectfault !6
+  %fi251 = call i32 @injectFault0(i64 278, i32 %fi246, i32 65, i32 2, i32 3, i32 2, ptr @insertvalue_namestr), !llfi_injectfault !6
+  %240 = insertvalue { ptr, i32 } %fi250, i32 %fi251, 1, !llfi_index !290
+  %fi249 = call { ptr, i32 } @injectFault1(i64 278, { ptr, i32 } %240, i32 65, i32 0, i32 3, i32 0, ptr @insertvalue_namestr), !llfi_injectfault !68
+  %fi252 = call { ptr, i32 } @injectFault1(i64 279, { ptr, i32 } %fi249, i32 6, i32 0, i32 1, i32 1, ptr @resume_namestr), !llfi_injectfault !6
   call void @postInjections()
-  resume { ptr, i32 } %240, !llfi_index !291
+  resume { ptr, i32 } %fi252, !llfi_index !291
 }
 
 declare i32 @__gxx_personality_v0(...)
@@ -748,47 +808,51 @@ define linkonce_odr dso_local noundef i64 @_ZN12AxBenchTimer20nanosecondsSinceIn
   %9 = getelementptr inbounds %class.AxBenchTimer, ptr %7, i32 0, i32 0, !llfi_index !310
   %10 = getelementptr inbounds %struct.timespec, ptr %9, i32 0, i32 1, !llfi_index !311
   %11 = load i64, ptr %10, align 8, !llfi_index !312
-  %fi8 = call i64 @injectFault1(i64 300, i64 %11, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi8 = call i64 @injectFault2(i64 300, i64 %11, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %12 = getelementptr inbounds %class.AxBenchTimer, ptr %7, i32 0, i32 0, !llfi_index !313
   %13 = getelementptr inbounds %struct.timespec, ptr %12, i32 0, i32 0, !llfi_index !314
   %14 = load i64, ptr %13, align 8, !llfi_index !315
-  %fi9 = call i64 @injectFault1(i64 303, i64 %14, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi11 = call i64 @injectFault1(i64 304, i64 %fi9, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi12 = call i64 @injectFault1(i64 304, i64 1000000000, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %fi9 = call i64 @injectFault2(i64 303, i64 %14, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi11 = call i64 @injectFault2(i64 304, i64 %fi9, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi12 = call i64 @injectFault2(i64 304, i64 1000000000, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
   %15 = mul nsw i64 %fi11, %fi12, !llfi_index !316
-  %fi10 = call i64 @injectFault1(i64 304, i64 %15, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi14 = call i64 @injectFault1(i64 305, i64 %fi8, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi15 = call i64 @injectFault1(i64 305, i64 %fi10, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %fi10 = call i64 @injectFault2(i64 304, i64 %15, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi14 = call i64 @injectFault2(i64 305, i64 %fi8, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi15 = call i64 @injectFault2(i64 305, i64 %fi10, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
   %16 = add nsw i64 %fi14, %fi15, !llfi_index !317
-  %fi13 = call i64 @injectFault1(i64 305, i64 %16, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %fi7 = call i64 @injectFault1(i64 306, i64 %fi13, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  %fi13 = call i64 @injectFault2(i64 305, i64 %16, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi7 = call i64 @injectFault2(i64 306, i64 %fi13, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
   store i64 %fi7, ptr %5, align 8, !llfi_index !318
   %17 = getelementptr inbounds %struct.timespec, ptr %4, i32 0, i32 1, !llfi_index !319
   %18 = load i64, ptr %17, align 8, !llfi_index !320
-  %fi16 = call i64 @injectFault1(i64 308, i64 %18, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi16 = call i64 @injectFault2(i64 308, i64 %18, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %19 = getelementptr inbounds %struct.timespec, ptr %4, i32 0, i32 0, !llfi_index !321
   %20 = load i64, ptr %19, align 8, !llfi_index !322
-  %fi17 = call i64 @injectFault1(i64 310, i64 %20, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi19 = call i64 @injectFault1(i64 311, i64 %fi17, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
-  %fi20 = call i64 @injectFault1(i64 311, i64 1000000000, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
+  %fi17 = call i64 @injectFault2(i64 310, i64 %20, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi19 = call i64 @injectFault2(i64 311, i64 %fi17, i32 17, i32 1, i32 3, i32 1, ptr @mul_namestr), !llfi_injectfault !6
+  %fi20 = call i64 @injectFault2(i64 311, i64 1000000000, i32 17, i32 2, i32 3, i32 2, ptr @mul_namestr), !llfi_injectfault !6
   %21 = mul nsw i64 %fi19, %fi20, !llfi_index !323
-  %fi18 = call i64 @injectFault1(i64 311, i64 %21, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
-  %fi22 = call i64 @injectFault1(i64 312, i64 %fi16, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
-  %fi23 = call i64 @injectFault1(i64 312, i64 %fi18, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
+  %fi18 = call i64 @injectFault2(i64 311, i64 %21, i32 17, i32 0, i32 3, i32 0, ptr @mul_namestr), !llfi_injectfault !68
+  %fi22 = call i64 @injectFault2(i64 312, i64 %fi16, i32 13, i32 1, i32 3, i32 1, ptr @add_namestr), !llfi_injectfault !6
+  %fi23 = call i64 @injectFault2(i64 312, i64 %fi18, i32 13, i32 2, i32 3, i32 2, ptr @add_namestr), !llfi_injectfault !6
   %22 = add nsw i64 %fi22, %fi23, !llfi_index !324
-  %fi21 = call i64 @injectFault1(i64 312, i64 %22, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
-  %fi24 = call i64 @injectFault1(i64 313, i64 %fi21, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  %fi21 = call i64 @injectFault2(i64 312, i64 %22, i32 13, i32 0, i32 3, i32 0, ptr @add_namestr), !llfi_injectfault !68
+  %fi24 = call i64 @injectFault2(i64 313, i64 %fi21, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
   store i64 %fi24, ptr %6, align 8, !llfi_index !325
   %23 = load i64, ptr %6, align 8, !llfi_index !326
-  %fi25 = call i64 @injectFault1(i64 314, i64 %23, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi25 = call i64 @injectFault2(i64 314, i64 %23, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %24 = load i64, ptr %5, align 8, !llfi_index !327
-  %fi26 = call i64 @injectFault1(i64 315, i64 %24, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %25 = sub i64 %fi25, %fi26, !llfi_index !328
-  %fi27 = call i64 @injectFault1(i64 317, i64 %25, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
-  store i64 %fi27, ptr %3, align 8, !llfi_index !329
+  %fi26 = call i64 @injectFault2(i64 315, i64 %24, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi28 = call i64 @injectFault2(i64 316, i64 %fi25, i32 15, i32 1, i32 3, i32 1, ptr @sub_namestr), !llfi_injectfault !6
+  %fi29 = call i64 @injectFault2(i64 316, i64 %fi26, i32 15, i32 2, i32 3, i32 2, ptr @sub_namestr), !llfi_injectfault !6
+  %25 = sub i64 %fi28, %fi29, !llfi_index !328
+  %fi27 = call i64 @injectFault2(i64 316, i64 %25, i32 15, i32 0, i32 3, i32 0, ptr @sub_namestr), !llfi_injectfault !68
+  %fi30 = call i64 @injectFault2(i64 317, i64 %fi27, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  store i64 %fi30, ptr %3, align 8, !llfi_index !329
   %26 = load i64, ptr %3, align 8, !llfi_index !330
-  %fi28 = call i64 @injectFault1(i64 318, i64 %26, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  ret i64 %fi28, !llfi_index !331
+  %fi31 = call i64 @injectFault2(i64 318, i64 %26, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi32 = call i64 @injectFault2(i64 319, i64 %fi31, i32 1, i32 0, i32 1, i32 1, ptr @ret_namestr), !llfi_injectfault !6
+  ret i64 %fi32, !llfi_index !331
 }
 
 declare noundef nonnull align 8 dereferenceable(8) ptr @_ZNSolsEd(ptr noundef nonnull align 8 dereferenceable(8), double noundef) #1
@@ -834,97 +898,97 @@ define dso_local void @_Z10forwardk2jffPfS_(float noundef %0, float noundef %1, 
   %7 = alloca ptr, i32 %fi2, align 8, !llfi_index !340
   %fi3 = call i32 @injectFault0(i64 329, i32 1, i32 31, i32 0, i32 1, i32 1, ptr @alloca_namestr), !llfi_injectfault !6
   %8 = alloca ptr, i32 %fi3, align 8, !llfi_index !341
-  %fi4 = call float @injectFault3(i64 330, float %0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  %fi4 = call float @injectFault4(i64 330, float %0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
   store float %fi4, ptr %5, align 4, !llfi_index !342
-  %fi5 = call float @injectFault3(i64 331, float %1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  %fi5 = call float @injectFault4(i64 331, float %1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
   store float %fi5, ptr %6, align 4, !llfi_index !343
   store ptr %2, ptr %7, align 8, !llfi_index !344
   store ptr %3, ptr %8, align 8, !llfi_index !345
   %9 = load float, ptr @l1, align 4, !llfi_index !346
-  %fi6 = call float @injectFault3(i64 334, float %9, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi8 = call float @injectFault3(i64 335, float %fi6, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi6 = call float @injectFault4(i64 334, float %9, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi8 = call float @injectFault4(i64 335, float %fi6, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %10 = fpext float %fi8 to double, !llfi_index !347
-  %fi7 = call double @injectFault4(i64 335, double %10, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi7 = call double @injectFault5(i64 335, double %10, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
   %11 = load float, ptr %5, align 4, !llfi_index !348
-  %fi9 = call float @injectFault3(i64 336, float %11, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi11 = call float @injectFault3(i64 337, float %fi9, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi9 = call float @injectFault4(i64 336, float %11, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi11 = call float @injectFault4(i64 337, float %fi9, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %12 = fpext float %fi11 to double, !llfi_index !349
-  %fi10 = call double @injectFault4(i64 337, double %12, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
-  %fi13 = call double @injectFault4(i64 338, double %fi10, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
+  %fi10 = call double @injectFault5(i64 337, double %12, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi13 = call double @injectFault5(i64 338, double %fi10, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
   %13 = call double @cos(double noundef %fi13) #8, !llfi_index !350
-  %fi12 = call double @injectFault4(i64 338, double %13, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
+  %fi12 = call double @injectFault5(i64 338, double %13, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
   %14 = load float, ptr @l2, align 4, !llfi_index !351
-  %fi14 = call float @injectFault3(i64 339, float %14, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi16 = call float @injectFault3(i64 340, float %fi14, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi14 = call float @injectFault4(i64 339, float %14, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi16 = call float @injectFault4(i64 340, float %fi14, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %15 = fpext float %fi16 to double, !llfi_index !352
-  %fi15 = call double @injectFault4(i64 340, double %15, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi15 = call double @injectFault5(i64 340, double %15, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
   %16 = load float, ptr %5, align 4, !llfi_index !353
-  %fi17 = call float @injectFault3(i64 341, float %16, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi17 = call float @injectFault4(i64 341, float %16, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %17 = load float, ptr %6, align 4, !llfi_index !354
-  %fi18 = call float @injectFault3(i64 342, float %17, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi20 = call float @injectFault3(i64 343, float %fi17, i32 14, i32 1, i32 3, i32 1, ptr @fadd_namestr), !llfi_injectfault !6
-  %fi21 = call float @injectFault3(i64 343, float %fi18, i32 14, i32 2, i32 3, i32 2, ptr @fadd_namestr), !llfi_injectfault !6
+  %fi18 = call float @injectFault4(i64 342, float %17, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi20 = call float @injectFault4(i64 343, float %fi17, i32 14, i32 1, i32 3, i32 1, ptr @fadd_namestr), !llfi_injectfault !6
+  %fi21 = call float @injectFault4(i64 343, float %fi18, i32 14, i32 2, i32 3, i32 2, ptr @fadd_namestr), !llfi_injectfault !6
   %18 = fadd float %fi20, %fi21, !llfi_index !355
-  %fi19 = call float @injectFault3(i64 343, float %18, i32 14, i32 0, i32 3, i32 0, ptr @fadd_namestr), !llfi_injectfault !68
-  %fi23 = call float @injectFault3(i64 344, float %fi19, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi19 = call float @injectFault4(i64 343, float %18, i32 14, i32 0, i32 3, i32 0, ptr @fadd_namestr), !llfi_injectfault !68
+  %fi23 = call float @injectFault4(i64 344, float %fi19, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %19 = fpext float %fi23 to double, !llfi_index !356
-  %fi22 = call double @injectFault4(i64 344, double %19, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
-  %fi25 = call double @injectFault4(i64 345, double %fi22, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
+  %fi22 = call double @injectFault5(i64 344, double %19, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi25 = call double @injectFault5(i64 345, double %fi22, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
   %20 = call double @cos(double noundef %fi25) #8, !llfi_index !357
-  %fi24 = call double @injectFault4(i64 345, double %20, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
-  %fi27 = call double @injectFault4(i64 346, double %fi15, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
-  %fi28 = call double @injectFault4(i64 346, double %fi24, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi24 = call double @injectFault5(i64 345, double %20, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
+  %fi27 = call double @injectFault5(i64 346, double %fi15, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi28 = call double @injectFault5(i64 346, double %fi24, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
   %21 = fmul double %fi27, %fi28, !llfi_index !358
-  %fi26 = call double @injectFault4(i64 346, double %21, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
+  %fi26 = call double @injectFault5(i64 346, double %21, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
   %22 = call double @llvm.fmuladd.f64(double %fi7, double %fi12, double %fi26), !llfi_index !359
-  %fi30 = call double @injectFault4(i64 348, double %22, i32 45, i32 1, i32 2, i32 1, ptr @fptrunc_namestr), !llfi_injectfault !6
+  %fi30 = call double @injectFault5(i64 348, double %22, i32 45, i32 1, i32 2, i32 1, ptr @fptrunc_namestr), !llfi_injectfault !6
   %23 = fptrunc double %fi30 to float, !llfi_index !360
-  %fi29 = call float @injectFault3(i64 348, float %23, i32 45, i32 0, i32 2, i32 0, ptr @fptrunc_namestr), !llfi_injectfault !68
+  %fi29 = call float @injectFault4(i64 348, float %23, i32 45, i32 0, i32 2, i32 0, ptr @fptrunc_namestr), !llfi_injectfault !68
   %24 = load ptr, ptr %7, align 8, !llfi_index !361
-  %fi31 = call float @injectFault3(i64 350, float %fi29, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  %fi31 = call float @injectFault4(i64 350, float %fi29, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
   store float %fi31, ptr %24, align 4, !llfi_index !362
   %25 = load float, ptr @l1, align 4, !llfi_index !363
-  %fi32 = call float @injectFault3(i64 351, float %25, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi34 = call float @injectFault3(i64 352, float %fi32, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi32 = call float @injectFault4(i64 351, float %25, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi34 = call float @injectFault4(i64 352, float %fi32, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %26 = fpext float %fi34 to double, !llfi_index !364
-  %fi33 = call double @injectFault4(i64 352, double %26, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi33 = call double @injectFault5(i64 352, double %26, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
   %27 = load float, ptr %5, align 4, !llfi_index !365
-  %fi35 = call float @injectFault3(i64 353, float %27, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi37 = call float @injectFault3(i64 354, float %fi35, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi35 = call float @injectFault4(i64 353, float %27, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi37 = call float @injectFault4(i64 354, float %fi35, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %28 = fpext float %fi37 to double, !llfi_index !366
-  %fi36 = call double @injectFault4(i64 354, double %28, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
-  %fi39 = call double @injectFault4(i64 355, double %fi36, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
+  %fi36 = call double @injectFault5(i64 354, double %28, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi39 = call double @injectFault5(i64 355, double %fi36, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
   %29 = call double @sin(double noundef %fi39) #8, !llfi_index !367
-  %fi38 = call double @injectFault4(i64 355, double %29, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
+  %fi38 = call double @injectFault5(i64 355, double %29, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
   %30 = load float, ptr @l2, align 4, !llfi_index !368
-  %fi40 = call float @injectFault3(i64 356, float %30, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi42 = call float @injectFault3(i64 357, float %fi40, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi40 = call float @injectFault4(i64 356, float %30, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi42 = call float @injectFault4(i64 357, float %fi40, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %31 = fpext float %fi42 to double, !llfi_index !369
-  %fi41 = call double @injectFault4(i64 357, double %31, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi41 = call double @injectFault5(i64 357, double %31, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
   %32 = load float, ptr %5, align 4, !llfi_index !370
-  %fi43 = call float @injectFault3(i64 358, float %32, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi43 = call float @injectFault4(i64 358, float %32, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %33 = load float, ptr %6, align 4, !llfi_index !371
-  %fi44 = call float @injectFault3(i64 359, float %33, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi46 = call float @injectFault3(i64 360, float %fi43, i32 14, i32 1, i32 3, i32 1, ptr @fadd_namestr), !llfi_injectfault !6
-  %fi47 = call float @injectFault3(i64 360, float %fi44, i32 14, i32 2, i32 3, i32 2, ptr @fadd_namestr), !llfi_injectfault !6
+  %fi44 = call float @injectFault4(i64 359, float %33, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi46 = call float @injectFault4(i64 360, float %fi43, i32 14, i32 1, i32 3, i32 1, ptr @fadd_namestr), !llfi_injectfault !6
+  %fi47 = call float @injectFault4(i64 360, float %fi44, i32 14, i32 2, i32 3, i32 2, ptr @fadd_namestr), !llfi_injectfault !6
   %34 = fadd float %fi46, %fi47, !llfi_index !372
-  %fi45 = call float @injectFault3(i64 360, float %34, i32 14, i32 0, i32 3, i32 0, ptr @fadd_namestr), !llfi_injectfault !68
-  %fi49 = call float @injectFault3(i64 361, float %fi45, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi45 = call float @injectFault4(i64 360, float %34, i32 14, i32 0, i32 3, i32 0, ptr @fadd_namestr), !llfi_injectfault !68
+  %fi49 = call float @injectFault4(i64 361, float %fi45, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %35 = fpext float %fi49 to double, !llfi_index !373
-  %fi48 = call double @injectFault4(i64 361, double %35, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
-  %fi51 = call double @injectFault4(i64 362, double %fi48, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
+  %fi48 = call double @injectFault5(i64 361, double %35, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi51 = call double @injectFault5(i64 362, double %fi48, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
   %36 = call double @sin(double noundef %fi51) #8, !llfi_index !374
-  %fi50 = call double @injectFault4(i64 362, double %36, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
-  %fi53 = call double @injectFault4(i64 363, double %fi41, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
-  %fi54 = call double @injectFault4(i64 363, double %fi50, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi50 = call double @injectFault5(i64 362, double %36, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
+  %fi53 = call double @injectFault5(i64 363, double %fi41, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi54 = call double @injectFault5(i64 363, double %fi50, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
   %37 = fmul double %fi53, %fi54, !llfi_index !375
-  %fi52 = call double @injectFault4(i64 363, double %37, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
+  %fi52 = call double @injectFault5(i64 363, double %37, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
   %38 = call double @llvm.fmuladd.f64(double %fi33, double %fi38, double %fi52), !llfi_index !376
-  %fi56 = call double @injectFault4(i64 365, double %38, i32 45, i32 1, i32 2, i32 1, ptr @fptrunc_namestr), !llfi_injectfault !6
+  %fi56 = call double @injectFault5(i64 365, double %38, i32 45, i32 1, i32 2, i32 1, ptr @fptrunc_namestr), !llfi_injectfault !6
   %39 = fptrunc double %fi56 to float, !llfi_index !377
-  %fi55 = call float @injectFault3(i64 365, float %39, i32 45, i32 0, i32 2, i32 0, ptr @fptrunc_namestr), !llfi_injectfault !68
+  %fi55 = call float @injectFault4(i64 365, float %39, i32 45, i32 0, i32 2, i32 0, ptr @fptrunc_namestr), !llfi_injectfault !68
   %40 = load ptr, ptr %8, align 8, !llfi_index !378
-  %fi57 = call float @injectFault3(i64 367, float %fi55, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  %fi57 = call float @injectFault4(i64 367, float %fi55, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
   store float %fi57, ptr %40, align 4, !llfi_index !379
   ret void, !llfi_index !380
 }
@@ -950,154 +1014,154 @@ define dso_local void @_Z10inversek2jffPfS_(float noundef %0, float noundef %1, 
   %8 = alloca ptr, i32 %fi67, align 8, !llfi_index !384
   %fi68 = call i32 @injectFault0(i64 373, i32 1, i32 31, i32 0, i32 1, i32 1, ptr @alloca_namestr), !llfi_injectfault !6
   %9 = alloca float, i32 %fi68, align 4, !llfi_index !385
-  %fi69 = call float @injectFault3(i64 374, float %0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  %fi69 = call float @injectFault4(i64 374, float %0, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
   store float %fi69, ptr %5, align 4, !llfi_index !386
-  %fi70 = call float @injectFault3(i64 375, float %1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  %fi70 = call float @injectFault4(i64 375, float %1, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
   store float %fi70, ptr %6, align 4, !llfi_index !387
   store ptr %2, ptr %7, align 8, !llfi_index !388
   store ptr %3, ptr %8, align 8, !llfi_index !389
   %10 = load float, ptr %5, align 4, !llfi_index !390
-  %fi71 = call float @injectFault3(i64 378, float %10, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi71 = call float @injectFault4(i64 378, float %10, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %11 = load float, ptr %5, align 4, !llfi_index !391
-  %fi72 = call float @injectFault3(i64 379, float %11, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi72 = call float @injectFault4(i64 379, float %11, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %12 = load float, ptr %6, align 4, !llfi_index !392
-  %fi73 = call float @injectFault3(i64 380, float %12, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi73 = call float @injectFault4(i64 380, float %12, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %13 = load float, ptr %6, align 4, !llfi_index !393
-  %fi74 = call float @injectFault3(i64 381, float %13, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi76 = call float @injectFault3(i64 382, float %fi73, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
-  %fi77 = call float @injectFault3(i64 382, float %fi74, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi74 = call float @injectFault4(i64 381, float %13, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi76 = call float @injectFault4(i64 382, float %fi73, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi77 = call float @injectFault4(i64 382, float %fi74, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
   %14 = fmul float %fi76, %fi77, !llfi_index !394
-  %fi75 = call float @injectFault3(i64 382, float %14, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
+  %fi75 = call float @injectFault4(i64 382, float %14, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
   %15 = call float @llvm.fmuladd.f32(float %fi71, float %fi72, float %fi75), !llfi_index !395
-  %fi78 = call float @injectFault3(i64 384, float %15, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  %fi78 = call float @injectFault4(i64 384, float %15, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
   store float %fi78, ptr %9, align 4, !llfi_index !396
   %16 = load float, ptr %5, align 4, !llfi_index !397
-  %fi2 = call float @injectFault3(i64 385, float %16, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi2 = call float @injectFault4(i64 385, float %16, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %17 = load float, ptr %5, align 4, !llfi_index !398
-  %fi3 = call float @injectFault3(i64 386, float %17, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi3 = call float @injectFault4(i64 386, float %17, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %18 = load float, ptr %6, align 4, !llfi_index !399
-  %fi4 = call float @injectFault3(i64 387, float %18, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi4 = call float @injectFault4(i64 387, float %18, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %19 = load float, ptr %6, align 4, !llfi_index !400
-  %fi5 = call float @injectFault3(i64 388, float %19, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi7 = call float @injectFault3(i64 389, float %fi4, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
-  %fi8 = call float @injectFault3(i64 389, float %fi5, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi5 = call float @injectFault4(i64 388, float %19, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi7 = call float @injectFault4(i64 389, float %fi4, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi8 = call float @injectFault4(i64 389, float %fi5, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
   %20 = fmul float %fi7, %fi8, !llfi_index !401
-  %fi6 = call float @injectFault3(i64 389, float %20, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
+  %fi6 = call float @injectFault4(i64 389, float %20, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
   %21 = call float @llvm.fmuladd.f32(float %fi2, float %fi3, float %fi6), !llfi_index !402
   %22 = load float, ptr @l1, align 4, !llfi_index !403
-  %fi9 = call float @injectFault3(i64 391, float %22, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi9 = call float @injectFault4(i64 391, float %22, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %23 = load float, ptr @l1, align 4, !llfi_index !404
-  %fi10 = call float @injectFault3(i64 392, float %23, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi12 = call float @injectFault3(i64 393, float %fi9, i32 12, i32 1, i32 2, i32 1, ptr @fneg_namestr), !llfi_injectfault !6
+  %fi10 = call float @injectFault4(i64 392, float %23, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi12 = call float @injectFault4(i64 393, float %fi9, i32 12, i32 1, i32 2, i32 1, ptr @fneg_namestr), !llfi_injectfault !6
   %24 = fneg float %fi12, !llfi_index !405
-  %fi11 = call float @injectFault3(i64 393, float %24, i32 12, i32 0, i32 2, i32 0, ptr @fneg_namestr), !llfi_injectfault !68
+  %fi11 = call float @injectFault4(i64 393, float %24, i32 12, i32 0, i32 2, i32 0, ptr @fneg_namestr), !llfi_injectfault !68
   %25 = call float @llvm.fmuladd.f32(float %fi11, float %fi10, float %21), !llfi_index !406
   %26 = load float, ptr @l2, align 4, !llfi_index !407
-  %fi13 = call float @injectFault3(i64 395, float %26, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi13 = call float @injectFault4(i64 395, float %26, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %27 = load float, ptr @l2, align 4, !llfi_index !408
-  %fi14 = call float @injectFault3(i64 396, float %27, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi16 = call float @injectFault3(i64 397, float %fi13, i32 12, i32 1, i32 2, i32 1, ptr @fneg_namestr), !llfi_injectfault !6
+  %fi14 = call float @injectFault4(i64 396, float %27, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi16 = call float @injectFault4(i64 397, float %fi13, i32 12, i32 1, i32 2, i32 1, ptr @fneg_namestr), !llfi_injectfault !6
   %28 = fneg float %fi16, !llfi_index !409
-  %fi15 = call float @injectFault3(i64 397, float %28, i32 12, i32 0, i32 2, i32 0, ptr @fneg_namestr), !llfi_injectfault !68
+  %fi15 = call float @injectFault4(i64 397, float %28, i32 12, i32 0, i32 2, i32 0, ptr @fneg_namestr), !llfi_injectfault !68
   %29 = call float @llvm.fmuladd.f32(float %fi15, float %fi14, float %25), !llfi_index !410
   %30 = load float, ptr @l1, align 4, !llfi_index !411
-  %fi17 = call float @injectFault3(i64 399, float %30, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi19 = call float @injectFault3(i64 400, float 2.000000e+00, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
-  %fi20 = call float @injectFault3(i64 400, float %fi17, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi17 = call float @injectFault4(i64 399, float %30, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi19 = call float @injectFault4(i64 400, float 2.000000e+00, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi20 = call float @injectFault4(i64 400, float %fi17, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
   %31 = fmul float %fi19, %fi20, !llfi_index !412
-  %fi18 = call float @injectFault3(i64 400, float %31, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
+  %fi18 = call float @injectFault4(i64 400, float %31, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
   %32 = load float, ptr @l2, align 4, !llfi_index !413
-  %fi21 = call float @injectFault3(i64 401, float %32, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi23 = call float @injectFault3(i64 402, float %fi18, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
-  %fi24 = call float @injectFault3(i64 402, float %fi21, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi21 = call float @injectFault4(i64 401, float %32, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi23 = call float @injectFault4(i64 402, float %fi18, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi24 = call float @injectFault4(i64 402, float %fi21, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
   %33 = fmul float %fi23, %fi24, !llfi_index !414
-  %fi22 = call float @injectFault3(i64 402, float %33, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
-  %fi26 = call float @injectFault3(i64 403, float %29, i32 21, i32 1, i32 3, i32 1, ptr @fdiv_namestr), !llfi_injectfault !6
-  %fi27 = call float @injectFault3(i64 403, float %fi22, i32 21, i32 2, i32 3, i32 2, ptr @fdiv_namestr), !llfi_injectfault !6
+  %fi22 = call float @injectFault4(i64 402, float %33, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
+  %fi26 = call float @injectFault4(i64 403, float %29, i32 21, i32 1, i32 3, i32 1, ptr @fdiv_namestr), !llfi_injectfault !6
+  %fi27 = call float @injectFault4(i64 403, float %fi22, i32 21, i32 2, i32 3, i32 2, ptr @fdiv_namestr), !llfi_injectfault !6
   %34 = fdiv float %fi26, %fi27, !llfi_index !415
-  %fi25 = call float @injectFault3(i64 403, float %34, i32 21, i32 0, i32 3, i32 0, ptr @fdiv_namestr), !llfi_injectfault !68
-  %fi29 = call float @injectFault3(i64 404, float %fi25, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi25 = call float @injectFault4(i64 403, float %34, i32 21, i32 0, i32 3, i32 0, ptr @fdiv_namestr), !llfi_injectfault !68
+  %fi29 = call float @injectFault4(i64 404, float %fi25, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %35 = fpext float %fi29 to double, !llfi_index !416
-  %fi28 = call double @injectFault4(i64 404, double %35, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
-  %fi31 = call double @injectFault4(i64 405, double %fi28, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
+  %fi28 = call double @injectFault5(i64 404, double %35, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi31 = call double @injectFault5(i64 405, double %fi28, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
   %36 = call double @acos(double noundef %fi31) #8, !llfi_index !417
-  %fi30 = call double @injectFault4(i64 405, double %36, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
-  %fi33 = call double @injectFault4(i64 406, double %fi30, i32 45, i32 1, i32 2, i32 1, ptr @fptrunc_namestr), !llfi_injectfault !6
+  %fi30 = call double @injectFault5(i64 405, double %36, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
+  %fi33 = call double @injectFault5(i64 406, double %fi30, i32 45, i32 1, i32 2, i32 1, ptr @fptrunc_namestr), !llfi_injectfault !6
   %37 = fptrunc double %fi33 to float, !llfi_index !418
-  %fi32 = call float @injectFault3(i64 406, float %37, i32 45, i32 0, i32 2, i32 0, ptr @fptrunc_namestr), !llfi_injectfault !68
+  %fi32 = call float @injectFault4(i64 406, float %37, i32 45, i32 0, i32 2, i32 0, ptr @fptrunc_namestr), !llfi_injectfault !68
   %38 = load ptr, ptr %8, align 8, !llfi_index !419
-  %fi34 = call float @injectFault3(i64 408, float %fi32, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  %fi34 = call float @injectFault4(i64 408, float %fi32, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
   store float %fi34, ptr %38, align 4, !llfi_index !420
   %39 = load float, ptr %6, align 4, !llfi_index !421
-  %fi35 = call float @injectFault3(i64 409, float %39, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi37 = call float @injectFault3(i64 410, float %fi35, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi35 = call float @injectFault4(i64 409, float %39, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi37 = call float @injectFault4(i64 410, float %fi35, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %40 = fpext float %fi37 to double, !llfi_index !422
-  %fi36 = call double @injectFault4(i64 410, double %40, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi36 = call double @injectFault5(i64 410, double %40, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
   %41 = load float, ptr @l1, align 4, !llfi_index !423
-  %fi38 = call float @injectFault3(i64 411, float %41, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi40 = call float @injectFault3(i64 412, float %fi38, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi38 = call float @injectFault4(i64 411, float %41, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi40 = call float @injectFault4(i64 412, float %fi38, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %42 = fpext float %fi40 to double, !llfi_index !424
-  %fi39 = call double @injectFault4(i64 412, double %42, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi39 = call double @injectFault5(i64 412, double %42, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
   %43 = load float, ptr @l2, align 4, !llfi_index !425
-  %fi41 = call float @injectFault3(i64 413, float %43, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi43 = call float @injectFault3(i64 414, float %fi41, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi41 = call float @injectFault4(i64 413, float %43, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi43 = call float @injectFault4(i64 414, float %fi41, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %44 = fpext float %fi43 to double, !llfi_index !426
-  %fi42 = call double @injectFault4(i64 414, double %44, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi42 = call double @injectFault5(i64 414, double %44, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
   %45 = load ptr, ptr %8, align 8, !llfi_index !427
   %46 = load float, ptr %45, align 4, !llfi_index !428
-  %fi44 = call float @injectFault3(i64 416, float %46, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi46 = call float @injectFault3(i64 417, float %fi44, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi44 = call float @injectFault4(i64 416, float %46, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi46 = call float @injectFault4(i64 417, float %fi44, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %47 = fpext float %fi46 to double, !llfi_index !429
-  %fi45 = call double @injectFault4(i64 417, double %47, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
-  %fi48 = call double @injectFault4(i64 418, double %fi45, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
+  %fi45 = call double @injectFault5(i64 417, double %47, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi48 = call double @injectFault5(i64 418, double %fi45, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
   %48 = call double @cos(double noundef %fi48) #8, !llfi_index !430
-  %fi47 = call double @injectFault4(i64 418, double %48, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
+  %fi47 = call double @injectFault5(i64 418, double %48, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
   %49 = call double @llvm.fmuladd.f64(double %fi42, double %fi47, double %fi39), !llfi_index !431
   %50 = load float, ptr %5, align 4, !llfi_index !432
-  %fi49 = call float @injectFault3(i64 420, float %50, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi49 = call float @injectFault4(i64 420, float %50, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
   %51 = load float, ptr @l2, align 4, !llfi_index !433
-  %fi50 = call float @injectFault3(i64 421, float %51, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi52 = call float @injectFault3(i64 422, float %fi49, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
-  %fi53 = call float @injectFault3(i64 422, float %fi50, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi50 = call float @injectFault4(i64 421, float %51, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi52 = call float @injectFault4(i64 422, float %fi49, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi53 = call float @injectFault4(i64 422, float %fi50, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
   %52 = fmul float %fi52, %fi53, !llfi_index !434
-  %fi51 = call float @injectFault3(i64 422, float %52, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
-  %fi55 = call float @injectFault3(i64 423, float %fi51, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi51 = call float @injectFault4(i64 422, float %52, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
+  %fi55 = call float @injectFault4(i64 423, float %fi51, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %53 = fpext float %fi55 to double, !llfi_index !435
-  %fi54 = call double @injectFault4(i64 423, double %53, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi54 = call double @injectFault5(i64 423, double %53, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
   %54 = load ptr, ptr %8, align 8, !llfi_index !436
   %55 = load float, ptr %54, align 4, !llfi_index !437
-  %fi56 = call float @injectFault3(i64 425, float %55, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi58 = call float @injectFault3(i64 426, float %fi56, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi56 = call float @injectFault4(i64 425, float %55, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi58 = call float @injectFault4(i64 426, float %fi56, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %56 = fpext float %fi58 to double, !llfi_index !438
-  %fi57 = call double @injectFault4(i64 426, double %56, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
-  %fi60 = call double @injectFault4(i64 427, double %fi57, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
+  %fi57 = call double @injectFault5(i64 426, double %56, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi60 = call double @injectFault5(i64 427, double %fi57, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
   %57 = call double @sin(double noundef %fi60) #8, !llfi_index !439
-  %fi59 = call double @injectFault4(i64 427, double %57, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
-  %fi62 = call double @injectFault4(i64 428, double %fi54, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
-  %fi63 = call double @injectFault4(i64 428, double %fi59, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi59 = call double @injectFault5(i64 427, double %57, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
+  %fi62 = call double @injectFault5(i64 428, double %fi54, i32 18, i32 1, i32 3, i32 1, ptr @fmul_namestr), !llfi_injectfault !6
+  %fi63 = call double @injectFault5(i64 428, double %fi59, i32 18, i32 2, i32 3, i32 2, ptr @fmul_namestr), !llfi_injectfault !6
   %58 = fmul double %fi62, %fi63, !llfi_index !440
-  %fi61 = call double @injectFault4(i64 428, double %58, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
-  %fi65 = call double @injectFault4(i64 429, double %fi61, i32 12, i32 1, i32 2, i32 1, ptr @fneg_namestr), !llfi_injectfault !6
+  %fi61 = call double @injectFault5(i64 428, double %58, i32 18, i32 0, i32 3, i32 0, ptr @fmul_namestr), !llfi_injectfault !68
+  %fi65 = call double @injectFault5(i64 429, double %fi61, i32 12, i32 1, i32 2, i32 1, ptr @fneg_namestr), !llfi_injectfault !6
   %59 = fneg double %fi65, !llfi_index !441
-  %fi64 = call double @injectFault4(i64 429, double %59, i32 12, i32 0, i32 2, i32 0, ptr @fneg_namestr), !llfi_injectfault !68
+  %fi64 = call double @injectFault5(i64 429, double %59, i32 12, i32 0, i32 2, i32 0, ptr @fneg_namestr), !llfi_injectfault !68
   %60 = call double @llvm.fmuladd.f64(double %fi36, double %49, double %fi64), !llfi_index !442
   %61 = load float, ptr %9, align 4, !llfi_index !443
-  %fi79 = call float @injectFault3(i64 431, float %61, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
-  %fi81 = call float @injectFault3(i64 432, float %fi79, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
+  %fi79 = call float @injectFault4(i64 431, float %61, i32 32, i32 0, i32 1, i32 0, ptr @load_namestr), !llfi_injectfault !68
+  %fi81 = call float @injectFault4(i64 432, float %fi79, i32 46, i32 1, i32 2, i32 1, ptr @fpext_namestr), !llfi_injectfault !6
   %62 = fpext float %fi81 to double, !llfi_index !444
-  %fi80 = call double @injectFault4(i64 432, double %62, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
-  %fi83 = call double @injectFault4(i64 433, double %60, i32 21, i32 1, i32 3, i32 1, ptr @fdiv_namestr), !llfi_injectfault !6
-  %fi84 = call double @injectFault4(i64 433, double %fi80, i32 21, i32 2, i32 3, i32 2, ptr @fdiv_namestr), !llfi_injectfault !6
+  %fi80 = call double @injectFault5(i64 432, double %62, i32 46, i32 0, i32 2, i32 0, ptr @fpext_namestr), !llfi_injectfault !68
+  %fi83 = call double @injectFault5(i64 433, double %60, i32 21, i32 1, i32 3, i32 1, ptr @fdiv_namestr), !llfi_injectfault !6
+  %fi84 = call double @injectFault5(i64 433, double %fi80, i32 21, i32 2, i32 3, i32 2, ptr @fdiv_namestr), !llfi_injectfault !6
   %63 = fdiv double %fi83, %fi84, !llfi_index !445
-  %fi82 = call double @injectFault4(i64 433, double %63, i32 21, i32 0, i32 3, i32 0, ptr @fdiv_namestr), !llfi_injectfault !68
-  %fi86 = call double @injectFault4(i64 434, double %fi82, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
+  %fi82 = call double @injectFault5(i64 433, double %63, i32 21, i32 0, i32 3, i32 0, ptr @fdiv_namestr), !llfi_injectfault !68
+  %fi86 = call double @injectFault5(i64 434, double %fi82, i32 56, i32 1, i32 2, i32 1, ptr @call_namestr), !llfi_injectfault !6
   %64 = call double @asin(double noundef %fi86) #8, !llfi_index !446
-  %fi85 = call double @injectFault4(i64 434, double %64, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
-  %fi88 = call double @injectFault4(i64 435, double %fi85, i32 45, i32 1, i32 2, i32 1, ptr @fptrunc_namestr), !llfi_injectfault !6
+  %fi85 = call double @injectFault5(i64 434, double %64, i32 56, i32 0, i32 2, i32 0, ptr @call_namestr), !llfi_injectfault !68
+  %fi88 = call double @injectFault5(i64 435, double %fi85, i32 45, i32 1, i32 2, i32 1, ptr @fptrunc_namestr), !llfi_injectfault !6
   %65 = fptrunc double %fi88 to float, !llfi_index !447
-  %fi87 = call float @injectFault3(i64 435, float %65, i32 45, i32 0, i32 2, i32 0, ptr @fptrunc_namestr), !llfi_injectfault !68
+  %fi87 = call float @injectFault4(i64 435, float %65, i32 45, i32 0, i32 2, i32 0, ptr @fptrunc_namestr), !llfi_injectfault !68
   %66 = load ptr, ptr %7, align 8, !llfi_index !448
-  %fi89 = call float @injectFault3(i64 437, float %fi87, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
+  %fi89 = call float @injectFault4(i64 437, float %fi87, i32 33, i32 0, i32 1, i32 1, ptr @store_namestr), !llfi_injectfault !6
   store float %fi89, ptr %66, align 4, !llfi_index !449
   ret void, !llfi_index !450
 }
@@ -1128,7 +1192,24 @@ exit:                                             ; preds = %inject, %entry
   ret i32 %updateval
 }
 
-define i64 @injectFault1(i64 %0, i64 %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
+define { ptr, i32 } @injectFault1(i64 %0, { ptr, i32 } %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
+entry:
+  %tmploc = alloca { ptr, i32 }, align 8
+  store { ptr, i32 } %1, ptr %tmploc, align 8
+  %pre_cond = call i1 @preFunc(i64 %0, i32 %2, i32 %3, i32 %4)
+  br i1 %pre_cond, label %inject, label %exit
+
+inject:                                           ; preds = %entry
+  %tmploc_cast = bitcast ptr %tmploc to ptr
+  call void @injectFunc(i64 %0, i32 128, ptr %tmploc_cast, i32 %3, i32 %5, ptr %6)
+  br label %exit
+
+exit:                                             ; preds = %inject, %entry
+  %updateval = load { ptr, i32 }, ptr %tmploc, align 8
+  ret { ptr, i32 } %updateval
+}
+
+define i64 @injectFault2(i64 %0, i64 %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
 entry:
   %tmploc = alloca i64, align 8
   store i64 %1, ptr %tmploc, align 8
@@ -1145,7 +1226,7 @@ exit:                                             ; preds = %inject, %entry
   ret i64 %updateval
 }
 
-define i1 @injectFault2(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
+define i1 @injectFault3(i64 %0, i1 %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
 entry:
   %tmploc = alloca i1, align 1
   store i1 %1, ptr %tmploc, align 1
@@ -1162,7 +1243,7 @@ exit:                                             ; preds = %inject, %entry
   ret i1 %updateval
 }
 
-define float @injectFault3(i64 %0, float %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
+define float @injectFault4(i64 %0, float %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
 entry:
   %tmploc = alloca float, align 4
   store float %1, ptr %tmploc, align 4
@@ -1179,7 +1260,7 @@ exit:                                             ; preds = %inject, %entry
   ret float %updateval
 }
 
-define double @injectFault4(i64 %0, double %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
+define double @injectFault5(i64 %0, double %1, i32 %2, i32 %3, i32 %4, i32 %5, ptr %6) {
 entry:
   %tmploc = alloca double, align 8
   store double %1, ptr %tmploc, align 8

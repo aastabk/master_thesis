@@ -27,4 +27,4 @@ inversek2j_systematic(){
 
     ./gather_csv.sh inversek2j ${CSV_FILE}
 }
-inversek2j_systematic
+# inversek2j_systematic

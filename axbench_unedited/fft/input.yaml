@@ -4,7 +4,14 @@ compileOption:
       include:
       - all
       # SDC > 50&
-      # - fdiv
+      # - add
+      # - sub
+      # - trunc
+      # - store
+      # - zext
+      # - invoke
+      # - lshr
+      # - select
       exclude:
       - getelementptr
       - phi
@@ -26,9 +33,10 @@ runOption:
     verbose: true
     fi_cycle: 1657472
     fi_max_multiple: 1
+    # fi_bit: all
     # fi_num_bits: 1
     # fi_index: 10
     # window_len_multiple: 2
 
 
-defaultTimeout: 0.063825500
+defaultTimeout: .39051800

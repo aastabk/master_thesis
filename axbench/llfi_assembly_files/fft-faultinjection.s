@@ -333,10 +333,23 @@ main:                                   # @main
 	movl	%eax, %eax
 	shlq	$4, %rax
 	.cfi_escape 0x2e, 0x00
-	movq	%rsp, %r15
-	subq	%rax, %r15
-	movq	%r15, %rsp
-	movq	8(%rbx), %rdi
+	movq	%rsp, %rcx
+	subq	%rax, %rcx
+	movq	%rcx, -104(%rbp)                # 8-byte Spill
+	movq	%rcx, %rsp
+	.cfi_escape 0x2e, 0x10
+	subq	$8, %rsp
+	leaq	getelementptr_namestr(%rip), %r15
+	movl	$16, %edi
+	movl	$1, %esi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	pushq	%r15
+	callq	injectFault1@PLT
+	addq	$16, %rsp
+	movq	(%rbx,%rax,8), %rdi
 	.cfi_escape 0x2e, 0x00
 	callq	atoi@PLT
 	.cfi_escape 0x2e, 0x10
@@ -352,7 +365,18 @@ main:                                   # @main
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, -52(%rbp)                 # 4-byte Spill
-	movq	16(%rbx), %rsi
+	.cfi_escape 0x2e, 0x10
+	subq	$8, %rsp
+	movl	$19, %edi
+	movl	$2, %esi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	pushq	%r15
+	callq	injectFault1@PLT
+	addq	$16, %rsp
+	movq	(%rbx,%rax,8), %rsi
 .Ltmp0:
 	.cfi_escape 0x2e, 0x00
 	movq	%r14, -72(%rbp)                 # 8-byte Spill
@@ -372,14 +396,14 @@ main:                                   # @main
 # %bb.2:
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
-	leaq	invoke_namestr(%rip), %r14
+	leaq	invoke_namestr(%rip), %r15
 	movl	$25, %edi
 	movl	$16, %esi
 	movl	$5, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$3, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 .Ltmp6:
@@ -391,9 +415,20 @@ main:                                   # @main
 	callq	_ZNSt14basic_ofstreamIcSt11char_traitsIcEE4openERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode@PLT
 .Ltmp7:
 # %bb.3:
-	movq	%r15, -104(%rbp)                # 8-byte Spill
-	movq	(%r12), %rax
-	movq	-24(%rax), %rsi
+	movq	(%r12), %rbx
+	.cfi_escape 0x2e, 0x10
+	subq	$8, %rsp
+	movl	$28, %edi
+	movq	$-24, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %r14
+	pushq	%r14
+	callq	injectFault1@PLT
+	addq	$16, %rsp
+	movq	(%rbx,%rax), %rsi
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
 	leaq	load_namestr(%rip), %rax
@@ -403,6 +438,16 @@ main:                                   # @main
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rax
+	callq	injectFault1@PLT
+	.cfi_escape 0x2e, 0x10
+	addq	$8, %rsp
+	movl	$32, %edi
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	pushq	%r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	leaq	(%rax,%r12), %rbx
@@ -414,7 +459,7 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$2, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	.cfi_escape 0x2e, 0x00
@@ -423,15 +468,15 @@ main:                                   # @main
 	callq	_ZNSt8ios_base9precisionEl
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
-	leaq	sext_namestr(%rip), %r15
+	leaq	sext_namestr(%rip), %r13
 	movl	$35, %edi
-	movl	-52(%rbp), %r13d                # 4-byte Reload
-	movl	%r13d, %esi
+	movl	-52(%rbp), %r15d                # 4-byte Reload
+	movl	%r15d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -442,7 +487,7 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault1@PLT
 	.cfi_escape 0x2e, 0x10
 	addq	$8, %rsp
@@ -489,21 +534,22 @@ main:                                   # @main
 	movl	$1, %r9d
 	leaq	call_namestr(%rip), %rax
 	pushq	%rax
+	movq	%rax, %r12
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	.cfi_escape 0x2e, 0x00
 	movq	%rax, %rdi
 	callq	malloc@PLT
-	movq	%rax, %r12
+	movq	%rax, -88(%rbp)                 # 8-byte Spill
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
 	movl	$41, %edi
-	movl	%r13d, %esi
+	movl	%r15d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -514,7 +560,7 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault1@PLT
 	.cfi_escape 0x2e, 0x10
 	addq	$8, %rsp
@@ -558,23 +604,22 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	leaq	call_namestr(%rip), %rax
-	pushq	%rax
+	pushq	%r12
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	.cfi_escape 0x2e, 0x00
 	movq	%rax, %rdi
 	callq	malloc@PLT
-	movq	%rax, %rbx
+	movq	%rax, %r12
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
 	movl	$47, %edi
-	movl	%r13d, %esi
+	movl	%r15d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -585,8 +630,7 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
-	movq	%rbx, %r15
+	pushq	%r13
 	callq	injectFault1@PLT
 	.cfi_escape 0x2e, 0x10
 	addq	$8, %rsp
@@ -639,36 +683,35 @@ main:                                   # @main
 	callq	malloc@PLT
 	movq	%rax, -80(%rbp)                 # 8-byte Spill
 	xorl	%esi, %esi
-	movq	%r12, -96(%rbp)                 # 8-byte Spill
-	testq	%r12, %r12
+	cmpq	$0, -88(%rbp)                   # 8-byte Folded Reload
 	sete	%sil
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
-	leaq	icmp_namestr(%rip), %r14
+	leaq	icmp_namestr(%rip), %r15
 	movl	$54, %edi
 	movl	$53, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault4@PLT
 	.cfi_escape 0x2e, 0x10
 	addq	$8, %rsp
-	leaq	br_namestr(%rip), %rbx
+	leaq	br_namestr(%rip), %r14
 	movzbl	%al, %esi
 	movl	$55, %edi
 	movl	$2, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault4@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	jne	.LBB1_11
 # %bb.4:
 	xorl	%esi, %esi
-	testq	%r15, %r15
+	testq	%r12, %r12
 	sete	%sil
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
@@ -677,7 +720,7 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault4@PLT
 	.cfi_escape 0x2e, 0x10
 	addq	$8, %rsp
@@ -687,7 +730,7 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault4@PLT
 	addq	$16, %rsp
 	testb	$1, %al
@@ -698,13 +741,13 @@ main:                                   # @main
 	sete	%sil
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
-	xorl	%r13d, %r13d
+	xorl	%ebx, %ebx
 	movl	$61, %edi
 	movl	$53, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault4@PLT
 	.cfi_escape 0x2e, 0x10
 	addq	$8, %rsp
@@ -714,7 +757,7 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault4@PLT
 	addq	$16, %rsp
 	testb	$1, %al
@@ -735,7 +778,20 @@ main:                                   # @main
 	movq	%rax, %rdi
 	callq	_ZNSolsEPFRSoS_E@PLT
 .Ltmp36:
-.LBB1_32:
+.LBB1_32:                               # %.split2
+	.cfi_escape 0x2e, 0x10
+	subq	$8, %rsp
+	leaq	phi_namestr(%rip), %rax
+	movl	$149, %edi
+	movl	%ebx, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	pushq	%rax
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, %ebx
 	.cfi_escape 0x2e, 0x00
 	movq	%r12, %rdi
 	callq	_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev@PLT
@@ -767,9 +823,9 @@ main:                                   # @main
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
-.LBB1_6:                                # %.preheader1.preheader
+.LBB1_6:                                # %.preheader4.preheader
 	.cfi_def_cfa %rbp, 16
-	movq	%r15, -88(%rbp)                 # 8-byte Spill
+	movq	%r12, -96(%rbp)                 # 8-byte Spill
 	jmp	.LBB1_7
 	.p2align	4, 0x90
 .LBB1_10:                               #   in Loop: Header=BB1_7 Depth=1
@@ -874,13 +930,13 @@ main:                                   # @main
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
 	movl	$92, %edi
-	movl	%r13d, %esi
+	movl	%r12d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	leaq	sext_namestr(%rip), %r12
-	pushq	%r12
+	leaq	sext_namestr(%rip), %r15
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -891,7 +947,7 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %rbx
@@ -903,21 +959,21 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	leaq	store_namestr(%rip), %r15
-	pushq	%r15
+	leaq	store_namestr(%rip), %r13
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movq	-96(%rbp), %r14                 # 8-byte Reload
+	movq	-88(%rbp), %r14                 # 8-byte Reload
 	movl	%eax, (%r14,%rbx,8)
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
 	movl	$97, %edi
-	movl	%r13d, %esi
+	movl	%r12d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -928,7 +984,7 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %rbx
@@ -940,14 +996,14 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, 4(%r14,%rbx,8)
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
 	movl	$102, %edi
-	movl	%r13d, %esi
+	movl	%r12d, %esi
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -980,19 +1036,32 @@ main:                                   # @main
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r13d
-.LBB1_7:                                # %.preheader1
+	movl	%eax, %ebx
+	leaq	icmp_namestr(%rip), %r15
+.LBB1_7:                                # %.preheader4
                                         # =>This Inner Loop Header: Depth=1
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
+	movl	$82, %edi
+	movl	%ebx, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	leaq	phi_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, %r12d
+	.cfi_escape 0x2e, 0x10
+	subq	$8, %rsp
 	movl	$83, %edi
-	movl	%r13d, %esi
+	movl	%eax, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	leaq	icmp_namestr(%rip), %r12
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %r14d
@@ -1005,7 +1074,7 @@ main:                                   # @main
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
@@ -1018,7 +1087,7 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault4@PLT
 	.cfi_escape 0x2e, 0x10
 	addq	$8, %rsp
@@ -1078,12 +1147,12 @@ main:                                   # @main
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
 	movl	$86, %edi
-	movl	%r13d, %esi
+	movl	%r12d, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %r14d
@@ -1095,7 +1164,7 @@ main:                                   # @main
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
@@ -1108,7 +1177,7 @@ main:                                   # @main
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault4@PLT
 	.cfi_escape 0x2e, 0x10
 	addq	$8, %rsp
@@ -1152,11 +1221,10 @@ main:                                   # @main
 .LBB1_17:
 .Ltmp8:
 	.cfi_escape 0x2e, 0x00
-	movq	-104(%rbp), %rbx                # 8-byte Reload
-	movq	%rbx, %rdi
+	movq	-104(%rbp), %rdi                # 8-byte Reload
 	callq	_ZN12AxBenchTimerC2Ev
 .Ltmp9:
-	movq	-88(%rbp), %r13                 # 8-byte Reload
+	movq	-96(%rbp), %r13                 # 8-byte Reload
 	leaq	invoke_namestr(%rip), %rax
 # %bb.18:
 	.cfi_escape 0x2e, 0x10
@@ -1174,13 +1242,13 @@ main:                                   # @main
 	.cfi_escape 0x2e, 0x00
 	movl	%eax, %edi
 	movq	-80(%rbp), %rsi                 # 8-byte Reload
-	movq	-96(%rbp), %rdx                 # 8-byte Reload
+	movq	-88(%rbp), %rdx                 # 8-byte Reload
 	movq	%r13, %rcx
 	callq	_Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp
 .Ltmp11:
 # %bb.19:
 	.cfi_escape 0x2e, 0x00
-	movq	%rbx, %rdi
+	movq	-104(%rbp), %rdi                # 8-byte Reload
 	callq	_ZN12AxBenchTimer20nanosecondsSinceInitEv
 	movq	%rax, %rbx
 .Ltmp12:
@@ -1269,14 +1337,26 @@ main:                                   # @main
 	callq	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
 .Ltmp17:
 # %bb.22:                               # %.preheader
-	xorl	%r15d, %r15d
+	xorl	%esi, %esi
 	leaq	fdiv_namestr(%rip), %r12
 	.p2align	4, 0x90
 .LBB1_23:                               # =>This Inner Loop Header: Depth=1
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
+	movl	$116, %edi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	leaq	phi_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, %r15d
+	.cfi_escape 0x2e, 0x10
+	subq	$8, %rsp
 	movl	$117, %edi
-	movl	%r15d, %esi
+	movl	%eax, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -1455,7 +1535,7 @@ main:                                   # @main
 	pushq	%rbx
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-88(%rbp), %rcx                 # 8-byte Reload
+	movq	-96(%rbp), %rcx                 # 8-byte Reload
 	movl	4(%rcx,%rax,8), %esi
 	.cfi_escape 0x2e, 0x10
 	subq	$8, %rsp
@@ -1563,6 +1643,17 @@ main:                                   # @main
 	xorl	%r9d, %r9d
 	pushq	%r13
 	callq	injectFault1@PLT
+	.cfi_escape 0x2e, 0x10
+	addq	$8, %rsp
+	movl	$140, %edi
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	-80(%rbp), %rcx                 # 8-byte Reload
 	movl	(%rcx,%rax,4), %esi
@@ -1637,8 +1728,8 @@ main:                                   # @main
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r15d
-	movq	-88(%rbp), %r13                 # 8-byte Reload
+	movl	%eax, %esi
+	movq	-96(%rbp), %r13                 # 8-byte Reload
 	jmp	.LBB1_23
 .LBB1_31:
 	xorl	%ebx, %ebx
@@ -1686,7 +1777,7 @@ main:                                   # @main
 	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r15d
+	movl	%eax, %ebx
 	jmp	.LBB1_34
 .LBB1_13:
 .Ltmp2:
@@ -1771,15 +1862,41 @@ main:                                   # @main
 	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r15d
+	movl	%eax, %ebx
 	.cfi_escape 0x2e, 0x00
 	movq	-64(%rbp), %rdi                 # 8-byte Reload
 	callq	_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev@PLT
 .LBB1_34:
+	.cfi_escape 0x2e, 0x10
+	subq	$8, %rsp
+	leaq	phi_namestr(%rip), %rax
+	movl	$154, %edi
+	movl	%ebx, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	pushq	%rax
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, %r15d
 	.cfi_escape 0x2e, 0x00
 	movq	-72(%rbp), %rdi                 # 8-byte Reload
 	callq	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@PLT
 .LBB1_35:
+	.cfi_escape 0x2e, 0x10
+	subq	$8, %rsp
+	leaq	phi_namestr(%rip), %rax
+	movl	$158, %edi
+	movl	%r15d, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	pushq	%rax
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, %r15d
 	.cfi_escape 0x2e, 0x10
 	leaq	insertvalue_namestr(%rip), %r12
 	movl	$159, %edi
@@ -2423,10 +2540,11 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	.cfi_offset %r13, -40
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
-	movq	%rsi, %r14
+	movq	%rsi, %r12
 	movl	%edi, %esi
-	leaq	sitofp_namestr(%rip), %rbx
-	movq	%rbx, (%rsp)
+	leaq	sitofp_namestr(%rip), %r14
+	movq	%r14, (%rsp)
+	movl	$1, %ebx
 	movl	$191, %edi
 	movl	$44, %edx
 	movl	$1, %ecx
@@ -2439,15 +2557,15 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	xorl	%edx, %edx
 	movl	$2, %ecx
 	xorl	%r8d, %r8d
-	movq	%rbx, %r9
+	movq	%r14, %r9
 	callq	injectFault2@PLT
-	leaq	call_namestr(%rip), %rbx
+	leaq	call_namestr(%rip), %r14
 	movl	$192, %edi
 	movl	$56, %esi
 	movl	$1, %edx
 	movl	$2, %ecx
 	movl	$1, %r8d
-	movq	%rbx, %r9
+	movq	%r14, %r9
 	callq	injectFault2@PLT
 	callq	log2f@PLT
 	movl	$192, %edi
@@ -2455,27 +2573,37 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	xorl	%edx, %edx
 	movl	$2, %ecx
 	xorl	%r8d, %r8d
-	movq	%rbx, %r9
+	movq	%r14, %r9
 	callq	injectFault2@PLT
-	leaq	fptosi_namestr(%rip), %rbx
+	leaq	fptosi_namestr(%rip), %r14
 	movl	$193, %edi
 	movl	$42, %esi
 	movl	$1, %edx
 	movl	$2, %ecx
 	movl	$1, %r8d
-	movq	%rbx, %r9
+	movq	%r14, %r9
 	callq	injectFault2@PLT
 	cvttss2si	%xmm0, %esi
-	movq	%rbx, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$193, %edi
 	movl	$42, %edx
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %ebx
-	leaq	store_namestr(%rip), %r15
-	movq	%r15, (%rsp)
+	movl	%eax, %r15d
+	leaq	getelementptr_namestr(%rip), %rax
+	movq	%rax, (%rsp)
+	movl	$194, %edi
+	xorl	%esi, %esi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	callq	injectFault1@PLT
+	movq	%rax, %r14
+	leaq	store_namestr(%rip), %rax
+	movq	%rax, (%rsp)
 	movl	$195, %edi
 	xorl	%esi, %esi
 	movl	$33, %edx
@@ -2483,19 +2611,19 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$1, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, (%r14)
-	leaq	sub_namestr(%rip), %r12
-	movq	%r12, (%rsp)
+	movl	%eax, (%r12,%r14,4)
+	leaq	sub_namestr(%rip), %r13
+	movq	%r13, (%rsp)
 	movl	$196, %edi
-	movl	%ebx, -52(%rbp)                 # 4-byte Spill
-	movl	%ebx, %esi
+	movl	%r15d, -48(%rbp)                # 4-byte Spill
+	movl	%r15d, %esi
 	movl	$15, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movl	%eax, %r14d
+	movq	%r13, (%rsp)
 	movl	$196, %edi
 	movl	$1, %esi
 	movl	$15, %edx
@@ -2503,18 +2631,18 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
-	subl	%eax, %ebx
-	movq	%r12, (%rsp)
+	subl	%eax, %r14d
+	movq	%r13, (%rsp)
 	movl	$196, %edi
-	movl	%ebx, %esi
+	movl	%r14d, %esi
 	movl	$15, %edx
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r13d
-	leaq	shl_namestr(%rip), %r12
-	movq	%r12, (%rsp)
+	movl	%eax, %r14d
+	leaq	shl_namestr(%rip), %r13
+	movq	%r13, (%rsp)
 	movl	$197, %edi
 	movl	$1, %esi
 	movl	$25, %edx
@@ -2522,41 +2650,52 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movl	%eax, %r15d
+	movq	%r13, (%rsp)
 	movl	$197, %edi
-	movl	%r13d, %esi
-	movq	%r12, %r13
+	movl	%r14d, %esi
 	movl	$25, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ecx
-	shll	%cl, %ebx
-	movq	%r12, (%rsp)
+	shll	%cl, %r15d
+	movq	%r13, (%rsp)
 	movl	$197, %edi
-	movl	%ebx, %esi
+	movl	%r15d, %esi
 	movl	$25, %edx
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movq	%r15, (%rsp)
+	movl	%eax, %r14d
+	leaq	getelementptr_namestr(%rip), %rax
+	movq	%rax, (%rsp)
+	movl	$198, %edi
+	movl	$1, %esi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	callq	injectFault1@PLT
+	movq	%rax, %r15
+	leaq	store_namestr(%rip), %rax
+	movq	%rax, (%rsp)
 	movl	$199, %edi
-	movl	%eax, %esi
+	movl	%r14d, %esi
 	movl	$33, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movq	%r14, -64(%rbp)                 # 8-byte Spill
-	movl	%eax, 4(%r14)
-	movl	$1, -44(%rbp)                   # 4-byte Folded Spill
-	leaq	add_namestr(%rip), %r14
+	movq	%r12, -64(%rbp)                 # 8-byte Spill
+	movl	%eax, (%r12,%r15,4)
+	leaq	add_namestr(%rip), %r15
 	jmp	.LBB7_1
 	.p2align	4, 0x90
 .LBB7_5:                                #   in Loop: Header=BB7_1 Depth=1
+	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$227, %edi
 	movl	-44(%rbp), %esi                 # 4-byte Reload
@@ -2583,22 +2722,33 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, -44(%rbp)                 # 4-byte Spill
+	movl	%eax, %ebx
+	movq	%r14, %r15
 .LBB7_1:                                # =>This Loop Header: Depth=1
                                         #     Child Loop BB7_3 Depth 2
-	leaq	icmp_namestr(%rip), %r15
-	movq	%r15, (%rsp)
+	leaq	phi_namestr(%rip), %rax
+	movq	%rax, (%rsp)
+	movl	$201, %edi
+	movl	%ebx, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	callq	injectFault0@PLT
+	movl	%eax, %esi
+	leaq	icmp_namestr(%rip), %r14
+	movq	%r14, (%rsp)
 	movl	$202, %edi
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r15, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$202, %edi
-	movl	-52(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$53, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -2607,7 +2757,7 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
-	movq	%r15, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$202, %edi
 	movl	$53, %edx
 	xorl	%ecx, %ecx
@@ -2626,7 +2776,8 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	testb	$1, %al
 	je	.LBB7_6
 # %bb.2:                                #   in Loop: Header=BB7_1 Depth=1
-	movq	%r13, (%rsp)
+	leaq	shl_namestr(%rip), %r12
+	movq	%r12, (%rsp)
 	movl	$204, %edi
 	movl	$1, %esi
 	movl	$25, %edx
@@ -2635,7 +2786,7 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$204, %edi
 	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$25, %edx
@@ -2645,7 +2796,7 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	callq	injectFault0@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$204, %edi
 	movl	%ebx, %esi
 	movl	$25, %edx
@@ -2653,11 +2804,20 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	.p2align	4, 0x90
 .LBB7_3:                                #   Parent Loop BB7_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
-	movq	%r14, (%rsp)
+	leaq	phi_namestr(%rip), %rcx
+	movq	%rcx, (%rsp)
+	movl	$206, %edi
+	movl	%eax, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	callq	injectFault0@PLT
+	movl	%eax, %r12d
+	movq	%r15, (%rsp)
 	movl	$207, %edi
 	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$13, %edx
@@ -2666,7 +2826,7 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r14, (%rsp)
+	movq	%r15, (%rsp)
 	movl	$207, %edi
 	movl	$1, %esi
 	movl	$13, %edx
@@ -2675,7 +2835,7 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	addl	%eax, %ebx
-	movq	%r14, (%rsp)
+	movq	%r15, (%rsp)
 	movl	$207, %edi
 	movl	%ebx, %esi
 	movl	$13, %edx
@@ -2683,8 +2843,9 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movl	%eax, %r13d
+	leaq	shl_namestr(%rip), %r14
+	movq	%r14, (%rsp)
 	movl	$208, %edi
 	movl	$1, %esi
 	movl	$25, %edx
@@ -2692,39 +2853,40 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r15d
-	movq	%r13, (%rsp)
+	movl	%eax, %ebx
+	movq	%r14, (%rsp)
 	movl	$208, %edi
-	movl	%ebx, %esi
+	movl	%r13d, %esi
 	movl	$25, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ecx
-	shll	%cl, %r15d
-	movq	%r13, (%rsp)
+	shll	%cl, %ebx
+	movq	%r14, (%rsp)
 	movl	$208, %edi
-	movl	%r15d, %esi
+	movl	%ebx, %esi
 	movl	$25, %edx
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r15d
-	leaq	icmp_namestr(%rip), %r12
-	movq	%r12, (%rsp)
+	movl	%eax, %r13d
+	leaq	icmp_namestr(%rip), %r15
+	movq	%r15, (%rsp)
 	movl	$209, %edi
-	movl	-48(%rbp), %esi                 # 4-byte Reload
+	movl	%r12d, %r14d
+	movl	%r12d, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movq	%r15, (%rsp)
 	movl	$209, %edi
-	movl	%r15d, %esi
+	movl	%r13d, %esi
 	movl	$53, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -2733,7 +2895,7 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
-	movq	%r12, (%rsp)
+	movq	%r15, (%rsp)
 	movl	$209, %edi
 	movl	$53, %edx
 	xorl	%ecx, %ecx
@@ -2752,7 +2914,8 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	testb	$1, %al
 	je	.LBB7_5
 # %bb.4:                                #   in Loop: Header=BB7_3 Depth=2
-	movq	%r13, (%rsp)
+	leaq	shl_namestr(%rip), %r12
+	movq	%r12, (%rsp)
 	movl	$211, %edi
 	movl	$1, %esi
 	movl	$25, %edx
@@ -2761,9 +2924,10 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$211, %edi
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	-44(%rbp), %r15d                # 4-byte Reload
+	movl	%r15d, %esi
 	movl	$25, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -2771,7 +2935,7 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	callq	injectFault0@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$211, %edi
 	movl	%ebx, %esi
 	movl	$25, %edx
@@ -2779,27 +2943,28 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r15d
-	leaq	sub_namestr(%rip), %r13
-	movq	%r13, (%rsp)
+	movl	%eax, %r13d
+	leaq	sub_namestr(%rip), %r12
+	movq	%r12, (%rsp)
 	movl	$212, %edi
-	movl	-48(%rbp), %esi                 # 4-byte Reload
+	movl	%r14d, -52(%rbp)                # 4-byte Spill
+	movl	%r14d, %esi
 	movl	$15, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$212, %edi
-	movl	%r15d, %esi
+	movl	%r13d, %esi
 	movl	$15, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	subl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$212, %edi
 	movl	%ebx, %esi
 	movl	$15, %edx
@@ -2825,6 +2990,15 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault1@PLT
+	leaq	getelementptr_namestr(%rip), %rcx
+	movq	%rcx, (%rsp)
+	movl	$214, %edi
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	callq	injectFault1@PLT
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
 	movl	(%rcx,%rax,4), %esi
 	leaq	load_namestr(%rip), %rax
@@ -2835,11 +3009,11 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r15d
-	movq	%r14, %r12
+	movl	%eax, %r13d
+	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$216, %edi
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	%r15d, %esi
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -2864,16 +3038,16 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$217, %edi
-	movl	-52(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$15, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r14d
-	movq	%r13, (%rsp)
+	movl	%eax, %r15d
+	movq	%r12, (%rsp)
 	movl	$217, %edi
 	movl	%ebx, %esi
 	movl	$15, %edx
@@ -2881,18 +3055,18 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
-	subl	%eax, %r14d
-	movq	%r13, (%rsp)
-	leaq	shl_namestr(%rip), %r13
+	subl	%eax, %r15d
+	movq	%r12, (%rsp)
+	leaq	shl_namestr(%rip), %r12
 	movl	$217, %edi
-	movl	%r14d, %esi
+	movl	%r15d, %esi
 	movl	$15, %edx
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r14d
-	movq	%r13, (%rsp)
+	movl	%eax, %r15d
+	movq	%r12, (%rsp)
 	movl	$218, %edi
 	movl	$1, %esi
 	movl	$25, %edx
@@ -2901,9 +3075,9 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$218, %edi
-	movl	%r14d, %esi
+	movl	%r15d, %esi
 	movl	$25, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -2911,7 +3085,7 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	callq	injectFault0@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$218, %edi
 	movl	%ebx, %esi
 	movl	$25, %edx
@@ -2919,26 +3093,26 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r14d
-	movq	%r12, (%rsp)
+	movl	%eax, %r15d
+	movq	%r14, (%rsp)
 	movl	$219, %edi
-	movl	%r15d, %esi
+	movl	%r13d, %esi
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$219, %edi
-	movl	%r14d, %esi
+	movl	%r15d, %esi
 	movl	$13, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	addl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$219, %edi
 	movl	%ebx, %esi
 	movl	$13, %edx
@@ -2946,12 +3120,12 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r14d
+	movl	%eax, %r15d
 	leaq	sext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$220, %edi
-	movl	-48(%rbp), %r15d                # 4-byte Reload
-	movl	%r15d, %esi
+	movl	-52(%rbp), %r12d                # 4-byte Reload
+	movl	%r12d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -2965,11 +3139,20 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault1@PLT
+	leaq	getelementptr_namestr(%rip), %rcx
+	movq	%rcx, (%rsp)
+	movl	$221, %edi
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	callq	injectFault1@PLT
 	movq	%rax, %rbx
 	leaq	store_namestr(%rip), %rax
 	movq	%rax, (%rsp)
 	movl	$222, %edi
-	movl	%r14d, %esi
+	movl	%r15d, %esi
 	movl	$33, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
@@ -2977,16 +3160,16 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	callq	injectFault0@PLT
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
 	movl	%eax, (%rcx,%rbx,4)
-	movq	%r12, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$224, %edi
-	movl	%r15d, %esi
+	movl	%r12d, %esi
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$224, %edi
 	movl	$1, %esi
 	movl	$13, %edx
@@ -2995,7 +3178,7 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	addl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$224, %edi
 	movl	%ebx, %esi
 	movl	$13, %edx
@@ -3003,8 +3186,7 @@ _Z14calcFftIndicesiPi:                  # @_Z14calcFftIndicesiPi
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, -48(%rbp)                 # 4-byte Spill
-	movq	%r12, %r14
+	movq	%r14, %r15
 	jmp	.LBB7_3
 .LBB7_6:
 	addq	$40, %rsp
@@ -3055,7 +3237,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	movq	%rcx, -168(%rbp)                # 8-byte Spill
-	movq	%rdx, -128(%rbp)                # 8-byte Spill
+	movq	%rdx, -120(%rbp)                # 8-byte Spill
 	movq	%rsi, %r15
 	movl	%edi, %ebx
 	subq	$8, %rsp
@@ -3074,7 +3256,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	andq	$-16, %rax
 	movq	%rsp, %rcx
 	subq	%rax, %rcx
-	movq	%rcx, -152(%rbp)                # 8-byte Spill
+	movq	%rcx, -144(%rbp)                # 8-byte Spill
 	movq	%rcx, %rsp
 	subq	$8, %rsp
 	movl	$231, %edi
@@ -3091,7 +3273,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	andq	$-16, %rax
 	movq	%rsp, %rcx
 	subq	%rax, %rcx
-	movq	%rcx, -144(%rbp)                # 8-byte Spill
+	movq	%rcx, -136(%rbp)                # 8-byte Spill
 	movq	%rcx, %rsp
 	subq	$8, %rsp
 	movl	$232, %edi
@@ -3105,7 +3287,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	addq	$8, %rsp
 	leaq	call_namestr(%rip), %rax
 	movl	$233, %edi
-	movl	%ebx, -104(%rbp)                # 4-byte Spill
+	movl	%ebx, -108(%rbp)                # 4-byte Spill
 	movl	%ebx, %esi
 	movl	$56, %edx
 	xorl	%ecx, %ecx
@@ -3115,7 +3297,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %edi
-	movq	%r15, -120(%rbp)                # 8-byte Spill
+	movq	%r15, -104(%rbp)                # 8-byte Spill
 	movq	%r15, %rsi
 	callq	_Z14calcFftIndicesiPi.2
 	subq	$8, %rsp
@@ -3132,12 +3314,12 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	movl	$235, %r12d
-	movl	$0, -132(%rbp)                  # 4-byte Folded Spill
+	movl	$0, -48(%rbp)                   # 4-byte Folded Spill
 	jmp	.LBB8_1
 	.p2align	4, 0x90
-.LBB8_8:                                #   in Loop: Header=BB8_1 Depth=1
+.LBB8_7:                                #   in Loop: Header=BB8_1 Depth=1
 	movl	$403, %edi                      # imm = 0x193
-	movl	-132(%rbp), %esi                # 4-byte Reload
+	movl	-148(%rbp), %esi                # 4-byte Reload
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -3169,7 +3351,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	addq	$8, %rsp
 	movl	$404, %r15d                     # imm = 0x194
 	movl	$404, %edi                      # imm = 0x194
-	movl	%eax, -132(%rbp)                # 4-byte Spill
+	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	movl	%eax, %esi
 	movl	$13, %edx
 	movl	$1, %ecx
@@ -3181,8 +3363,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, %ebx
 	movl	$405, %r12d                     # imm = 0x195
 .LBB8_1:                                # =>This Loop Header: Depth=1
-                                        #     Child Loop BB8_3 Depth 2
-                                        #       Child Loop BB8_5 Depth 3
+                                        #     Child Loop BB8_2 Depth 2
+                                        #       Child Loop BB8_4 Depth 3
 	subq	$8, %rsp
 	movq	%r15, %rdi
 	movl	$1, %esi
@@ -3204,7 +3386,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r15d
+	movl	%eax, %ebx
 	subq	$8, %rsp
 	movq	%r12, %rdi
 	movl	$1, %esi
@@ -3216,10 +3398,11 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %ebx
+	movq	%r12, %r15
+	movl	%eax, %r12d
 	subq	$8, %rsp
-	movq	%r12, %rdi
-	movl	%r15d, %esi
+	movq	%r15, %rdi
+	movl	%ebx, %esi
 	movl	$25, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -3228,10 +3411,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
-	shll	%cl, %ebx
+	shll	%cl, %r12d
 	subq	$8, %rsp
-	movq	%r12, %rdi
-	movl	%ebx, %esi
+	movq	%r15, %rdi
+	movl	%r12d, %esi
 	movl	$25, %edx
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
@@ -3239,9 +3422,32 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$8, %rsp
-	movl	$239, %edi
-	movl	%eax, -108(%rbp)                # 4-byte Spill
+	movl	$238, %edi
 	movl	%eax, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	leaq	phi_namestr(%rip), %r12
+	pushq	%r12
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, %ebx
+	subq	$8, %rsp
+	movl	$237, %edi
+	movl	-48(%rbp), %esi                 # 4-byte Reload
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	pushq	%r12
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, -148(%rbp)                # 4-byte Spill
+	subq	$8, %rsp
+	movl	$239, %edi
+	movl	%ebx, -112(%rbp)                # 4-byte Spill
+	movl	%ebx, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -3253,7 +3459,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$239, %edi
-	movl	-104(%rbp), %esi                # 4-byte Reload
+	movl	-108(%rbp), %esi                # 4-byte Reload
 	movl	$53, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -3283,16 +3489,14 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	pushq	%rax
 	callq	injectFault4@PLT
 	addq	$16, %rsp
+	xorl	%esi, %esi
 	testb	$1, %al
-	je	.LBB8_9
-# %bb.2:                                # %.preheader1.preheader
-                                        #   in Loop: Header=BB8_1 Depth=1
-	movl	$0, -100(%rbp)                  # 4-byte Folded Spill
-	jmp	.LBB8_3
+	jne	.LBB8_2
+	jmp	.LBB8_8
 	.p2align	4, 0x90
-.LBB8_7:                                #   in Loop: Header=BB8_3 Depth=2
+.LBB8_6:                                #   in Loop: Header=BB8_2 Depth=2
 	movl	$400, %edi                      # imm = 0x190
-	movl	-100(%rbp), %esi                # 4-byte Reload
+	movl	-124(%rbp), %esi                # 4-byte Reload
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -3303,7 +3507,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$400, %edi                      # imm = 0x190
-	movl	-108(%rbp), %esi                # 4-byte Reload
+	movl	-112(%rbp), %esi                # 4-byte Reload
 	movl	$13, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -3322,14 +3526,24 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -100(%rbp)                # 4-byte Spill
-.LBB8_3:                                # %.preheader1
+	movl	%eax, %esi
+.LBB8_2:                                # %.preheader1
                                         #   Parent Loop BB8_1 Depth=1
                                         # =>  This Loop Header: Depth=2
-                                        #       Child Loop BB8_5 Depth 3
+                                        #       Child Loop BB8_4 Depth 3
 	subq	$8, %rsp
+	movl	$242, %edi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	leaq	phi_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault0@PLT
+	addq	$8, %rsp
 	movl	$243, %edi
-	movl	-100(%rbp), %esi                # 4-byte Reload
+	movl	%eax, -124(%rbp)                # 4-byte Spill
+	movl	%eax, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -3341,7 +3555,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$243, %edi
-	movl	-104(%rbp), %esi                # 4-byte Reload
+	movl	-108(%rbp), %esi                # 4-byte Reload
 	movl	$53, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -3373,19 +3587,19 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	addq	$16, %rsp
 	subq	$8, %rsp
 	testb	$1, %al
-	je	.LBB8_8
-# %bb.4:                                #   in Loop: Header=BB8_3 Depth=2
+	je	.LBB8_7
+# %bb.3:                                #   in Loop: Header=BB8_2 Depth=2
 	movl	$245, %edi
-	movl	-108(%rbp), %esi                # 4-byte Reload
+	movl	-112(%rbp), %esi                # 4-byte Reload
 	movl	$27, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	leaq	ashr_namestr(%rip), %r15
-	pushq	%r15
+	leaq	ashr_namestr(%rip), %r12
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %ebx
+	movl	%eax, %r15d
 	subq	$8, %rsp
 	movl	$245, %edi
 	movl	$1, %esi
@@ -3393,30 +3607,42 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
-	sarl	%cl, %ebx
+	sarl	%cl, %r15d
 	subq	$8, %rsp
-	xorl	%r12d, %r12d
+	xorl	%ebx, %ebx
 	movl	$245, %edi
-	movl	%ebx, %esi
+	movl	%r15d, %esi
 	movl	$27, %edx
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -136(%rbp)                # 4-byte Spill
+	movl	%eax, -128(%rbp)                # 4-byte Spill
 	.p2align	4, 0x90
-.LBB8_5:                                #   Parent Loop BB8_1 Depth=1
-                                        #     Parent Loop BB8_3 Depth=2
+.LBB8_4:                                #   Parent Loop BB8_1 Depth=1
+                                        #     Parent Loop BB8_2 Depth=2
                                         # =>    This Inner Loop Header: Depth=3
 	subq	$8, %rsp
+	movl	$247, %edi
+	movl	%ebx, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	leaq	phi_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, %r13d
+	subq	$8, %rsp
 	movl	$248, %edi
-	movl	%r12d, %esi
+	movl	%eax, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -3428,7 +3654,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$248, %edi
-	movl	-136(%rbp), %esi                # 4-byte Reload
+	movl	-128(%rbp), %esi                # 4-byte Reload
 	movl	$53, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -3460,10 +3686,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	addq	$16, %rsp
 	subq	$8, %rsp
 	testb	$1, %al
-	je	.LBB8_7
-# %bb.6:                                #   in Loop: Header=BB8_5 Depth=3
+	je	.LBB8_6
+# %bb.5:                                #   in Loop: Header=BB8_4 Depth=3
 	movl	$250, %edi
-	movl	%r12d, %esi
+	movl	%r13d, %esi
 	movl	$44, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -3480,10 +3706,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r8d, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -64(%rbp)                # 4-byte Spill
+	movss	%xmm0, -48(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$251, %edi
-	movl	-108(%rbp), %esi                # 4-byte Reload
+	movl	-112(%rbp), %esi                # 4-byte Reload
 	movl	$44, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -3502,7 +3728,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	callq	injectFault2@PLT
 	movss	%xmm0, -44(%rbp)                # 4-byte Spill
 	movl	$252, %edi
-	movss	-64(%rbp), %xmm0                # 4-byte Reload
+	movss	-48(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$21, %esi
 	movl	$1, %edx
@@ -3511,7 +3737,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	leaq	fdiv_namestr(%rip), %rbx
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -64(%rbp)                # 4-byte Spill
+	movss	%xmm0, -48(%rbp)                # 4-byte Spill
 	movl	$252, %edi
 	movss	-44(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
@@ -3521,7 +3747,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	-64(%rbp), %xmm1                # 4-byte Reload
+	movss	-48(%rbp), %xmm1                # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm0, %xmm1
 	movl	$252, %edi
@@ -3535,7 +3761,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movss	%xmm0, -80(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$253, %edi
-	movl	-100(%rbp), %r15d               # 4-byte Reload
+	movl	-124(%rbp), %r15d               # 4-byte Reload
 	movl	%r15d, %esi
 	movl	$13, %edx
 	movl	$1, %ecx
@@ -3547,8 +3773,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$253, %edi
-	movl	%r12d, %esi
-	movl	%r12d, -160(%rbp)               # 4-byte Spill
+	movl	%r13d, %esi
 	movl	$13, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -3567,7 +3792,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r13d
+	movl	%eax, %r12d
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$254, %edi
@@ -3582,7 +3807,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$254, %edi
-	movl	-136(%rbp), %esi                # 4-byte Reload
+	movl	-128(%rbp), %esi                # 4-byte Reload
 	movl	$13, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -3613,7 +3838,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$255, %edi
-	movl	%r12d, %esi
+	movl	%r13d, %esi
 	movl	$13, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -3632,8 +3857,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r12d
-	movl	%eax, -64(%rbp)                 # 4-byte Spill
+	movl	%eax, %r14d
+	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	movl	$256, %edi                      # imm = 0x100
 	movss	-80(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
@@ -3643,18 +3868,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %r8d
 	leaq	call_namestr(%rip), %r9
 	callq	injectFault2@PLT
-	movq	-152(%rbp), %rdi                # 8-byte Reload
-	movq	-144(%rbp), %rsi                # 8-byte Reload
+	movq	-144(%rbp), %rdi                # 8-byte Reload
+	movq	-136(%rbp), %rsi                # 8-byte Reload
 	callq	_Z9fftSinCosfPfS_.3_fixp
 	subq	$8, %rsp
 	movl	$257, %edi                      # imm = 0x101
-	movl	%r13d, %esi
+	movl	%r12d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	leaq	sext_namestr(%rip), %rbx
-	pushq	%rbx
+	leaq	sext_namestr(%rip), %r15
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -3664,18 +3889,28 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r15
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$258, %edi                      # imm = 0x102
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-120(%rbp), %rcx                # 8-byte Reload
-	movl	(%rcx,%rax,4), %esi
-	movq	%rcx, %r14
+	movq	-104(%rbp), %rbx                # 8-byte Reload
+	movl	(%rbx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$259, %edi                      # imm = 0x103
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
+	movl	%r13d, -156(%rbp)               # 4-byte Spill
 	leaq	load_namestr(%rip), %r13
 	pushq	%r13
 	callq	injectFault0@PLT
@@ -3686,7 +3921,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -3696,11 +3931,11 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r15
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-128(%rbp), %r15                # 8-byte Reload
-	movq	(%r15,%rax,8), %rsi
+	movq	-120(%rbp), %r12                # 8-byte Reload
+	movq	(%r12,%rax,8), %rsi
 	movq	%rsi, -80(%rbp)                 # 8-byte Spill
 	subq	$8, %rsp
 	movl	$267, %edi                      # imm = 0x10B
@@ -3715,12 +3950,12 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, -96(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$268, %edi                      # imm = 0x10C
-	movl	%r12d, %esi
+	movl	%r14d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -3730,10 +3965,20 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r15
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$269, %edi                      # imm = 0x10D
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	(%r14,%rax,4), %esi
+	movl	(%rbx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$270, %edi                      # imm = 0x10E
 	movl	$32, %edx
@@ -3741,7 +3986,6 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r13
-	movq	%r13, %r12
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$271, %edi                      # imm = 0x10F
@@ -3750,7 +3994,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -3760,40 +4004,37 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r15
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	%r15, %r13
-	movss	(%r15,%rax,8), %xmm0            # xmm0 = mem[0],zero,zero,zero
+	movss	(%r12,%rax,8), %xmm0            # xmm0 = mem[0],zero,zero,zero
 	movl	$274, %edi                      # imm = 0x112
 	movl	$32, %esi
 	xorl	%edx, %edx
 	movl	$1, %ecx
 	xorl	%r8d, %r8d
-	movq	%r12, %r9
+	movq	%r13, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -52(%rbp)                # 4-byte Spill
-	movq	-144(%rbp), %rax                # 8-byte Reload
+	movss	%xmm0, -56(%rbp)                # 4-byte Spill
+	movq	-136(%rbp), %rax                # 8-byte Reload
 	movss	(%rax), %xmm0                   # xmm0 = mem[0],zero,zero,zero
-	movss	%xmm0, -60(%rbp)                # 4-byte Spill
+	movss	%xmm0, -64(%rbp)                # 4-byte Spill
 	movl	$275, %edi                      # imm = 0x113
 	movl	$32, %esi
 	xorl	%edx, %edx
 	movl	$1, %ecx
 	xorl	%r8d, %r8d
-	movq	%r12, %r9
-	movq	%r12, %r15
+	movq	%r13, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -48(%rbp)                # 4-byte Spill
+	movss	%xmm0, -52(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$276, %edi                      # imm = 0x114
-	movl	-44(%rbp), %r12d                # 4-byte Reload
-	movl	%r12d, %esi
+	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -3803,18 +4044,27 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r15
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$277, %edi                      # imm = 0x115
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	(%r14,%rax,4), %esi
+	movl	(%rbx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$278, %edi                      # imm = 0x116
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
-	movq	%r15, %r14
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$279, %edi                      # imm = 0x117
@@ -3823,7 +4073,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -3833,28 +4083,27 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r15
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movss	4(%r13,%rax,8), %xmm0           # xmm0 = mem[0],zero,zero,zero
+	movss	4(%r12,%rax,8), %xmm0           # xmm0 = mem[0],zero,zero,zero
 	movl	$282, %edi                      # imm = 0x11A
 	movl	$32, %esi
 	xorl	%edx, %edx
 	movl	$1, %ecx
 	xorl	%r8d, %r8d
-	movq	%r15, %r9
+	movq	%r13, %r9
 	callq	injectFault2@PLT
 	movss	%xmm0, -68(%rbp)                # 4-byte Spill
-	movq	-152(%rbp), %rax                # 8-byte Reload
+	movq	-144(%rbp), %rax                # 8-byte Reload
 	movss	(%rax), %xmm0                   # xmm0 = mem[0],zero,zero,zero
-	movss	%xmm0, -56(%rbp)                # 4-byte Spill
+	movss	%xmm0, -60(%rbp)                # 4-byte Spill
 	movl	$283, %edi                      # imm = 0x11B
 	movl	$32, %esi
 	xorl	%edx, %edx
 	movl	$1, %ecx
 	xorl	%r8d, %r8d
-	movq	%r15, %r9
-	movq	%r15, %r13
+	movq	%r13, %r9
 	callq	injectFault2@PLT
 	movss	%xmm0, -84(%rbp)                # 4-byte Spill
 	movl	$284, %edi                      # imm = 0x11C
@@ -3902,11 +4151,11 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r8d, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	-48(%rbp), %xmm1                # 4-byte Reload
+	movss	-52(%rbp), %xmm1                # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
-	mulss	-52(%rbp), %xmm1                # 4-byte Folded Reload
+	mulss	-56(%rbp), %xmm1                # 4-byte Folded Reload
 	addss	%xmm1, %xmm0
-	movss	%xmm0, -52(%rbp)                # 4-byte Spill
+	movss	%xmm0, -56(%rbp)                # 4-byte Spill
 	movl	$287, %edi                      # imm = 0x11F
 	movss	.LCPI8_1(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
@@ -3915,9 +4164,9 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %r8d
 	movq	%r14, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -48(%rbp)                # 4-byte Spill
+	movss	%xmm0, -52(%rbp)                # 4-byte Spill
 	movl	$287, %edi                      # imm = 0x11F
-	movss	-52(%rbp), %xmm0                # 4-byte Reload
+	movss	-56(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
 	movl	$2, %edx
@@ -3925,7 +4174,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %r8d
 	movq	%r14, %r9
 	callq	injectFault2@PLT
-	mulss	-48(%rbp), %xmm0                # 4-byte Folded Reload
+	mulss	-52(%rbp), %xmm0                # 4-byte Folded Reload
 	movl	$287, %edi                      # imm = 0x11F
 	movl	$18, %esi
 	xorl	%edx, %edx
@@ -4037,6 +4286,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movss	%xmm0, -96(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$292, %edi                      # imm = 0x124
+	movl	-44(%rbp), %r12d                # 4-byte Reload
 	movl	%r12d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
@@ -4054,18 +4304,27 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	movq	%r14, %rbx
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$293, %edi                      # imm = 0x125
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-120(%rbp), %r14                # 8-byte Reload
-	movl	(%r14,%rax,4), %esi
+	movq	-104(%rbp), %rcx                # 8-byte Reload
+	movl	(%rcx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$294, %edi                      # imm = 0x126
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$295, %edi                      # imm = 0x127
@@ -4074,7 +4333,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -4084,7 +4343,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %rbx
@@ -4097,7 +4356,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %r8d
 	leaq	store_namestr(%rip), %r9
 	callq	injectFault2@PLT
-	movq	-128(%rbp), %r15                # 8-byte Reload
+	movq	-120(%rbp), %r15                # 8-byte Reload
 	movss	%xmm0, (%r15,%rbx,8)
 	movq	-80(%rbp), %rsi                 # 8-byte Reload
 	shrq	$32, %rsi
@@ -4112,7 +4371,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -52(%rbp)                 # 4-byte Spill
+	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$301, %edi                      # imm = 0x12D
 	movl	%r12d, %esi
@@ -4120,8 +4379,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	leaq	sext_namestr(%rip), %rbx
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -4131,11 +4389,21 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
-	movq	%rbx, %r12
+	pushq	%r14
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$302, %edi                      # imm = 0x12E
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %r12
+	pushq	%r12
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	(%r14,%rax,4), %esi
+	movq	-104(%rbp), %rbx                # 8-byte Reload
+	movl	(%rbx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$303, %edi                      # imm = 0x12F
 	movl	$32, %edx
@@ -4151,7 +4419,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -4161,7 +4429,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movss	4(%r15,%rax,8), %xmm0           # xmm0 = mem[0],zero,zero,zero
@@ -4172,9 +4440,9 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r8d, %r8d
 	movq	%r13, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -48(%rbp)                # 4-byte Spill
+	movss	%xmm0, -52(%rbp)                # 4-byte Spill
 	movl	$308, %edi                      # imm = 0x134
-	movss	-60(%rbp), %xmm0                # 4-byte Reload
+	movss	-64(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$32, %esi
 	xorl	%edx, %edx
@@ -4185,12 +4453,12 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movss	%xmm0, -68(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$309, %edi                      # imm = 0x135
-	movl	-64(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -4200,10 +4468,19 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r14
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$310, %edi                      # imm = 0x136
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	pushq	%r12
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	(%r14,%rax,4), %esi
+	movl	(%rbx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$311, %edi                      # imm = 0x137
 	movl	$32, %edx
@@ -4219,7 +4496,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -4229,7 +4506,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movss	(%r15,%rax,8), %xmm0            # xmm0 = mem[0],zero,zero,zero
@@ -4242,15 +4519,16 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	callq	injectFault2@PLT
 	movss	%xmm0, -84(%rbp)                # 4-byte Spill
 	movl	$316, %edi                      # imm = 0x13C
-	movss	-56(%rbp), %xmm0                # 4-byte Reload
+	movss	-60(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$32, %esi
 	xorl	%edx, %edx
 	movl	$1, %ecx
 	xorl	%r8d, %r8d
 	movq	%r13, %r9
+	movq	%r13, %r14
 	callq	injectFault2@PLT
-	movss	%xmm0, -156(%rbp)               # 4-byte Spill
+	movss	%xmm0, -152(%rbp)               # 4-byte Spill
 	movl	$317, %edi                      # imm = 0x13D
 	movss	-84(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
@@ -4263,7 +4541,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	callq	injectFault2@PLT
 	movss	%xmm0, -84(%rbp)                # 4-byte Spill
 	movl	$317, %edi                      # imm = 0x13D
-	movss	-156(%rbp), %xmm0               # 4-byte Reload
+	movss	-152(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
 	movl	$2, %edx
@@ -4281,9 +4559,9 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	callq	injectFault2@PLT
 	movss	-68(%rbp), %xmm1                # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
-	mulss	-48(%rbp), %xmm1                # 4-byte Folded Reload
+	mulss	-52(%rbp), %xmm1                # 4-byte Folded Reload
 	addss	%xmm1, %xmm0
-	movss	%xmm0, -48(%rbp)                # 4-byte Spill
+	movss	%xmm0, -52(%rbp)                # 4-byte Spill
 	movl	$319, %edi                      # imm = 0x13F
 	movss	.LCPI8_1(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
@@ -4294,7 +4572,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	callq	injectFault2@PLT
 	movss	%xmm0, -68(%rbp)                # 4-byte Spill
 	movl	$319, %edi                      # imm = 0x13F
-	movss	-48(%rbp), %xmm0                # 4-byte Reload
+	movss	-52(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
 	movl	$2, %edx
@@ -4331,7 +4609,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, %r12d
 	subq	$8, %rsp
 	movl	$321, %edi                      # imm = 0x141
-	movl	-52(%rbp), %esi                 # 4-byte Reload
+	movl	-56(%rbp), %esi                 # 4-byte Reload
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -4391,7 +4669,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	leaq	fdiv_namestr(%rip), %rbx
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -52(%rbp)                # 4-byte Spill
+	movss	%xmm0, -56(%rbp)                # 4-byte Spill
 	movl	$323, %edi                      # imm = 0x143
 	movss	.LCPI8_1(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
 	movl	$21, %esi
@@ -4400,7 +4678,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	-52(%rbp), %xmm1                # 4-byte Reload
+	movss	-56(%rbp), %xmm1                # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm0, %xmm1
 	movl	$323, %edi                      # imm = 0x143
@@ -4411,7 +4689,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r8d, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -52(%rbp)                # 4-byte Spill
+	movss	%xmm0, -56(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$324, %edi                      # imm = 0x144
 	movl	-44(%rbp), %r15d                # 4-byte Reload
@@ -4433,15 +4711,25 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r9d, %r9d
 	pushq	%r13
 	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$325, %edi                      # imm = 0x145
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	(%r14,%rax,4), %esi
+	movq	-104(%rbp), %rcx                # 8-byte Reload
+	movl	(%rcx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$326, %edi                      # imm = 0x146
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	leaq	load_namestr(%rip), %r14
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$8, %rsp
@@ -4466,7 +4754,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	addq	$16, %rsp
 	movq	%rax, %rbx
 	movl	$330, %edi                      # imm = 0x14A
-	movss	-52(%rbp), %xmm0                # 4-byte Reload
+	movss	-56(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$33, %esi
 	xorl	%edx, %edx
@@ -4474,7 +4762,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %r8d
 	leaq	store_namestr(%rip), %r9
 	callq	injectFault2@PLT
-	movq	-128(%rbp), %r12                # 8-byte Reload
+	movq	-120(%rbp), %r12                # 8-byte Reload
 	movss	%xmm0, 4(%r12,%rbx,8)
 	subq	$8, %rsp
 	movl	$332, %edi                      # imm = 0x14C
@@ -4490,7 +4778,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, -80(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$333, %edi                      # imm = 0x14D
-	movl	-64(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -4507,8 +4795,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r9d, %r9d
 	pushq	%r13
 	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$334, %edi                      # imm = 0x14E
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-120(%rbp), %rbx                # 8-byte Reload
+	movq	-104(%rbp), %rbx                # 8-byte Reload
 	movl	(%rbx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$335, %edi                      # imm = 0x14F
@@ -4546,9 +4844,9 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r8d, %r8d
 	movq	%r14, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -52(%rbp)                # 4-byte Spill
+	movss	%xmm0, -56(%rbp)                # 4-byte Spill
 	movl	$340, %edi                      # imm = 0x154
-	movss	-60(%rbp), %xmm0                # 4-byte Reload
+	movss	-64(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$32, %esi
 	xorl	%edx, %edx
@@ -4556,7 +4854,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r8d, %r8d
 	movq	%r14, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -60(%rbp)                # 4-byte Spill
+	movss	%xmm0, -64(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$341, %edi                      # imm = 0x155
 	movl	%r15d, %esi
@@ -4575,6 +4873,16 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r13
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$342, %edi                      # imm = 0x156
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movl	(%rbx,%rax,4), %esi
@@ -4614,9 +4922,9 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r8d, %r8d
 	movq	%r14, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -48(%rbp)                # 4-byte Spill
+	movss	%xmm0, -52(%rbp)                # 4-byte Spill
 	movl	$348, %edi                      # imm = 0x15C
-	movss	-56(%rbp), %xmm0                # 4-byte Reload
+	movss	-60(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$32, %esi
 	xorl	%edx, %edx
@@ -4624,9 +4932,9 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r8d, %r8d
 	movq	%r14, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -56(%rbp)                # 4-byte Spill
+	movss	%xmm0, -60(%rbp)                # 4-byte Spill
 	movl	$349, %edi                      # imm = 0x15D
-	movss	-48(%rbp), %xmm0                # 4-byte Reload
+	movss	-52(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
 	movl	$1, %edx
@@ -4635,9 +4943,9 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	leaq	fmul_namestr(%rip), %r15
 	movq	%r15, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -48(%rbp)                # 4-byte Spill
+	movss	%xmm0, -52(%rbp)                # 4-byte Spill
 	movl	$349, %edi                      # imm = 0x15D
-	movss	-56(%rbp), %xmm0                # 4-byte Reload
+	movss	-60(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
 	movl	$2, %edx
@@ -4645,7 +4953,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %r8d
 	movq	%r15, %r9
 	callq	injectFault2@PLT
-	mulss	-48(%rbp), %xmm0                # 4-byte Folded Reload
+	mulss	-52(%rbp), %xmm0                # 4-byte Folded Reload
 	movl	$349, %edi                      # imm = 0x15D
 	movl	$18, %esi
 	xorl	%edx, %edx
@@ -4669,11 +4977,11 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r8d, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	-60(%rbp), %xmm1                # 4-byte Reload
+	movss	-64(%rbp), %xmm1                # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
-	mulss	-52(%rbp), %xmm1                # 4-byte Folded Reload
+	mulss	-56(%rbp), %xmm1                # 4-byte Folded Reload
 	addss	%xmm1, %xmm0
-	movss	%xmm0, -60(%rbp)                # 4-byte Spill
+	movss	%xmm0, -64(%rbp)                # 4-byte Spill
 	movl	$352, %edi                      # imm = 0x160
 	movss	.LCPI8_1(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
@@ -4682,9 +4990,9 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %r8d
 	movq	%r15, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -56(%rbp)                # 4-byte Spill
+	movss	%xmm0, -60(%rbp)                # 4-byte Spill
 	movl	$352, %edi                      # imm = 0x160
-	movss	-60(%rbp), %xmm0                # 4-byte Reload
+	movss	-64(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
 	movl	$2, %edx
@@ -4692,7 +5000,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %r8d
 	movq	%r15, %r9
 	callq	injectFault2@PLT
-	mulss	-56(%rbp), %xmm0                # 4-byte Folded Reload
+	mulss	-60(%rbp), %xmm0                # 4-byte Folded Reload
 	movl	$352, %edi                      # imm = 0x160
 	movl	$18, %esi
 	xorl	%edx, %edx
@@ -4803,7 +5111,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movss	%xmm0, -80(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$357, %edi                      # imm = 0x165
-	movl	-64(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -4820,17 +5128,27 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r9d, %r9d
 	pushq	%r13
 	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$358, %edi                      # imm = 0x166
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-120(%rbp), %r14                # 8-byte Reload
-	movl	(%r14,%rax,4), %esi
+	movq	-104(%rbp), %r12                # 8-byte Reload
+	movl	(%r12,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$359, %edi                      # imm = 0x167
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	leaq	load_namestr(%rip), %r12
-	pushq	%r12
+	leaq	load_namestr(%rip), %r14
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$360, %edi                      # imm = 0x168
@@ -4862,7 +5180,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %r8d
 	leaq	store_namestr(%rip), %r9
 	callq	injectFault2@PLT
-	movq	-128(%rbp), %r15                # 8-byte Reload
+	movq	-120(%rbp), %r15                # 8-byte Reload
 	movss	%xmm0, (%r15,%rbx,8)
 	subq	$8, %rsp
 	movl	$365, %edi                      # imm = 0x16D
@@ -4872,7 +5190,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, -80(%rbp)                 # 4-byte Spill
@@ -4895,16 +5213,25 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r9d, %r9d
 	pushq	%r13
 	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$367, %edi                      # imm = 0x16F
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	%r14, %rbx
-	movl	(%r14,%rax,4), %esi
+	movl	(%r12,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$368, %edi                      # imm = 0x170
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$369, %edi                      # imm = 0x171
@@ -4924,7 +5251,6 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r13
-	movq	%r13, %r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movss	4(%r15,%rax,8), %xmm0           # xmm0 = mem[0],zero,zero,zero
@@ -4933,28 +5259,27 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%edx, %edx
 	movl	$1, %ecx
 	xorl	%r8d, %r8d
-	movq	%r12, %r9
+	movq	%r14, %r9
 	callq	injectFault2@PLT
 	movss	%xmm0, -44(%rbp)                # 4-byte Spill
-	movq	-144(%rbp), %rax                # 8-byte Reload
+	movq	-136(%rbp), %rax                # 8-byte Reload
 	movss	(%rax), %xmm0                   # xmm0 = mem[0],zero,zero,zero
 	movl	$373, %edi                      # imm = 0x175
 	movl	$32, %esi
 	xorl	%edx, %edx
 	movl	$1, %ecx
 	xorl	%r8d, %r8d
-	movq	%r12, %r9
-	movq	%r12, %r13
+	movq	%r14, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -60(%rbp)                # 4-byte Spill
+	movss	%xmm0, -64(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$374, %edi                      # imm = 0x176
-	movl	-64(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r14
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -4964,17 +5289,27 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r13
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$375, %edi                      # imm = 0x177
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	(%rbx,%rax,4), %esi
+	movl	(%r12,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$376, %edi                      # imm = 0x178
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$377, %edi                      # imm = 0x179
@@ -4983,7 +5318,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r14
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -4993,7 +5328,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movss	(%r15,%rax,8), %xmm0            # xmm0 = mem[0],zero,zero,zero
@@ -5002,21 +5337,21 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%edx, %edx
 	movl	$1, %ecx
 	xorl	%r8d, %r8d
-	movq	%r12, %r9
+	movq	%r14, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -56(%rbp)                # 4-byte Spill
-	movq	-152(%rbp), %rax                # 8-byte Reload
+	movss	%xmm0, -60(%rbp)                # 4-byte Spill
+	movq	-144(%rbp), %rax                # 8-byte Reload
 	movss	(%rax), %xmm0                   # xmm0 = mem[0],zero,zero,zero
 	movl	$381, %edi                      # imm = 0x17D
 	movl	$32, %esi
 	xorl	%edx, %edx
 	movl	$1, %ecx
 	xorl	%r8d, %r8d
-	movq	%r12, %r9
+	movq	%r14, %r9
 	callq	injectFault2@PLT
 	movss	%xmm0, -96(%rbp)                # 4-byte Spill
 	movl	$382, %edi                      # imm = 0x17E
-	movss	-56(%rbp), %xmm0                # 4-byte Reload
+	movss	-60(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
 	movl	$1, %edx
@@ -5025,7 +5360,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	leaq	fmul_namestr(%rip), %rbx
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -56(%rbp)                # 4-byte Spill
+	movss	%xmm0, -60(%rbp)                # 4-byte Spill
 	movl	$382, %edi                      # imm = 0x17E
 	movss	-96(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
@@ -5035,7 +5370,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	mulss	-56(%rbp), %xmm0                # 4-byte Folded Reload
+	mulss	-60(%rbp), %xmm0                # 4-byte Folded Reload
 	movl	$382, %edi                      # imm = 0x17E
 	movl	$18, %esi
 	xorl	%edx, %edx
@@ -5043,7 +5378,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r8d, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	-60(%rbp), %xmm1                # 4-byte Reload
+	movss	-64(%rbp), %xmm1                # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	mulss	-44(%rbp), %xmm1                # 4-byte Folded Reload
 	addss	%xmm1, %xmm0
@@ -5056,7 +5391,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -60(%rbp)                # 4-byte Spill
+	movss	%xmm0, -64(%rbp)                # 4-byte Spill
 	movl	$384, %edi                      # imm = 0x180
 	movss	-44(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
@@ -5066,7 +5401,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	mulss	-60(%rbp), %xmm0                # 4-byte Folded Reload
+	mulss	-64(%rbp), %xmm0                # 4-byte Folded Reload
 	movl	$384, %edi                      # imm = 0x180
 	movl	$18, %esi
 	xorl	%edx, %edx
@@ -5096,13 +5431,13 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	subq	$8, %rsp
 	movl	$386, %edi                      # imm = 0x182
 	movl	-80(%rbp), %esi                 # 4-byte Reload
-	leaq	add_namestr(%rip), %r14
+	leaq	add_namestr(%rip), %r12
 	movl	$15, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	leaq	sub_namestr(%rip), %r12
-	pushq	%r12
+	leaq	sub_namestr(%rip), %r14
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
@@ -5113,7 +5448,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r12
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	subl	%eax, %ebx
@@ -5124,7 +5459,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r14
+	movq	%r12, %r14
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$387, %edi                      # imm = 0x183
@@ -5177,13 +5513,12 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movss	%xmm0, -44(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$389, %edi                      # imm = 0x185
-	movl	-64(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	leaq	sext_namestr(%rip), %rbx
-	pushq	%rbx
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -5193,10 +5528,20 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r13
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$390, %edi                      # imm = 0x186
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-120(%rbp), %rcx                # 8-byte Reload
+	movq	-104(%rbp), %rcx                # 8-byte Reload
 	movl	(%rcx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$391, %edi                      # imm = 0x187
@@ -5204,7 +5549,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r13
+	leaq	load_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$392, %edi                      # imm = 0x188
@@ -5213,7 +5559,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -5223,7 +5569,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %rbx
@@ -5236,16 +5582,16 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$1, %r8d
 	leaq	store_namestr(%rip), %r9
 	callq	injectFault2@PLT
-	movq	-128(%rbp), %rax                # 8-byte Reload
+	movq	-120(%rbp), %rax                # 8-byte Reload
 	movss	%xmm0, 4(%rax,%rbx,8)
 	subq	$8, %rsp
 	movl	$397, %edi                      # imm = 0x18D
-	movl	-160(%rbp), %esi                # 4-byte Reload
+	movl	-156(%rbp), %esi                # 4-byte Reload
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	pushq	%r14
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
@@ -5256,7 +5602,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r14
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
@@ -5267,20 +5613,30 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r12d
-	jmp	.LBB8_5
-.LBB8_9:                                # %.preheader.preheader
-	xorl	%r14d, %r14d
+	movl	%eax, %ebx
+	jmp	.LBB8_4
+.LBB8_8:                                # %.preheader.preheader
 	movq	-168(%rbp), %r15                # 8-byte Reload
 	.p2align	4, 0x90
-.LBB8_10:                               # %.preheader
+.LBB8_9:                                # %.preheader
                                         # =>This Inner Loop Header: Depth=1
 	subq	$8, %rsp
+	movl	$408, %edi                      # imm = 0x198
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	leaq	phi_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, %r14d
+	subq	$8, %rsp
 	movl	$409, %edi                      # imm = 0x199
-	movl	%r14d, %esi
+	movl	%eax, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -5292,7 +5648,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$409, %edi                      # imm = 0x199
-	movl	-104(%rbp), %esi                # 4-byte Reload
+	movl	-108(%rbp), %esi                # 4-byte Reload
 	movl	$53, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -5323,8 +5679,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	callq	injectFault4@PLT
 	addq	$16, %rsp
 	testb	$1, %al
-	je	.LBB8_12
-# %bb.11:                               #   in Loop: Header=BB8_10 Depth=1
+	je	.LBB8_11
+# %bb.10:                               #   in Loop: Header=BB8_9 Depth=1
 	subq	$8, %rsp
 	movl	$411, %edi                      # imm = 0x19B
 	movl	%r14d, %esi
@@ -5345,8 +5701,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	xorl	%r9d, %r9d
 	pushq	%r12
 	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$412, %edi                      # imm = 0x19C
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-120(%rbp), %rcx                # 8-byte Reload
+	movq	-104(%rbp), %rcx                # 8-byte Reload
 	movl	(%rcx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$413, %edi                      # imm = 0x19D
@@ -5398,7 +5764,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	pushq	%r12
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-128(%rbp), %rcx                # 8-byte Reload
+	movq	-120(%rbp), %rcx                # 8-byte Reload
 	movq	(%rcx,%rbx,8), %rcx
 	movq	%rcx, (%r15,%rax,8)
 	subq	$8, %rsp
@@ -5434,9 +5800,9 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_: # @_Z23radix2DitCooleyTykeyFftiPiP7C
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r14d
-	jmp	.LBB8_10
-.LBB8_12:
+	movl	%eax, %esi
+	jmp	.LBB8_9
+.LBB8_11:
 	leaq	-40(%rbp), %rsp
 	popq	%rbx
 	popq	%r12
@@ -5471,10 +5837,11 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	.cfi_offset %r13, -40
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
-	movq	%rsi, %r14
+	movq	%rsi, %r12
 	movl	%edi, %esi
-	leaq	sitofp_namestr(%rip), %rbx
-	movq	%rbx, (%rsp)
+	leaq	sitofp_namestr(%rip), %r14
+	movq	%r14, (%rsp)
+	movl	$1, %ebx
 	movl	$425, %edi                      # imm = 0x1A9
 	movl	$44, %edx
 	movl	$1, %ecx
@@ -5487,15 +5854,15 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	xorl	%edx, %edx
 	movl	$2, %ecx
 	xorl	%r8d, %r8d
-	movq	%rbx, %r9
+	movq	%r14, %r9
 	callq	injectFault2@PLT
-	leaq	call_namestr(%rip), %rbx
+	leaq	call_namestr(%rip), %r14
 	movl	$426, %edi                      # imm = 0x1AA
 	movl	$56, %esi
 	movl	$1, %edx
 	movl	$2, %ecx
 	movl	$1, %r8d
-	movq	%rbx, %r9
+	movq	%r14, %r9
 	callq	injectFault2@PLT
 	callq	log2f@PLT
 	movl	$426, %edi                      # imm = 0x1AA
@@ -5503,27 +5870,37 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	xorl	%edx, %edx
 	movl	$2, %ecx
 	xorl	%r8d, %r8d
-	movq	%rbx, %r9
+	movq	%r14, %r9
 	callq	injectFault2@PLT
-	leaq	fptosi_namestr(%rip), %rbx
+	leaq	fptosi_namestr(%rip), %r14
 	movl	$427, %edi                      # imm = 0x1AB
 	movl	$42, %esi
 	movl	$1, %edx
 	movl	$2, %ecx
 	movl	$1, %r8d
-	movq	%rbx, %r9
+	movq	%r14, %r9
 	callq	injectFault2@PLT
 	cvttss2si	%xmm0, %esi
-	movq	%rbx, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$427, %edi                      # imm = 0x1AB
 	movl	$42, %edx
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %ebx
-	leaq	store_namestr(%rip), %r15
-	movq	%r15, (%rsp)
+	movl	%eax, %r15d
+	leaq	getelementptr_namestr(%rip), %rax
+	movq	%rax, (%rsp)
+	movl	$428, %edi                      # imm = 0x1AC
+	xorl	%esi, %esi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	callq	injectFault1@PLT
+	movq	%rax, %r14
+	leaq	store_namestr(%rip), %rax
+	movq	%rax, (%rsp)
 	movl	$429, %edi                      # imm = 0x1AD
 	xorl	%esi, %esi
 	movl	$33, %edx
@@ -5531,19 +5908,19 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$1, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, (%r14)
-	leaq	sub_namestr(%rip), %r12
-	movq	%r12, (%rsp)
+	movl	%eax, (%r12,%r14,4)
+	leaq	sub_namestr(%rip), %r13
+	movq	%r13, (%rsp)
 	movl	$430, %edi                      # imm = 0x1AE
-	movl	%ebx, -52(%rbp)                 # 4-byte Spill
-	movl	%ebx, %esi
+	movl	%r15d, -48(%rbp)                # 4-byte Spill
+	movl	%r15d, %esi
 	movl	$15, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movl	%eax, %r14d
+	movq	%r13, (%rsp)
 	movl	$430, %edi                      # imm = 0x1AE
 	movl	$1, %esi
 	movl	$15, %edx
@@ -5551,18 +5928,18 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
-	subl	%eax, %ebx
-	movq	%r12, (%rsp)
+	subl	%eax, %r14d
+	movq	%r13, (%rsp)
 	movl	$430, %edi                      # imm = 0x1AE
-	movl	%ebx, %esi
+	movl	%r14d, %esi
 	movl	$15, %edx
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r13d
-	leaq	shl_namestr(%rip), %r12
-	movq	%r12, (%rsp)
+	movl	%eax, %r14d
+	leaq	shl_namestr(%rip), %r13
+	movq	%r13, (%rsp)
 	movl	$431, %edi                      # imm = 0x1AF
 	movl	$1, %esi
 	movl	$25, %edx
@@ -5570,41 +5947,52 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movl	%eax, %r15d
+	movq	%r13, (%rsp)
 	movl	$431, %edi                      # imm = 0x1AF
-	movl	%r13d, %esi
-	movq	%r12, %r13
+	movl	%r14d, %esi
 	movl	$25, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ecx
-	shll	%cl, %ebx
-	movq	%r12, (%rsp)
+	shll	%cl, %r15d
+	movq	%r13, (%rsp)
 	movl	$431, %edi                      # imm = 0x1AF
-	movl	%ebx, %esi
+	movl	%r15d, %esi
 	movl	$25, %edx
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movq	%r15, (%rsp)
+	movl	%eax, %r14d
+	leaq	getelementptr_namestr(%rip), %rax
+	movq	%rax, (%rsp)
+	movl	$432, %edi                      # imm = 0x1B0
+	movl	$1, %esi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	callq	injectFault1@PLT
+	movq	%rax, %r15
+	leaq	store_namestr(%rip), %rax
+	movq	%rax, (%rsp)
 	movl	$433, %edi                      # imm = 0x1B1
-	movl	%eax, %esi
+	movl	%r14d, %esi
 	movl	$33, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movq	%r14, -64(%rbp)                 # 8-byte Spill
-	movl	%eax, 4(%r14)
-	movl	$1, -44(%rbp)                   # 4-byte Folded Spill
-	leaq	add_namestr(%rip), %r14
+	movq	%r12, -64(%rbp)                 # 8-byte Spill
+	movl	%eax, (%r12,%r15,4)
+	leaq	add_namestr(%rip), %r15
 	jmp	.LBB9_1
 	.p2align	4, 0x90
 .LBB9_5:                                #   in Loop: Header=BB9_1 Depth=1
+	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$461, %edi                      # imm = 0x1CD
 	movl	-44(%rbp), %esi                 # 4-byte Reload
@@ -5631,22 +6019,33 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, -44(%rbp)                 # 4-byte Spill
+	movl	%eax, %ebx
+	movq	%r14, %r15
 .LBB9_1:                                # =>This Loop Header: Depth=1
                                         #     Child Loop BB9_3 Depth 2
-	leaq	icmp_namestr(%rip), %r15
-	movq	%r15, (%rsp)
+	leaq	phi_namestr(%rip), %rax
+	movq	%rax, (%rsp)
+	movl	$435, %edi                      # imm = 0x1B3
+	movl	%ebx, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	callq	injectFault0@PLT
+	movl	%eax, %esi
+	leaq	icmp_namestr(%rip), %r14
+	movq	%r14, (%rsp)
 	movl	$436, %edi                      # imm = 0x1B4
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r15, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$436, %edi                      # imm = 0x1B4
-	movl	-52(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$53, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -5655,7 +6054,7 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
-	movq	%r15, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$436, %edi                      # imm = 0x1B4
 	movl	$53, %edx
 	xorl	%ecx, %ecx
@@ -5674,7 +6073,8 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	testb	$1, %al
 	je	.LBB9_6
 # %bb.2:                                #   in Loop: Header=BB9_1 Depth=1
-	movq	%r13, (%rsp)
+	leaq	shl_namestr(%rip), %r12
+	movq	%r12, (%rsp)
 	movl	$438, %edi                      # imm = 0x1B6
 	movl	$1, %esi
 	movl	$25, %edx
@@ -5683,7 +6083,7 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$438, %edi                      # imm = 0x1B6
 	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$25, %edx
@@ -5693,7 +6093,7 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	callq	injectFault0@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$438, %edi                      # imm = 0x1B6
 	movl	%ebx, %esi
 	movl	$25, %edx
@@ -5701,11 +6101,20 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	.p2align	4, 0x90
 .LBB9_3:                                #   Parent Loop BB9_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
-	movq	%r14, (%rsp)
+	leaq	phi_namestr(%rip), %rcx
+	movq	%rcx, (%rsp)
+	movl	$440, %edi                      # imm = 0x1B8
+	movl	%eax, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	callq	injectFault0@PLT
+	movl	%eax, %r12d
+	movq	%r15, (%rsp)
 	movl	$441, %edi                      # imm = 0x1B9
 	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$13, %edx
@@ -5714,7 +6123,7 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r14, (%rsp)
+	movq	%r15, (%rsp)
 	movl	$441, %edi                      # imm = 0x1B9
 	movl	$1, %esi
 	movl	$13, %edx
@@ -5723,7 +6132,7 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	addl	%eax, %ebx
-	movq	%r14, (%rsp)
+	movq	%r15, (%rsp)
 	movl	$441, %edi                      # imm = 0x1B9
 	movl	%ebx, %esi
 	movl	$13, %edx
@@ -5731,8 +6140,9 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movl	%eax, %r13d
+	leaq	shl_namestr(%rip), %r14
+	movq	%r14, (%rsp)
 	movl	$442, %edi                      # imm = 0x1BA
 	movl	$1, %esi
 	movl	$25, %edx
@@ -5740,39 +6150,40 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r15d
-	movq	%r13, (%rsp)
+	movl	%eax, %ebx
+	movq	%r14, (%rsp)
 	movl	$442, %edi                      # imm = 0x1BA
-	movl	%ebx, %esi
+	movl	%r13d, %esi
 	movl	$25, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ecx
-	shll	%cl, %r15d
-	movq	%r13, (%rsp)
+	shll	%cl, %ebx
+	movq	%r14, (%rsp)
 	movl	$442, %edi                      # imm = 0x1BA
-	movl	%r15d, %esi
+	movl	%ebx, %esi
 	movl	$25, %edx
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r15d
-	leaq	icmp_namestr(%rip), %r12
-	movq	%r12, (%rsp)
+	movl	%eax, %r13d
+	leaq	icmp_namestr(%rip), %r15
+	movq	%r15, (%rsp)
 	movl	$443, %edi                      # imm = 0x1BB
-	movl	-48(%rbp), %esi                 # 4-byte Reload
+	movl	%r12d, %r14d
+	movl	%r12d, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movq	%r15, (%rsp)
 	movl	$443, %edi                      # imm = 0x1BB
-	movl	%r15d, %esi
+	movl	%r13d, %esi
 	movl	$53, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -5781,7 +6192,7 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
-	movq	%r12, (%rsp)
+	movq	%r15, (%rsp)
 	movl	$443, %edi                      # imm = 0x1BB
 	movl	$53, %edx
 	xorl	%ecx, %ecx
@@ -5800,7 +6211,8 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	testb	$1, %al
 	je	.LBB9_5
 # %bb.4:                                #   in Loop: Header=BB9_3 Depth=2
-	movq	%r13, (%rsp)
+	leaq	shl_namestr(%rip), %r12
+	movq	%r12, (%rsp)
 	movl	$445, %edi                      # imm = 0x1BD
 	movl	$1, %esi
 	movl	$25, %edx
@@ -5809,9 +6221,10 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$445, %edi                      # imm = 0x1BD
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	-44(%rbp), %r15d                # 4-byte Reload
+	movl	%r15d, %esi
 	movl	$25, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -5819,7 +6232,7 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	callq	injectFault0@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$445, %edi                      # imm = 0x1BD
 	movl	%ebx, %esi
 	movl	$25, %edx
@@ -5827,27 +6240,28 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r15d
-	leaq	sub_namestr(%rip), %r13
-	movq	%r13, (%rsp)
+	movl	%eax, %r13d
+	leaq	sub_namestr(%rip), %r12
+	movq	%r12, (%rsp)
 	movl	$446, %edi                      # imm = 0x1BE
-	movl	-48(%rbp), %esi                 # 4-byte Reload
+	movl	%r14d, -52(%rbp)                # 4-byte Spill
+	movl	%r14d, %esi
 	movl	$15, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$446, %edi                      # imm = 0x1BE
-	movl	%r15d, %esi
+	movl	%r13d, %esi
 	movl	$15, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	subl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$446, %edi                      # imm = 0x1BE
 	movl	%ebx, %esi
 	movl	$15, %edx
@@ -5873,6 +6287,15 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault1@PLT
+	leaq	getelementptr_namestr(%rip), %rcx
+	movq	%rcx, (%rsp)
+	movl	$448, %edi                      # imm = 0x1C0
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	callq	injectFault1@PLT
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
 	movl	(%rcx,%rax,4), %esi
 	leaq	load_namestr(%rip), %rax
@@ -5883,11 +6306,11 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r15d
-	movq	%r14, %r12
+	movl	%eax, %r13d
+	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$450, %edi                      # imm = 0x1C2
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	%r15d, %esi
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -5912,16 +6335,16 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$451, %edi                      # imm = 0x1C3
-	movl	-52(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$15, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r14d
-	movq	%r13, (%rsp)
+	movl	%eax, %r15d
+	movq	%r12, (%rsp)
 	movl	$451, %edi                      # imm = 0x1C3
 	movl	%ebx, %esi
 	movl	$15, %edx
@@ -5929,18 +6352,18 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
-	subl	%eax, %r14d
-	movq	%r13, (%rsp)
-	leaq	shl_namestr(%rip), %r13
+	subl	%eax, %r15d
+	movq	%r12, (%rsp)
+	leaq	shl_namestr(%rip), %r12
 	movl	$451, %edi                      # imm = 0x1C3
-	movl	%r14d, %esi
+	movl	%r15d, %esi
 	movl	$15, %edx
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r14d
-	movq	%r13, (%rsp)
+	movl	%eax, %r15d
+	movq	%r12, (%rsp)
 	movl	$452, %edi                      # imm = 0x1C4
 	movl	$1, %esi
 	movl	$25, %edx
@@ -5949,9 +6372,9 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$452, %edi                      # imm = 0x1C4
-	movl	%r14d, %esi
+	movl	%r15d, %esi
 	movl	$25, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -5959,7 +6382,7 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	callq	injectFault0@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
-	movq	%r13, (%rsp)
+	movq	%r12, (%rsp)
 	movl	$452, %edi                      # imm = 0x1C4
 	movl	%ebx, %esi
 	movl	$25, %edx
@@ -5967,26 +6390,26 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r14d
-	movq	%r12, (%rsp)
+	movl	%eax, %r15d
+	movq	%r14, (%rsp)
 	movl	$453, %edi                      # imm = 0x1C5
-	movl	%r15d, %esi
+	movl	%r13d, %esi
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$453, %edi                      # imm = 0x1C5
-	movl	%r14d, %esi
+	movl	%r15d, %esi
 	movl	$13, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	addl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$453, %edi                      # imm = 0x1C5
 	movl	%ebx, %esi
 	movl	$13, %edx
@@ -5994,12 +6417,12 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, %r14d
+	movl	%eax, %r15d
 	leaq	sext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$454, %edi                      # imm = 0x1C6
-	movl	-48(%rbp), %r15d                # 4-byte Reload
-	movl	%r15d, %esi
+	movl	-52(%rbp), %r12d                # 4-byte Reload
+	movl	%r12d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -6013,11 +6436,20 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault1@PLT
+	leaq	getelementptr_namestr(%rip), %rcx
+	movq	%rcx, (%rsp)
+	movl	$455, %edi                      # imm = 0x1C7
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	callq	injectFault1@PLT
 	movq	%rax, %rbx
 	leaq	store_namestr(%rip), %rax
 	movq	%rax, (%rsp)
 	movl	$456, %edi                      # imm = 0x1C8
-	movl	%r14d, %esi
+	movl	%r15d, %esi
 	movl	$33, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
@@ -6025,16 +6457,16 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	callq	injectFault0@PLT
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
 	movl	%eax, (%rcx,%rbx,4)
-	movq	%r12, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$458, %edi                      # imm = 0x1CA
-	movl	%r15d, %esi
+	movl	%r12d, %esi
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
 	callq	injectFault0@PLT
 	movl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$458, %edi                      # imm = 0x1CA
 	movl	$1, %esi
 	movl	$13, %edx
@@ -6043,7 +6475,7 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$2, %r9d
 	callq	injectFault0@PLT
 	addl	%eax, %ebx
-	movq	%r12, (%rsp)
+	movq	%r14, (%rsp)
 	movl	$458, %edi                      # imm = 0x1CA
 	movl	%ebx, %esi
 	movl	$13, %edx
@@ -6051,8 +6483,7 @@ _Z14calcFftIndicesiPi.2:                # @_Z14calcFftIndicesiPi.2
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	callq	injectFault0@PLT
-	movl	%eax, -48(%rbp)                 # 4-byte Spill
-	movq	%r12, %r14
+	movq	%r14, %r15
 	jmp	.LBB9_3
 .LBB9_6:
 	addq	$40, %rsp
@@ -6323,7 +6754,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	andq	$-16, %rax
 	movq	%rsp, %rcx
 	subq	%rax, %rcx
-	movq	%rcx, -128(%rbp)                # 8-byte Spill
+	movq	%rcx, -120(%rbp)                # 8-byte Spill
 	movq	%rcx, %rsp
 	subq	$8, %rsp
 	movl	$476, %edi                      # imm = 0x1DC
@@ -6340,7 +6771,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	andq	$-16, %rax
 	movq	%rsp, %rcx
 	subq	%rax, %rcx
-	movq	%rcx, -120(%rbp)                # 8-byte Spill
+	movq	%rcx, -136(%rbp)                # 8-byte Spill
 	movq	%rcx, %rsp
 	subq	$8, %rsp
 	movl	$477, %edi                      # imm = 0x1DD
@@ -6362,7 +6793,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	subq	$8, %rsp
 	leaq	call_namestr(%rip), %rax
 	movl	$478, %edi                      # imm = 0x1DE
-	movl	%ebx, -72(%rbp)                 # 4-byte Spill
+	movl	%ebx, -76(%rbp)                 # 4-byte Spill
 	movl	%ebx, %esi
 	movl	$56, %edx
 	xorl	%ecx, %ecx
@@ -6372,7 +6803,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %edi
-	movq	%r15, -88(%rbp)                 # 8-byte Spill
+	movq	%r15, -72(%rbp)                 # 8-byte Spill
 	movq	%r15, %rsi
 	callq	_Z14calcFftIndicesiPi.2
 	subq	$8, %rsp
@@ -6443,19 +6874,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r15d
-	movl	$0, -100(%rbp)                  # 4-byte Folded Spill
+	xorl	%r14d, %r14d
 	jmp	.LBB11_1
 	.p2align	4, 0x90
-.LBB11_8:                               #   in Loop: Header=BB11_1 Depth=1
+.LBB11_7:                               #   in Loop: Header=BB11_1 Depth=1
 	movl	$681, %edi                      # imm = 0x2A9
-	movl	-100(%rbp), %esi                # 4-byte Reload
+	movl	-124(%rbp), %esi                # 4-byte Reload
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	leaq	add_namestr(%rip), %r14
-	pushq	%r14
+	leaq	add_namestr(%rip), %r15
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
@@ -6466,7 +6896,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
@@ -6477,17 +6907,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault0@PLT
-	addq	$8, %rsp
+	addq	$16, %rsp
+	movl	%eax, %r14d
+	subq	$8, %rsp
 	movl	$682, %edi                      # imm = 0x2AA
-	movl	%eax, -100(%rbp)                # 4-byte Spill
 	movl	%eax, %esi
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
@@ -6498,7 +6929,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
@@ -6509,10 +6940,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r14d
+	movl	%eax, %r15d
 	subq	$8, %rsp
 	movl	$683, %edi                      # imm = 0x2AB
 	movl	$1, %esi
@@ -6520,19 +6951,19 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	leaq	shl_namestr(%rip), %r15
-	pushq	%r15
+	leaq	shl_namestr(%rip), %r12
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$683, %edi                      # imm = 0x2AB
-	movl	%r14d, %esi
+	movl	%r15d, %esi
 	movl	$25, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
@@ -6544,16 +6975,39 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
+	pushq	%r12
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+.LBB11_1:                               # =>This Loop Header: Depth=1
+                                        #     Child Loop BB11_2 Depth 2
+                                        #       Child Loop BB11_4 Depth 3
+	subq	$8, %rsp
+	movl	$483, %edi                      # imm = 0x1E3
+	movl	%eax, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	leaq	phi_namestr(%rip), %r15
 	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r15d
-.LBB11_1:                               # =>This Loop Header: Depth=1
-                                        #     Child Loop BB11_3 Depth 2
-                                        #       Child Loop BB11_5 Depth 3
+	movl	%eax, %ebx
+	subq	$8, %rsp
+	movl	$482, %edi                      # imm = 0x1E2
+	movl	%r14d, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	pushq	%r15
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, -124(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$484, %edi                      # imm = 0x1E4
-	movl	%r15d, %esi
+	movl	%ebx, -80(%rbp)                 # 4-byte Spill
+	movl	%ebx, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -6565,7 +7019,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$484, %edi                      # imm = 0x1E4
-	movl	-72(%rbp), %esi                 # 4-byte Reload
+	movl	-76(%rbp), %esi                 # 4-byte Reload
 	movl	$53, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -6595,17 +7049,14 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%rax
 	callq	injectFault4@PLT
 	addq	$16, %rsp
+	xorl	%esi, %esi
 	testb	$1, %al
-	je	.LBB11_9
-# %bb.2:                                # %.preheader1.preheader
-                                        #   in Loop: Header=BB11_1 Depth=1
-	movl	$0, -68(%rbp)                   # 4-byte Folded Spill
-	movl	%r15d, -104(%rbp)               # 4-byte Spill
-	jmp	.LBB11_3
+	jne	.LBB11_2
+	jmp	.LBB11_8
 	.p2align	4, 0x90
-.LBB11_7:                               #   in Loop: Header=BB11_3 Depth=2
+.LBB11_6:                               #   in Loop: Header=BB11_2 Depth=2
 	movl	$678, %edi                      # imm = 0x2A6
-	movl	-68(%rbp), %esi                 # 4-byte Reload
+	movl	-100(%rbp), %esi                # 4-byte Reload
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -6617,8 +7068,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$678, %edi                      # imm = 0x2A6
-	movl	-104(%rbp), %r15d               # 4-byte Reload
-	movl	%r15d, %esi
+	movl	-80(%rbp), %esi                 # 4-byte Reload
 	movl	$13, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -6637,14 +7087,24 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -68(%rbp)                 # 4-byte Spill
-.LBB11_3:                               # %.preheader1
+	movl	%eax, %esi
+.LBB11_2:                               # %.preheader1
                                         #   Parent Loop BB11_1 Depth=1
                                         # =>  This Loop Header: Depth=2
-                                        #       Child Loop BB11_5 Depth 3
+                                        #       Child Loop BB11_4 Depth 3
 	subq	$8, %rsp
+	movl	$487, %edi                      # imm = 0x1E7
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	leaq	phi_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault0@PLT
+	addq	$8, %rsp
 	movl	$488, %edi                      # imm = 0x1E8
-	movl	-68(%rbp), %esi                 # 4-byte Reload
+	movl	%eax, -100(%rbp)                # 4-byte Spill
+	movl	%eax, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -6656,7 +7116,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$488, %edi                      # imm = 0x1E8
-	movl	-72(%rbp), %esi                 # 4-byte Reload
+	movl	-76(%rbp), %esi                 # 4-byte Reload
 	movl	$53, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -6688,19 +7148,19 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	addq	$16, %rsp
 	subq	$8, %rsp
 	testb	$1, %al
-	je	.LBB11_8
-# %bb.4:                                #   in Loop: Header=BB11_3 Depth=2
+	je	.LBB11_7
+# %bb.3:                                #   in Loop: Header=BB11_2 Depth=2
 	movl	$490, %edi                      # imm = 0x1EA
-	movl	%r15d, %esi
+	movl	-80(%rbp), %esi                 # 4-byte Reload
 	movl	$27, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	leaq	ashr_namestr(%rip), %r14
-	pushq	%r14
+	leaq	ashr_namestr(%rip), %r15
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %ebx
+	movl	%eax, %r14d
 	subq	$8, %rsp
 	movl	$490, %edi                      # imm = 0x1EA
 	movl	$1, %esi
@@ -6708,31 +7168,41 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
-	sarl	%cl, %ebx
+	sarl	%cl, %r14d
 	subq	$8, %rsp
-	xorl	%r13d, %r13d
+	xorl	%ebx, %ebx
 	movl	$490, %edi                      # imm = 0x1EA
-	movl	%ebx, %esi
+	movl	%r14d, %esi
 	movl	$27, %edx
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r12d
-	movl	%eax, -132(%rbp)                # 4-byte Spill
+	movl	%eax, -104(%rbp)                # 4-byte Spill
 	.p2align	4, 0x90
-.LBB11_5:                               #   Parent Loop BB11_1 Depth=1
-                                        #     Parent Loop BB11_3 Depth=2
+.LBB11_4:                               #   Parent Loop BB11_1 Depth=1
+                                        #     Parent Loop BB11_2 Depth=2
                                         # =>    This Inner Loop Header: Depth=3
 	subq	$8, %rsp
+	movl	$492, %edi                      # imm = 0x1EC
+	movl	%ebx, %esi
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	leaq	phi_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault0@PLT
+	addq	$8, %rsp
 	movl	$493, %edi                      # imm = 0x1ED
-	movl	%r13d, %esi
+	movl	%eax, %r13d
+	movl	%eax, %esi
 	movl	$53, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -6744,7 +7214,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$493, %edi                      # imm = 0x1ED
-	movl	%r12d, %esi
+	movl	-104(%rbp), %esi                # 4-byte Reload
 	movl	$53, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -6776,8 +7246,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	addq	$16, %rsp
 	subq	$8, %rsp
 	testb	$1, %al
-	je	.LBB11_7
-# %bb.6:                                #   in Loop: Header=BB11_5 Depth=3
+	je	.LBB11_6
+# %bb.5:                                #   in Loop: Header=BB11_4 Depth=3
 	movl	$495, %edi                      # imm = 0x1EF
 	movl	%r13d, %esi
 	movl	$44, %edx
@@ -6796,10 +7266,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%r8d, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -44(%rbp)                # 4-byte Spill
+	movss	%xmm0, -48(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$496, %edi                      # imm = 0x1F0
-	movl	-104(%rbp), %esi                # 4-byte Reload
+	movl	-80(%rbp), %esi                 # 4-byte Reload
 	movl	$44, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -6816,9 +7286,9 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%r8d, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -48(%rbp)                # 4-byte Spill
+	movss	%xmm0, -44(%rbp)                # 4-byte Spill
 	movl	$497, %edi                      # imm = 0x1F1
-	movss	-44(%rbp), %xmm0                # 4-byte Reload
+	movss	-48(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$21, %esi
 	movl	$1, %edx
@@ -6827,9 +7297,9 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	leaq	fdiv_namestr(%rip), %rbx
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -44(%rbp)                # 4-byte Spill
+	movss	%xmm0, -48(%rbp)                # 4-byte Spill
 	movl	$497, %edi                      # imm = 0x1F1
-	movss	-48(%rbp), %xmm0                # 4-byte Reload
+	movss	-44(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$21, %esi
 	movl	$2, %edx
@@ -6837,7 +7307,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	-44(%rbp), %xmm1                # 4-byte Reload
+	movss	-48(%rbp), %xmm1                # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm0, %xmm1
 	movl	$497, %edi                      # imm = 0x1F1
@@ -6848,10 +7318,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%r8d, %r8d
 	movq	%rbx, %r9
 	callq	injectFault2@PLT
-	movss	%xmm0, -56(%rbp)                # 4-byte Spill
+	movss	%xmm0, -60(%rbp)                # 4-byte Spill
 	subq	$8, %rsp
 	movl	$498, %edi                      # imm = 0x1F2
-	movl	-68(%rbp), %r14d                # 4-byte Reload
+	movl	-100(%rbp), %r14d               # 4-byte Reload
 	movl	%r14d, %esi
 	movl	$13, %edx
 	movl	$1, %ecx
@@ -6859,19 +7329,19 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %r9d
 	leaq	add_namestr(%rip), %rax
 	pushq	%rax
-	movq	%rax, %r15
+	movq	%rax, %r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$498, %edi                      # imm = 0x1F2
 	movl	%r13d, %esi
-	movl	%r13d, -136(%rbp)               # 4-byte Spill
+	movl	%r13d, -128(%rbp)               # 4-byte Spill
 	movl	$13, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
@@ -6882,10 +7352,11 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -48(%rbp)                 # 4-byte Spill
+	movl	%eax, %r15d
+	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$499, %edi                      # imm = 0x1F3
 	movl	%r14d, %esi
@@ -6893,18 +7364,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
 	movl	$499, %edi                      # imm = 0x1F3
-	movl	%r12d, %esi
+	movl	-104(%rbp), %esi                # 4-byte Reload
 	movl	$13, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
@@ -6915,7 +7386,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$500, %edi                      # imm = 0x1F4
@@ -6924,7 +7395,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
@@ -6935,7 +7406,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
@@ -6946,10 +7417,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -44(%rbp)                 # 4-byte Spill
+	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	movl	$501, %edi                      # imm = 0x1F5
 	movss	.LCPI11_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
@@ -6961,7 +7432,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	callq	injectFault2@PLT
 	movss	%xmm0, -64(%rbp)                # 4-byte Spill
 	movl	$501, %edi                      # imm = 0x1F5
-	movss	-56(%rbp), %xmm0                # 4-byte Reload
+	movss	-60(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movl	$18, %esi
 	movl	$2, %edx
@@ -7007,13 +7478,13 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %edi
-	movq	-128(%rbp), %rsi                # 8-byte Reload
-	movq	-120(%rbp), %rdx                # 8-byte Reload
+	movq	-120(%rbp), %rsi                # 8-byte Reload
+	movq	-136(%rbp), %rdx                # 8-byte Reload
+	movq	%rdx, %rbx
 	callq	_Z9fftSinCosfPfS_.5_fixp
 	subq	$8, %rsp
 	movl	$504, %edi                      # imm = 0x1F8
-	movl	-48(%rbp), %r13d                # 4-byte Reload
-	movl	%r13d, %esi
+	movl	%r15d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -7031,17 +7502,27 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%r9d, %r9d
 	pushq	%r14
 	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$505, %edi                      # imm = 0x1F9
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-88(%rbp), %rbx                 # 8-byte Reload
-	movl	(%rbx,%rax,4), %esi
+	movq	-72(%rbp), %r12                 # 8-byte Reload
+	movl	(%r12,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$506, %edi                      # imm = 0x1FA
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	leaq	load_namestr(%rip), %r15
-	pushq	%r15
+	leaq	load_namestr(%rip), %r13
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$507, %edi                      # imm = 0x1FB
@@ -7063,8 +7544,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-96(%rbp), %r12                 # 8-byte Reload
-	movq	(%r12,%rax,8), %rsi
+	movq	-96(%rbp), %r15                 # 8-byte Reload
+	movq	(%r15,%rax,8), %rsi
 	movq	-112(%rbp), %rax                # 8-byte Reload
 	movq	%rsi, (%rax)
 	subq	$8, %rsp
@@ -7074,12 +7555,94 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, -56(%rbp)                 # 4-byte Spill
+	subq	$8, %rsp
+	movl	$516, %edi                      # imm = 0x204
+	movl	-48(%rbp), %esi                 # 4-byte Reload
+	movl	$40, %edx
+	movl	$1, %ecx
+	movl	$2, %r8d
+	movl	$1, %r9d
+	pushq	%r14
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movslq	%eax, %rsi
+	subq	$8, %rsp
+	movl	$516, %edi                      # imm = 0x204
+	movl	$40, %edx
+	xorl	%ecx, %ecx
+	movl	$2, %r8d
+	xorl	%r9d, %r9d
+	pushq	%r14
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$517, %edi                      # imm = 0x205
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault1@PLT
+	addq	$16, %rsp
+	movl	(%r12,%rax,4), %esi
+	subq	$8, %rsp
+	movl	$518, %edi                      # imm = 0x206
+	movl	$32, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	pushq	%r13
+	callq	injectFault0@PLT
+	addq	$8, %rsp
+	movl	$519, %edi                      # imm = 0x207
+	movl	%eax, %esi
+	movl	$40, %edx
+	movl	$1, %ecx
+	movl	$2, %r8d
+	movl	$1, %r9d
+	pushq	%r14
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movslq	%eax, %rsi
+	subq	$8, %rsp
+	movl	$519, %edi                      # imm = 0x207
+	movl	$40, %edx
+	xorl	%ecx, %ecx
+	movl	$2, %r8d
+	xorl	%r9d, %r9d
+	pushq	%r14
+	callq	injectFault1@PLT
+	addq	$16, %rsp
+	movl	(%r15,%rax,8), %esi
+	subq	$8, %rsp
+	movl	$522, %edi                      # imm = 0x20A
+	movl	$32, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	pushq	%r13
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, -84(%rbp)                 # 4-byte Spill
+	movl	(%rbx), %esi
+	movl	%esi, -60(%rbp)                 # 4-byte Spill
+	subq	$8, %rsp
+	movl	$523, %edi                      # imm = 0x20B
+	movl	$32, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, -52(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
-	movl	$516, %edi                      # imm = 0x204
+	movl	$524, %edi                      # imm = 0x20C
 	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
@@ -7090,95 +7653,32 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
-	movl	$516, %edi                      # imm = 0x204
+	movl	$524, %edi                      # imm = 0x20C
 	movl	$40, %edx
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
 	callq	injectFault1@PLT
-	addq	$16, %rsp
-	movl	(%rbx,%rax,4), %esi
-	subq	$8, %rsp
-	movl	$518, %edi                      # imm = 0x206
-	movl	$32, %edx
-	xorl	%ecx, %ecx
-	movl	$1, %r8d
-	xorl	%r9d, %r9d
-	pushq	%r15
-	callq	injectFault0@PLT
 	addq	$8, %rsp
-	movl	$519, %edi                      # imm = 0x207
-	movl	%eax, %esi
-	movl	$40, %edx
-	movl	$1, %ecx
-	movl	$2, %r8d
-	movl	$1, %r9d
-	pushq	%r14
-	callq	injectFault0@PLT
-	addq	$16, %rsp
-	movslq	%eax, %rsi
-	subq	$8, %rsp
-	movl	$519, %edi                      # imm = 0x207
-	movl	$40, %edx
-	xorl	%ecx, %ecx
-	movl	$2, %r8d
-	xorl	%r9d, %r9d
-	pushq	%r14
-	callq	injectFault1@PLT
-	addq	$16, %rsp
-	movl	(%r12,%rax,8), %esi
-	subq	$8, %rsp
-	movl	$522, %edi                      # imm = 0x20A
-	movl	$32, %edx
+	movl	$525, %edi                      # imm = 0x20D
+	movq	%rax, %rsi
+	movl	$34, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
-	xorl	%r9d, %r9d
-	pushq	%r15
-	callq	injectFault0@PLT
-	addq	$16, %rsp
-	movl	%eax, -76(%rbp)                 # 4-byte Spill
-	movq	-120(%rbp), %rax                # 8-byte Reload
-	movl	(%rax), %esi
-	movl	%esi, -56(%rbp)                 # 4-byte Spill
-	subq	$8, %rsp
-	movl	$523, %edi                      # imm = 0x20B
-	movl	$32, %edx
-	xorl	%ecx, %ecx
-	movl	$1, %r8d
-	xorl	%r9d, %r9d
-	pushq	%r15
-	callq	injectFault0@PLT
-	addq	$16, %rsp
-	movl	%eax, -60(%rbp)                 # 4-byte Spill
-	subq	$8, %rsp
-	movl	$524, %edi                      # imm = 0x20C
-	movl	%r13d, %esi
-	movl	$40, %edx
-	movl	$1, %ecx
-	movl	$2, %r8d
-	movl	$1, %r9d
-	pushq	%r14
-	callq	injectFault0@PLT
-	addq	$16, %rsp
-	movslq	%eax, %rsi
-	subq	$8, %rsp
-	movl	$524, %edi                      # imm = 0x20C
-	movl	$40, %edx
-	xorl	%ecx, %ecx
-	movl	$2, %r8d
-	xorl	%r9d, %r9d
-	pushq	%r14
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	(%rbx,%rax,4), %esi
+	movl	(%r12,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$526, %edi                      # imm = 0x20E
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$527, %edi                      # imm = 0x20F
@@ -7200,18 +7700,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	4(%r12,%rax,8), %esi
+	movl	4(%r15,%rax,8), %esi
 	subq	$8, %rsp
 	movl	$530, %edi                      # imm = 0x212
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
-	movq	-128(%rbp), %rax                # 8-byte Reload
+	movq	-120(%rbp), %rax                # 8-byte Reload
 	movl	(%rax), %esi
 	movl	%esi, -64(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
@@ -7220,7 +7720,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %r15d
@@ -7244,7 +7744,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	%rax, %r13
+	movq	%rax, %r12
 	subq	$8, %rsp
 	movl	$533, %edi                      # imm = 0x215
 	movl	%r15d, %esi
@@ -7268,7 +7768,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movq	%rax, %r15
 	subq	$8, %rsp
 	movl	$534, %edi                      # imm = 0x216
-	movq	%r13, %rsi
+	movq	%r12, %rsi
 	movl	$17, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -7306,9 +7806,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	leaq	ashr_namestr(%rip), %rax
-	pushq	%rax
-	movq	%rax, %r13
+	leaq	ashr_namestr(%rip), %r13
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %rbx
@@ -7424,7 +7923,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %r15d
 	subq	$8, %rsp
 	movl	$539, %edi                      # imm = 0x21B
-	movl	-76(%rbp), %esi                 # 4-byte Reload
+	movl	-84(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -7446,7 +7945,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movq	%rax, %r14
 	subq	$8, %rsp
 	movl	$540, %edi                      # imm = 0x21C
-	movl	-60(%rbp), %esi                 # 4-byte Reload
+	movl	-52(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -7585,7 +8084,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %r14d
 	subq	$8, %rsp
 	movl	$545, %edi                      # imm = 0x221
-	movl	-52(%rbp), %esi                 # 4-byte Reload
+	movl	-56(%rbp), %esi                 # 4-byte Reload
 	movl	$27, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -7650,14 +8149,13 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %r14d
 	subq	$8, %rsp
 	movl	$547, %edi                      # imm = 0x223
-	movl	-48(%rbp), %r12d                # 4-byte Reload
-	movl	%r12d, %esi
+	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	leaq	sext_namestr(%rip), %rbx
-	pushq	%rbx
+	leaq	sext_namestr(%rip), %r13
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -7667,11 +8165,21 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r13
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$548, %edi                      # imm = 0x224
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-88(%rbp), %r13                 # 8-byte Reload
-	movl	(%r13,%rax,4), %esi
+	movq	-72(%rbp), %rcx                 # 8-byte Reload
+	movl	(%rcx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$549, %edi                      # imm = 0x225
 	movl	$32, %edx
@@ -7688,7 +8196,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -7698,10 +8206,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	%rax, %r15
+	movq	%rax, %r12
 	subq	$8, %rsp
 	movl	$553, %edi                      # imm = 0x229
 	movl	%r14d, %esi
@@ -7747,8 +8255,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%rax
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movq	-96(%rbp), %rbx                 # 8-byte Reload
-	movl	%eax, (%rbx,%r15,8)
+	movq	-96(%rbp), %r15                 # 8-byte Reload
+	movl	%eax, (%r15,%r12,8)
 	movq	-112(%rbp), %rax                # 8-byte Reload
 	movl	4(%rax), %esi
 	subq	$8, %rsp
@@ -7757,20 +8265,20 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	leaq	load_namestr(%rip), %r14
-	pushq	%r14
+	leaq	load_namestr(%rip), %r13
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -52(%rbp)                 # 4-byte Spill
+	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$557, %edi                      # imm = 0x22D
-	movl	%r12d, %esi
+	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	leaq	sext_namestr(%rip), %r15
-	pushq	%r15
+	leaq	sext_namestr(%rip), %rbx
+	pushq	%rbx
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -7780,17 +8288,29 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%rbx
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$558, %edi                      # imm = 0x22E
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %r14
+	pushq	%r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	(%r13,%rax,4), %esi
+	movq	-72(%rbp), %r12                 # 8-byte Reload
+	movl	(%r12,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$559, %edi                      # imm = 0x22F
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r13
+	movq	%r13, %r14
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$560, %edi                      # imm = 0x230
@@ -7799,7 +8319,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	leaq	sext_namestr(%rip), %r13
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -7809,10 +8330,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	4(%rbx,%rax,8), %esi
+	movl	4(%r15,%rax,8), %esi
 	subq	$8, %rsp
 	movl	$563, %edi                      # imm = 0x233
 	movl	$32, %edx
@@ -7822,10 +8343,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r12d
+	movl	%eax, -52(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$564, %edi                      # imm = 0x234
-	movl	-56(%rbp), %esi                 # 4-byte Reload
+	movl	-60(%rbp), %esi                 # 4-byte Reload
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
@@ -7833,15 +8354,15 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -56(%rbp)                 # 4-byte Spill
+	movl	%eax, -60(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$565, %edi                      # imm = 0x235
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -7851,10 +8372,20 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$566, %edi                      # imm = 0x236
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	(%r13,%rax,4), %esi
+	movl	(%r12,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$567, %edi                      # imm = 0x237
 	movl	$32, %edx
@@ -7870,7 +8401,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -7880,10 +8411,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	(%rbx,%rax,8), %esi
+	movl	(%r15,%rax,8), %esi
 	subq	$8, %rsp
 	movl	$571, %edi                      # imm = 0x23B
 	movl	$32, %edx
@@ -7904,7 +8435,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r13d
+	movl	%eax, %r12d
 	subq	$8, %rsp
 	movl	$573, %edi                      # imm = 0x23D
 	movl	%ebx, %esi
@@ -7912,7 +8443,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -7922,18 +8453,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %r14
 	subq	$8, %rsp
 	movl	$574, %edi                      # imm = 0x23E
-	movl	%r13d, %esi
+	movl	%r12d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -7943,10 +8474,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	%rax, %r13
+	movq	%rax, %r12
 	subq	$8, %rsp
 	movl	$575, %edi                      # imm = 0x23F
 	movq	%r14, %rsi
@@ -7961,13 +8492,12 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movq	%rax, %rbx
 	subq	$8, %rsp
 	movl	$575, %edi                      # imm = 0x23F
-	movq	%r13, %rsi
+	movq	%r12, %rsi
 	movl	$17, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	movq	%r14, %r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	imulq	%rax, %rbx
@@ -8036,12 +8566,12 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %r14d
 	subq	$8, %rsp
 	movl	$578, %edi                      # imm = 0x242
-	movl	%r12d, %esi
+	movl	-52(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -8051,18 +8581,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %r12
 	subq	$8, %rsp
 	movl	$579, %edi                      # imm = 0x243
-	movl	-56(%rbp), %esi                 # 4-byte Reload
+	movl	-60(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -8072,7 +8602,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %r15
@@ -8083,8 +8613,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	movq	%r13, %r12
-	pushq	%r13
+	leaq	mul_namestr(%rip), %r12
+	pushq	%r12
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %rbx
@@ -8095,7 +8625,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r13
+	pushq	%r12
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	imulq	%rax, %rbx
@@ -8106,7 +8636,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r13
+	pushq	%r12
 	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movl	$581, %edi                      # imm = 0x245
@@ -8197,7 +8727,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %r14d
 	subq	$8, %rsp
 	movl	$584, %edi                      # imm = 0x248
-	movl	-52(%rbp), %esi                 # 4-byte Reload
+	movl	-56(%rbp), %esi                 # 4-byte Reload
 	movl	$27, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -8262,13 +8792,12 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %r14d
 	subq	$8, %rsp
 	movl	$586, %edi                      # imm = 0x24A
-	movl	-48(%rbp), %esi                 # 4-byte Reload
+	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	leaq	sext_namestr(%rip), %r12
-	pushq	%r12
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -8278,12 +8807,22 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
-	movq	%r12, %rbx
+	pushq	%r13
+	movq	%r13, %rbx
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$587, %edi                      # imm = 0x24B
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-88(%rbp), %r12                 # 8-byte Reload
-	movl	(%r12,%rax,4), %esi
+	movq	-72(%rbp), %r13                 # 8-byte Reload
+	movl	(%r13,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$588, %edi                      # imm = 0x24C
 	movl	$32, %edx
@@ -8358,8 +8897,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%rax
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movq	-96(%rbp), %r13                 # 8-byte Reload
-	movl	%eax, 4(%r13,%r15,8)
+	movq	-96(%rbp), %r12                 # 8-byte Reload
+	movl	%eax, 4(%r12,%r15,8)
 	movq	-112(%rbp), %rax                # 8-byte Reload
 	movl	(%rax), %esi
 	subq	$8, %rsp
@@ -8372,10 +8911,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -52(%rbp)                 # 4-byte Spill
+	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$596, %edi                      # imm = 0x254
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -8393,9 +8932,19 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%r9d, %r9d
 	pushq	%rbx
 	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$597, %edi                      # imm = 0x255
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	%r12, %r15
-	movl	(%r12,%rax,4), %esi
+	movq	%r13, %r15
+	movl	(%r13,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$598, %edi                      # imm = 0x256
 	movl	$32, %edx
@@ -8403,6 +8952,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
+	movq	%r14, %r13
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$599, %edi                      # imm = 0x257
@@ -8422,36 +8972,36 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	movq	%rbx, %r12
+	movq	%rbx, %r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	(%r13,%rax,8), %esi
+	movl	(%r12,%rax,8), %esi
 	subq	$8, %rsp
 	movl	$602, %edi                      # imm = 0x25A
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -76(%rbp)                 # 4-byte Spill
-	movq	-120(%rbp), %rax                # 8-byte Reload
+	movl	%eax, -84(%rbp)                 # 4-byte Spill
+	movq	-136(%rbp), %rax                # 8-byte Reload
 	movl	(%rax), %esi
-	movl	%esi, -56(%rbp)                 # 4-byte Spill
+	movl	%esi, -60(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$603, %edi                      # imm = 0x25B
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -60(%rbp)                 # 4-byte Spill
+	movl	%eax, -52(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$604, %edi                      # imm = 0x25C
-	movl	-48(%rbp), %esi                 # 4-byte Reload
+	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -8467,6 +9017,16 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$605, %edi                      # imm = 0x25D
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movl	(%r15,%rax,4), %esi
@@ -8476,7 +9036,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$607, %edi                      # imm = 0x25F
@@ -8498,18 +9058,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%rbx
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movl	4(%r13,%rax,8), %esi
+	movl	4(%r12,%rax,8), %esi
 	subq	$8, %rsp
 	movl	$610, %edi                      # imm = 0x262
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
-	movq	-128(%rbp), %rax                # 8-byte Reload
+	movq	-120(%rbp), %rax                # 8-byte Reload
 	movl	(%rax), %esi
 	movl	%esi, -64(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
@@ -8518,7 +9078,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %r15d
@@ -8529,7 +9089,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r12
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -8539,10 +9099,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	%rax, %r13
+	movq	%rax, %r12
 	subq	$8, %rsp
 	movl	$613, %edi                      # imm = 0x265
 	movl	%r15d, %esi
@@ -8550,7 +9110,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r12
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -8560,19 +9120,19 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %r15
 	subq	$8, %rsp
 	movl	$614, %edi                      # imm = 0x266
-	movq	%r13, %rsi
+	movq	%r12, %rsi
 	movl	$17, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	leaq	mul_namestr(%rip), %r13
-	pushq	%r13
+	leaq	mul_namestr(%rip), %r12
+	pushq	%r12
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %rbx
@@ -8583,7 +9143,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r13
+	pushq	%r12
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	imulq	%rax, %rbx
@@ -8594,7 +9154,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r13
+	pushq	%r12
 	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movl	$615, %edi                      # imm = 0x267
@@ -8603,8 +9163,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	leaq	ashr_namestr(%rip), %r15
-	pushq	%r15
+	leaq	ashr_namestr(%rip), %r13
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %rbx
@@ -8615,7 +9175,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
@@ -8627,7 +9187,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movl	$616, %edi                      # imm = 0x268
@@ -8655,7 +9215,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
@@ -8666,7 +9226,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
@@ -8678,7 +9238,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r15
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %r15d
@@ -8689,8 +9249,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	leaq	sub_namestr(%rip), %r13
-	pushq	%r13
+	leaq	sub_namestr(%rip), %r12
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
@@ -8701,7 +9261,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r13
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	subl	%eax, %ebx
@@ -8712,19 +9272,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r13
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %r15d
 	subq	$8, %rsp
 	movl	$619, %edi                      # imm = 0x26B
-	movl	-76(%rbp), %esi                 # 4-byte Reload
+	movl	-84(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	movq	%r12, %rbx
-	pushq	%r12
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -8734,18 +9293,19 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r14
+	movq	%r14, %r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %r12
 	subq	$8, %rsp
 	movl	$620, %edi                      # imm = 0x26C
-	movl	-60(%rbp), %esi                 # 4-byte Reload
+	movl	-52(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -8755,7 +9315,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r14
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %r14
@@ -8880,7 +9440,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %r14d
 	subq	$8, %rsp
 	movl	$625, %edi                      # imm = 0x271
-	movl	-52(%rbp), %esi                 # 4-byte Reload
+	movl	-56(%rbp), %esi                 # 4-byte Reload
 	movl	$27, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -8917,7 +9477,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	pushq	%r13
+	leaq	sub_namestr(%rip), %r15
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
@@ -8928,7 +9489,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r13
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	subl	%eax, %ebx
@@ -8939,19 +9500,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r13
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %r14d
 	subq	$8, %rsp
 	movl	$627, %edi                      # imm = 0x273
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	leaq	sext_namestr(%rip), %rbx
-	pushq	%rbx
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -8961,19 +9521,29 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r13
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$628, %edi                      # imm = 0x274
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-88(%rbp), %r12                 # 8-byte Reload
-	movl	(%r12,%rax,4), %esi
+	movq	-72(%rbp), %rcx                 # 8-byte Reload
+	movl	(%rcx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$629, %edi                      # imm = 0x275
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	leaq	load_namestr(%rip), %rax
-	pushq	%rax
+	leaq	load_namestr(%rip), %r12
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$630, %edi                      # imm = 0x276
@@ -8982,7 +9552,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -8992,7 +9562,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %r15
@@ -9050,14 +9620,13 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	leaq	load_namestr(%rip), %r14
-	pushq	%r14
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -52(%rbp)                 # 4-byte Spill
+	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$637, %edi                      # imm = 0x27D
-	movl	-48(%rbp), %esi                 # 4-byte Reload
+	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -9075,16 +9644,26 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%r9d, %r9d
 	pushq	%rbx
 	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$638, %edi                      # imm = 0x27E
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %r14
+	pushq	%r14
+	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	%r12, %r15
-	movl	(%r12,%rax,4), %esi
+	movq	-72(%rbp), %r15                 # 8-byte Reload
+	movl	(%r15,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$639, %edi                      # imm = 0x27F
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$640, %edi                      # imm = 0x280
@@ -9104,7 +9683,6 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	movq	%rbx, %r12
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movl	4(%r13,%rax,8), %esi
@@ -9114,24 +9692,24 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -60(%rbp)                 # 4-byte Spill
+	movl	%eax, -52(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$644, %edi                      # imm = 0x284
-	movl	-56(%rbp), %esi                 # 4-byte Reload
+	movl	-60(%rbp), %esi                 # 4-byte Reload
 	movl	$32, %edx
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, -48(%rbp)                 # 4-byte Spill
+	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	subq	$8, %rsp
 	movl	$645, %edi                      # imm = 0x285
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
@@ -9148,6 +9726,15 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%r9d, %r9d
 	pushq	%rbx
 	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$646, %edi                      # imm = 0x286
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	pushq	%r14
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movl	(%r15,%rax,4), %esi
 	subq	$8, %rsp
@@ -9156,7 +9743,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$648, %edi                      # imm = 0x288
@@ -9176,6 +9763,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
+	movq	%rbx, %r15
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movl	(%r13,%rax,8), %esi
@@ -9185,7 +9773,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
@@ -9196,10 +9784,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r14
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
-	movl	%eax, %r13d
+	movl	%eax, %r12d
 	subq	$8, %rsp
 	movl	$653, %edi                      # imm = 0x28D
 	movl	%ebx, %esi
@@ -9207,7 +9795,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -9217,18 +9805,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %r14
 	subq	$8, %rsp
 	movl	$654, %edi                      # imm = 0x28E
-	movl	%r13d, %esi
+	movl	%r12d, %esi
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -9238,10 +9826,10 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
+	pushq	%r15
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	%rax, %r13
+	movq	%rax, %r12
 	subq	$8, %rsp
 	movl	$655, %edi                      # imm = 0x28F
 	movq	%r14, %rsi
@@ -9256,7 +9844,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movq	%rax, %rbx
 	subq	$8, %rsp
 	movl	$655, %edi                      # imm = 0x28F
-	movq	%r13, %rsi
+	movq	%r12, %rsi
 	movl	$17, %edx
 	movl	$2, %ecx
 	movl	$3, %r8d
@@ -9314,8 +9902,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	leaq	trunc_namestr(%rip), %r13
-	pushq	%r13
+	leaq	trunc_namestr(%rip), %rbx
+	pushq	%rbx
 	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movl	$657, %edi                      # imm = 0x291
@@ -9324,18 +9912,19 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r13
+	pushq	%rbx
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %r14d
 	subq	$8, %rsp
 	movl	$658, %edi                      # imm = 0x292
-	movl	-60(%rbp), %esi                 # 4-byte Reload
+	movl	-52(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r12
+	movq	%r15, %r13
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -9345,19 +9934,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r12
-	movq	%r12, %rbx
+	pushq	%r15
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %r12
 	subq	$8, %rsp
 	movl	$659, %edi                      # imm = 0x293
-	movl	-48(%rbp), %esi                 # 4-byte Reload
+	movl	-44(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r15
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -9367,7 +9955,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r15
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %r15
@@ -9443,7 +10031,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%r13
+	leaq	trunc_namestr(%rip), %rbx
+	pushq	%rbx
 	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movl	$662, %edi                      # imm = 0x296
@@ -9452,7 +10041,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r13
+	pushq	%rbx
 	callq	injectFault0@PLT
 	addq	$8, %rsp
 	movl	$663, %edi                      # imm = 0x297
@@ -9461,8 +10050,8 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	leaq	add_namestr(%rip), %r13
-	pushq	%r13
+	leaq	add_namestr(%rip), %r12
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
@@ -9473,7 +10062,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r13
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
@@ -9484,13 +10073,13 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r13
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %r14d
 	subq	$8, %rsp
 	movl	$664, %edi                      # imm = 0x298
-	movl	-52(%rbp), %esi                 # 4-byte Reload
+	movl	-56(%rbp), %esi                 # 4-byte Reload
 	movl	$27, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
@@ -9556,13 +10145,12 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	%eax, %r14d
 	subq	$8, %rsp
 	movl	$666, %edi                      # imm = 0x29A
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	-48(%rbp), %esi                 # 4-byte Reload
 	movl	$40, %edx
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	leaq	sext_namestr(%rip), %rbx
-	pushq	%rbx
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -9572,10 +10160,20 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r13
+	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$667, %edi                      # imm = 0x29B
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
 	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-88(%rbp), %rcx                 # 8-byte Reload
+	movq	-72(%rbp), %rcx                 # 8-byte Reload
 	movl	(%rcx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$668, %edi                      # imm = 0x29C
@@ -9593,7 +10191,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	pushq	%rbx
+	pushq	%r13
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
@@ -9603,7 +10201,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	pushq	%rbx
+	pushq	%r13
 	callq	injectFault1@PLT
 	addq	$16, %rsp
 	movq	%rax, %r15
@@ -9653,15 +10251,14 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	addq	$16, %rsp
 	movq	-96(%rbp), %rcx                 # 8-byte Reload
 	movl	%eax, 4(%rcx,%r15,8)
-	movl	-132(%rbp), %r12d               # 4-byte Reload
 	subq	$8, %rsp
 	movl	$675, %edi                      # imm = 0x2A3
-	movl	-136(%rbp), %esi                # 4-byte Reload
+	movl	-128(%rbp), %esi                # 4-byte Reload
 	movl	$13, %edx
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	pushq	%r13
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
@@ -9672,7 +10269,7 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	pushq	%r13
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
@@ -9683,63 +10280,13 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	pushq	%r13
-	callq	injectFault0@PLT
-	addq	$16, %rsp
-	movl	%eax, %r13d
-	jmp	.LBB11_5
-.LBB11_9:                               # %.preheader.preheader
-	xorl	%r14d, %r14d
-	.p2align	4, 0x90
-.LBB11_10:                              # %.preheader
-                                        # =>This Inner Loop Header: Depth=1
-	subq	$8, %rsp
-	movl	$687, %edi                      # imm = 0x2AF
-	movl	%r14d, %esi
-	movl	$53, %edx
-	movl	$1, %ecx
-	movl	$3, %r8d
-	movl	$1, %r9d
-	leaq	icmp_namestr(%rip), %r15
-	pushq	%r15
+	pushq	%r12
 	callq	injectFault0@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
-	subq	$8, %rsp
-	movl	$687, %edi                      # imm = 0x2AF
-	movl	-72(%rbp), %esi                 # 4-byte Reload
-	movl	$53, %edx
-	movl	$2, %ecx
-	movl	$3, %r8d
-	movl	$2, %r9d
-	pushq	%r15
-	callq	injectFault0@PLT
-	addq	$16, %rsp
-	xorl	%esi, %esi
-	cmpl	%eax, %ebx
-	setl	%sil
-	subq	$8, %rsp
-	movl	$687, %edi                      # imm = 0x2AF
-	movl	$53, %edx
-	xorl	%ecx, %ecx
-	movl	$3, %r8d
-	xorl	%r9d, %r9d
-	pushq	%r15
-	callq	injectFault4@PLT
-	addq	$8, %rsp
-	movzbl	%al, %esi
-	movl	$688, %edi                      # imm = 0x2B0
-	movl	$2, %edx
-	xorl	%ecx, %ecx
-	movl	$1, %r8d
-	movl	$1, %r9d
-	leaq	br_namestr(%rip), %rax
-	pushq	%rax
-	callq	injectFault4@PLT
-	addq	$16, %rsp
-	testb	$1, %al
-	je	.LBB11_12
-# %bb.11:                               #   in Loop: Header=BB11_10 Depth=1
+	jmp	.LBB11_4
+	.p2align	4, 0x90
+.LBB11_9:                               #   in Loop: Header=BB11_8 Depth=1
 	subq	$8, %rsp
 	movl	$689, %edi                      # imm = 0x2B1
 	movl	%r14d, %esi
@@ -9760,8 +10307,18 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	xorl	%r9d, %r9d
 	pushq	%r15
 	callq	injectFault1@PLT
+	addq	$8, %rsp
+	movl	$690, %edi                      # imm = 0x2B2
+	movq	%rax, %rsi
+	movl	$34, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$2, %r9d
+	leaq	getelementptr_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault1@PLT
 	addq	$16, %rsp
-	movq	-88(%rbp), %rcx                 # 8-byte Reload
+	movq	-72(%rbp), %rcx                 # 8-byte Reload
 	movl	(%rcx,%rax,4), %esi
 	subq	$8, %rsp
 	movl	$691, %edi                      # imm = 0x2B3
@@ -9850,9 +10407,67 @@ _Z23radix2DitCooleyTykeyFftiPiP7ComplexS1_.1_fixp: # @_Z23radix2DitCooleyTykeyFf
 	pushq	%r14
 	callq	injectFault0@PLT
 	addq	$16, %rsp
+	movl	%eax, %esi
+.LBB11_8:                               # %.preheader
+                                        # =>This Inner Loop Header: Depth=1
+	subq	$8, %rsp
+	movl	$686, %edi                      # imm = 0x2AE
+	movl	$55, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	xorl	%r9d, %r9d
+	leaq	phi_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault0@PLT
+	addq	$16, %rsp
 	movl	%eax, %r14d
-	jmp	.LBB11_10
-.LBB11_12:
+	subq	$8, %rsp
+	movl	$687, %edi                      # imm = 0x2AF
+	movl	%eax, %esi
+	movl	$53, %edx
+	movl	$1, %ecx
+	movl	$3, %r8d
+	movl	$1, %r9d
+	leaq	icmp_namestr(%rip), %r15
+	pushq	%r15
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	movl	%eax, %ebx
+	subq	$8, %rsp
+	movl	$687, %edi                      # imm = 0x2AF
+	movl	-76(%rbp), %esi                 # 4-byte Reload
+	movl	$53, %edx
+	movl	$2, %ecx
+	movl	$3, %r8d
+	movl	$2, %r9d
+	pushq	%r15
+	callq	injectFault0@PLT
+	addq	$16, %rsp
+	xorl	%esi, %esi
+	cmpl	%eax, %ebx
+	setl	%sil
+	subq	$8, %rsp
+	movl	$687, %edi                      # imm = 0x2AF
+	movl	$53, %edx
+	xorl	%ecx, %ecx
+	movl	$3, %r8d
+	xorl	%r9d, %r9d
+	pushq	%r15
+	callq	injectFault4@PLT
+	addq	$8, %rsp
+	movzbl	%al, %esi
+	movl	$688, %edi                      # imm = 0x2B0
+	movl	$2, %edx
+	xorl	%ecx, %ecx
+	movl	$1, %r8d
+	movl	$1, %r9d
+	leaq	br_namestr(%rip), %rax
+	pushq	%rax
+	callq	injectFault4@PLT
+	addq	$16, %rsp
+	testb	$1, %al
+	jne	.LBB11_9
+# %bb.10:
 	leaq	-40(%rbp), %rsp
 	popq	%rbx
 	popq	%r12
@@ -10740,15 +11355,15 @@ invoke_namestr:
 	.asciz	"invoke"
 	.size	invoke_namestr, 7
 
+	.type	getelementptr_namestr,@object   # @getelementptr_namestr
+getelementptr_namestr:
+	.asciz	"getelementptr"
+	.size	getelementptr_namestr, 14
+
 	.type	load_namestr,@object            # @load_namestr
 load_namestr:
 	.asciz	"load"
 	.size	load_namestr, 5
-
-	.type	sext_namestr,@object            # @sext_namestr
-sext_namestr:
-	.asciz	"sext"
-	.size	sext_namestr, 5
 
 	.type	fpext_namestr,@object           # @fpext_namestr
 fpext_namestr:
@@ -10759,21 +11374,6 @@ fpext_namestr:
 fmul_namestr:
 	.asciz	"fmul"
 	.size	fmul_namestr, 5
-
-	.type	fptosi_namestr,@object          # @fptosi_namestr
-fptosi_namestr:
-	.asciz	"fptosi"
-	.size	fptosi_namestr, 7
-
-	.type	add_namestr,@object             # @add_namestr
-add_namestr:
-	.asciz	"add"
-	.size	add_namestr, 4
-
-	.type	sitofp_namestr,@object          # @sitofp_namestr
-sitofp_namestr:
-	.asciz	"sitofp"
-	.size	sitofp_namestr, 7
 
 	.type	call_namestr,@object            # @call_namestr
 call_namestr:
@@ -10790,15 +11390,25 @@ store_namestr:
 	.asciz	"store"
 	.size	store_namestr, 6
 
-	.type	sub_namestr,@object             # @sub_namestr
-sub_namestr:
-	.asciz	"sub"
-	.size	sub_namestr, 4
+	.type	add_namestr,@object             # @add_namestr
+add_namestr:
+	.asciz	"add"
+	.size	add_namestr, 4
+
+	.type	fptosi_namestr,@object          # @fptosi_namestr
+fptosi_namestr:
+	.asciz	"fptosi"
+	.size	fptosi_namestr, 7
 
 	.type	alloca_namestr,@object          # @alloca_namestr
 alloca_namestr:
 	.asciz	"alloca"
 	.size	alloca_namestr, 7
+
+	.type	phi_namestr,@object             # @phi_namestr
+phi_namestr:
+	.asciz	"phi"
+	.size	phi_namestr, 4
 
 	.type	icmp_namestr,@object            # @icmp_namestr
 icmp_namestr:
@@ -10809,6 +11419,11 @@ icmp_namestr:
 br_namestr:
 	.asciz	"br"
 	.size	br_namestr, 3
+
+	.type	sext_namestr,@object            # @sext_namestr
+sext_namestr:
+	.asciz	"sext"
+	.size	sext_namestr, 5
 
 	.type	mul_namestr,@object             # @mul_namestr
 mul_namestr:
@@ -10850,6 +11465,11 @@ fdiv_namestr:
 	.asciz	"fdiv"
 	.size	fdiv_namestr, 5
 
+	.type	sitofp_namestr,@object          # @sitofp_namestr
+sitofp_namestr:
+	.asciz	"sitofp"
+	.size	sitofp_namestr, 7
+
 	.type	ret_namestr,@object             # @ret_namestr
 ret_namestr:
 	.asciz	"ret"
@@ -10865,10 +11485,10 @@ resume_namestr:
 	.asciz	"resume"
 	.size	resume_namestr, 7
 
-	.type	fneg_namestr,@object            # @fneg_namestr
-fneg_namestr:
-	.asciz	"fneg"
-	.size	fneg_namestr, 5
+	.type	sub_namestr,@object             # @sub_namestr
+sub_namestr:
+	.asciz	"sub"
+	.size	sub_namestr, 4
 
 	.type	shl_namestr,@object             # @shl_namestr
 shl_namestr:
@@ -10879,6 +11499,11 @@ shl_namestr:
 ashr_namestr:
 	.asciz	"ashr"
 	.size	ashr_namestr, 5
+
+	.type	fneg_namestr,@object            # @fneg_namestr
+fneg_namestr:
+	.asciz	"fneg"
+	.size	fneg_namestr, 5
 
 	.type	trunc_namestr,@object           # @trunc_namestr
 trunc_namestr:
@@ -10910,20 +11535,20 @@ DW.ref.__gxx_personality_v0:
 	.addrsig_sym _ZL1f
 	.addrsig_sym _ZSt4cout
 	.addrsig_sym invoke_namestr
+	.addrsig_sym getelementptr_namestr
 	.addrsig_sym load_namestr
-	.addrsig_sym sext_namestr
 	.addrsig_sym fpext_namestr
 	.addrsig_sym fmul_namestr
-	.addrsig_sym fptosi_namestr
-	.addrsig_sym add_namestr
-	.addrsig_sym sitofp_namestr
 	.addrsig_sym call_namestr
 	.addrsig_sym fptrunc_namestr
 	.addrsig_sym store_namestr
-	.addrsig_sym sub_namestr
+	.addrsig_sym add_namestr
+	.addrsig_sym fptosi_namestr
 	.addrsig_sym alloca_namestr
+	.addrsig_sym phi_namestr
 	.addrsig_sym icmp_namestr
 	.addrsig_sym br_namestr
+	.addrsig_sym sext_namestr
 	.addrsig_sym mul_namestr
 	.addrsig_sym extractvalue_namestr
 	.addrsig_sym sdiv_namestr
@@ -10932,11 +11557,13 @@ DW.ref.__gxx_personality_v0:
 	.addrsig_sym lshr_namestr
 	.addrsig_sym uitofp_namestr
 	.addrsig_sym fdiv_namestr
+	.addrsig_sym sitofp_namestr
 	.addrsig_sym ret_namestr
 	.addrsig_sym insertvalue_namestr
 	.addrsig_sym resume_namestr
-	.addrsig_sym fneg_namestr
+	.addrsig_sym sub_namestr
 	.addrsig_sym shl_namestr
 	.addrsig_sym ashr_namestr
+	.addrsig_sym fneg_namestr
 	.addrsig_sym trunc_namestr
 	.addrsig_sym zext_namestr

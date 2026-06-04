@@ -98,7 +98,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movl	$7, %edi
 	movss	.LCPI0_0(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
@@ -140,7 +140,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r13
 	movq	%r13, (%rsp)
 	movl	$9, %edi
@@ -149,7 +149,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$9, %edi
@@ -158,7 +158,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$9, %edi
@@ -167,7 +167,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	movq	-64(%rbp), %rax                 # 8-byte Reload
 	movss	(%rax), %xmm0                   # xmm0 = mem[0],zero,zero,zero
@@ -230,7 +230,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movl	$16, %edi
 	movss	.LCPI0_0(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
@@ -272,7 +272,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r13, (%rsp)
 	movl	$18, %edi
 	movl	%eax, %esi
@@ -280,7 +280,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$18, %edi
@@ -289,7 +289,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$18, %edi
@@ -298,7 +298,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	lshr_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -308,7 +308,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$19, %edi
@@ -317,7 +317,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shrl	%cl, %ebx
 	movq	%r14, (%rsp)
@@ -327,7 +327,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	sext_namestr(%rip), %rax
 	movq	%rax, (%rsp)
@@ -338,7 +338,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$20, %edi
@@ -355,7 +355,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$21, %edi
@@ -439,7 +439,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movq	%rcx, %r14
@@ -449,7 +449,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$25, %edi
@@ -458,7 +458,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$25, %edi
@@ -467,7 +467,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	movq	-64(%rbp), %r13                 # 8-byte Reload
 	movss	4(%r13), %xmm0                  # xmm0 = mem[0],zero,zero,zero
@@ -533,7 +533,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	$32, %edi
 	movss	.LCPI0_0(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
@@ -576,7 +576,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r15
 	movq	%r15, (%rsp)
 	movl	$34, %edi
@@ -585,7 +585,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$34, %edi
@@ -594,7 +594,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$34, %edi
@@ -603,7 +603,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movss	4(%r13), %xmm0                  # xmm0 = mem[0],zero,zero,zero
 	movl	$36, %edi
@@ -667,7 +667,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	$41, %edi
 	movss	.LCPI0_0(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
@@ -709,7 +709,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$43, %edi
@@ -718,7 +718,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$43, %edi
@@ -727,7 +727,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$43, %edi
@@ -736,7 +736,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	sext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -746,7 +746,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$44, %edi
@@ -763,7 +763,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$45, %edi
@@ -844,7 +844,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$49, %edi
@@ -853,7 +853,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$49, %edi
@@ -862,7 +862,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$49, %edi
@@ -871,7 +871,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	movq	-64(%rbp), %rax                 # 8-byte Reload
 	movss	8(%rax), %xmm0                  # xmm0 = mem[0],zero,zero,zero
@@ -935,7 +935,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	$56, %edi
 	movss	.LCPI0_0(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
@@ -977,7 +977,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r15
 	movq	%r15, (%rsp)
 	movl	$58, %edi
@@ -986,7 +986,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$58, %edi
@@ -995,7 +995,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$58, %edi
@@ -1004,7 +1004,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	movq	-64(%rbp), %rax                 # 8-byte Reload
 	movss	8(%rax), %xmm0                  # xmm0 = mem[0],zero,zero,zero
@@ -1067,7 +1067,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	$65, %edi
 	movss	.LCPI0_0(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
@@ -1109,7 +1109,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, (%rsp)
 	movl	$67, %edi
 	movl	%eax, %esi
@@ -1117,7 +1117,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$67, %edi
@@ -1126,7 +1126,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$67, %edi
@@ -1135,7 +1135,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	shl_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -1145,7 +1145,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$68, %edi
@@ -1154,7 +1154,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
 	movq	%r14, (%rsp)
@@ -1164,7 +1164,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -64(%rbp)                 # 4-byte Spill
 	leaq	sext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -1174,7 +1174,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$69, %edi
@@ -1191,7 +1191,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$70, %edi
@@ -1271,7 +1271,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$74, %edi
@@ -1280,7 +1280,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$74, %edi
@@ -1289,7 +1289,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$74, %edi
@@ -1298,7 +1298,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	call_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$75, %edi
@@ -1307,7 +1307,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %edi
 	callq	_ZSt4sqrtf.8_u2_30fixp
 	movq	%rbx, (%rsp)
@@ -1317,7 +1317,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	uitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$76, %edi
@@ -1326,7 +1326,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid: # @_Z17euclideanDistanceP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
 	movl	$76, %edi
@@ -1442,7 +1442,7 @@ _Z11pickClusterP8RgbPixelP8Centroid:    # @_Z11pickClusterP8RgbPixelP8Centroid
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -1451,7 +1451,7 @@ _Z11pickClusterP8RgbPixelP8Centroid:    # @_Z11pickClusterP8RgbPixelP8Centroid
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	notb	%al
 	movzbl	%al, %esi
 	andl	$1, %esi
@@ -1462,7 +1462,7 @@ _Z11pickClusterP8RgbPixelP8Centroid:    # @_Z11pickClusterP8RgbPixelP8Centroid
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$24, %rsp
 	popq	%rbx
 	popq	%rbp
@@ -1506,7 +1506,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$90, %edi
@@ -1549,7 +1549,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$116, %edi
@@ -1558,7 +1558,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$116, %edi
@@ -1567,7 +1567,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	movq	-72(%rbp), %r15                 # 8-byte Reload
 .LBB2_1:                                # =>This Inner Loop Header: Depth=1
@@ -1578,7 +1578,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	icmp_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -1588,7 +1588,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$99, %edi
@@ -1597,7 +1597,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -1607,7 +1607,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movzbl	%al, %esi
@@ -1616,7 +1616,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB2_5
 # %bb.2:                                #   in Loop: Header=BB2_1 Depth=1
@@ -1632,7 +1632,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$103, %edi
@@ -1693,7 +1693,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r15, (%rsp)
 	movzbl	%al, %esi
 	movl	$109, %edi
@@ -1701,7 +1701,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB2_4
 # %bb.3:                                #   in Loop: Header=BB2_1 Depth=1
@@ -1713,7 +1713,7 @@ _Z13assignClusterP8RgbPixelP8Clusters:  # @_Z13assignClusterP8RgbPixelP8Clusters
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-64(%rbp), %rbx                 # 8-byte Reload
 	movl	%eax, 12(%rbx)
 	movl	$113, %edi
@@ -1803,7 +1803,7 @@ main:                                   # @main
 	movl	$1, %r9d
 	pushq	%rax
 	movq	%rax, %r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	leaq	(%rax,%rax,2), %rax
@@ -1823,7 +1823,7 @@ main:                                   # @main
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	shlq	$4, %rax
@@ -1841,7 +1841,7 @@ main:                                   # @main
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	shlq	$5, %rax
@@ -1858,7 +1858,7 @@ main:                                   # @main
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	addq	$15, %rax
@@ -1877,7 +1877,7 @@ main:                                   # @main
 	movl	$1, %r9d
 	pushq	%r14
 	movq	%r14, %r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	shlq	$5, %rax
@@ -1894,7 +1894,7 @@ main:                                   # @main
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	addq	$15, %rax
@@ -1913,7 +1913,7 @@ main:                                   # @main
 	movl	$1, %r9d
 	leaq	alloca_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	shlq	$4, %rax
@@ -1984,7 +1984,7 @@ main:                                   # @main
 	movl	$2, %r8d
 	movl	$2, %r9d
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	.cfi_escape 0x2e, 0x00
@@ -2018,7 +2018,7 @@ main:                                   # @main
 	movl	$1, %r8d
 	movl	$3, %r9d
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 .Ltmp12:
 	.cfi_escape 0x2e, 0x00
@@ -2167,7 +2167,7 @@ main:                                   # @main
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	.cfi_escape 0x2e, 0x00
@@ -2218,7 +2218,7 @@ main:                                   # @main
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r12d
 	.cfi_escape 0x2e, 0x00
@@ -2260,7 +2260,7 @@ main:                                   # @main
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r12d
 	.cfi_escape 0x2e, 0x00
@@ -2302,7 +2302,7 @@ main:                                   # @main
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r12d
 	.cfi_escape 0x2e, 0x00
@@ -2353,7 +2353,7 @@ main:                                   # @main
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	.cfi_escape 0x2e, 0x10
 	movl	$180, %edi
@@ -2525,7 +2525,7 @@ _ZN12AxBenchTimer20nanosecondsSinceInitEv: # @_ZN12AxBenchTimer20nanosecondsSinc
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r13d
 	shlq	$4, %r13
@@ -2543,7 +2543,7 @@ _ZN12AxBenchTimer20nanosecondsSinceInitEv: # @_ZN12AxBenchTimer20nanosecondsSinc
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %edi
 	movq	%r12, %rsi
@@ -2556,7 +2556,7 @@ _ZN12AxBenchTimer20nanosecondsSinceInitEv: # @_ZN12AxBenchTimer20nanosecondsSinc
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	8(%r14), %rsi
 	subq	$8, %rsp
@@ -2818,7 +2818,7 @@ _ZN12AxBenchTimer5resetEv:              # @_ZN12AxBenchTimer5resetEv
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %edi
 	movq	%rbx, %rsi
 	callq	clock_gettime@PLT
@@ -2829,7 +2829,7 @@ _ZN12AxBenchTimer5resetEv:              # @_ZN12AxBenchTimer5resetEv
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	popq	%rbx
 	popq	%r14
@@ -2866,7 +2866,7 @@ _Z12initRgbImageP8RgbImage:             # @_Z12initRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, (%rbx)
 	movq	%r14, (%rsp)
 	movl	$209, %edi
@@ -2875,7 +2875,7 @@ _Z12initRgbImageP8RgbImage:             # @_Z12initRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 4(%rbx)
 	xorps	%xmm0, %xmm0
 	movups	%xmm0, 8(%rbx)
@@ -2958,7 +2958,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, (%rsp)
 	movl	$230, %edi
 	movl	%eax, %esi
@@ -2966,7 +2966,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$230, %edi
@@ -2975,7 +2975,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setne	%sil
@@ -2985,7 +2985,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r14, (%rsp)
 	movzbl	%al, %esi
 	movl	$231, %edi
@@ -2993,7 +2993,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movl	$261, %ebx                      # imm = 0x105
 	testb	$1, %al
 	je	.LBB9_5
@@ -3008,7 +3008,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movq	%r15, (%rsp)
 	movl	$221, %edi
@@ -3017,7 +3017,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$221, %edi
@@ -3026,7 +3026,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setne	%sil
@@ -3036,7 +3036,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r14, (%rsp)
 	movzbl	%al, %esi
 	movl	$222, %edi
@@ -3044,7 +3044,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB9_10
 # %bb.3:                                #   in Loop: Header=BB9_2 Depth=1
@@ -3055,7 +3055,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$223, %edi
@@ -3064,7 +3064,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	sete	%sil
@@ -3074,7 +3074,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r14, (%rsp)
 	movzbl	%al, %esi
 	movl	$224, %edi
@@ -3082,7 +3082,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	jne	.LBB9_1
 # %bb.4:                                #   in Loop: Header=BB9_2 Depth=1
@@ -3093,7 +3093,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$225, %edi
@@ -3102,7 +3102,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	sete	%sil
@@ -3112,7 +3112,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r14, (%rsp)
 	movzbl	%al, %esi
 	movl	$226, %edi
@@ -3120,7 +3120,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	jne	.LBB9_1
 .LBB9_5:                                #   in Loop: Header=BB9_2 Depth=1
@@ -3131,7 +3131,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$234, %edi
@@ -3140,7 +3140,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	sete	%sil
@@ -3150,7 +3150,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r14, (%rsp)
 	movzbl	%al, %esi
 	movl	$235, %edi
@@ -3158,7 +3158,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	jne	.LBB9_7
 # %bb.6:                                #   in Loop: Header=BB9_2 Depth=1
@@ -3169,7 +3169,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$236, %edi
@@ -3178,7 +3178,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	sete	%sil
@@ -3188,7 +3188,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r14, (%rsp)
 	movzbl	%al, %esi
 	movl	$237, %edi
@@ -3196,7 +3196,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB9_9
 .LBB9_7:                                #   in Loop: Header=BB9_2 Depth=1
@@ -3226,7 +3226,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, (%rsp)
 	movl	$241, %edi
 	movl	%eax, %esi
@@ -3234,7 +3234,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$241, %edi
@@ -3243,7 +3243,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setne	%sil
@@ -3253,7 +3253,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r14, (%rsp)
 	movzbl	%al, %esi
 	movl	$242, %edi
@@ -3261,7 +3261,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	jne	.LBB9_10
 # %bb.8:                                #   in Loop: Header=BB9_2 Depth=1
@@ -3272,7 +3272,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$244, %edi
@@ -3281,7 +3281,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	sete	%sil
@@ -3291,7 +3291,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r14, (%rsp)
 	movzbl	%al, %esi
 	movl	$245, %edi
@@ -3299,7 +3299,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	jne	.LBB9_13
 .LBB9_9:                                #   in Loop: Header=BB9_2 Depth=1
@@ -3311,7 +3311,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%rbx, (%rsp)
 	movl	$254, %edi
 	movl	%eax, %esi
@@ -3330,7 +3330,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$255, %edi
@@ -3360,7 +3360,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$258, %edi                      # imm = 0x102
@@ -3369,7 +3369,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$258, %edi                      # imm = 0x102
@@ -3378,7 +3378,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	movl	$261, %ebx                      # imm = 0x105
 	jmp	.LBB9_2
@@ -3392,7 +3392,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$264, %edi                      # imm = 0x108
@@ -3421,7 +3421,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$40, %rsp
 	popq	%rbx
 	popq	%r12
@@ -3441,7 +3441,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%rbx, (%rsp)
 	movl	$246, %edi
 	movl	%eax, %esi
@@ -3460,7 +3460,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$247, %edi
@@ -3489,7 +3489,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$250, %edi
@@ -3498,7 +3498,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$250, %edi
@@ -3507,7 +3507,7 @@ _Z8readCellP8_IO_FILEPc:                # @_Z8readCellP8_IO_FILEPc
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	jmp	.LBB9_11
 .Lfunc_end9:
@@ -3588,7 +3588,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, -96(%rbp)                 # 4-byte Spill
 	movl	$270, %edi                      # imm = 0x10E
@@ -3633,7 +3633,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, -92(%rbp)                 # 4-byte Spill
 	movl	$272, %edi                      # imm = 0x110
@@ -3678,7 +3678,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r15d
 	subq	$8, %rsp
@@ -3690,7 +3690,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	shlq	$8, %rax
@@ -3713,7 +3713,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	leaq	br_namestr(%rip), %rbx
 	movzbl	%al, %esi
@@ -3723,7 +3723,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%rbx
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB10_1
@@ -3741,7 +3741,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%r12, %rdi
 	callq	atoi@PLT
@@ -3754,7 +3754,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	pushq	%r13
 	movq	%r13, %rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	leaq	store_namestr(%rip), %r15
 	movl	$285, %edi                      # imm = 0x11D
@@ -3764,7 +3764,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	-80(%rbp), %r13                 # 8-byte Reload
 	movl	%eax, (%r13)
@@ -3780,7 +3780,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%r12, %rdi
 	callq	atoi@PLT
@@ -3792,7 +3792,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$291, %edi                      # imm = 0x123
 	movl	%eax, %esi
@@ -3801,7 +3801,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, 4(%r13)
 	subq	$8, %rsp
@@ -3813,7 +3813,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	leaq	sext_namestr(%rip), %rbx
 	movl	$294, %edi                      # imm = 0x126
@@ -3823,7 +3823,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -3891,7 +3891,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	leaq	icmp_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$299, %edi                      # imm = 0x12B
@@ -3901,7 +3901,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB10_3
@@ -3919,7 +3919,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	-72(%rbp), %rdi                 # 8-byte Reload
 	callq	fclose@PLT
@@ -3946,7 +3946,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%ebx, %ebx
 	jmp	.LBB10_34
@@ -3966,7 +3966,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r13d
 	subq	$8, %rsp
@@ -3978,7 +3978,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	icmp_namestr(%rip), %r12
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -3989,7 +3989,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
@@ -4001,7 +4001,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$308, %edi                      # imm = 0x134
@@ -4011,7 +4011,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %r13
 	pushq	%r13
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB10_7
@@ -4026,7 +4026,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$311, %edi                      # imm = 0x137
 	movl	%eax, %esi
@@ -4036,7 +4036,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	sext_namestr(%rip), %r13
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -4101,7 +4101,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -4123,7 +4123,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -4146,7 +4146,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$322, %edi                      # imm = 0x142
@@ -4155,7 +4155,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	jne	.LBB10_7
@@ -4169,7 +4169,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	add_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -4180,7 +4180,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
 	subq	$8, %rsp
@@ -4192,7 +4192,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	pushq	%r14
 	leaq	load_namestr(%rip), %r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r15d
 	movq	-80(%rbp), %r13                 # 8-byte Reload
@@ -4207,7 +4207,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -4218,7 +4218,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
@@ -4231,7 +4231,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$329, %edi                      # imm = 0x149
@@ -4240,7 +4240,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB10_8
@@ -4257,7 +4257,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$331, %r15d                     # imm = 0x14B
 	movl	$331, %edi                      # imm = 0x14B
@@ -4268,7 +4268,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	add_namestr(%rip), %r12
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	leaq	icmp_namestr(%rip), %r14
@@ -4283,7 +4283,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
 	subq	$8, %rsp
@@ -4294,7 +4294,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -4305,7 +4305,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r14d
 	subq	$8, %rsp
@@ -4317,7 +4317,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r9d
 	leaq	icmp_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %r14d
@@ -4330,7 +4330,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$335, %edi                      # imm = 0x14F
@@ -4340,7 +4340,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB10_16
@@ -4354,7 +4354,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	sext_namestr(%rip), %r15
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -4377,7 +4377,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	jmp	.LBB10_14
@@ -4396,7 +4396,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -4407,7 +4407,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
 	subq	$8, %rsp
@@ -4418,7 +4418,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 .LBB10_9:                               # %.preheader6
@@ -4434,7 +4434,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	leaq	load_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r13d
 	subq	$8, %rsp
@@ -4446,7 +4446,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -4457,7 +4457,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
@@ -4470,7 +4470,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$353, %edi                      # imm = 0x161
@@ -4480,7 +4480,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	jne	.LBB10_10
@@ -4520,7 +4520,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$408, %edi                      # imm = 0x198
 	movl	%eax, %esi
@@ -4530,7 +4530,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	uitofp_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
@@ -4579,7 +4579,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -4603,7 +4603,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -4635,7 +4635,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -4657,7 +4657,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -4679,7 +4679,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	store_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, 12(%r12,%rbx,4)
 	subq	$8, %rsp
@@ -4691,7 +4691,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -4713,7 +4713,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -4744,7 +4744,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	add_namestr(%rip), %r12
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -4755,7 +4755,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
 	subq	$8, %rsp
@@ -4766,7 +4766,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	leaq	icmp_namestr(%rip), %r14
@@ -4783,7 +4783,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	leaq	load_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r13d
 	subq	$8, %rsp
@@ -4795,7 +4795,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -4806,7 +4806,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
@@ -4818,7 +4818,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$359, %edi                      # imm = 0x167
@@ -4828,7 +4828,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB10_27
@@ -4846,7 +4846,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%rbx, %rdi
 	callq	atoi@PLT
@@ -4858,7 +4858,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$364, %edi                      # imm = 0x16C
 	movl	%eax, %esi
@@ -4868,7 +4868,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	shl_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -4879,7 +4879,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
 	shll	%cl, %ebx
@@ -4891,7 +4891,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$365, %edi                      # imm = 0x16D
 	movl	%eax, %esi
@@ -4901,7 +4901,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	zext_namestr(%rip), %r15
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -4954,7 +4954,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -5037,7 +5037,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$370, %edi                      # imm = 0x172
 	movl	%eax, %esi
@@ -5047,7 +5047,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	uitofp_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
@@ -5096,7 +5096,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	sext_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -5118,7 +5118,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -5155,7 +5155,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%rbx, %rdi
 	callq	atoi@PLT
@@ -5167,7 +5167,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$383, %edi                      # imm = 0x17F
 	movl	%eax, %esi
@@ -5177,7 +5177,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	shl_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -5188,7 +5188,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
 	shll	%cl, %ebx
@@ -5200,7 +5200,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$384, %edi                      # imm = 0x180
 	movl	%eax, %esi
@@ -5210,7 +5210,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	zext_namestr(%rip), %r13
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -5263,7 +5263,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -5346,7 +5346,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$389, %edi                      # imm = 0x185
 	movl	%eax, %esi
@@ -5356,7 +5356,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	uitofp_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
@@ -5405,7 +5405,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	sext_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -5427,7 +5427,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -5463,7 +5463,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%rbx, %rdi
 	callq	atoi@PLT
@@ -5475,7 +5475,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$402, %edi                      # imm = 0x192
 	movl	%eax, %esi
@@ -5485,7 +5485,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	shl_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -5496,7 +5496,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
 	shll	%cl, %ebx
@@ -5508,7 +5508,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$403, %edi                      # imm = 0x193
 	movl	%eax, %esi
@@ -5518,7 +5518,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	zext_namestr(%rip), %r13
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -5571,7 +5571,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -5643,7 +5643,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%rbx, %rdi
 	callq	strlen@PLT
@@ -5712,7 +5712,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	leaq	icmp_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$450, %edi                      # imm = 0x1C2
@@ -5722,7 +5722,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB10_33
@@ -5738,7 +5738,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	.p2align	4, 0x90
 .LBB10_30:                              # =>This Inner Loop Header: Depth=1
@@ -5751,7 +5751,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	xorl	%r9d, %r9d
 	leaq	load_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r14d
 	subq	$8, %rsp
@@ -5763,7 +5763,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	icmp_namestr(%rip), %r13
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -5774,7 +5774,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
@@ -5786,7 +5786,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r13
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$457, %edi                      # imm = 0x1C9
@@ -5796,7 +5796,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB10_32
@@ -5810,7 +5810,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	sext_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -5834,7 +5834,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r9d
 	leaq	add_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -5845,7 +5845,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
 	subq	$8, %rsp
@@ -5856,7 +5856,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r15d
 	jmp	.LBB10_30
@@ -5883,7 +5883,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	leaq	call_namestr(%rip), %rax
 	pushq	%rax
 .LBB10_18:
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 .LBB10_34:
 	subq	$8, %rsp
@@ -5895,7 +5895,7 @@ _Z12loadRgbImagePKcP8RgbImagef:         # @_Z12loadRgbImagePKcP8RgbImagef
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	-40(%rbp), %rsp
 	popq	%rbx
 	popq	%r12
@@ -5949,7 +5949,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -5958,7 +5958,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB11_1
 # %bb.2:
@@ -5970,7 +5970,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movl	4(%r12), %esi
 	movq	%r13, (%rsp)
@@ -5979,7 +5979,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	call_namestr(%rip), %rax
 	movq	%rax, (%rsp)
@@ -5989,7 +5989,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$3, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	leaq	call_namestr(%rip), %rax
 	movq	%rax, (%rsp)
@@ -5999,7 +5999,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$4, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	.L.str.10(%rip), %rsi
 	movq	%r15, -72(%rbp)                 # 8-byte Spill
 	movq	%r15, %rdi
@@ -6015,7 +6015,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%ebx, %ebx
 	movq	%r12, -88(%rbp)                 # 8-byte Spill
 	jmp	.LBB11_3
@@ -6029,7 +6029,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$539, %edi                      # imm = 0x21B
@@ -6046,7 +6046,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$542, %edi                      # imm = 0x21E
@@ -6105,7 +6105,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -52(%rbp)                 # 4-byte Spill
 	movq	-88(%rbp), %r12                 # 8-byte Reload
 	movq	8(%r12), %rbx
@@ -6116,7 +6116,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$550, %edi                      # imm = 0x226
@@ -6134,7 +6134,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$553, %edi                      # imm = 0x229
@@ -6193,7 +6193,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	movq	8(%r12), %rbx
 	movq	%r15, (%rsp)
@@ -6203,7 +6203,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$561, %edi                      # imm = 0x231
@@ -6220,7 +6220,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$564, %edi                      # imm = 0x234
@@ -6279,7 +6279,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	call_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -6289,7 +6289,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$4, %r8d
 	movl	$3, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	%r13, (%rsp)
 	movl	$570, %edi                      # imm = 0x23A
@@ -6298,7 +6298,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$2, %ecx
 	movl	$4, %r8d
 	movl	$4, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$570, %edi                      # imm = 0x23A
@@ -6307,7 +6307,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$3, %ecx
 	movl	$4, %r8d
 	movl	$5, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-72(%rbp), %rdi                 # 8-byte Reload
 	leaq	.L.str.12(%rip), %rsi
 	movl	%r15d, %edx
@@ -6323,7 +6323,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$4, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$572, %edi                      # imm = 0x23C
@@ -6332,7 +6332,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$572, %edi                      # imm = 0x23C
@@ -6341,7 +6341,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$572, %edi                      # imm = 0x23C
@@ -6350,7 +6350,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 .LBB11_3:                               # =>This Loop Header: Depth=1
                                         #     Child Loop BB11_5 Depth 2
@@ -6362,7 +6362,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	icmp_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -6373,7 +6373,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$491, %edi                      # imm = 0x1EB
@@ -6382,7 +6382,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -6392,7 +6392,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -6401,7 +6401,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB11_8
 # %bb.4:                                # %.preheader.preheader
@@ -6419,7 +6419,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$497, %edi                      # imm = 0x1F1
@@ -6428,7 +6428,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$497, %edi                      # imm = 0x1F1
@@ -6437,7 +6437,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$497, %edi                      # imm = 0x1F1
@@ -6446,7 +6446,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	icmp_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -6456,7 +6456,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$498, %edi                      # imm = 0x1F2
@@ -6465,7 +6465,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -6475,7 +6475,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -6484,7 +6484,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	8(%r15), %rbx
 	leaq	sext_namestr(%rip), %r15
 	testb	$1, %al
@@ -6497,7 +6497,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$502, %edi                      # imm = 0x1F6
@@ -6515,7 +6515,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$505, %edi                      # imm = 0x1F9
@@ -6574,7 +6574,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -52(%rbp)                 # 4-byte Spill
 	movq	-88(%rbp), %r12                 # 8-byte Reload
 	movq	8(%r12), %rbx
@@ -6586,7 +6586,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$513, %edi                      # imm = 0x201
@@ -6604,7 +6604,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$516, %edi                      # imm = 0x204
@@ -6663,7 +6663,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	movq	8(%r12), %rbx
 	movq	%r15, (%rsp)
@@ -6673,7 +6673,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$524, %edi                      # imm = 0x20C
@@ -6690,7 +6690,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$527, %edi                      # imm = 0x20F
@@ -6749,7 +6749,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r12, %r15
 	movl	%eax, %r12d
 	leaq	call_namestr(%rip), %r14
@@ -6760,7 +6760,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$4, %r8d
 	movl	$3, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movq	%r14, (%rsp)
 	movl	$533, %edi                      # imm = 0x215
@@ -6769,7 +6769,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$2, %ecx
 	movl	$4, %r8d
 	movl	$4, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$533, %edi                      # imm = 0x215
@@ -6778,7 +6778,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$3, %ecx
 	movl	$4, %r8d
 	movl	$5, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-72(%rbp), %rdi                 # 8-byte Reload
 	leaq	.L.str.11(%rip), %rsi
 	movl	%r13d, %edx
@@ -6793,7 +6793,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$4, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$535, %edi                      # imm = 0x217
@@ -6802,7 +6802,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$535, %edi                      # imm = 0x217
@@ -6811,7 +6811,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$535, %edi                      # imm = 0x217
@@ -6820,7 +6820,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	jmp	.LBB11_5
 .LBB11_1:                               # %.split3
@@ -6848,7 +6848,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%rbx, %rdi
 	callq	fclose@PLT
 	movq	%r15, (%rsp)
@@ -6859,7 +6859,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ret_namestr(%rip), %rax
 	movq	%rax, (%rsp)
 	movl	$580, %edi                      # imm = 0x244
@@ -6868,7 +6868,7 @@ _Z12saveRgbImageP8RgbImagePKcf:         # @_Z12saveRgbImageP8RgbImagePKcf
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$56, %rsp
 	popq	%rbx
 	popq	%r12
@@ -6915,7 +6915,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movzbl	%al, %esi
@@ -6924,7 +6924,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB12_2
 # %bb.1:
@@ -6941,7 +6941,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%rbx, (%rsp)
 	movzbl	%al, %esi
 	movl	$592, %edi                      # imm = 0x250
@@ -6949,7 +6949,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB12_3
 # %bb.8:
@@ -6973,7 +6973,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$613, %edi                      # imm = 0x265
@@ -6982,7 +6982,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$613, %edi                      # imm = 0x265
@@ -6991,7 +6991,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 .LBB12_3:                               # =>This Inner Loop Header: Depth=1
 	movl	4(%r14), %esi
@@ -7002,7 +7002,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	icmp_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -7012,7 +7012,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$598, %edi                      # imm = 0x256
@@ -7021,7 +7021,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -7031,7 +7031,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movzbl	%al, %esi
@@ -7040,7 +7040,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB12_7
 # %bb.4:                                #   in Loop: Header=BB12_3 Depth=1
@@ -7053,7 +7053,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%rbx, (%rsp)
 	movzbl	%al, %esi
 	movl	$603, %edi                      # imm = 0x25B
@@ -7061,7 +7061,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB12_6
 # %bb.5:                                #   in Loop: Header=BB12_3 Depth=1
@@ -7074,7 +7074,7 @@ _Z12freeRgbImageP8RgbImage:             # @_Z12freeRgbImageP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$606, %edi                      # imm = 0x25E
@@ -7147,7 +7147,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%r15, (%rsp)
 	movl	$700, %edi                      # imm = 0x2BC
@@ -7156,7 +7156,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %r14d
 	movq	%r15, (%rsp)
 	movl	$700, %edi                      # imm = 0x2BC
@@ -7165,7 +7165,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%rbx, %r15
 	leaq	load_namestr(%rip), %rbx
@@ -7178,7 +7178,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	icmp_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -7189,7 +7189,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%r12, (%rsp)
 	movl	$625, %edi                      # imm = 0x271
@@ -7198,7 +7198,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r14d
 	setl	%sil
@@ -7208,7 +7208,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -7217,7 +7217,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB13_6
 # %bb.2:                                # %.preheader.preheader
@@ -7234,7 +7234,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, %rbx
 	movl	%eax, %r12d
 	leaq	icmp_namestr(%rip), %r14
@@ -7245,7 +7245,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	%r14, (%rsp)
 	movl	$631, %edi                      # imm = 0x277
@@ -7254,7 +7254,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r15d
 	setl	%sil
@@ -7264,7 +7264,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -7273,7 +7273,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB13_5
 # %bb.4:                                #   in Loop: Header=BB13_3 Depth=2
@@ -7287,7 +7287,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$635, %edi                      # imm = 0x27B
@@ -7305,7 +7305,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$638, %edi                      # imm = 0x27E
@@ -7333,7 +7333,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$644, %edi                      # imm = 0x284
@@ -7351,7 +7351,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$647, %edi                      # imm = 0x287
@@ -7412,7 +7412,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movq	%rbx, %r13
@@ -7430,7 +7430,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$658, %edi                      # imm = 0x292
@@ -7497,7 +7497,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$667, %edi                      # imm = 0x29B
@@ -7515,7 +7515,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$670, %edi                      # imm = 0x29E
@@ -7583,7 +7583,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movq	%rbx, %r13
@@ -7601,7 +7601,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$681, %edi                      # imm = 0x2A9
@@ -7667,7 +7667,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$689, %edi                      # imm = 0x2B1
@@ -7684,7 +7684,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$692, %edi                      # imm = 0x2B4
@@ -7712,7 +7712,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$697, %edi                      # imm = 0x2B9
@@ -7721,7 +7721,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$697, %edi                      # imm = 0x2B9
@@ -7730,7 +7730,7 @@ _Z13makeGrayscaleP8RgbImage:            # @_Z13makeGrayscaleP8RgbImage
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movq	%r14, %r15
 	leaq	load_namestr(%rip), %rbx
@@ -7786,7 +7786,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$703, %edi                      # imm = 0x2BF
@@ -7844,7 +7844,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -7853,7 +7853,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB14_2
 # %bb.1:                                # %.split3
@@ -7868,7 +7868,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	jmp	.LBB14_5
 .LBB14_2:
 	leaq	store_namestr(%rip), %rax
@@ -7879,7 +7879,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%r13, -64(%rbp)                 # 8-byte Spill
 	movl	%eax, (%r13)
@@ -7893,7 +7893,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	icmp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -7903,7 +7903,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%rbx, (%rsp)
 	movl	$719, %edi                      # imm = 0x2CF
@@ -7912,7 +7912,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r14d
 	setl	%sil
@@ -7922,7 +7922,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -7931,7 +7931,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB14_4
 # %bb.6:                                #   in Loop: Header=BB14_3 Depth=1
@@ -7943,7 +7943,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$722, %edi                      # imm = 0x2D2
@@ -7952,7 +7952,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	cvtsi2ss	%eax, %xmm0
 	movl	$722, %edi                      # imm = 0x2D2
 	movl	$44, %esi
@@ -8026,7 +8026,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$727, %edi                      # imm = 0x2D7
@@ -8057,7 +8057,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$732, %edi                      # imm = 0x2DC
@@ -8066,7 +8066,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorps	%xmm0, %xmm0
 	cvtsi2ss	%eax, %xmm0
 	movl	$732, %edi                      # imm = 0x2DC
@@ -8141,7 +8141,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$737, %edi                      # imm = 0x2E1
@@ -8171,7 +8171,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$742, %edi                      # imm = 0x2E6
@@ -8180,7 +8180,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorps	%xmm0, %xmm0
 	cvtsi2ss	%eax, %xmm0
 	movl	$742, %edi                      # imm = 0x2E6
@@ -8253,7 +8253,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$747, %edi                      # imm = 0x2EB
@@ -8284,7 +8284,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$753, %edi                      # imm = 0x2F1
@@ -8302,7 +8302,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 12(%r14,%rbx)
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -8312,7 +8312,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$758, %edi                      # imm = 0x2F6
@@ -8321,7 +8321,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$758, %edi                      # imm = 0x2F6
@@ -8331,7 +8331,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movl	(%r13), %esi
 	jmp	.LBB14_3
@@ -8346,7 +8346,7 @@ _Z12initClustersP8Clustersif:           # @_Z12initClustersP8Clustersif
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$40, %rsp
 	popq	%rbx
 	popq	%r12
@@ -8385,7 +8385,7 @@ _Z12freeClustersP8Clusters:             # @_Z12freeClustersP8Clusters
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -8394,7 +8394,7 @@ _Z12freeClustersP8Clusters:             # @_Z12freeClustersP8Clusters
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB15_1
 # %bb.2:
@@ -8461,7 +8461,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1054, %edi                     # imm = 0x41E
@@ -8470,7 +8470,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1054, %edi                     # imm = 0x41E
@@ -8479,7 +8479,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	icmp_namestr(%rip), %rbx
 .LBB16_1:                               # =>This Loop Header: Depth=1
                                         #     Child Loop BB16_2 Depth 2
@@ -8496,7 +8496,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%rbx, (%rsp)
 	movl	$773, %edi                      # imm = 0x305
@@ -8505,7 +8505,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r14d
 	setl	%sil
@@ -8515,7 +8515,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -8524,7 +8524,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	xorl	%r13d, %r13d
 	testb	$1, %al
 	jne	.LBB16_2
@@ -8539,7 +8539,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$800, %edi                      # imm = 0x320
@@ -8548,7 +8548,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$800, %edi                      # imm = 0x320
@@ -8557,7 +8557,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	load_namestr(%rip), %r15
 .LBB16_2:                               # %.preheader7
@@ -8572,7 +8572,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	icmp_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -8582,7 +8582,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$779, %edi                      # imm = 0x30B
@@ -8591,7 +8591,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -8601,7 +8601,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -8610,7 +8610,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB16_3
 # %bb.12:                               # %.preheader3.preheader
@@ -8631,7 +8631,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	icmp_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -8641,7 +8641,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$785, %edi                      # imm = 0x311
@@ -8650,7 +8650,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -8660,7 +8660,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %r13
 	movq	%r13, (%rsp)
 	movzbl	%al, %esi
@@ -8669,7 +8669,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB16_15
 # %bb.14:                               #   in Loop: Header=BB16_13 Depth=3
@@ -8682,7 +8682,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$789, %edi                      # imm = 0x315
@@ -8699,7 +8699,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$792, %edi                      # imm = 0x318
@@ -8720,7 +8720,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$797, %edi                      # imm = 0x31D
@@ -8729,7 +8729,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$797, %edi                      # imm = 0x31D
@@ -8738,7 +8738,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	load_namestr(%rip), %rax
 	jmp	.LBB16_13
@@ -8759,7 +8759,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	icmp_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -8769,7 +8769,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$806, %edi                      # imm = 0x326
@@ -8779,7 +8779,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -8789,7 +8789,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -8798,7 +8798,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB16_5
 # %bb.16:                               #   in Loop: Header=BB16_4 Depth=2
@@ -8812,7 +8812,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$810, %edi                      # imm = 0x32A
@@ -8840,7 +8840,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$816, %edi                      # imm = 0x330
@@ -8868,7 +8868,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$822, %edi                      # imm = 0x336
@@ -8896,7 +8896,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$828, %edi                      # imm = 0x33C
@@ -8915,7 +8915,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 12(%r15,%rbx)
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -8925,7 +8925,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$833, %edi                      # imm = 0x341
@@ -8934,7 +8934,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$833, %edi                      # imm = 0x341
@@ -8943,7 +8943,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	jmp	.LBB16_4
 	.p2align	4, 0x90
@@ -8962,7 +8962,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$964, %edi                      # imm = 0x3C4
@@ -8971,7 +8971,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$964, %edi                      # imm = 0x3C4
@@ -8980,7 +8980,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 .LBB16_6:                               # %.preheader5
                                         #   Parent Loop BB16_1 Depth=1
@@ -8994,7 +8994,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%r15, (%rsp)
 	movl	$839, %edi                      # imm = 0x347
@@ -9003,7 +9003,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$839, %edi                      # imm = 0x347
@@ -9012,7 +9012,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -9022,7 +9022,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -9031,7 +9031,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB16_7
 # %bb.17:                               # %.preheader2.preheader
@@ -9051,7 +9051,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%r15, (%rsp)
 	movl	$845, %edi                      # imm = 0x34D
@@ -9061,7 +9061,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$845, %edi                      # imm = 0x34D
@@ -9070,7 +9070,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -9080,7 +9080,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -9089,7 +9089,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB16_20
 # %bb.19:                               #   in Loop: Header=BB16_18 Depth=3
@@ -9104,7 +9104,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$849, %edi                      # imm = 0x351
@@ -9123,7 +9123,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movq	%rbx, %r12
@@ -9156,7 +9156,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$860, %edi                      # imm = 0x35C
@@ -9173,7 +9173,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$863, %edi                      # imm = 0x35F
@@ -9190,7 +9190,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r12, (%rsp)
 	movl	$867, %edi                      # imm = 0x363
 	movl	%eax, %esi
@@ -9198,7 +9198,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$867, %edi                      # imm = 0x363
@@ -9261,7 +9261,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	$873, %edi                      # imm = 0x369
 	movss	.LCPI16_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -9303,7 +9303,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	add_namestr(%rip), %r15
 	movq	%r15, (%rsp)
@@ -9313,7 +9313,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$875, %edi                      # imm = 0x36B
@@ -9322,7 +9322,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$875, %edi                      # imm = 0x36B
@@ -9331,7 +9331,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$876, %edi                      # imm = 0x36C
@@ -9340,7 +9340,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorps	%xmm0, %xmm0
 	cvtsi2ss	%eax, %xmm0
 	movl	$876, %edi                      # imm = 0x36C
@@ -9398,7 +9398,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movq	%rbx, %r15
@@ -9417,7 +9417,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$884, %edi                      # imm = 0x374
@@ -9448,7 +9448,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$892, %edi                      # imm = 0x37C
@@ -9465,7 +9465,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$895, %edi                      # imm = 0x37F
@@ -9483,7 +9483,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, (%rsp)
 	movl	$899, %edi                      # imm = 0x383
 	movl	%eax, %esi
@@ -9491,7 +9491,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$899, %edi                      # imm = 0x383
@@ -9554,7 +9554,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movl	$905, %edi                      # imm = 0x389
 	movss	.LCPI16_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -9596,7 +9596,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	add_namestr(%rip), %r15
 	movq	%r15, (%rsp)
@@ -9606,7 +9606,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$907, %edi                      # imm = 0x38B
@@ -9615,7 +9615,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$907, %edi                      # imm = 0x38B
@@ -9624,7 +9624,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$908, %edi                      # imm = 0x38C
@@ -9633,7 +9633,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorps	%xmm0, %xmm0
 	cvtsi2ss	%eax, %xmm0
 	movl	$908, %edi                      # imm = 0x38C
@@ -9691,7 +9691,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movq	%rbx, %r15
@@ -9710,7 +9710,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$916, %edi                      # imm = 0x394
@@ -9741,7 +9741,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$924, %edi                      # imm = 0x39C
@@ -9758,7 +9758,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$927, %edi                      # imm = 0x39F
@@ -9776,7 +9776,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, (%rsp)
 	movl	$931, %edi                      # imm = 0x3A3
 	movl	%eax, %esi
@@ -9784,7 +9784,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$931, %edi                      # imm = 0x3A3
@@ -9846,7 +9846,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movl	$937, %edi                      # imm = 0x3A9
 	movss	.LCPI16_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -9888,7 +9888,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	add_namestr(%rip), %r15
 	movq	%r15, (%rsp)
@@ -9898,7 +9898,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, %r12
 	movq	%r15, (%rsp)
@@ -9908,7 +9908,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$939, %edi                      # imm = 0x3AB
@@ -9917,7 +9917,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$940, %edi                      # imm = 0x3AC
@@ -9926,7 +9926,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorps	%xmm0, %xmm0
 	cvtsi2ss	%eax, %xmm0
 	movl	$940, %edi                      # imm = 0x3AC
@@ -9985,7 +9985,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$947, %edi                      # imm = 0x3B3
@@ -10003,7 +10003,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$950, %edi                      # imm = 0x3B6
@@ -10021,7 +10021,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r14, (%rsp)
 	movl	$954, %edi                      # imm = 0x3BA
 	movl	%eax, %esi
@@ -10029,7 +10029,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$954, %edi                      # imm = 0x3BA
@@ -10047,7 +10047,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r12, (%rsp)
 	movl	$958, %edi                      # imm = 0x3BE
 	movl	%eax, %esi
@@ -10055,7 +10055,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$958, %edi                      # imm = 0x3BE
@@ -10064,7 +10064,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$958, %edi                      # imm = 0x3BE
@@ -10073,7 +10073,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$959, %edi                      # imm = 0x3BF
@@ -10082,7 +10082,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 12(%r15,%r14)
 	leaq	icmp_namestr(%rip), %r15
 	movq	%r12, (%rsp)
@@ -10092,7 +10092,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$961, %edi                      # imm = 0x3C1
@@ -10101,7 +10101,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r12, (%rsp)
 	leaq	load_namestr(%rip), %r13
@@ -10111,7 +10111,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	jmp	.LBB16_18
 	.p2align	4, 0x90
@@ -10129,7 +10129,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1051, %edi                     # imm = 0x41B
@@ -10138,7 +10138,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1051, %edi                     # imm = 0x41B
@@ -10147,7 +10147,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	leaq	load_namestr(%rip), %r13
 .LBB16_8:                               # %.preheader4
@@ -10161,7 +10161,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%r13, %r15
 	leaq	icmp_namestr(%rip), %r13
@@ -10173,7 +10173,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$970, %edi                      # imm = 0x3CA
@@ -10182,7 +10182,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -10192,7 +10192,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %r13
 	movq	%r13, (%rsp)
 	movzbl	%al, %esi
@@ -10201,7 +10201,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB16_21
 # %bb.9:                                #   in Loop: Header=BB16_8 Depth=2
@@ -10215,7 +10215,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$974, %edi                      # imm = 0x3CE
@@ -10232,7 +10232,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	icmp_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$978, %edi                      # imm = 0x3D2
@@ -10241,7 +10241,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$978, %edi                      # imm = 0x3D2
@@ -10250,7 +10250,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setne	%sil
@@ -10260,7 +10260,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r13, (%rsp)
 	movzbl	%al, %esi
 	movl	$979, %edi                      # imm = 0x3D3
@@ -10268,7 +10268,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB16_11
 # %bb.10:                               #   in Loop: Header=BB16_8 Depth=2
@@ -10282,7 +10282,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$982, %edi                      # imm = 0x3D6
@@ -10343,7 +10343,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	(%r13), %r15
 	leaq	sext_namestr(%rip), %rbx
@@ -10354,7 +10354,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$990, %edi                      # imm = 0x3DE
@@ -10372,7 +10372,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%r12d, -44(%rbp)                # 4-byte Spill
 	movl	%eax, %r12d
 	leaq	sdiv_namestr(%rip), %rax
@@ -10384,7 +10384,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$994, %edi                      # imm = 0x3E2
@@ -10393,7 +10393,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	movl	%ebx, %eax
 	cltd
@@ -10405,7 +10405,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$995, %edi                      # imm = 0x3E3
@@ -10414,7 +10414,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	cvtsi2ss	%eax, %xmm0
 	movl	$995, %edi                      # imm = 0x3E3
 	movl	$44, %esi
@@ -10462,7 +10462,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$999, %edi                      # imm = 0x3E7
@@ -10491,7 +10491,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1005, %edi                     # imm = 0x3ED
@@ -10553,7 +10553,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	(%r12), %r13
 	leaq	sext_namestr(%rip), %rbx
@@ -10564,7 +10564,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1013, %edi                     # imm = 0x3F5
@@ -10581,7 +10581,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	sdiv_namestr(%rip), %r15
 	movq	%r15, (%rsp)
@@ -10591,7 +10591,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$1017, %edi                     # imm = 0x3F9
@@ -10600,7 +10600,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	movl	%ebx, %eax
 	cltd
@@ -10612,7 +10612,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1018, %edi                     # imm = 0x3FA
@@ -10621,7 +10621,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	cvtsi2ss	%eax, %xmm0
 	movl	$1018, %edi                     # imm = 0x3FA
 	movl	$44, %esi
@@ -10669,7 +10669,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movq	%rbx, %r12
@@ -10699,7 +10699,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movq	%r12, %r13
@@ -10762,7 +10762,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	(%r15), %rbx
 	movq	%r13, (%rsp)
@@ -10772,7 +10772,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1036, %edi                     # imm = 0x40C
@@ -10789,7 +10789,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	sdiv_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -10799,7 +10799,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$1040, %edi                     # imm = 0x410
@@ -10809,7 +10809,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	movl	%ebx, %eax
 	cltd
@@ -10821,7 +10821,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1041, %edi                     # imm = 0x411
@@ -10830,7 +10830,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	cvtsi2ss	%eax, %xmm0
 	movl	$1041, %edi                     # imm = 0x411
 	movl	$44, %esi
@@ -10877,7 +10877,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1045, %edi                     # imm = 0x415
@@ -10909,7 +10909,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1156, %edi                     # imm = 0x484
@@ -10918,7 +10918,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1156, %edi                     # imm = 0x484
@@ -10927,7 +10927,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	icmp_namestr(%rip), %rbx
 	leaq	load_namestr(%rip), %r15
@@ -10942,7 +10942,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%rbx, (%rsp)
 	movl	$1060, %edi                     # imm = 0x424
@@ -10951,7 +10951,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	%rbx, (%rsp)
 	movl	$1060, %edi                     # imm = 0x424
@@ -10960,7 +10960,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r12d
 	setl	%sil
@@ -10970,7 +10970,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -10979,7 +10979,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB16_27
 # %bb.24:                               # %.preheader.preheader
@@ -10999,7 +10999,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	icmp_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -11009,7 +11009,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$1066, %edi                     # imm = 0x42A
@@ -11018,7 +11018,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -11028,7 +11028,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %r13
 	movq	%r13, (%rsp)
 	movzbl	%al, %esi
@@ -11037,7 +11037,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB16_22
 # %bb.26:                               #   in Loop: Header=BB16_25 Depth=2
@@ -11052,7 +11052,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1072, %edi                     # imm = 0x430
@@ -11069,7 +11069,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1075, %edi                     # imm = 0x433
@@ -11087,7 +11087,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r13, (%rsp)
 	movl	$1079, %edi                     # imm = 0x437
 	movl	%eax, %esi
@@ -11095,7 +11095,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1079, %edi                     # imm = 0x437
@@ -11157,7 +11157,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1085, %edi                     # imm = 0x43D
@@ -11166,7 +11166,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorps	%xmm0, %xmm0
 	cvtsi2ss	%eax, %xmm0
 	movl	$1085, %edi                     # imm = 0x43D
@@ -11215,7 +11215,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1089, %edi                     # imm = 0x441
@@ -11233,7 +11233,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1092, %edi                     # imm = 0x444
@@ -11264,7 +11264,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1100, %edi                     # imm = 0x44C
@@ -11281,7 +11281,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1103, %edi                     # imm = 0x44F
@@ -11299,7 +11299,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r13, (%rsp)
 	movl	$1107, %edi                     # imm = 0x453
 	movl	%eax, %esi
@@ -11307,7 +11307,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1107, %edi                     # imm = 0x453
@@ -11368,7 +11368,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1113, %edi                     # imm = 0x459
@@ -11377,7 +11377,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorps	%xmm0, %xmm0
 	cvtsi2ss	%eax, %xmm0
 	movl	$1113, %edi                     # imm = 0x459
@@ -11426,7 +11426,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1117, %edi                     # imm = 0x45D
@@ -11444,7 +11444,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1120, %edi                     # imm = 0x460
@@ -11475,7 +11475,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1128, %edi                     # imm = 0x468
@@ -11492,7 +11492,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1131, %edi                     # imm = 0x46B
@@ -11510,7 +11510,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r13, (%rsp)
 	movl	$1135, %edi                     # imm = 0x46F
 	movl	%eax, %esi
@@ -11518,7 +11518,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1135, %edi                     # imm = 0x46F
@@ -11580,7 +11580,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1141, %edi                     # imm = 0x475
@@ -11589,7 +11589,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorps	%xmm0, %xmm0
 	cvtsi2ss	%eax, %xmm0
 	movl	$1141, %edi                     # imm = 0x475
@@ -11636,7 +11636,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1145, %edi                     # imm = 0x479
@@ -11653,7 +11653,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1148, %edi                     # imm = 0x47C
@@ -11681,7 +11681,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1153, %edi                     # imm = 0x481
@@ -11690,7 +11690,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1153, %edi                     # imm = 0x481
@@ -11699,7 +11699,7 @@ _Z12segmentImageP8RgbImageP8Clustersi:  # @_Z12segmentImageP8RgbImageP8Clustersi
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	jmp	.LBB16_25
 .LBB16_27:
@@ -12953,7 +12953,7 @@ _Z12freeClustersP8Clusters.5_fixp:      # @_Z12freeClustersP8Clusters.5_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -12962,7 +12962,7 @@ _Z12freeClustersP8Clusters.5_fixp:      # @_Z12freeClustersP8Clusters.5_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB21_1
 # %bb.2:
@@ -13055,7 +13055,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -84(%rbp)                 # 4-byte Spill
 	movl	$1284, %edi                     # imm = 0x504
 	movss	.LCPI22_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -13098,7 +13098,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -80(%rbp)                 # 4-byte Spill
 	movl	$1286, %edi                     # imm = 0x506
 	movss	.LCPI22_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -13141,7 +13141,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -76(%rbp)                 # 4-byte Spill
 	leaq	sext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -13151,7 +13151,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1288, %edi                     # imm = 0x508
@@ -13209,7 +13209,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -13218,7 +13218,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB22_2
 # %bb.1:                                # %.split3
@@ -13233,7 +13233,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	jmp	.LBB22_5
 .LBB22_2:
 	leaq	store_namestr(%rip), %rax
@@ -13244,7 +13244,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%r12, -72(%rbp)                 # 8-byte Spill
 	movl	%eax, (%r12)
@@ -13258,7 +13258,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	icmp_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -13268,7 +13268,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1306, %edi                     # imm = 0x51A
@@ -13277,7 +13277,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -13287,7 +13287,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -13296,7 +13296,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB22_4
 # %bb.6:                                #   in Loop: Header=BB22_3 Depth=1
@@ -13309,7 +13309,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1309, %edi                     # imm = 0x51D
@@ -13318,7 +13318,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	cvtsi2ss	%eax, %xmm0
 	movl	$1309, %edi                     # imm = 0x51D
 	movl	$44, %esi
@@ -13399,7 +13399,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	zext_namestr(%rip), %r13
 	movq	%r13, (%rsp)
 	movl	$1313, %edi                     # imm = 0x521
@@ -13408,7 +13408,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%r13, (%rsp)
 	movl	$1313, %edi                     # imm = 0x521
@@ -13425,7 +13425,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%r13, (%rsp)
 	movl	$1314, %edi                     # imm = 0x522
@@ -13510,7 +13510,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	-72(%rbp), %rax                 # 8-byte Reload
 	movq	8(%rax), %r13
@@ -13523,7 +13523,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1320, %edi                     # imm = 0x528
@@ -13542,7 +13542,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1323, %edi                     # imm = 0x52B
@@ -13551,7 +13551,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shrl	%cl, %ebx
 	movq	%r14, (%rsp)
@@ -13561,7 +13561,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$1324, %edi                     # imm = 0x52C
@@ -13570,7 +13570,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, (%r13,%r15)
 	callq	rand@PLT
 	leaq	call_namestr(%rip), %rcx
@@ -13581,7 +13581,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1326, %edi                     # imm = 0x52E
@@ -13590,7 +13590,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	cvtsi2ss	%eax, %xmm0
 	movl	$1326, %edi                     # imm = 0x52E
 	movl	$44, %esi
@@ -13671,7 +13671,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	zext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1330, %edi                     # imm = 0x532
@@ -13680,7 +13680,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$1330, %edi                     # imm = 0x532
@@ -13697,7 +13697,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$1331, %edi                     # imm = 0x533
@@ -13778,7 +13778,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	-72(%rbp), %rax                 # 8-byte Reload
 	movq	8(%rax), %r14
@@ -13790,7 +13790,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1337, %edi                     # imm = 0x539
@@ -13808,7 +13808,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$1340, %edi                     # imm = 0x53C
@@ -13817,7 +13817,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shrl	%cl, %ebx
 	movq	%r13, (%rsp)
@@ -13827,7 +13827,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$1341, %edi                     # imm = 0x53D
@@ -13836,7 +13836,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 4(%r14,%r12)
 	callq	rand@PLT
 	leaq	call_namestr(%rip), %rcx
@@ -13847,7 +13847,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1343, %edi                     # imm = 0x53F
@@ -13856,7 +13856,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	cvtsi2ss	%eax, %xmm0
 	movl	$1343, %edi                     # imm = 0x53F
 	movl	$44, %esi
@@ -13937,7 +13937,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	zext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1347, %edi                     # imm = 0x543
@@ -13946,7 +13946,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$1347, %edi                     # imm = 0x543
@@ -13963,7 +13963,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$1348, %edi                     # imm = 0x544
@@ -14044,7 +14044,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	-72(%rbp), %r13                 # 8-byte Reload
 	movq	8(%r13), %rax
@@ -14057,7 +14057,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1354, %edi                     # imm = 0x54A
@@ -14075,7 +14075,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1357, %edi                     # imm = 0x54D
@@ -14084,7 +14084,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shrl	%cl, %ebx
 	movq	%r14, (%rsp)
@@ -14094,7 +14094,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$1358, %edi                     # imm = 0x54E
@@ -14103,7 +14103,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-56(%rbp), %rcx                 # 8-byte Reload
 	movl	%eax, 8(%rcx,%r12)
 	movq	8(%r13), %r14
@@ -14116,7 +14116,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1361, %edi                     # imm = 0x551
@@ -14135,7 +14135,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 12(%r14,%rbx)
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -14145,7 +14145,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1366, %edi                     # imm = 0x556
@@ -14154,7 +14154,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1366, %edi                     # imm = 0x556
@@ -14163,7 +14163,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movl	(%r13), %esi
 	jmp	.LBB22_3
@@ -14178,7 +14178,7 @@ _Z12initClustersP8Clustersif.7_fixp:    # @_Z12initClustersP8Clustersif.7_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$56, %rsp
 	popq	%rbx
 	popq	%r12
@@ -14224,7 +14224,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movzbl	%al, %esi
@@ -14233,7 +14233,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB23_2
 # %bb.1:
@@ -14250,7 +14250,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%rbx, (%rsp)
 	movzbl	%al, %esi
 	movl	$1383, %edi                     # imm = 0x567
@@ -14258,7 +14258,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB23_3
 # %bb.8:
@@ -14282,7 +14282,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1406, %edi                     # imm = 0x57E
@@ -14291,7 +14291,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1406, %edi                     # imm = 0x57E
@@ -14300,7 +14300,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 .LBB23_3:                               # =>This Inner Loop Header: Depth=1
 	movl	4(%r14), %esi
@@ -14311,7 +14311,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	icmp_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -14321,7 +14321,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1389, %edi                     # imm = 0x56D
@@ -14330,7 +14330,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -14340,7 +14340,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movzbl	%al, %esi
@@ -14349,7 +14349,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB23_7
 # %bb.4:                                #   in Loop: Header=BB23_3 Depth=1
@@ -14362,7 +14362,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%rbx, (%rsp)
 	movzbl	%al, %esi
 	movl	$1395, %edi                     # imm = 0x573
@@ -14370,7 +14370,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB23_6
 # %bb.5:                                #   in Loop: Header=BB23_3 Depth=1
@@ -14383,7 +14383,7 @@ _Z12freeRgbImageP8RgbImage.1_fixp:      # @_Z12freeRgbImageP8RgbImage.1_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1398, %edi                     # imm = 0x576
@@ -14746,7 +14746,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -14755,7 +14755,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB24_1
 # %bb.2:
@@ -14768,7 +14768,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movl	4(%rbx), %esi
 	movq	%r12, (%rsp)
@@ -14777,7 +14777,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	call_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -14787,7 +14787,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$3, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	%r12, (%rsp)
 	movl	$1436, %edi                     # imm = 0x59C
@@ -14796,7 +14796,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$4, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	.L.str.10(%rip), %rsi
 	movq	%r13, %rdi
 	movl	%r15d, %edx
@@ -14811,7 +14811,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%r13d, %r13d
 	movq	%r15, -80(%rbp)                 # 8-byte Spill
 	movq	%rbx, -72(%rbp)                 # 8-byte Spill
@@ -14826,7 +14826,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1504, %edi                     # imm = 0x5E0
@@ -14843,7 +14843,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1507, %edi                     # imm = 0x5E3
@@ -14860,7 +14860,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	zext_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movq	%rcx, %rbx
@@ -14870,7 +14870,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%rbx, 8(%rsp)
 	movl	$0, (%rsp)
 	movl	%eax, %esi
@@ -15034,7 +15034,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -64(%rbp)                 # 4-byte Spill
 	movq	-72(%rbp), %rax                 # 8-byte Reload
 	movq	8(%rax), %r14
@@ -15046,7 +15046,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1520, %edi                     # imm = 0x5F0
@@ -15063,7 +15063,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1523, %edi                     # imm = 0x5F3
@@ -15081,7 +15081,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	zext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1527, %edi                     # imm = 0x5F7
@@ -15090,7 +15090,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%rbx, 8(%rsp)
 	movl	$0, (%rsp)
 	movl	%eax, %esi
@@ -15253,7 +15253,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	movq	-72(%rbp), %rax                 # 8-byte Reload
 	movq	8(%rax), %r14
@@ -15265,7 +15265,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movq	%rbx, %r15
@@ -15283,7 +15283,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1539, %edi                     # imm = 0x603
@@ -15301,7 +15301,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	zext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1543, %edi                     # imm = 0x607
@@ -15310,7 +15310,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%rbx, 8(%rsp)
 	movq	%rbx, %r15
 	movl	$0, (%rsp)
@@ -15473,7 +15473,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	call_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -15483,7 +15483,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$4, %r8d
 	movl	$3, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%r12, (%rsp)
 	movl	$1550, %edi                     # imm = 0x60E
@@ -15492,7 +15492,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$2, %ecx
 	movl	$4, %r8d
 	movl	$4, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1550, %edi                     # imm = 0x60E
@@ -15501,7 +15501,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$3, %ecx
 	movl	$4, %r8d
 	movl	$5, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-80(%rbp), %r15                 # 8-byte Reload
 	movq	%r15, %rdi
 	leaq	.L.str.12(%rip), %rsi
@@ -15517,7 +15517,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$4, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$1552, %edi                     # imm = 0x610
@@ -15526,7 +15526,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1552, %edi                     # imm = 0x610
@@ -15535,7 +15535,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1552, %edi                     # imm = 0x610
@@ -15544,7 +15544,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movq	-72(%rbp), %rbx                 # 8-byte Reload
 .LBB24_3:                               # =>This Loop Header: Depth=1
@@ -15557,7 +15557,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	icmp_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -15568,7 +15568,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movq	%r12, (%rsp)
 	movl	$1441, %edi                     # imm = 0x5A1
@@ -15577,7 +15577,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r13d
 	setl	%sil
@@ -15587,7 +15587,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -15596,7 +15596,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB24_8
 # %bb.4:                                # %.preheader.preheader
@@ -15615,7 +15615,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$1447, %edi                     # imm = 0x5A7
@@ -15624,7 +15624,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1447, %edi                     # imm = 0x5A7
@@ -15633,7 +15633,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1447, %edi                     # imm = 0x5A7
@@ -15642,7 +15642,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	icmp_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -15653,7 +15653,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1448, %edi                     # imm = 0x5A8
@@ -15662,7 +15662,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -15672,7 +15672,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -15681,7 +15681,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	8(%r13), %rbx
 	testb	$1, %al
 	leaq	load_namestr(%rip), %r14
@@ -15696,7 +15696,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1452, %edi                     # imm = 0x5AC
@@ -15713,7 +15713,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1455, %edi                     # imm = 0x5AF
@@ -15730,7 +15730,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	zext_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movq	%rcx, %rbx
@@ -15740,7 +15740,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%rbx, 8(%rsp)
 	movl	$0, (%rsp)
 	movl	%eax, %esi
@@ -15904,7 +15904,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -64(%rbp)                 # 4-byte Spill
 	movq	-72(%rbp), %rax                 # 8-byte Reload
 	movq	8(%rax), %r14
@@ -15916,7 +15916,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1468, %edi                     # imm = 0x5BC
@@ -15933,7 +15933,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1471, %edi                     # imm = 0x5BF
@@ -15951,7 +15951,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	zext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1475, %edi                     # imm = 0x5C3
@@ -15960,7 +15960,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%rbx, 8(%rsp)
 	movl	$0, (%rsp)
 	movl	%eax, %esi
@@ -16124,7 +16124,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	movq	-72(%rbp), %rax                 # 8-byte Reload
 	movq	8(%rax), %r14
@@ -16136,7 +16136,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movq	%rbx, %r15
@@ -16154,7 +16154,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1487, %edi                     # imm = 0x5CF
@@ -16172,7 +16172,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	zext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$1491, %edi                     # imm = 0x5D3
@@ -16181,7 +16181,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%rbx, 8(%rsp)
 	movq	%rbx, %r15
 	movl	$0, (%rsp)
@@ -16343,7 +16343,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	call_namestr(%rip), %r15
 	movq	%r15, (%rsp)
@@ -16353,7 +16353,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$4, %r8d
 	movl	$3, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	%r15, (%rsp)
 	movl	$1498, %edi                     # imm = 0x5DA
@@ -16362,7 +16362,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$2, %ecx
 	movl	$4, %r8d
 	movl	$4, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$1498, %edi                     # imm = 0x5DA
@@ -16371,7 +16371,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$3, %ecx
 	movl	$4, %r8d
 	movl	$5, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-80(%rbp), %rdi                 # 8-byte Reload
 	leaq	.L.str.11(%rip), %rsi
 	movl	%r12d, %edx
@@ -16386,7 +16386,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$4, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$1500, %edi                     # imm = 0x5DC
@@ -16395,7 +16395,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1500, %edi                     # imm = 0x5DC
@@ -16404,7 +16404,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1500, %edi                     # imm = 0x5DC
@@ -16413,11 +16413,11 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	-72(%rbp), %rbx                 # 8-byte Reload
 	jmp	.LBB24_5
-.LBB24_1:                               # %.split3
+.LBB24_1:                               # %.split102
 	leaq	.L.str.6.22(%rip), %rdi
 	movq	%r12, %rsi
 	xorl	%eax, %eax
@@ -16441,7 +16441,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, %rdi
 	callq	fclose@PLT
 	movq	%rbx, (%rsp)
@@ -16452,7 +16452,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ret_namestr(%rip), %rax
 	movq	%rax, (%rsp)
 	movl	$1560, %edi                     # imm = 0x618
@@ -16461,7 +16461,7 @@ _Z12saveRgbImageP8RgbImagePKcf.2_fixp:  # @_Z12saveRgbImageP8RgbImagePKcf.2_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$104, %rsp
 	popq	%rbx
 	popq	%r12
@@ -16515,7 +16515,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1816, %edi                     # imm = 0x718
@@ -16524,7 +16524,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1816, %edi                     # imm = 0x718
@@ -16533,7 +16533,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	load_namestr(%rip), %r14
 .LBB25_1:                               # =>This Loop Header: Depth=1
@@ -16550,7 +16550,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$1563, %edi                     # imm = 0x61B
@@ -16559,7 +16559,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -16569,7 +16569,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -16578,7 +16578,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB25_23
 # %bb.2:                                # %.preheader7.preheader
@@ -16596,7 +16596,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$1589, %edi                     # imm = 0x635
@@ -16605,7 +16605,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$1589, %edi                     # imm = 0x635
@@ -16614,7 +16614,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 .LBB25_3:                               # %.preheader7
                                         #   Parent Loop BB25_1 Depth=1
@@ -16629,7 +16629,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	icmp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -16639,7 +16639,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	%rbx, (%rsp)
 	movl	$1569, %edi                     # imm = 0x621
@@ -16648,7 +16648,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r12d
 	setl	%sil
@@ -16658,7 +16658,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -16667,7 +16667,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB25_4
 # %bb.13:                               # %.preheader3.preheader
@@ -16687,7 +16687,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	icmp_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -16697,7 +16697,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$1575, %edi                     # imm = 0x627
@@ -16706,7 +16706,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -16716,7 +16716,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %r13
 	movq	%r13, (%rsp)
 	movzbl	%al, %esi
@@ -16725,7 +16725,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB25_16
 # %bb.15:                               #   in Loop: Header=BB25_14 Depth=3
@@ -16739,7 +16739,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$1579, %edi                     # imm = 0x62B
@@ -16756,7 +16756,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$1582, %edi                     # imm = 0x62E
@@ -16777,7 +16777,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1586, %edi                     # imm = 0x632
@@ -16786,7 +16786,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1586, %edi                     # imm = 0x632
@@ -16795,7 +16795,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	jmp	.LBB25_14
 	.p2align	4, 0x90
@@ -16815,7 +16815,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	icmp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -16825,7 +16825,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	%rbx, (%rsp)
 	movl	$1595, %edi                     # imm = 0x63B
@@ -16835,7 +16835,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r12d
 	setl	%sil
@@ -16845,7 +16845,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movzbl	%al, %esi
@@ -16854,7 +16854,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB25_6
 # %bb.17:                               #   in Loop: Header=BB25_5 Depth=2
@@ -16868,7 +16868,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$1599, %edi                     # imm = 0x63F
@@ -16887,7 +16887,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, (%r15,%rbx)
 	movq	(%r12), %r15
 	movq	%r14, (%rsp)
@@ -16897,7 +16897,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$1605, %edi                     # imm = 0x645
@@ -16916,7 +16916,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 4(%r15,%rbx)
 	movq	(%r12), %r15
 	movq	%r14, (%rsp)
@@ -16926,7 +16926,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$1611, %edi                     # imm = 0x64B
@@ -16945,7 +16945,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 8(%r15,%rbx)
 	movq	(%r12), %r15
 	movq	%r14, (%rsp)
@@ -16955,7 +16955,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$1617, %edi                     # imm = 0x651
@@ -16974,7 +16974,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 12(%r15,%rbx)
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -16984,7 +16984,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1622, %edi                     # imm = 0x656
@@ -16993,7 +16993,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1622, %edi                     # imm = 0x656
@@ -17002,7 +17002,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	jmp	.LBB25_5
 	.p2align	4, 0x90
@@ -17022,7 +17022,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1738, %edi                     # imm = 0x6CA
@@ -17031,7 +17031,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movq	%r13, %r12
@@ -17041,7 +17041,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 .LBB25_7:                               # %.preheader5
                                         #   Parent Loop BB25_1 Depth=1
@@ -17055,7 +17055,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%r15, (%rsp)
 	movl	$1628, %edi                     # imm = 0x65C
@@ -17065,7 +17065,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$1628, %edi                     # imm = 0x65C
@@ -17074,7 +17074,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -17084,7 +17084,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r12, (%rsp)
 	movzbl	%al, %esi
 	movl	$1629, %edi                     # imm = 0x65D
@@ -17092,7 +17092,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB25_8
 # %bb.18:                               # %.preheader2.preheader
@@ -17112,7 +17112,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	%r15, (%rsp)
 	movl	$1634, %edi                     # imm = 0x662
@@ -17122,7 +17122,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$1634, %edi                     # imm = 0x662
@@ -17131,7 +17131,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -17141,7 +17141,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movzbl	%al, %esi
@@ -17150,7 +17150,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB25_21
 # %bb.20:                               #   in Loop: Header=BB25_19 Depth=3
@@ -17165,7 +17165,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1638, %edi                     # imm = 0x666
@@ -17184,7 +17184,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movq	%rbx, %r13
@@ -17202,7 +17202,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -84(%rbp)                 # 4-byte Spill
 	movq	-72(%rbp), %rax                 # 8-byte Reload
 	movq	(%rax), %rax
@@ -17216,7 +17216,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1649, %edi                     # imm = 0x671
@@ -17233,7 +17233,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1652, %edi                     # imm = 0x674
@@ -17250,7 +17250,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r13, (%rsp)
 	movl	$1656, %edi                     # imm = 0x678
 	movl	%eax, %esi
@@ -17258,7 +17258,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$1656, %edi                     # imm = 0x678
@@ -17277,7 +17277,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	shl_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -17287,7 +17287,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1660, %edi                     # imm = 0x67C
@@ -17296,7 +17296,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
 	movq	%r12, (%rsp)
@@ -17306,7 +17306,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	add_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -17316,7 +17316,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$1661, %edi                     # imm = 0x67D
@@ -17325,7 +17325,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$1661, %edi                     # imm = 0x67D
@@ -17334,7 +17334,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$1662, %edi                     # imm = 0x67E
@@ -17343,7 +17343,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
 	movl	%eax, (%rcx,%r15)
 	movq	-56(%rbp), %rax                 # 8-byte Reload
@@ -17357,7 +17357,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movq	%rbx, %r14
@@ -17376,7 +17376,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$1668, %edi                     # imm = 0x684
@@ -17394,7 +17394,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -84(%rbp)                 # 4-byte Spill
 	movq	-72(%rbp), %rax                 # 8-byte Reload
 	movq	(%rax), %rax
@@ -17408,7 +17408,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$1676, %edi                     # imm = 0x68C
@@ -17425,7 +17425,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$1679, %edi                     # imm = 0x68F
@@ -17442,7 +17442,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r14, (%rsp)
 	movl	$1683, %edi                     # imm = 0x693
 	movl	%eax, %esi
@@ -17450,7 +17450,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$1683, %edi                     # imm = 0x693
@@ -17469,7 +17469,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	shl_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -17479,7 +17479,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1687, %edi                     # imm = 0x697
@@ -17488,7 +17488,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
 	movq	%r14, (%rsp)
@@ -17498,7 +17498,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -17508,7 +17508,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1688, %edi                     # imm = 0x698
@@ -17517,7 +17517,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1688, %edi                     # imm = 0x698
@@ -17526,7 +17526,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$1689, %edi                     # imm = 0x699
@@ -17535,7 +17535,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
 	movl	%eax, 4(%rcx,%r15)
 	movq	-56(%rbp), %rax                 # 8-byte Reload
@@ -17549,7 +17549,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$1692, %edi                     # imm = 0x69C
@@ -17567,7 +17567,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$1695, %edi                     # imm = 0x69F
@@ -17585,7 +17585,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -84(%rbp)                 # 4-byte Spill
 	movq	-72(%rbp), %rax                 # 8-byte Reload
 	movq	(%rax), %rax
@@ -17599,7 +17599,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$1703, %edi                     # imm = 0x6A7
@@ -17616,7 +17616,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$1706, %edi                     # imm = 0x6AA
@@ -17634,7 +17634,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r12, (%rsp)
 	movl	$1710, %edi                     # imm = 0x6AE
 	movl	%eax, %esi
@@ -17642,7 +17642,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r12, (%rsp)
 	movl	$1710, %edi                     # imm = 0x6AE
@@ -17661,7 +17661,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	shl_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -17671,7 +17671,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1714, %edi                     # imm = 0x6B2
@@ -17680,7 +17680,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
 	movq	%r14, (%rsp)
@@ -17690,7 +17690,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -17700,7 +17700,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1715, %edi                     # imm = 0x6B3
@@ -17709,7 +17709,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1715, %edi                     # imm = 0x6B3
@@ -17718,7 +17718,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$1716, %edi                     # imm = 0x6B4
@@ -17727,7 +17727,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
 	movl	%eax, 8(%rcx,%r15)
 	movq	-72(%rbp), %rax                 # 8-byte Reload
@@ -17742,7 +17742,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1721, %edi                     # imm = 0x6B9
@@ -17759,7 +17759,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1724, %edi                     # imm = 0x6BC
@@ -17777,7 +17777,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, (%rsp)
 	movl	$1728, %edi                     # imm = 0x6C0
 	movl	%eax, %esi
@@ -17785,7 +17785,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1728, %edi                     # imm = 0x6C0
@@ -17804,7 +17804,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$1732, %edi                     # imm = 0x6C4
@@ -17813,7 +17813,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1732, %edi                     # imm = 0x6C4
@@ -17822,7 +17822,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1732, %edi                     # imm = 0x6C4
@@ -17831,7 +17831,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$1733, %edi                     # imm = 0x6C5
@@ -17840,7 +17840,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 12(%r13,%r15)
 	leaq	icmp_namestr(%rip), %r15
 	movq	%r12, (%rsp)
@@ -17850,7 +17850,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1735, %edi                     # imm = 0x6C7
@@ -17859,7 +17859,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1735, %edi                     # imm = 0x6C7
@@ -17868,7 +17868,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	jmp	.LBB25_19
 	.p2align	4, 0x90
@@ -17886,7 +17886,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1813, %edi                     # imm = 0x715
@@ -17895,7 +17895,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1813, %edi                     # imm = 0x715
@@ -17904,7 +17904,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 .LBB25_9:                               # %.preheader4
                                         #   Parent Loop BB25_1 Depth=1
@@ -17918,7 +17918,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	icmp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -17929,7 +17929,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	%rbx, (%rsp)
 	movl	$1744, %edi                     # imm = 0x6D0
@@ -17939,7 +17939,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r12d
 	setl	%sil
@@ -17949,7 +17949,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %r13
 	movq	%r13, (%rsp)
 	movzbl	%al, %esi
@@ -17958,7 +17958,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB25_22
 # %bb.10:                               #   in Loop: Header=BB25_9 Depth=2
@@ -17972,7 +17972,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1748, %edi                     # imm = 0x6D4
@@ -17990,7 +17990,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, (%rsp)
 	movl	$1752, %edi                     # imm = 0x6D8
 	movl	%eax, %esi
@@ -17998,7 +17998,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$1752, %edi                     # imm = 0x6D8
@@ -18007,7 +18007,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setne	%sil
@@ -18017,7 +18017,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r13, (%rsp)
 	movl	%r14d, %r13d
 	movzbl	%al, %esi
@@ -18026,7 +18026,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB25_12
 # %bb.11:                               #   in Loop: Header=BB25_9 Depth=2
@@ -18042,7 +18042,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$1756, %edi                     # imm = 0x6DC
@@ -18060,7 +18060,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	(%rbx), %r12
 	movq	%r14, (%rsp)
@@ -18070,7 +18070,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$1762, %edi                     # imm = 0x6E2
@@ -18088,7 +18088,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	sdiv_namestr(%rip), %rax
 	movq	%rax, (%rsp)
@@ -18099,7 +18099,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1766, %edi                     # imm = 0x6E6
@@ -18108,7 +18108,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	movl	%ebx, %eax
 	cltd
@@ -18120,7 +18120,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	-72(%rbp), %r13                 # 8-byte Reload
 	movq	(%r13), %rax
@@ -18134,7 +18134,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1769, %edi                     # imm = 0x6E9
@@ -18153,7 +18153,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-80(%rbp), %rcx                 # 8-byte Reload
 	movl	%eax, (%rcx,%rbx)
 	movq	%r13, %rbx
@@ -18167,7 +18167,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1775, %edi                     # imm = 0x6EF
@@ -18185,7 +18185,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	(%rbx), %r12
 	leaq	sext_namestr(%rip), %rbx
@@ -18196,7 +18196,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1781, %edi                     # imm = 0x6F5
@@ -18213,7 +18213,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	sdiv_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -18223,7 +18223,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1785, %edi                     # imm = 0x6F9
@@ -18232,7 +18232,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	movl	%ebx, %eax
 	cltd
@@ -18244,7 +18244,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	-72(%rbp), %r14                 # 8-byte Reload
 	movq	(%r14), %r12
@@ -18256,7 +18256,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1788, %edi                     # imm = 0x6FC
@@ -18275,7 +18275,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 4(%r12,%rbx)
 	movq	(%r14), %r15
 	movq	%r14, %r12
@@ -18287,7 +18287,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1794, %edi                     # imm = 0x702
@@ -18305,7 +18305,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	(%r12), %r15
 	movq	%rbx, (%rsp)
@@ -18315,7 +18315,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$1800, %edi                     # imm = 0x708
@@ -18333,7 +18333,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movl	%r13d, %r15d
 	leaq	sdiv_namestr(%rip), %r13
@@ -18344,7 +18344,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$1804, %edi                     # imm = 0x70C
@@ -18353,7 +18353,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	movl	%ebx, %eax
 	cltd
@@ -18366,7 +18366,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	-72(%rbp), %rax                 # 8-byte Reload
 	movq	(%rax), %r12
@@ -18379,7 +18379,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r14, (%rsp)
 	movl	$1807, %edi                     # imm = 0x70F
@@ -18398,7 +18398,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 8(%r12,%rbx)
 	jmp	.LBB25_12
 .LBB25_23:                              # %.preheader1.preheader
@@ -18415,7 +18415,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1909, %edi                     # imm = 0x775
@@ -18424,7 +18424,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1909, %edi                     # imm = 0x775
@@ -18433,7 +18433,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	load_namestr(%rip), %r14
 .LBB25_24:                              # %.preheader1
@@ -18447,7 +18447,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	icmp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -18457,7 +18457,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%rbx, (%rsp)
 	movl	$1822, %edi                     # imm = 0x71E
@@ -18466,7 +18466,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r14d
 	setl	%sil
@@ -18476,7 +18476,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r13, (%rsp)
 	movzbl	%al, %esi
 	movl	$1823, %edi                     # imm = 0x71F
@@ -18484,7 +18484,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB25_29
 # %bb.25:                               # %.preheader.preheader
@@ -18504,7 +18504,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	icmp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -18514,7 +18514,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%rbx, (%rsp)
 	movl	$1828, %edi                     # imm = 0x724
@@ -18523,7 +18523,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r14d
 	setl	%sil
@@ -18533,7 +18533,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movq	%r13, (%rsp)
 	movzbl	%al, %esi
 	movl	$1829, %edi                     # imm = 0x725
@@ -18541,7 +18541,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB25_28
 # %bb.27:                               #   in Loop: Header=BB25_26 Depth=2
@@ -18561,7 +18561,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1834, %edi                     # imm = 0x72A
@@ -18578,7 +18578,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1837, %edi                     # imm = 0x72D
@@ -18597,7 +18597,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, (%rsp)
 	movl	$1841, %edi                     # imm = 0x731
 	movl	%eax, %esi
@@ -18605,7 +18605,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1841, %edi                     # imm = 0x731
@@ -18623,7 +18623,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	8(%r13), %rbx
 	movq	%r15, (%rsp)
@@ -18633,7 +18633,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1847, %edi                     # imm = 0x737
@@ -18651,7 +18651,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1850, %edi                     # imm = 0x73A
@@ -18669,7 +18669,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1853, %edi                     # imm = 0x73D
@@ -18678,7 +18678,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r12, (%rsp)
@@ -18688,7 +18688,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$1854, %edi                     # imm = 0x73E
@@ -18697,7 +18697,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
 	movl	%eax, (%rcx,%r13,4)
 	movq	-72(%rbp), %rax                 # 8-byte Reload
@@ -18712,7 +18712,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1859, %edi                     # imm = 0x743
@@ -18730,7 +18730,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1862, %edi                     # imm = 0x746
@@ -18748,7 +18748,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, (%rsp)
 	movl	$1866, %edi                     # imm = 0x74A
 	movl	%eax, %esi
@@ -18756,7 +18756,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1866, %edi                     # imm = 0x74A
@@ -18773,7 +18773,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	-56(%rbp), %rax                 # 8-byte Reload
 	movq	8(%rax), %rbx
@@ -18784,7 +18784,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1872, %edi                     # imm = 0x750
@@ -18802,7 +18802,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1875, %edi                     # imm = 0x753
@@ -18820,7 +18820,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$1878, %edi                     # imm = 0x756
@@ -18829,7 +18829,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r12, (%rsp)
@@ -18839,7 +18839,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$1879, %edi                     # imm = 0x757
@@ -18848,7 +18848,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
 	movl	%eax, 4(%rcx,%r13,4)
 	movq	-72(%rbp), %rax                 # 8-byte Reload
@@ -18863,7 +18863,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1884, %edi                     # imm = 0x75C
@@ -18881,7 +18881,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1887, %edi                     # imm = 0x75F
@@ -18899,7 +18899,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, (%rsp)
 	movl	$1891, %edi                     # imm = 0x763
 	movl	%eax, %esi
@@ -18907,7 +18907,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1891, %edi                     # imm = 0x763
@@ -18924,7 +18924,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	-56(%rbp), %rax                 # 8-byte Reload
 	movq	8(%rax), %rbx
@@ -18935,7 +18935,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1897, %edi                     # imm = 0x769
@@ -18954,7 +18954,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r15, (%rsp)
 	movl	$1900, %edi                     # imm = 0x76C
@@ -18972,7 +18972,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$1903, %edi                     # imm = 0x76F
@@ -18981,7 +18981,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -18991,7 +18991,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$1904, %edi                     # imm = 0x770
@@ -19000,7 +19000,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
 	movl	%eax, 8(%rcx,%r13,4)
 	leaq	br_namestr(%rip), %r13
@@ -19012,7 +19012,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1906, %edi                     # imm = 0x772
@@ -19021,7 +19021,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$1906, %edi                     # imm = 0x772
@@ -19030,7 +19030,7 @@ _Z12segmentImageP8RgbImageP8Clustersi.6_fixp: # @_Z12segmentImageP8RgbImageP8Clu
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	jmp	.LBB25_26
 .LBB25_29:
@@ -19122,7 +19122,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, -100(%rbp)                # 4-byte Spill
 	movl	$1914, %edi                     # imm = 0x77A
@@ -19167,7 +19167,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, -96(%rbp)                 # 4-byte Spill
 	movl	$1916, %edi                     # imm = 0x77C
@@ -19212,7 +19212,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r15d
 	subq	$8, %rsp
@@ -19224,7 +19224,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	shlq	$8, %rax
@@ -19247,7 +19247,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	leaq	br_namestr(%rip), %rbx
 	movzbl	%al, %esi
@@ -19257,7 +19257,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%rbx
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB26_1
@@ -19275,7 +19275,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%r12, %rdi
 	callq	atoi@PLT
@@ -19288,7 +19288,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	pushq	%r13
 	movq	%r13, %rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	leaq	store_namestr(%rip), %r15
 	movl	$1929, %edi                     # imm = 0x789
@@ -19298,7 +19298,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	-72(%rbp), %r13                 # 8-byte Reload
 	movl	%eax, (%r13)
@@ -19314,7 +19314,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%r12, %rdi
 	callq	atoi@PLT
@@ -19326,7 +19326,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$1935, %edi                     # imm = 0x78F
 	movl	%eax, %esi
@@ -19335,7 +19335,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, 4(%r13)
 	subq	$8, %rsp
@@ -19347,7 +19347,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	leaq	sext_namestr(%rip), %rbx
 	movl	$1938, %edi                     # imm = 0x792
@@ -19357,7 +19357,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -19425,7 +19425,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	leaq	icmp_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$1943, %edi                     # imm = 0x797
@@ -19435,7 +19435,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB26_3
@@ -19453,7 +19453,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	-64(%rbp), %rdi                 # 8-byte Reload
 	callq	fclose@PLT
@@ -19480,7 +19480,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%ebx, %ebx
 	jmp	.LBB26_34
@@ -19500,7 +19500,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r13d
 	subq	$8, %rsp
@@ -19512,7 +19512,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	icmp_namestr(%rip), %r12
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -19523,7 +19523,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
@@ -19535,7 +19535,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$1952, %edi                     # imm = 0x7A0
@@ -19545,7 +19545,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %r13
 	pushq	%r13
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB26_7
@@ -19560,7 +19560,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$1955, %edi                     # imm = 0x7A3
 	movl	%eax, %esi
@@ -19570,7 +19570,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	sext_namestr(%rip), %r13
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -19635,7 +19635,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -19657,7 +19657,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -19680,7 +19680,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$1966, %edi                     # imm = 0x7AE
@@ -19689,7 +19689,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	jne	.LBB26_7
@@ -19703,7 +19703,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	add_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -19714,7 +19714,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
 	subq	$8, %rsp
@@ -19726,7 +19726,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	pushq	%r14
 	leaq	load_namestr(%rip), %r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r15d
 	movq	-72(%rbp), %r13                 # 8-byte Reload
@@ -19741,7 +19741,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -19752,7 +19752,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
@@ -19765,7 +19765,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$1973, %edi                     # imm = 0x7B5
@@ -19774,7 +19774,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB26_8
@@ -19791,7 +19791,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$1975, %r15d                    # imm = 0x7B7
 	movl	$1975, %edi                     # imm = 0x7B7
@@ -19802,7 +19802,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	add_namestr(%rip), %r12
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	leaq	icmp_namestr(%rip), %r14
@@ -19817,7 +19817,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
 	subq	$8, %rsp
@@ -19828,7 +19828,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -19839,7 +19839,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r14d
 	subq	$8, %rsp
@@ -19851,7 +19851,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r9d
 	leaq	icmp_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %r14d
@@ -19864,7 +19864,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$1979, %edi                     # imm = 0x7BB
@@ -19874,7 +19874,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB26_16
@@ -19888,7 +19888,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	sext_namestr(%rip), %r15
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -19911,7 +19911,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	jmp	.LBB26_14
@@ -19930,7 +19930,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -19941,7 +19941,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
 	subq	$8, %rsp
@@ -19952,7 +19952,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 .LBB26_9:                               # %.preheader3
@@ -19969,7 +19969,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	leaq	load_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r13d
 	subq	$8, %rsp
@@ -19981,7 +19981,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -19992,7 +19992,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
@@ -20004,7 +20004,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$1997, %edi                     # imm = 0x7CD
@@ -20014,7 +20014,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	jne	.LBB26_10
@@ -20054,7 +20054,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$2052, %edi                     # imm = 0x804
 	movl	%eax, %esi
@@ -20064,7 +20064,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	uitofp_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
@@ -20112,7 +20112,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -20136,7 +20136,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -20169,7 +20169,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -20191,7 +20191,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -20213,7 +20213,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	store_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, 12(%r14,%rbx,4)
 	subq	$8, %rsp
@@ -20225,7 +20225,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -20246,7 +20246,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -20277,7 +20277,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	add_namestr(%rip), %r12
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -20288,7 +20288,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
 	subq	$8, %rsp
@@ -20299,7 +20299,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r15d
 	leaq	icmp_namestr(%rip), %r14
@@ -20316,7 +20316,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	leaq	load_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r13d
 	subq	$8, %rsp
@@ -20327,7 +20327,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$1, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -20338,7 +20338,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
@@ -20350,7 +20350,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$2003, %edi                     # imm = 0x7D3
@@ -20360,7 +20360,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB26_27
@@ -20379,7 +20379,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%rbx, %rdi
 	callq	atoi@PLT
@@ -20391,7 +20391,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$2008, %edi                     # imm = 0x7D8
 	movl	%eax, %esi
@@ -20401,7 +20401,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	shl_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -20412,7 +20412,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
 	shll	%cl, %ebx
@@ -20424,7 +20424,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$2009, %edi                     # imm = 0x7D9
 	movl	%eax, %esi
@@ -20434,7 +20434,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	zext_namestr(%rip), %r15
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -20487,7 +20487,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r15
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -20569,7 +20569,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$2014, %edi                     # imm = 0x7DE
 	movl	%eax, %esi
@@ -20579,7 +20579,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	uitofp_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
@@ -20629,7 +20629,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	sext_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -20651,7 +20651,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -20688,7 +20688,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%rbx, %rdi
 	callq	atoi@PLT
@@ -20700,7 +20700,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$2027, %edi                     # imm = 0x7EB
 	movl	%eax, %esi
@@ -20710,7 +20710,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	shl_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -20721,7 +20721,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
 	shll	%cl, %ebx
@@ -20733,7 +20733,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$2028, %edi                     # imm = 0x7EC
 	movl	%eax, %esi
@@ -20743,7 +20743,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	zext_namestr(%rip), %r12
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -20796,7 +20796,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -20878,7 +20878,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$2033, %edi                     # imm = 0x7F1
 	movl	%eax, %esi
@@ -20888,7 +20888,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	uitofp_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
@@ -20937,7 +20937,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	sext_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -20959,7 +20959,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -20995,7 +20995,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%rbx, %rdi
 	callq	atoi@PLT
@@ -21007,7 +21007,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$2046, %edi                     # imm = 0x7FE
 	movl	%eax, %esi
@@ -21017,7 +21017,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	shl_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -21028,7 +21028,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ecx
 	shll	%cl, %ebx
@@ -21040,7 +21040,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$8, %rsp
 	movl	$2047, %edi                     # imm = 0x7FF
 	movl	%eax, %esi
@@ -21050,7 +21050,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	zext_namestr(%rip), %r12
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -21103,7 +21103,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$2, %r8d
 	movl	$1, %r9d
 	pushq	%r12
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %esi
 	subq	$8, %rsp
@@ -21175,7 +21175,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	leaq	call_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movq	%rbx, %rdi
 	callq	strlen@PLT
@@ -21244,7 +21244,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	leaq	icmp_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$2095, %edi                     # imm = 0x82F
@@ -21254,7 +21254,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB26_33
@@ -21270,7 +21270,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	.p2align	4, 0x90
 .LBB26_30:                              # =>This Inner Loop Header: Depth=1
@@ -21283,7 +21283,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	xorl	%r9d, %r9d
 	leaq	load_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r14d
 	subq	$8, %rsp
@@ -21295,7 +21295,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	icmp_namestr(%rip), %r13
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -21306,7 +21306,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r13
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
@@ -21318,7 +21318,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r13
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$8, %rsp
 	movzbl	%al, %esi
 	movl	$2102, %edi                     # imm = 0x836
@@ -21328,7 +21328,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	br_namestr(%rip), %rax
 	pushq	%rax
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	addq	$16, %rsp
 	testb	$1, %al
 	je	.LBB26_32
@@ -21342,7 +21342,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	sext_namestr(%rip), %rbx
 	pushq	%rbx
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movslq	%eax, %rsi
 	subq	$8, %rsp
@@ -21366,7 +21366,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r9d
 	leaq	add_namestr(%rip), %r14
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %ebx
 	subq	$8, %rsp
@@ -21377,7 +21377,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	movl	$2, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	addl	%eax, %ebx
 	subq	$8, %rsp
@@ -21388,7 +21388,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
 	pushq	%r14
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 	movl	%eax, %r15d
 	jmp	.LBB26_30
@@ -21415,7 +21415,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	leaq	call_namestr(%rip), %rax
 	pushq	%rax
 .LBB26_18:
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$16, %rsp
 .LBB26_34:
 	subq	$8, %rsp
@@ -21427,7 +21427,7 @@ _Z12loadRgbImagePKcP8RgbImagef.3_fixp:  # @_Z12loadRgbImagePKcP8RgbImagef.3_fixp
 	movl	$1, %r8d
 	movl	$1, %r9d
 	pushq	%rax
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	-40(%rbp), %rsp
 	popq	%rbx
 	popq	%r12
@@ -21465,7 +21465,7 @@ _Z12initRgbImageP8RgbImage.4_fixp:      # @_Z12initRgbImageP8RgbImage.4_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, (%rbx)
 	movq	%r14, (%rsp)
 	movl	$2125, %edi                     # imm = 0x84D
@@ -21474,7 +21474,7 @@ _Z12initRgbImageP8RgbImage.4_fixp:      # @_Z12initRgbImageP8RgbImage.4_fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 4(%rbx)
 	xorps	%xmm0, %xmm0
 	movups	%xmm0, 8(%rbx)
@@ -21526,7 +21526,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$2134, %edi                     # imm = 0x856
@@ -21569,7 +21569,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2164, %edi                     # imm = 0x874
@@ -21578,7 +21578,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2164, %edi                     # imm = 0x874
@@ -21587,7 +21587,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	-72(%rbp), %rbx                 # 8-byte Reload
 .LBB28_1:                               # =>This Inner Loop Header: Depth=1
@@ -21599,7 +21599,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%r15, (%rsp)
 	movl	$2143, %edi                     # imm = 0x85F
@@ -21609,7 +21609,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	%r15, (%rsp)
 	movl	$2143, %edi                     # imm = 0x85F
@@ -21618,7 +21618,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r12d
 	setl	%sil
@@ -21628,7 +21628,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movzbl	%al, %esi
@@ -21637,7 +21637,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB28_5
 # %bb.2:                                #   in Loop: Header=BB28_1 Depth=1
@@ -21651,7 +21651,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2147, %edi                     # imm = 0x863
@@ -21726,7 +21726,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movl	%eax, %r14d
 	movl	$2154, %edi                     # imm = 0x86A
 	movss	.LCPI28_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -21769,7 +21769,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movzbl	%r14b, %esi
@@ -21778,7 +21778,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	movl	%eax, %r14d
 	movq	%r15, (%rsp)
 	movzbl	%bl, %esi
@@ -21787,7 +21787,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	xorb	$1, %al
 	andb	%r14b, %al
 	movq	%r15, (%rsp)
@@ -21797,7 +21797,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -21806,7 +21806,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	movl	-56(%rbp), %ebx                 # 4-byte Reload
 	je	.LBB28_4
@@ -21819,7 +21819,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.12_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-64(%rbp), %r13                 # 8-byte Reload
 	movl	%eax, 12(%r13)
 	movl	$2161, %edi                     # imm = 0x871
@@ -21873,7 +21873,7 @@ _ZSt4sqrtf.8_u2_30fixp:                 # @_ZSt4sqrtf.8_u2_30fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
 	movl	$2167, %edi                     # imm = 0x877
@@ -21978,7 +21978,7 @@ _ZSt4sqrtf.8_u2_30fixp:                 # @_ZSt4sqrtf.8_u2_30fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ret_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$2172, %edi                     # imm = 0x87C
@@ -21987,7 +21987,7 @@ _ZSt4sqrtf.8_u2_30fixp:                 # @_ZSt4sqrtf.8_u2_30fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$24, %rsp
 	popq	%rbx
 	popq	%rbp
@@ -22030,7 +22030,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%r13, (%rsp)
 	movl	$2175, %edi                     # imm = 0x87F
@@ -22052,7 +22052,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	store_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$2179, %edi                     # imm = 0x883
@@ -22061,7 +22061,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r15, -56(%rbp)                 # 8-byte Spill
 	movl	%eax, 16(%r15)
 	leaq	load_namestr(%rip), %r15
@@ -22077,7 +22077,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2201, %edi                     # imm = 0x899
@@ -22086,7 +22086,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2201, %edi                     # imm = 0x899
@@ -22095,7 +22095,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	movq	-64(%rbp), %r14                 # 8-byte Reload
 	leaq	load_namestr(%rip), %r15
@@ -22107,7 +22107,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	icmp_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -22117,7 +22117,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2184, %edi                     # imm = 0x888
@@ -22127,7 +22127,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %ebx
 	setl	%sil
@@ -22137,7 +22137,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -22146,7 +22146,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB30_5
 # %bb.2:                                #   in Loop: Header=BB30_1 Depth=1
@@ -22159,7 +22159,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2188, %edi                     # imm = 0x88C
@@ -22182,7 +22182,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movl	16(%rbx), %esi
 	movq	%r15, (%rsp)
@@ -22191,7 +22191,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2193, %edi                     # imm = 0x891
@@ -22200,7 +22200,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	%r13, (%rsp)
 	movl	$2193, %edi                     # imm = 0x891
@@ -22209,7 +22209,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	xorl	%esi, %esi
 	cmpl	%eax, %r14d
 	setb	%sil
@@ -22219,7 +22219,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	leaq	br_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movzbl	%al, %esi
@@ -22228,7 +22228,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault2@PLT
+	callq	injectFault1@PLT
 	testb	$1, %al
 	je	.LBB30_4
 # %bb.3:                                #   in Loop: Header=BB30_1 Depth=1
@@ -22240,7 +22240,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	-56(%rbp), %rbx                 # 8-byte Reload
 	movl	%eax, 12(%rbx)
 	movq	%r14, (%rsp)
@@ -22250,7 +22250,7 @@ _Z13assignClusterP8RgbPixelP8Clusters.13_fixp: # @_Z13assignClusterP8RgbPixelP8C
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, 16(%rbx)
 	jmp	.LBB30_4
 .LBB30_5:
@@ -22316,7 +22316,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	fmul_namestr(%rip), %rbx
 	movss	.LCPI31_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -22360,7 +22360,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r15
 	movq	%r15, (%rsp)
 	movl	$2210, %edi                     # imm = 0x8A2
@@ -22369,7 +22369,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2210, %edi                     # imm = 0x8A2
@@ -22378,7 +22378,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2210, %edi                     # imm = 0x8A2
@@ -22387,7 +22387,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movss	(%r13), %xmm0                   # xmm0 = mem[0],zero,zero,zero
 	movl	$2212, %edi                     # imm = 0x8A4
@@ -22406,7 +22406,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movl	$2215, %edi                     # imm = 0x8A7
 	movss	.LCPI31_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -22450,7 +22450,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$2217, %edi                     # imm = 0x8A9
@@ -22459,7 +22459,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2217, %edi                     # imm = 0x8A9
@@ -22468,7 +22468,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2217, %edi                     # imm = 0x8A9
@@ -22477,7 +22477,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	lshr_namestr(%rip), %r15
 	movq	%r15, (%rsp)
@@ -22487,7 +22487,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2218, %edi                     # imm = 0x8AA
@@ -22496,7 +22496,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shrl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -22506,7 +22506,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	sext_namestr(%rip), %rax
 	movq	%rax, (%rsp)
@@ -22517,7 +22517,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2219, %edi                     # imm = 0x8AB
@@ -22534,7 +22534,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2220, %edi                     # imm = 0x8AC
@@ -22618,7 +22618,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movq	%rcx, %r14
@@ -22628,7 +22628,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2224, %edi                     # imm = 0x8B0
@@ -22637,7 +22637,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2224, %edi                     # imm = 0x8B0
@@ -22646,7 +22646,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	movq	-64(%rbp), %r15                 # 8-byte Reload
 	movss	4(%r15), %xmm0                  # xmm0 = mem[0],zero,zero,zero
@@ -22667,7 +22667,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	$2229, %edi                     # imm = 0x8B5
 	movss	.LCPI31_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -22711,7 +22711,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$2231, %edi                     # imm = 0x8B7
@@ -22720,7 +22720,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2231, %edi                     # imm = 0x8B7
@@ -22729,7 +22729,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2231, %edi                     # imm = 0x8B7
@@ -22738,7 +22738,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movss	4(%r15), %xmm0                  # xmm0 = mem[0],zero,zero,zero
 	movl	$2233, %edi                     # imm = 0x8B9
@@ -22758,7 +22758,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movl	$2236, %edi                     # imm = 0x8BC
 	movss	.LCPI31_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -22802,7 +22802,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r13
 	movq	%r13, (%rsp)
 	movl	$2238, %edi                     # imm = 0x8BE
@@ -22811,7 +22811,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2238, %edi                     # imm = 0x8BE
@@ -22820,7 +22820,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2238, %edi                     # imm = 0x8BE
@@ -22829,7 +22829,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	sext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -22839,7 +22839,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2239, %edi                     # imm = 0x8BF
@@ -22856,7 +22856,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2240, %edi                     # imm = 0x8C0
@@ -22937,7 +22937,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$2244, %edi                     # imm = 0x8C4
@@ -22946,7 +22946,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2244, %edi                     # imm = 0x8C4
@@ -22955,7 +22955,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2244, %edi                     # imm = 0x8C4
@@ -22964,7 +22964,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	movq	-64(%rbp), %r14                 # 8-byte Reload
 	movss	8(%r14), %xmm0                  # xmm0 = mem[0],zero,zero,zero
@@ -22984,7 +22984,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movl	$2249, %edi                     # imm = 0x8C9
 	movss	.LCPI31_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -23028,7 +23028,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$2251, %edi                     # imm = 0x8CB
@@ -23037,7 +23037,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2251, %edi                     # imm = 0x8CB
@@ -23046,7 +23046,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2251, %edi                     # imm = 0x8CB
@@ -23055,7 +23055,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	movss	8(%r14), %xmm0                  # xmm0 = mem[0],zero,zero,zero
 	movl	$2253, %edi                     # imm = 0x8CD
@@ -23075,7 +23075,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movl	$2256, %edi                     # imm = 0x8D0
 	movss	.LCPI31_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -23118,7 +23118,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r12, (%rsp)
 	movl	$2258, %edi                     # imm = 0x8D2
 	movl	%eax, %esi
@@ -23126,7 +23126,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2258, %edi                     # imm = 0x8D2
@@ -23135,7 +23135,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2258, %edi                     # imm = 0x8D2
@@ -23144,7 +23144,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	shl_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -23154,7 +23154,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2259, %edi                     # imm = 0x8D3
@@ -23163,7 +23163,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
 	movq	%r13, (%rsp)
@@ -23173,7 +23173,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -64(%rbp)                 # 4-byte Spill
 	leaq	sext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -23183,7 +23183,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2260, %edi                     # imm = 0x8D4
@@ -23200,7 +23200,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2261, %edi                     # imm = 0x8D5
@@ -23280,7 +23280,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$2265, %edi                     # imm = 0x8D9
@@ -23289,7 +23289,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2265, %edi                     # imm = 0x8D9
@@ -23298,7 +23298,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2265, %edi                     # imm = 0x8D9
@@ -23307,7 +23307,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	call_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$2266, %edi                     # imm = 0x8DA
@@ -23316,7 +23316,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %edi
 	callq	_ZSt4sqrtf.8.16.22_u2_30fixp
 	movq	%rbx, (%rsp)
@@ -23326,7 +23326,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	uitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$2267, %edi                     # imm = 0x8DB
@@ -23335,7 +23335,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.18_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
 	movl	$2267, %edi                     # imm = 0x8DB
@@ -23441,7 +23441,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	fmul_namestr(%rip), %rbx
 	movss	.LCPI32_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -23485,7 +23485,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r15
 	movq	%r15, (%rsp)
 	movl	$2276, %edi                     # imm = 0x8E4
@@ -23494,7 +23494,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2276, %edi                     # imm = 0x8E4
@@ -23503,7 +23503,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2276, %edi                     # imm = 0x8E4
@@ -23512,7 +23512,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movss	(%r13), %xmm0                   # xmm0 = mem[0],zero,zero,zero
 	movl	$2278, %edi                     # imm = 0x8E6
@@ -23531,7 +23531,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movl	$2281, %edi                     # imm = 0x8E9
 	movss	.LCPI32_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -23575,7 +23575,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$2283, %edi                     # imm = 0x8EB
@@ -23584,7 +23584,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2283, %edi                     # imm = 0x8EB
@@ -23593,7 +23593,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2283, %edi                     # imm = 0x8EB
@@ -23602,7 +23602,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	lshr_namestr(%rip), %r15
 	movq	%r15, (%rsp)
@@ -23612,7 +23612,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2284, %edi                     # imm = 0x8EC
@@ -23621,7 +23621,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shrl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -23631,7 +23631,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	sext_namestr(%rip), %rax
 	movq	%rax, (%rsp)
@@ -23642,7 +23642,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2285, %edi                     # imm = 0x8ED
@@ -23659,7 +23659,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2286, %edi                     # imm = 0x8EE
@@ -23743,7 +23743,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movq	%rcx, %r14
@@ -23753,7 +23753,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2290, %edi                     # imm = 0x8F2
@@ -23762,7 +23762,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2290, %edi                     # imm = 0x8F2
@@ -23771,7 +23771,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	movq	-64(%rbp), %r15                 # 8-byte Reload
 	movss	4(%r15), %xmm0                  # xmm0 = mem[0],zero,zero,zero
@@ -23792,7 +23792,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	$2295, %edi                     # imm = 0x8F7
 	movss	.LCPI32_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -23836,7 +23836,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$2297, %edi                     # imm = 0x8F9
@@ -23845,7 +23845,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2297, %edi                     # imm = 0x8F9
@@ -23854,7 +23854,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2297, %edi                     # imm = 0x8F9
@@ -23863,7 +23863,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movss	4(%r15), %xmm0                  # xmm0 = mem[0],zero,zero,zero
 	movl	$2299, %edi                     # imm = 0x8FB
@@ -23883,7 +23883,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movl	$2302, %edi                     # imm = 0x8FE
 	movss	.LCPI32_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -23927,7 +23927,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r13
 	movq	%r13, (%rsp)
 	movl	$2304, %edi                     # imm = 0x900
@@ -23936,7 +23936,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2304, %edi                     # imm = 0x900
@@ -23945,7 +23945,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2304, %edi                     # imm = 0x900
@@ -23954,7 +23954,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	sext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -23964,7 +23964,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2305, %edi                     # imm = 0x901
@@ -23981,7 +23981,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2306, %edi                     # imm = 0x902
@@ -24062,7 +24062,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$2310, %edi                     # imm = 0x906
@@ -24071,7 +24071,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2310, %edi                     # imm = 0x906
@@ -24080,7 +24080,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2310, %edi                     # imm = 0x906
@@ -24089,7 +24089,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -48(%rbp)                 # 4-byte Spill
 	movq	-64(%rbp), %r14                 # 8-byte Reload
 	movss	8(%r14), %xmm0                  # xmm0 = mem[0],zero,zero,zero
@@ -24109,7 +24109,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movl	$2315, %edi                     # imm = 0x90B
 	movss	.LCPI32_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -24153,7 +24153,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	sub_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$2317, %edi                     # imm = 0x90D
@@ -24162,7 +24162,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2317, %edi                     # imm = 0x90D
@@ -24171,7 +24171,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2317, %edi                     # imm = 0x90D
@@ -24180,7 +24180,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	movss	8(%r14), %xmm0                  # xmm0 = mem[0],zero,zero,zero
 	movl	$2319, %edi                     # imm = 0x90F
@@ -24200,7 +24200,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movl	$2322, %edi                     # imm = 0x912
 	movss	.LCPI32_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -24243,7 +24243,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movq	%r12, (%rsp)
 	movl	$2324, %edi                     # imm = 0x914
 	movl	%eax, %esi
@@ -24251,7 +24251,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2324, %edi                     # imm = 0x914
@@ -24260,7 +24260,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2324, %edi                     # imm = 0x914
@@ -24269,7 +24269,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	shl_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -24279,7 +24279,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2325, %edi                     # imm = 0x915
@@ -24288,7 +24288,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
 	movq	%r13, (%rsp)
@@ -24298,7 +24298,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -64(%rbp)                 # 4-byte Spill
 	leaq	sext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -24308,7 +24308,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2326, %edi                     # imm = 0x916
@@ -24325,7 +24325,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movslq	%eax, %rsi
 	movq	%rbx, (%rsp)
 	movl	$2327, %edi                     # imm = 0x917
@@ -24405,7 +24405,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$2331, %edi                     # imm = 0x91B
@@ -24414,7 +24414,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2331, %edi                     # imm = 0x91B
@@ -24423,7 +24423,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2331, %edi                     # imm = 0x91B
@@ -24432,7 +24432,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	call_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$2332, %edi                     # imm = 0x91C
@@ -24441,7 +24441,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %edi
 	callq	_ZSt4sqrtf.8.15.21_u2_30fixp
 	movq	%rbx, (%rsp)
@@ -24451,7 +24451,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	uitofp_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$2333, %edi                     # imm = 0x91D
@@ -24460,7 +24460,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.17_u0_0fixp: # @_Z17euclideanDistan
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
 	movl	$2333, %edi                     # imm = 0x91D
@@ -24549,7 +24549,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	(%r12), %esi
 	movq	%r12, -64(%rbp)                 # 8-byte Spill
@@ -24559,7 +24559,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movq	%rcx, %r15
@@ -24569,7 +24569,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2340, %edi                     # imm = 0x924
@@ -24578,7 +24578,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -24588,7 +24588,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	sub_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -24598,7 +24598,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2341, %edi                     # imm = 0x925
@@ -24607,7 +24607,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2341, %edi                     # imm = 0x925
@@ -24616,7 +24616,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -68(%rbp)                 # 4-byte Spill
 	movq	-56(%rbp), %rax                 # 8-byte Reload
 	movl	(%rax), %esi
@@ -24627,7 +24627,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	(%r12), %esi
 	movq	%rbx, (%rsp)
@@ -24636,7 +24636,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %r15
 	movq	%r15, (%rsp)
 	movl	$2346, %edi                     # imm = 0x92A
@@ -24645,7 +24645,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2346, %edi                     # imm = 0x92A
@@ -24654,7 +24654,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -24664,7 +24664,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	%r13, (%rsp)
 	movl	$2347, %edi                     # imm = 0x92B
@@ -24673,7 +24673,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2347, %edi                     # imm = 0x92B
@@ -24682,7 +24682,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2347, %edi                     # imm = 0x92B
@@ -24691,7 +24691,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	lshr_namestr(%rip), %r15
 	movq	%r15, (%rsp)
@@ -24701,7 +24701,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2348, %edi                     # imm = 0x92C
@@ -24710,7 +24710,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shrl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -24720,7 +24720,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	leaq	zext_namestr(%rip), %rax
 	movq	%rax, (%rsp)
@@ -24731,7 +24731,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2349, %edi                     # imm = 0x92D
@@ -24748,7 +24748,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2350, %edi                     # imm = 0x92E
@@ -24829,7 +24829,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movq	%rcx, %r14
@@ -24839,7 +24839,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2354, %edi                     # imm = 0x932
@@ -24848,7 +24848,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2354, %edi                     # imm = 0x932
@@ -24857,7 +24857,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	movq	-56(%rbp), %r15                 # 8-byte Reload
 	movl	4(%r15), %esi
@@ -24868,7 +24868,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	-64(%rbp), %rax                 # 8-byte Reload
 	movl	4(%rax), %esi
@@ -24878,7 +24878,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$2359, %edi                     # imm = 0x937
@@ -24887,7 +24887,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2359, %edi                     # imm = 0x937
@@ -24896,7 +24896,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r12, (%rsp)
@@ -24906,7 +24906,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	sub_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -24916,7 +24916,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2360, %edi                     # imm = 0x938
@@ -24925,7 +24925,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2360, %edi                     # imm = 0x938
@@ -24934,7 +24934,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movl	4(%r15), %esi
 	leaq	load_namestr(%rip), %rbx
@@ -24944,7 +24944,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	-64(%rbp), %rax                 # 8-byte Reload
 	movl	4(%rax), %esi
@@ -24954,7 +24954,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %r15
 	movq	%r15, (%rsp)
 	movl	$2365, %edi                     # imm = 0x93D
@@ -24963,7 +24963,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2365, %edi                     # imm = 0x93D
@@ -24972,7 +24972,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -24982,7 +24982,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	%r12, (%rsp)
 	movl	$2366, %edi                     # imm = 0x93E
@@ -24991,7 +24991,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2366, %edi                     # imm = 0x93E
@@ -25000,7 +25000,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2366, %edi                     # imm = 0x93E
@@ -25009,7 +25009,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	zext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -25019,7 +25019,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2367, %edi                     # imm = 0x93F
@@ -25036,7 +25036,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2368, %edi                     # imm = 0x940
@@ -25117,7 +25117,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$2372, %edi                     # imm = 0x944
@@ -25126,7 +25126,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2372, %edi                     # imm = 0x944
@@ -25135,7 +25135,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2372, %edi                     # imm = 0x944
@@ -25144,7 +25144,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	movq	-56(%rbp), %rax                 # 8-byte Reload
 	movl	8(%rax), %esi
@@ -25155,7 +25155,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	-64(%rbp), %r12                 # 8-byte Reload
 	movl	8(%r12), %esi
@@ -25165,7 +25165,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %r15
 	movq	%r15, (%rsp)
 	movl	$2377, %edi                     # imm = 0x949
@@ -25174,7 +25174,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2377, %edi                     # imm = 0x949
@@ -25183,7 +25183,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -25193,7 +25193,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	sub_namestr(%rip), %r15
 	movq	%r15, (%rsp)
@@ -25203,7 +25203,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2378, %edi                     # imm = 0x94A
@@ -25212,7 +25212,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2378, %edi                     # imm = 0x94A
@@ -25221,7 +25221,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movq	-56(%rbp), %rax                 # 8-byte Reload
 	movl	8(%rax), %esi
@@ -25232,7 +25232,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	8(%r12), %esi
 	movq	%rbx, (%rsp)
@@ -25241,7 +25241,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$2383, %edi                     # imm = 0x94F
@@ -25250,7 +25250,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2383, %edi                     # imm = 0x94F
@@ -25259,7 +25259,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r12, (%rsp)
@@ -25269,7 +25269,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	%r15, (%rsp)
 	movl	$2384, %edi                     # imm = 0x950
@@ -25278,7 +25278,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2384, %edi                     # imm = 0x950
@@ -25287,7 +25287,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2384, %edi                     # imm = 0x950
@@ -25296,7 +25296,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	shl_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -25306,7 +25306,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2385, %edi                     # imm = 0x951
@@ -25315,7 +25315,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
 	movq	%r14, (%rsp)
@@ -25325,7 +25325,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	leaq	zext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -25335,7 +25335,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2386, %edi                     # imm = 0x952
@@ -25352,7 +25352,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2387, %edi                     # imm = 0x953
@@ -25432,7 +25432,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$2391, %edi                     # imm = 0x957
@@ -25441,7 +25441,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2391, %edi                     # imm = 0x957
@@ -25450,7 +25450,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2391, %edi                     # imm = 0x957
@@ -25459,7 +25459,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	call_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$2392, %edi                     # imm = 0x958
@@ -25468,7 +25468,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %edi
 	callq	_ZSt4sqrtf.8.16.24_u2_30fixp
 	movq	%rbx, (%rsp)
@@ -25478,7 +25478,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ret_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$2393, %edi                     # imm = 0x959
@@ -25487,7 +25487,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.11.20_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$40, %rsp
 	popq	%rbx
 	popq	%r12
@@ -25533,7 +25533,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	(%r12), %esi
 	movq	%r12, -64(%rbp)                 # 8-byte Spill
@@ -25543,7 +25543,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movq	%rcx, %r15
@@ -25553,7 +25553,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2398, %edi                     # imm = 0x95E
@@ -25562,7 +25562,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -25572,7 +25572,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	sub_namestr(%rip), %r13
 	movq	%r13, (%rsp)
@@ -25582,7 +25582,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2399, %edi                     # imm = 0x95F
@@ -25591,7 +25591,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2399, %edi                     # imm = 0x95F
@@ -25600,7 +25600,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -68(%rbp)                 # 4-byte Spill
 	movq	-56(%rbp), %rax                 # 8-byte Reload
 	movl	(%rax), %esi
@@ -25611,7 +25611,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	(%r12), %esi
 	movq	%rbx, (%rsp)
@@ -25620,7 +25620,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %r15
 	movq	%r15, (%rsp)
 	movl	$2404, %edi                     # imm = 0x964
@@ -25629,7 +25629,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2404, %edi                     # imm = 0x964
@@ -25638,7 +25638,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -25648,7 +25648,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	%r13, (%rsp)
 	movl	$2405, %edi                     # imm = 0x965
@@ -25657,7 +25657,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2405, %edi                     # imm = 0x965
@@ -25666,7 +25666,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r13, (%rsp)
 	movl	$2405, %edi                     # imm = 0x965
@@ -25675,7 +25675,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	leaq	lshr_namestr(%rip), %r15
 	movq	%r15, (%rsp)
@@ -25685,7 +25685,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2406, %edi                     # imm = 0x966
@@ -25694,7 +25694,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shrl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -25704,7 +25704,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	leaq	zext_namestr(%rip), %rax
 	movq	%rax, (%rsp)
@@ -25715,7 +25715,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2407, %edi                     # imm = 0x967
@@ -25732,7 +25732,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2408, %edi                     # imm = 0x968
@@ -25813,7 +25813,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movq	%rcx, %r14
@@ -25823,7 +25823,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2412, %edi                     # imm = 0x96C
@@ -25832,7 +25832,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2412, %edi                     # imm = 0x96C
@@ -25841,7 +25841,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	movq	-56(%rbp), %r15                 # 8-byte Reload
 	movl	4(%r15), %esi
@@ -25852,7 +25852,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	-64(%rbp), %rax                 # 8-byte Reload
 	movl	4(%rax), %esi
@@ -25862,7 +25862,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$2417, %edi                     # imm = 0x971
@@ -25871,7 +25871,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2417, %edi                     # imm = 0x971
@@ -25880,7 +25880,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r12, (%rsp)
@@ -25890,7 +25890,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	sub_namestr(%rip), %r12
 	movq	%r12, (%rsp)
@@ -25900,7 +25900,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2418, %edi                     # imm = 0x972
@@ -25909,7 +25909,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2418, %edi                     # imm = 0x972
@@ -25918,7 +25918,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movl	4(%r15), %esi
 	leaq	load_namestr(%rip), %rbx
@@ -25928,7 +25928,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	-64(%rbp), %rax                 # 8-byte Reload
 	movl	4(%rax), %esi
@@ -25938,7 +25938,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %r15
 	movq	%r15, (%rsp)
 	movl	$2423, %edi                     # imm = 0x977
@@ -25947,7 +25947,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2423, %edi                     # imm = 0x977
@@ -25956,7 +25956,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -25966,7 +25966,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	movq	%r12, (%rsp)
 	movl	$2424, %edi                     # imm = 0x978
@@ -25975,7 +25975,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2424, %edi                     # imm = 0x978
@@ -25984,7 +25984,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2424, %edi                     # imm = 0x978
@@ -25993,7 +25993,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r15d
 	leaq	zext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -26003,7 +26003,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2425, %edi                     # imm = 0x979
@@ -26020,7 +26020,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2426, %edi                     # imm = 0x97A
@@ -26101,7 +26101,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$2430, %edi                     # imm = 0x97E
@@ -26110,7 +26110,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2430, %edi                     # imm = 0x97E
@@ -26119,7 +26119,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2430, %edi                     # imm = 0x97E
@@ -26128,7 +26128,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -44(%rbp)                 # 4-byte Spill
 	movq	-56(%rbp), %rax                 # 8-byte Reload
 	movl	8(%rax), %esi
@@ -26139,7 +26139,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movq	-64(%rbp), %r12                 # 8-byte Reload
 	movl	8(%r12), %esi
@@ -26149,7 +26149,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %r15
 	movq	%r15, (%rsp)
 	movl	$2435, %edi                     # imm = 0x983
@@ -26158,7 +26158,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2435, %edi                     # imm = 0x983
@@ -26167,7 +26167,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r15, (%rsp)
@@ -26177,7 +26177,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	leaq	sub_namestr(%rip), %r15
 	movq	%r15, (%rsp)
@@ -26187,7 +26187,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2436, %edi                     # imm = 0x984
@@ -26196,7 +26196,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2436, %edi                     # imm = 0x984
@@ -26205,7 +26205,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r13d
 	movq	-56(%rbp), %rax                 # 8-byte Reload
 	movl	8(%rax), %esi
@@ -26216,7 +26216,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r14d
 	movl	8(%r12), %esi
 	movq	%rbx, (%rsp)
@@ -26225,7 +26225,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ashr_namestr(%rip), %r12
 	movq	%r12, (%rsp)
 	movl	$2441, %edi                     # imm = 0x989
@@ -26234,7 +26234,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r12, (%rsp)
 	movl	$2441, %edi                     # imm = 0x989
@@ -26243,7 +26243,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	sarl	%cl, %ebx
 	movq	%r12, (%rsp)
@@ -26253,7 +26253,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	movq	%r15, (%rsp)
 	movl	$2442, %edi                     # imm = 0x98A
@@ -26262,7 +26262,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2442, %edi                     # imm = 0x98A
@@ -26271,7 +26271,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	subl	%eax, %ebx
 	movq	%r15, (%rsp)
 	movl	$2442, %edi                     # imm = 0x98A
@@ -26280,7 +26280,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %r12d
 	leaq	shl_namestr(%rip), %r14
 	movq	%r14, (%rsp)
@@ -26290,7 +26290,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2443, %edi                     # imm = 0x98B
@@ -26299,7 +26299,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ecx
 	shll	%cl, %ebx
 	movq	%r14, (%rsp)
@@ -26309,7 +26309,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	leaq	zext_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
@@ -26319,7 +26319,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2444, %edi                     # imm = 0x98C
@@ -26336,7 +26336,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %esi
 	movq	%rbx, (%rsp)
 	movl	$2445, %edi                     # imm = 0x98D
@@ -26416,7 +26416,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	add_namestr(%rip), %r14
 	movq	%r14, (%rsp)
 	movl	$2449, %edi                     # imm = 0x991
@@ -26425,7 +26425,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$3, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2449, %edi                     # imm = 0x991
@@ -26434,7 +26434,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$2, %ecx
 	movl	$3, %r8d
 	movl	$2, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addl	%eax, %ebx
 	movq	%r14, (%rsp)
 	movl	$2449, %edi                     # imm = 0x991
@@ -26443,7 +26443,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$3, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	call_namestr(%rip), %rbx
 	movq	%rbx, (%rsp)
 	movl	$2450, %edi                     # imm = 0x992
@@ -26452,7 +26452,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %edi
 	callq	_ZSt4sqrtf.8.15.23_u2_30fixp
 	movq	%rbx, (%rsp)
@@ -26462,7 +26462,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ret_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$2451, %edi                     # imm = 0x993
@@ -26471,7 +26471,7 @@ _Z17euclideanDistanceP8RgbPixelP8Centroid.10.19_u2_30fixp: # @_Z17euclideanDista
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$40, %rsp
 	popq	%rbx
 	popq	%r12
@@ -26511,7 +26511,7 @@ _ZSt4sqrtf.8.16.22_u2_30fixp:           # @_ZSt4sqrtf.8.16.22_u2_30fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
 	movl	$2452, %edi                     # imm = 0x994
@@ -26616,7 +26616,7 @@ _ZSt4sqrtf.8.16.22_u2_30fixp:           # @_ZSt4sqrtf.8.16.22_u2_30fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ret_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$2457, %edi                     # imm = 0x999
@@ -26625,7 +26625,7 @@ _ZSt4sqrtf.8.16.22_u2_30fixp:           # @_ZSt4sqrtf.8.16.22_u2_30fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$24, %rsp
 	popq	%rbx
 	popq	%rbp
@@ -26661,7 +26661,7 @@ _ZSt4sqrtf.8.15.21_u2_30fixp:           # @_ZSt4sqrtf.8.15.21_u2_30fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
 	movl	$2458, %edi                     # imm = 0x99A
@@ -26766,7 +26766,7 @@ _ZSt4sqrtf.8.15.21_u2_30fixp:           # @_ZSt4sqrtf.8.15.21_u2_30fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ret_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$2463, %edi                     # imm = 0x99F
@@ -26775,7 +26775,7 @@ _ZSt4sqrtf.8.15.21_u2_30fixp:           # @_ZSt4sqrtf.8.15.21_u2_30fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$24, %rsp
 	popq	%rbx
 	popq	%rbp
@@ -26811,7 +26811,7 @@ _ZSt4sqrtf.8.16.24_u2_30fixp:           # @_ZSt4sqrtf.8.16.24_u2_30fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
 	movl	$2464, %edi                     # imm = 0x9A0
@@ -26916,7 +26916,7 @@ _ZSt4sqrtf.8.16.24_u2_30fixp:           # @_ZSt4sqrtf.8.16.24_u2_30fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ret_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$2469, %edi                     # imm = 0x9A5
@@ -26925,7 +26925,7 @@ _ZSt4sqrtf.8.16.24_u2_30fixp:           # @_ZSt4sqrtf.8.16.24_u2_30fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$24, %rsp
 	popq	%rbx
 	popq	%rbp
@@ -26961,7 +26961,7 @@ _ZSt4sqrtf.8.15.23_u2_30fixp:           # @_ZSt4sqrtf.8.15.23_u2_30fixp
 	movl	$1, %ecx
 	movl	$2, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	movl	%eax, %eax
 	cvtsi2ss	%rax, %xmm0
 	movl	$2470, %edi                     # imm = 0x9A6
@@ -27066,7 +27066,7 @@ _ZSt4sqrtf.8.15.23_u2_30fixp:           # @_ZSt4sqrtf.8.15.23_u2_30fixp
 	xorl	%ecx, %ecx
 	movl	$2, %r8d
 	xorl	%r9d, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	leaq	ret_namestr(%rip), %rcx
 	movq	%rcx, (%rsp)
 	movl	$2475, %edi                     # imm = 0x9AB
@@ -27075,7 +27075,7 @@ _ZSt4sqrtf.8.15.23_u2_30fixp:           # @_ZSt4sqrtf.8.15.23_u2_30fixp
 	xorl	%ecx, %ecx
 	movl	$1, %r8d
 	movl	$1, %r9d
-	callq	injectFault1@PLT
+	callq	injectFault2@PLT
 	addq	$24, %rsp
 	popq	%rbx
 	popq	%rbp
@@ -27165,7 +27165,9 @@ injectFault1:                           # @injectFault1
 	movl	%ecx, %r15d
 	movl	%esi, %ebp
 	movq	%rdi, %rbx
-	movl	%esi, 4(%rsp)
+	movl	%ebp, %eax
+	andb	$1, %al
+	movb	%al, 7(%rsp)
 	movl	%edx, %esi
 	movl	%ecx, %edx
 	movl	%r8d, %ecx
@@ -27174,13 +27176,13 @@ injectFault1:                           # @injectFault1
 	je	.LBB40_2
 # %bb.1:                                # %inject
 	movq	48(%rsp), %r9
-	leaq	4(%rsp), %rdx
+	leaq	7(%rsp), %rdx
 	movq	%rbx, %rdi
-	movl	$32, %esi
+	movl	$1, %esi
 	movl	%r15d, %ecx
 	movl	%r14d, %r8d
 	callq	injectFunc@PLT
-	movl	4(%rsp), %ebp
+	movb	7(%rsp), %bpl
 .LBB40_2:                               # %exit
 	movl	%ebp, %eax
 	addq	$8, %rsp
@@ -27222,9 +27224,7 @@ injectFault2:                           # @injectFault2
 	movl	%ecx, %r15d
 	movl	%esi, %ebp
 	movq	%rdi, %rbx
-	movl	%ebp, %eax
-	andb	$1, %al
-	movb	%al, 7(%rsp)
+	movl	%esi, 4(%rsp)
 	movl	%edx, %esi
 	movl	%ecx, %edx
 	movl	%r8d, %ecx
@@ -27233,13 +27233,13 @@ injectFault2:                           # @injectFault2
 	je	.LBB41_2
 # %bb.1:                                # %inject
 	movq	48(%rsp), %r9
-	leaq	7(%rsp), %rdx
+	leaq	4(%rsp), %rdx
 	movq	%rbx, %rdi
-	movl	$1, %esi
+	movl	$32, %esi
 	movl	%r15d, %ecx
 	movl	%r14d, %r8d
 	callq	injectFunc@PLT
-	movb	7(%rsp), %bpl
+	movl	4(%rsp), %ebp
 .LBB41_2:                               # %exit
 	movl	%ebp, %eax
 	addq	$8, %rsp
@@ -27617,25 +27617,30 @@ load_namestr:
 	.asciz	"load"
 	.size	load_namestr, 5
 
-	.type	store_namestr,@object           # @store_namestr
-store_namestr:
-	.asciz	"store"
-	.size	store_namestr, 6
+	.type	fcmp_namestr,@object            # @fcmp_namestr
+fcmp_namestr:
+	.asciz	"fcmp"
+	.size	fcmp_namestr, 5
 
 	.type	icmp_namestr,@object            # @icmp_namestr
 icmp_namestr:
 	.asciz	"icmp"
 	.size	icmp_namestr, 5
 
-	.type	fptosi_namestr,@object          # @fptosi_namestr
-fptosi_namestr:
-	.asciz	"fptosi"
-	.size	fptosi_namestr, 7
+	.type	store_namestr,@object           # @store_namestr
+store_namestr:
+	.asciz	"store"
+	.size	store_namestr, 6
 
 	.type	fmul_namestr,@object            # @fmul_namestr
 fmul_namestr:
 	.asciz	"fmul"
 	.size	fmul_namestr, 5
+
+	.type	fptosi_namestr,@object          # @fptosi_namestr
+fptosi_namestr:
+	.asciz	"fptosi"
+	.size	fptosi_namestr, 7
 
 	.type	sub_namestr,@object             # @sub_namestr
 sub_namestr:
@@ -27672,11 +27677,6 @@ add_namestr:
 	.asciz	"add"
 	.size	add_namestr, 4
 
-	.type	fcmp_namestr,@object            # @fcmp_namestr
-fcmp_namestr:
-	.asciz	"fcmp"
-	.size	fcmp_namestr, 5
-
 	.type	br_namestr,@object              # @br_namestr
 br_namestr:
 	.asciz	"br"
@@ -27701,11 +27701,6 @@ uitofp_namestr:
 fdiv_namestr:
 	.asciz	"fdiv"
 	.size	fdiv_namestr, 5
-
-	.type	zext_namestr,@object            # @zext_namestr
-zext_namestr:
-	.asciz	"zext"
-	.size	zext_namestr, 5
 
 	.type	ret_namestr,@object             # @ret_namestr
 ret_namestr:
@@ -27732,6 +27727,11 @@ invoke_namestr:
 	.asciz	"invoke"
 	.size	invoke_namestr, 7
 
+	.type	zext_namestr,@object            # @zext_namestr
+zext_namestr:
+	.asciz	"zext"
+	.size	zext_namestr, 5
+
 	.type	extractvalue_namestr,@object    # @extractvalue_namestr
 extractvalue_namestr:
 	.asciz	"extractvalue"
@@ -27752,16 +27752,6 @@ fptoui_namestr:
 	.asciz	"fptoui"
 	.size	fptoui_namestr, 7
 
-	.type	fpext_namestr,@object           # @fpext_namestr
-fpext_namestr:
-	.asciz	"fpext"
-	.size	fpext_namestr, 6
-
-	.type	fptrunc_namestr,@object         # @fptrunc_namestr
-fptrunc_namestr:
-	.asciz	"fptrunc"
-	.size	fptrunc_namestr, 8
-
 	.type	fsub_namestr,@object            # @fsub_namestr
 fsub_namestr:
 	.asciz	"fsub"
@@ -27771,6 +27761,16 @@ fsub_namestr:
 sdiv_namestr:
 	.asciz	"sdiv"
 	.size	sdiv_namestr, 5
+
+	.type	fpext_namestr,@object           # @fpext_namestr
+fpext_namestr:
+	.asciz	"fpext"
+	.size	fpext_namestr, 6
+
+	.type	fptrunc_namestr,@object         # @fptrunc_namestr
+fptrunc_namestr:
+	.asciz	"fptrunc"
+	.size	fptrunc_namestr, 8
 
 	.hidden	DW.ref.__gxx_personality_v0
 	.weak	DW.ref.__gxx_personality_v0
@@ -27791,10 +27791,11 @@ DW.ref.__gxx_personality_v0:
 	.addrsig_sym _Unwind_Resume
 	.addrsig_sym _ZSt4cout
 	.addrsig_sym load_namestr
-	.addrsig_sym store_namestr
+	.addrsig_sym fcmp_namestr
 	.addrsig_sym icmp_namestr
-	.addrsig_sym fptosi_namestr
+	.addrsig_sym store_namestr
 	.addrsig_sym fmul_namestr
+	.addrsig_sym fptosi_namestr
 	.addrsig_sym sub_namestr
 	.addrsig_sym ashr_namestr
 	.addrsig_sym lshr_namestr
@@ -27802,23 +27803,22 @@ DW.ref.__gxx_personality_v0:
 	.addrsig_sym mul_namestr
 	.addrsig_sym trunc_namestr
 	.addrsig_sym add_namestr
-	.addrsig_sym fcmp_namestr
 	.addrsig_sym br_namestr
 	.addrsig_sym shl_namestr
 	.addrsig_sym call_namestr
 	.addrsig_sym uitofp_namestr
 	.addrsig_sym fdiv_namestr
-	.addrsig_sym zext_namestr
 	.addrsig_sym ret_namestr
 	.addrsig_sym insertvalue_namestr
 	.addrsig_sym resume_namestr
 	.addrsig_sym alloca_namestr
 	.addrsig_sym invoke_namestr
+	.addrsig_sym zext_namestr
 	.addrsig_sym extractvalue_namestr
 	.addrsig_sym sitofp_namestr
 	.addrsig_sym udiv_namestr
 	.addrsig_sym fptoui_namestr
-	.addrsig_sym fpext_namestr
-	.addrsig_sym fptrunc_namestr
 	.addrsig_sym fsub_namestr
 	.addrsig_sym sdiv_namestr
+	.addrsig_sym fpext_namestr
+	.addrsig_sym fptrunc_namestr

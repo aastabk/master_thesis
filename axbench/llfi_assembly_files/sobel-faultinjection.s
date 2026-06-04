@@ -33558,11 +33558,6 @@ call_namestr:
 	.asciz	"call"
 	.size	call_namestr, 5
 
-	.type	store_namestr,@object           # @store_namestr
-store_namestr:
-	.asciz	"store"
-	.size	store_namestr, 6
-
 	.type	lshr_namestr,@object            # @lshr_namestr
 lshr_namestr:
 	.asciz	"lshr"
@@ -33643,6 +33638,11 @@ fptrunc_namestr:
 	.asciz	"fptrunc"
 	.size	fptrunc_namestr, 8
 
+	.type	store_namestr,@object           # @store_namestr
+store_namestr:
+	.asciz	"store"
+	.size	store_namestr, 6
+
 	.type	alloca_namestr,@object          # @alloca_namestr
 alloca_namestr:
 	.asciz	"alloca"
@@ -33720,7 +33720,6 @@ DW.ref.__gxx_personality_v0:
 	.addrsig_sym _ZSt4cout
 	.addrsig_sym invoke_namestr
 	.addrsig_sym call_namestr
-	.addrsig_sym store_namestr
 	.addrsig_sym lshr_namestr
 	.addrsig_sym sitofp_namestr
 	.addrsig_sym fdiv_namestr
@@ -33737,6 +33736,7 @@ DW.ref.__gxx_personality_v0:
 	.addrsig_sym uitofp_namestr
 	.addrsig_sym zext_namestr
 	.addrsig_sym fptrunc_namestr
+	.addrsig_sym store_namestr
 	.addrsig_sym alloca_namestr
 	.addrsig_sym trunc_namestr
 	.addrsig_sym ptrtoint_namestr

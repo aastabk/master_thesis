@@ -17509,15 +17509,20 @@ fcmp_namestr:
 	.asciz	"fcmp"
 	.size	fcmp_namestr, 5
 
-	.type	fneg_namestr,@object            # @fneg_namestr
-fneg_namestr:
-	.asciz	"fneg"
-	.size	fneg_namestr, 5
+	.type	icmp_namestr,@object            # @icmp_namestr
+icmp_namestr:
+	.asciz	"icmp"
+	.size	icmp_namestr, 5
 
 	.type	br_namestr,@object              # @br_namestr
 br_namestr:
 	.asciz	"br"
 	.size	br_namestr, 3
+
+	.type	fneg_namestr,@object            # @fneg_namestr
+fneg_namestr:
+	.asciz	"fneg"
+	.size	fneg_namestr, 5
 
 	.type	fptoui_namestr,@object          # @fptoui_namestr
 fptoui_namestr:
@@ -17543,11 +17548,6 @@ trunc_namestr:
 sext_namestr:
 	.asciz	"sext"
 	.size	sext_namestr, 5
-
-	.type	uitofp_namestr,@object          # @uitofp_namestr
-uitofp_namestr:
-	.asciz	"uitofp"
-	.size	uitofp_namestr, 7
 
 	.type	add_namestr,@object             # @add_namestr
 add_namestr:
@@ -17589,35 +17589,25 @@ alloca_namestr:
 	.asciz	"alloca"
 	.size	alloca_namestr, 7
 
-	.type	sub_namestr,@object             # @sub_namestr
-sub_namestr:
-	.asciz	"sub"
-	.size	sub_namestr, 4
-
-	.type	icmp_namestr,@object            # @icmp_namestr
-icmp_namestr:
-	.asciz	"icmp"
-	.size	icmp_namestr, 5
-
 	.type	fptrunc_namestr,@object         # @fptrunc_namestr
 fptrunc_namestr:
 	.asciz	"fptrunc"
 	.size	fptrunc_namestr, 8
 
+	.type	sub_namestr,@object             # @sub_namestr
+sub_namestr:
+	.asciz	"sub"
+	.size	sub_namestr, 4
+
+	.type	uitofp_namestr,@object          # @uitofp_namestr
+uitofp_namestr:
+	.asciz	"uitofp"
+	.size	uitofp_namestr, 7
+
 	.type	fadd_namestr,@object            # @fadd_namestr
 fadd_namestr:
 	.asciz	"fadd"
 	.size	fadd_namestr, 5
-
-	.type	store_namestr,@object           # @store_namestr
-store_namestr:
-	.asciz	"store"
-	.size	store_namestr, 6
-
-	.type	ptrtoint_namestr,@object        # @ptrtoint_namestr
-ptrtoint_namestr:
-	.asciz	"ptrtoint"
-	.size	ptrtoint_namestr, 9
 
 	.type	and_namestr,@object             # @and_namestr
 and_namestr:
@@ -17628,6 +17618,16 @@ and_namestr:
 inttoptr_namestr:
 	.asciz	"inttoptr"
 	.size	inttoptr_namestr, 9
+
+	.type	store_namestr,@object           # @store_namestr
+store_namestr:
+	.asciz	"store"
+	.size	store_namestr, 6
+
+	.type	ptrtoint_namestr,@object        # @ptrtoint_namestr
+ptrtoint_namestr:
+	.asciz	"ptrtoint"
+	.size	ptrtoint_namestr, 9
 
 	.type	select_namestr,@object          # @select_namestr
 select_namestr:
@@ -17669,14 +17669,14 @@ sdiv_namestr:
 	.addrsig_sym fpext_namestr
 	.addrsig_sym fmul_namestr
 	.addrsig_sym fcmp_namestr
-	.addrsig_sym fneg_namestr
+	.addrsig_sym icmp_namestr
 	.addrsig_sym br_namestr
+	.addrsig_sym fneg_namestr
 	.addrsig_sym fptoui_namestr
 	.addrsig_sym zext_namestr
 	.addrsig_sym mul_namestr
 	.addrsig_sym trunc_namestr
 	.addrsig_sym sext_namestr
-	.addrsig_sym uitofp_namestr
 	.addrsig_sym add_namestr
 	.addrsig_sym shl_namestr
 	.addrsig_sym udiv_namestr
@@ -17685,14 +17685,14 @@ sdiv_namestr:
 	.addrsig_sym fsub_namestr
 	.addrsig_sym ret_namestr
 	.addrsig_sym alloca_namestr
-	.addrsig_sym sub_namestr
-	.addrsig_sym icmp_namestr
 	.addrsig_sym fptrunc_namestr
+	.addrsig_sym sub_namestr
+	.addrsig_sym uitofp_namestr
 	.addrsig_sym fadd_namestr
-	.addrsig_sym store_namestr
-	.addrsig_sym ptrtoint_namestr
 	.addrsig_sym and_namestr
 	.addrsig_sym inttoptr_namestr
+	.addrsig_sym store_namestr
+	.addrsig_sym ptrtoint_namestr
 	.addrsig_sym select_namestr
 	.addrsig_sym sitofp_namestr
 	.addrsig_sym fptosi_namestr

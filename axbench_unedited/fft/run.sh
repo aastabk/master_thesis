@@ -32,4 +32,4 @@ fft_systematic(){
 
     ./gather_csv.sh fft ${CSV_FILE}
 }
-fft_systematic
+# fft_systematic

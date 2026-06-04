@@ -166,6 +166,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %55 = mul nsw i32 %54, 2, !llfi_index !68
   call void @doProfiling(i32 17)
   %56 = sext i32 %55 to i64, !llfi_index !69
+  call void @doProfiling(i32 40)
   %57 = mul i64 %56, 4, !llfi_index !70
   call void @doProfiling(i32 17)
   call void @doProfiling(i32 56)
@@ -195,9 +196,11 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 66:                                               ; preds = %2
   %67 = landingpad { ptr, i32 }
           cleanup, !llfi_index !81
+  call void @doProfiling(i32 64)
   %68 = extractvalue { ptr, i32 } %67, 0, !llfi_index !82
   store ptr %68, ptr %17, align 8, !llfi_index !83
   %69 = extractvalue { ptr, i32 } %67, 1, !llfi_index !84
+  call void @doProfiling(i32 64)
   call void @doProfiling(i32 33)
   store i32 %69, ptr %18, align 4, !llfi_index !85
   store ptr %16, ptr %7, align 8, !llfi_index !86
@@ -208,9 +211,11 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 71:                                               ; preds = %39
   %72 = landingpad { ptr, i32 }
           cleanup, !llfi_index !90
+  call void @doProfiling(i32 64)
   %73 = extractvalue { ptr, i32 } %72, 0, !llfi_index !91
   store ptr %73, ptr %17, align 8, !llfi_index !92
   %74 = extractvalue { ptr, i32 } %72, 1, !llfi_index !93
+  call void @doProfiling(i32 64)
   call void @doProfiling(i32 33)
   store i32 %74, ptr %18, align 4, !llfi_index !94
   store ptr %20, ptr %5, align 8, !llfi_index !95
@@ -221,9 +226,11 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 76:                                               ; preds = %46
   %77 = landingpad { ptr, i32 }
           cleanup, !llfi_index !99
+  call void @doProfiling(i32 64)
   %78 = extractvalue { ptr, i32 } %77, 0, !llfi_index !100
   store ptr %78, ptr %17, align 8, !llfi_index !101
   %79 = extractvalue { ptr, i32 } %77, 1, !llfi_index !102
+  call void @doProfiling(i32 64)
   call void @doProfiling(i32 33)
   store i32 %79, ptr %18, align 4, !llfi_index !103
   br label %234, !llfi_index !104
@@ -231,9 +238,11 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 80:                                               ; preds = %49, %48
   %81 = landingpad { ptr, i32 }
           cleanup, !llfi_index !105
+  call void @doProfiling(i32 64)
   %82 = extractvalue { ptr, i32 } %81, 0, !llfi_index !106
   store ptr %82, ptr %17, align 8, !llfi_index !107
   %83 = extractvalue { ptr, i32 } %81, 1, !llfi_index !108
+  call void @doProfiling(i32 64)
   call void @doProfiling(i32 33)
   store i32 %83, ptr %18, align 4, !llfi_index !109
   br label %233, !llfi_index !110
@@ -241,9 +250,11 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
 84:                                               ; preds = %228, %227, %221, %213, %211, %203, %194, %189, %187, %185, %158, %124, %116, %99, %97, %63, %61, %50
   %85 = landingpad { ptr, i32 }
           cleanup, !llfi_index !111
+  call void @doProfiling(i32 64)
   %86 = extractvalue { ptr, i32 } %85, 0, !llfi_index !112
   store ptr %86, ptr %17, align 8, !llfi_index !113
   %87 = extractvalue { ptr, i32 } %85, 1, !llfi_index !114
+  call void @doProfiling(i32 64)
   call void @doProfiling(i32 33)
   store i32 %87, ptr %18, align 4, !llfi_index !115
   call void @_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev(ptr noundef nonnull align 8 dereferenceable(256) %22) #8, !llfi_index !116
@@ -253,6 +264,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %89 = call i64 @time(ptr noundef null) #8, !llfi_index !118
   call void @doProfiling(i32 56)
   %90 = trunc i64 %89 to i32, !llfi_index !119
+  call void @doProfiling(i32 38)
   call void @doProfiling(i32 56)
   call void @srand(i32 noundef %90) #8, !llfi_index !120
   call void @doProfiling(i32 33)
@@ -288,6 +300,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %104 = load i32, ptr %25, align 4, !llfi_index !133
   call void @doProfiling(i32 32)
   %105 = sext i32 %104 to i64, !llfi_index !134
+  call void @doProfiling(i32 40)
   %106 = getelementptr inbounds float, ptr %103, i64 %105, !llfi_index !135
   call void @doProfiling(i32 33)
   store float %102, ptr %106, align 4, !llfi_index !136
@@ -299,6 +312,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %110 = add nsw i32 %109, 1, !llfi_index !140
   call void @doProfiling(i32 13)
   %111 = sext i32 %110 to i64, !llfi_index !141
+  call void @doProfiling(i32 40)
   %112 = getelementptr inbounds float, ptr %108, i64 %111, !llfi_index !142
   call void @doProfiling(i32 33)
   store float %107, ptr %112, align 4, !llfi_index !143
@@ -345,6 +359,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %127 = add nsw i32 %126, 0, !llfi_index !163
   call void @doProfiling(i32 13)
   %128 = sext i32 %127 to i64, !llfi_index !164
+  call void @doProfiling(i32 40)
   %129 = getelementptr inbounds float, ptr %125, i64 %128, !llfi_index !165
   %130 = load float, ptr %129, align 4, !llfi_index !166
   call void @doProfiling(i32 32)
@@ -354,6 +369,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %133 = add nsw i32 %132, 1, !llfi_index !169
   call void @doProfiling(i32 13)
   %134 = sext i32 %133 to i64, !llfi_index !170
+  call void @doProfiling(i32 40)
   %135 = getelementptr inbounds float, ptr %131, i64 %134, !llfi_index !171
   %136 = load float, ptr %135, align 4, !llfi_index !172
   call void @doProfiling(i32 32)
@@ -363,6 +379,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %139 = add nsw i32 %138, 2, !llfi_index !175
   call void @doProfiling(i32 13)
   %140 = sext i32 %139 to i64, !llfi_index !176
+  call void @doProfiling(i32 40)
   %141 = getelementptr inbounds float, ptr %137, i64 %140, !llfi_index !177
   %142 = load ptr, ptr %23, align 8, !llfi_index !178
   %143 = load i32, ptr %30, align 4, !llfi_index !179
@@ -370,6 +387,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %144 = add nsw i32 %143, 3, !llfi_index !180
   call void @doProfiling(i32 13)
   %145 = sext i32 %144 to i64, !llfi_index !181
+  call void @doProfiling(i32 40)
   %146 = getelementptr inbounds float, ptr %142, i64 %145, !llfi_index !182
   call void @doProfiling(i32 5)
   invoke void @_Z10forwardk2jffPfS_(float noundef %130, float noundef %136, ptr noundef %141, ptr noundef %146)
@@ -413,6 +431,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %161 = add nsw i32 %160, 2, !llfi_index !200
   call void @doProfiling(i32 13)
   %162 = sext i32 %161 to i64, !llfi_index !201
+  call void @doProfiling(i32 40)
   %163 = getelementptr inbounds float, ptr %159, i64 %162, !llfi_index !202
   %164 = load float, ptr %163, align 4, !llfi_index !203
   call void @doProfiling(i32 32)
@@ -422,6 +441,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %167 = add nsw i32 %166, 3, !llfi_index !206
   call void @doProfiling(i32 13)
   %168 = sext i32 %167 to i64, !llfi_index !207
+  call void @doProfiling(i32 40)
   %169 = getelementptr inbounds float, ptr %165, i64 %168, !llfi_index !208
   %170 = load float, ptr %169, align 4, !llfi_index !209
   call void @doProfiling(i32 32)
@@ -431,6 +451,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %173 = add nsw i32 %172, 0, !llfi_index !212
   call void @doProfiling(i32 13)
   %174 = sext i32 %173 to i64, !llfi_index !213
+  call void @doProfiling(i32 40)
   %175 = getelementptr inbounds float, ptr %171, i64 %174, !llfi_index !214
   %176 = load ptr, ptr %23, align 8, !llfi_index !215
   %177 = load i32, ptr %31, align 4, !llfi_index !216
@@ -438,6 +459,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %178 = add nsw i32 %177, 1, !llfi_index !217
   call void @doProfiling(i32 13)
   %179 = sext i32 %178 to i64, !llfi_index !218
+  call void @doProfiling(i32 40)
   %180 = getelementptr inbounds float, ptr %176, i64 %179, !llfi_index !219
   call void @doProfiling(i32 5)
   invoke void @_Z10inversek2jffPfS_(float noundef %164, float noundef %170, ptr noundef %175, ptr noundef %180)
@@ -469,6 +491,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %190 = load i64, ptr %32, align 8, !llfi_index !230
   call void @doProfiling(i32 32)
   %191 = uitofp i64 %190 to double, !llfi_index !231
+  call void @doProfiling(i32 43)
   %192 = fdiv double %191, 1.000000e+09, !llfi_index !232
   call void @doProfiling(i32 21)
   call void @doProfiling(i32 5)
@@ -505,6 +528,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %206 = add nsw i32 %205, 0, !llfi_index !245
   call void @doProfiling(i32 13)
   %207 = sext i32 %206 to i64, !llfi_index !246
+  call void @doProfiling(i32 40)
   %208 = getelementptr inbounds float, ptr %204, i64 %207, !llfi_index !247
   %209 = load float, ptr %208, align 4, !llfi_index !248
   call void @doProfiling(i32 32)
@@ -523,6 +547,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %216 = add nsw i32 %215, 1, !llfi_index !253
   call void @doProfiling(i32 13)
   %217 = sext i32 %216 to i64, !llfi_index !254
+  call void @doProfiling(i32 40)
   %218 = getelementptr inbounds float, ptr %214, i64 %217, !llfi_index !255
   %219 = load float, ptr %218, align 4, !llfi_index !256
   call void @doProfiling(i32 32)
@@ -571,6 +596,7 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   call void @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev(ptr noundef nonnull align 8 dereferenceable(32) %15) #8, !llfi_index !276
   %232 = load i32, ptr %11, align 4, !llfi_index !277
   call void @doProfiling(i32 32)
+  call void @doProfiling(i32 1)
   call void @endProfiling()
   ret i32 %232, !llfi_index !278
 
@@ -591,7 +617,10 @@ define dso_local noundef i32 @main(i32 noundef %0, ptr noundef %1) #0 personalit
   %238 = load i32, ptr %18, align 4, !llfi_index !286
   call void @doProfiling(i32 32)
   %239 = insertvalue { ptr, i32 } undef, ptr %237, 0, !llfi_index !287
+  call void @doProfiling(i32 65)
   %240 = insertvalue { ptr, i32 } %239, i32 %238, 1, !llfi_index !288
+  call void @doProfiling(i32 65)
+  call void @doProfiling(i32 6)
   call void @endProfiling()
   resume { ptr, i32 } %240, !llfi_index !289
 }
@@ -695,10 +724,12 @@ define linkonce_odr dso_local noundef i64 @_ZN12AxBenchTimer20nanosecondsSinceIn
   %24 = load i64, ptr %5, align 8, !llfi_index !325
   call void @doProfiling(i32 32)
   %25 = sub i64 %23, %24, !llfi_index !326
+  call void @doProfiling(i32 15)
   call void @doProfiling(i32 33)
   store i64 %25, ptr %3, align 8, !llfi_index !327
   %26 = load i64, ptr %3, align 8, !llfi_index !328
   call void @doProfiling(i32 32)
+  call void @doProfiling(i32 1)
   ret i64 %26, !llfi_index !329
 }
 

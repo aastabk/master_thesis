@@ -45,6 +45,7 @@ BASELINE_TIME=$(grep '^kernel time = ' llfi/baseline/golden_std_output | cut -d=
 TIMEOUT=$(echo "scale=4; $BASELINE_TIME * 100" | bc)
 sed -i "s/defaultTimeout:.*/defaultTimeout: "$TIMEOUT"/" "$YAML_FILE"
 runs=8
+start_time=$(date +%s)
 
 for ((i=1; i<=runs; i++)) # parallelize
 do

@@ -5,19 +5,15 @@ compileOption:
               - all
               # SDC > 50%
               #   - add
-              #   - alloca
-              #   - br
-              #   - call
-              #   - fadd
-              #   - fdiv
+              #   - fptosi
               #   - fmul
-              #   - fneg
-              #   - fpext
-              #   - fptrunc
-              #   - icmp
-              #   - invoke
+              #   - sext
+              #   - sdiv
               #   - load
-              #   - mul
+              #   - sub
+              #   - sitofp
+              #   - uitofp
+              #   - invoke
               #   - store
             exclude:
               - getelementptr
@@ -46,4 +42,4 @@ runOption:
         # fi_num_bits: 1
         # fi_random_seed: 3383708800
 
-defaultTimeout: 4.1777600
+defaultTimeout: 4.3355100
